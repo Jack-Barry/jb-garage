@@ -1,4 +1,6 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "jack-barry-onl": "apps/jack-barry-onl"
+  }
 }

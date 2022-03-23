@@ -1,0 +1,53 @@
+{
+  "projectType": "application",
+  "root": "apps/jack-barry-onl",
+  "sourceRoot": "apps/jack-barry-onl",
+  "tags": [],
+  "targets": {
+    "dev": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/jack-barry-onl",
+        "command": "npx nuxt"
+      }
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["apps/jack-barry-onl/.nuxt"],
+      "options": {
+        "cwd": "apps/jack-barry-onl",
+        "command": "npx nuxt build"
+      }
+    },
+    "gen": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["apps/jack-barry-onl/dist"],
+      "options": {
+        "cwd": "apps/jack-barry-onl",
+        "command": "npx nuxt generate"
+      }
+    },
+    "start": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/jack-barry-onl",
+        "command": "npx nuxt start"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/jack-barry-onl/**/*.vue"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/jack-barry-onl"],
+      "options": {
+        "jestConfig": "apps/jack-barry-onl/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
