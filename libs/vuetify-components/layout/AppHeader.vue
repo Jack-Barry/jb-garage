@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import BtnDarkModeToggle from '@/components/BtnDarkModeToggle.vue'
+import BtnDarkModeToggle from '../controls/BtnDarkModeToggle.vue'
 
 export default Vue.extend({
   components: { BtnDarkModeToggle }
