@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import AppHeader from '../../../libs/vuetify-components/layout/AppHeader.vue'
+import { AppHeader } from '../../../libs/vuetify-components'
 
 export default Vue.extend({
   components: { AppHeader }

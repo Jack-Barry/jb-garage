@@ -1,0 +1,4 @@
+{
+  "name": "@jb-garage/vuetify-components",
+  "main": "dist/ssr.esm.js"
+}

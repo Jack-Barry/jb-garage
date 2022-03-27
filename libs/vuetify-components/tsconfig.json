@@ -9,10 +9,7 @@
     "allowJs": true,
     "strict": true,
     "noEmit": true,
-    "types": ["vuetify"],
-    "paths": {
-      "@/*": ["./libs/vuetify-components/*"]
-    }
+    "types": ["vuetify"]
   },
   "files": [],
   "include": [],
