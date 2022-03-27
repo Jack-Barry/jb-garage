@@ -10,7 +10,7 @@
     "@fortawesome/fontawesome-svg-core": "6.1.1",
     "@fortawesome/free-solid-svg-icons": "6.1.1",
     "@fortawesome/vue-fontawesome": "2.0.6",
-    "@nrwl/cli": "13.9.3",
+    "@nrwl/cli": "13.9.5",
     "@nrwl/eslint-plugin-nx": "13.9.4",
     "@nrwl/jest": "13.9.4",
     "@nrwl/js": "13.9.5",
