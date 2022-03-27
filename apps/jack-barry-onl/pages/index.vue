@@ -1,3 +1,14 @@
 <template>
-  <h1>Hello world!</h1>
+  <v-container>
+    <card-under-construction />
+  </v-container>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import CardUnderConstruction from '../../../libs/vuetify-components/content/CardUnderConstruction.vue'
+
+export default Vue.extend({
+  components: { CardUnderConstruction }
+})
+</script>

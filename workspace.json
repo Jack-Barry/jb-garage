@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "jack-barry-onl": "apps/jack-barry-onl"
+    "jack-barry-onl": "apps/jack-barry-onl",
+    "vuetify-components": "libs/vuetify-components"
   }
 }

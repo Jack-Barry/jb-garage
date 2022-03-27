@@ -9,10 +9,9 @@
     "allowJs": true,
     "strict": true,
     "noEmit": true,
-    "types": ["@types/node", "@nuxt/types", "@nuxt/vue-app", "vuetify"],
+    "types": ["vuetify"],
     "paths": {
-      "~/*": ["./apps/jack-barry-onl/*"],
-      "@/*": ["./apps/jack-barry-onl/*"]
+      "@/*": ["./libs/vuetify-components/*"]
     }
   },
   "files": [],

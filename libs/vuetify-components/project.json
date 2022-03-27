@@ -1,0 +1,29 @@
+{
+  "projectType": "library",
+  "root": "vuetify-components",
+  "sourceRoot": "vuetify-components",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/vuetify-components/**/*.{vue,ts,js}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/vuetify-components"],
+      "dependsOn": [
+        {
+          "target": "lint",
+          "projects": "self"
+        }
+      ],
+      "options": {
+        "jestConfig": "libs/vuetify-components/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
