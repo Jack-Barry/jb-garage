@@ -9,7 +9,7 @@
     "allowJs": true,
     "strict": true,
     "noEmit": true,
-    "types": ["@types/node", "@nuxt/types", "@nuxt/vue-app", "@nuxtjs/vuetify"],
+    "types": ["@types/node", "@nuxt/types", "@nuxt/vue-app", "vuetify"],
     "paths": {
       "~/*": ["./apps/jack-barry-onl/*"],
       "@/*": ["./apps/jack-barry-onl/*"]
@@ -18,9 +18,6 @@
   "files": [],
   "include": [],
   "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
     {
       "path": "./tsconfig.spec.json"
     }

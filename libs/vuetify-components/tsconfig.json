@@ -9,7 +9,7 @@
     "allowJs": true,
     "strict": true,
     "noEmit": true,
-    "types": ["@types/node"],
+    "types": ["vuetify"],
     "paths": {
       "@/*": ["./libs/vuetify-components/*"]
     }
@@ -17,9 +17,6 @@
   "files": [],
   "include": [],
   "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
     {
       "path": "./tsconfig.spec.json"
     }

@@ -6,7 +6,7 @@ on:
   pull_request: null
   workflow_dispatch: null
 jobs:
-  build_and_test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,5 +25,3 @@ jobs:
         run: npm ci --verbose
       - name: Build Affected
         run: npx nx affected:build
-      - name: Test Affected
-        run: npx nx affected:test
