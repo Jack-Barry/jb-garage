@@ -1,8 +1,9 @@
 name: CI
 on:
   push:
-    - dev
-    - main
+    branches:
+      - dev
+      - main
   pull_request: null
   workflow_dispatch: null
 jobs:
