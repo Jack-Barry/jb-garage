@@ -14,11 +14,14 @@ export default Vue.extend({
   },
 
   mounted() {
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', (e) => {
-        this.$vuetify.theme.dark = e.matches
-      })
+    if (!window.matchMedia) return
+
+    const userInDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+    this.$vuetify.theme.dark = userInDarkMode.matches
+
+    userInDarkMode.addEventListener('change', (e) => {
+      this.$vuetify.theme.dark = e.matches
+    })
   },
 
   methods: {
