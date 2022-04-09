@@ -1,3 +1,5 @@
+const commitTypes = require('cz-emoji/lib/types.json')
+
 module.exports = {
   extends: ['gitmoji'],
   parserPreset: {
@@ -6,5 +8,8 @@ module.exports = {
       breakingHeaderPattern: /^((?:\w|-)*)(?:\((.*)\))?!: (.*)$/,
       headerCorrespondence: ['type', 'scope', 'subject', 'ticket']
     }
+  },
+  rules: {
+    'type-enum': [2, 'always', commitTypes.map((type) => type.name)]
   }
 }
