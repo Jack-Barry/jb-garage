@@ -1,0 +1,54 @@
+{
+  "root": "apps/jack-barry-onl",
+  "sourceRoot": "apps/jack-barry-onl",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/jack-barry-onl",
+        "outputPath": "dist/apps/jack-barry-onl"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "jack-barry-onl:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "jack-barry-onl:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "jack-barry-onl:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/jack-barry-onl"],
+      "options": {
+        "jestConfig": "apps/jack-barry-onl/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/jack-barry-onl/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}
