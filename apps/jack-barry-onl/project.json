@@ -48,6 +48,13 @@
       "options": {
         "lintFilePatterns": ["apps/jack-barry-onl/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "slice-machine": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npx start-slicemachine",
+        "cwd": "apps/jack-barry-onl"
+      }
     }
   },
   "tags": []

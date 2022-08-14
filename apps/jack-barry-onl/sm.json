@@ -1,0 +1,7 @@
+{
+  "apiEndpoint": "https://jackbarry.prismic.io/api/v2",
+  "libraries": ["@/slices"],
+  "framework": "next",
+  "tracking": false,
+  "_latest": "0.4.2"
+}
