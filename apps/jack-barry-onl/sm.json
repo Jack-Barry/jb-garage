@@ -1,5 +1,6 @@
 {
   "apiEndpoint": "https://jackbarry.prismic.io/api/v2",
+  "localSliceSimulatorURL": "http://localhost:4200/slice-simulator",
   "libraries": ["@/slices"],
   "framework": "next",
   "tracking": false,
