@@ -1,5 +1,62 @@
 {
   "slices": {
-    "components": {}
+    "components": {
+      "rich_text_card": {
+        "library": "slices",
+        "id": "rich_text_card",
+        "name": "RichTextCard",
+        "description": "RichTextCard",
+        "model": {
+          "id": "rich_text_card",
+          "type": "SharedSlice",
+          "name": "RichTextCard",
+          "description": "RichTextCard",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "RichTextCard",
+              "primary": {
+                "message": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Message",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [{}],
+            "primary": {
+              "message": [
+                {
+                  "type": "paragraph",
+                  "text": "Velit ullamco in et consequat Lorem irure sunt enim do nisi ex fugiat sit. Occaecat elit do amet ex irure quis consequat anim. Est excepteur in excepteur do reprehenderit officia et mollit aliqua consequat proident anim anim.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "rich_text_card"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      }
+    }
   }
 }

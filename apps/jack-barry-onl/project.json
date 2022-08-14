@@ -3,6 +3,13 @@
   "sourceRoot": "apps/jack-barry-onl",
   "projectType": "application",
   "targets": {
+    "setup": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "rm -f package.json && ln -s ../../package.json package.json",
+        "cwd": "apps/jack-barry-onl"
+      }
+    },
     "build": {
       "executor": "@nrwl/next:build",
       "outputs": ["{options.outputPath}"],

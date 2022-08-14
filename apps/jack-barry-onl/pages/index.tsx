@@ -1,33 +1,22 @@
-import { faHardHat } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  Box,
-  Card,
-  CardContent,
-  Container,
-  SvgIcon,
-  Typography
-} from '@mui/material'
+import { SliceZone } from '@prismicio/react'
 
-export function Index() {
-  return (
-    <Container sx={{ mt: 2 }}>
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)' }}>
-        <Box sx={{ display: 'grid', gridColumn: '2/6' }}>
-          <Card>
-            <CardContent sx={{ textAlign: 'center' }}>
-              <SvgIcon color="warning" fontSize="large">
-                <FontAwesomeIcon icon={faHardHat} />
-              </SvgIcon>
-              <Typography fontSize="1.5rem">
-                Site is currently under construction, please come back soon!
-              </Typography>
-            </CardContent>
-          </Card>
-        </Box>
-      </Box>
-    </Container>
-  )
+import { createClient } from '../prismicio'
+import { components } from '../slices'
+
+const Page = ({ page, navigation, settings }) => (
+  <SliceZone slices={page.data.slices} components={components} />
+)
+
+export default Page
+
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData })
+
+  const page = await client.getSingle('home_page')
+
+  return {
+    props: {
+      page
+    }
+  }
 }
-
-export default Index

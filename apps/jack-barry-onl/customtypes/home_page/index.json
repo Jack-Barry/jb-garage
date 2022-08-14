@@ -12,6 +12,17 @@
           "multi": "heading1,heading2",
           "label": "Welcome Message"
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "rich_text_card": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }

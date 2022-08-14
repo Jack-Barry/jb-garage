@@ -1,5 +1,9 @@
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import { CssBaseline, PaletteMode } from '@mui/material'
+import {
+  CssBaseline,
+  PaletteMode,
+  ThemeProvider,
+  createTheme
+} from '@mui/material'
 import { themeOptions } from '../config/mui/theme'
 import { createContext, useContext, useMemo, useState } from 'react'
 import { getColorMode, isDarkMode } from '../utils/theme'
