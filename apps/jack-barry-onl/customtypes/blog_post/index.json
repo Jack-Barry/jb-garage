@@ -91,6 +91,12 @@
                   }
                 }
               }
+            },
+            "code_block": {
+              "type": "SharedSlice"
+            },
+            "blog_post_section": {
+              "type": "SharedSlice"
             }
           }
         }

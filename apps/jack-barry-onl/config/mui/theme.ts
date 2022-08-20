@@ -37,11 +37,23 @@ export const themeOptions = (mode: PaletteMode): ThemeOptions => ({
   palette: isDarkMode(mode) ? darkPalette : lightPalette,
   typography: {
     fontFamily: baseFontFamily,
-    h1: { fontFamily: headerFontFamily },
-    h2: { fontFamily: headerFontFamily },
-    h3: { fontFamily: headerFontFamily },
+    h1: { fontFamily: headerFontFamily, fontSize: '4.2rem' },
+    h2: {
+      fontFamily: headerFontFamily,
+      fontSize: '3.5rem',
+      marginBottom: '1rem'
+    },
+    h3: {
+      fontFamily: headerFontFamily,
+      fontSize: '3rem',
+      marginBottom: '1rem'
+    },
     h4: { fontFamily: headerFontFamily },
     h5: { fontFamily: headerFontFamily },
-    h6: { fontFamily: headerFontFamily }
+    h6: { fontFamily: headerFontFamily },
+    body1: {
+      marginBottom: '1rem',
+      lineHeight: '1.7rem'
+    }
   }
 })

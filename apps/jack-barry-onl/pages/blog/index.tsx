@@ -11,27 +11,18 @@ import {
 import Link from 'next/link'
 import { Fragment } from 'react'
 
-import { truncateString } from '../../utils/strings'
 import { createClient } from '../../prismicio'
+import { BlogPostDocument } from '../../types.generated'
 import { BLOG_POST_TIMESTAMP_FORMAT, dayjs } from '../../utils/dates'
+import { truncateString } from '../../utils/strings'
 
-interface BlogPost {
-  uid: string
-  first_publication_date: string
-  data: {
-    post_title: { text: string }[]
-    post_tldr: string
-  }
-  tags?: string[]
-}
-
-const Page = ({ items }: { items: BlogPost[] }) => {
+const Page = ({ items }: { items: BlogPostDocument[] }) => {
   return (
     <Container sx={{ my: 2 }}>
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)' }}>
         <Box sx={{ display: 'grid', gridColumn: '2/6' }}>
           <Fragment>
-            {items.map((item: BlogPost) => {
+            {items.map((item) => {
               return (
                 <Card key={item.uid} elevation={3} sx={{ my: 1 }}>
                   <CardHeader

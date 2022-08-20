@@ -1,0 +1,22 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [{}],
+    "primary": {
+      "content": [
+        {
+          "type": "heading2",
+          "text": "Loose",
+          "spans": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Mollit veniam fugiat ut quis quis deserunt nulla.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "blog_post_section"
+  }
+]

@@ -62,6 +62,13 @@
         "command": "npx start-slicemachine",
         "cwd": "apps/jack-barry-onl"
       }
+    },
+    "prismic-ts-codegen": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npx prismic-ts-codegen",
+        "cwd": "apps/jack-barry-onl"
+      }
     }
   },
   "tags": []

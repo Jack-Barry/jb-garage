@@ -1,4 +1,6 @@
 export const truncateString = (str: string, limit = 200, append = '...') => {
+  if (!str) return ''
+
   const firstSpaceBeforeLength = str.indexOf(' ') + append.length > limit
   if (firstSpaceBeforeLength) {
     return str

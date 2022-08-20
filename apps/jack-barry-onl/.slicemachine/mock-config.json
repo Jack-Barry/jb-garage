@@ -16,9 +16,34 @@
       "default": {
         "primary": {}
       }
+    },
+    "CodeBlock": {
+      "default": {
+        "primary": {
+          "code": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "BlogPostSection": {
+      "default": {
+        "primary": {
+          "content": {
+            "config": {
+              "patternType": "STORY",
+              "blocks": 1
+            }
+          }
+        }
+      }
     }
   },
   "_cts": {
-    "home_page": {}
+    "home_page": {},
+    "blog_post": {}
   }
 }
