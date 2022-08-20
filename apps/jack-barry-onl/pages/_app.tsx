@@ -9,6 +9,7 @@ import AppThemeProvider, { useAppTheme } from '../contexts/app-theme'
 import { linkResolver, repositoryName } from '../prismicio'
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import '../styles/prism.css'
 import './index.scss'
 
 config.autoAddCss = false

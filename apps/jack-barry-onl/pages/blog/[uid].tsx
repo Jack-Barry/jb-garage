@@ -17,12 +17,25 @@ import { createClient, linkResolver } from '../../prismicio'
 import { components } from '../../slices'
 import { BlogPostDocument } from '../../types.generated'
 import { BLOG_POST_TIMESTAMP_FORMAT, dayjs } from '../../utils/dates'
+import markdownToHtml from '../../utils/markdown'
 
-const Page = ({ page }: { page: BlogPostDocument }) => {
+interface CodeBlock {
+  index: number
+  codeBlock: string
+}
+
+const Page = ({
+  page,
+  codeBlocks
+}: {
+  page: BlogPostDocument
+  codeBlocks: CodeBlock[]
+}) => {
   const publishDate = dayjs(page.first_publication_date).format(
     BLOG_POST_TIMESTAMP_FORMAT
   )
-  console.log({ page })
+  console.log({ codeBlocks })
+  // console.log({ page })
   return (
     <Box
       sx={{
@@ -44,7 +57,11 @@ const Page = ({ page }: { page: BlogPostDocument }) => {
               <AlertTitle sx={{ fontWeight: 'bold' }}>TL;DR</AlertTitle>
               {page.data.post_tldr}
             </Alert>
-            <SliceZone slices={page.data.body} components={components} />
+            <SliceZone
+              slices={page.data.body}
+              components={components}
+              context={codeBlocks}
+            />
           </CardContent>
         </Card>
       </article>
@@ -59,9 +76,21 @@ export async function getStaticProps({ params, previewData }) {
 
   const page = await client.getByUID('blog_post', params.uid)
 
+  const codeBlocks = []
+  for (const [index, section] of page.data.body.entries()) {
+    if (section.slice_type === 'code_block')
+      codeBlocks.push({
+        index,
+        // eslint-disable-next-line
+        // @ts-ignore
+        codeBlock: await markdownToHtml(section.primary.code[0].text)
+      })
+  }
+
   return {
     props: {
-      page
+      page,
+      codeBlocks
     }
   }
 }
