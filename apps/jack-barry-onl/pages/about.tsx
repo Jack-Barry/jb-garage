@@ -1,13 +1,10 @@
-import { Box } from '@mui/system'
 import { SliceZone } from '@prismicio/react'
 
 import { createClient } from '../prismicio'
 import { components } from '../slices'
 
 const Page = ({ page, navigation, settings }) => (
-  <Box sx={{ textAlign: 'center' }}>
-    <SliceZone slices={page.data.slices} components={components} />
-  </Box>
+  <SliceZone slices={page.data.body} components={components} />
 )
 
 export default Page
@@ -15,7 +12,9 @@ export default Page
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
-  const page = await client.getSingle('home_page')
+  const page = await client.getSingle('about_page')
+
+  console.log({ page })
 
   return {
     props: {

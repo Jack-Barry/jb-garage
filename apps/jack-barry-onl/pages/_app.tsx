@@ -113,20 +113,20 @@ const NavMenu = () => {
                     <ListItemText color="text.secondary">Home</ListItemText>
                   </MenuItem>
                 </Link>
-                <Link passHref={true} href="/about">
-                  <MenuItem sx={{ py: 2, my: 0 }} onClick={closeDrawer}>
-                    <ListItemIcon>
-                      <FontAwesomeIcon icon={faBook} />
-                    </ListItemIcon>
-                    <ListItemText color="text.secondary">About</ListItemText>
-                  </MenuItem>
-                </Link>
                 <Link passHref={true} href="/blog">
                   <MenuItem sx={{ py: 2, my: 0 }} onClick={closeDrawer}>
                     <ListItemIcon>
                       <FontAwesomeIcon icon={faNewspaper} />
                     </ListItemIcon>
                     <ListItemText color="text.secondary">Blog</ListItemText>
+                  </MenuItem>
+                </Link>
+                <Link passHref={true} href="/about">
+                  <MenuItem sx={{ py: 2, my: 0 }} onClick={closeDrawer}>
+                    <ListItemIcon>
+                      <FontAwesomeIcon icon={faBook} />
+                    </ListItemIcon>
+                    <ListItemText color="text.secondary">About</ListItemText>
                   </MenuItem>
                 </Link>
               </MenuList>
