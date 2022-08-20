@@ -11,6 +11,11 @@
           }
         }
       }
+    },
+    "StandardRichTextBlock": {
+      "default": {
+        "primary": {}
+      }
     }
   },
   "_cts": {
