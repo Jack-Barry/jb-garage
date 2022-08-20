@@ -1,5 +1,18 @@
 import { config } from '@fortawesome/fontawesome-svg-core'
-import { AppBar, Box, Toolbar, Typography, useTheme } from '@mui/material'
+import {
+  AppBar,
+  Box,
+  Drawer,
+  IconButton,
+  ListItemIcon,
+  ListItemText,
+  MenuItem,
+  MenuList,
+  Paper,
+  Toolbar,
+  Typography,
+  useTheme
+} from '@mui/material'
 import { PrismicProvider } from '@prismicio/react'
 import { PrismicPreview } from '@prismicio/next'
 import Link from 'next/link'
@@ -12,6 +25,14 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import '../styles/prism.scss'
 import './index.scss'
 import Image from 'next/image'
+import { Fragment, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faBars,
+  faBook,
+  faHome,
+  faNewspaper
+} from '@fortawesome/free-solid-svg-icons'
 
 config.autoAddCss = false
 
@@ -58,6 +79,11 @@ export default function App({ Component, pageProps }) {
 const NavMenu = () => {
   const theme = useTheme()
   const { mode } = useAppTheme()
+  const [drawerOpen, setDrawerOpen] = useState(false)
+
+  const closeDrawer = () => {
+    setDrawerOpen(false)
+  }
 
   return (
     <AppBar
@@ -68,6 +94,45 @@ const NavMenu = () => {
       }}
     >
       <Toolbar>
+        <Fragment>
+          <IconButton
+            onClick={() => {
+              setDrawerOpen((prev) => !prev)
+            }}
+          >
+            <FontAwesomeIcon icon={faBars} />
+          </IconButton>
+          <Drawer anchor="left" open={drawerOpen} onClose={closeDrawer}>
+            <Paper sx={{ width: 320, maxWidth: '100%' }} elevation={0}>
+              <MenuList dense>
+                <Link passHref={true} href="/">
+                  <MenuItem sx={{ py: 2, my: 0 }} onClick={closeDrawer}>
+                    <ListItemIcon>
+                      <FontAwesomeIcon icon={faHome} />
+                    </ListItemIcon>
+                    <ListItemText color="text.secondary">Home</ListItemText>
+                  </MenuItem>
+                </Link>
+                <Link passHref={true} href="/about">
+                  <MenuItem sx={{ py: 2, my: 0 }} onClick={closeDrawer}>
+                    <ListItemIcon>
+                      <FontAwesomeIcon icon={faBook} />
+                    </ListItemIcon>
+                    <ListItemText color="text.secondary">About</ListItemText>
+                  </MenuItem>
+                </Link>
+                <Link passHref={true} href="/blog">
+                  <MenuItem sx={{ py: 2, my: 0 }} onClick={closeDrawer}>
+                    <ListItemIcon>
+                      <FontAwesomeIcon icon={faNewspaper} />
+                    </ListItemIcon>
+                    <ListItemText color="text.secondary">Blog</ListItemText>
+                  </MenuItem>
+                </Link>
+              </MenuList>
+            </Paper>
+          </Drawer>
+        </Fragment>
         <Typography sx={{ flexGrow: 1 }} />
         <ButtonDarkModeToggle />
       </Toolbar>
