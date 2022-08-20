@@ -1,15 +1,15 @@
 import {
   Box,
+  Button,
   Card,
   CardActions,
   CardContent,
   CardHeader,
   Chip,
-  Container,
+  Stack,
   Typography
 } from '@mui/material'
 import Link from 'next/link'
-import { Fragment } from 'react'
 
 import { createClient } from '../../prismicio'
 import { BlogPostDocument } from '../../types.generated'
@@ -18,40 +18,48 @@ import { truncateString } from '../../utils/strings'
 
 const Page = ({ items }: { items: BlogPostDocument[] }) => {
   return (
-    <Container sx={{ my: 2 }}>
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)' }}>
-        <Box sx={{ display: 'grid', gridColumn: '2/6' }}>
-          <Fragment>
-            {items.map((item) => {
-              return (
-                <Card key={item.uid} elevation={3} sx={{ my: 1 }}>
-                  <CardHeader
-                    title={item.data.post_title[0].text}
-                    sx={{ pb: 0 }}
-                  />
-                  <CardContent sx={{ py: 0 }}>
-                    <Typography variant="subtitle1" fontStyle="italic">
-                      {dayjs(item.first_publication_date).format(
-                        BLOG_POST_TIMESTAMP_FORMAT
-                      )}
-                    </Typography>
-                    <Typography variant="body1" gutterBottom>
-                      {truncateString(item.data.post_tldr)}
-                    </Typography>
-                    {item.tags?.map((tag) => (
-                      <Chip key={tag} label={tag} sx={{ mr: 1 }} />
-                    ))}
-                  </CardContent>
-                  <CardActions>
-                    <Link href={`/blog/${item.uid}`}>Read More</Link>
-                  </CardActions>
-                </Card>
-              )
-            })}
-          </Fragment>
-        </Box>
-      </Box>
-    </Container>
+    <Stack
+      direction="column"
+      justifyContent="flex-start"
+      alignItems="center"
+      spacing={1}
+      marginX="auto"
+      sx={{
+        width: { xs: '96vw', sm: '32rem' },
+        my: '1rem'
+      }}
+    >
+      {items.map((item) => {
+        return (
+          <Card key={item.uid} elevation={3} sx={{ width: '100%' }}>
+            <CardHeader title={item.data.post_title[0].text} sx={{ pb: 0 }} />
+            <CardContent sx={{ py: 0 }}>
+              <Typography variant="subtitle1" fontStyle="italic">
+                {dayjs(item.first_publication_date).format(
+                  BLOG_POST_TIMESTAMP_FORMAT
+                )}
+              </Typography>
+              <Box
+                display="flex"
+                sx={{ gap: '0.5rem', flexWrap: 'wrap', mb: '0.5rem' }}
+              >
+                {item.tags?.map((tag) => (
+                  <Chip key={tag} label={tag} />
+                ))}
+              </Box>
+              <Typography variant="body1" gutterBottom>
+                {truncateString(item.data.post_tldr)}
+              </Typography>
+            </CardContent>
+            <CardActions sx={{ justifyContent: 'flex-end', pt: 0 }}>
+              <Link passHref={true} href={`/blog/${item.uid}`}>
+                <Button>Read More</Button>
+              </Link>
+            </CardActions>
+          </Card>
+        )
+      })}
+    </Stack>
   )
 }
 

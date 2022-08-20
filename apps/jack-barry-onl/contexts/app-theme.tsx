@@ -2,10 +2,17 @@ import {
   CssBaseline,
   PaletteMode,
   ThemeProvider,
-  createTheme
+  createTheme,
+  responsiveFontSizes
 } from '@mui/material'
 import { themeOptions } from '../config/mui/theme'
-import { createContext, useContext, useMemo, useState } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState
+} from 'react'
 import { getColorMode, isDarkMode } from '../utils/theme'
 
 const AppThemeContext = createContext({
@@ -19,18 +26,16 @@ export const useAppTheme = () => useContext(AppThemeContext)
 
 export default function AppThemeProvider({ children }) {
   const [mode, setMode] = useState<PaletteMode>('light')
-  const darkMode = useMemo(
-    () => ({
-      toggle: () => {
-        setMode((prevMode) => getColorMode(!isDarkMode(prevMode)))
-      }
-    }),
-    []
+  const toggleDarkMode = useCallback(() => {
+    setMode((prevMode) => getColorMode(!isDarkMode(prevMode)))
+  }, [setMode])
+
+  const theme = useMemo(
+    () => responsiveFontSizes(createTheme(themeOptions(mode))),
+    [mode]
   )
 
-  const theme = useMemo(() => createTheme(themeOptions(mode)), [mode])
-
-  const context = { toggleDarkMode: darkMode.toggle, mode }
+  const context = { toggleDarkMode, mode }
 
   return (
     <AppThemeContext.Provider value={context}>

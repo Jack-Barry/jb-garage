@@ -9,8 +9,9 @@ import AppThemeProvider, { useAppTheme } from '../contexts/app-theme'
 import { linkResolver, repositoryName } from '../prismicio'
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import '../styles/prism.css'
+import '../styles/prism.scss'
 import './index.scss'
+import Image from 'next/image'
 
 config.autoAddCss = false
 
@@ -31,15 +32,24 @@ export default function App({ Component, pageProps }) {
           heading4: (props) => <Typography variant="h4" {...props} />,
           heading5: (props) => <Typography variant="h5" {...props} />,
           heading6: (props) => <Typography variant="h6" {...props} />,
-          paragraph: (props) => <Typography variant="body1" {...props} />
+          paragraph: (props) => <Typography variant="body1" {...props} />,
+          image: (props) => (
+            <Box marginBottom="1.5rem">
+              <Image
+                src={props.node.url}
+                alt={props.node.alt}
+                width={props.node.dimensions.width}
+                height={props.node.dimensions.height}
+                layout="responsive"
+              />
+            </Box>
+          ),
+          hyperlink: (props) => (
+            <Link href={props.node.data.url}>{props.text}</Link>
+          )
         }}
       >
-        <Box>
-          <NavMenu />
-          <PrismicPreview repositoryName={repositoryName}>
-            <Component {...pageProps} />
-          </PrismicPreview>
-        </Box>
+        <AppContent Component={Component} pageProps={pageProps} />
       </PrismicProvider>
     </AppThemeProvider>
   )
@@ -62,5 +72,24 @@ const NavMenu = () => {
         <ButtonDarkModeToggle />
       </Toolbar>
     </AppBar>
+  )
+}
+
+const AppContent = ({
+  Component,
+  pageProps
+}: {
+  Component: (props: any) => JSX.Element
+  pageProps: any
+}) => {
+  const { mode } = useAppTheme()
+
+  return (
+    <Box className={mode === 'light' ? 'app-light' : 'app-dark'}>
+      <NavMenu />
+      <PrismicPreview repositoryName={repositoryName}>
+        <Component {...pageProps} />
+      </PrismicPreview>
+    </Box>
   )
 }

@@ -1,17 +1,7 @@
-import {
-  Alert,
-  AlertTitle,
-  Card,
-  CardContent,
-  CardHeader,
-  Grid,
-  Stack,
-  Typography
-} from '@mui/material'
+import { Alert, AlertTitle, Card, CardContent, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import * as prismicH from '@prismicio/helpers'
 import { SliceZone } from '@prismicio/react'
-import { Fragment } from 'react'
 
 import { createClient, linkResolver } from '../../prismicio'
 import { components } from '../../slices'
