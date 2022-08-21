@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 import Link from 'next/link'
 
-import { createClient } from '../../prismicio'
+import { createClient } from '../../config/prismic'
 import { BlogPostDocument } from '../../types.generated'
 import { BLOG_POST_TIMESTAMP_FORMAT, dayjs } from '../../utils/dates'
 import { prepareStaticProps } from '../../utils/prepare-static-props'
@@ -71,7 +71,6 @@ export async function getStaticProps({ previewData }) {
 
   const items = await client.getAllByType('blog_post', {
     orderings: [{ field: 'document.first_publication_date', direction: 'desc' }]
-    /*{ fetch: ['uid']}*/
   })
   const resoc = await prepareStaticProps("Jack Barry's Personal Blog", 'blog')
 

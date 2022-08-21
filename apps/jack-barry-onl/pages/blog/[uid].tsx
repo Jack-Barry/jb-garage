@@ -2,9 +2,8 @@ import { Alert, AlertTitle, Card, CardContent, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import * as prismicH from '@prismicio/helpers'
 import { SliceZone } from '@prismicio/react'
-import { Fragment } from 'react'
 
-import { createClient, linkResolver } from '../../prismicio'
+import { createClient, linkResolver } from '../../config/prismic'
 import { components } from '../../slices'
 import { BlogPostDocument } from '../../types.generated'
 import { BLOG_POST_TIMESTAMP_FORMAT, dayjs } from '../../utils/dates'
@@ -23,9 +22,6 @@ const Page = ({
   page: BlogPostDocument
   codeBlocks: CodeBlock[]
 }) => {
-  // TODO: figure out cleaner way to avoid the prerender undefined page thing
-  if (!page) return <Fragment />
-
   const publishDate = dayjs(page.first_publication_date).format(
     BLOG_POST_TIMESTAMP_FORMAT
   )
@@ -100,6 +96,6 @@ export async function getStaticPaths() {
 
   return {
     paths: documents.map((doc) => prismicH.asLink(doc, linkResolver)),
-    fallback: true
+    fallback: false
   }
 }

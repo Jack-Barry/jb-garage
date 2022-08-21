@@ -1,10 +1,10 @@
 import { SliceZone } from '@prismicio/react'
 
-import { createClient } from '../prismicio'
+import { createClient } from '../config/prismic'
 import { components } from '../slices'
 import { prepareStaticProps } from '../utils/prepare-static-props'
 
-const Page = ({ page, navigation, settings }) => (
+const Page = ({ page }) => (
   <SliceZone slices={page.data.body} components={components} />
 )
 

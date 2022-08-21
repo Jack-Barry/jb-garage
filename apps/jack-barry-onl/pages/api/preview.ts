@@ -5,7 +5,7 @@ import {
   CreateClientConfig,
   RedirectToPreviewURLConfig
 } from '@prismicio/next'
-import { linkResolver, createClient } from '../../prismicio'
+import { linkResolver, createClient } from '../../config/prismic'
 
 export default async function preview(
   req: CreateClientConfig['req'],
