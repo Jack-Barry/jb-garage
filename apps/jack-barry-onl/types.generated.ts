@@ -445,52 +445,6 @@ export type RichTextCardSlice = prismicT.SharedSlice<
   'rich_text_card',
   RichTextCardSliceVariation
 >
-/**
- * Item in StandardRichTextBlock → Items
- *
- */
-export interface StandardRichTextBlockSliceDefaultItem {
-  /**
-   * text field in *StandardRichTextBlock → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: standard_rich_text_block.items[].text
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  text: prismicT.RichTextField
-}
-/**
- * Default variation for StandardRichTextBlock Slice
- *
- * - **API ID**: `default`
- * - **Description**: `StandardRichTextBlock`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type StandardRichTextBlockSliceDefault = prismicT.SharedSliceVariation<
-  'default',
-  Record<string, never>,
-  Simplify<StandardRichTextBlockSliceDefaultItem>
->
-/**
- * Slice variation for *StandardRichTextBlock*
- *
- */
-type StandardRichTextBlockSliceVariation = StandardRichTextBlockSliceDefault
-/**
- * StandardRichTextBlock Shared Slice
- *
- * - **API ID**: `standard_rich_text_block`
- * - **Description**: `StandardRichTextBlock`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type StandardRichTextBlockSlice = prismicT.SharedSlice<
-  'standard_rich_text_block',
-  StandardRichTextBlockSliceVariation
->
 declare module '@prismicio/client' {
   interface CreateClient {
     (

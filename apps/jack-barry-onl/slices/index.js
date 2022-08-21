@@ -3,13 +3,11 @@
 import BlogPostSection from './BlogPostSection'
 import CodeBlock from './CodeBlock'
 import RichTextCard from './RichTextCard'
-import StandardRichTextBlock from './StandardRichTextBlock'
 
-export { BlogPostSection, CodeBlock, RichTextCard, StandardRichTextBlock }
+export { BlogPostSection, CodeBlock, RichTextCard }
 
 export const components = {
   blog_post_section: BlogPostSection,
   code_block: CodeBlock,
-  rich_text_card: RichTextCard,
-  standard_rich_text_block: StandardRichTextBlock
+  rich_text_card: RichTextCard
 }
