@@ -2,6 +2,7 @@ import { Alert, AlertTitle, Card, CardContent, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import * as prismicH from '@prismicio/helpers'
 import { SliceZone } from '@prismicio/react'
+import { Fragment } from 'react'
 
 import { createClient, linkResolver } from '../../prismicio'
 import { components } from '../../slices'
@@ -22,11 +23,12 @@ const Page = ({
   page: BlogPostDocument
   codeBlocks: CodeBlock[]
 }) => {
+  // TODO: figure out cleaner way to avoid the prerender undefined page thing
+  if (!page) return <Fragment />
+
   const publishDate = dayjs(page.first_publication_date).format(
     BLOG_POST_TIMESTAMP_FORMAT
   )
-  console.log({ codeBlocks })
-  // console.log({ page })
   return (
     <Box
       sx={{

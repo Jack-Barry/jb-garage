@@ -2,7 +2,6 @@ import React from 'react'
 // import { PrismicRichText } from '@prismicio/react'
 
 const CodeBlock = ({ slice, context, index }) => {
-  console.log({ slice, context, index })
   return (
     <div
       dangerouslySetInnerHTML={{
