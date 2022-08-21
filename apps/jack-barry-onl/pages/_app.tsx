@@ -1,4 +1,11 @@
+import {
+  faBars,
+  faBook,
+  faHome,
+  faNewspaper
+} from '@fortawesome/free-solid-svg-icons'
 import { config } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   AppBar,
   Box,
@@ -15,7 +22,11 @@ import {
 } from '@mui/material'
 import { PrismicProvider } from '@prismicio/react'
 import { PrismicPreview } from '@prismicio/next'
+import { FacebookOpenGraph } from '@resoc/core'
+import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
+import { Fragment, useState } from 'react'
 
 import ButtonDarkModeToggle from '../components/ButtonDarkModeToggle'
 import AppThemeProvider, { useAppTheme } from '../contexts/app-theme'
@@ -24,15 +35,6 @@ import { linkResolver, repositoryName } from '../prismicio'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '../styles/prism.scss'
 import './index.scss'
-import Image from 'next/image'
-import { Fragment, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faBars,
-  faBook,
-  faHome,
-  faNewspaper
-} from '@fortawesome/free-solid-svg-icons'
 
 config.autoAddCss = false
 
@@ -70,6 +72,24 @@ export default function App({ Component, pageProps }) {
           )
         }}
       >
+        <Head>
+          <title>{pageProps.title}</title>
+          <meta name="description" content={pageProps.description} />
+          <meta property="og:title" content={pageProps.title} />
+          <meta property="og:description" content={pageProps.description} />
+          <meta
+            property="og:image"
+            content={`/social-images/${pageProps.imgSlug}.jpg`}
+          />
+          <meta
+            property="og:image:width"
+            content={`${FacebookOpenGraph.width}`}
+          />
+          <meta
+            property="og:image:height"
+            content={`${FacebookOpenGraph.height}`}
+          />
+        </Head>
         <AppContent Component={Component} pageProps={pageProps} />
       </PrismicProvider>
     </AppThemeProvider>

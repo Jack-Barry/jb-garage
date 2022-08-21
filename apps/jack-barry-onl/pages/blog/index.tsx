@@ -14,6 +14,7 @@ import Link from 'next/link'
 import { createClient } from '../../prismicio'
 import { BlogPostDocument } from '../../types.generated'
 import { BLOG_POST_TIMESTAMP_FORMAT, dayjs } from '../../utils/dates'
+import { prepareStaticProps } from '../../utils/prepare-static-props'
 import { truncateString } from '../../utils/strings'
 
 const Page = ({ items }: { items: BlogPostDocument[] }) => {
@@ -72,9 +73,13 @@ export async function getStaticProps({ previewData }) {
     orderings: [{ field: 'document.first_publication_date', direction: 'desc' }]
     /*{ fetch: ['uid']}*/
   })
+  const resoc = await prepareStaticProps("Jack Barry's Personal Blog", 'blog')
 
   return {
     props: {
+      ...resoc.props,
+      description:
+        'Thoughts from Jack Barry on development, philosophy, and life in general',
       items
     }
   }

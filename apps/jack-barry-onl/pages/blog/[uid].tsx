@@ -8,6 +8,7 @@ import { components } from '../../slices'
 import { BlogPostDocument } from '../../types.generated'
 import { BLOG_POST_TIMESTAMP_FORMAT, dayjs } from '../../utils/dates'
 import markdownToHtml from '../../utils/markdown'
+import { prepareStaticProps } from '../../utils/prepare-static-props'
 
 interface CodeBlock {
   index: number
@@ -76,9 +77,15 @@ export async function getStaticProps({ params, previewData }) {
         codeBlock: await markdownToHtml(section.primary.code[0].text)
       })
   }
+  const resoc = await prepareStaticProps(
+    page.data.post_title[0].text,
+    page.data.post_title[0].text
+  )
 
   return {
     props: {
+      ...resoc.props,
+      description: page.data.post_tldr,
       page,
       codeBlocks
     }
