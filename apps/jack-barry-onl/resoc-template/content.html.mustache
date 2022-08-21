@@ -1,0 +1,20 @@
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+<link
+  href='https://fonts.googleapis.com/css?family=Montserrat:300i,400,600|Playfair+Display:700&display=swap'
+  rel='stylesheet'
+/>
+<div class='wrapper'>
+  <h1 id='title'>
+    {{title}}
+  </h1>
+  <div id='footer'>
+    <img id='logo' src='logo.png' />
+  </div>
+</div>
+
+<script src='textFit.js'></script>
+<script>
+  window.onload = function() { textFit(document.getElementById('title'), {
+  maxFontSize: 500, multiLine: true }); };
+</script>
