@@ -1,0 +1,19 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "text": [
+          {
+            "type": "paragraph",
+            "text": "Quis veniam reprehenderit exercitation nisi laborum aliqua ex dolor.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {},
+    "slice_type": "standard_rich_text_block"
+  }
+]

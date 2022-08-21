@@ -1,0 +1,17 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [{}],
+    "primary": {
+      "message": [
+        {
+          "type": "paragraph",
+          "text": "Et cillum deserunt esse ullamco magna occaecat dolore dolor. Adipisicing incididunt laboris ut voluptate commodo cupidatat duis dolore Lorem dolor elit occaecat eiusmod ut.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "rich_text_card"
+  }
+]

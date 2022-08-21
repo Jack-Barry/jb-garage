@@ -1,0 +1,17 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [{}],
+    "primary": {
+      "code": [
+        {
+          "type": "paragraph",
+          "text": "Nulla in ex proident dolore fugiat reprehenderit ex commodo cupidatat officia. Sunt exercitation dolore aliquip aute deserunt sint amet non reprehenderit. Lorem amet voluptate nisi esse nostrud.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "code_block"
+  }
+]
