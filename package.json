@@ -63,7 +63,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@mui/icons-material": "^5.6.0",
-    "@mui/material": "^5.6.0",
+    "@mui/material": "^5.10.1",
     "@nrwl/next": "13.10.1",
     "@prismicio/client": "^6.6.4",
     "@prismicio/helpers": "^2.3.3",
