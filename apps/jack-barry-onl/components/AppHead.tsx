@@ -11,6 +11,7 @@ export default function AppHead({ pageProps }: AppProps) {
       <meta property="og:title" content={pageProps.title} />
       <meta property="og:description" content={pageProps.description} />
       <meta
+        name="image"
         property="og:image"
         content={`/social-images/${pageProps.imgSlug}.jpg`}
       />
