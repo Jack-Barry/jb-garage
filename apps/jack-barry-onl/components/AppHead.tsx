@@ -5,6 +5,7 @@ import Head from 'next/head'
 export default function AppHead({ pageProps }: AppProps) {
   return (
     <Head>
+      <link rel="shortcut icon" href="/favicon.ico" />
       <title>{pageProps.title}</title>
       <meta name="description" content={pageProps.description} />
       <meta property="og:title" content={pageProps.title} />

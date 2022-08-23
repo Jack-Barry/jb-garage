@@ -6,10 +6,10 @@ import { ElementType } from 'react'
 
 export const internalLinkComponent: ElementType<LinkProps> = ({
   href,
-  ...pageProps
+  ...props
 }) => (
   <Link href={href}>
-    <a {...pageProps} />
+    <a {...props} />
   </Link>
 )
 
