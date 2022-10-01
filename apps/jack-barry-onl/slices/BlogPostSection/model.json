@@ -17,7 +17,16 @@
             "label": "Content",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+            "labels": [
+              "code",
+              "quote",
+              "red-text",
+              "language-typescript",
+              "language-bash",
+              "language-javascript",
+              "language-powershell"
+            ]
           }
         }
       },

@@ -25,7 +25,16 @@
                     "label": "Content",
                     "placeholder": "",
                     "allowTargetBlank": true,
-                    "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                    "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                    "labels": [
+                      "code",
+                      "quote",
+                      "red-text",
+                      "language-typescript",
+                      "language-bash",
+                      "language-javascript",
+                      "language-powershell"
+                    ]
                   }
                 }
               },
@@ -161,64 +170,6 @@
               ]
             },
             "slice_type": "rich_text_card"
-          }
-        },
-        "meta": {
-          "fileName": "index",
-          "extension": "js"
-        },
-        "screenshotPaths": {}
-      },
-      "standard_rich_text_block": {
-        "library": "slices",
-        "id": "standard_rich_text_block",
-        "name": "StandardRichTextBlock",
-        "description": "StandardRichTextBlock",
-        "model": {
-          "id": "standard_rich_text_block",
-          "type": "SharedSlice",
-          "name": "StandardRichTextBlock",
-          "description": "StandardRichTextBlock",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "StandardRichTextBlock",
-              "primary": {},
-              "items": {
-                "text": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "text",
-                    "placeholder": "",
-                    "allowTargetBlank": true,
-                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-                  }
-                }
-              },
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "version": "sktwi1xtmkfgx8626",
-            "items": [
-              {
-                "text": [
-                  {
-                    "type": "paragraph",
-                    "text": "Quis veniam reprehenderit exercitation nisi laborum aliqua ex dolor.",
-                    "spans": []
-                  }
-                ]
-              }
-            ],
-            "primary": {},
-            "slice_type": "standard_rich_text_block"
           }
         },
         "meta": {
