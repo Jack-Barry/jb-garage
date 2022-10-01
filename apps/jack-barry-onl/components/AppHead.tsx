@@ -2,12 +2,11 @@ import { FacebookOpenGraph } from '@resoc/core'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Fragment } from 'react'
+import { getHostname } from '../utils/window'
 
 export default function AppHead({ pageProps }: AppProps) {
-  const hostname =
-    typeof window !== 'undefined' && window.location.hostname
-      ? window.location.hostname
-      : ''
+  const hostname = getHostname()
+
   return (
     <Head>
       <link rel="shortcut icon" href="/favicon.ico" />

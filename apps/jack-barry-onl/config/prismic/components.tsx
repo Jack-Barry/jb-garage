@@ -1,5 +1,6 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Link as MuiLink, Typography } from '@mui/material'
 import { JSXMapSerializer, LinkProps } from '@prismicio/react'
+import { FilledLinkToWebField } from '@prismicio/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ElementType } from 'react'
@@ -8,8 +9,8 @@ export const internalLinkComponent: ElementType<LinkProps> = ({
   href,
   ...props
 }) => (
-  <Link href={href}>
-    <a {...props} />
+  <Link href={href} passHref>
+    <MuiLink {...props} />
   </Link>
 )
 
@@ -32,5 +33,15 @@ export const richTextComponents: JSXMapSerializer = {
       />
     </Box>
   ),
-  hyperlink: (props) => <Link href={props.node.data.url}>{props.text}</Link>
+  hyperlink: (props) => (
+    <Link href={props.node.data.url} passHref>
+      <MuiLink
+        {...props}
+        target={(props.node.data as FilledLinkToWebField).target}
+        rel="noreferrer"
+      >
+        {props.text}
+      </MuiLink>
+    </Link>
+  )
 }
