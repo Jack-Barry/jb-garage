@@ -13,13 +13,14 @@ export default function AppHead({ pageProps }: AppProps) {
       <meta
         name="image"
         property="og:image"
-        content={`/social-images/${pageProps.imgSlug}.jpg`}
+        content={`/open-graph/${pageProps.ogImage}`}
       />
       <meta property="og:image:width" content={`${FacebookOpenGraph.width}`} />
       <meta
         property="og:image:height"
         content={`${FacebookOpenGraph.height}`}
       />
+      <meta name="author" content="Jack Barry" />
     </Head>
   )
 }

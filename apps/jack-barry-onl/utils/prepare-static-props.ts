@@ -1,15 +1,22 @@
-import { storeImageData } from '@resoc/img-data'
+import { FacebookOpenGraph } from '@resoc/core'
+import { compileLocalTemplate } from '@resoc/create-img'
+import { basename } from 'path'
 
 export const prepareStaticProps = async (title: string, imgSlug: string) => {
-  await storeImageData('apps/jack-barry-onl/resoc-image-data.json', imgSlug, {
-    template: 'default',
-    values: { title }
-  })
+  const ogImage = await compileLocalTemplate(
+    'apps/jack-barry-onl/resoc-template/resoc.manifest.json',
+    {
+      title
+    },
+    FacebookOpenGraph,
+    `apps/jack-barry-onl/public/open-graph/${imgSlug}-{{ hash }}.jpg`,
+    { cache: true }
+  )
 
   return {
     props: {
       title,
-      imgSlug
+      ogImage: basename(ogImage)
     }
   }
 }

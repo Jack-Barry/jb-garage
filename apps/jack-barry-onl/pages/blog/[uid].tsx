@@ -75,10 +75,8 @@ export async function getStaticProps({ params, previewData }) {
         codeBlock: await markdownToHtml(section.primary.code[0].text)
       })
   }
-  const resoc = await prepareStaticProps(
-    page.data.post_title[0].text,
-    page.data.post_title[0].text
-  )
+
+  const resoc = await prepareStaticProps(page.data.post_title[0].text, page.uid)
 
   return {
     props: {

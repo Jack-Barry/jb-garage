@@ -22,7 +22,8 @@ export async function getStaticProps({ previewData }) {
   return {
     props: {
       ...resoc.props,
-      description: 'Jack Barry is a software engineer from El Paso, TX',
+      description:
+        'Jack Barry is a software engineer from El Paso, TX. He enjoys hanging out with his family, playing/recording music, tinkering on software and home server projects, and riding his bicycle',
       page
     }
   }
