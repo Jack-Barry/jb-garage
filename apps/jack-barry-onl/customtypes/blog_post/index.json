@@ -26,29 +26,6 @@
           "placeholder": "Post TL;DR"
         }
       },
-      "social_media_image": {
-        "type": "Link",
-        "config": {
-          "label": "Social Media Image",
-          "select": null
-        }
-      },
-      "post_content": {
-        "type": "StructuredText",
-        "config": {
-          "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,o-list-item",
-          "label": "Post Content",
-          "labels": [
-            "code",
-            "quote",
-            "red-text",
-            "language-typescript",
-            "language-bash",
-            "language-javascript",
-            "language-powershell"
-          ]
-        }
-      },
       "body": {
         "type": "Slices",
         "fieldset": "Slice Zone",
