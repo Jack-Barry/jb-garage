@@ -2,5 +2,5 @@
 package = "@netlify/plugin-nextjs"
 
 [build]
-  command = "cd ../.. && npx nx run jack-barry-onl:build:production"
+  command = "cd ../.. && npm ci && npx nx run jack-barry-onl:build:production"
   publish = "../../dist/apps/jack-barry-onl/.next"
