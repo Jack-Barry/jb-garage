@@ -70,10 +70,10 @@
         "cwd": "apps/jack-barry-onl"
       }
     },
-    "deploy": {
+    "netlify-build": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "npx dotenv npx netlify deploy -- --build --auth $NETLIFY_AUTH_TOKEN --site $SITE_ID_JACK_BARRY_ONL",
+        "command": "npx dotenv npx netlify build",
         "cwd": "apps/jack-barry-onl"
       }
     }
