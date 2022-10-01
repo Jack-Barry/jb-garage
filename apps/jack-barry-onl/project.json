@@ -73,7 +73,7 @@
     "deploy": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "npx dotenv npx netlify deploy -- --build",
+        "command": "npx dotenv npx netlify deploy -- --build --auth $NETLIFY_AUTH_TOKEN",
         "cwd": "apps/jack-barry-onl"
       }
     }
