@@ -21,6 +21,8 @@ export async function getStaticProps({ previewData }) {
       ...resoc.props,
       description:
         "About page for Jack Barry's personal blog. Jack is a software engineer from El Paso, TX who enjoys hanging out with his family, playing/recording music, tinkering on software and home server projects, and riding his bicycle",
+      publishDate: page.first_publication_date,
+      modifiedDate: page.last_publication_date,
       page
     }
   }

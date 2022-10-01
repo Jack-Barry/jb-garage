@@ -82,6 +82,8 @@ export async function getStaticProps({ params, previewData }) {
     props: {
       ...resoc.props,
       description: page.data.post_tldr,
+      publishDate: page.first_publication_date,
+      modifiedDate: page.last_publication_date,
       page,
       codeBlocks
     }

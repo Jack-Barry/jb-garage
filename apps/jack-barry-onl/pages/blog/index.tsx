@@ -79,6 +79,7 @@ export async function getStaticProps({ previewData }) {
       ...resoc.props,
       description:
         'Thoughts from Jack Barry on development, philosophy, and life in general',
+      modifiedDate: items[0].last_publication_date,
       items
     }
   }

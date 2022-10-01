@@ -69,6 +69,13 @@
         "command": "npx prismic-ts-codegen",
         "cwd": "apps/jack-barry-onl"
       }
+    },
+    "deploy": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npx dotenv npx netlify deploy -- --build",
+        "cwd": "apps/jack-barry-onl"
+      }
     }
   },
   "tags": []
