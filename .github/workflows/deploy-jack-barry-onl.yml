@@ -19,4 +19,5 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           PRISMIC_ACCESS_TOKEN: ${{ secrets.PRISMIC_ACCESS_TOKEN }}
+          SITE_ID_JACK_BARRY_ONL: ${{ secrets.SITE_ID_JACK_BARRY_ONL }}
         run: npx nx run jack-barry-onl:deploy
