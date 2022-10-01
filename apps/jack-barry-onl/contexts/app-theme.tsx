@@ -14,6 +14,9 @@ import {
   useState
 } from 'react'
 import { getColorMode, isDarkMode } from '../utils/theme'
+import { localStorage } from '../utils/window'
+
+const LOCAL_STORAGE_SELECTED_THEME_KEY = 'selected_theme'
 
 const AppThemeContext = createContext({
   mode: 'light' as PaletteMode,
@@ -25,10 +28,17 @@ const AppThemeContext = createContext({
 export const useAppTheme = () => useContext(AppThemeContext)
 
 export default function AppThemeProvider({ children }) {
-  const [mode, setMode] = useState<PaletteMode>('light')
+  const ls = localStorage()
+  const [mode, setMode] = useState<PaletteMode>(
+    (ls.getItem(LOCAL_STORAGE_SELECTED_THEME_KEY) as PaletteMode) || 'light'
+  )
   const toggleDarkMode = useCallback(() => {
-    setMode((prevMode) => getColorMode(!isDarkMode(prevMode)))
-  }, [setMode])
+    setMode((prevMode) => {
+      const selectedMode = getColorMode(!isDarkMode(prevMode))
+      ls.setItem(LOCAL_STORAGE_SELECTED_THEME_KEY, selectedMode)
+      return selectedMode
+    })
+  }, [setMode, ls])
 
   const theme = useMemo(
     () => responsiveFontSizes(createTheme(themeOptions(mode))),
