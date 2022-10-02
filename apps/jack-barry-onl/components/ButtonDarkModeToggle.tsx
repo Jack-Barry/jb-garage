@@ -5,7 +5,7 @@ import { useAppTheme } from '../contexts/app-theme'
 import { isDarkMode } from '../utils/theme'
 
 export default function ButtonDarkModeToggle() {
-  const { toggleDarkMode, mode } = useAppTheme()
+  const { toggleDarkMode, activePalette } = useAppTheme()
   const handleClick = () => {
     toggleDarkMode()
   }
@@ -13,7 +13,7 @@ export default function ButtonDarkModeToggle() {
   return (
     <IconButton onClick={handleClick}>
       <Typography component="div" sx={{ flexGrow: 1 }} />
-      <FontAwesomeIcon icon={isDarkMode(mode) ? faSun : faMoon} />
+      <FontAwesomeIcon icon={isDarkMode(activePalette) ? faSun : faMoon} />
     </IconButton>
   )
 }
