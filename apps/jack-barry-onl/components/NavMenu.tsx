@@ -26,7 +26,7 @@ import ButtonDarkModeToggle from './ButtonDarkModeToggle'
 
 export default function NavMenu() {
   const theme = useTheme()
-  const { mode } = useAppTheme()
+  const { activePalette } = useAppTheme()
   const [drawerOpen, setDrawerOpen] = useState(false)
 
   const closeDrawer = () => {
@@ -38,7 +38,7 @@ export default function NavMenu() {
   }
 
   const backgroundColor =
-    mode === 'dark' ? theme.palette.primary.dark : undefined
+    activePalette === 'dark' ? theme.palette.primary.dark : undefined
 
   return (
     <AppBar position="static" sx={{ backgroundColor }}>
