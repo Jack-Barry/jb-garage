@@ -1,5 +1,5 @@
 import { config } from '@fortawesome/fontawesome-svg-core'
-import { Box } from '@mui/material'
+import { Box, PaletteMode } from '@mui/material'
 import { PrismicProvider } from '@prismicio/react'
 import { PrismicPreview } from '@prismicio/next'
 import { Fragment } from 'react'
@@ -11,20 +11,28 @@ import {
   richTextComponents
 } from '../config/prismic/components'
 import { linkResolver, repositoryName } from '../config/prismic'
-import AppThemeProvider, { useAppTheme } from '../contexts/app-theme'
+import AppThemeProvider, {
+  LOCAL_STORAGE_SELECTED_THEME_KEY,
+  useAppTheme
+} from '../contexts/app-theme'
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '../styles/prism.scss'
 import './index.scss'
 import { AppProps } from 'next/app'
+import { localStorage } from '../utils/window'
 
 config.autoAddCss = false
 
 export default function App(props: AppProps) {
+  const ls = localStorage()
+  const initialThemeMode =
+    (ls.getItem(LOCAL_STORAGE_SELECTED_THEME_KEY) as PaletteMode) || 'light'
+
   return (
     <Fragment>
       <AppHead {...props} />
-      <AppThemeProvider>
+      <AppThemeProvider initialMode={initialThemeMode}>
         <PrismicProvider
           linkResolver={linkResolver}
           internalLinkComponent={internalLinkComponent}
