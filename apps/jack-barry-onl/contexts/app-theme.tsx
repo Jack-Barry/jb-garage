@@ -16,10 +16,10 @@ import {
 import { getColorMode, isDarkMode } from '../utils/theme'
 import { localStorage } from '../utils/window'
 
-const LOCAL_STORAGE_SELECTED_THEME_KEY = 'selected_theme'
+export const LOCAL_STORAGE_SELECTED_THEME_KEY = 'selected_theme'
 
 const AppThemeContext = createContext({
-  mode: 'light' as PaletteMode,
+  mode: undefined, // 'light' as PaletteMode,
   toggleDarkMode: () => {
     // placeholder function
   }
@@ -27,11 +27,9 @@ const AppThemeContext = createContext({
 
 export const useAppTheme = () => useContext(AppThemeContext)
 
-export default function AppThemeProvider({ children }) {
+export default function AppThemeProvider({ initialMode, children }) {
   const ls = localStorage()
-  const [mode, setMode] = useState<PaletteMode>(
-    (ls.getItem(LOCAL_STORAGE_SELECTED_THEME_KEY) as PaletteMode) || 'light'
-  )
+  const [mode, setMode] = useState<PaletteMode>(initialMode)
   const toggleDarkMode = useCallback(() => {
     setMode((prevMode) => {
       const selectedMode = getColorMode(!isDarkMode(prevMode))
