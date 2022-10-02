@@ -10,16 +10,16 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState
 } from 'react'
 import { getColorMode, isDarkMode } from '../utils/theme'
-import { localStorage } from '../utils/window'
 
 export const LOCAL_STORAGE_SELECTED_THEME_KEY = 'selected_theme'
 
 const AppThemeContext = createContext({
-  mode: undefined, // 'light' as PaletteMode,
+  activePalette: undefined,
   toggleDarkMode: () => {
     // placeholder function
   }
@@ -27,23 +27,37 @@ const AppThemeContext = createContext({
 
 export const useAppTheme = () => useContext(AppThemeContext)
 
-export default function AppThemeProvider({ initialMode, children }) {
-  const ls = localStorage()
-  const [mode, setMode] = useState<PaletteMode>(initialMode)
-  const toggleDarkMode = useCallback(() => {
-    setMode((prevMode) => {
-      const selectedMode = getColorMode(!isDarkMode(prevMode))
-      ls.setItem(LOCAL_STORAGE_SELECTED_THEME_KEY, selectedMode)
-      return selectedMode
-    })
-  }, [setMode, ls])
-
-  const theme = useMemo(
-    () => responsiveFontSizes(createTheme(themeOptions(mode))),
-    [mode]
+export default function AppThemeProvider({ children }) {
+  const [activePalette, setActivePalette] = useState<PaletteMode>(
+    document.body.dataset.theme as PaletteMode
   )
 
-  const context = { toggleDarkMode, mode }
+  useEffect(() => {
+    document.body.dataset.theme = activePalette
+    window.localStorage.setItem('theme', activePalette)
+  }, [activePalette])
+
+  useEffect(() => {
+    document.body.dataset.theme = activePalette
+  }, [activePalette])
+
+  const theme = useMemo(
+    () => responsiveFontSizes(createTheme(themeOptions(activePalette))),
+    [activePalette]
+  )
+
+  const toggleDarkMode = useCallback(() => {
+    setActivePalette((prev) => {
+      const selectedMode = getColorMode(!isDarkMode(prev))
+      window.localStorage.setItem(
+        LOCAL_STORAGE_SELECTED_THEME_KEY,
+        selectedMode
+      )
+      return selectedMode
+    })
+  }, [])
+
+  const context = { activePalette, toggleDarkMode }
 
   return (
     <AppThemeContext.Provider value={context}>

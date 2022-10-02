@@ -28,8 +28,6 @@ const darkPalette: ThemeOptions['palette'] = {
   background: {
     paper: '#00070f',
     default: '#00050a'
-    // paper: '#00050a',
-    // default: '#00070f'
   },
   primary: {
     main: '#3a93ff'
