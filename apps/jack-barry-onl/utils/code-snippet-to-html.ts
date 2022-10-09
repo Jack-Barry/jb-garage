@@ -10,6 +10,6 @@ export default async function codeSnippetToHtml(
     // https://github.com/sergioramos/remark-prism/issues/265
     .use(html, { sanitize: false })
     .use(prism)
-    .process(`\`\`\`${language}\n${markdown}\n\`\`\``)
+    .process(`\`\`\`${language || 'shell'}\n${markdown}\n\`\`\``)
   return result.toString()
 }
