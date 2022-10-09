@@ -7,7 +7,6 @@
   },
   "private": true,
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.23.3",
     "@nrwl/cli": "13.9.3",
     "@nrwl/cypress": "13.10.1",
     "@nrwl/eslint-plugin-nx": "13.10.1",
