@@ -1,5 +1,19 @@
 {
   "_cts": {
     "blog_post": {}
+  },
+  "slices": {
+    "CodeBlock": {
+      "default": {
+        "primary": {
+          "code": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
   }
 }

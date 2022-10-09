@@ -6,7 +6,7 @@ const withNx = require('@nrwl/next/plugins/with-nx')
  **/
 const nextConfig = {
   images: {
-    domains: ['images.prismic.io']
+    domains: ['images.prismic.io', 'prismic-io.s3.amazonaws.com']
   }
 }
 

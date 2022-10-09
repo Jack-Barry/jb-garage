@@ -2,12 +2,13 @@ import { Alert, AlertTitle, Card, CardContent, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import * as prismicH from '@prismicio/helpers'
 import { SliceZone } from '@prismicio/react'
+import { RTPreformattedNode } from '@prismicio/types'
 
 import { createClient, linkResolver } from '../../config/prismic'
 import { components } from '../../slices'
 import { BlogPostDocument } from '../../types.generated'
 import { BLOG_POST_TIMESTAMP_FORMAT, dayjs } from '../../utils/dates'
-import markdownToHtml from '../../utils/markdown'
+import codeSnippetToHtml from '../../utils/code-snippet-to-html'
 import { prepareStaticProps } from '../../utils/prepare-static-props'
 
 interface CodeBlock {
@@ -67,13 +68,15 @@ export async function getStaticProps({ params, previewData }) {
 
   const codeBlocks = []
   for (const [index, section] of page.data.body.entries()) {
-    if (section.slice_type === 'code_block')
+    if (section.slice_type === 'code_block') {
       codeBlocks.push({
         index,
-        // eslint-disable-next-line
-        // @ts-ignore
-        codeBlock: await markdownToHtml(section.primary.code[0].text)
+        codeBlock: await codeSnippetToHtml(
+          (section.primary.code[0] as RTPreformattedNode).text,
+          section.primary.language
+        )
       })
+    }
   }
 
   const resoc = await prepareStaticProps(page.data.post_title[0].text, page.uid)
