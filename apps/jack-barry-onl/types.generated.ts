@@ -60,28 +60,6 @@ interface BlogPostDocumentData {
    */
   post_tldr: prismicT.KeyTextField
   /**
-   * Social Media Image field in *Blog Post*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.social_media_image
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-   *
-   */
-  social_media_image: prismicT.LinkField
-  /**
-   * Post Content field in *Blog Post*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.post_content
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  post_content: prismicT.RichTextField
-  /**
    * Slice Zone field in *Blog Post*
    *
    * - **Field Type**: Slice Zone
@@ -358,6 +336,20 @@ export type BlogPostSectionSlice = prismicT.SharedSlice<
  *
  */
 interface CodeBlockSliceDefaultPrimary {
+  /**
+   * language field in *CodeBlock → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: shell
+   * - **API ID Path**: code_block.primary.language
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  language: prismicT.SelectField<
+    'shell' | 'javascript' | 'typescript',
+    'filled'
+  >
   /**
    * Code field in *CodeBlock → Primary*
    *

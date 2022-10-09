@@ -11,6 +11,15 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "CodeBlock",
       "primary": {
+        "language": {
+          "type": "Select",
+          "config": {
+            "label": "language",
+            "placeholder": "",
+            "options": ["shell", "javascript", "typescript"],
+            "default_value": "shell"
+          }
+        },
         "code": {
           "type": "StructuredText",
           "config": {

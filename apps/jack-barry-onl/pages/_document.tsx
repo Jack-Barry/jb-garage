@@ -15,7 +15,7 @@ export default function AppDocument() {
     <Html>
       <Head>
         <link
-          href="https://fonts.googleapis.com/css?family=Montserrat:300i,400,600|Playfair+Display:700&display=swap"
+          href="https://fonts.googleapis.com/css?family=Montserrat:300i,400,600,600i|Playfair+Display:700&display=swap"
           rel="stylesheet"
         />
       </Head>
