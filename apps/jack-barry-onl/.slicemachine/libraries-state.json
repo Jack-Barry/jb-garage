@@ -89,7 +89,12 @@
                   "config": {
                     "label": "language",
                     "placeholder": "",
-                    "options": ["shell", "javascript", "typescript"],
+                    "options": [
+                      "shell",
+                      "javascript",
+                      "typescript",
+                      "powershell"
+                    ],
                     "default_value": "shell"
                   }
                 },
@@ -114,11 +119,11 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [{}],
             "primary": {
-              "language": "typescript",
+              "language": "shell",
               "code": [
                 {
                   "type": "paragraph",
-                  "text": "Occaecat ex eiusmod irure aliqua.",
+                  "text": "Do esse adipisicing dolore officia qui laborum excepteur mollit. Minim nostrud officia pariatur. Do consectetur in proident quis.",
                   "spans": []
                 }
               ]
