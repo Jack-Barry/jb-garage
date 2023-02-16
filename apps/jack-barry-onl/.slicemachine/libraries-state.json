@@ -93,7 +93,8 @@
                       "shell",
                       "javascript",
                       "typescript",
-                      "powershell"
+                      "powershell",
+                      "yaml"
                     ],
                     "default_value": "shell"
                   }
@@ -119,11 +120,11 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [{}],
             "primary": {
-              "language": "shell",
+              "language": "typescript",
               "code": [
                 {
                   "type": "paragraph",
-                  "text": "Do esse adipisicing dolore officia qui laborum excepteur mollit. Minim nostrud officia pariatur. Do consectetur in proident quis.",
+                  "text": "Consequat labore dolor nostrud ea pariatur nulla commodo duis anim exercitation. Tempor do ex veniam enim sint adipisicing nisi sint esse commodo ipsum.",
                   "spans": []
                 }
               ]

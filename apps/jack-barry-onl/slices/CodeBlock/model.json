@@ -16,7 +16,13 @@
           "config": {
             "label": "language",
             "placeholder": "",
-            "options": ["shell", "javascript", "typescript", "powershell"],
+            "options": [
+              "shell",
+              "javascript",
+              "typescript",
+              "powershell",
+              "yaml"
+            ],
             "default_value": "shell"
           }
         },
