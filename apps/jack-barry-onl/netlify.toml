@@ -1,7 +1,7 @@
-[[plugins]]
-package = "@netlify/plugin-nextjs"
+#[[plugins]]
+#package = "@netlify/plugin-nextjs"
 
 [build]
-  environment = { NODE_VERSION = "16.14.2" }
-  command = "cd ../.. && npm ci && npx nx run jack-barry-onl:build:production --skip-nx-cache"
-  publish = "../../dist/apps/jack-barry-onl/.next"
+environment = { NODE_VERSION = "16.14.2" }
+command = "cd ../.. && npm ci && npx nx run jack-barry-onl:build:production --skip-nx-cache"
+publish = "../../dist/apps/jack-barry-onl/.next"
