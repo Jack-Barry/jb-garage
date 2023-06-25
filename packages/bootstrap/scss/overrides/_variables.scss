@@ -1,0 +1,27 @@
+@use 'style-dictionary/scss/colors/base';
+@use 'style-dictionary/scss/colors/dark_mode';
+@use 'style-dictionary/scss/colors/light_mode';
+
+$colors: (
+  'blue': map-get(base.$tokens, color-base-blue-500),
+  'red': map-get(base.$tokens, color-base-red-500),
+  'yellow': map-get(base.$tokens, color-base-yellow-500),
+  'green': map-get(base.$tokens, color-base-green-500),
+  'black': map-get(base.$tokens, color-base-black),
+  'white': map-get(base.$tokens, color-base-white),
+  'gray': map-get(base.$tokens, color-base-gray-500)
+);
+
+$theme-colors: (
+  'primary': map-get($colors, 'blue'),
+  'secondary': map-get(base.$tokens, color-base-gray-300),
+  'success': map-get($colors, 'green'),
+  'info': map-get($colors, 'blue'),
+  'warning': map-get($colors, 'yellow'),
+  'danger': map-get($colors, 'red'),
+  'light': map-get($colors, 'white'),
+  'dark': map-get($colors, 'black')
+);
+
+@import './variables/color_modes';
+@import './variables/text';

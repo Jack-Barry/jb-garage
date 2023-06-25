@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@jb-garage/bootstrap-react": ["packages/bootstrap-react/src/index.ts"],
+      "@jb-garage/bootstrap/*": ["packages/bootstrap/*"],
+      "@jb-garage/style-dictionary/*": ["dist/packages/style-dictionary/*"],
       "@jb-garage/utils-generic": ["packages/utils-generic/src/index.ts"]
     }
   },

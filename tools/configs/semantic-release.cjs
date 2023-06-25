@@ -21,8 +21,22 @@ const COMMON_COMMIT_PATHS = [
   '.prettierignore'
 ]
 
+/** Builds a release config that can be used for packages */
+function makePackageReleaseConfig(packageName) {
+  const name = `@jb-garage/${packageName}`
+  const srcRoot = `packages/${packageName}`
+
+  return {
+    pkgRoot: `dist/${srcRoot}`,
+    tagFormat: makeTagFormat(name),
+    commitPaths: [...COMMON_COMMIT_PATHS, `${srcRoot}/*`],
+    branches: SEMANTIC_RELEASE_BRANCHES
+  }
+}
+
 module.exports = {
   makeTagFormat,
   SEMANTIC_RELEASE_BRANCHES,
-  COMMON_COMMIT_PATHS
+  COMMON_COMMIT_PATHS,
+  makePackageReleaseConfig
 }

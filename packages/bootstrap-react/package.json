@@ -1,0 +1,10 @@
+{
+  "name": "@jb-garage/bootstrap-react",
+  "version": "0.0.1",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jack-barry/jb-garage.git",
+    "directory": "packages/bootstrap-react"
+  }
+}

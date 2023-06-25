@@ -1,0 +1,25 @@
+{
+  "color": {
+    "dark_mode": {
+      "surface": {
+        "base": { "value": "{color.base.black}" },
+        "error": { "value": "{color.base.red.700}" },
+        "warning": { "value": "{color.base.yellow.800}" },
+        "success": { "value": "{color.base.green.800}" },
+        "info": { "value": "{color.base.blue.700}" },
+        "nav_background": { "value": "{color.base.blue.200}" },
+        "button_primary": { "value": "{color.base.blue.200}" }
+      },
+      "text": {
+        "base": { "value": "{color.base.white}" },
+        "button": { "value": "{color.base.black}" },
+        "secondary": { "value": "{color.base.gray.100}" },
+        "tertiary": { "value": "{color.base.gray.300}" },
+        "error": { "value": "{color.base.red.100}" },
+        "warning": { "value": "{color.base.yellow.100}" },
+        "success": { "value": "{color.base.green.100}" },
+        "info": { "value": "{color.base.blue.100}" }
+      }
+    }
+  }
+}

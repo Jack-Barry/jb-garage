@@ -1,0 +1,52 @@
+{
+  "name": "bootstrap",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bootstrap/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/bootstrap/**/*.ts"]
+      }
+    },
+    "build:js": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/bootstrap",
+        "main": "packages/bootstrap/src/index.ts",
+        "tsConfig": "packages/bootstrap/tsconfig.lib.json",
+        "assets": ["packages/bootstrap/*.md", "packages/bootstrap/scss/**/*"],
+        "generatePackageJson": true
+      },
+      "dependsOn": ["lint", "^build"]
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "commands": [
+          "npx sass --load-path=node_modules --load-path=dist/packages packages/bootstrap/scss/index.scss dist/packages/bootstrap/styles/index.css",
+          "npx postcss dist/packages/bootstrap/styles/index.css --config packages/bootstrap/postcss.config.js --replace",
+          "npx postcss dist/packages/bootstrap/styles/index.css > dist/packages/bootstrap/styles/index.min.css --config packages/bootstrap/postcss.config.js --env=production"
+        ],
+        "parallel": false
+      },
+      "dependsOn": ["build:js"]
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx semantic-release --extends=./packages/bootstrap/release.config.js"
+          }
+        ]
+      },
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@jb-garage/bootstrap",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jack-barry/jb-garage.git",
+    "directory": "packages/bootstrap"
+  },
+  "dependencies": {
+    "@jb-garage/style-dictionary": "0.0.1"
+  },
+  "peerDependencies": {
+    "bootstrap": "^5.3.0"
+  },
+  "peerDependenciesMeta": {
+    "bootstrap": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "style-dictionary",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/style-dictionary/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npx ts-node --esm --project packages/style-dictionary/tsconfig.json packages/style-dictionary/build.ts",
+          "npx ts-node --esm --project packages/style-dictionary/tsconfig.json packages/style-dictionary/scripts/pack.ts"
+        ]
+      }
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx semantic-release --extends=./packages/style-dictionary/release.config.js"
+          }
+        ]
+      },
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

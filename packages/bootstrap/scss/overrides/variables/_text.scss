@@ -1,0 +1,4 @@
+// https://getbootstrap.com/docs/5.3/utilities/text/#sass-variables
+@use 'style-dictionary/scss/fonts/families';
+
+$font-family-sans-serif: families.$font-family-base + ', ' + families.$font-family-fallback;
