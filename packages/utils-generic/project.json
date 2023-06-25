@@ -1,0 +1,39 @@
+{
+  "name": "utils-generic",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/utils-generic/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/utils-generic/**/*.ts"]
+      }
+    },
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/utils-generic",
+        "main": "packages/utils-generic/src/index.ts",
+        "tsConfig": "packages/utils-generic/tsconfig.lib.json",
+        "assets": ["packages/utils-generic/*.md"],
+        "generatePackageJson": true
+      },
+      "dependsOn": ["lint"]
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx semantic-release --extends=./packages/utils-generic/release.config.js"
+          }
+        ]
+      },
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

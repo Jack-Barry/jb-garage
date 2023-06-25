@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Clean up formatting in changed files
+node ./node_modules/.bin/lint-staged
