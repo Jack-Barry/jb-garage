@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jb-garage/bootstrap-react": ["packages/bootstrap-react/src/index.ts"],
+      "@jb-garage/bootstrap-react/*": ["packages/bootstrap-react/src/*"],
       "@jb-garage/bootstrap/*": ["packages/bootstrap/*"],
       "@jb-garage/style-dictionary/*": ["dist/packages/style-dictionary/*"],
+      "@jb-garage/theme-switcher": ["packages/theme-switcher/src/index.ts"],
+      "@jb-garage/theme-switcher-react": ["packages/theme-switcher-react/src/index.ts"],
       "@jb-garage/utils-generic": ["packages/utils-generic/src/index.ts"]
     }
   },

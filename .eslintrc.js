@@ -22,7 +22,7 @@ module.exports = {
     },
     {
       env: { node: true },
-      files: ['**/*.config.js', '**/*.cjs'],
+      files: ['**/*.config.js', '**/*.cjs', 'jest.preset.js'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off'
       }

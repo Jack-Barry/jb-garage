@@ -1,9 +1,7 @@
 import classNames from 'classnames'
-import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from 'react'
+import { ElementProps } from '../types'
 
-export type BadgeProps = PropsWithChildren<
-  DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>
->
+export type BadgeProps = ElementProps<HTMLSpanElement>
 
 /**
  * [Badge](https://getbootstrap.com/docs/5.3/components/badge/)

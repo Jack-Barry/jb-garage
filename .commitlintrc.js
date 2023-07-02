@@ -7,7 +7,15 @@ const config = {
   },
   prompt: {
     useEmoji: true,
-    scopes: ['global', 'bootstrap', 'bootstrap-react', 'style-dictionary', 'utils-generic'],
+    scopes: [
+      'global',
+      'bootstrap',
+      'bootstrap-react',
+      'jack-barry-onl',
+      'style-dictionary',
+      'theme-switcher',
+      'utils-generic'
+    ],
     allowCustomScopes: false,
     allowEmptyScopes: false,
     maxHeaderLength: MAX_HEADER_LENGTH,

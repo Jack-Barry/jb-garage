@@ -36,7 +36,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/bootstrap-react",
-        "main": "packages/bootstrap-react/src/index.tsx",
+        "main": "packages/bootstrap-react/src/index.ts",
         "tsConfig": "packages/bootstrap-react/tsconfig.lib.json",
         "assets": ["packages/bootstrap-react/*.md"],
         "generatePackageJson": true

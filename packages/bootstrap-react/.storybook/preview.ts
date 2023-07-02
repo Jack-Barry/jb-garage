@@ -1,6 +1,7 @@
 import { Preview } from '@storybook/react'
-import '../../../dist/packages/bootstrap/styles/index.min.css'
 import theme from './theme'
+
+import '../../../dist/packages/bootstrap/styles/index.min.css'
 
 const preview: Preview = {
   parameters: {

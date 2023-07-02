@@ -1,0 +1,82 @@
+{
+  "name": "jack-barry-onl",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/jack-barry-onl",
+  "projectType": "application",
+  "targets": {
+    "prepare": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "node dist/packages/theme-switcher/scripts/setup.js apps/jack-barry-onl/public/setThemeOnLoad.js bsTheme"
+          }
+        ]
+      },
+      "dependsOn": ["^build"]
+    },
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/jack-barry-onl"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/jack-barry-onl"
+        },
+        "production": {}
+      },
+      "dependsOn": ["prepare"]
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "jack-barry-onl:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "jack-barry-onl:build:development",
+          "hostname": "127.0.0.1",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "jack-barry-onl:build:production",
+          "dev": false
+        }
+      },
+      "dependsOn": ["prepare"]
+    },
+    "export": {
+      "executor": "@nx/next:export",
+      "options": {
+        "buildTarget": "jack-barry-onl:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/jack-barry-onl/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/jack-barry-onl/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}
