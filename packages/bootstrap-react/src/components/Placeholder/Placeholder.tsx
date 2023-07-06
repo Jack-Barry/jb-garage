@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { ElementProps } from '../types'
+import { ElementProps } from '../../types'
 
 export type PlaceholderProps = ElementProps<HTMLSpanElement> & { animation?: 'glow' | 'wave' }
 
