@@ -1,23 +1,31 @@
 import classNames from 'classnames'
-import { ElementProps } from '../types'
+import { BrElement, BrElementProps } from '../utils/BrElement'
+import { ElementType, PropsWithChildren } from 'react'
 
-export type BadgeProps = ElementProps<HTMLSpanElement>
+export type BadgeProps<T extends ElementType> = PropsWithChildren<BrElementProps<T>> & {
+  /**
+   * Type of HTML element to render
+   *
+   * @default "span"
+   */
+  as?: T
+}
 
 /**
  * [Badge](https://getbootstrap.com/docs/5.3/components/badge/)
  *
- * - Accepts all props that can be passed to a `span` element
  * - If no `bg-` class is provided, defaults to `bg-secondary`
  */
-export default function Badge(props: BadgeProps) {
-  const { children, className } = props
+export default function Badge<T extends ElementType>(props: BadgeProps<T>) {
+  const { as = 'span' as ElementType, children, className, ...rest } = props
 
   return (
-    <span
-      {...props}
+    <BrElement
+      as={as}
       className={classNames('badge', className, { 'bg-secondary': !className?.includes('bg-') })}
+      {...rest}
     >
       {children}
-    </span>
+    </BrElement>
   )
 }

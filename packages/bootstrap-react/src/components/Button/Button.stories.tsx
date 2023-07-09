@@ -12,10 +12,10 @@ const meta: Meta<typeof Button> = {
 }
 
 export default meta
-export const ButtonStory: StoryObj = {
+export const BaseExample: StoryObj = {
   args: {
     children: 'Button Text',
-    className: '',
+    className: 'btn-primary',
     onClick: action('button clicked')
   }
 }

@@ -4,6 +4,7 @@ import viteTsConfigPathsPlugin from 'vite-tsconfig-paths'
 
 const config: StorybookConfig = {
   stories: [
+    '../src/storybook/README.mdx',
     // '../src/**/*.mdx',
     '../src/**/*.stories.tsx'
   ],
@@ -20,7 +21,7 @@ const config: StorybookConfig = {
     autodocs: 'tag'
   },
   async viteFinal(config) {
-    config.plugins.push(
+    config.plugins?.push(
       viteTsConfigPathsPlugin({ projects: [resolve(__dirname, '..', 'tsconfig.json')] })
     )
     return config

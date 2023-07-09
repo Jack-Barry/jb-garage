@@ -1,7 +1,6 @@
 import { Preview } from '@storybook/react'
-import theme from './theme'
 
-import '../../../dist/packages/bootstrap/styles/index.min.css'
+import '../../../node_modules/bootstrap/scss/bootstrap.scss'
 
 const preview: Preview = {
   parameters: {
@@ -11,9 +10,6 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/
       }
-    },
-    docs: {
-      theme
     }
   }
 }
