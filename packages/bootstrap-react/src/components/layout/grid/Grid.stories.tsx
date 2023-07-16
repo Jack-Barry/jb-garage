@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react'
 import Container from '../containers/Container'
 import Row from './Row'
-import Col from './Col'
+import Col from '../columns/Col'
 
 const meta: Meta = {
   title: 'Grid',
@@ -48,12 +48,12 @@ export const AutoLayoutColumnsSettingOneColumnWidth: StoryFn = () => {
       <Container className="text-center">
         <Row>
           <Col>1 of 3</Col>
-          <Col size={6}>2 of 3 (wider)</Col>
+          <Col colSize={6}>2 of 3 (wider)</Col>
           <Col>3 of 3</Col>
         </Row>
         <Row>
           <Col>1 of 3</Col>
-          <Col size={5}>2 of 3 (wider)</Col>
+          <Col colSize={5}>2 of 3 (wider)</Col>
           <Col>3 of 3</Col>
         </Row>
       </Container>
@@ -66,14 +66,14 @@ export const AutoLayoutColumnsVariableWidthContent: StoryFn = () => {
     <div className="bd-example-row">
       <Container className="text-center">
         <Row className="justify-content-md-center">
-          <Col lg={2}>1 of 3</Col>
-          <Col md="auto">Variable width content</Col>
-          <Col lg="2">3 of 3</Col>
+          <Col colLg={2}>1 of 3</Col>
+          <Col colMd="auto">Variable width content</Col>
+          <Col colLg="2">3 of 3</Col>
         </Row>
         <Row>
           <Col>1 of 3</Col>
-          <Col md="auto">Variable width content</Col>
-          <Col lg={2}>3 of 3</Col>
+          <Col colMd="auto">Variable width content</Col>
+          <Col colLg={2}>3 of 3</Col>
         </Row>
       </Container>
     </div>
@@ -91,8 +91,8 @@ export const ReponsiveClassesAllBreakpoints: StoryFn = () => {
           <Col>col</Col>
         </Row>
         <Row>
-          <Col size={8}>col-8</Col>
-          <Col size={4}>col-4</Col>
+          <Col colSize={8}>col-8</Col>
+          <Col colSize={4}>col-4</Col>
         </Row>
       </Container>
     </div>
@@ -104,13 +104,13 @@ export const ResponsiveClassesStackedToHorizontal: StoryFn = () => {
     <div className="bd-example-row">
       <Container className="text-center">
         <Row>
-          <Col sm={8}>col-sm-8</Col>
-          <Col sm={4}>col-sm-4</Col>
+          <Col colSm={8}>col-sm-8</Col>
+          <Col colSm={4}>col-sm-4</Col>
         </Row>
         <Row>
-          <Col sm>col-sm</Col>
-          <Col sm>col-sm</Col>
-          <Col sm>col-sm</Col>
+          <Col colSm>col-sm</Col>
+          <Col colSm>col-sm</Col>
+          <Col colSm>col-sm</Col>
         </Row>
       </Container>
     </div>
@@ -123,29 +123,29 @@ export const ResponsiveClassesMixAndMatch: StoryFn = () => {
       <Container className="text-center">
         {/* Stack the columns on mobile by making one full-width and the other half-width */}
         <Row>
-          <Col md={8}>.col-md-8</Col>
-          <Col size={6} md={4}>
+          <Col colMd={8}>.col-md-8</Col>
+          <Col colSize={6} colMd={4}>
             .col-6 .col-md-4
           </Col>
         </Row>
 
         {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
         <Row>
-          <Col size={6} md={4}>
+          <Col colSize={6} colMd={4}>
             .col-6 .col-md-4
           </Col>
-          <Col size={6} md={4}>
+          <Col colSize={6} colMd={4}>
             .col-6 .col-md-4
           </Col>
-          <Col size={6} md={4}>
+          <Col colSize={6} colMd={4}>
             .col-6 .col-md-4
           </Col>
         </Row>
 
         {/* Columns are always 50% wide, on mobile and desktop */}
         <Row>
-          <Col size={6}>.col-6</Col>
-          <Col size={6}>.col-6</Col>
+          <Col colSize={6}>.col-6</Col>
+          <Col colSize={6}>.col-6</Col>
         </Row>
       </Container>
     </div>
@@ -195,7 +195,7 @@ export const ResponsiveClassesRowColumns: StoryFn = () => {
         <Row cols={4}>
           <Col>Column</Col>
           <Col>Column</Col>
-          <Col size={6}>Column</Col>
+          <Col colSize={6}>Column</Col>
           <Col>Column</Col>
         </Row>
       </Container>
@@ -217,13 +217,13 @@ export const Nesting: StoryFn = () => {
     <div className="bd-example-row">
       <Container className="text-center">
         <Row>
-          <Col sm={3}>Level 1: .col-sm-3</Col>
-          <Col sm={9}>
+          <Col colSm={3}>Level 1: .col-sm-3</Col>
+          <Col colSm={9}>
             <Row>
-              <Col size={8} sm={6}>
+              <Col colSize={8} colSm={6}>
                 Level 2: .col-8 .col-sm-6
               </Col>
-              <Col size={4} sm={6}>
+              <Col colSize={4} colSm={6}>
                 Level 2: .col-4 .col-sm-6
               </Col>
             </Row>

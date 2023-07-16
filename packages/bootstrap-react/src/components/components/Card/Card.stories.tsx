@@ -18,7 +18,7 @@ import ListGroup from '../ListGroup/ListGroup'
 import ListGroupItem from '../ListGroup/ListGroupItem'
 import CardHeader from './CardHeader'
 import CardFooter from './CardFooter'
-import Col from '../../layout/grid/Col'
+import Col from '../../layout/columns/Col'
 import Row from '../../layout/grid/Row'
 import Nav from '../navsAndTabs/Nav/Nav'
 import NavItem from '../navsAndTabs/Nav/NavItem'
@@ -219,7 +219,7 @@ HeaderAndFooter.decorators = [
 export const SizingUsingGridMarkup: StoryFn = () => {
   return (
     <Row>
-      <Col sm={6} className="mb-3 mb-sm-0">
+      <Col colSm={6} className="mb-3 mb-sm-0">
         <Card>
           <CardBody>
             <CardTitle>Special title treatment</CardTitle>
@@ -232,7 +232,7 @@ export const SizingUsingGridMarkup: StoryFn = () => {
           </CardBody>
         </Card>
       </Col>
-      <Col sm={6}>
+      <Col colSm={6}>
         <Card>
           <CardBody>
             <CardTitle>Special title treatment</CardTitle>
@@ -454,7 +454,7 @@ export const Horizontal: StoryFn = () => {
   return (
     <Card className="mb-3" style={{ maxWidth: '540px' }}>
       <Row className="g-0">
-        <Col md={4}>
+        <Col colMd={4}>
           <Image
             fluid
             {...placeholderImgSvgProps({
@@ -466,7 +466,7 @@ export const Horizontal: StoryFn = () => {
             <PlaceholderImgSvgChildren text="Image" />
           </Image>
         </Col>
-        <Col md={8}>
+        <Col colMd={8}>
           <CardBody>
             <CardTitle>Card title</CardTitle>
             <CardText>

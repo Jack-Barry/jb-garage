@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType } from 'react'
-import { ColSpan } from './Col'
+import { ColSpan } from '../columns/Col'
 
-export type RowProps<T extends ElementType> = BrElementProps<T> & {
+export type RowProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   /**
    * Type of HTML element to render
    *
@@ -27,7 +27,7 @@ export type RowProps<T extends ElementType> = BrElementProps<T> & {
 }
 
 /** [Row]() */
-export default function Row<T extends ElementType>(props: RowProps<T>) {
+export default function Row<T extends ElementType = 'div'>(props: RowProps<T>) {
   const {
     as = 'div' as ElementType,
     children,
