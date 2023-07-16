@@ -4,6 +4,24 @@
   "sourceRoot": "packages/bootstrap-react/src",
   "projectType": "library",
   "targets": {
+    "clean:repos": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/bootstrap-react",
+        "commands": ["shx rm -rf repos/bootstrap"]
+      }
+    },
+    "setup:dev": {
+      "executor": "nx:run-commands",
+      "outputs": ["packages/bootstrap-react/repos/bootstrap"],
+      "options": {
+        "cwd": "packages/bootstrap-react",
+        "commands": [
+          "git clone --depth 1 --branch v5.3.0 https://github.com/twbs/bootstrap.git repos/bootstrap"
+        ]
+      },
+      "dependsOn": ["clean:repos"]
+    },
     "storybook": {
       "executor": "@nx/storybook:storybook",
       "options": {
@@ -14,15 +32,22 @@
         "ci": {
           "quiet": true
         }
-      }
+      },
+      "dependsOn": ["setup:dev"]
     },
     "storybook:build": {
-      "executor": "nx:run-commands",
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "cwd": "packages/bootstrap-react",
-        "commands": ["npx storybook build"]
+        "outputDir": "dist/storybook/bootstrap-react",
+        "configDir": "packages/bootstrap-react/.storybook"
       },
-      "dependsOn": ["^build"]
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "dependsOn": ["build", "setup:dev"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
@@ -41,7 +66,7 @@
         "assets": ["packages/bootstrap-react/*.md"],
         "generatePackageJson": true
       },
-      "dependsOn": ["lint"]
+      "dependsOn": ["lint", "setup:dev"]
     },
     "release": {
       "executor": "nx:run-commands",
@@ -53,19 +78,6 @@
         ]
       },
       "dependsOn": ["build"]
-    },
-    "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/storybook/bootstrap-react",
-        "configDir": "packages/bootstrap-react/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
     }
   },
   "tags": []

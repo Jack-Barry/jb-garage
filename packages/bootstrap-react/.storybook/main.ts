@@ -5,8 +5,22 @@ import viteTsConfigPathsPlugin from 'vite-tsconfig-paths'
 const config: StorybookConfig = {
   stories: [
     '../src/storybook/README.mdx',
-    // '../src/**/*.mdx',
-    '../src/**/*.stories.tsx'
+    {
+      titlePrefix: 'Layout',
+      directory: '../src/components/layout'
+    },
+    {
+      titlePrefix: 'Content',
+      directory: '../src/components/content'
+    },
+    {
+      titlePrefix: 'Forms',
+      directory: '../src/components/forms'
+    },
+    {
+      titlePrefix: 'Components',
+      directory: '../src/components/components'
+    }
   ],
   addons: [
     '@storybook/addon-links',

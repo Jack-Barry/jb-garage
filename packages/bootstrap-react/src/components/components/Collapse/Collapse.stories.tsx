@@ -1,0 +1,110 @@
+import type { Meta, StoryFn } from '@storybook/react'
+
+import { as } from '../../../storybook/utils'
+import Collapse from './Collapse'
+import { useCollapse } from './useCollapse'
+import Button from '../Button/Button'
+import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
+import CardBody from '../Card/CardBody'
+import Card from '../Card/Card'
+
+const meta: Meta<typeof Collapse> = {
+  component: Collapse,
+  tags: ['autodocs'],
+  argTypes: {
+    as
+  }
+}
+
+export default meta
+export const BaseExample: StoryFn<typeof Collapse> = () => {
+  const collapse = useCollapse()
+
+  return (
+    <div style={{ minHeight: '200px' }}>
+      <Button onClick={collapse.toggle}>Click to {collapse.isVisible ? 'Hide' : 'Show'}</Button>
+      <Collapse collapse={collapse}>
+        <Card>
+          <CardBody>
+            Some placeholder content for the collapse component. This panel is hidden by default but
+            revealed when the user activates the relevant trigger.
+          </CardBody>
+        </Card>
+      </Collapse>
+    </div>
+  )
+}
+
+export const Horizontal: StoryFn = () => {
+  const collapse = useCollapse()
+
+  return (
+    <div style={{ minHeight: '300px' }}>
+      <Button onClick={collapse.toggle}>Click to {collapse.isVisible ? 'Hide' : 'Show'}</Button>
+      <div>
+        <Collapse collapse={collapse} className="collapse-horizontal">
+          <Card style={{ width: '300px' }}>
+            <CardBody>
+              Some placeholder content for the collapse component. This panel is hidden by default
+              but revealed when the user activates the relevant trigger.
+            </CardBody>
+          </Card>
+        </Collapse>
+      </div>
+    </div>
+  )
+}
+Horizontal.decorators = [
+  linkToBootstrapDocs('https://getbootstrap.com/docs/5.3/components/collapse/#horizontal')
+]
+
+export const MultipleTogglesAndTargets: StoryFn = () => {
+  const collapse1 = useCollapse()
+  const collapse2 = useCollapse()
+
+  return (
+    <div style={{ minHeight: '200px' }}>
+      <div className="d-flex gap-2">
+        <Button onClick={collapse1.toggle}>Toggle first element</Button>
+        <Button onClick={collapse2.toggle}>Toggle second element</Button>
+        <Button
+          onClick={() => {
+            collapse1.toggle()
+            collapse2.toggle()
+          }}
+        >
+          Toggle both elements
+        </Button>
+      </div>
+      <div className="row" style={{ maxWidth: '700px' }}>
+        <div className="col">
+          <Collapse collapse={collapse1}>
+            <Card>
+              <CardBody>
+                Some placeholder content for the first collapse component of this multi-collapse
+                example. This panel is hidden by default but revealed when the user activates the
+                relevant trigger.
+              </CardBody>
+            </Card>
+          </Collapse>
+        </div>
+        <div className="col">
+          <Collapse collapse={collapse2}>
+            <Card>
+              <CardBody>
+                Some placeholder content for the second collapse component of this multi-collapse
+                example. This panel is hidden by default but revealed when the user activates the
+                relevant trigger.
+              </CardBody>
+            </Card>
+          </Collapse>
+        </div>
+      </div>
+    </div>
+  )
+}
+MultipleTogglesAndTargets.decorators = [
+  linkToBootstrapDocs(
+    'https://getbootstrap.com/docs/5.3/components/collapse/#multiple-toggles-and-targets'
+  )
+]

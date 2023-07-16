@@ -8,7 +8,7 @@ import {
   forwardRef
 } from 'react'
 
-export type BrAsProp<Component extends ElementType | undefined> = {
+export type BrPropsWithAs<Component extends ElementType | undefined> = {
   /** Type of HTML element to render */
   as?: Component
 }
@@ -18,20 +18,20 @@ export type BrAsProp<Component extends ElementType | undefined> = {
  *   component, e.g. something like "color", from `React.ComponentPropsWithoutRef`
  *   that we reference in the union
  */
-type BrPropsToOmit<Component extends ElementType, Props> = keyof (BrAsProp<Component> & Props)
+type BrPropsToOmit<Component extends ElementType, Props> = keyof (BrPropsWithAs<Component> & Props)
 
 /** Type of `ref` that can be used based on element type */
-type BrRef<Component extends ElementType> = ComponentPropsWithRef<Component>['ref']
+export type BrRef<Component extends ElementType | undefined> = Component extends ElementType
+  ? ComponentPropsWithRef<Component>['ref']
+  : never
 
 /** Props that can be passed to the `BrComponent` */
 export type BrElementProps<Component extends ElementType, Props = object> =
   // Allow for `children` to be provided
-  PropsWithChildren<Props & BrAsProp<Component>> &
-    // Remove duplicated props, prefer types specified by `Props` type
-    Omit<ComponentPropsWithoutRef<Component>, BrPropsToOmit<Component, Props>> & {
-      // Allow for `ref` to be provided
-      ref?: BrRef<Component>
-    }
+  PropsWithChildren<Props & BrPropsWithAs<Component>> & {
+    // Allow for `ref` to be provided
+    ref?: BrRef<Component>
+  } & Omit<ComponentPropsWithoutRef<Component>, BrPropsToOmit<Component, Props>> // Remove duplicated props, prefer types specified by `Props` type}
 
 /** Type for component function that will accept `BrElementProps` */
 type BrComponent = <Component extends ElementType = 'div'>(
@@ -45,16 +45,13 @@ type BrComponent = <Component extends ElementType = 'div'>(
  * - Passes all provided props into it
  * - Allows for passing in `ref`
  */
-export const BrElement: BrComponent = forwardRef(
-  <Component extends ElementType = 'div'>(
-    props: BrElementProps<Component>,
-    ref: BrRef<Component>
-  ) => {
-    const { as: Component = 'div', children, ...rest } = props
-    return (
-      <Component {...rest} ref={ref}>
-        {children}
-      </Component>
-    )
-  }
-)
+export const BrElement: BrComponent = forwardRef(function BrElement<
+  Component extends ElementType = 'div'
+>(props: BrElementProps<Component>, ref?: BrElementProps<Component>['ref']) {
+  const { as: Component = 'div', children, ...rest } = props
+  return (
+    <Component {...rest} ref={ref}>
+      {children}
+    </Component>
+  )
+})

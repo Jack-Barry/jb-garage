@@ -1,6 +1,6 @@
 import { Decorator } from '@storybook/react'
 
-export default function linkToBootstrapDocs(href: string, text?: string): Decorator {
+export function linkToBootstrapDocs(href: string, text?: string): Decorator {
   return function (Story, Context) {
     return (
       <div className="d-flex flex-column gap-2">
