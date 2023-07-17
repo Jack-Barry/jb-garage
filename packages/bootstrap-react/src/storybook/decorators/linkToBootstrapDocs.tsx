@@ -1,3 +1,4 @@
+import { BrElement } from '@jb-garage/bootstrap-react/components/utils/BrElement'
 import { Decorator } from '@storybook/react'
 
 export function linkToBootstrapDocs(href: string, text?: string): Decorator {
@@ -9,7 +10,7 @@ export function linkToBootstrapDocs(href: string, text?: string): Decorator {
             Bootstrap Docs: {text || Context.name}
           </a>
         </div>
-        <hr className="mt-0" />
+        <BrElement as="hr" brMargin={{ top: 0 }} />
         <Story />
       </div>
     )

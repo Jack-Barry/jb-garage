@@ -7,6 +7,7 @@ import Popover from './Popover'
 import PopoverBody from './PopoverBody'
 import PopoverHeader from './PopoverHeader'
 import { usePopover } from './usePopover'
+import { BrElement } from '../../utils/BrElement'
 
 const meta: Meta<typeof Popover> = {
   component: Popover,
@@ -21,7 +22,7 @@ export const BaseExample: StoryFn<typeof Popover> = () => {
   const popover = usePopover()
 
   return (
-    <div className="py-5">
+    <BrElement brPadding={{ y: 5 }}>
       <Button {...popover.referenceProps} className="btn-lg btn-danger">
         Click to toggle popover
       </Button>
@@ -29,7 +30,7 @@ export const BaseExample: StoryFn<typeof Popover> = () => {
         <PopoverHeader as="h3">Popover Header</PopoverHeader>
         <PopoverBody>Popover body</PopoverBody>
       </Popover>
-    </div>
+    </BrElement>
   )
 }
 
@@ -40,7 +41,7 @@ export const FourDirections: StoryFn = () => {
   const popoverLeft = usePopover({ floatingOptions: { placement: 'left' } })
 
   return (
-    <div className="d-flex gap-2 py-5">
+    <BrElement brPadding={{ y: 5 }} className="d-flex gap-2">
       <Button {...popoverTop.referenceProps} className="btn-secondary">
         Popover on top
       </Button>
@@ -65,7 +66,7 @@ export const FourDirections: StoryFn = () => {
       <Popover popover={popoverLeft}>
         <PopoverBody>Left popover</PopoverBody>
       </Popover>
-    </div>
+    </BrElement>
   )
 }
 FourDirections.decorators = [

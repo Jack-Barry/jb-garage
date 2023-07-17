@@ -40,47 +40,41 @@ export type ColProps<T extends ElementType = 'div'> = BrElementProps<T> & {
    */
   as?: T
   /** Number of columns to span across */
-  colSize?: ColSpan
-  /** Number of columns to span across below xs breakpoint */
-  colXs?: ColSpan | boolean
+  brCols?: ColSpan
   /** Number of columns to span across above sm breakpoint */
-  colSm?: ColSpan | boolean
+  brColsSm?: ColSpan | boolean
   /** Number of columns to span across above md breakpoint */
-  colMd?: ColSpan | boolean
+  brColsMd?: ColSpan | boolean
   /** Number of columns to span across above lg breakpoint */
-  colLg?: ColSpan | boolean
+  brColsLg?: ColSpan | boolean
   /** Number of columns to span across above xl breakpoint */
-  colXl?: ColSpan | boolean
+  brColsXl?: ColSpan | boolean
   /** Number of columns to span across above xxl breakpoint */
-  colXxl?: ColSpan | boolean
+  brColsXxl?: ColSpan | boolean
   /** Order number or position for the column */
-  colOrder?: ColOrder
-  /** Order number or position below xs breakpoint */
-  colOrderXs?: ColOrder
+  brColOrder?: ColOrder
   /** Order number or position above sm breakpoint */
-  colOrderSm?: ColOrder
+  brColOrderSm?: ColOrder
   /** Order number or position above md breakpoint */
-  colOrderMd?: ColOrder
+  brColOrderMd?: ColOrder
   /** Order number or position above lg breakpoint */
-  colOrderLg?: ColOrder
+  brColOrderLg?: ColOrder
   /** Order number or position above xl breakpoint */
-  colOrderXl?: ColOrder
+  brColOrderXl?: ColOrder
   /** Order number or position above xxl breakpoint */
-  colOrderXxl?: ColOrder
+  brColOrderXxl?: ColOrder
   /** Size of offset */
-  colOffset?: ColOffset
-  /** Offset size below xs breakpoint */
-  colOffsetXs?: ColOffset
+  brColOffset?: ColOffset
   /** Offset size above sm breakpoint */
-  colOffsetSm?: ColOffset
+  brColOffsetSm?: ColOffset
   /** Offset size above md breakpoint */
-  colOffsetMd?: ColOffset
+  brColOffsetMd?: ColOffset
   /** Offset size above lg breakpoint */
-  colOffsetLg?: ColOffset
+  brColOffsetLg?: ColOffset
   /** Offset size above xl breakpoint */
-  colOffsetXl?: ColOffset
+  brColOffsetXl?: ColOffset
   /** Offset size above xxl breakpoint */
-  colOffsetXxl?: ColOffset
+  brColOffsetXxl?: ColOffset
 }
 
 /** [Col]() */
@@ -89,27 +83,24 @@ export default function Col<T extends ElementType = 'div'>(props: ColProps<T>) {
     as = 'div' as ElementType,
     children,
     className,
-    colSize,
-    colXs,
-    colSm,
-    colMd,
-    colLg,
-    colXl,
-    colXxl,
-    colOrder,
-    colOrderXs,
-    colOrderSm,
-    colOrderMd,
-    colOrderLg,
-    colOrderXl,
-    colOrderXxl,
-    colOffset,
-    colOffsetXs,
-    colOffsetSm,
-    colOffsetMd,
-    colOffsetLg,
-    colOffsetXl,
-    colOffsetXxl,
+    brCols,
+    brColsSm,
+    brColsMd,
+    brColsLg,
+    brColsXl,
+    brColsXxl,
+    brColOrder,
+    brColOrderSm,
+    brColOrderMd,
+    brColOrderLg,
+    brColOrderXl,
+    brColOrderXxl,
+    brColOffset,
+    brColOffsetSm,
+    brColOffsetMd,
+    brColOffsetLg,
+    brColOffsetXl,
+    brColOffsetXxl,
     ...rest
   } = props
 
@@ -118,34 +109,30 @@ export default function Col<T extends ElementType = 'div'>(props: ColProps<T>) {
       as={as}
       className={classNames(
         {
-          col: !colSize && !colXs && !colSm && !colMd && !colLg && !colXl && !colXxl,
-          [`col-${colSize}`]: !!colSize,
-          [`col-${colXs}`]: typeof colXs !== 'boolean' && !!colXs,
-          'col-xs': typeof colXs === 'boolean' && !!colXs,
-          [`col-sm-${colSm}`]: typeof colSm !== 'boolean' && !!colSm,
-          'col-sm': typeof colSm === 'boolean' && !!colSm,
-          [`col-md-${colMd}`]: typeof colMd !== 'boolean' && !!colMd,
-          'col-md': typeof colMd === 'boolean' && !!colMd,
-          [`col-lg-${colLg}`]: typeof colLg !== 'boolean' && !!colLg,
-          'col-lg': typeof colLg === 'boolean' && !!colLg,
-          [`col-xl-${colXl}`]: typeof colXl !== 'boolean' && !!colXl,
-          'col-xl': typeof colXl === 'boolean' && !!colXl,
-          [`col-xxl-${colXxl}`]: typeof colXxl !== 'boolean' && !!colXxl,
-          'col-xxl': typeof colXxl === 'boolean' && !!colXxl,
-          [`order-${colOrder}`]: !!colOrder,
-          [`order-${colOrderXs}`]: !!colOrderXs,
-          [`order-sm-${colOrderSm}`]: !!colOrderSm,
-          [`order-md-${colOrderMd}`]: !!colOrderMd,
-          [`order-lg-${colOrderLg}`]: !!colOrderLg,
-          [`order-xl-${colOrderXl}`]: !!colOrderXl,
-          [`order-xxl-${colOrderXxl}`]: !!colOrderXxl,
-          [`offset-${colOffset}`]: typeof colOffset !== 'undefined',
-          [`offset-${colOffsetXs}`]: typeof colOffsetXs !== 'undefined',
-          [`offset-sm-${colOffsetSm}`]: typeof colOffsetSm !== 'undefined',
-          [`offset-md-${colOffsetMd}`]: typeof colOffsetMd !== 'undefined',
-          [`offset-lg-${colOffsetLg}`]: typeof colOffsetLg !== 'undefined',
-          [`offset-xl-${colOffsetXl}`]: typeof colOffsetXl !== 'undefined',
-          [`offset-xxl-${colOffsetXxl}`]: typeof colOffsetXxl !== 'undefined'
+          col: !brCols && !brColsSm && !brColsMd && !brColsLg && !brColsXl && !brColsXxl,
+          [`col-${brCols}`]: !!brCols,
+          [`col-sm-${brColsSm}`]: typeof brColsSm !== 'boolean' && !!brColsSm,
+          'col-sm': typeof brColsSm === 'boolean' && !!brColsSm,
+          [`col-md-${brColsMd}`]: typeof brColsMd !== 'boolean' && !!brColsMd,
+          'col-md': typeof brColsMd === 'boolean' && !!brColsMd,
+          [`col-lg-${brColsLg}`]: typeof brColsLg !== 'boolean' && !!brColsLg,
+          'col-lg': typeof brColsLg === 'boolean' && !!brColsLg,
+          [`col-xl-${brColsXl}`]: typeof brColsXl !== 'boolean' && !!brColsXl,
+          'col-xl': typeof brColsXl === 'boolean' && !!brColsXl,
+          [`col-xxl-${brColsXxl}`]: typeof brColsXxl !== 'boolean' && !!brColsXxl,
+          'col-xxl': typeof brColsXxl === 'boolean' && !!brColsXxl,
+          [`order-${brColOrder}`]: !!brColOrder,
+          [`order-sm-${brColOrderSm}`]: !!brColOrderSm,
+          [`order-md-${brColOrderMd}`]: !!brColOrderMd,
+          [`order-lg-${brColOrderLg}`]: !!brColOrderLg,
+          [`order-xl-${brColOrderXl}`]: !!brColOrderXl,
+          [`order-xxl-${brColOrderXxl}`]: !!brColOrderXxl,
+          [`offset-${brColOffset}`]: typeof brColOffset !== 'undefined',
+          [`offset-sm-${brColOffsetSm}`]: typeof brColOffsetSm !== 'undefined',
+          [`offset-md-${brColOffsetMd}`]: typeof brColOffsetMd !== 'undefined',
+          [`offset-lg-${brColOffsetLg}`]: typeof brColOffsetLg !== 'undefined',
+          [`offset-xl-${brColOffsetXl}`]: typeof brColOffsetXl !== 'undefined',
+          [`offset-xxl-${brColOffsetXxl}`]: typeof brColOffsetXxl !== 'undefined'
         },
         className
       )}

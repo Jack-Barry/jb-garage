@@ -8,6 +8,9 @@ import Badge from '../Badge/Badge'
 import FormCheck from '../../forms/FormCheck/FormCheck'
 import { MouseEvent } from 'react'
 import { useTabs } from '@jb-garage/bootstrap-react/hooks/useTabs'
+import { BrElement } from '../../utils/BrElement'
+import Row from '../../layout/grid/Row'
+import Col from '../../layout/columns/Col'
 
 const meta: Meta<typeof ListGroup> = {
   component: ListGroup,
@@ -138,24 +141,24 @@ export const Numbered: StoryFn = () => {
       <hr />
       <ListGroup as="ol" className="list-group-numbered">
         <ListGroupItem className="d-flex justify-content-between align-items-start">
-          <div className="ms-2 me-auto">
+          <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
-          </div>
+          </BrElement>
           <Badge className="bg-primary rounded-pill">14</Badge>
         </ListGroupItem>
         <ListGroupItem className="d-flex justify-content-between align-items-start">
-          <div className="ms-2 me-auto">
+          <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
-          </div>
+          </BrElement>
           <Badge className="bg-primary rounded-pill">14</Badge>
         </ListGroupItem>
         <ListGroupItem className="d-flex justify-content-between align-items-start">
-          <div className="ms-2 me-auto">
+          <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
-          </div>
+          </BrElement>
           <Badge className="bg-primary rounded-pill">14</Badge>
         </ListGroupItem>
       </ListGroup>
@@ -301,26 +304,38 @@ export const CustomContent: StoryFn = () => {
     <ListGroup as="div">
       <ListGroupItem as="a" href="#" className="list-group-item-action active" aria-current="true">
         <div className="d-flex w-100 justify-content-between">
-          <h5 className="mb-1">List group item heading</h5>
+          <BrElement as="h5" brMargin={{ bottom: 1 }}>
+            List group item heading
+          </BrElement>
           <small>3 days ago</small>
         </div>
-        <p className="mb-1">Some placeholder content in a paragraph.</p>
+        <BrElement as="p" brMargin={{ bottom: 1 }}>
+          Some placeholder content in a paragraph.
+        </BrElement>
         <small>And some small print.</small>
       </ListGroupItem>
       <ListGroupItem as="a" href="#" className="list-group-item-action">
         <div className="d-flex w-100 justify-content-between">
-          <h5 className="mb-1">List group item heading</h5>
+          <BrElement as="h5" brMargin={{ bottom: 1 }}>
+            List group item heading
+          </BrElement>
           <small className="text-body-secondary">3 days ago</small>
         </div>
-        <p className="mb-1">Some placeholder content in a paragraph.</p>
+        <BrElement as="p" brMargin={{ bottom: 1 }}>
+          Some placeholder content in a paragraph.
+        </BrElement>
         <small className="text-body-secondary">And some muted small print.</small>
       </ListGroupItem>
       <ListGroupItem as="a" href="#" className="list-group-item-action">
         <div className="d-flex w-100 justify-content-between">
-          <h5 className="mb-1">List group item heading</h5>
+          <BrElement as="h5" brMargin={{ bottom: 1 }}>
+            List group item heading
+          </BrElement>
           <small className="text-body-secondary">3 days ago</small>
         </div>
-        <p className="mb-1">Some placeholder content in a paragraph.</p>
+        <BrElement as="p" brMargin={{ bottom: 1 }}>
+          Some placeholder content in a paragraph.
+        </BrElement>
         <small className="text-body-secondary">And some muted small print.</small>
       </ListGroupItem>
     </ListGroup>
@@ -429,8 +444,8 @@ export const JavascriptBehavior: StoryFn = () => {
 
   return (
     <div>
-      <div className="row">
-        <div className="col-4">
+      <Row>
+        <Col brCols={4}>
           <ListGroup id="list-tab" role="tablist">
             <ListGroupItem
               as="a"
@@ -481,8 +496,8 @@ export const JavascriptBehavior: StoryFn = () => {
               Settings
             </ListGroupItem>
           </ListGroup>
-        </div>
-        <div className="col-8">
+        </Col>
+        <Col brCols={8}>
           <div className="tab-content" id="nav-tabContent">
             <div
               className="tab-pane fade"
@@ -517,8 +532,8 @@ export const JavascriptBehavior: StoryFn = () => {
               Settings Stuff
             </div>
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </div>
   )
 }

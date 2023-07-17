@@ -7,6 +7,8 @@ import Button from '../Button/Button'
 import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
 import CardBody from '../Card/CardBody'
 import Card from '../Card/Card'
+import Row from '../../layout/grid/Row'
+import Col from '../../layout/columns/Col'
 
 const meta: Meta<typeof Collapse> = {
   component: Collapse,
@@ -76,8 +78,8 @@ export const MultipleTogglesAndTargets: StoryFn = () => {
           Toggle both elements
         </Button>
       </div>
-      <div className="row" style={{ maxWidth: '700px' }}>
-        <div className="col">
+      <Row style={{ maxWidth: '700px' }}>
+        <Col>
           <Collapse collapse={collapse1}>
             <Card>
               <CardBody>
@@ -87,8 +89,8 @@ export const MultipleTogglesAndTargets: StoryFn = () => {
               </CardBody>
             </Card>
           </Collapse>
-        </div>
-        <div className="col">
+        </Col>
+        <Col>
           <Collapse collapse={collapse2}>
             <Card>
               <CardBody>
@@ -98,8 +100,8 @@ export const MultipleTogglesAndTargets: StoryFn = () => {
               </CardBody>
             </Card>
           </Collapse>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { useThemeSwitcher } from '@jb-garage/theme-switcher-react'
-import Button from '@jb-garage/bootstrap-react/components/Button'
-import Placeholder from '@jb-garage/bootstrap-react/components/Placeholder'
+import Button from '@jb-garage/bootstrap-react/components/components/Button/Button'
+import Placeholder from '@jb-garage/bootstrap-react/components/components/Placeholder/Placeholder'
 import { useEffect, useState } from 'react'
 
 export default function ThemeSwitcherButton() {
@@ -28,7 +28,7 @@ export default function ThemeSwitcherButton() {
 
           setTheme(nextTheme)
         }}
-        className="p-0"
+        brPadding={0}
         title="Click once to change theme. Double click to follow system theme setting"
       >
         {nextTheme === 'dark' ? '🌚' : '🌞'}

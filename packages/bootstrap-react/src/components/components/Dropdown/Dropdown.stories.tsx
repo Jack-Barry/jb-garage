@@ -12,6 +12,7 @@ import Button from '../Button/Button'
 import DropdownHeader from './DropdownHeader'
 import FormInputWithLabel from '../../forms/FormInput/FormInputWithLabel'
 import FormCheck from '../../forms/FormCheck/FormCheck'
+import { BrElement } from '../../utils/BrElement'
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
@@ -504,9 +505,11 @@ export const Dividers: StoryFn = () => {
 export const Text: StoryFn = () => {
   return (
     <div className="bd-example">
-      <DropdownMenu className="p-3 text-body-secondary" style={{ maxWidth: '200px' }}>
+      <DropdownMenu brPadding={3} className="text-body-secondary" style={{ maxWidth: '200px' }}>
         <p>Some example text that's free-flowing within the dropdown menu.</p>
-        <p className="mb-0">And this is more example text.</p>
+        <BrElement as="p" brMargin={{ bottom: 0 }}>
+          And this is more example text.
+        </BrElement>
       </DropdownMenu>
     </div>
   )
@@ -516,10 +519,10 @@ export const Forms: StoryFn = () => {
   return (
     <div className="bd-example">
       <DropdownMenu>
-        <form className="px-4 py-3">
+        <BrElement as="form" brPadding={{ x: 4, y: 3 }}>
           <FormInputWithLabel
             wrapperProps={{
-              className: 'mb-3'
+              brMargin: { bottom: 3 }
             }}
             inputProps={{
               type: 'email',
@@ -532,7 +535,7 @@ export const Forms: StoryFn = () => {
           />
           <FormInputWithLabel
             wrapperProps={{
-              className: 'mb-3'
+              brMargin: { bottom: 3 }
             }}
             inputProps={{
               type: 'password',
@@ -545,7 +548,7 @@ export const Forms: StoryFn = () => {
           />
           <FormCheck
             wrapperProps={{
-              className: 'mb-3'
+              brMargin: { bottom: 3 }
             }}
             inputProps={{ id: 'dropdownCheck1' }}
             labelProps={{ children: 'Remember me' }}
@@ -553,7 +556,7 @@ export const Forms: StoryFn = () => {
           <Button type="submit" className="btn-primary">
             Sign in
           </Button>
-        </form>
+        </BrElement>
         <DropdownDivider />
         <DropdownItem wrapperAs={null} href="#">
           New around here? Sign up
@@ -566,10 +569,10 @@ export const Forms: StoryFn = () => {
       <div style={{ minHeight: '320px' }}>
         <Dropdown>
           <DropdownToggle className="btn-primary">Dropdown form</DropdownToggle>
-          <DropdownMenu as="form" className="p-4">
+          <DropdownMenu as="form" brPadding={4}>
             <FormInputWithLabel
               wrapperProps={{
-                className: 'mb-3'
+                brMargin: { bottom: 3 }
               }}
               inputProps={{
                 type: 'email',
@@ -582,7 +585,7 @@ export const Forms: StoryFn = () => {
             />
             <FormInputWithLabel
               wrapperProps={{
-                className: 'mb-3'
+                brMargin: { bottom: 3 }
               }}
               inputProps={{
                 type: 'password',
@@ -595,7 +598,7 @@ export const Forms: StoryFn = () => {
             />
             <FormCheck
               wrapperProps={{
-                className: 'mb-3'
+                brMargin: { bottom: 3 }
               }}
               inputProps={{ id: 'dropdownCheck2' }}
               labelProps={{ children: 'Remember me' }}
@@ -621,7 +624,7 @@ export const DropdownOptions: StoryFn = () => {
   return (
     <div className="bd-example" style={{ minHeight: '220px' }}>
       <div className="d-flex">
-        <Dropdown className="me-1">
+        <Dropdown brMargin={{ end: 1 }}>
           <DropdownToggle className="btn-secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
             Offset
           </DropdownToggle>
