@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type FormLabelProps = Omit<BrElementProps<'label'>, 'as'> & {
+export type LabelProps = Omit<BrElementProps<'label'>, 'as'> & {
   /** Apply Bootstrap column form label styling */
   brColFormLabel?: boolean
 }
 
-export default function FormLabel(props: FormLabelProps) {
+export default function Label(props: LabelProps) {
   const { brColFormLabel, children, className, ...rest } = props
 
   return (

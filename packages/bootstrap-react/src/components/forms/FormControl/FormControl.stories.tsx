@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/react'
 import FormControl from './FormControl'
-import FormInput from './FormInput'
-import FormLabel from './FormLabel'
+import Input from './Input'
+import Label from './Label'
 import Row from '../../layout/grid/Row'
 import Col from '../../layout/columns/Col'
 import Button from '../../components/Button/Button'
@@ -41,9 +41,9 @@ export const BaseExample: StoryFn = () => {
 export const Sizing: StoryFn = () => {
   return (
     <div className="bd-example">
-      <FormInput placeholder=".form-control-lg" aria-label=".form-control-lg example" brLg />
-      <FormInput placeholder="Default input" aria-label="default input example" />
-      <FormInput placeholder=".form-control-sm" aria-label=".form-control-sm example" brSm />
+      <Input placeholder=".form-control-lg" aria-label=".form-control-lg example" brLg />
+      <Input placeholder="Default input" aria-label="default input example" />
+      <Input placeholder=".form-control-sm" aria-label=".form-control-sm example" brSm />
     </div>
   )
 }
@@ -52,8 +52,8 @@ export const FormTextStory: StoryFn = () => {
   return (
     <div className="bd-example">
       <div>
-        <FormLabel htmlFor="inputPassword5">Password</FormLabel>
-        <FormInput type="password" id="inputPassword5" aria-labelledby="passwordHelpBlock" />
+        <Label htmlFor="inputPassword5">Password</Label>
+        <Input type="password" id="inputPassword5" aria-labelledby="passwordHelpBlock" />
         <FormText id="passwordHelpBlock">
           Your password must be 8-20 characters long, contain letters and numbers, and must not
           contain spaces, special characters, or emoji.
@@ -63,12 +63,12 @@ export const FormTextStory: StoryFn = () => {
       <div>
         <Row brRowGutter={3} className="align-items-center">
           <Col brCols="auto">
-            <FormLabel htmlFor="inputPassword6" brColFormLabel>
+            <Label htmlFor="inputPassword6" brColFormLabel>
               Password
-            </FormLabel>
+            </Label>
           </Col>
           <Col brCols="auto">
-            <FormInput type="password" id="inputPassword6" aria-labelledby="passwordHelpInline" />
+            <Input type="password" id="inputPassword6" aria-labelledby="passwordHelpInline" />
           </Col>
           <Col brCols="auto">
             <FormText as="span" id="passwordHelpInline">
@@ -85,8 +85,8 @@ FormTextStory.storyName = 'Form Text'
 export const Disabled: StoryFn = () => {
   return (
     <div className="bd-example">
-      <FormInput placeholder="Disabled input" aria-label="Disabled input example" disabled />
-      <FormInput
+      <Input placeholder="Disabled input" aria-label="Disabled input example" disabled />
+      <Input
         placeholder="Disabled readonly input"
         aria-label="Disabled input example"
         disabled
@@ -97,7 +97,7 @@ export const Disabled: StoryFn = () => {
 }
 
 export const ReadOnly: StoryFn = () => {
-  return <FormInput value="Readonly input here..." aria-label="readonly input example" readOnly />
+  return <Input value="Readonly input here..." aria-label="readonly input example" readOnly />
 }
 
 export const ReadOnlyPlainText: StoryFn = () => {
@@ -105,19 +105,19 @@ export const ReadOnlyPlainText: StoryFn = () => {
     <div className="bd-example">
       <div>
         <Row brMargin={{ bottom: 3 }}>
-          <FormLabel htmlFor="staticEmail" brColFormLabel className="col-sm-2">
+          <Label htmlFor="staticEmail" brColFormLabel className="col-sm-2">
             Email
-          </FormLabel>
+          </Label>
           <Col brColsSm={10}>
-            <FormInput id="staticEmail" value="email@example.com" readOnly brPlainText />
+            <Input id="staticEmail" value="email@example.com" readOnly brPlainText />
           </Col>
         </Row>
         <Row brMargin={{ bottom: 3 }}>
-          <FormLabel htmlFor="inputPassword" brColFormLabel className="col-sm-2">
+          <Label htmlFor="inputPassword" brColFormLabel className="col-sm-2">
             Password
-          </FormLabel>
+          </Label>
           <Col brColsSm={10}>
-            <FormInput id="inputPassword" />
+            <Input id="inputPassword" />
           </Col>
         </Row>
       </div>
@@ -125,22 +125,16 @@ export const ReadOnlyPlainText: StoryFn = () => {
       <div>
         <Row as="form" brRowGutter={3}>
           <Col brCols="auto">
-            <FormLabel htmlFor="staticEmail2" className="visually-hidden">
+            <Label htmlFor="staticEmail2" className="visually-hidden">
               Email
-            </FormLabel>
-            <FormInput
-              type="text"
-              readOnly
-              brPlainText
-              id="staticEmail2"
-              value="email@example.com"
-            />
+            </Label>
+            <Input type="text" readOnly brPlainText id="staticEmail2" value="email@example.com" />
           </Col>
           <Col brCols="auto">
-            <FormLabel htmlFor="inputPassword2" className="visually-hidden">
+            <Label htmlFor="inputPassword2" className="visually-hidden">
               Password
-            </FormLabel>
-            <FormInput type="password" id="inputPassword2" placeholder="Password" />
+            </Label>
+            <Input type="password" id="inputPassword2" placeholder="Password" />
           </Col>
           <Col brCols="auto">
             <Button type="submit" brMargin={{ bottom: 3 }} className="btn-primary">
@@ -192,8 +186,8 @@ export const FiltInput: StoryFn = () => {
 export const Color: StoryFn = () => {
   return (
     <div className="bd-example">
-      <FormLabel htmlFor="exampleColorInput">Color picker</FormLabel>
-      <FormInput type="color" id="exampleColorInput" value="#563d7c" title="Choose your color" />
+      <Label htmlFor="exampleColorInput">Color picker</Label>
+      <Input type="color" id="exampleColorInput" value="#563d7c" title="Choose your color" />
     </div>
   )
 }
@@ -201,8 +195,8 @@ export const Color: StoryFn = () => {
 export const Datalists: StoryFn = () => {
   return (
     <div className="bd-example">
-      <FormLabel htmlFor="exampleDataList">Datalist example</FormLabel>
-      <FormInput list="datalistOptions" id="exampleDataList" placeholder="Type to search..." />
+      <Label htmlFor="exampleDataList">Datalist example</Label>
+      <Input list="datalistOptions" id="exampleDataList" placeholder="Type to search..." />
       <datalist id="datalistOptions">
         <option value="San Francisco" />
         <option value="New York" />

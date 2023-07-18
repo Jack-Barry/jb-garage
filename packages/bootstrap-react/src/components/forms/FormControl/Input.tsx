@@ -2,8 +2,8 @@ import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ReactNode, forwardRef } from 'react'
 
-export type FormInputElementType = 'input' | 'textarea'
-export type FormInputProps<T extends FormInputElementType> = Omit<BrElementProps<T>, 'type'> & {
+export type InputElementType = 'input' | 'textarea'
+export type InputProps<T extends InputElementType> = Omit<BrElementProps<T>, 'type'> & {
   /**
    * Type of `input`
    *
@@ -47,15 +47,16 @@ export type FormInputProps<T extends FormInputElementType> = Omit<BrElementProps
   brColor?: boolean
 }
 
-type FormInputComponent = <Component extends FormInputElementType = 'input'>(
-  props: FormInputProps<Component>
+type InputComponent = <Component extends InputElementType = 'input'>(
+  props: InputProps<Component>
 ) => ReactNode | null
 
-const FormInput: FormInputComponent = forwardRef(function FormInput<
-  T extends FormInputElementType = 'input'
->(props: FormInputProps<T>, ref?: FormInputProps<T>['ref']) {
+const Input: InputComponent = forwardRef(function FormInput<T extends InputElementType = 'input'>(
+  props: InputProps<T>,
+  ref?: InputProps<T>['ref']
+) {
   const {
-    as = 'input' as FormInputElementType,
+    as = 'input' as InputElementType,
     type = 'text',
     children,
     className,
@@ -87,4 +88,4 @@ const FormInput: FormInputComponent = forwardRef(function FormInput<
     </BrElement>
   )
 })
-export default FormInput
+export default Input
