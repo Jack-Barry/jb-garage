@@ -6,6 +6,7 @@
   "targets": {
     "clean:repos": {
       "executor": "nx:run-commands",
+      "outputs": ["packages/bootstrap-react/repos/bootstrap"],
       "options": {
         "cwd": "packages/bootstrap-react",
         "commands": ["shx rm -rf repos/bootstrap"]

@@ -1,12 +1,12 @@
 import { ElementType } from 'react'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import FormInput, { FormInputProps } from './FormInput'
-import FormInputLabel, { FormInputLabelProps } from './FormInputLabel'
+import FormInput, { FormInputElementType, FormInputProps } from './FormInput'
+import FormLabel, { FormLabelProps } from './FormLabel'
 
-type FormInputWithLabelProps<T extends ElementType> = {
-  wrapperProps?: BrElementProps<T>
-  inputProps?: FormInputProps
-  labelProps?: FormInputLabelProps
+type FormControlProps<Wrapper extends ElementType, Input extends FormInputElementType> = {
+  wrapperProps?: BrElementProps<Wrapper>
+  inputProps?: FormInputProps<Input>
+  labelProps?: FormLabelProps
 }
 
 /**
@@ -18,16 +18,21 @@ type FormInputWithLabelProps<T extends ElementType> = {
  *   `htmlFor` prop to match. You can override `htmlFor` in the `label` if needed
  *   by explicitly providing `labelProps.htmlFor`
  */
-export default function FormInputWithLabel<T extends ElementType = 'div'>(
-  props: FormInputWithLabelProps<T>
-) {
-  const { wrapperProps = {} as BrElementProps<T>, inputProps = {}, labelProps = {} } = props
+export default function FormControl<
+  Wrapper extends ElementType = 'div',
+  Input extends FormInputElementType = 'input'
+>(props: FormControlProps<Wrapper, Input>) {
+  const {
+    wrapperProps = {} as BrElementProps<Wrapper>,
+    inputProps = {} as FormInputProps<Input>,
+    labelProps = {}
+  } = props
   const { as, className: wrapperClassName, ...wrapperRest } = wrapperProps
   const { htmlFor = inputProps.id, ...labelPropsRest } = labelProps
 
   return (
     <BrElement as={as as ElementType} className={wrapperClassName} {...wrapperRest}>
-      <FormInputLabel htmlFor={htmlFor} {...labelPropsRest} />
+      <FormLabel htmlFor={htmlFor} {...labelPropsRest} />
       <FormInput {...inputProps} />
     </BrElement>
   )

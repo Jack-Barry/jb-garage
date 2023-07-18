@@ -10,7 +10,7 @@ import DropdownDivider from './DropdownDivider'
 import DropdownToggle from './DropdownToggle'
 import Button from '../Button/Button'
 import DropdownHeader from './DropdownHeader'
-import FormInputWithLabel from '../../forms/FormInput/FormInputWithLabel'
+import FormControl from '../../forms/FormControl/FormControl'
 import FormCheck from '../../forms/FormCheck/FormCheck'
 import { BrElement } from '../../utils/BrElement'
 
@@ -520,7 +520,7 @@ export const Forms: StoryFn = () => {
     <div className="bd-example">
       <DropdownMenu>
         <BrElement as="form" brPadding={{ x: 4, y: 3 }}>
-          <FormInputWithLabel
+          <FormControl
             wrapperProps={{
               brMargin: { bottom: 3 }
             }}
@@ -533,7 +533,7 @@ export const Forms: StoryFn = () => {
               children: 'Email address'
             }}
           />
-          <FormInputWithLabel
+          <FormControl
             wrapperProps={{
               brMargin: { bottom: 3 }
             }}
@@ -570,7 +570,7 @@ export const Forms: StoryFn = () => {
         <Dropdown>
           <DropdownToggle className="btn-primary">Dropdown form</DropdownToggle>
           <DropdownMenu as="form" brPadding={4}>
-            <FormInputWithLabel
+            <FormControl
               wrapperProps={{
                 brMargin: { bottom: 3 }
               }}
@@ -583,7 +583,7 @@ export const Forms: StoryFn = () => {
                 children: 'Email address'
               }}
             />
-            <FormInputWithLabel
+            <FormControl
               wrapperProps={{
                 brMargin: { bottom: 3 }
               }}
