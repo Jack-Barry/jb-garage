@@ -45,6 +45,13 @@ export type InputProps<T extends InputElementType> = Omit<BrElementProps<T>, 'ty
    *   explicitly if needed
    */
   brColor?: boolean
+  /**
+   * Should render Bootstrap range input styles
+   *
+   * If `type` is `"range"`, this defaults to `true`, but you may set it to `false`
+   *   explicitly if needed
+   */
+  brRange?: boolean
 }
 
 type InputComponent = <Component extends InputElementType = 'input'>(
@@ -64,8 +71,11 @@ const Input: InputComponent = forwardRef(function FormInput<T extends InputEleme
     brSm,
     brPlainText,
     brColor,
+    brRange,
     ...rest
   } = props
+
+  const isRange = brRange ?? type === 'range'
 
   return (
     <BrElement
@@ -73,12 +83,13 @@ const Input: InputComponent = forwardRef(function FormInput<T extends InputEleme
       type={type}
       ref={ref}
       className={classNames(
-        'form-control',
         {
+          'form-control': !isRange,
           'form-control-lg': brLg,
           'form-control-sm': brSm,
           'form-control-plaintext': brPlainText,
-          'form-control-color': brColor ?? type === 'color'
+          'form-control-color': brColor ?? type === 'color',
+          'form-range': isRange
         },
         className
       )}
