@@ -11,7 +11,7 @@ export type DropdownToggleProps<T extends ButtonElementType> = ButtonProps<T> & 
    */
   as?: T
   /** Toggle is part of a split button */
-  isSplit?: boolean
+  brSplitToggle?: boolean
 }
 
 type DropdownToggleComponent = <Component extends ButtonElementType = 'button'>(
@@ -24,14 +24,18 @@ type DropdownToggleComponent = <Component extends ButtonElementType = 'button'>(
 const DropdownToggle: DropdownToggleComponent = forwardRef(function DropdownToggle<
   T extends ButtonElementType = 'button'
 >(props: DropdownToggleProps<T>, ref?: DropdownToggleProps<T>['ref']) {
-  const { as = 'button' as ButtonElementType, isSplit, children, className, ...rest } = props
+  const { as = 'button' as ButtonElementType, brSplitToggle, children, className, ...rest } = props
 
   return (
     <Button
       as={as}
       ref={ref}
       data-bs-toggle="dropdown"
-      className={classNames('dropdown-toggle', { 'dropdown-toggle-split': isSplit }, className)}
+      className={classNames(
+        'dropdown-toggle',
+        { 'dropdown-toggle-split': brSplitToggle },
+        className
+      )}
       {...rest}
     >
       {children}

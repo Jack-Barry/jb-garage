@@ -112,7 +112,12 @@ export const SplitButton: StoryFn = () => {
     <div className="bd-example" style={{ minHeight: '150px' }}>
       <ButtonGroup>
         <Button className="btn-primary">Action</Button>
-        <DropdownToggle className="btn-primary" ref={dropdownRef} aria-expanded={isOpen} isSplit />
+        <DropdownToggle
+          className="btn-primary"
+          ref={dropdownRef}
+          aria-expanded={isOpen}
+          brSplitToggle
+        />
         <DropdownMenu>
           <DropdownItem href="#">Action</DropdownItem>
           <DropdownItem href="#">Another action</DropdownItem>
@@ -140,7 +145,7 @@ function DropdownSplitButtonExample(props: { variant: string }) {
         className={`btn-${variant}`}
         ref={dropdownRef}
         aria-expanded={isOpen}
-        isSplit
+        brSplitToggle
       />
       <DropdownMenu>
         <DropdownItem href="#">Action</DropdownItem>
@@ -175,7 +180,7 @@ export const Sizing: StoryFn = () => {
             className="btn-secondary btn-lg"
             ref={dropdownRef2}
             aria-expanded={isOpen2}
-            isSplit
+            brSplitToggle
           />
           <DropdownMenuWithSeparatedLink />
         </ButtonGroup>
@@ -197,7 +202,7 @@ export const Sizing: StoryFn = () => {
             className="btn-secondary btn-sm"
             ref={dropdownRef4}
             aria-expanded={isOpen4}
-            isSplit
+            brSplitToggle
           />
           <DropdownMenuWithSeparatedLink />
         </ButtonGroup>
@@ -259,7 +264,7 @@ export const DirectionsDropup: StoryFn = () => {
           className="btn-secondary"
           ref={dropdownRef2}
           aria-expanded={isOpen2}
-          isSplit
+          brSplitToggle
         />
         <DropdownMenu>
           <DropdownItem href="#">Action</DropdownItem>
@@ -312,7 +317,7 @@ export const Dropend: StoryFn = () => {
           className="btn-secondary"
           ref={dropdownRef2}
           aria-expanded={isOpen2}
-          isSplit
+          brSplitToggle
         />
         <DropdownMenu>
           <DropdownItem href="#">Action</DropdownItem>
@@ -345,7 +350,7 @@ export const Dropstart: StoryFn = () => {
           className="btn-secondary"
           ref={dropdownRef2}
           aria-expanded={isOpen2}
-          isSplit
+          brSplitToggle
         />
         <DropdownMenu>
           <DropdownItem href="#">Action</DropdownItem>
@@ -640,7 +645,7 @@ export const DropdownOptions: StoryFn = () => {
             className="btn-secondary"
             ref={dropdownRef2}
             aria-expanded={isOpen2}
-            isSplit
+            brSplitToggle
           />
           <DropdownMenu>
             <DropdownItem href="#">Action</DropdownItem>
