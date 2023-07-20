@@ -1,17 +1,17 @@
 import classNames from 'classnames'
-import { ElementType } from 'react'
+import { ElementType, PropsWithChildren } from 'react'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 import FormCheckInput, { FormCheckInputProps } from './FormCheckInput'
 import FormCheckLabel, { FormCheckLabelProps } from './FormCheckLabel'
 
-type FormCheckProps<T extends ElementType> = {
-  wrapperProps?: BrElementProps<T> & {
+type FormCheckProps<T extends ElementType> = PropsWithChildren<{
+  wrapperProps?: Omit<BrElementProps<T>, 'children'> & {
     /** Apply Bootstrap disabled styling */
     brDisabled?: boolean
   }
   inputProps?: FormCheckInputProps
   labelProps?: FormCheckLabelProps
-}
+}>
 
 /**
  * [Form Check](https://getbootstrap.com/docs/5.3/forms/checks-radios/#checks)
@@ -26,7 +26,8 @@ export default function FormCheck<T extends ElementType = 'div'>(props: FormChec
   const {
     wrapperProps = {} as Required<FormCheckProps<T>>['wrapperProps'],
     inputProps = {},
-    labelProps = {}
+    labelProps = {},
+    children
   } = props
   const {
     as = 'div' as ElementType,
@@ -44,6 +45,7 @@ export default function FormCheck<T extends ElementType = 'div'>(props: FormChec
     >
       <FormCheckInput {...inputProps} />
       <FormCheckLabel htmlFor={htmlFor} {...labelPropsRest} />
+      {children}
     </BrElement>
   )
 }

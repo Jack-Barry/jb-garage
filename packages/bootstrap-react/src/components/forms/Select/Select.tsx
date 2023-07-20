@@ -7,6 +7,10 @@ export type SelectProps = Omit<BrElementProps<'select'>, 'as'> & {
   brSm?: boolean
   /** Render select with Bootstrap's large styling */
   brLg?: boolean
+  /** Form input value is invalid */
+  brIsInvalid?: boolean
+  /** Form input value is valid */
+  brIsValid?: boolean
 }
 
 type SelectComponent = (props: SelectProps) => ReactNode | null
@@ -15,7 +19,7 @@ const Select: SelectComponent = forwardRef(function Select(
   props: SelectProps,
   ref?: SelectProps['ref']
 ) {
-  const { children, className, brSm, brLg, ...rest } = props
+  const { children, className, brSm, brLg, brIsInvalid, brIsValid, ...rest } = props
 
   return (
     <BrElement
@@ -25,7 +29,9 @@ const Select: SelectComponent = forwardRef(function Select(
         'form-select',
         {
           'form-select-sm': brSm,
-          'form-select-lg': brLg
+          'form-select-lg': brLg,
+          'is-invalid': brIsInvalid,
+          'is-valid': brIsValid
         },
         className
       )}

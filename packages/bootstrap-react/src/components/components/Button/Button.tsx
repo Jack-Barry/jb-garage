@@ -30,7 +30,7 @@ const Button: ButtonComponent = forwardRef(function Button<T extends ButtonEleme
 ) {
   const { as = 'button' as ButtonElementType, type, className, children, ...rest } = props
   /** By default, set type to match button. Avoids `form` gotchas */
-  const usedType = type || as === 'button' ? 'button' : undefined
+  const usedType = type || (as === 'button' ? 'button' : undefined)
 
   return (
     <BrElement

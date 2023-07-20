@@ -54,6 +54,8 @@ export type InputProps<T extends InputElementType> = Omit<BrElementProps<T>, 'ty
   brRange?: boolean
   /** Form input value is invalid */
   brIsInvalid?: boolean
+  /** Form input value is valid */
+  brIsValid?: boolean
 }
 
 type InputComponent = <Component extends InputElementType = 'input'>(
@@ -75,6 +77,7 @@ const Input: InputComponent = forwardRef(function FormInput<T extends InputEleme
     brColor,
     brRange,
     brIsInvalid,
+    brIsValid,
     ...rest
   } = props
 
@@ -93,7 +96,8 @@ const Input: InputComponent = forwardRef(function FormInput<T extends InputEleme
           'form-control-plaintext': brPlainText,
           'form-control-color': brColor ?? type === 'color',
           'form-range': isRange,
-          'is-invalid': brIsInvalid
+          'is-invalid': brIsInvalid,
+          'is-valid': brIsValid
         },
         className
       )}
