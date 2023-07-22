@@ -70,44 +70,25 @@ export function useDropdown<T extends HTMLElement = HTMLButtonElement>(
   })
 
   function beginAnimation() {
-    console.log('beginAnimation')
     setIsAnimating(true)
   }
 
   function endHide() {
-    console.log('endHide')
     setIsAnimating(false)
     setIsOpen(false)
   }
 
   function endShown() {
-    console.log('endShown')
     setHasBeenShown(true)
     setIsAnimating(false)
     setIsOpen(true)
   }
 
-  // function toggle() {
-  //   setIsOpen((prev) => !prev)
-  // }
-
   return {
     /** Ref that can be used for the dropdown toggle element */
     dropdownRef,
-    /**
-     * Function to toggle the visibility of the collapsible element
-     *
-     * If you want to explicitly set the visibility, use `setIsVisible` instead
-     */
-    // toggle,
     /** Dropdown is currently open */
     isOpen,
-    /**
-     * Function to explicitly set the open state of the dropdown element
-     *
-     * If you just want to toggle the open state, use `toggle` instead
-     */
-    // setIsOpen,
     /**
      * Dropdown has been opened at least once
      *
