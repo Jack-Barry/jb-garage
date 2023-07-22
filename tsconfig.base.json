@@ -20,8 +20,12 @@
       "@jb-garage/style-dictionary/*": ["dist/packages/style-dictionary/*"],
       "@jb-garage/theme-switcher": ["packages/theme-switcher/src/index.ts"],
       "@jb-garage/theme-switcher-react": ["packages/theme-switcher-react/src/index.ts"],
-      "@jb-garage/utils-generic": ["packages/utils-generic/src/index.ts"]
+      "@jb-garage/utils-generic": ["packages/utils-generic/src/index.ts"],
+      "@jb-garage/utils-node": ["packages/utils-node/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "ts-node": {
+    "experimentalSpecifierResolution": "node"
+  }
 }
