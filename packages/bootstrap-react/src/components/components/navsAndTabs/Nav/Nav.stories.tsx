@@ -10,6 +10,7 @@ import DropdownDivider from '../../Dropdown/DropdownDivider'
 import { useTabs } from '@jb-garage/bootstrap-react/hooks/useTabs'
 import { MouseEvent } from 'react'
 import classNames from 'classnames'
+import { BrElement } from '@jb-garage/bootstrap-react/components/utils/BrElement'
 
 const meta: Meta<typeof Nav> = {
   title: 'Navs & Tabs/Nav',
@@ -469,9 +470,9 @@ function JavascriptBehaviorExample(props: { idPrefix: string; className: string 
   }
 
   return (
-    <div
+    <BrElement
+      brDisplay={idPrefix === 'v-pills' ? 'flex' : undefined}
       className={classNames({
-        'd-flex': idPrefix === 'v-pills',
         'align-items-start': idPrefix === 'v-pills'
       })}
     >
@@ -640,6 +641,6 @@ function JavascriptBehaviorExample(props: { idPrefix: string; className: string 
           </div>
         )}
       </div>
-    </div>
+    </BrElement>
   )
 }

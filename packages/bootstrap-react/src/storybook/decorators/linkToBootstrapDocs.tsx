@@ -4,7 +4,7 @@ import { Decorator } from '@storybook/react'
 export function linkToBootstrapDocs(href: string, text?: string): Decorator {
   return function (Story, Context) {
     return (
-      <div className="d-flex flex-column gap-2">
+      <BrElement brDisplay="flex" className="flex-column gap-2">
         <div className="text-end">
           <a href={href} target="_blank">
             Bootstrap Docs: {text || Context.name}
@@ -12,7 +12,7 @@ export function linkToBootstrapDocs(href: string, text?: string): Decorator {
         </div>
         <BrElement as="hr" brMargin={{ top: 0 }} />
         <Story />
-      </div>
+      </BrElement>
     )
   }
 }

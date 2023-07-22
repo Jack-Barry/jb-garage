@@ -20,6 +20,10 @@ const config: StorybookConfig = {
     {
       titlePrefix: 'Components',
       directory: '../src/components/components'
+    },
+    {
+      titlePrefix: 'Utilities',
+      directory: '../src/components/utils'
     }
   ],
   addons: [

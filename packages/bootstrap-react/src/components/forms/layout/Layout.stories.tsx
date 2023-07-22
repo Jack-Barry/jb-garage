@@ -225,13 +225,13 @@ export const AutoSizing: StoryFn = () => {
     <div>
       <Row as="form" brRowGutter={{ x: 3, y: 2 }} className="align-items-center">
         <Col brCols="auto">
-          <Label className="visually-hidden" htmlFor="autoSizingInput">
+          <Label brVisuallyHidden htmlFor="autoSizingInput">
             Name
           </Label>
           <Input id="autoSizingInput" placeholder="Jane Doe" />
         </Col>
         <Col brCols="auto">
-          <Label className="visually-hidden" htmlFor="autoSizingInputGroup">
+          <Label brVisuallyHidden htmlFor="autoSizingInputGroup">
             Username
           </Label>
           <InputGroup>
@@ -240,7 +240,7 @@ export const AutoSizing: StoryFn = () => {
           </InputGroup>
         </Col>
         <Col brCols="auto">
-          <Label className="visually-hidden" htmlFor="autoSizingSelect">
+          <Label brVisuallyHidden htmlFor="autoSizingSelect">
             Preference
           </Label>
           <Select id="autoSizingSelect">
@@ -265,13 +265,13 @@ export const AutoSizing: StoryFn = () => {
       <hr />
       <Row as="form" brRowGutter={{ x: 3, y: 2 }} className="align-items-center">
         <Col brColsSm={3}>
-          <Label className="visually-hidden" htmlFor="specificSizeInputName">
+          <Label brVisuallyHidden htmlFor="specificSizeInputName">
             Name
           </Label>
           <Input type="text" id="specificSizeInputName" placeholder="Jane Doe" />
         </Col>
         <Col brColsSm={3}>
-          <Label className="visually-hidden" htmlFor="specificSizeInputGroupUsername">
+          <Label brVisuallyHidden htmlFor="specificSizeInputGroupUsername">
             Username
           </Label>
           <InputGroup>
@@ -280,7 +280,7 @@ export const AutoSizing: StoryFn = () => {
           </InputGroup>
         </Col>
         <Col brColsSm={3}>
-          <Label className="visually-hidden" htmlFor="specificSizeSelect">
+          <Label brVisuallyHidden htmlFor="specificSizeSelect">
             Preference
           </Label>
           <Select id="specificSizeSelect">
@@ -310,7 +310,7 @@ export const InlineForms: StoryFn = () => {
   return (
     <Row as="form" brRowColsLg="auto" brRowGutter={3} className="align-items-center">
       <Col brCols={12}>
-        <Label className="visually-hidden" htmlFor="inlineFormInputGroupUsername">
+        <Label brVisuallyHidden htmlFor="inlineFormInputGroupUsername">
           Username
         </Label>
         <InputGroup>
@@ -320,7 +320,7 @@ export const InlineForms: StoryFn = () => {
       </Col>
 
       <Col brCols={12}>
-        <Label className="visually-hidden" htmlFor="inlineFormSelectPref">
+        <Label brVisuallyHidden htmlFor="inlineFormSelectPref">
           Preference
         </Label>
         <Select id="inlineFormSelectPref">

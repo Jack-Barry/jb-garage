@@ -9,6 +9,7 @@ import CardBody from '../Card/CardBody'
 import Card from '../Card/Card'
 import Row from '../../layout/grid/Row'
 import Col from '../../layout/columns/Col'
+import { BrElement } from '../../utils/BrElement'
 
 const meta: Meta<typeof Collapse> = {
   component: Collapse,
@@ -66,7 +67,7 @@ export const MultipleTogglesAndTargets: StoryFn = () => {
 
   return (
     <div style={{ minHeight: '200px' }}>
-      <div className="d-flex gap-2">
+      <BrElement brDisplay="flex" className="gap-2">
         <Button onClick={collapse1.toggle}>Toggle first element</Button>
         <Button onClick={collapse2.toggle}>Toggle second element</Button>
         <Button
@@ -77,7 +78,7 @@ export const MultipleTogglesAndTargets: StoryFn = () => {
         >
           Toggle both elements
         </Button>
-      </div>
+      </BrElement>
       <Row style={{ maxWidth: '700px' }}>
         <Col>
           <Collapse collapse={collapse1}>

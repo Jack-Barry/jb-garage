@@ -533,7 +533,7 @@ function BackgroundAndColorExample(props: { variant: string }) {
 export const CardStylesBorder: StoryFn = () => {
   return (
     <div>
-      <Card brMargin={{ bottom: 3 }} className="border-primary" style={{ maxWidth: '18rem' }}>
+      <Card brMargin={{ bottom: 3 }} brBorder={{ color: 'primary' }} style={{ maxWidth: '18rem' }}>
         <CardHeader>Header</CardHeader>
         <CardBody className="text-primary">
           <CardTitle>Primary card title</CardTitle>
@@ -558,7 +558,7 @@ function BorderExample(props: { variant: string; cardBodyClass?: string }) {
   const { variant, cardBodyClass } = props
 
   return (
-    <Card brMargin={{ bottom: 3 }} className={`border-${variant}`} style={{ maxWidth: '18rem' }}>
+    <Card brMargin={{ bottom: 3 }} brBorder={{ color: variant }} style={{ maxWidth: '18rem' }}>
       <CardHeader>Header</CardHeader>
       <CardBody className={cardBodyClass}>
         <CardTitle>
@@ -577,8 +577,10 @@ function BorderExample(props: { variant: string; cardBodyClass?: string }) {
 export const CardStylesMixinsUtilities: StoryFn = () => {
   return (
     <div>
-      <Card brMargin={{ bottom: 3 }} className="border-success" style={{ maxWidth: '18rem' }}>
-        <CardHeader className="bg-transparent border-success">Header</CardHeader>
+      <Card brMargin={{ bottom: 3 }} brBorder={{ color: 'success' }} style={{ maxWidth: '18rem' }}>
+        <CardHeader brBorder={{ color: 'success' }} className="bg-transparent">
+          Header
+        </CardHeader>
         <CardBody className="text-success">
           <CardTitle>Success card title</CardTitle>
           <CardText>
@@ -586,7 +588,9 @@ export const CardStylesMixinsUtilities: StoryFn = () => {
             content.
           </CardText>
         </CardBody>
-        <CardFooter className="bg-transparent border-success">Footer</CardFooter>
+        <CardFooter brBorder={{ color: 'success' }} className="bg-transparent">
+          Footer
+        </CardFooter>
       </Card>
     </div>
   )

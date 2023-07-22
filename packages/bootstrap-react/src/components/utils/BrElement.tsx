@@ -53,10 +53,74 @@ export type BrSpacingConfig = {
 
 /** Prop that can be accepted by `BrElement` for a Bootstrap spacing utility */
 export type BrSpacingProp = BrSpacingValue | BrSpacingConfig
+/** Prop that can be accepted by `BrElement` for Bootstrap position utilities */
+export type BrPositionProp = 'relative' | 'absolute'
+/** Prop that can be accepted by `BrElement` for Bootstrap display utilities */
+export type BrDisplayProp =
+  | 'none'
+  | 'inline'
+  | 'inline-block'
+  | 'block'
+  | 'grid'
+  | 'inline-grid'
+  | 'table'
+  | 'table-cell'
+  | 'table-row'
+  | 'flex'
+  | 'inline-flex'
+  | string
+/** Value that can be used to configure a border width */
+type BrBorderConfigValue =
+  | 0
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | '0'
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | string
+  | number
+/** Value that can be used to configure an individual border */
+type BrBorderConfig = {
+  width?: BrBorderConfigValue
+  rounded?: 'circle' | 'pill' | boolean | BrBorderConfigValue
+}
+/** Prop that can be accepted by `BrElement` for Bootstrap border utilities */
+type BrBorderProp =
+  | boolean
+  | (BrBorderConfig & {
+      color?: string
+      opacity?: 10 | 25 | 50 | 75 | number
+      top?: boolean | BrBorderConfig
+      end?: boolean | BrBorderConfig
+      bottom?: boolean | BrBorderConfig
+      start?: boolean | BrBorderConfig
+    })
 
-export type BrPropsWithAs<Component extends ElementType | undefined> = {
-  /** Type of HTML element to render */
-  as?: Component
+export type BrElementCommonProps = {
+  /** Position to apply to the element using Bootstrap class */
+  brPosition?: BrPositionProp
+  /** Display type to apply to the element using Bootstrap class */
+  brDisplay?: BrDisplayProp
+  /** Display type to apply to the element above the sm breakpoint using Bootstrap class */
+  brDisplaySm?: BrDisplayProp
+  /** Display type to apply to the element above the md breakpoint using Bootstrap class */
+  brDisplayMd?: BrDisplayProp
+  /** Display type to apply to the element above the lg breakpoint using Bootstrap class */
+  brDisplayLg?: BrDisplayProp
+  /** Display type to apply to the element above the xl breakpoint using Bootstrap class */
+  brDisplayXl?: BrDisplayProp
+  /** Display type to apply to the element above the xxl breakpoint using Bootstrap class */
+  brDisplayXxl?: BrDisplayProp
+  /** Display type to apply to the element for print using Bootstrap class */
+  brDisplayPrint?: BrDisplayProp
+  /** Element should be visually hidden (but present for screen readers) */
+  brVisuallyHidden?: boolean
   /** Margin to apply to the element using Bootstrap classes */
   brMargin?: BrSpacingProp
   /** Margin to apply to the element above the sm breakpoint using Bootstrap classes */
@@ -93,7 +157,14 @@ export type BrPropsWithAs<Component extends ElementType | undefined> = {
   brPaddingXl?: BrSpacingProp
   /** Padding to apply to the element above the xxl breakpoint using Bootstrap classes */
   brPaddingXxl?: BrSpacingProp
+  /** Border to apply to the element using Bootstrap classes */
+  brBorder?: BrBorderProp
 }
+
+export type BrPropsWithAs<Component extends ElementType | undefined> = {
+  /** Type of HTML element to render */
+  as?: Component
+} & BrElementCommonProps
 
 /**
  * Utility type allows us to omit common props that are uniquely handled by a
@@ -113,7 +184,8 @@ export type BrElementProps<Component extends ElementType, Props = object> =
   PropsWithChildren<Props & BrPropsWithAs<Component>> & {
     // Allow for `ref` to be provided
     ref?: BrRef<Component>
-  } & Omit<ComponentPropsWithoutRef<Component>, BrPropsToOmit<Component, Props>> // Remove duplicated props, prefer types specified by `Props` type}
+    // Remove duplicated props, prefer types specified by `Props` type
+  } & Omit<ComponentPropsWithoutRef<Component>, BrPropsToOmit<Component, Props>>
 
 /** Type for component function that will accept `BrElementProps` */
 type BrComponent = <Component extends ElementType = 'div'>(
@@ -135,6 +207,15 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     as: Component = 'div',
     className,
     children,
+    brPosition,
+    brDisplay,
+    brDisplaySm,
+    brDisplayMd,
+    brDisplayLg,
+    brDisplayXl,
+    brDisplayXxl,
+    brDisplayPrint,
+    brVisuallyHidden,
     brMargin,
     brMarginSm,
     brMarginMd,
@@ -153,12 +234,24 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brPaddingLg,
     brPaddingXl,
     brPaddingXxl,
+    brBorder,
     ...rest
   } = props
   return (
     <Component
       ref={ref}
       className={classNames(className, {
+        [`position-${brPosition}`]: !!brPosition,
+        ...brDisplayClasses({
+          brDisplay,
+          brDisplaySm,
+          brDisplayMd,
+          brDisplayLg,
+          brDisplayXl,
+          brDisplayXxl,
+          brDisplayPrint
+        }),
+        'visually-hidden': brVisuallyHidden,
         ...brSpacingClasses({ prefix: 'm' }, brMargin),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'sm-' }, brMarginSm),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'md-' }, brMarginMd),
@@ -176,7 +269,8 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'md-' }, brPaddingMd),
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'lg-' }, brPaddingLg),
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xl-' }, brPaddingXl),
-        ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xxl-' }, brPaddingXxl)
+        ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xxl-' }, brPaddingXxl),
+        ...brBorderClasses(brBorder)
       })}
       {...rest}
     >
@@ -219,16 +313,97 @@ function brSpacingClasses(
   }
 }
 
-export function isSpacingConfig(value?: BrSpacingProp): value is BrSpacingConfig {
-  return (
-    typeof (value as BrSpacingConfig)?.x !== 'undefined' ||
-    typeof (value as BrSpacingConfig)?.y !== 'undefined' ||
-    typeof (value as BrSpacingConfig)?.top !== 'undefined' ||
-    typeof (value as BrSpacingConfig)?.bottom !== 'undefined' ||
-    typeof (value as BrSpacingConfig)?.start !== 'undefined' ||
-    typeof (value as BrSpacingConfig)?.end !== 'undefined'
-  )
-}
-export function isSpacingValue(value?: BrSpacingProp): value is BrSpacingValue {
+function isSpacingValue(value?: BrSpacingProp): value is BrSpacingValue {
   return typeof value === 'string' || typeof value === 'number'
+}
+
+function brDisplayClasses(
+  props: Pick<
+    BrElementCommonProps,
+    | 'brDisplay'
+    | 'brDisplaySm'
+    | 'brDisplayMd'
+    | 'brDisplayLg'
+    | 'brDisplayXl'
+    | 'brDisplayXxl'
+    | 'brDisplayPrint'
+  >
+) {
+  const {
+    brDisplay,
+    brDisplaySm,
+    brDisplayMd,
+    brDisplayLg,
+    brDisplayXl,
+    brDisplayXxl,
+    brDisplayPrint
+  } = props
+
+  return {
+    [`d-${brDisplay}`]: !!brDisplay,
+    [`d-sm-${brDisplaySm}`]: !!brDisplaySm,
+    [`d-md-${brDisplayMd}`]: !!brDisplayMd,
+    [`d-lg-${brDisplayLg}`]: !!brDisplayLg,
+    [`d-xl-${brDisplayXl}`]: !!brDisplayXl,
+    [`d-xxl-${brDisplayXxl}`]: !!brDisplayXxl,
+    [`d-print-${brDisplayPrint}`]: !!brDisplayPrint
+  }
+}
+
+function brBorderClasses(prop: BrBorderProp = {}) {
+  if (typeof prop === 'boolean') {
+    return { border: true, 'border-0': !prop }
+  }
+
+  const { width, rounded, opacity, color, ...rest } = prop
+  const hasWidth = typeof width !== 'undefined'
+  const hasRounded = typeof rounded !== 'undefined'
+  const hasOpacity = typeof opacity !== 'undefined'
+  const hasColor = typeof color !== 'undefined'
+  const hasDirectional = !!Object.keys(rest).length
+  if (!hasWidth && !hasRounded && !hasOpacity && !hasColor && !hasDirectional) {
+    return {}
+  }
+
+  const classes: Record<string, boolean> = {}
+
+  if (hasWidth) {
+    classes['border'] = true
+    classes[`border-${width}`] = true
+  }
+
+  if (hasRounded) {
+    classes[`rounded-${rounded}`] = typeof rounded !== 'boolean'
+    classes['rounded'] = typeof rounded === 'boolean'
+  }
+
+  if (hasOpacity) {
+    classes[`border-opacity-${opacity}`] = true
+  }
+
+  if (hasColor) {
+    classes['border'] = true
+    classes[`border-${color}`] = true
+  }
+
+  for (const [key, directionalProp] of Object.entries(rest)) {
+    if (typeof directionalProp === 'boolean') {
+      classes[`border-${key}`] = directionalProp
+      classes[`border-${key}-0`] = !directionalProp
+      classes['border'] = !directionalProp
+      continue
+    }
+
+    const { width: directionalWidth, rounded: directionalRounded } = directionalProp
+    if (typeof directionalWidth !== 'undefined') {
+      classes[`border-${key}-${directionalWidth}`] = true
+    }
+
+    if (typeof directionalRounded !== 'undefined') {
+      classes[`rounded-${key}-${directionalRounded}`] = typeof directionalRounded !== 'boolean'
+      classes[`rounded-${key}`] = typeof directionalRounded === 'boolean'
+    }
+  }
+
+  return classes
 }

@@ -140,21 +140,21 @@ export const Numbered: StoryFn = () => {
       </ListGroup>
       <hr />
       <ListGroup as="ol" className="list-group-numbered">
-        <ListGroupItem className="d-flex justify-content-between align-items-start">
+        <ListGroupItem brDisplay="flex" className="justify-content-between align-items-start">
           <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
           <Badge className="bg-primary rounded-pill">14</Badge>
         </ListGroupItem>
-        <ListGroupItem className="d-flex justify-content-between align-items-start">
+        <ListGroupItem brDisplay="flex" className="justify-content-between align-items-start">
           <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
           <Badge className="bg-primary rounded-pill">14</Badge>
         </ListGroupItem>
-        <ListGroupItem className="d-flex justify-content-between align-items-start">
+        <ListGroupItem brDisplay="flex" className="justify-content-between align-items-start">
           <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
@@ -282,15 +282,15 @@ VariantsForLinksAndButtons.decorators = [
 export const WithBadges: StoryFn = () => {
   return (
     <ListGroup>
-      <ListGroupItem className="d-flex justify-content-between align-items-center">
+      <ListGroupItem brDisplay="flex" className="justify-content-between align-items-center">
         A list item
         <Badge className="bg-primary rounded-pill">14</Badge>
       </ListGroupItem>
-      <ListGroupItem className="d-flex justify-content-between align-items-center">
+      <ListGroupItem brDisplay="flex" className="justify-content-between align-items-center">
         A second list item
         <Badge className="bg-primary rounded-pill">2</Badge>
       </ListGroupItem>
-      <ListGroupItem className="d-flex justify-content-between align-items-center">
+      <ListGroupItem brDisplay="flex" className="justify-content-between align-items-center">
         A third list item
         <Badge className="bg-primary rounded-pill">1</Badge>
       </ListGroupItem>
@@ -303,36 +303,36 @@ export const CustomContent: StoryFn = () => {
   return (
     <ListGroup as="div">
       <ListGroupItem as="a" href="#" className="list-group-item-action active" aria-current="true">
-        <div className="d-flex w-100 justify-content-between">
+        <BrElement brDisplay="flex" className="w-100 justify-content-between">
           <BrElement as="h5" brMargin={{ bottom: 1 }}>
             List group item heading
           </BrElement>
           <small>3 days ago</small>
-        </div>
+        </BrElement>
         <BrElement as="p" brMargin={{ bottom: 1 }}>
           Some placeholder content in a paragraph.
         </BrElement>
         <small>And some small print.</small>
       </ListGroupItem>
       <ListGroupItem as="a" href="#" className="list-group-item-action">
-        <div className="d-flex w-100 justify-content-between">
+        <BrElement brDisplay="flex" className="w-100 justify-content-between">
           <BrElement as="h5" brMargin={{ bottom: 1 }}>
             List group item heading
           </BrElement>
           <small className="text-body-secondary">3 days ago</small>
-        </div>
+        </BrElement>
         <BrElement as="p" brMargin={{ bottom: 1 }}>
           Some placeholder content in a paragraph.
         </BrElement>
         <small className="text-body-secondary">And some muted small print.</small>
       </ListGroupItem>
       <ListGroupItem as="a" href="#" className="list-group-item-action">
-        <div className="d-flex w-100 justify-content-between">
+        <BrElement brDisplay="flex" className="w-100 justify-content-between">
           <BrElement as="h5" brMargin={{ bottom: 1 }}>
             List group item heading
           </BrElement>
           <small className="text-body-secondary">3 days ago</small>
-        </div>
+        </BrElement>
         <BrElement as="p" brMargin={{ bottom: 1 }}>
           Some placeholder content in a paragraph.
         </BrElement>

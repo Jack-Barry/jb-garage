@@ -41,7 +41,7 @@ export const FourDirections: StoryFn = () => {
   const popoverLeft = usePopover({ floatingOptions: { placement: 'left' } })
 
   return (
-    <BrElement brPadding={{ y: 5 }} className="d-flex gap-2">
+    <BrElement brPadding={{ y: 5 }} brDisplay="flex" className="gap-2">
       <Button {...popoverTop.referenceProps} className="btn-secondary">
         Popover on top
       </Button>

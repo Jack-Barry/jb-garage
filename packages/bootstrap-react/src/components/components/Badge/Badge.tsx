@@ -22,7 +22,9 @@ export default function Badge<T extends ElementType>(props: BadgeProps<T>) {
   return (
     <BrElement
       as={as}
-      className={classNames('badge', className, { 'bg-secondary': !className?.includes('bg-') })}
+      className={classNames('badge', className, {
+        'bg-secondary': !className?.includes('bg-')
+      })}
       {...rest}
     >
       {children}

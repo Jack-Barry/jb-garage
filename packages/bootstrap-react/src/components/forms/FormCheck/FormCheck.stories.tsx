@@ -4,6 +4,7 @@ import { linkToBootstrapDocs } from '../../../storybook/decorators/linkToBootstr
 import FormCheck from './FormCheck'
 import FormCheckInput from './FormCheckInput'
 import FormCheckLabel from './FormCheckLabel'
+import { BrElement } from '../../utils/BrElement'
 
 const meta: Meta<typeof FormCheck> = {
   component: FormCheck,
@@ -298,7 +299,7 @@ ToggleButtons.decorators = [
 
 export const RadioToggleButtons: StoryFn = () => {
   return (
-    <div className="d-flex gap-1">
+    <BrElement brDisplay="flex" className="gap-1">
       <FormCheckInput
         type="radio"
         className="btn-check"
@@ -341,7 +342,7 @@ export const RadioToggleButtons: StoryFn = () => {
       <FormCheckLabel className="btn btn-secondary" htmlFor="option4">
         Radio
       </FormCheckLabel>
-    </div>
+    </BrElement>
   )
 }
 ToggleButtons.decorators = [
@@ -350,7 +351,7 @@ ToggleButtons.decorators = [
 
 export const OutlinedStyles: StoryFn = () => {
   return (
-    <div className="d-flex flex-column gap-1">
+    <BrElement brDisplay="flex" className="flex-column gap-1">
       <div>
         <FormCheckInput className="btn-check" id="btn-check-outlined" autoComplete="off" />
         <FormCheckLabel className="btn btn-outline-primary" htmlFor="btn-check-outlined">
@@ -368,7 +369,7 @@ export const OutlinedStyles: StoryFn = () => {
           Checked
         </FormCheckLabel>
       </div>
-      <div className="d-flex gap-1">
+      <BrElement brDisplay="flex" className="gap-1">
         <FormCheckInput
           type="radio"
           className="btn-check"
@@ -390,7 +391,7 @@ export const OutlinedStyles: StoryFn = () => {
         <FormCheckLabel className="btn btn-outline-danger" htmlFor="danger-outlined">
           Danger radio
         </FormCheckLabel>
-      </div>
-    </div>
+      </BrElement>
+    </BrElement>
   )
 }

@@ -628,7 +628,7 @@ export const DropdownOptions: StoryFn = () => {
 
   return (
     <div className="bd-example" style={{ minHeight: '220px' }}>
-      <div className="d-flex">
+      <BrElement brDisplay="flex">
         <Dropdown brMargin={{ end: 1 }}>
           <DropdownToggle className="btn-secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
             Offset
@@ -655,7 +655,7 @@ export const DropdownOptions: StoryFn = () => {
             <DropdownItem href="#">Separated link</DropdownItem>
           </DropdownMenu>
         </ButtonGroup>
-      </div>
+      </BrElement>
     </div>
   )
 }

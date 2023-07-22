@@ -288,7 +288,9 @@ export const SegmentedButtons: StoryFn = () => {
           className="btn-outline-secondary"
           aria-expanded={isOpen1}
         >
-          <span className="visually-hidden">Toggle Dropdown</span>
+          <BrElement as="span" brVisuallyHidden>
+            Toggle Dropdown
+          </BrElement>
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem href="#">Action</DropdownItem>
@@ -309,7 +311,9 @@ export const SegmentedButtons: StoryFn = () => {
           className="btn-outline-secondary"
           aria-expanded={isOpen2}
         >
-          <span className="visually-hidden">Toggle Dropdown</span>
+          <BrElement as="span" brVisuallyHidden>
+            Toggle Dropdown
+          </BrElement>
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
           <DropdownItem href="#">Action</DropdownItem>
