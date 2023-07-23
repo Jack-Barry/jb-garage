@@ -85,6 +85,8 @@ export type BrElementCommonProps = {
   brFlexXl?: BrFlexProp
   /** Flex styles to apply to the element above the xxl breakpoint using Bootstrap classes */
   brFlexXxl?: BrFlexProp
+  /** Theme to apply to the element using `bs-data-theme` attribute */
+  brTheme?: 'light' | 'dark' | string
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -167,6 +169,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brFlexLg,
     brFlexXl,
     brFlexXxl,
+    brTheme,
     ...rest
   } = props
   return (
@@ -212,6 +215,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
           brFlexXxl
         })
       })}
+      data-bs-theme={brTheme}
       {...rest}
     >
       {children}
