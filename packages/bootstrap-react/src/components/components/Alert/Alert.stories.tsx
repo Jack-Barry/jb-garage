@@ -55,7 +55,7 @@ export const LiveExample: StoryFn = () => {
           />
         </Alert>
       ))}
-      <Button className="btn-primary" id="liveAlertBtn" onClick={addAlert}>
+      <Button brVariant="primary" id="liveAlertBtn" onClick={addAlert}>
         Show live alert
       </Button>
     </div>

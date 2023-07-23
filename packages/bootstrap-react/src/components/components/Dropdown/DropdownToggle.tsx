@@ -1,9 +1,9 @@
 import classNames from 'classnames'
-import { ReactNode, forwardRef } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
-import Button, { ButtonElementType, ButtonProps } from '../Button/Button'
+import Button, { ButtonProps } from '../Button/Button'
 
-export type DropdownToggleProps<T extends ButtonElementType> = ButtonProps<T> & {
+export type DropdownToggleProps<T extends ElementType> = ButtonProps<T> & {
   /**
    * Type of HTML element to render
    *
@@ -14,7 +14,7 @@ export type DropdownToggleProps<T extends ButtonElementType> = ButtonProps<T> & 
   brSplitToggle?: boolean
 }
 
-type DropdownToggleComponent = <Component extends ButtonElementType = 'button'>(
+type DropdownToggleComponent = <Component extends ElementType = 'button'>(
   props: DropdownToggleProps<Component>
 ) => ReactNode | null
 
@@ -22,9 +22,9 @@ type DropdownToggleComponent = <Component extends ButtonElementType = 'button'>(
  * [DropdownToggle]()
  */
 const DropdownToggle: DropdownToggleComponent = forwardRef(function DropdownToggle<
-  T extends ButtonElementType = 'button'
+  T extends ElementType = 'button'
 >(props: DropdownToggleProps<T>, ref?: DropdownToggleProps<T>['ref']) {
-  const { as = 'button' as ButtonElementType, brSplitToggle, children, className, ...rest } = props
+  const { as = 'button' as ElementType, brSplitToggle, children, className, ...rest } = props
 
   return (
     <Button

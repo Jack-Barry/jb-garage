@@ -137,7 +137,7 @@ export const ReadOnlyPlainText: StoryFn = () => {
             <Input type="password" id="inputPassword2" placeholder="Password" />
           </Col>
           <Col brCols="auto">
-            <Button type="submit" brMargin={{ bottom: 3 }} className="btn-primary">
+            <Button type="submit" brMargin={{ bottom: 3 }} brVariant="primary">
               Confirm identity
             </Button>
           </Col>

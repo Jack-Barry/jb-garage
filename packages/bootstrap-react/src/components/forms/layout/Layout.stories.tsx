@@ -92,7 +92,7 @@ export const Gutters: StoryFn = () => {
           <FormCheck labelProps={{ children: 'Check me out' }} inputProps={{ id: 'gridCheck' }} />
         </Col>
         <Col brCols={12}>
-          <Button type="submit" className="btn-primary">
+          <Button type="submit" brVariant="primary">
             Sign in
           </Button>
         </Col>
@@ -154,7 +154,7 @@ export const HorizontalForm: StoryFn = () => {
           />
         </Col>
       </Row>
-      <Button type="submit" className="btn-primary">
+      <Button type="submit" brVariant="primary">
         Sign in
       </Button>
     </form>
@@ -257,7 +257,7 @@ export const AutoSizing: StoryFn = () => {
           />
         </Col>
         <Col brCols="auto">
-          <Button type="submit" className="btn-primary">
+          <Button type="submit" brVariant="primary">
             Submit
           </Button>
         </Col>
@@ -297,7 +297,7 @@ export const AutoSizing: StoryFn = () => {
           />
         </Col>
         <Col brCols="auto">
-          <Button type="submit" className="btn-primary">
+          <Button type="submit" brVariant="primary">
             Submit
           </Button>
         </Col>
@@ -339,7 +339,7 @@ export const InlineForms: StoryFn = () => {
       </Col>
 
       <Col brCols={12}>
-        <Button type="submit" className="btn-primary">
+        <Button type="submit" brVariant="primary">
           Submit
         </Button>
       </Col>

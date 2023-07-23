@@ -30,7 +30,7 @@ export const SingleButton: StoryFn = () => {
     <div>
       <div style={{ minHeight: '150px' }}>
         <Dropdown>
-          <DropdownToggle className="btn-secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+          <DropdownToggle brVariant="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
             Dropdown button
           </DropdownToggle>
           <DropdownMenu>
@@ -45,7 +45,7 @@ export const SingleButton: StoryFn = () => {
         <Dropdown>
           <DropdownToggle
             as="a"
-            className="btn btn-secondary"
+            brVariant="secondary"
             href="#"
             role="button"
             ref={dropdownRef2}
@@ -63,7 +63,7 @@ export const SingleButton: StoryFn = () => {
       <hr />
       <div className="bd-example" style={{ minHeight: '250px' }}>
         <ButtonGroup>
-          <DropdownToggle className="btn-primary" ref={dropdownRef3} aria-expanded={isOpen3}>
+          <DropdownToggle brVariant="primary" ref={dropdownRef3} aria-expanded={isOpen3}>
             Primary
           </DropdownToggle>
           <DropdownMenu>
@@ -91,7 +91,7 @@ function DropdownVariantExample(props: { variant: string }) {
 
   return (
     <ButtonGroup>
-      <DropdownToggle className={`btn-${variant}`} ref={dropdownRef} aria-expanded={isOpen}>
+      <DropdownToggle brVariant={variant} ref={dropdownRef} aria-expanded={isOpen}>
         {variant[0].toUpperCase() + variant.slice(1)}
       </DropdownToggle>
       <DropdownMenu>
@@ -111,9 +111,9 @@ export const SplitButton: StoryFn = () => {
   return (
     <div className="bd-example" style={{ minHeight: '150px' }}>
       <ButtonGroup>
-        <Button className="btn-primary">Action</Button>
+        <Button brVariant="primary">Action</Button>
         <DropdownToggle
-          className="btn-primary"
+          brVariant="primary"
           ref={dropdownRef}
           aria-expanded={isOpen}
           brSplitToggle
@@ -140,13 +140,8 @@ function DropdownSplitButtonExample(props: { variant: string }) {
 
   return (
     <ButtonGroup>
-      <Button className={`btn-${variant}`}>{variant[0].toUpperCase() + variant.slice(1)}</Button>
-      <DropdownToggle
-        className={`btn-${variant}`}
-        ref={dropdownRef}
-        aria-expanded={isOpen}
-        brSplitToggle
-      />
+      <Button brVariant={variant}>{variant[0].toUpperCase() + variant.slice(1)}</Button>
+      <DropdownToggle brVariant={variant} ref={dropdownRef} aria-expanded={isOpen} brSplitToggle />
       <DropdownMenu>
         <DropdownItem href="#">Action</DropdownItem>
         <DropdownItem href="#">Another action</DropdownItem>
@@ -165,19 +160,18 @@ export const Sizing: StoryFn = () => {
     <div>
       <div className="bd-example" style={{ minHeight: '250px' }}>
         <ButtonGroup>
-          <DropdownToggle
-            className="btn-secondary btn-lg"
-            ref={dropdownRef1}
-            aria-expanded={isOpen1}
-          >
+          <DropdownToggle brVariant="secondary" brLg ref={dropdownRef1} aria-expanded={isOpen1}>
             Large button
           </DropdownToggle>
           <DropdownMenuWithSeparatedLink />
         </ButtonGroup>
         <ButtonGroup>
-          <Button className="btn-secondary btn-lg">Large split button</Button>
+          <Button brVariant="secondary" brLg>
+            Large split button
+          </Button>
           <DropdownToggle
-            className="btn-secondary btn-lg"
+            brVariant="secondary"
+            brLg
             ref={dropdownRef2}
             aria-expanded={isOpen2}
             brSplitToggle
@@ -187,19 +181,18 @@ export const Sizing: StoryFn = () => {
       </div>
       <div className="bd-example" style={{ minHeight: '250px' }}>
         <ButtonGroup>
-          <DropdownToggle
-            className="btn-secondary btn-sm"
-            ref={dropdownRef3}
-            aria-expanded={isOpen3}
-          >
+          <DropdownToggle brVariant="secondary" brSm ref={dropdownRef3} aria-expanded={isOpen3}>
             Small button
           </DropdownToggle>
           <DropdownMenuWithSeparatedLink />
         </ButtonGroup>
         <ButtonGroup>
-          <Button className="btn-secondary btn-sm">Small split button</Button>
+          <Button brVariant="secondary" brSm>
+            Small split button
+          </Button>
           <DropdownToggle
-            className="btn-secondary btn-sm"
+            brVariant="secondary"
+            brSm
             ref={dropdownRef4}
             aria-expanded={isOpen4}
             brSplitToggle
@@ -229,7 +222,7 @@ export const DirectionsCentered: StoryFn = () => {
   return (
     <div style={{ minHeight: '150px' }}>
       <div className="dropdown-center">
-        <DropdownToggle className="btn-secondary" ref={dropdownRef} aria-expanded={isOpen}>
+        <DropdownToggle brVariant="secondary" ref={dropdownRef} aria-expanded={isOpen}>
           Centered dropdown
         </DropdownToggle>
         <DropdownMenu>
@@ -249,7 +242,7 @@ export const DirectionsDropup: StoryFn = () => {
   return (
     <div className="bd-example" style={{ paddingTop: '150px' }}>
       <ButtonGroup className="dropup">
-        <DropdownToggle className="btn-secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+        <DropdownToggle brVariant="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
           Dropup
         </DropdownToggle>
         <DropdownMenu>
@@ -259,9 +252,9 @@ export const DirectionsDropup: StoryFn = () => {
         </DropdownMenu>
       </ButtonGroup>
       <ButtonGroup className="dropup">
-        <Button className="btn-secondary">Split dropup</Button>
+        <Button brVariant="secondary">Split dropup</Button>
         <DropdownToggle
-          className="btn-secondary"
+          brVariant="secondary"
           ref={dropdownRef2}
           aria-expanded={isOpen2}
           brSplitToggle
@@ -282,7 +275,7 @@ export const DropupCentered: StoryFn = () => {
   return (
     <div style={{ paddingTop: '150px' }}>
       <div className="dropup dropdup-center">
-        <DropdownToggle className="btn-secondary" ref={dropdownRef} aria-expanded={isOpen}>
+        <DropdownToggle brVariant="secondary" ref={dropdownRef} aria-expanded={isOpen}>
           Centered dropup
         </DropdownToggle>
         <DropdownMenu>
@@ -302,7 +295,7 @@ export const Dropend: StoryFn = () => {
   return (
     <div className="bd-example" style={{ minHeight: '150px' }}>
       <ButtonGroup className="dropend">
-        <DropdownToggle className="btn-secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+        <DropdownToggle brVariant="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
           Dropend
         </DropdownToggle>
         <DropdownMenu>
@@ -312,9 +305,9 @@ export const Dropend: StoryFn = () => {
         </DropdownMenu>
       </ButtonGroup>
       <ButtonGroup className="dropend">
-        <Button className="btn-secondary">Split dropend</Button>
+        <Button brVariant="secondary">Split dropend</Button>
         <DropdownToggle
-          className="btn-secondary"
+          brVariant="secondary"
           ref={dropdownRef2}
           aria-expanded={isOpen2}
           brSplitToggle
@@ -336,7 +329,7 @@ export const Dropstart: StoryFn = () => {
   return (
     <div className="bd-example" style={{ paddingLeft: '150px', minHeight: '150px' }}>
       <ButtonGroup className="dropstart">
-        <DropdownToggle className="btn-secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+        <DropdownToggle brVariant="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
           Dropstart
         </DropdownToggle>
         <DropdownMenu>
@@ -347,7 +340,7 @@ export const Dropstart: StoryFn = () => {
       </ButtonGroup>
       <ButtonGroup className="dropstart">
         <DropdownToggle
-          className="btn-secondary"
+          brVariant="secondary"
           ref={dropdownRef2}
           aria-expanded={isOpen2}
           brSplitToggle
@@ -357,7 +350,7 @@ export const Dropstart: StoryFn = () => {
           <DropdownItem href="#">Action two</DropdownItem>
           <DropdownItem href="#">Action three</DropdownItem>
         </DropdownMenu>
-        <Button className="btn-secondary">Split dropstart</Button>
+        <Button brVariant="secondary">Split dropstart</Button>
       </ButtonGroup>
     </div>
   )
@@ -370,7 +363,7 @@ export const MenuItems: StoryFn = () => {
     <div className="bd-example">
       <div style={{ minHeight: '175px' }}>
         <Dropdown>
-          <DropdownToggle className="btn-secondary" ref={dropdownRef} aria-expanded={isOpen}>
+          <DropdownToggle brVariant="secondary" ref={dropdownRef} aria-expanded={isOpen}>
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -424,7 +417,7 @@ export const MenuAlignment: StoryFn = () => {
   return (
     <div className="bd-example" style={{ minHeight: '200px' }}>
       <ButtonGroup>
-        <DropdownToggle className="btn-secondary" ref={dropdownRef} aria-expanded={isOpen}>
+        <DropdownToggle brVariant="secondary" ref={dropdownRef} aria-expanded={isOpen}>
           Right-aligned menu example
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
@@ -445,7 +438,7 @@ export const ResponsiveAlignment: StoryFn = () => {
       <div style={{ minHeight: '200px' }}>
         <ButtonGroup>
           <DropdownToggle
-            className="btn-secondary"
+            brVariant="secondary"
             data-bs-display="static"
             ref={dropdownRef}
             aria-expanded={isOpen}
@@ -463,7 +456,7 @@ export const ResponsiveAlignment: StoryFn = () => {
       <div style={{ minHeight: '200px' }}>
         <ButtonGroup>
           <DropdownToggle
-            className="btn-secondary"
+            brVariant="secondary"
             data-bs-display="static"
             ref={dropdownRef}
             aria-expanded={isOpen}
@@ -558,7 +551,7 @@ export const Forms: StoryFn = () => {
             inputProps={{ id: 'dropdownCheck1' }}
             labelProps={{ children: 'Remember me' }}
           />
-          <Button type="submit" className="btn-primary">
+          <Button type="submit" brVariant="primary">
             Sign in
           </Button>
         </BrElement>
@@ -573,7 +566,7 @@ export const Forms: StoryFn = () => {
       <hr />
       <div style={{ minHeight: '320px' }}>
         <Dropdown>
-          <DropdownToggle className="btn-primary">Dropdown form</DropdownToggle>
+          <DropdownToggle brVariant="primary">Dropdown form</DropdownToggle>
           <DropdownMenu as="form" brPadding={4}>
             <FormControl
               wrapperProps={{
@@ -608,7 +601,7 @@ export const Forms: StoryFn = () => {
               inputProps={{ id: 'dropdownCheck2' }}
               labelProps={{ children: 'Remember me' }}
             />
-            <Button type="submit" className="btn-primary">
+            <Button type="submit" brVariant="primary">
               Sign in
             </Button>
           </DropdownMenu>
@@ -630,7 +623,7 @@ export const DropdownOptions: StoryFn = () => {
     <div className="bd-example" style={{ minHeight: '220px' }}>
       <BrElement brDisplay="flex">
         <Dropdown brMargin={{ end: 1 }}>
-          <DropdownToggle className="btn-secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+          <DropdownToggle brVariant="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
             Offset
           </DropdownToggle>
           <DropdownMenu>
@@ -640,9 +633,9 @@ export const DropdownOptions: StoryFn = () => {
           </DropdownMenu>
         </Dropdown>
         <ButtonGroup>
-          <Button className="btn-secondary">Reference</Button>
+          <Button brVariant="secondary">Reference</Button>
           <DropdownToggle
-            className="btn-secondary"
+            brVariant="secondary"
             ref={dropdownRef2}
             aria-expanded={isOpen2}
             brSplitToggle
@@ -677,7 +670,7 @@ export const AutoCloseBehavior: StoryFn = () => {
   return (
     <div className="bd-example" style={{ minHeight: '200px' }}>
       <ButtonGroup>
-        <DropdownToggle className="btn-secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+        <DropdownToggle brVariant="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
           Default dropdown
         </DropdownToggle>
         <DropdownMenu>
@@ -687,7 +680,7 @@ export const AutoCloseBehavior: StoryFn = () => {
         </DropdownMenu>
       </ButtonGroup>
       <ButtonGroup>
-        <DropdownToggle className="btn-secondary" ref={dropdownRef2} aria-expanded={isOpen2}>
+        <DropdownToggle brVariant="secondary" ref={dropdownRef2} aria-expanded={isOpen2}>
           Clickable inside
         </DropdownToggle>
         <DropdownMenu>
@@ -697,7 +690,7 @@ export const AutoCloseBehavior: StoryFn = () => {
         </DropdownMenu>
       </ButtonGroup>
       <ButtonGroup>
-        <DropdownToggle className="btn-secondary" ref={dropdownRef3} aria-expanded={isOpen3}>
+        <DropdownToggle brVariant="secondary" ref={dropdownRef3} aria-expanded={isOpen3}>
           Clickable outside
         </DropdownToggle>
         <DropdownMenu>
@@ -707,7 +700,7 @@ export const AutoCloseBehavior: StoryFn = () => {
         </DropdownMenu>
       </ButtonGroup>
       <ButtonGroup>
-        <DropdownToggle className="btn-secondary" ref={dropdownRef4} aria-expanded={isOpen4}>
+        <DropdownToggle brVariant="secondary" ref={dropdownRef4} aria-expanded={isOpen4}>
           Manual close
         </DropdownToggle>
         <DropdownMenu>

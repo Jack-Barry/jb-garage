@@ -49,7 +49,7 @@ export const BaseExample: StoryFn<typeof Card> = () => {
           Some quick example text to build on the card title and make up the bulk of the card's
           content.
         </CardText>
-        <Button as="a" href="#" className="btn btn-primary">
+        <Button as="a" href="#" brVariant="primary">
           Go somewhere
         </Button>
       </CardBody>
@@ -181,9 +181,9 @@ export const HeaderAndFooter: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <a href="#" className="btn btn-primary">
+          <Button as="a" href="#" brVariant="primary">
             Go somewhere
-          </a>
+          </Button>
         </CardBody>
       </Card>
       <hr />
@@ -206,9 +206,9 @@ export const HeaderAndFooter: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <a href="#" className="btn btn-primary">
+          <Button as="a" href="#" brVariant="primary">
             Go somewhere
-          </a>
+          </Button>
         </CardBody>
         <CardFooter className="text-body-secondary">2 days ago</CardFooter>
       </Card>
@@ -229,7 +229,7 @@ export const SizingUsingGridMarkup: StoryFn = () => {
             <CardText>
               With supporting text below as a natural lead-in to additional content.
             </CardText>
-            <Button as="a" href="#" className="btn btn-primary">
+            <Button as="a" href="#" brVariant="primary">
               Go somewhere
             </Button>
           </CardBody>
@@ -242,7 +242,7 @@ export const SizingUsingGridMarkup: StoryFn = () => {
             <CardText>
               With supporting text below as a natural lead-in to additional content.
             </CardText>
-            <Button as="a" href="#" className="btn btn-primary">
+            <Button as="a" href="#" brVariant="primary">
               Go somewhere
             </Button>
           </CardBody>
@@ -261,7 +261,7 @@ export const SizingUsingUtilities: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" className="btn btn-primary">
+          <Button as="a" href="#" brVariant="primary">
             Button
           </Button>
         </CardBody>
@@ -273,7 +273,7 @@ export const SizingUsingUtilities: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" className="btn btn-primary">
+          <Button as="a" href="#" brVariant="primary">
             Button
           </Button>
         </CardBody>
@@ -288,7 +288,7 @@ export const SizingUsingCustomCss: StoryFn = () => {
       <CardBody>
         <CardTitle>Special title treatment</CardTitle>
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-        <Button as="a" href="#" className="btn btn-primary">
+        <Button as="a" href="#" brVariant="primary">
           Go somewhere
         </Button>
       </CardBody>
@@ -305,7 +305,7 @@ export const TextAlignment: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" className="btn btn-primary">
+          <Button as="a" href="#" brVariant="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -316,7 +316,7 @@ export const TextAlignment: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" className="btn btn-primary">
+          <Button as="a" href="#" brVariant="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -327,7 +327,7 @@ export const TextAlignment: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" className="btn btn-primary">
+          <Button as="a" href="#" brVariant="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -360,7 +360,7 @@ export const Navigation: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" className="btn btn-primary">
+          <Button as="a" href="#" brVariant="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -387,7 +387,7 @@ export const Navigation: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" className="btn btn-primary">
+          <Button as="a" href="#" brVariant="primary">
             Go somewhere
           </Button>
         </CardBody>

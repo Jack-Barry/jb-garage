@@ -157,7 +157,7 @@ export const ButtonAddons: StoryFn = () => {
   return (
     <div>
       <InputGroup brMargin={{ bottom: 3 }}>
-        <Button className="btn-outline-secondary" id="button-addon1">
+        <Button brVariant="outline-secondary" id="button-addon1">
           Button
         </Button>
         <Input
@@ -173,14 +173,14 @@ export const ButtonAddons: StoryFn = () => {
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
         />
-        <Button className="btn-outline-secondary" id="button-addon2">
+        <Button brVariant="outline-secondary" id="button-addon2">
           Button
         </Button>
       </InputGroup>
 
       <InputGroup brMargin={{ bottom: 3 }}>
-        <Button className="btn-outline-secondary">Button</Button>
-        <Button className="btn-outline-secondary">Button</Button>
+        <Button brVariant="outline-secondary">Button</Button>
+        <Button brVariant="outline-secondary">Button</Button>
         <Input placeholder="" aria-label="Example text with two button addons" />
       </InputGroup>
 
@@ -189,8 +189,8 @@ export const ButtonAddons: StoryFn = () => {
           placeholder="Recipient's username"
           aria-label="Recipient's username with two button addons"
         />
-        <Button className="btn-outline-secondary">Button</Button>
-        <Button className="btn-outline-secondary">Button</Button>
+        <Button brVariant="outline-secondary">Button</Button>
+        <Button brVariant="outline-secondary">Button</Button>
       </InputGroup>
     </div>
   )
@@ -205,11 +205,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
   return (
     <div style={{ minHeight: '300px' }}>
       <InputGroup brMargin={{ bottom: 3 }}>
-        <DropdownToggle
-          ref={dropdownRef1}
-          className="btn-outline-secondary"
-          aria-expanded={isOpen1}
-        >
+        <DropdownToggle ref={dropdownRef1} brVariant="outline-secondary" aria-expanded={isOpen1}>
           Dropdown
         </DropdownToggle>
         <DropdownMenu>
@@ -223,11 +219,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
       </InputGroup>
       <InputGroup brMargin={{ bottom: 3 }}>
         <Input aria-label="Text input with dropdown button" />
-        <DropdownToggle
-          ref={dropdownRef2}
-          className="btn-outline-secondary"
-          aria-expanded={isOpen2}
-        >
+        <DropdownToggle ref={dropdownRef2} brVariant="outline-secondary" aria-expanded={isOpen2}>
           Dropdown
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
@@ -240,11 +232,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
       </InputGroup>
 
       <InputGroup>
-        <DropdownToggle
-          ref={dropdownRef3}
-          className="btn-outline-secondary"
-          aria-expanded={isOpen3}
-        >
+        <DropdownToggle ref={dropdownRef3} brVariant="outline-secondary" aria-expanded={isOpen3}>
           Dropdown
         </DropdownToggle>
         <DropdownMenu>
@@ -255,11 +243,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
           <DropdownItem href="#">Separated link</DropdownItem>
         </DropdownMenu>
         <Input aria-label="Text input with 2 dropdown buttons" />
-        <DropdownToggle
-          ref={dropdownRef4}
-          className="btn-outline-secondary"
-          aria-expanded={isOpen4}
-        >
+        <DropdownToggle ref={dropdownRef4} brVariant="outline-secondary" aria-expanded={isOpen4}>
           Dropdown
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
@@ -281,11 +265,11 @@ export const SegmentedButtons: StoryFn = () => {
   return (
     <div style={{ minHeight: '280px' }}>
       <InputGroup brMargin={{ bottom: 3 }}>
-        <Button className="btn-outline-secondary">Action</Button>
+        <Button brVariant="outline-secondary">Action</Button>
         <DropdownToggle
           ref={dropdownRef1}
           brSplitToggle
-          className="btn-outline-secondary"
+          brVariant="outline-secondary"
           aria-expanded={isOpen1}
         >
           <BrElement as="span" brVisuallyHidden>
@@ -304,11 +288,11 @@ export const SegmentedButtons: StoryFn = () => {
 
       <InputGroup>
         <Input aria-label="Text input with segmented dropdown button" />
-        <Button className="btn-outline-secondary">Action</Button>
+        <Button brVariant="outline-secondary">Action</Button>
         <DropdownToggle
           ref={dropdownRef2}
           brSplitToggle
-          className="btn-outline-secondary"
+          brVariant="outline-secondary"
           aria-expanded={isOpen2}
         >
           <BrElement as="span" brVisuallyHidden>
@@ -355,7 +339,7 @@ export const CustomFormsCustomSelect: StoryFn = () => {
       </InputGroup>
 
       <InputGroup brMargin={{ bottom: 3 }}>
-        <Button className="btn-outline-secondary">Button</Button>
+        <Button brVariant="outline-secondary">Button</Button>
         <Select id="inputGroupSelect03" aria-label="Example select with button addon">
           <option selected>Choose...</option>
           <option value="1">One</option>
@@ -371,7 +355,7 @@ export const CustomFormsCustomSelect: StoryFn = () => {
           <option value="2">Two</option>
           <option value="3">Three</option>
         </Select>
-        <Button className="btn-outline-secondary" type="button">
+        <Button brVariant="outline-secondary" type="button">
           Button
         </Button>
       </InputGroup>
@@ -397,7 +381,7 @@ export const CustomFormsCustomFileInput: StoryFn = () => {
       </InputGroup>
 
       <InputGroup brMargin={{ bottom: 3 }}>
-        <Button className="btn-outline-secondary" id="inputGroupFileAddon03">
+        <Button brVariant="outline-secondary" id="inputGroupFileAddon03">
           Button
         </Button>
         <Input
@@ -415,7 +399,7 @@ export const CustomFormsCustomFileInput: StoryFn = () => {
           aria-describedby="inputGroupFileAddon04"
           aria-label="Upload"
         />
-        <Button className="btn-outline-secondary" id="inputGroupFileAddon04">
+        <Button brVariant="outline-secondary" id="inputGroupFileAddon04">
           Button
         </Button>
       </InputGroup>

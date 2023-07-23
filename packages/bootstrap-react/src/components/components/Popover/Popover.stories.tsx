@@ -23,7 +23,7 @@ export const BaseExample: StoryFn<typeof Popover> = () => {
 
   return (
     <BrElement brPadding={{ y: 5 }}>
-      <Button {...popover.referenceProps} className="btn-lg btn-danger">
+      <Button {...popover.referenceProps} brVariant="danger" brLg>
         Click to toggle popover
       </Button>
       <Popover popover={popover}>
@@ -42,25 +42,25 @@ export const FourDirections: StoryFn = () => {
 
   return (
     <BrElement brPadding={{ y: 5 }} brDisplay="flex" className="gap-2">
-      <Button {...popoverTop.referenceProps} className="btn-secondary">
+      <Button {...popoverTop.referenceProps} brVariant="secondary">
         Popover on top
       </Button>
       <Popover popover={popoverTop}>
         <PopoverBody>Top popover</PopoverBody>
       </Popover>
-      <Button {...popoverRight.referenceProps} className="btn-secondary">
+      <Button {...popoverRight.referenceProps} brVariant="secondary">
         Popover on right
       </Button>
       <Popover popover={popoverRight}>
         <PopoverBody>Right popover</PopoverBody>
       </Popover>
-      <Button {...popoverBottom.referenceProps} className="btn-secondary">
+      <Button {...popoverBottom.referenceProps} brVariant="secondary">
         Popover on bottom
       </Button>
       <Popover popover={popoverBottom}>
         <PopoverBody>Bottom popover</PopoverBody>
       </Popover>
-      <Button {...popoverLeft.referenceProps} className="btn-secondary">
+      <Button {...popoverLeft.referenceProps} brVariant="secondary">
         Popover on left
       </Button>
       <Popover popover={popoverLeft}>
@@ -78,7 +78,7 @@ export const DismissOnNextClick: StoryFn = () => {
 
   return (
     <div>
-      <Button {...popover.referenceProps} className="btn-lg btn-danger">
+      <Button {...popover.referenceProps} brVariant="danger" brLg>
         Dismissable popover
       </Button>
       <Popover popover={popover}>

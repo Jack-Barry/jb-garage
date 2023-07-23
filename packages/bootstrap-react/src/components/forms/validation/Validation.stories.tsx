@@ -78,7 +78,7 @@ export const CustomStyles: StoryFn = () => {
         />
       </Col>
       <Col brCols={12}>
-        <Button className="btn-primary" type="submit">
+        <Button brVariant="primary" type="submit">
           Submit form
         </Button>
       </Col>
@@ -128,7 +128,7 @@ export const BrowserDefaults: StoryFn = () => {
         />
       </Col>
       <Col brCols={12}>
-        <Button className="btn-primary" type="submit">
+        <Button brVariant="primary" type="submit">
           Submit form
         </Button>
       </Col>
@@ -212,7 +212,7 @@ export const ServerSide: StoryFn = () => {
         />
       </Col>
       <Col brCols={12}>
-        <Button className="btn-primary" type="submit">
+        <Button brVariant="primary" type="submit">
           Submit form
         </Button>
       </Col>
@@ -283,7 +283,7 @@ export const SupportedElements: StoryFn = () => {
       </BrElement>
 
       <BrElement brMargin={{ bottom: 3 }}>
-        <Button className="btn-primary" type="submit" disabled>
+        <Button brVariant="primary" type="submit" disabled>
           Submit form
         </Button>
       </BrElement>
@@ -353,7 +353,7 @@ export const Tooltips: StoryFn = () => {
         <Feedback brTooltip>Please provide a valid zip.</Feedback>
       </Col>
       <Col brCols={12}>
-        <Button className="btn-primary" type="submit">
+        <Button brVariant="primary" type="submit">
           Submit form
         </Button>
       </Col>

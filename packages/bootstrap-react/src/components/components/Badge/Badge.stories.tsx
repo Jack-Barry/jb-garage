@@ -37,7 +37,7 @@ export const ExamplesHeadings: StoryFn = () => {
 
 export const ExamplesButtons: StoryFn = () => {
   return (
-    <Button className="btn-primary">
+    <Button brVariant="primary">
       Notifications <Badge className="text-bg-secondary">4</Badge>
     </Button>
   )
@@ -46,7 +46,7 @@ export const ExamplesButtons: StoryFn = () => {
 export const ExamplesPositioned: StoryFn = () => {
   return (
     <div>
-      <Button brPosition="relative" className="btn-primary">
+      <Button brPosition="relative" brVariant="primary">
         Inbox
         <Badge
           brPosition="absolute"
@@ -60,7 +60,7 @@ export const ExamplesPositioned: StoryFn = () => {
         </Badge>
       </Button>
       <hr />
-      <Button brPosition="relative" className="btn-primary">
+      <Button brPosition="relative" brVariant="primary">
         Profile
         <BrElement
           as="span"
