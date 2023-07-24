@@ -87,6 +87,8 @@ export type BrElementCommonProps = {
   brFlexXxl?: BrFlexProp
   /** Theme to apply to the element using `bs-data-theme` attribute */
   brTheme?: 'light' | 'dark' | string
+  /** Apply float clearfix to element */
+  brClearfix?: boolean
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -170,6 +172,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brFlexXl,
     brFlexXxl,
     brTheme,
+    brClearfix,
     ...rest
   } = props
   return (
@@ -213,7 +216,8 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
           brFlexLg,
           brFlexXl,
           brFlexXxl
-        })
+        }),
+        clearfix: brClearfix
       })}
       data-bs-theme={brTheme}
       {...rest}

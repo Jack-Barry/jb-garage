@@ -7,6 +7,7 @@ import {
   PlaceholderImgSvgChildren,
   placeholderImgSvgProps
 } from '@jb-garage/bootstrap-react/storybook/components/PlaceholderImgSvg'
+import { BrElement } from '../../utils/BrElement'
 
 const meta: Meta = {
   title: 'Columns',
@@ -262,7 +263,7 @@ export const StandaloneColumnClasses: StoryFn = () => {
         </Col>
       </div>
       <hr />
-      <div className="clearfix">
+      <BrElement brClearfix>
         <Col
           as="svg"
           brColsMd={6}
@@ -288,7 +289,7 @@ export const StandaloneColumnClasses: StoryFn = () => {
           more insights, or some hidden easter egg of content. A joke, perhaps. Unfortunately,
           there's none of that here.
         </p>
-      </div>
+      </BrElement>
     </div>
   )
 }
