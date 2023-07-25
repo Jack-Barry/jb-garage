@@ -18,7 +18,11 @@ enum AlertEvents {
 }
 
 /** Hook for using Bootstrap's `Alert` class for an element */
-export function useAlert(options: UseAlertOptions = {}) {
+export function useAlert(
+  options: UseAlertOptions = {},
+  /** Set to `true` to skip any actual state management by this hook */
+  hasControlledState = false
+) {
   const { onDismissed } = options
   const [isClosed, setIsClosed] = useState(false)
   const [isDismissed, setIsDismissed] = useState(false)
@@ -26,7 +30,7 @@ export function useAlert(options: UseAlertOptions = {}) {
   const [alertNode, setAlertNode] = useState<HTMLElement | null>(null)
   const alertRef = useCallback(
     (node: HTMLElement | null) => {
-      if (!node) {
+      if (hasControlledState || !node) {
         return
       }
 
@@ -36,7 +40,7 @@ export function useAlert(options: UseAlertOptions = {}) {
   )
 
   const alert = useMemo(() => {
-    if (!alertNode) {
+    if (hasControlledState || !alertNode) {
       return
     }
 
@@ -44,16 +48,16 @@ export function useAlert(options: UseAlertOptions = {}) {
   }, [alertNode])
 
   useEffect(() => {
-    if (!alertNode) {
+    if (hasControlledState || !alertNode) {
       return
     }
 
     // set up event listeners on alert element
-    alertNode.addEventListener(AlertEvents.close, beginAnimation)
-    alertNode.addEventListener(AlertEvents.closed, endAnimation)
+    alertNode.addEventListener(AlertEvents.close, beginAnimation, { passive: true })
+    alertNode.addEventListener(AlertEvents.closed, endAnimation, { passive: true })
 
     return function () {
-      if (!alertNode) {
+      if (hasControlledState || !alertNode) {
         return
       }
 
@@ -64,7 +68,7 @@ export function useAlert(options: UseAlertOptions = {}) {
   }, [alertNode])
 
   useEffect(() => {
-    const shouldClose = !!alert && !isAnimating && !isDismissed && isClosed
+    const shouldClose = !hasControlledState && !!alert && !isAnimating && !isDismissed && isClosed
     if (!shouldClose) {
       return
     }
@@ -86,6 +90,10 @@ export function useAlert(options: UseAlertOptions = {}) {
   }
 
   function close() {
+    if (hasControlledState) {
+      return
+    }
+
     setIsClosed(true)
   }
 

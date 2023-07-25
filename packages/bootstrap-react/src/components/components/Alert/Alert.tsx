@@ -36,8 +36,9 @@ const Alert: AlertComponent = forwardRef(function Alert<T extends ElementType = 
     ...rest
   } = props
 
-  const { isAnimating, isDismissed, alertRef } = brAlert || {}
-  const usedRef = useMultiRef(ref, alertRef)
+  const defaultAlert = useAlert({}, !!brAlert)
+  const { isAnimating, isDismissed, alertRef } = brAlert || defaultAlert
+  const usedRef = useMultiRef(ref, defaultAlert.alertRef, alertRef)
 
   return (
     <BrElement

@@ -6,7 +6,6 @@ import AlertLink from './AlertLink'
 import AlertHeading from './AlertHeading'
 import { BrElement } from '../../utils/BrElement'
 import Image from '../../content/Image/Image'
-import { useAlert } from './useAlert'
 import classNames from 'classnames'
 import CloseButton from '../CloseButton/CloseButton'
 
@@ -176,18 +175,10 @@ export const Icons: StoryFn = () => {
 }
 
 export const Dismissing: StoryFn = () => {
-  const alert = useAlert({
-    onDismissed() {
-      console.log('alert was dismissed')
-    }
-  })
-
   return (
-    <div>
-      <Alert brDismissible brAlert={alert} className={classNames('alert-warning fade')}>
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-        <CloseButton onClick={alert.close} />
-      </Alert>
-    </div>
+    <Alert brDismissible className={classNames('alert-warning fade')}>
+      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <CloseButton brDismiss="alert" />
+    </Alert>
   )
 }
