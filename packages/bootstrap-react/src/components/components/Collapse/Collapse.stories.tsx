@@ -25,8 +25,8 @@ export const BaseExample: StoryFn<typeof Collapse> = () => {
 
   return (
     <div style={{ minHeight: '200px' }}>
-      <Button onClick={collapse.toggle}>Click to {collapse.isVisible ? 'Hide' : 'Show'}</Button>
-      <Collapse collapse={collapse}>
+      <Button onClick={collapse.toggle}>Click to {collapse.isOpen ? 'Hide' : 'Show'}</Button>
+      <Collapse brCollapse={collapse}>
         <Card>
           <CardBody>
             Some placeholder content for the collapse component. This panel is hidden by default but
@@ -43,9 +43,9 @@ export const Horizontal: StoryFn = () => {
 
   return (
     <div style={{ minHeight: '300px' }}>
-      <Button onClick={collapse.toggle}>Click to {collapse.isVisible ? 'Hide' : 'Show'}</Button>
+      <Button onClick={collapse.toggle}>Click to {collapse.isOpen ? 'Hide' : 'Show'}</Button>
       <div>
-        <Collapse collapse={collapse} className="collapse-horizontal">
+        <Collapse brCollapse={collapse} className="collapse-horizontal">
           <Card style={{ width: '300px' }}>
             <CardBody>
               Some placeholder content for the collapse component. This panel is hidden by default
@@ -81,7 +81,7 @@ export const MultipleTogglesAndTargets: StoryFn = () => {
       </BrElement>
       <Row style={{ maxWidth: '700px' }}>
         <Col>
-          <Collapse collapse={collapse1}>
+          <Collapse brCollapse={collapse1}>
             <Card>
               <CardBody>
                 Some placeholder content for the first collapse component of this multi-collapse
@@ -92,7 +92,7 @@ export const MultipleTogglesAndTargets: StoryFn = () => {
           </Collapse>
         </Col>
         <Col>
-          <Collapse collapse={collapse2}>
+          <Collapse brCollapse={collapse2}>
             <Card>
               <CardBody>
                 Some placeholder content for the second collapse component of this multi-collapse

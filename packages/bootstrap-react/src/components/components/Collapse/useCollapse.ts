@@ -1,5 +1,5 @@
 import { Collapse } from 'bootstrap'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 export interface UseCollapseOptions {
   defaultIsVisible?: boolean
@@ -14,58 +14,66 @@ enum CollapseEvents {
 }
 
 /** Hook for using Bootstrap's `Collapse` class for an element */
-export function useCollapse(options: UseCollapseOptions = {}) {
+export function useCollapse(options: UseCollapseOptions = {}, disabled = false) {
   const { defaultIsVisible } = options
 
-  const [isVisible, setIsVisible] = useState(defaultIsVisible ?? false)
+  const [isOpen, setIsOpen] = useState(defaultIsVisible ?? false)
   const [isAnimating, setIsAnimating] = useState(false)
-  const [hasBeenShown, setHasBeenShown] = useState(isVisible)
-  const collapseRef = useRef<HTMLElement>(null)
-
-  const collapse = useMemo(() => {
-    if (!collapseRef.current) {
+  // const [hasBeenShown, setHasBeenShown] = useState(isOpen)
+  const [collapseNode, setCollapseNode] = useState<HTMLElement | null>(null)
+  const collapseRef = useCallback((node: HTMLElement | null) => {
+    if (!node) {
       return
     }
 
-    return new Collapse(collapseRef.current, { toggle: false })
-  }, [collapseRef.current])
+    setCollapseNode(node)
+  }, [])
+
+  const collapse = useMemo(() => {
+    if (disabled || !collapseNode) {
+      return
+    }
+
+    return new Collapse(collapseNode, { toggle: false })
+  }, [collapseNode])
 
   useEffect(() => {
-    if (!collapseRef.current) {
+    if (disabled || !collapseNode) {
       return
     }
 
     // set up event listeners on collapse element
-    collapseRef.current.addEventListener(CollapseEvents.hide, beginAnimation)
-    collapseRef.current.addEventListener(CollapseEvents.hidden, endAnimation)
-    collapseRef.current.addEventListener(CollapseEvents.show, beginAnimation)
-    collapseRef.current.addEventListener(CollapseEvents.shown, endShown)
+    collapseNode.addEventListener(CollapseEvents.hide, beginAnimation, { passive: true })
+    collapseNode.addEventListener(CollapseEvents.hidden, endAnimation, { passive: true })
+    collapseNode.addEventListener(CollapseEvents.show, beginAnimation, { passive: true })
+    collapseNode.addEventListener(CollapseEvents.shown, endAnimation, { passive: true })
 
     return function () {
-      if (!collapseRef.current) {
+      if (disabled || !collapseNode) {
         return
       }
 
       // clean up event listeners on collapse element
-      collapseRef.current.removeEventListener(CollapseEvents.hide, beginAnimation)
-      collapseRef.current.removeEventListener(CollapseEvents.hidden, endAnimation)
-      collapseRef.current.removeEventListener(CollapseEvents.show, beginAnimation)
-      collapseRef.current.removeEventListener(CollapseEvents.shown, endShown)
+      collapseNode.removeEventListener(CollapseEvents.hide, beginAnimation)
+      collapseNode.removeEventListener(CollapseEvents.hidden, endAnimation)
+      collapseNode.removeEventListener(CollapseEvents.show, beginAnimation)
+      collapseNode.removeEventListener(CollapseEvents.shown, endAnimation)
     }
-  }, [collapseRef.current])
+  }, [collapseNode])
 
   useEffect(() => {
-    if (!collapse || isAnimating) {
+    const shouldToggle = !disabled && !!collapse && !isAnimating
+    if (!shouldToggle) {
       return
     }
 
     // sync Collapse state with isVisible
-    if (isVisible) {
+    if (isOpen) {
       collapse.show()
     } else {
       collapse.hide()
     }
-  })
+  }, [collapse, isAnimating, isOpen])
 
   function beginAnimation() {
     setIsAnimating(true)
@@ -75,13 +83,12 @@ export function useCollapse(options: UseCollapseOptions = {}) {
     setIsAnimating(false)
   }
 
-  function endShown() {
-    setHasBeenShown(true)
-    endAnimation()
-  }
-
   function toggle() {
-    setIsVisible((prev) => !prev)
+    if (disabled) {
+      return
+    }
+
+    setIsOpen((prev) => !prev)
   }
 
   return {
@@ -94,19 +101,14 @@ export function useCollapse(options: UseCollapseOptions = {}) {
      */
     toggle,
     /** Collapsible element is currently being shown */
-    isVisible,
+    isOpen,
+    /** Collapsible element visibility is currently being animated */
+    isAnimating,
     /**
      * Function to explicitly set the visibility of the collapsible element
      *
      * If you just want to toggle the visibility, use `toggle` instead
      */
-    setIsVisible,
-    /**
-     * Collapsible element has been shown at least once
-     *
-     * This allows us to set the `"collapse"` class on the element before any events
-     *   have been emitted, while avoiding interfering with show/hide animations
-     */
-    hasBeenShown
+    setIsOpen
   }
 }

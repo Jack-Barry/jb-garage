@@ -31,6 +31,12 @@ export type ButtonProps<T extends ElementType> = BrElementProps<
     brDisabled?: boolean
     /** Button is currently active */
     brActive?: boolean
+    /**
+     * Button should have `btn` class
+     *
+     * @default true
+     */
+    brBtn?: boolean
   }
 >
 
@@ -57,6 +63,7 @@ const Button: ButtonComponent = forwardRef(function Button<T extends ElementType
     brLg,
     brDisabled,
     brActive,
+    brBtn = true,
     'aria-disabled': ariaDisabled = typeof brDisabled !== 'undefined' ? brDisabled : undefined,
     ...rest
   } = props
@@ -69,8 +76,8 @@ const Button: ButtonComponent = forwardRef(function Button<T extends ElementType
       type={usedType}
       ref={ref}
       className={classNames(
-        'btn',
         {
+          btn: brBtn,
           [`btn-${brVariant}`]: !!brVariant,
           'btn-sm': brSm,
           'btn-lg': brLg,
