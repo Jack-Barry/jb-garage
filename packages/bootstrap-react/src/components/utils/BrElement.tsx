@@ -14,7 +14,7 @@ import { BrDisplayProp, brDisplayClasses } from './bootstrapClasses/display'
 import { BrSpacingProp, brSpacingClasses } from './bootstrapClasses/spacing'
 
 /** Prop that can be accepted by `BrElement` for Bootstrap position utilities */
-export type BrPositionProp = 'relative' | 'absolute'
+export type BrPositionProp = 'relative' | 'absolute' | 'static'
 
 export type BrElementCommonProps = {
   /** Position to apply to the element using Bootstrap class */

@@ -1,5 +1,7 @@
 import { BrElementCommonProps } from '../BrElement'
 
+type BrGapSize = 0 | 1 | 2 | 3 | 4 | 5 | '0' | '1' | '2' | '3' | '4' | '5' | number | string
+
 type BrFlexPropAlignment = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
 export type BrFlexProp = {
   row?: true | 'reverse'
@@ -29,6 +31,9 @@ export type BrFlexProp = {
     | '5'
     | number
     | string
+  gap?: BrGapSize
+  gapRow?: BrGapSize
+  gapColumn?: BrGapSize
 }
 
 export function brFlexClasses(
@@ -57,7 +62,10 @@ export function brFlexClasses(
       shrink,
       wrap,
       order,
-      alignContent
+      alignContent,
+      gap,
+      gapRow,
+      gapColumn
     } = flexConfig
     if (row === true) {
       classes[`flex-${prefix}row`] = true
@@ -105,6 +113,18 @@ export function brFlexClasses(
 
     if (alignContent) {
       classes[`align-content-${prefix}${alignContent}`] = true
+    }
+
+    if (typeof gap !== 'undefined') {
+      classes[`gap-${gap}`] = true
+    }
+
+    if (typeof gapRow !== 'undefined') {
+      classes[`row-gap-${gap}`] = true
+    }
+
+    if (typeof gapColumn !== 'undefined') {
+      classes[`column-gap-${gap}`] = true
     }
   }
 
