@@ -19,7 +19,6 @@ export function useCollapse(options: UseCollapseOptions = {}, disabled = false) 
 
   const [isOpen, setIsOpen] = useState(defaultIsVisible ?? false)
   const [isAnimating, setIsAnimating] = useState(false)
-  // const [hasBeenShown, setHasBeenShown] = useState(isOpen)
   const [collapseNode, setCollapseNode] = useState<HTMLElement | null>(null)
   const collapseRef = useCallback((node: HTMLElement | null) => {
     if (!node) {
@@ -83,13 +82,13 @@ export function useCollapse(options: UseCollapseOptions = {}, disabled = false) 
     setIsAnimating(false)
   }
 
-  function toggle() {
+  const toggle = useCallback(() => {
     if (disabled) {
       return
     }
 
     setIsOpen((prev) => !prev)
-  }
+  }, [disabled])
 
   return {
     /** Ref that can be used for the element that is collapsible */
