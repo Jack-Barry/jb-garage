@@ -12,10 +12,10 @@ const meta: Meta = {
 export default meta
 
 export const TooltipsOnLinks: StoryFn = () => {
-  const { tooltip: tooltip1, target: target1 } = useTooltip()
-  const { tooltip: tooltip2, target: target2 } = useTooltip()
-  const { tooltip: tooltip3, target: target3 } = useTooltip()
-  const { tooltip: tooltip4, target: target4 } = useTooltip()
+  const { floating: tooltip1, target: target1 } = useTooltip()
+  const { floating: tooltip2, target: target2 } = useTooltip()
+  const { floating: tooltip3, target: target3 } = useTooltip()
+  const { floating: tooltip4, target: target4 } = useTooltip()
 
   return (
     <p className="muted">
@@ -45,13 +45,13 @@ export const TooltipsOnLinks: StoryFn = () => {
 }
 
 export const CustomTooltips: StoryFn = () => {
-  const { target, tooltip } = useTooltip()
+  const { target, floating } = useTooltip()
   return (
     <div>
       <Button ref={target.ref} {...target.getProps()} brVariant="secondary">
         Custom tooltip
       </Button>
-      <Tooltip brTooltip={tooltip} className="custom-tooltip">
+      <Tooltip brTooltip={floating} className="custom-tooltip">
         This tooltip is themed via CSS variables.
       </Tooltip>
     </div>
@@ -59,12 +59,12 @@ export const CustomTooltips: StoryFn = () => {
 }
 
 export const Directions: StoryFn = () => {
-  const { target: targetTop, tooltip: tooltipTop } = useTooltip({ placement: 'top' })
-  const { target: targetRight, tooltip: tooltipRight } = useTooltip({ placement: 'right' })
-  const { target: targetBottom, tooltip: tooltipBottom } = useTooltip({ placement: 'bottom' })
-  const { target: targetLeft, tooltip: tooltipLeft } = useTooltip({ placement: 'left' })
-  const { target: targetHtml, tooltip: tooltipHtml } = useTooltip()
-  const { target: targetSvg, tooltip: tooltipSvg } = useTooltip()
+  const { target: targetTop, floating: tooltipTop } = useTooltip({ placement: 'top' })
+  const { target: targetRight, floating: tooltipRight } = useTooltip({ placement: 'right' })
+  const { target: targetBottom, floating: tooltipBottom } = useTooltip({ placement: 'bottom' })
+  const { target: targetLeft, floating: tooltipLeft } = useTooltip({ placement: 'left' })
+  const { target: targetHtml, floating: tooltipHtml } = useTooltip()
+  const { target: targetSvg, floating: tooltipSvg } = useTooltip()
 
   return (
     <BrElement brMargin={5}>
@@ -112,7 +112,7 @@ export const Directions: StoryFn = () => {
 }
 
 export const DisabledElements: StoryFn = () => {
-  const { target, tooltip } = useTooltip()
+  const { target, floating } = useTooltip()
 
   return (
     <div>
@@ -126,7 +126,7 @@ export const DisabledElements: StoryFn = () => {
         <Button brVariant="primary" disabled>
           Disabled button
         </Button>
-        <Tooltip brTooltip={tooltip}>Disabled tooltip</Tooltip>
+        <Tooltip brTooltip={floating}>Disabled tooltip</Tooltip>
       </BrElement>
     </div>
   )

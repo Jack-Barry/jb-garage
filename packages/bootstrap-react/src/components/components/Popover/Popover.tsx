@@ -1,77 +1,79 @@
-import { ElementType } from 'react'
-
-import { usePopover } from './usePopover'
-import classNames from 'classnames'
+import { ElementType, ReactNode, forwardRef } from 'react'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
+import classNames from 'classnames'
+import { usePopover } from './usePopover'
+import { useMultiRef } from '../../utils/useMultiRef'
 
 export type PopoverProps<T extends ElementType> = BrElementProps<
   T,
   {
+    /** Controlled state can be provided by the return value of `usePopover` */
+    brPopover: ReturnType<typeof usePopover>['floating']
     /**
-     * Type of HTML element to render
-     *
-     * @default "div"
-     */
-    as?: T
-    /** Controlled state, can be return value from `usePopover` */
-    popover: ReturnType<typeof usePopover>
-    /**
-     * Enable fade transition when opening/closing
-     *
      * @default true
      */
-    doesFade?: boolean
-    /**
-     * Include an arrow element for the popover
-     *
-     * @default true
-     */
-    hasArrow?: boolean
+    brPopoverArrow?: boolean
   }
 >
 
+export type PopoverComponent = <Component extends ElementType = 'div'>(
+  props: PopoverProps<Component>
+) => ReactNode | null
+
 /**
- * Provides an element that can be used as a [Popover](https://getbootstrap.com/docs/5.3/components/popovers/)
- *
- * - Defaults to a `div`
- * - Accepts all props that can be passed to the `as` element
- * - Note that if `style` is provided, it will be combined with the values from
- *    `popover.floatingProps.style`
+ * [Popover]()
  */
-export default function Popover<T extends ElementType>(props: PopoverProps<T>) {
+const Popover: PopoverComponent = forwardRef(function Popover<T extends ElementType>(
+  props: PopoverProps<T>,
+  ref?: PopoverProps<T>['ref']
+) {
   const {
     as,
-    popover,
-    doesFade = true,
-    hasArrow = true,
+    brPopover,
+    brPopoverArrow = true,
+    role = 'tooltip',
     className,
     style,
     children,
     ...rest
   } = props
-  const { isMounted, status, floatingProps, placement, arrowRef, arrowStyle } = popover
+  const {
+    arrow,
+    getProps,
+    isMounted,
+    placement,
+    ref: popoverRef,
+    shouldAnimate,
+    styles,
+    transitionStatus
+  } = brPopover
+  const usedRef = useMultiRef(ref, popoverRef)
 
-  return isMounted ? (
-    <BrElement
-      as={as as ElementType}
-      {...floatingProps}
-      className={classNames(
-        'popover',
-        {
-          fade: doesFade,
-          show: doesFade && status === 'open',
-          'bs-popover-auto': hasArrow
-        },
-        className
-      )}
-      style={{ ...floatingProps.style, ...style }}
-      data-popper-placement={placement}
-      {...rest}
-    >
-      {hasArrow && (
-        <div ref={arrowRef} className="popover-arrow position-absolute" style={arrowStyle} />
-      )}
-      {children}
-    </BrElement>
-  ) : null
-}
+  return (
+    isMounted && (
+      <BrElement
+        as={as as ElementType}
+        {...getProps()}
+        ref={usedRef}
+        role={role}
+        className={classNames(
+          'popover',
+          {
+            fade: shouldAnimate,
+            show: transitionStatus === 'open',
+            'bs-popover-auto': brPopoverArrow
+          },
+          className
+        )}
+        style={{ ...styles, ...style }}
+        // don't need this for Popper, but Bootstrap uses it for styling
+        data-popper-placement={placement}
+        {...rest}
+      >
+        {brPopoverArrow && <div className="popover-arrow" {...arrow} />}
+        <div className="popover-inner">{children}</div>
+      </BrElement>
+    )
+  )
+})
+export default Popover

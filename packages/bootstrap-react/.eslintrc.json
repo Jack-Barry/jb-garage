@@ -1,6 +1,6 @@
 {
   "extends": ["../../.eslintrc.js", "plugin:storybook/recommended"],
-  "ignorePatterns": ["!**/*"],
+  "ignorePatterns": ["!**/*", "repos/**/*"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],

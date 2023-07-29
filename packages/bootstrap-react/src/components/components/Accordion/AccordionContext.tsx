@@ -1,6 +1,7 @@
-import { PropsWithChildren, createContext, useContext, useState } from 'react'
-import { useCollapse } from '../Collapse/useCollapse'
 import { noOp } from '@jb-garage/utils-generic'
+import { PropsWithChildren, createContext, useContext, useState } from 'react'
+
+import { useCollapse } from '../Collapse/useCollapse'
 
 export type UseCollapseValue = ReturnType<typeof useCollapse>
 export type AccordionContextItem = { collapse?: UseCollapseValue }

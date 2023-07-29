@@ -1,7 +1,8 @@
 import classNames from 'classnames'
-import { BrElement, BrElementProps, BrSpacingProp, BrSpacingConfig } from '../../utils/BrElement'
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType } from 'react'
 import { ColSpan } from '../columns/Col'
+import { BrSpacingConfig, BrSpacingProp } from '../../utils/bootstrapClasses/spacing'
 
 export type RowProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   /**

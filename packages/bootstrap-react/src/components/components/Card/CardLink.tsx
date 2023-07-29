@@ -1,7 +1,8 @@
+import { ElementType } from 'react'
 import classNames from 'classnames'
-import Button, { ButtonElementType, ButtonProps } from '../Button/Button'
+import Button, { ButtonProps } from '../Button/Button'
 
-export type CardLinkProps<T extends ButtonElementType> = ButtonProps<T> & {
+export type CardLinkProps<T extends ElementType> = ButtonProps<T> & {
   /**
    * Type of HTML element to render
    *
@@ -11,8 +12,8 @@ export type CardLinkProps<T extends ButtonElementType> = ButtonProps<T> & {
 }
 
 /** [Card Link](https://getbootstrap.com/docs/5.3/components/card/) */
-export default function CardLink<T extends ButtonElementType = 'a'>(props: CardLinkProps<T>) {
-  const { as = 'a' as ButtonElementType, children, className, ...rest } = props
+export default function CardLink<T extends ElementType = 'a'>(props: CardLinkProps<T>) {
+  const { as = 'a' as ElementType, children, className, ...rest } = props
 
   return (
     <Button as={as} className={classNames('card-link', className)} {...rest}>

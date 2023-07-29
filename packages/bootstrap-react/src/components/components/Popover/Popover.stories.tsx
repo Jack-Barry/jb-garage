@@ -3,14 +3,14 @@ import type { Meta, StoryFn } from '@storybook/react'
 import { linkToBootstrapDocs } from '../../../storybook/decorators/linkToBootstrapDocs'
 import { as } from '../../../storybook/utils'
 import Button from '../Button/Button'
-import Popover from './Popover'
 import PopoverBody from './PopoverBody'
 import PopoverHeader from './PopoverHeader'
-import { usePopover } from './usePopover'
 import { BrElement } from '../../utils/BrElement'
+import { usePopover } from './usePopover'
+import Popover from './Popover'
 
-const meta: Meta<typeof Popover> = {
-  component: Popover,
+const meta: Meta = {
+  title: 'Popover',
   tags: ['autodocs'],
   argTypes: {
     as
@@ -18,15 +18,15 @@ const meta: Meta<typeof Popover> = {
 }
 
 export default meta
-export const BaseExample: StoryFn<typeof Popover> = () => {
-  const popover = usePopover()
+export const BaseExample: StoryFn = () => {
+  const { target, floating } = usePopover()
 
   return (
     <BrElement brPadding={{ y: 5 }}>
-      <Button {...popover.referenceProps} brVariant="danger" brLg>
+      <Button ref={target.ref} {...target.getProps()} brVariant="danger" brLg>
         Click to toggle popover
       </Button>
-      <Popover popover={popover}>
+      <Popover brPopover={floating}>
         <PopoverHeader as="h3">Popover Header</PopoverHeader>
         <PopoverBody>Popover body</PopoverBody>
       </Popover>
@@ -35,35 +35,43 @@ export const BaseExample: StoryFn<typeof Popover> = () => {
 }
 
 export const FourDirections: StoryFn = () => {
-  const popoverTop = usePopover({ floatingOptions: { placement: 'top' } })
-  const popoverRight = usePopover({ floatingOptions: { placement: 'right' } })
-  const popoverBottom = usePopover({ floatingOptions: { placement: 'bottom' } })
-  const popoverLeft = usePopover({ floatingOptions: { placement: 'left' } })
+  const popoverTop = usePopover({ placement: 'top' })
+  const popoverRight = usePopover({ placement: 'right' })
+  const popoverBottom = usePopover({ placement: 'bottom' })
+  const popoverLeft = usePopover({ placement: 'left' })
 
   return (
     <BrElement brPadding={{ y: 5 }} brDisplay="flex" className="gap-2">
-      <Button {...popoverTop.referenceProps} brVariant="secondary">
+      <Button ref={popoverTop.target.ref} {...popoverTop.target.getProps()} brVariant="secondary">
         Popover on top
       </Button>
-      <Popover popover={popoverTop}>
+      <Popover brPopover={popoverTop.floating}>
         <PopoverBody>Top popover</PopoverBody>
       </Popover>
-      <Button {...popoverRight.referenceProps} brVariant="secondary">
+      <Button
+        ref={popoverRight.target.ref}
+        {...popoverRight.target.getProps()}
+        brVariant="secondary"
+      >
         Popover on right
       </Button>
-      <Popover popover={popoverRight}>
+      <Popover brPopover={popoverRight.floating}>
         <PopoverBody>Right popover</PopoverBody>
       </Popover>
-      <Button {...popoverBottom.referenceProps} brVariant="secondary">
+      <Button
+        ref={popoverBottom.target.ref}
+        {...popoverBottom.target.getProps()}
+        brVariant="secondary"
+      >
         Popover on bottom
       </Button>
-      <Popover popover={popoverBottom}>
+      <Popover brPopover={popoverBottom.floating}>
         <PopoverBody>Bottom popover</PopoverBody>
       </Popover>
-      <Button {...popoverLeft.referenceProps} brVariant="secondary">
+      <Button ref={popoverLeft.target.ref} {...popoverLeft.target.getProps()} brVariant="secondary">
         Popover on left
       </Button>
-      <Popover popover={popoverLeft}>
+      <Popover brPopover={popoverLeft.floating}>
         <PopoverBody>Left popover</PopoverBody>
       </Popover>
     </BrElement>
@@ -74,14 +82,14 @@ FourDirections.decorators = [
 ]
 
 export const DismissOnNextClick: StoryFn = () => {
-  const popover = usePopover({ isDismissible: true })
+  const popover = usePopover({ dismissible: true })
 
   return (
     <div>
-      <Button {...popover.referenceProps} brVariant="danger" brLg>
+      <Button ref={popover.target.ref} {...popover.target.getProps()} brVariant="danger" brLg>
         Dismissable popover
       </Button>
-      <Popover popover={popover}>
+      <Popover brPopover={popover.floating}>
         <PopoverHeader as="h2">Popover Header</PopoverHeader>
         <PopoverBody>Popover body</PopoverBody>
       </Popover>

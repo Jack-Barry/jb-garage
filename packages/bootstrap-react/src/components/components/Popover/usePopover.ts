@@ -1,106 +1,42 @@
 import {
-  UseFloatingOptions,
-  arrow,
-  autoPlacement,
-  autoUpdate,
-  offset,
-  useClick,
-  useDismiss,
-  useFloating,
-  useInteractions,
-  useTransitionStatus
-} from '@floating-ui/react'
-import { CSSProperties, useState } from 'react'
+  UseFloatingElementOptions,
+  useFloatingElement
+} from '@jb-garage/bootstrap-react/hooks/useFloatingElement'
 
-import { POPOVER_ARROW_OFFSET } from './constants'
-
-export interface UsePopoverOptions {
+type UsePopoverOptions = UseFloatingElementOptions & {
   /**
-   * Options to pass along to floating UI
+   * Types of interactions that will toggle the visibility of the popover element
    *
-   * If you need access to `isOpen` state outside of the component, you can provide
-   *   `open` and `onOpenChange` values here
+   * @default { hover: false; focus: false; click: true }
    */
-  floatingOptions?: Partial<Omit<UseFloatingOptions, 'middleware'>> & {
-    /**
-     * Callback accepts a `ref` for the arrow element and returns an array of
-     *   middlewares
-     */
-    middleware?: (arrow: HTMLDivElement | null) => UseFloatingOptions['middleware']
-  }
-  /** Clicking away from the reference element should dismiss the popover */
-  isDismissible?: boolean
+  trigger?: { hover?: boolean; focus?: boolean; click?: boolean }
+  /**
+   * The popover element is dismissed when clicking outside of the floating element
+   *
+   * This only applies when `trigger.click` is `true`
+   *
+   * @default false
+   */
+  dismissible?: boolean
 }
 
+const POPOVER_TRIGGER_DEFAULTS = { hover: false, focus: false, click: true }
+
 /**
- * Provides a thin wrapper around `useFloating` to make it more convenient for
- *   popover elements that are toggled by click events
+ * Provides popover-related functionality which closely aligns with Bootstrap's
+ *   vanilla JS implementation of the `Popover` class.
  *
- * Any values passed as part of `floatingOptions` will override the hook's defaults,
- *   so that it gives you full control if needed anywhere
+ * Key differences with the Bootstrap vanilla JS implementation:
+ * - `allowList`, `container`, `customClass`, `html`, `sanitize`, `sanitizeFn`,
+ *   `selector` `title`, and `template` options are not implemented, since they
+ *   are mostly superceded by simply providing the target and content of the tooltip
+ *   as React components
+ * - `popperConfig` is not used, because the underlying lib supporting floating
+ *   elements in this project is [Floating UI](https://floating-ui.com/). However,
+ *   you may augment the default config used for `useFloating` with the `customFloatingConfig`
+ *   option
  */
-export function usePopover(options: UsePopoverOptions = {}) {
-  const { floatingOptions = {}, isDismissible = false } = options
-  const { middleware, ...floatingOptionsRest } = floatingOptions
-
-  const [isOpen, setIsOpen] = useState(false)
-  const [reference, setReference] = useState<HTMLElement | null>(null)
-  const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null)
-
-  // middleware
-  const defaultMiddleware: UseFloatingOptions['middleware'] = [offset(POPOVER_ARROW_OFFSET)]
-  if (!floatingOptions?.placement) {
-    defaultMiddleware.push(autoPlacement())
-  }
-  defaultMiddleware.push(arrow({ element: arrowRef }))
-
-  const { refs, floatingStyles, context, placement } = useFloating({
-    open: isOpen,
-    onOpenChange: setIsOpen,
-    middleware: middleware ? middleware(arrowRef) : defaultMiddleware,
-    whileElementsMounted: autoUpdate,
-    ...floatingOptionsRest,
-    elements: {
-      reference,
-      ...floatingOptions?.elements
-    }
-  })
-
-  // interactions
-  const focus = useDismiss(context, { enabled: isDismissible })
-  const click = useClick(context, { toggle: !isDismissible })
-  const { getReferenceProps, getFloatingProps } = useInteractions([click, focus])
-
-  // arrow styling
-  const { x: arrowX, y: arrowY } = context.middlewareData.arrow || {}
-  const arrowStyle: CSSProperties = {
-    top: arrowY ? `${arrowY}px` : undefined,
-    left: arrowX ? `${arrowX}px` : undefined
-  }
-
-  // transitions
-  const { isMounted, status } = useTransitionStatus(context)
-
-  // utility functions
-  function closePopover() {
-    setIsOpen(false)
-  }
-
-  return {
-    reference,
-    floatingProps: {
-      ref: refs.setFloating,
-      style: floatingStyles,
-      ...getFloatingProps({ onClick: isDismissible ? closePopover : undefined })
-    },
-    referenceProps: {
-      ref: setReference,
-      ...getReferenceProps()
-    },
-    isMounted,
-    status,
-    placement,
-    arrowRef: setArrowRef,
-    arrowStyle
-  }
+export function usePopover<Arrow extends HTMLElement>(options: UsePopoverOptions = {}) {
+  const { trigger = POPOVER_TRIGGER_DEFAULTS, dismissible = false, ...rest } = options
+  return useFloatingElement<Arrow>({ trigger, dismissible, ...rest })
 }

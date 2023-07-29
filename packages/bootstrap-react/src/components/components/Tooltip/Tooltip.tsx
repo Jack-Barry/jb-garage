@@ -8,7 +8,7 @@ export type TooltipProps<T extends ElementType> = BrElementProps<
   T,
   {
     /** Controlled state can be provided by the return value of `useTooltip` */
-    brTooltip: ReturnType<typeof useTooltip>['tooltip']
+    brTooltip: ReturnType<typeof useTooltip>['floating']
     /**
      * @default true
      */
@@ -71,7 +71,7 @@ const Tooltip: TooltipComponent = forwardRef(function Tooltip<T extends ElementT
         {...rest}
       >
         {brTooltipArrow && <div className="tooltip-arrow" {...arrow} />}
-        <BrElement className="tooltip-inner">{children}</BrElement>
+        <div className="tooltip-inner">{children}</div>
       </BrElement>
     )
   )
