@@ -11,9 +11,10 @@ export type NavLinkProps<T extends ElementType> = BrElementProps<T> & {
    */
   as?: T
   /** Nav link is currently active */
-  isActive?: boolean
+  brActive?: boolean
   /** Nav link is currently disabled */
-  isDisabled?: boolean
+  brDisabled?: boolean
+  brDropdownToggle?: boolean
 }
 
 type NavLinkComponent = <Component extends ElementType = 'a'>(
@@ -23,13 +24,25 @@ type NavLinkComponent = <Component extends ElementType = 'a'>(
 /** [Nav]() */
 const NavLink: NavLinkComponent = forwardRef(
   <T extends ElementType = 'a'>(props: NavLinkProps<T>, ref?: NavLinkProps<T>['ref']) => {
-    const { as = 'a' as ElementType, children, className, isActive, isDisabled, ...rest } = props
+    const {
+      as = 'a' as ElementType,
+      brActive,
+      brDisabled,
+      brDropdownToggle,
+      children,
+      className,
+      ...rest
+    } = props
 
     return (
       <BrElement
         as={as}
         ref={ref}
-        className={classNames('nav-link', { active: isActive, disabled: isDisabled }, className)}
+        className={classNames(
+          'nav-link',
+          { active: brActive, disabled: brDisabled, 'dropdown-toggle': brDropdownToggle },
+          className
+        )}
         {...rest}
       >
         {children}

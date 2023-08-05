@@ -13,6 +13,9 @@ import { BrBorderProp, brBorderClasses } from './bootstrapClasses/border'
 import { BrDisplayProp, brDisplayClasses } from './bootstrapClasses/display'
 import { BrSpacingProp, brSpacingClasses } from './bootstrapClasses/spacing'
 
+/** Prop representing a Bootstrap viewport breakpoint */
+export type BrBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | string
+
 /** Prop that can be accepted by `BrElement` for Bootstrap position utilities */
 export type BrPositionProp = 'relative' | 'absolute' | 'static'
 

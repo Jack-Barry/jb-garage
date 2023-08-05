@@ -24,7 +24,7 @@ export const BaseExample: StoryFn = () => {
     <div>
       <Nav>
         <NavItem>
-          <NavLink aria-current="page" href="#" isActive>
+          <NavLink aria-current="page" href="#" brActive>
             Active
           </NavLink>
         </NavItem>
@@ -35,17 +35,17 @@ export const BaseExample: StoryFn = () => {
           <NavLink href="#">Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink isDisabled>Disabled</NavLink>
+          <NavLink brDisabled>Disabled</NavLink>
         </NavItem>
       </Nav>
       <hr />
       <Nav as="nav">
-        <NavLink aria-current="page" href="#" isActive>
+        <NavLink aria-current="page" href="#" brActive>
           Active
         </NavLink>
         <NavLink href="#">Link</NavLink>
         <NavLink href="#">Link</NavLink>
-        <NavLink isDisabled>Disabled</NavLink>
+        <NavLink brDisabled>Disabled</NavLink>
       </Nav>
     </div>
   )
@@ -56,7 +56,7 @@ export const AvailableStylesHorizontalAlignment: StoryFn = () => {
     <div>
       <Nav className="justify-content-center">
         <NavItem>
-          <NavLink aria-current="page" href="#" isActive>
+          <NavLink aria-current="page" href="#" brActive>
             Active
           </NavLink>
         </NavItem>
@@ -67,13 +67,13 @@ export const AvailableStylesHorizontalAlignment: StoryFn = () => {
           <NavLink href="#">Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink isDisabled>Disabled</NavLink>
+          <NavLink brDisabled>Disabled</NavLink>
         </NavItem>
       </Nav>
       <hr />
       <Nav className="justify-content-end">
         <NavItem>
-          <NavLink aria-current="page" href="#" isActive>
+          <NavLink aria-current="page" href="#" brActive>
             Active
           </NavLink>
         </NavItem>
@@ -84,7 +84,7 @@ export const AvailableStylesHorizontalAlignment: StoryFn = () => {
           <NavLink href="#">Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink isDisabled>Disabled</NavLink>
+          <NavLink brDisabled>Disabled</NavLink>
         </NavItem>
       </Nav>
     </div>
@@ -96,7 +96,7 @@ export const AvailableStylesVertical: StoryFn = () => {
     <div>
       <Nav className="flex-column">
         <NavItem>
-          <NavLink aria-current="page" href="#" isActive>
+          <NavLink aria-current="page" href="#" brActive>
             Active
           </NavLink>
         </NavItem>
@@ -107,17 +107,17 @@ export const AvailableStylesVertical: StoryFn = () => {
           <NavLink href="#">Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink isDisabled>Disabled</NavLink>
+          <NavLink brDisabled>Disabled</NavLink>
         </NavItem>
       </Nav>
       <hr />
       <Nav as="nav" className="flex-column">
-        <NavLink aria-current="page" href="#" isActive>
+        <NavLink aria-current="page" href="#" brActive>
           Active
         </NavLink>
         <NavLink href="#">Link</NavLink>
         <NavLink href="#">Link</NavLink>
-        <NavLink isDisabled>Disabled</NavLink>
+        <NavLink brDisabled>Disabled</NavLink>
       </Nav>
     </div>
   )
@@ -127,7 +127,7 @@ export const AvailableStylesTabs: StoryFn = () => {
   return (
     <Nav className="nav-tabs">
       <NavItem>
-        <NavLink aria-current="page" href="#" isActive>
+        <NavLink aria-current="page" href="#" brActive>
           Active
         </NavLink>
       </NavItem>
@@ -138,7 +138,7 @@ export const AvailableStylesTabs: StoryFn = () => {
         <NavLink href="#">Link</NavLink>
       </NavItem>
       <NavItem>
-        <NavLink isDisabled>Disabled</NavLink>
+        <NavLink brDisabled>Disabled</NavLink>
       </NavItem>
     </Nav>
   )
@@ -148,7 +148,7 @@ export const AvailableStylesPills: StoryFn = () => {
   return (
     <Nav className="nav-pills">
       <NavItem>
-        <NavLink aria-current="page" href="#" isActive>
+        <NavLink aria-current="page" href="#" brActive>
           Active
         </NavLink>
       </NavItem>
@@ -159,7 +159,7 @@ export const AvailableStylesPills: StoryFn = () => {
         <NavLink href="#">Link</NavLink>
       </NavItem>
       <NavItem>
-        <NavLink isDisabled>Disabled</NavLink>
+        <NavLink brDisabled>Disabled</NavLink>
       </NavItem>
     </Nav>
   )
@@ -169,7 +169,7 @@ export const AvailableStylesUnderline: StoryFn = () => {
   return (
     <Nav className="nav-underline">
       <NavItem>
-        <NavLink aria-current="page" href="#" isActive>
+        <NavLink aria-current="page" href="#" brActive>
           Active
         </NavLink>
       </NavItem>
@@ -180,7 +180,7 @@ export const AvailableStylesUnderline: StoryFn = () => {
         <NavLink href="#">Link</NavLink>
       </NavItem>
       <NavItem>
-        <NavLink isDisabled>Disabled</NavLink>
+        <NavLink brDisabled>Disabled</NavLink>
       </NavItem>
     </Nav>
   )
@@ -191,7 +191,7 @@ export const AvailableStylesFillAndJustify: StoryFn = () => {
     <div>
       <Nav className="nav-pills nav-fill">
         <NavItem>
-          <NavLink aria-current="page" href="#" isActive>
+          <NavLink aria-current="page" href="#" brActive>
             Active
           </NavLink>
         </NavItem>
@@ -202,22 +202,22 @@ export const AvailableStylesFillAndJustify: StoryFn = () => {
           <NavLink href="#">Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink isDisabled>Disabled</NavLink>
+          <NavLink brDisabled>Disabled</NavLink>
         </NavItem>
       </Nav>
       <hr />
       <Nav as="nav" className="nav-pills nav-fill">
-        <NavLink aria-current="page" href="#" isActive>
+        <NavLink aria-current="page" href="#" brActive>
           Active
         </NavLink>
         <NavLink href="#">Much longer nav link</NavLink>
         <NavLink href="#">Link</NavLink>
-        <NavLink isDisabled>Disabled</NavLink>
+        <NavLink brDisabled>Disabled</NavLink>
       </Nav>
       <hr />
       <Nav className="nav-pills nav-justified">
         <NavItem>
-          <NavLink aria-current="page" href="#" isActive>
+          <NavLink aria-current="page" href="#" brActive>
             Active
           </NavLink>
         </NavItem>
@@ -228,17 +228,17 @@ export const AvailableStylesFillAndJustify: StoryFn = () => {
           <NavLink href="#">Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink isDisabled>Disabled</NavLink>
+          <NavLink brDisabled>Disabled</NavLink>
         </NavItem>
       </Nav>
       <hr />
       <Nav as="nav" className="nav-pills nav-justified">
-        <NavLink aria-current="page" href="#" isActive>
+        <NavLink aria-current="page" href="#" brActive>
           Active
         </NavLink>
         <NavLink href="#">Much longer nav link</NavLink>
         <NavLink href="#">Link</NavLink>
-        <NavLink isDisabled>Disabled</NavLink>
+        <NavLink brDisabled>Disabled</NavLink>
       </Nav>
     </div>
   )
@@ -247,12 +247,12 @@ export const AvailableStylesFillAndJustify: StoryFn = () => {
 export const WorkingWithFlexUtilities: StoryFn = () => {
   return (
     <Nav as="nav" className="nav-pills flex-column flex-sm-row">
-      <NavLink aria-current="page" href="#" isActive>
+      <NavLink aria-current="page" href="#" brActive>
         Active
       </NavLink>
       <NavLink href="#">Longer nav link</NavLink>
       <NavLink href="#">Link</NavLink>
-      <NavLink isDisabled>Disabled</NavLink>
+      <NavLink brDisabled>Disabled</NavLink>
     </Nav>
   )
 }
@@ -264,7 +264,7 @@ export const UsingDropdownsTabsWithDropdowns: StoryFn = () => {
     <div style={{ minHeight: '200px' }}>
       <Nav className="nav-tabs">
         <NavItem>
-          <NavLink aria-current="page" href="#" isActive>
+          <NavLink aria-current="page" href="#" brActive>
             Active
           </NavLink>
         </NavItem>
@@ -291,7 +291,7 @@ export const UsingDropdownsTabsWithDropdowns: StoryFn = () => {
           <NavLink href="#">Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink isDisabled>Disabled</NavLink>
+          <NavLink brDisabled>Disabled</NavLink>
         </NavItem>
       </Nav>
     </div>
@@ -305,7 +305,7 @@ export const UsingDropdownsPillsWithDropdowns: StoryFn = () => {
     <div style={{ minHeight: '200px' }}>
       <Nav className="nav-pills">
         <NavItem>
-          <NavLink aria-current="page" href="#" isActive>
+          <NavLink aria-current="page" href="#" brActive>
             Active
           </NavLink>
         </NavItem>
@@ -332,7 +332,7 @@ export const UsingDropdownsPillsWithDropdowns: StoryFn = () => {
           <NavLink href="#">Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink isDisabled>Disabled</NavLink>
+          <NavLink brDisabled>Disabled</NavLink>
         </NavItem>
       </Nav>
     </div>
@@ -539,7 +539,7 @@ function JavascriptBehaviorExample(props: { idPrefix: string; className: string 
             role="tab"
             aria-controls={`${idPrefix}-disabled-tab-pane`}
             aria-selected={activeTab === `${idPrefix}-disabled-tab`}
-            isDisabled
+            brDisabled
             ref={registerTab}
             onClick={handleTabClick1}
           >

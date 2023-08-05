@@ -343,7 +343,7 @@ export const Navigation: StoryFn = () => {
         <CardHeader>
           <Nav className="nav-tabs card-header-tabs">
             <NavItem>
-              <NavLink aria-current="true" href="#" isActive>
+              <NavLink aria-current="true" href="#" brActive>
                 Active
               </NavLink>
             </NavItem>
@@ -351,7 +351,7 @@ export const Navigation: StoryFn = () => {
               <NavLink href="#">Link</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink isDisabled>Disabled</NavLink>
+              <NavLink brDisabled>Disabled</NavLink>
             </NavItem>
           </Nav>
         </CardHeader>
@@ -370,7 +370,7 @@ export const Navigation: StoryFn = () => {
         <CardHeader>
           <Nav className="nav-pills card-header-pills">
             <NavItem>
-              <NavLink aria-current="true" href="#" isActive>
+              <NavLink aria-current="true" href="#" brActive>
                 Active
               </NavLink>
             </NavItem>
@@ -378,7 +378,7 @@ export const Navigation: StoryFn = () => {
               <NavLink href="#">Link</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink isDisabled>Disabled</NavLink>
+              <NavLink brDisabled>Disabled</NavLink>
             </NavItem>
           </Nav>
         </CardHeader>

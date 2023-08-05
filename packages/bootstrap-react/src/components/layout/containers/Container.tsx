@@ -1,8 +1,6 @@
 import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
+import { BrBreakpoint, BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType } from 'react'
-
-type ContainerBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | string
 
 export type ContainerProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -12,23 +10,23 @@ export type ContainerProps<T extends ElementType> = BrElementProps<T> & {
    */
   as?: T
   /** Breakpoint size to use */
-  breakpoint?: ContainerBreakpoint
+  brBreakpoint?: BrBreakpoint
   /** Container is fluid */
-  fluid?: boolean
+  brFluid?: boolean
 }
 
 /** [Container](https://getbootstrap.com/docs/5.3/layout/containers/) */
 export default function Container<T extends ElementType = 'div'>(props: ContainerProps<T>) {
-  const { as = 'div' as ElementType, children, className, breakpoint, fluid, ...rest } = props
+  const { as = 'div' as ElementType, children, className, brBreakpoint, brFluid, ...rest } = props
 
   return (
     <BrElement
       as={as}
       className={classNames(
         {
-          container: !breakpoint && !fluid,
-          [`container-${breakpoint}`]: !!breakpoint,
-          'container-fluid': fluid
+          container: !brBreakpoint && !brFluid,
+          [`container-${brBreakpoint}`]: !!brBreakpoint,
+          'container-fluid': brFluid
         },
         className
       )}
