@@ -12,14 +12,15 @@ export type PaginationProps<T extends ElementType> = BrElementProps<T> & {
   brPaginationSize?: 'lg' | 'sm'
 }
 
-export type PaginationComponent = <Component extends ElementType = 'ul'>(
+export type PaginationWithRef = <Component extends ElementType = 'ul'>(
   props: PaginationProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /** [Pagination]() */
-const Pagination: PaginationComponent = forwardRef(function Pagination<
-  T extends ElementType = 'ul'
->(props: PaginationProps<T>, ref?: PaginationProps<T>['ref']) {
+const Pagination: PaginationWithRef = forwardRef(function Pagination<T extends ElementType = 'ul'>(
+  props: PaginationProps<T>,
+  ref?: PaginationProps<T>['ref']
+) {
   const { as = 'ul' as ElementType, children, className, brPaginationSize, ...rest } = props
 
   return (

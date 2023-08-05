@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../../utils/BrElement'
 
@@ -14,17 +14,24 @@ export type NavProps<T extends ElementType> = BrElementProps<T> & {
   brNavPills?: boolean
 }
 
+type NavWithRef = <Component extends ElementType = 'ul'>(props: NavProps<Component>) => ReactNode
+
 /** [Nav]() */
-export default function Nav<T extends ElementType = 'ul'>(props: NavProps<T>) {
+const Nav: NavWithRef = forwardRef(function Nav<T extends ElementType = 'ul'>(
+  props: NavProps<T>,
+  ref?: NavProps<T>['ref']
+) {
   const { as = 'ul' as ElementType, children, className, brNavPills, ...rest } = props
 
   return (
     <BrElement
       as={as}
+      ref={ref}
       className={classNames('nav', { 'nav-pills': brNavPills }, className)}
       {...rest}
     >
       {children}
     </BrElement>
   )
-}
+})
+export default Nav

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type DropdownItemProps<T extends ElementType, U extends ElementType> = BrElementProps<T> & {
   /**
@@ -31,12 +31,20 @@ export type DropdownItemProps<T extends ElementType, U extends ElementType> = Br
   brDropdownItemWrapperProps?: BrElementProps<U>
 }
 
+type DropdownItemWithRef = <
+  Component extends ElementType = 'a',
+  Wrapper extends ElementType = 'li'
+>(
+  props: DropdownItemProps<Component, Wrapper>
+) => ReactNode
+
 /**
  * [Dropdown]()
  */
-export default function DropdownItem<T extends ElementType = 'a', U extends ElementType = 'li'>(
-  props: DropdownItemProps<T, U>
-) {
+const DropdownItem: DropdownItemWithRef = forwardRef(function DropdownItem<
+  T extends ElementType = 'a',
+  U extends ElementType = 'li'
+>(props: DropdownItemProps<T, U>, ref?: DropdownItemProps<T, U>['ref']) {
   const {
     as = 'a' as ElementType,
     children,
@@ -52,6 +60,7 @@ export default function DropdownItem<T extends ElementType = 'a', U extends Elem
   const content = (
     <BrElement
       as={as}
+      ref={ref}
       className={classNames(
         {
           'dropdown-item': brDropdownItemInteractive,
@@ -76,4 +85,5 @@ export default function DropdownItem<T extends ElementType = 'a', U extends Elem
       {content}
     </BrElement>
   )
-}
+})
+export default DropdownItem

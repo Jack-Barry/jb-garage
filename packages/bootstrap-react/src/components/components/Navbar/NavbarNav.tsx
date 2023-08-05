@@ -4,14 +4,14 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type NavbarNavProps<T extends ElementType> = BrElementProps<T>
 
-export type NavbarNavComponent = <Component extends ElementType = 'ul'>(
+export type NavbarNavWithRef = <Component extends ElementType = 'ul'>(
   props: NavbarNavProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Navbar]()
  */
-const NavbarNav: NavbarNavComponent = forwardRef(function NavbarNav<T extends ElementType = 'ul'>(
+const NavbarNav: NavbarNavWithRef = forwardRef(function NavbarNav<T extends ElementType = 'ul'>(
   props: NavbarNavProps<T>,
   ref?: NavbarNavProps<T>['ref']
 ) {

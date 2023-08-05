@@ -4,14 +4,14 @@ import classNames from 'classnames'
 
 export type OffcanvasTitleProps<T extends ElementType> = BrElementProps<T>
 
-export type OffcanvasTitleComponent = <Component extends ElementType = 'h5'>(
+export type OffcanvasTitleWithRef = <Component extends ElementType = 'h5'>(
   props: OffcanvasTitleProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Offcanvas]()
  */
-const OffcanvasTitle: OffcanvasTitleComponent = forwardRef(function OffcanvasTitle<
+const OffcanvasTitle: OffcanvasTitleWithRef = forwardRef(function OffcanvasTitle<
   T extends ElementType = 'h5'
 >(props: OffcanvasTitleProps<T>, ref?: OffcanvasTitleProps<T>['ref']) {
   const { as = 'h5' as ElementType, className, ...rest } = props

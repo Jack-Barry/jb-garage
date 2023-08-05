@@ -4,14 +4,14 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type NavbarTogglerIconProps<T extends ElementType> = BrElementProps<T>
 
-export type NavbarTogglerIconComponent = <Component extends ElementType = 'span'>(
+export type NavbarTogglerIconWithRef = <Component extends ElementType = 'span'>(
   props: NavbarTogglerIconProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Navbar]()
  */
-const NavbarTogglerIcon: NavbarTogglerIconComponent = forwardRef(function NavbarTogglerIcon<
+const NavbarTogglerIcon: NavbarTogglerIconWithRef = forwardRef(function NavbarTogglerIcon<
   T extends ElementType = 'span'
 >(props: NavbarTogglerIconProps<T>, ref?: NavbarTogglerIconProps<T>['ref']) {
   const { as = 'span' as ElementType, className, ...rest } = props

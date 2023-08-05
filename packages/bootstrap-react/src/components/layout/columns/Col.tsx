@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type ColSpan =
   | 1
@@ -77,8 +77,13 @@ export type ColProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   brColOffsetXxl?: ColOffset
 }
 
+type ColWithRef = <Component extends ElementType = 'div'>(props: ColProps<Component>) => ReactNode
+
 /** [Col]() */
-export default function Col<T extends ElementType = 'div'>(props: ColProps<T>) {
+const Col: ColWithRef = forwardRef(function Col<T extends ElementType = 'div'>(
+  props: ColProps<T>,
+  ref?: ColProps<T>['ref']
+) {
   const {
     as = 'div' as ElementType,
     children,
@@ -107,6 +112,7 @@ export default function Col<T extends ElementType = 'div'>(props: ColProps<T>) {
   return (
     <BrElement
       as={as}
+      ref={ref}
       className={classNames(
         {
           col: !brCols && !brColsSm && !brColsMd && !brColsLg && !brColsXl && !brColsXxl,
@@ -141,4 +147,5 @@ export default function Col<T extends ElementType = 'div'>(props: ColProps<T>) {
       {children}
     </BrElement>
   )
-}
+})
+export default Col

@@ -15,14 +15,14 @@ export type ListGroupItemProps<T extends ElementType> = Omit<BrElementProps<T>, 
   brListGroupItemActive?: boolean
 }
 
-export type ListGroupItemComponent = <Component extends ElementType = 'li'>(
+export type ListGroupItemWithRef = <Component extends ElementType = 'li'>(
   props: ListGroupItemProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [List Group Item](https://getbootstrap.com/docs/5.3/components/list-group/)
  */
-const ListGroupItem: ListGroupItemComponent = forwardRef(function ListGroupItem<
+const ListGroupItem: ListGroupItemWithRef = forwardRef(function ListGroupItem<
   T extends ElementType = 'li'
 >(props: ListGroupItemProps<T>, ref: BrElementProps<T>['ref']) {
   const {

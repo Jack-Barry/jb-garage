@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
-export type DropdownItemProps<T extends ElementType> = BrElementProps<'hr'> & {
+export type DropdownDividerProps<T extends ElementType> = BrElementProps<'hr'> & {
   /**
    * Type of HTML element to wrap the item in
    *
@@ -15,10 +15,16 @@ export type DropdownItemProps<T extends ElementType> = BrElementProps<'hr'> & {
   brDropdownItemWrapperProps?: BrElementProps<T>
 }
 
+type DropdownDividierWithRef = <Component extends ElementType = 'li'>(
+  props: DropdownDividerProps<Component>
+) => ReactNode
+
 /**
  * [Dropdown]()
  */
-export default function DropdownDivider<T extends ElementType = 'li'>(props: DropdownItemProps<T>) {
+const DropdownDivider: DropdownDividierWithRef = forwardRef(function DropdownDivier<
+  T extends ElementType = 'li'
+>(props: DropdownDividerProps<T>, ref?: DropdownDividerProps<T>['ref']) {
   const {
     className,
     brDropdownItemWrapperAs = 'li' as ElementType,
@@ -26,7 +32,7 @@ export default function DropdownDivider<T extends ElementType = 'li'>(props: Dro
     ...rest
   } = props
 
-  const content = <hr className={classNames('dropdown-divider', className)} {...rest} />
+  const content = <hr ref={ref} className={classNames('dropdown-divider', className)} {...rest} />
 
   if (brDropdownItemWrapperAs === null) {
     return content
@@ -37,4 +43,5 @@ export default function DropdownDivider<T extends ElementType = 'li'>(props: Dro
       {content}
     </BrElement>
   )
-}
+})
+export default DropdownDivider

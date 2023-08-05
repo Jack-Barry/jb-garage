@@ -4,25 +4,20 @@ import classNames from 'classnames'
 
 export type CarouselCaptionProps<T extends ElementType> = BrElementProps<T>
 
-export type CarouselCaptionComponent = <Component extends ElementType = 'div'>(
+export type CarouselCaptionWithRef = <Component extends ElementType = 'div'>(
   props: CarouselCaptionProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const CarouselCaption: CarouselCaptionComponent = forwardRef(function CarouselCaption<
+const CarouselCaption: CarouselCaptionWithRef = forwardRef(function CarouselCaption<
   T extends ElementType = 'div'
 >(props: CarouselCaptionProps<T>, ref?: CarouselCaptionProps<T>['ref']) {
-  const { as, className, ...rest } = props
+  const { as = 'div' as ElementType, className, ...rest } = props
 
   return (
-    <BrElement
-      as={as as ElementType}
-      ref={ref}
-      className={classNames('carousel-caption', className)}
-      {...rest}
-    />
+    <BrElement as={as} ref={ref} className={classNames('carousel-caption', className)} {...rest} />
   )
 })
 export default CarouselCaption

@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import TableEntry, { TableEntryProps } from './TableEntry'
+import { ReactNode, forwardRef } from 'react'
 
 type TableGroupElementType = 'thead' | 'tbody' | 'tfoot'
 export type TableGroupProps<T extends TableGroupElementType> = TableEntryProps<T> & {
@@ -7,13 +8,22 @@ export type TableGroupProps<T extends TableGroupElementType> = TableEntryProps<T
   brTableGroupDivider?: boolean
 }
 
-export default function TableGroup<T extends TableGroupElementType>(props: TableGroupProps<T>) {
-  const { className, brTableGroupDivider, ...rest } = props
+type TableGroupWithRef = <Component extends TableGroupElementType = 'tbody'>(
+  props: TableGroupProps<Component>
+) => ReactNode
+
+const TableGroup: TableGroupWithRef = forwardRef(function TableGroup<
+  T extends TableGroupElementType = 'tbody'
+>(props: TableGroupProps<T>, ref?: TableGroupProps<T>['ref']) {
+  const { as = 'tbody' as TableGroupElementType, className, brTableGroupDivider, ...rest } = props
 
   return (
     <TableEntry
+      as={as}
+      ref={ref}
       className={classNames({ 'table-group-divider': brTableGroupDivider }, className)}
       {...rest}
     />
   )
-}
+})
+export default TableGroup

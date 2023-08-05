@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { forwardRef } from 'react'
+import { ReactNode, forwardRef } from 'react'
 
 export type FormCheckInputProps = Omit<BrElementProps<'input'>, 'as' | 'type'> & {
   type?: 'checkbox' | 'radio'
@@ -10,7 +10,9 @@ export type FormCheckInputProps = Omit<BrElementProps<'input'>, 'as' | 'type'> &
   brFormCheckInputValid?: boolean
 }
 
-const FormCheckInput = forwardRef<HTMLInputElement, FormCheckInputProps>(function FormCheckInput(
+type FormCheckInputWithRef = (props: FormCheckInputProps) => ReactNode
+
+const FormCheckInput: FormCheckInputWithRef = forwardRef(function FormCheckInput(
   props: FormCheckInputProps,
   ref
 ) {

@@ -1,20 +1,23 @@
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 import classNames from 'classnames'
 
 export type AccordionItemProps<T extends ElementType> = BrElementProps<T>
 
+type AccordionItemWithRef = <Component extends ElementType = 'div'>(
+  props: AccordionItemProps<Component>
+) => ReactNode
+
 /**
  * [Accordion]()
  */
-export default function AccordionItem<T extends ElementType = 'div'>(props: AccordionItemProps<T>) {
-  const { as, className, ...rest } = props
+const AccordionItem: AccordionItemWithRef = forwardRef(function AccordionItem<
+  T extends ElementType = 'div'
+>(props: AccordionItemProps<T>, ref?: AccordionItemProps<T>['ref']) {
+  const { as = 'div' as ElementType, className, ...rest } = props
 
   return (
-    <BrElement
-      as={as as ElementType}
-      className={classNames('accordion-item', className)}
-      {...rest}
-    />
+    <BrElement as={as} ref={ref} className={classNames('accordion-item', className)} {...rest} />
   )
-}
+})
+export default AccordionItem

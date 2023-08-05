@@ -4,25 +4,18 @@ import classNames from 'classnames'
 
 export type ToastHeaderProps<T extends ElementType> = BrElementProps<T>
 
-export type ToastHeaderComponent = <Component extends ElementType = 'div'>(
+export type ToastHeaderWithRef = <Component extends ElementType = 'div'>(
   props: ToastHeaderProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Toast]()
  */
-const ToastHeader: ToastHeaderComponent = forwardRef(function ToastHeader<
+const ToastHeader: ToastHeaderWithRef = forwardRef(function ToastHeader<
   T extends ElementType = 'div'
 >(props: ToastHeaderProps<T>, ref?: ToastHeaderProps<T>['ref']) {
-  const { as, className, ...rest } = props
+  const { as = 'div' as ElementType, className, ...rest } = props
 
-  return (
-    <BrElement
-      as={as as ElementType}
-      ref={ref}
-      className={classNames('toast-header', className)}
-      {...rest}
-    />
-  )
+  return <BrElement as={as} ref={ref} className={classNames('toast-header', className)} {...rest} />
 })
 export default ToastHeader

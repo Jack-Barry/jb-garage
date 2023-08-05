@@ -6,11 +6,11 @@ export type InputGroupTextProps<T extends ElementType> = BrElementProps<T> & {
   /** */
 }
 
-type InputGroupTextComponent = <Component extends ElementType = 'span'>(
+type InputGroupTextWithRef = <Component extends ElementType = 'span'>(
   props: InputGroupTextProps<Component>
-) => ReactNode | null
+) => ReactNode
 
-const InputGroupText: InputGroupTextComponent = forwardRef(function FormInput<
+const InputGroupText: InputGroupTextWithRef = forwardRef(function FormInput<
   T extends ElementType = 'span'
 >(props: InputGroupTextProps<T>, ref?: InputGroupTextProps<T>['ref']) {
   const { as = 'span' as ElementType, className, children, ...rest } = props

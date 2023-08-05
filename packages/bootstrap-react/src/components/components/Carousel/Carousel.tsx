@@ -13,23 +13,23 @@ export type CarouselProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type CarouselComponent = <Component extends ElementType = 'div'>(
+export type CarouselWithRef = <Component extends ElementType = 'div'>(
   props: CarouselProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const Carousel: CarouselComponent = forwardRef(function Carousel<T extends ElementType = 'div'>(
+const Carousel: CarouselWithRef = forwardRef(function Carousel<T extends ElementType = 'div'>(
   props: CarouselProps<T>,
   ref?: CarouselProps<T>['ref']
 ) {
-  const { as, brCarousel, brCarouselFade, className, ...rest } = props
+  const { as = 'div' as ElementType, brCarousel, brCarouselFade, className, ...rest } = props
   const usedRef = useMultiRef(ref, brCarousel.ref)
 
   return (
     <BrElement
-      as={as as ElementType}
+      as={as}
       ref={usedRef}
       className={classNames('carousel slide', { 'carousel-fade': brCarouselFade }, className)}
       {...rest}

@@ -9,11 +9,11 @@ export type FormGroupProps<T extends ElementType> = BrElementProps<T> & {
   brFormGroupIsInvalid?: boolean
 }
 
-type FormGroupComponent = <Component extends ElementType = 'div'>(
+type FormGroupWithRef = <Component extends ElementType = 'div'>(
   props: FormGroupProps<Component>
-) => ReactNode | null
+) => ReactNode
 
-const FormGroup: FormGroupComponent = forwardRef(function FormGroup<T extends ElementType = 'div'>(
+const FormGroup: FormGroupWithRef = forwardRef(function FormGroup<T extends ElementType = 'div'>(
   props: FormGroupProps<T>,
   ref?: FormGroupProps<T>['ref']
 ) {

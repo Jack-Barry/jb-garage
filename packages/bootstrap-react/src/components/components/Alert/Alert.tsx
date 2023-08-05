@@ -17,12 +17,12 @@ export type AlertProps<T extends ElementType> = BrElementProps<T> & {
   brAlertDismissible?: boolean
 }
 
-export type AlertComponent = <Component extends ElementType = 'div'>(
+export type AlertWithRef = <Component extends ElementType = 'div'>(
   props: AlertProps<Component>
 ) => ReactNode | null
 
 /** [Alert]() */
-const Alert: AlertComponent = forwardRef(function Alert<T extends ElementType = 'div'>(
+const Alert: AlertWithRef = forwardRef(function Alert<T extends ElementType = 'div'>(
   props: AlertProps<T>,
   ref?: AlertProps<T>['ref']
 ) {

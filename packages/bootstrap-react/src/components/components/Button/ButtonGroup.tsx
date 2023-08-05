@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type ButtonGroupProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -17,8 +17,14 @@ export type ButtonGroupProps<T extends ElementType> = BrElementProps<T> & {
   brButtonGroupVertical?: boolean
 }
 
+type ButtonGroupWithRef = <Component extends ElementType = 'div'>(
+  props: ButtonGroupProps<Component>
+) => ReactNode
+
 /** [ButtonGroup]() */
-export default function ButtonGroup<T extends ElementType = 'div'>(props: ButtonGroupProps<T>) {
+const ButtonGroup: ButtonGroupWithRef = forwardRef(function ButtonGroup<
+  T extends ElementType = 'div'
+>(props: ButtonGroupProps<T>, ref?: ButtonGroupProps<T>['ref']) {
   const {
     as = 'div' as ElementType,
     children,
@@ -33,6 +39,7 @@ export default function ButtonGroup<T extends ElementType = 'div'>(props: Button
   return (
     <BrElement
       as={as}
+      ref={ref}
       className={classNames(
         {
           'btn-group': !brButtonGroupVertical,
@@ -48,4 +55,5 @@ export default function ButtonGroup<T extends ElementType = 'div'>(props: Button
       {children}
     </BrElement>
   )
-}
+})
+export default ButtonGroup

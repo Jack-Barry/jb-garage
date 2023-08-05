@@ -9,14 +9,14 @@ export type CarouselControlProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type CarouselControlComponent = <Component extends ElementType = 'button'>(
+export type CarouselControlWithRef = <Component extends ElementType = 'button'>(
   props: CarouselControlProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const CarouselControl: CarouselControlComponent = forwardRef(function CarouselControl<
+const CarouselControl: CarouselControlWithRef = forwardRef(function CarouselControl<
   T extends ElementType = 'button'
 >(props: CarouselControlProps<T>, ref?: CarouselControlProps<T>['ref']) {
   const {

@@ -1,9 +1,9 @@
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 import classNames from 'classnames'
 import Button, { ButtonProps } from '../Button/Button'
 import { useParentAccordion } from './AccordionContext'
 
-export type AccordionButton<T extends ElementType> = ButtonProps<T> & {
+export type AccordionButtonProps<T extends ElementType> = ButtonProps<T> & {
   /**
    * Button should have `btn` class
    *
@@ -14,12 +14,16 @@ export type AccordionButton<T extends ElementType> = ButtonProps<T> & {
   brAccordionButtonCollapsed?: boolean
 }
 
+type AccordionButtonWithRef = <Component extends ElementType = 'button'>(
+  props: AccordionButtonProps<Component>
+) => ReactNode
+
 /**
  * [Accordion]()
  */
-export default function AccordionButton<T extends ElementType = 'button'>(
-  props: AccordionButton<T>
-) {
+const AccordionButton: AccordionButtonWithRef = forwardRef(function AccordionButton<
+  T extends ElementType = 'button'
+>(props: AccordionButtonProps<T>, ref?: AccordionButtonProps<T>['ref']) {
   const {
     as = 'button' as ElementType,
     className,
@@ -41,6 +45,7 @@ export default function AccordionButton<T extends ElementType = 'button'>(
   return (
     <Button
       as={as}
+      ref={ref}
       className={classNames(
         'accordion-button',
         {
@@ -54,4 +59,5 @@ export default function AccordionButton<T extends ElementType = 'button'>(
       {...rest}
     />
   )
-}
+})
+export default AccordionButton

@@ -8,18 +8,18 @@ export type AccordionCollapseProps<T extends ElementType> = Partial<CollapseProp
   brAccordionCollapseDefaultOpen?: boolean
 }
 
-export type AccordionCollapseComponent = <Component extends ElementType = 'div'>(
+export type AccordionCollapseWithRef = <Component extends ElementType = 'div'>(
   props: AccordionCollapseProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Accordion]()
  */
-const AccordionCollapse: AccordionCollapseComponent = forwardRef(function AccordionCollapse<
+const AccordionCollapse: AccordionCollapseWithRef = forwardRef(function AccordionCollapse<
   T extends ElementType = 'div'
 >(props: AccordionCollapseProps<T>, ref?: AccordionCollapseProps<T>['ref']) {
   const {
-    as,
+    as = 'div' as ElementType,
     className,
     brCollapse,
     brAccordionCollapseDefaultOpen: brAccordionCollapseDefaultOpen,
@@ -56,7 +56,7 @@ const AccordionCollapse: AccordionCollapseComponent = forwardRef(function Accord
 
   return (
     <Collapse
-      as={as as ElementType}
+      as={as}
       ref={ref}
       brCollapse={usedCollapse}
       className={classNames('accordion-collapse', className)}

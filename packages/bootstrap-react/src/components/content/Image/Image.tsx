@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
+import { ReactNode, forwardRef } from 'react'
 
 export type ImageElementType = 'img' | 'svg'
 export type ImageProps<T extends ImageElementType> = BrElementProps<
@@ -11,7 +12,14 @@ export type ImageProps<T extends ImageElementType> = BrElementProps<
   }
 >
 
-export default function Image<T extends ImageElementType = 'img'>(props: ImageProps<T>) {
+type ImageWithRef = <Component extends ImageElementType = 'img'>(
+  props: ImageProps<Component>
+) => ReactNode
+
+const Image: ImageWithRef = forwardRef(function Image<T extends ImageElementType = 'img'>(
+  props: ImageProps<T>,
+  ref?: ImageProps<T>['ref']
+) {
   const {
     as = 'img' as ImageElementType,
     brImageFluid,
@@ -23,6 +31,7 @@ export default function Image<T extends ImageElementType = 'img'>(props: ImagePr
   return (
     <BrElement
       as={as}
+      ref={ref}
       className={classNames(
         { 'img-fluid': brImageFluid, 'img-thumbnail': brImageThumbnail },
         className
@@ -30,4 +39,5 @@ export default function Image<T extends ImageElementType = 'img'>(props: ImagePr
       {...rest}
     />
   )
-}
+})
+export default Image

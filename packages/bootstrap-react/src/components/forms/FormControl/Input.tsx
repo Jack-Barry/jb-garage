@@ -58,11 +58,11 @@ export type InputProps<T extends InputElementType> = Omit<BrElementProps<T>, 'ty
   brInputValid?: boolean
 }
 
-type InputComponent = <Component extends InputElementType = 'input'>(
+type InputWithRef = <Component extends InputElementType = 'input'>(
   props: InputProps<Component>
-) => ReactNode | null
+) => ReactNode
 
-const Input: InputComponent = forwardRef(function FormInput<T extends InputElementType = 'input'>(
+const Input: InputWithRef = forwardRef(function FormInput<T extends InputElementType = 'input'>(
   props: InputProps<T>,
   ref?: InputProps<T>['ref']
 ) {

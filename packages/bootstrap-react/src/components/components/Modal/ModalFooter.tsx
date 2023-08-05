@@ -5,25 +5,18 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type ModalFooterProps<T extends ElementType> = BrElementProps<T>
 
-export type ModalFooterComponent = <Component extends ElementType = 'div'>(
+export type ModalFooterWithRef = <Component extends ElementType = 'div'>(
   props: ModalFooterProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const ModalFooter: ModalFooterComponent = forwardRef(function ModalFooter<
+const ModalFooter: ModalFooterWithRef = forwardRef(function ModalFooter<
   T extends ElementType = 'div'
 >(props: ModalFooterProps<T>, ref?: ModalFooterProps<T>['ref']) {
-  const { as, className, ...rest } = props
+  const { as = 'div' as ElementType, className, ...rest } = props
 
-  return (
-    <BrElement
-      as={as as ElementType}
-      ref={ref}
-      className={classNames('modal-footer', className)}
-      {...rest}
-    />
-  )
+  return <BrElement as={as} ref={ref} className={classNames('modal-footer', className)} {...rest} />
 })
 export default ModalFooter

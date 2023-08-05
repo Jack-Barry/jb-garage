@@ -7,14 +7,14 @@ export type NavbarProps<T extends ElementType> = BrElementProps<T> & {
   brNavbarPlacement?: 'fixed-top' | 'fixed-bottom' | 'sticky-top' | 'sticky-bottom'
 }
 
-export type NavbarComponent = <Component extends ElementType = 'nav'>(
+export type NavbarWithRef = <Component extends ElementType = 'nav'>(
   props: NavbarProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Navbar]()
  */
-const Navbar: NavbarComponent = forwardRef(function Navbar<T extends ElementType = 'nav'>(
+const Navbar: NavbarWithRef = forwardRef(function Navbar<T extends ElementType = 'nav'>(
   props: NavbarProps<T>,
   ref?: NavbarProps<T>['ref']
 ) {

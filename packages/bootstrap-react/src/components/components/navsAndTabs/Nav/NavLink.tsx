@@ -17,12 +17,12 @@ export type NavLinkProps<T extends ElementType> = BrElementProps<T> & {
   brNavLinkDropdownToggle?: boolean
 }
 
-type NavLinkComponent = <Component extends ElementType = 'a'>(
+type NavLinkWithRef = <Component extends ElementType = 'a'>(
   props: NavLinkProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /** [Nav]() */
-const NavLink: NavLinkComponent = forwardRef(
+const NavLink: NavLinkWithRef = forwardRef(
   <T extends ElementType = 'a'>(props: NavLinkProps<T>, ref?: NavLinkProps<T>['ref']) => {
     const {
       as = 'a' as ElementType,

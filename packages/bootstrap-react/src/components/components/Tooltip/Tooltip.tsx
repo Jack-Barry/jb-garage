@@ -16,19 +16,19 @@ export type TooltipProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type TooltipComponent = <Component extends ElementType = 'div'>(
+export type TooltipWithRef = <Component extends ElementType = 'div'>(
   props: TooltipProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Tooltip]()
  */
-const Tooltip: TooltipComponent = forwardRef(function Tooltip<T extends ElementType>(
+const Tooltip: TooltipWithRef = forwardRef(function Tooltip<T extends ElementType = 'div'>(
   props: TooltipProps<T>,
   ref?: TooltipProps<T>['ref']
 ) {
   const {
-    as,
+    as = 'div' as ElementType,
     brTooltip,
     brTooltipArrow = true,
     role = 'tooltip',
@@ -52,7 +52,7 @@ const Tooltip: TooltipComponent = forwardRef(function Tooltip<T extends ElementT
   return (
     isMounted && (
       <BrElement
-        as={as as ElementType}
+        as={as}
         {...getProps()}
         ref={usedRef}
         role={role}

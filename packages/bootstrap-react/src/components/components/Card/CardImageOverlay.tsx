@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type CardImageOverlayProps<T extends ElementType> = BrElementProps<T> & {
@@ -11,15 +11,20 @@ export type CardImageOverlayProps<T extends ElementType> = BrElementProps<T> & {
   as?: T
 }
 
+type CardImageOverlayWithRef = <Component extends ElementType = 'div'>(
+  props: CardImageOverlayProps<Component>
+) => ReactNode
+
 /** []() */
-export default function CardImageOverlay<T extends ElementType = 'div'>(
-  props: CardImageOverlayProps<T>
-) {
+const CardImageOverlay: CardImageOverlayWithRef = forwardRef(function CardImageOverlay<
+  T extends ElementType = 'div'
+>(props: CardImageOverlayProps<T>, ref?: CardImageOverlayProps<T>['ref']) {
   const { as = 'div' as ElementType, children, className, ...rest } = props
 
   return (
-    <BrElement as={as} className={classNames('card-img-overlay', className)} {...rest}>
+    <BrElement as={as} ref={ref} className={classNames('card-img-overlay', className)} {...rest}>
       {children}
     </BrElement>
   )
-}
+})
+export default CardImageOverlay

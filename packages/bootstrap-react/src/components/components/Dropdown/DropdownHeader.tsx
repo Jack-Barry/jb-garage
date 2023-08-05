@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type DropdownHeaderProps<
   T extends ElementType,
@@ -24,12 +24,20 @@ export type DropdownHeaderProps<
   brDropdownHeaderWrapperProps?: BrElementProps<U>
 }
 
+type DropdownHeaderWithRef = <
+  Component extends ElementType = 'h6',
+  Wrapper extends ElementType = 'li'
+>(
+  props: DropdownHeaderProps<Component, Wrapper>
+) => ReactNode
+
 /**
  * [Dropdown]()
  */
-export default function DropdownHeader<T extends ElementType = 'h6', U extends ElementType = 'li'>(
-  props: DropdownHeaderProps<T, U>
-) {
+const DropdownHeader: DropdownHeaderWithRef = forwardRef(function DropdownHeader<
+  T extends ElementType = 'h6',
+  U extends ElementType = 'li'
+>(props: DropdownHeaderProps<T, U>, ref?: DropdownHeaderProps<T, U>['ref']) {
   const {
     as = 'h6' as ElementType,
     children,
@@ -40,7 +48,7 @@ export default function DropdownHeader<T extends ElementType = 'h6', U extends E
   } = props
 
   const content = (
-    <BrElement as={as} className={classNames('dropdown-header', className)} {...rest}>
+    <BrElement as={as} ref={ref} className={classNames('dropdown-header', className)} {...rest}>
       {children}
     </BrElement>
   )
@@ -54,4 +62,5 @@ export default function DropdownHeader<T extends ElementType = 'h6', U extends E
       {content}
     </BrElement>
   )
-}
+})
+export default DropdownHeader

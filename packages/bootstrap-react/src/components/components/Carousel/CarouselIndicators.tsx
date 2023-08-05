@@ -4,21 +4,21 @@ import classNames from 'classnames'
 
 export type CarouselIndicatorsProps<T extends ElementType> = BrElementProps<T>
 
-export type CarouselIndicatorsComponent = <Component extends ElementType = 'div'>(
+export type CarouselIndicatorsWithRef = <Component extends ElementType = 'div'>(
   props: CarouselIndicatorsProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const CarouselIndicators: CarouselIndicatorsComponent = forwardRef(function CarouselIndicators<
+const CarouselIndicators: CarouselIndicatorsWithRef = forwardRef(function CarouselIndicators<
   T extends ElementType = 'div'
 >(props: CarouselIndicatorsProps<T>, ref?: CarouselIndicatorsProps<T>['ref']) {
-  const { as, className, ...rest } = props
+  const { as = 'div' as ElementType, className, ...rest } = props
 
   return (
     <BrElement
-      as={as as ElementType}
+      as={as}
       ref={ref}
       className={classNames('carousel-indicators', className)}
       {...rest}

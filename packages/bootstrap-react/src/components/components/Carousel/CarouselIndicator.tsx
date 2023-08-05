@@ -9,14 +9,14 @@ export type CarouselIndicatorProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type CarouselIndicatorComponent = <Component extends ElementType = 'button'>(
+export type CarouselIndicatorWithRef = <Component extends ElementType = 'button'>(
   props: CarouselIndicatorProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const CarouselIndicator: CarouselIndicatorComponent = forwardRef(function CarouselIndicator<
+const CarouselIndicator: CarouselIndicatorWithRef = forwardRef(function CarouselIndicator<
   T extends ElementType = 'button'
 >(props: CarouselIndicatorProps<T>, ref?: CarouselIndicatorProps<T>['ref']) {
   const {

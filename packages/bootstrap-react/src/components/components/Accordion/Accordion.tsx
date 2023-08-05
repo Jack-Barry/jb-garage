@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { AccordionContextProvider } from './AccordionContext'
@@ -15,12 +15,19 @@ export type AccordionProps<T extends ElementType> = BrElementProps<T> & {
   brAccordionAlwaysOpen?: boolean
 }
 
+type AccordionWithRef = <Component extends ElementType = 'div'>(
+  props: AccordionProps<Component>
+) => ReactNode
+
 /**
  * [Accordion]()
  */
-export default function Accordion<T extends ElementType>(props: AccordionProps<T>) {
+const Accordion: AccordionWithRef = forwardRef(function Accordion<T extends ElementType = 'div'>(
+  props: AccordionProps<T>,
+  ref?: AccordionProps<T>['ref']
+) {
   const {
-    as,
+    as = 'div' as ElementType,
     className,
     children,
     brAccordionFlush,
@@ -30,7 +37,8 @@ export default function Accordion<T extends ElementType>(props: AccordionProps<T
 
   return (
     <BrElement
-      as={as as ElementType}
+      as={as}
+      ref={ref}
       className={classNames(
         'accordion',
         {
@@ -45,4 +53,5 @@ export default function Accordion<T extends ElementType>(props: AccordionProps<T
       </AccordionContextProvider>
     </BrElement>
   )
-}
+})
+export default Accordion

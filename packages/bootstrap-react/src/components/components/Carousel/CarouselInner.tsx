@@ -4,25 +4,20 @@ import classNames from 'classnames'
 
 export type CarouselInnerProps<T extends ElementType> = BrElementProps<T>
 
-export type CarouselInnerComponent = <Component extends ElementType = 'div'>(
+export type CarouselInnerWithRef = <Component extends ElementType = 'div'>(
   props: CarouselInnerProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const CarouselInner: CarouselInnerComponent = forwardRef(function CarouselInner<
+const CarouselInner: CarouselInnerWithRef = forwardRef(function CarouselInner<
   T extends ElementType = 'div'
 >(props: CarouselInnerProps<T>, ref?: CarouselInnerProps<T>['ref']) {
-  const { as, className, ...rest } = props
+  const { as = 'div' as ElementType, className, ...rest } = props
 
   return (
-    <BrElement
-      as={as as ElementType}
-      ref={ref}
-      className={classNames('carousel-inner', className)}
-      {...rest}
-    />
+    <BrElement as={as} ref={ref} className={classNames('carousel-inner', className)} {...rest} />
   )
 })
 export default CarouselInner

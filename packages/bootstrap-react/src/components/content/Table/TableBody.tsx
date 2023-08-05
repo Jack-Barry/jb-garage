@@ -1,5 +1,13 @@
+import { ReactNode, forwardRef } from 'react'
 import TableGroup, { TableGroupProps } from './TableGroup'
 
-export default function TableBody(props: Omit<TableGroupProps<'tbody'>, 'as'>) {
-  return <TableGroup as="tbody" {...props} />
-}
+export type TableBodyProps = Omit<TableGroupProps<'tbody'>, 'as'>
+type TableBodyWithRef = (props: TableBodyProps) => ReactNode
+
+const TableBody: TableBodyWithRef = forwardRef(function TableBody(
+  props: TableBodyProps,
+  ref?: TableBodyProps['ref']
+) {
+  return <TableGroup as="tbody" ref={ref} {...props} />
+})
+export default TableBody

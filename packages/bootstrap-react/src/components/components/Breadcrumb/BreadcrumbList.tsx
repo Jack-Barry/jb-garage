@@ -14,14 +14,14 @@ export type BreadcrumbListProps<T extends ElementType> = BrElementProps<
   }
 >
 
-type BreadcrumbListComponent = <Component extends ElementType = 'ol'>(
+type BreadcrumbListWithRef = <Component extends ElementType = 'ol'>(
   props: BreadcrumbListProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * []()
  */
-const BreadcrumbList: BreadcrumbListComponent = forwardRef(function BreadcrumbList<
+const BreadcrumbList: BreadcrumbListWithRef = forwardRef(function BreadcrumbList<
   T extends ElementType = 'ol'
 >(props: BreadcrumbListProps<T>, ref?: BreadcrumbListProps<T>['ref']) {
   const { as = 'ol' as ElementType, className, children, ...rest } = props

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrBreakpoint, BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type ContainerProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -15,8 +15,15 @@ export type ContainerProps<T extends ElementType> = BrElementProps<T> & {
   brContainerFluid?: boolean
 }
 
+type ContainerWithRef = <Component extends ElementType>(
+  props: ContainerProps<Component>
+) => ReactNode
+
 /** [Container](https://getbootstrap.com/docs/5.3/layout/containers/) */
-export default function Container<T extends ElementType = 'div'>(props: ContainerProps<T>) {
+const Container: ContainerWithRef = forwardRef(function Container<T extends ElementType = 'div'>(
+  props: ContainerProps<T>,
+  ref?: ContainerProps<T>['ref']
+) {
   const {
     as = 'div' as ElementType,
     children,
@@ -29,6 +36,7 @@ export default function Container<T extends ElementType = 'div'>(props: Containe
   return (
     <BrElement
       as={as}
+      ref={ref}
       className={classNames(
         {
           container: !brContainerBreakpoint && !brContainerFluid,
@@ -42,4 +50,5 @@ export default function Container<T extends ElementType = 'div'>(props: Containe
       {children}
     </BrElement>
   )
-}
+})
+export default Container

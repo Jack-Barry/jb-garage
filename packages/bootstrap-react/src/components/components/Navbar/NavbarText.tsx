@@ -4,14 +4,14 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type NavbarTextProps<T extends ElementType> = BrElementProps<T>
 
-export type NavbarTextComponent = <Component extends ElementType = 'span'>(
+export type NavbarTextWithRef = <Component extends ElementType = 'span'>(
   props: NavbarTextProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Navbar]()
  */
-const NavbarText: NavbarTextComponent = forwardRef(function NavbarText<
+const NavbarText: NavbarTextWithRef = forwardRef(function NavbarText<
   T extends ElementType = 'span'
 >(props: NavbarTextProps<T>, ref?: NavbarTextProps<T>['ref']) {
   const { as = 'span' as ElementType, className, ...rest } = props

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type FormTextProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -11,13 +11,21 @@ export type FormTextProps<T extends ElementType> = BrElementProps<T> & {
   as?: T
 }
 
+type FormTextWithRef = <Component extends ElementType = 'div'>(
+  props: FormTextProps<Component>
+) => ReactNode
+
 /** []() */
-export default function FormText<T extends ElementType = 'div'>(props: FormTextProps<T>) {
+const FormText: FormTextWithRef = forwardRef(function FormText<T extends ElementType = 'div'>(
+  props: FormTextProps<T>,
+  ref?: FormTextProps<T>['ref']
+) {
   const { as = 'div' as ElementType, children, className, ...rest } = props
 
   return (
-    <BrElement as={as} className={classNames('form-text', className)} {...rest}>
+    <BrElement as={as} ref={ref} className={classNames('form-text', className)} {...rest}>
       {children}
     </BrElement>
   )
-}
+})
+export default FormText

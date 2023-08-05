@@ -16,19 +16,19 @@ export type PopoverProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type PopoverComponent = <Component extends ElementType = 'div'>(
+export type PopoverWithRef = <Component extends ElementType = 'div'>(
   props: PopoverProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Popover]()
  */
-const Popover: PopoverComponent = forwardRef(function Popover<T extends ElementType>(
+const Popover: PopoverWithRef = forwardRef(function Popover<T extends ElementType = 'div'>(
   props: PopoverProps<T>,
   ref?: PopoverProps<T>['ref']
 ) {
   const {
-    as,
+    as = 'div' as ElementType,
     brPopover,
     brPopoverArrow = true,
     role = 'tooltip',
@@ -52,7 +52,7 @@ const Popover: PopoverComponent = forwardRef(function Popover<T extends ElementT
   return (
     isMounted && (
       <BrElement
-        as={as as ElementType}
+        as={as}
         {...getProps()}
         ref={usedRef}
         role={role}
@@ -66,7 +66,7 @@ const Popover: PopoverComponent = forwardRef(function Popover<T extends ElementT
           className
         )}
         style={{ ...styles, ...style }}
-        // don't need this for Popper, but Bootstrap uses it for styling
+        // don't need this for Popper/Floating UI, but Bootstrap uses it for styling
         data-popper-placement={placement}
         {...rest}
       >

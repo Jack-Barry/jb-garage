@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type ProgressStackedProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -11,17 +11,21 @@ export type ProgressStackedProps<T extends ElementType> = BrElementProps<T> & {
   as?: T
 }
 
+type ProgressStackedWithRef = <Component extends ElementType = 'div'>(
+  props: ProgressStackedProps<Component>
+) => ReactNode
 /**
  * [Progress]()
  */
-export default function ProgressStacked<T extends ElementType = 'div'>(
-  props: ProgressStackedProps<T>
-) {
+const ProgressStacked: ProgressStackedWithRef = forwardRef(function ProgressStacked<
+  T extends ElementType = 'div'
+>(props: ProgressStackedProps<T>, ref?: ProgressStackedProps<T>['ref']) {
   const { as = 'div' as ElementType, children, className, ...rest } = props
 
   return (
-    <BrElement as={as} className={classNames('progress-stacked', className)} {...rest}>
+    <BrElement as={as} ref={ref} className={classNames('progress-stacked', className)} {...rest}>
       {children}
     </BrElement>
   )
-}
+})
+export default ProgressStacked

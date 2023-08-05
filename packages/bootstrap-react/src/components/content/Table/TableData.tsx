@@ -1,5 +1,13 @@
+import { ReactNode, forwardRef } from 'react'
 import TableEntry, { TableEntryProps } from './TableEntry'
 
-export default function TableData(props: Omit<TableEntryProps<'td'>, 'as'>) {
-  return <TableEntry as="td" {...props} />
-}
+export type TableDataProps = Omit<TableEntryProps<'td'>, 'as'>
+type TableDataWithRef = (props: TableDataProps) => ReactNode
+
+const TableData: TableDataWithRef = forwardRef(function TableData(
+  props: TableDataProps,
+  ref?: TableDataProps['ref']
+) {
+  return <TableEntry as="td" ref={ref} {...props} />
+})
+export default TableData

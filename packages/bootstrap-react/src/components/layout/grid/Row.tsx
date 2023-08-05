@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 import { ColSpan } from '../columns/Col'
 import { BrSpacingConfig, BrSpacingProp } from '../../utils/bootstrapClasses/spacing'
 
@@ -37,8 +37,13 @@ export type RowProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   brRowGutterXxl?: BrSpacingProp
 }
 
+type RowWithRef = <Component extends ElementType = 'div'>(props: RowProps<Component>) => ReactNode
+
 /** [Row]() */
-export default function Row<T extends ElementType = 'div'>(props: RowProps<T>) {
+const Row: RowWithRef = forwardRef(function Row<T extends ElementType = 'div'>(
+  props: RowProps<T>,
+  ref?: RowProps<T>['ref']
+) {
   const {
     as = 'div' as ElementType,
     children,
@@ -61,6 +66,7 @@ export default function Row<T extends ElementType = 'div'>(props: RowProps<T>) {
   return (
     <BrElement
       as={as}
+      ref={ref}
       className={classNames(
         'row',
         {
@@ -113,4 +119,5 @@ export default function Row<T extends ElementType = 'div'>(props: RowProps<T>) {
       {children}
     </BrElement>
   )
-}
+})
+export default Row

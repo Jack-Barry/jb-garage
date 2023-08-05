@@ -7,10 +7,10 @@ export type CloseButtonProps = BrElementProps<'button'> & {
   'aria-label'?: string
 }
 
-export type CloseButtonComponent = (props: CloseButtonProps) => ReactNode
+export type CloseButtonWithRef = (props: CloseButtonProps) => ReactNode
 
 /** [CloseButton]() */
-const CloseButton: CloseButtonComponent = forwardRef(function CloseButton(
+const CloseButton: CloseButtonWithRef = forwardRef(function CloseButton(
   props: CloseButtonProps,
   ref?: CloseButtonProps['ref']
 ) {

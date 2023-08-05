@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type AlertLinkProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -11,13 +11,21 @@ export type AlertLinkProps<T extends ElementType> = BrElementProps<T> & {
   as?: T
 }
 
+type AlertLinkWithRef = <Component extends ElementType = 'a'>(
+  props: AlertLinkProps<Component>
+) => ReactNode
+
 /** [AlertLink]() */
-export default function AlertLink<T extends ElementType = 'a'>(props: AlertLinkProps<T>) {
+const AlertLink: AlertLinkWithRef = forwardRef(function AlertLink<T extends ElementType = 'a'>(
+  props: AlertLinkProps<T>,
+  ref?: AlertLinkProps<T>['ref']
+) {
   const { as = 'a' as ElementType, children, className, ...rest } = props
 
   return (
-    <BrElement as={as} className={classNames('alert-link', className)} {...rest}>
+    <BrElement as={as} ref={ref} className={classNames('alert-link', className)} {...rest}>
       {children}
     </BrElement>
   )
-}
+})
+export default AlertLink

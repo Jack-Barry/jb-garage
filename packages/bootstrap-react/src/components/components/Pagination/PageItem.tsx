@@ -15,12 +15,12 @@ export type PageItemProps<T extends ElementType> = BrElementProps<T> & {
   brPageItemActive?: boolean
 }
 
-export type PageItemComponent = <Component extends ElementType = 'li'>(
+export type PageItemWithRef = <Component extends ElementType = 'li'>(
   props: PageItemProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /** [Pagination]() */
-const PageItem: PageItemComponent = forwardRef(function PageItem<T extends ElementType = 'li'>(
+const PageItem: PageItemWithRef = forwardRef(function PageItem<T extends ElementType = 'li'>(
   props: PageItemProps<T>,
   ref?: PageItemProps<T>['ref']
 ) {

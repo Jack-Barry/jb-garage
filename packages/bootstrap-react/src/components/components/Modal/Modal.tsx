@@ -16,23 +16,23 @@ export type ModalProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type ModalComponent = <Component extends ElementType = 'div'>(
+export type ModalWithRef = <Component extends ElementType = 'div'>(
   props: ModalProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const Modal: ModalComponent = forwardRef(function Modal<T extends ElementType = 'div'>(
+const Modal: ModalWithRef = forwardRef(function Modal<T extends ElementType = 'div'>(
   props: ModalProps<T>,
   ref?: ModalProps<T>['ref']
 ) {
-  const { as, brModal, brModalFade = true, className, ...rest } = props
+  const { as = 'div' as ElementType, brModal, brModalFade = true, className, ...rest } = props
   const usedRef = useMultiRef(ref, brModal.ref)
 
   return (
     <BrElement
-      as={as as ElementType}
+      as={as}
       ref={usedRef}
       className={classNames(
         'modal',

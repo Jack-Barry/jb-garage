@@ -12,22 +12,28 @@ export type ToastProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type ToastComponent = <Component extends ElementType = 'div'>(
+export type ToastWithRef = <Component extends ElementType = 'div'>(
   props: ToastProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Toast]()
  */
-const Toast: ToastComponent = forwardRef(function Toast<T extends ElementType = 'div'>(
+const Toast: ToastWithRef = forwardRef(function Toast<T extends ElementType = 'div'>(
   props: ToastProps<T>,
   ref?: ToastProps<T>['ref']
 ) {
-  const { as, className, role = 'alert', brToastFade = true, ...rest } = props
+  const {
+    as = 'div' as ElementType,
+    className,
+    role = 'alert',
+    brToastFade = true,
+    ...rest
+  } = props
 
   return (
     <BrElement
-      as={as as ElementType}
+      as={as}
       ref={ref}
       role={role}
       className={classNames('toast', { fade: brToastFade }, className)}

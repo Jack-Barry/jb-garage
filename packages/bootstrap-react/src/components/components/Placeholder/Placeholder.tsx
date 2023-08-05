@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type PlaceholderProps<T extends ElementType, U extends ElementType> = BrElementProps<
   T,
@@ -18,15 +18,23 @@ export type PlaceholderProps<T extends ElementType, U extends ElementType> = BrE
   }
 >
 
+type PlaceholderWithRef = <
+  Component extends ElementType = 'span',
+  Wrapper extends ElementType = 'p'
+>(
+  props: PlaceholderProps<Component, Wrapper>
+) => ReactNode
+
 /**
  * [Placeholder](https://getbootstrap.com/docs/5.3/components/placeholders/)
  *
  * - `as` defaults to `"span"`
  * - `wrapperProps.as` defaults to `"p"`
  */
-export default function Placeholder<T extends ElementType = 'span', U extends ElementType = 'p'>(
-  props: PlaceholderProps<T, U>
-) {
+const Placeholder: PlaceholderWithRef = forwardRef(function Placeholder<
+  T extends ElementType = 'span',
+  U extends ElementType = 'p'
+>(props: PlaceholderProps<T, U>, ref?: PlaceholderProps<T, U>['ref']) {
   const {
     as = 'span' as ElementType,
     brPlaceholderWrapperProps,
@@ -49,7 +57,8 @@ export default function Placeholder<T extends ElementType = 'span', U extends El
       )}
       {...wrapperRest}
     >
-      <BrElement as={as} className={classNames('placeholder', className)} {...rest} />
+      <BrElement as={as} ref={ref} className={classNames('placeholder', className)} {...rest} />
     </BrElement>
   )
-}
+})
+export default Placeholder

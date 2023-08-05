@@ -11,13 +11,14 @@ export type InputGroupProps<T extends ElementType> = BrElementProps<T> & {
   brInputGroupHasValidation?: boolean
 }
 
-type InputGroupComponent = <Component extends ElementType = 'div'>(
+type InputGroupWithRef = <Component extends ElementType = 'div'>(
   props: InputGroupProps<Component>
-) => ReactNode | null
+) => ReactNode
 
-const InputGroup: InputGroupComponent = forwardRef(function FormInput<
-  T extends ElementType = 'div'
->(props: InputGroupProps<T>, ref?: InputGroupProps<T>['ref']) {
+const InputGroup: InputGroupWithRef = forwardRef(function FormInput<T extends ElementType = 'div'>(
+  props: InputGroupProps<T>,
+  ref?: InputGroupProps<T>['ref']
+) {
   const {
     as = 'div' as ElementType,
     className,

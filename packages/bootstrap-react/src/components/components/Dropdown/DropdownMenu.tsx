@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type DropdownMenuProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -11,15 +11,22 @@ export type DropdownMenuProps<T extends ElementType> = BrElementProps<T> & {
   as?: T
 }
 
+type DropdownMenuWithRef = <Component extends ElementType = 'ul'>(
+  props: DropdownMenuProps<Component>
+) => ReactNode
+
 /**
  * [Dropdown]()
  */
-export default function DropdownMenu<T extends ElementType = 'ul'>(props: DropdownMenuProps<T>) {
+const DropdownMenu: DropdownMenuWithRef = forwardRef(function DropdownMenu<
+  T extends ElementType = 'ul'
+>(props: DropdownMenuProps<T>, ref?: DropdownMenuProps<T>['ref']) {
   const { as = 'ul' as ElementType, children, className, ...rest } = props
 
   return (
-    <BrElement as={as} className={classNames('dropdown-menu', className)} {...rest}>
+    <BrElement as={as} ref={ref} className={classNames('dropdown-menu', className)} {...rest}>
       {children}
     </BrElement>
   )
-}
+})
+export default DropdownMenu

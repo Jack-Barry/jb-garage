@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type AlertHeadingProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -11,13 +11,20 @@ export type AlertHeadingProps<T extends ElementType> = BrElementProps<T> & {
   as?: T
 }
 
+type AlertHeadingWithRef = <Component extends ElementType = 'h4'>(
+  props: AlertHeadingProps<Component>
+) => ReactNode
+
 /** [AlertHeading]() */
-export default function AlertHeading<T extends ElementType = 'h4'>(props: AlertHeadingProps<T>) {
+const AlertHeading: AlertHeadingWithRef = forwardRef(function AlertHeading<
+  T extends ElementType = 'h4'
+>(props: AlertHeadingProps<T>, ref?: AlertHeadingProps<T>['ref']) {
   const { as = 'h4' as ElementType, children, className, ...rest } = props
 
   return (
-    <BrElement as={as} className={classNames('alert-heading', className)} {...rest}>
+    <BrElement as={as} ref={ref} className={classNames('alert-heading', className)} {...rest}>
       {children}
     </BrElement>
   )
-}
+})
+export default AlertHeading

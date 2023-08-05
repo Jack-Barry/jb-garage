@@ -15,19 +15,19 @@ export type OffcanvasProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type OffcanvasComponent = <Component extends ElementType = 'div'>(
+export type OffcanvasWithRef = <Component extends ElementType = 'div'>(
   props: OffcanvasProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Offcanvas]()
  */
-const Offcanvas: OffcanvasComponent = forwardRef(function Offcanvas<T extends ElementType = 'div'>(
+const Offcanvas: OffcanvasWithRef = forwardRef(function Offcanvas<T extends ElementType = 'div'>(
   props: OffcanvasProps<T>,
   ref?: OffcanvasProps<T>['ref']
 ) {
   const {
-    as,
+    as = 'div' as ElementType,
     brOffcanvas,
     brOffcanvasPlacement = 'start',
     brOffcanvasBreakpoint,
@@ -38,7 +38,7 @@ const Offcanvas: OffcanvasComponent = forwardRef(function Offcanvas<T extends El
 
   return (
     <BrElement
-      as={as as ElementType}
+      as={as}
       ref={usedRef}
       className={classNames(
         {

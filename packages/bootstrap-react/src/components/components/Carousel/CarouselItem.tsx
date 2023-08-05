@@ -10,21 +10,27 @@ export type CarouselItemProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type CarouselItemComponent = <Component extends ElementType = 'div'>(
+export type CarouselItemWithRef = <Component extends ElementType = 'div'>(
   props: CarouselItemProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const CarouselItem: CarouselItemComponent = forwardRef(function CarouselItem<
+const CarouselItem: CarouselItemWithRef = forwardRef(function CarouselItem<
   T extends ElementType = 'div'
 >(props: CarouselItemProps<T>, ref?: CarouselItemProps<T>['ref']) {
-  const { as, brCarouselItemActive, brCarouselItemInterval, className, ...rest } = props
+  const {
+    as = 'div' as ElementType,
+    brCarouselItemActive,
+    brCarouselItemInterval,
+    className,
+    ...rest
+  } = props
 
   return (
     <BrElement
-      as={as as ElementType}
+      as={as}
       ref={ref}
       className={classNames('carousel-item', { active: brCarouselItemActive }, className)}
       data-bs-interval={brCarouselItemInterval}

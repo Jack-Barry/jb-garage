@@ -11,28 +11,21 @@ export type CollapseProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type CollapseComponent = <Component extends ElementType = 'div'>(
+export type CollapseWithRef = <Component extends ElementType = 'div'>(
   props: CollapseProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Collapse](https://getbootstrap.com/docs/5.3/components/collapse)
  */
-const Collapse: CollapseComponent = forwardRef(function Collapse<T extends ElementType>(
+const Collapse: CollapseWithRef = forwardRef(function Collapse<T extends ElementType = 'div'>(
   props: CollapseProps<T>,
   ref?: CollapseProps<T>['ref']
 ) {
-  const { as, brCollapse, className, ...rest } = props
+  const { as = 'div' as ElementType, brCollapse, className, ...rest } = props
   const { collapseRef } = brCollapse
   const usedRef = useMultiRef(ref, collapseRef)
 
-  return (
-    <BrElement
-      as={as as ElementType}
-      ref={usedRef}
-      className={classNames('collapse', className)}
-      {...rest}
-    />
-  )
+  return <BrElement as={as} ref={usedRef} className={classNames('collapse', className)} {...rest} />
 })
 export default Collapse

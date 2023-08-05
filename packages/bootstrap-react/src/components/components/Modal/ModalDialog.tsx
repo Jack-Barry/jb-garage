@@ -21,18 +21,18 @@ export type ModalDialogProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type ModalDialogComponent = <Component extends ElementType = 'div'>(
+export type ModalDialogWithRef = <Component extends ElementType = 'div'>(
   props: ModalDialogProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const ModalDialog: ModalDialogComponent = forwardRef(function ModalDialog<
+const ModalDialog: ModalDialogWithRef = forwardRef(function ModalDialog<
   T extends ElementType = 'div'
 >(props: ModalDialogProps<T>, ref?: ModalDialogProps<T>['ref']) {
   const {
-    as,
+    as = 'div' as ElementType,
     brModalDialogScrollable,
     brModalDialogCentered,
     brModalDialogSize,
@@ -43,7 +43,7 @@ const ModalDialog: ModalDialogComponent = forwardRef(function ModalDialog<
 
   return (
     <BrElement
-      as={as as ElementType}
+      as={as}
       ref={ref}
       className={classNames(
         'modal-dialog',

@@ -13,9 +13,9 @@ export type SelectProps = Omit<BrElementProps<'select'>, 'as'> & {
   brSelectValid?: boolean
 }
 
-type SelectComponent = (props: SelectProps) => ReactNode | null
+type SelectWithRef = (props: SelectProps) => ReactNode
 
-const Select: SelectComponent = forwardRef(function Select(
+const Select: SelectWithRef = forwardRef(function Select(
   props: SelectProps,
   ref?: SelectProps['ref']
 ) {

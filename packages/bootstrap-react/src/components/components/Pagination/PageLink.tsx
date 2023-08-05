@@ -11,12 +11,12 @@ export type PageLinkProps<T extends ElementType> = BrElementProps<T> & {
   as?: T
 }
 
-export type PageLinkComponent = <Component extends ElementType = 'a'>(
+export type PageLinkWithRef = <Component extends ElementType = 'a'>(
   props: PageLinkProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /** [Pagination]() */
-const PageLink: PageLinkComponent = forwardRef(function PageLink<T extends ElementType = 'a'>(
+const PageLink: PageLinkWithRef = forwardRef(function PageLink<T extends ElementType = 'a'>(
   props: PageLinkProps<T>,
   ref?: PageLinkProps<T>['ref']
 ) {

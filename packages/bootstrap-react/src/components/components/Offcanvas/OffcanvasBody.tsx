@@ -4,25 +4,20 @@ import classNames from 'classnames'
 
 export type OffcanvasBodyProps<T extends ElementType> = BrElementProps<T>
 
-export type OffcanvasBodyComponent = <Component extends ElementType = 'div'>(
+export type OffcanvasBodyWithRef = <Component extends ElementType = 'div'>(
   props: OffcanvasBodyProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Offcanvas]()
  */
-const OffcanvasBody: OffcanvasBodyComponent = forwardRef(function OffcanvasBody<
+const OffcanvasBody: OffcanvasBodyWithRef = forwardRef(function OffcanvasBody<
   T extends ElementType = 'div'
 >(props: OffcanvasBodyProps<T>, ref?: OffcanvasBodyProps<T>['ref']) {
-  const { as, className, ...rest } = props
+  const { as = 'div' as ElementType, className, ...rest } = props
 
   return (
-    <BrElement
-      as={as as ElementType}
-      ref={ref}
-      className={classNames('offcanvas-body', className)}
-      {...rest}
-    />
+    <BrElement as={as} ref={ref} className={classNames('offcanvas-body', className)} {...rest} />
   )
 })
 export default OffcanvasBody

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type ProgressProps<T extends ElementType, W extends ElementType> = BrElementProps<T> & {
   /**
@@ -25,12 +25,17 @@ export type ProgressProps<T extends ElementType, W extends ElementType> = BrElem
   brProgressAnimated?: boolean
 }
 
+type ProgressWithRef = <Component extends ElementType = 'div', Wrapper extends ElementType = 'div'>(
+  props: ProgressProps<Component, Wrapper>
+) => ReactNode
+
 /**
  * [Progress]()
  */
-export default function Progress<T extends ElementType = 'div', W extends ElementType = 'div'>(
-  props: ProgressProps<T, W>
-) {
+const Progress: ProgressWithRef = forwardRef(function Progress<
+  T extends ElementType = 'div',
+  W extends ElementType = 'div'
+>(props: ProgressProps<T, W>, ref?: ProgressProps<T, W>['ref']) {
   const {
     as = 'div' as ElementType,
     children,
@@ -59,6 +64,7 @@ export default function Progress<T extends ElementType = 'div', W extends Elemen
   return (
     <BrElement
       as={as}
+      ref={ref}
       className={classNames('progress', className)}
       role={role}
       style={{ width: brProgressStacked ? percentageString : undefined, ...style }}
@@ -81,4 +87,5 @@ export default function Progress<T extends ElementType = 'div', W extends Elemen
       </BrElement>
     </BrElement>
   )
-}
+})
+export default Progress

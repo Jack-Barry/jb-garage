@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type SpinnerProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -19,10 +19,17 @@ export type SpinnerProps<T extends ElementType> = BrElementProps<T> & {
   brSpinnerSize?: string
 }
 
+type SpinnerWithRef = <Component extends ElementType = 'div'>(
+  props: SpinnerProps<Component>
+) => ReactNode
+
 /**
  * [Spinner]()
  */
-export default function Spinner<T extends ElementType = 'div'>(props: SpinnerProps<T>) {
+const Spinner: SpinnerWithRef = forwardRef(function Spinner<T extends ElementType = 'div'>(
+  props: SpinnerProps<T>,
+  ref?: SpinnerProps<T>['ref']
+) {
   const {
     as = 'div' as ElementType,
     children,
@@ -39,6 +46,7 @@ export default function Spinner<T extends ElementType = 'div'>(props: SpinnerPro
   return (
     <BrElement
       as={as}
+      ref={ref}
       className={classNames(
         {
           'spinner-border': !brSpinnerGrowing,
@@ -56,4 +64,5 @@ export default function Spinner<T extends ElementType = 'div'>(props: SpinnerPro
       {children}
     </BrElement>
   )
-}
+})
+export default Spinner

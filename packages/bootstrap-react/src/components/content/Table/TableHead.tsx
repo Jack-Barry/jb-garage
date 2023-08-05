@@ -1,5 +1,14 @@
+import { ReactNode, forwardRef } from 'react'
 import TableGroup, { TableGroupProps } from './TableGroup'
 
-export default function TableHead(props: Omit<TableGroupProps<'thead'>, 'as'>) {
-  return <TableGroup as="thead" {...props} />
-}
+export type TableHeadProps = Omit<TableGroupProps<'thead'>, 'as'>
+
+type TableHeadWithRef = (props: TableHeadProps) => ReactNode
+
+const TableHead: TableHeadWithRef = forwardRef(function TableHead(
+  props: TableHeadProps,
+  ref?: TableHeadProps['ref']
+) {
+  return <TableGroup as="thead" ref={ref} {...props} />
+})
+export default TableHead

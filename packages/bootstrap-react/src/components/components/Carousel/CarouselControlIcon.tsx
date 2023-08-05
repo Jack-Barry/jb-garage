@@ -9,14 +9,14 @@ export type CarouselControlIconProps<T extends ElementType> = BrElementProps<
   }
 >
 
-export type CarouselControlIconComponent = <Component extends ElementType = 'span'>(
+export type CarouselControlIconWithRef = <Component extends ElementType = 'span'>(
   props: CarouselControlIconProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Modal]()
  */
-const CarouselControlIcon: CarouselControlIconComponent = forwardRef(function CarouselControlIcon<
+const CarouselControlIcon: CarouselControlIconWithRef = forwardRef(function CarouselControlIcon<
   T extends ElementType = 'span'
 >(props: CarouselControlIconProps<T>, ref?: CarouselControlIconProps<T>['ref']) {
   const { as = 'span' as ElementType, brCarouselControlIconDirection, className, ...rest } = props

@@ -40,16 +40,16 @@ export type ButtonProps<T extends ElementType> = BrElementProps<
   }
 >
 
-type ButtonComponent = <Component extends ElementType = 'button'>(
+type ButtonWithRef = <Component extends ElementType = 'button'>(
   props: ButtonProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [Button](https://getbootstrap.com/docs/5.3/components/buttons/)
  *
  * - Accepts all props that can be passed to a `button` element
  */
-const Button: ButtonComponent = forwardRef(function Button<T extends ElementType = 'button'>(
+const Button: ButtonWithRef = forwardRef(function Button<T extends ElementType = 'button'>(
   props: ButtonProps<T>,
   ref?: ButtonProps<T>['ref']
 ) {

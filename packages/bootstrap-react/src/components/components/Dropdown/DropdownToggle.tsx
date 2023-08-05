@@ -14,14 +14,14 @@ export type DropdownToggleProps<T extends ElementType> = ButtonProps<T> & {
   brDropdownToggleSplit?: boolean
 }
 
-type DropdownToggleComponent = <Component extends ElementType = 'button'>(
+type DropdownToggleWithRef = <Component extends ElementType = 'button'>(
   props: DropdownToggleProps<Component>
-) => ReactNode | null
+) => ReactNode
 
 /**
  * [DropdownToggle]()
  */
-const DropdownToggle: DropdownToggleComponent = forwardRef(function DropdownToggle<
+const DropdownToggle: DropdownToggleWithRef = forwardRef(function DropdownToggle<
   T extends ElementType = 'button'
 >(props: DropdownToggleProps<T>, ref?: DropdownToggleProps<T>['ref']) {
   const {

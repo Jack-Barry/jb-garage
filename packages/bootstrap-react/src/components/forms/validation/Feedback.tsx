@@ -14,11 +14,11 @@ export type FeedbackProps<T extends ElementType> = BrElementProps<T> & {
   brFeedbackTooltip?: boolean
 }
 
-type FeedbackComponent = <Component extends ElementType = 'div'>(
+type FeedbackWithRef = <Component extends ElementType = 'div'>(
   props: FeedbackProps<Component>
-) => ReactNode | null
+) => ReactNode
 
-const Feedback: FeedbackComponent = forwardRef(function Feedback<T extends ElementType = 'div'>(
+const Feedback: FeedbackWithRef = forwardRef(function Feedback<T extends ElementType = 'div'>(
   props: FeedbackProps<T>,
   ref?: FeedbackProps<T>['ref']
 ) {

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { ElementType } from 'react'
+import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type CardProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -11,13 +11,19 @@ export type CardProps<T extends ElementType> = BrElementProps<T> & {
   as?: T
 }
 
+type CardWithRef = <Component extends ElementType = 'div'>(props: CardProps<Component>) => ReactNode
+
 /** [Card](https://getbootstrap.com/docs/5.3/components/card/) */
-export default function Card<T extends ElementType = 'div'>(props: CardProps<T>) {
+const Card: CardWithRef = forwardRef(function Card<T extends ElementType = 'div'>(
+  props: CardProps<T>,
+  ref?: CardProps<T>['ref']
+) {
   const { as = 'div' as ElementType, children, className, ...rest } = props
 
   return (
-    <BrElement as={as} className={classNames('card', className)} {...rest}>
+    <BrElement as={as} ref={ref} className={classNames('card', className)} {...rest}>
       {children}
     </BrElement>
   )
-}
+})
+export default Card
