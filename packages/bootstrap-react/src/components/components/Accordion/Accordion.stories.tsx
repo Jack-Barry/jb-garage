@@ -20,7 +20,7 @@ export const Example: StoryFn = () => {
         <AccordionHeader>
           <AccordionButton aria-controls="collapseOne">Accordion Item #1</AccordionButton>
         </AccordionHeader>
-        <AccordionCollapse id="collapseOne" brDefaultOpen>
+        <AccordionCollapse id="collapseOne" brAccordionCollapseDefaultOpen>
           <AccordionBody>
             <strong>This is the first item's accordion body.</strong> It is shown by default, until
             the collapse plugin adds the appropriate classes that we use to style each element.
@@ -67,7 +67,7 @@ export const Example: StoryFn = () => {
 
 export const Flush: StoryFn = () => {
   return (
-    <Accordion brFlush id="accordionFlushExample">
+    <Accordion brAccordionFlush id="accordionFlushExample">
       <AccordionItem>
         <AccordionHeader>
           <AccordionButton aria-controls="flush-collapseOne">Accordion Item #1</AccordionButton>
@@ -111,14 +111,14 @@ export const Flush: StoryFn = () => {
 
 export const AlwaysOpen: StoryFn = () => {
   return (
-    <Accordion id="accordionPanelsStayOpenExample" brAlwaysOpen>
+    <Accordion id="accordionPanelsStayOpenExample" brAccordionAlwaysOpen>
       <AccordionItem>
         <AccordionHeader>
           <AccordionButton aria-controls="panelsStayOpen-collapseOne">
             Accordion Item #1
           </AccordionButton>
         </AccordionHeader>
-        <AccordionCollapse id="panelsStayOpen-collapseOne" brDefaultOpen>
+        <AccordionCollapse id="panelsStayOpen-collapseOne" brAccordionCollapseDefaultOpen>
           <AccordionBody>
             <strong>This is the first item's accordion body.</strong> It is shown by default, until
             the collapse plugin adds the appropriate classes that we use to style each element.

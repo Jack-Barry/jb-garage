@@ -101,7 +101,7 @@ function VariantExample(props: { variant: string }) {
 
 export const StripedRows: StoryFn = () => {
   return (
-    <Table brStriped>
+    <Table brTableStriped>
       <TableExampleContent />
     </Table>
   )
@@ -109,7 +109,7 @@ export const StripedRows: StoryFn = () => {
 
 export const StripedColumns: StoryFn = () => {
   return (
-    <Table brStripedCols>
+    <Table brTableStripedCols>
       <TableExampleContent />
     </Table>
   )
@@ -118,19 +118,19 @@ export const StripedColumns: StoryFn = () => {
 export const StripedVariants: StoryFn = () => {
   return (
     <div>
-      <Table className="table-dark" brStriped>
+      <Table className="table-dark" brTableStriped>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" brStripedCols>
+      <Table className="table-dark" brTableStripedCols>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-success" brStriped>
+      <Table className="table-success" brTableStriped>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-success" brStripedCols>
+      <Table className="table-success" brTableStripedCols>
         <TableExampleContent />
       </Table>
     </div>
@@ -140,15 +140,15 @@ export const StripedVariants: StoryFn = () => {
 export const HoverableRows: StoryFn = () => {
   return (
     <div>
-      <Table brHover>
+      <Table brTableRowHover>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" brHover>
+      <Table className="table-dark" brTableRowHover>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table brHover brStriped>
+      <Table brTableRowHover brTableStriped>
         <TableExampleContent />
       </Table>
     </div>
@@ -160,7 +160,7 @@ export const TableActive: StoryFn = () => {
     <div>
       <Table>
         <TableHead>
-          <TableRow brActive>
+          <TableRow brTableEntryActive>
             <TableHeader scope="col">#</TableHeader>
             <TableHeader scope="col">First</TableHeader>
             <TableHeader scope="col">Last</TableHeader>
@@ -182,7 +182,7 @@ export const TableActive: StoryFn = () => {
           </TableRow>
           <TableRow>
             <TableHeader scope="row">3</TableHeader>
-            <TableData colSpan={2} brActive>
+            <TableData colSpan={2} brTableEntryActive>
               Larry the Bird
             </TableData>
             <TableData>@twitter</TableData>
@@ -192,7 +192,7 @@ export const TableActive: StoryFn = () => {
       <hr />
       <Table className="table-dark">
         <TableHead>
-          <TableRow brActive>
+          <TableRow brTableEntryActive>
             <TableHeader scope="col">#</TableHeader>
             <TableHeader scope="col">First</TableHeader>
             <TableHeader scope="col">Last</TableHeader>
@@ -214,7 +214,7 @@ export const TableActive: StoryFn = () => {
           </TableRow>
           <TableRow>
             <TableHeader scope="row">3</TableHeader>
-            <TableData colSpan={2} brActive>
+            <TableData colSpan={2} brTableEntryActive>
               Larry the Bird
             </TableData>
             <TableData>@twitter</TableData>
@@ -228,11 +228,11 @@ export const TableActive: StoryFn = () => {
 export const BorderedTables: StoryFn = () => {
   return (
     <div>
-      <Table brBordered>
+      <Table brTableBordered>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table brBordered className="border-primary">
+      <Table brTableBordered className="border-primary">
         <TableExampleContent />
       </Table>
     </div>
@@ -242,11 +242,11 @@ export const BorderedTables: StoryFn = () => {
 export const TablesWithoutBorders: StoryFn = () => {
   return (
     <div>
-      <Table brBorderless>
+      <Table brTableBorderless>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" brBorderless>
+      <Table className="table-dark" brTableBorderless>
         <TableExampleContent />
       </Table>
     </div>
@@ -256,11 +256,11 @@ export const TablesWithoutBorders: StoryFn = () => {
 export const SmallTables: StoryFn = () => {
   return (
     <div>
-      <Table brSmall>
+      <Table brTableSmall>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" brSmall>
+      <Table className="table-dark" brTableSmall>
         <TableExampleContent />
       </Table>
     </div>
@@ -271,7 +271,7 @@ export const TableGroupDividers: StoryFn = () => {
   return (
     <Table>
       <TableExampleHead />
-      <TableBody brGroupDivider>
+      <TableBody brTableGroupDivider>
         <TableRow>
           <TableHeader scope="row">1</TableHeader>
           <TableData>Mark</TableData>
@@ -296,7 +296,7 @@ export const TableGroupDividers: StoryFn = () => {
 
 export const Nesting: StoryFn = () => {
   return (
-    <Table brStriped brBordered>
+    <Table brTableStriped brTableBordered>
       <TableHead>
         <TableRow>
           <TableHeader scope="col">#</TableHeader>
@@ -410,12 +410,12 @@ export const AnatomyTableFoot: StoryFn = () => {
 export const Captions: StoryFn = () => {
   return (
     <div>
-      <Table brSmall>
+      <Table brTableSmall>
         <caption>List of users</caption>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table brCaptionTop>
+      <Table brTableCaptionTop>
         <caption>List of users</caption>
         <TableExampleContent />
       </Table>
@@ -425,7 +425,7 @@ export const Captions: StoryFn = () => {
 
 export const ResponsiveTablesAlwaysResponsive: StoryFn = () => {
   return (
-    <ResponsiveTableWrapper brResponsive>
+    <ResponsiveTableWrapper brTableResponsive>
       <Table>
         <TableHead>
           <TableRow>
@@ -487,23 +487,23 @@ export const ResponsiveTablesAlwaysResponsive: StoryFn = () => {
 export const ResponsiveTablesBreakpointSpecific: StoryFn = () => {
   return (
     <div>
-      <ResponsiveTableWrapper brResponsiveSm>
+      <ResponsiveTableWrapper brTableResponsiveSm>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
       <hr />
-      <ResponsiveTableWrapper brResponsiveMd>
+      <ResponsiveTableWrapper brTableResponsiveMd>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
       <hr />
-      <ResponsiveTableWrapper brResponsiveLg>
+      <ResponsiveTableWrapper brTableResponsiveLg>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
       <hr />
-      <ResponsiveTableWrapper brResponsiveXl>
+      <ResponsiveTableWrapper brTableResponsiveXl>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
       <hr />
-      <ResponsiveTableWrapper brResponsiveXxl>
+      <ResponsiveTableWrapper brTableResponsiveXxl>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
     </div>

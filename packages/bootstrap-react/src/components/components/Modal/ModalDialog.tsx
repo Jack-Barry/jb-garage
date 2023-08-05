@@ -8,16 +8,16 @@ export type ModalDialogProps<T extends ElementType> = BrElementProps<
   {
     /**
      */
-    brScrollable?: boolean
+    brModalDialogScrollable?: boolean
     /**
      */
-    brCentered?: boolean
+    brModalDialogCentered?: boolean
     /**
      */
-    brSize?: 'sm' | 'lg' | 'xl' | string
+    brModalDialogSize?: 'sm' | 'lg' | 'xl' | string
     /**
      */
-    brFullscreen?: boolean | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | string
+    brModalDialogFullscreen?: boolean | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | string
   }
 >
 
@@ -31,7 +31,15 @@ export type ModalDialogComponent = <Component extends ElementType = 'div'>(
 const ModalDialog: ModalDialogComponent = forwardRef(function ModalDialog<
   T extends ElementType = 'div'
 >(props: ModalDialogProps<T>, ref?: ModalDialogProps<T>['ref']) {
-  const { as, brScrollable, brCentered, brSize, brFullscreen, className, ...rest } = props
+  const {
+    as,
+    brModalDialogScrollable,
+    brModalDialogCentered,
+    brModalDialogSize,
+    brModalDialogFullscreen,
+    className,
+    ...rest
+  } = props
 
   return (
     <BrElement
@@ -40,11 +48,12 @@ const ModalDialog: ModalDialogComponent = forwardRef(function ModalDialog<
       className={classNames(
         'modal-dialog',
         {
-          'modal-dialog-scrollable': brScrollable,
-          'modal-dialog-centered': brCentered,
-          [`modal-${brSize}`]: !!brSize,
-          'modal-fullscreen': brFullscreen === true,
-          [`modal-fullscreen-${brFullscreen}-down`]: !!brFullscreen && brFullscreen !== true
+          'modal-dialog-scrollable': brModalDialogScrollable,
+          'modal-dialog-centered': brModalDialogCentered,
+          [`modal-${brModalDialogSize}`]: !!brModalDialogSize,
+          'modal-fullscreen': brModalDialogFullscreen === true,
+          [`modal-fullscreen-${brModalDialogFullscreen}-down`]:
+            !!brModalDialogFullscreen && brModalDialogFullscreen !== true
         },
         className
       )}

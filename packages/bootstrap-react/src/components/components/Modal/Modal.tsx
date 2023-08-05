@@ -12,7 +12,7 @@ export type ModalProps<T extends ElementType> = BrElementProps<
     /**
      * @default true
      */
-    brFade?: boolean
+    brModalFade?: boolean
   }
 >
 
@@ -27,7 +27,7 @@ const Modal: ModalComponent = forwardRef(function Modal<T extends ElementType = 
   props: ModalProps<T>,
   ref?: ModalProps<T>['ref']
 ) {
-  const { as, brModal, brFade = true, className, ...rest } = props
+  const { as, brModal, brModalFade = true, className, ...rest } = props
   const usedRef = useMultiRef(ref, brModal.ref)
 
   return (
@@ -37,7 +37,7 @@ const Modal: ModalComponent = forwardRef(function Modal<T extends ElementType = 
       className={classNames(
         'modal',
         {
-          fade: brFade
+          fade: brModalFade
         },
         className
       )}

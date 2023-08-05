@@ -12,7 +12,7 @@ export type ButtonProps<T extends ElementType> = BrElementProps<
      */
     as?: T
     /** Variant of button style to apply */
-    brVariant?:
+    brButtonColor?:
       | 'primary'
       | 'secondary'
       | 'success'
@@ -24,19 +24,19 @@ export type ButtonProps<T extends ElementType> = BrElementProps<
       | 'link'
       | string
     /** Present a small button */
-    brSm?: boolean
+    brButtonSm?: boolean
     /** Present a large button */
-    brLg?: boolean
+    brButtonLg?: boolean
     /** Use this prop for HTML elements that do not support `disabled` */
-    brDisabled?: boolean
+    brButtonDisabled?: boolean
     /** Button is currently active */
-    brActive?: boolean
+    brButtonActive?: boolean
     /**
      * Button should have `btn` class
      *
      * @default true
      */
-    brBtn?: boolean
+    brButtonBtn?: boolean
   }
 >
 
@@ -58,13 +58,15 @@ const Button: ButtonComponent = forwardRef(function Button<T extends ElementType
     type,
     className,
     children,
-    brVariant,
-    brSm,
-    brLg,
-    brDisabled,
-    brActive,
-    brBtn = true,
-    'aria-disabled': ariaDisabled = typeof brDisabled !== 'undefined' ? brDisabled : undefined,
+    brButtonColor,
+    brButtonSm,
+    brButtonLg,
+    brButtonDisabled,
+    brButtonActive,
+    brButtonBtn = true,
+    'aria-disabled': ariaDisabled = typeof brButtonDisabled !== 'undefined'
+      ? brButtonDisabled
+      : undefined,
     ...rest
   } = props
   /** By default, set type to match button. Avoids `form` gotchas */
@@ -77,12 +79,12 @@ const Button: ButtonComponent = forwardRef(function Button<T extends ElementType
       ref={ref}
       className={classNames(
         {
-          btn: brBtn,
-          [`btn-${brVariant}`]: !!brVariant,
-          'btn-sm': brSm,
-          'btn-lg': brLg,
-          disabled: brDisabled,
-          active: brActive
+          btn: brButtonBtn,
+          [`btn-${brButtonColor}`]: !!brButtonColor,
+          'btn-sm': brButtonSm,
+          'btn-lg': brButtonLg,
+          disabled: brButtonDisabled,
+          active: brButtonActive
         },
         className
       )}

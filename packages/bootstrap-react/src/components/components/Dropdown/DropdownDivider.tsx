@@ -10,25 +10,30 @@ export type DropdownItemProps<T extends ElementType> = BrElementProps<'hr'> & {
    *
    * @default "li"
    */
-  wrapperAs?: T | null
+  brDropdownItemWrapperAs?: T | null
   /** Props to pass along to the wrapper element */
-  wrapperProps?: BrElementProps<T>
+  brDropdownItemWrapperProps?: BrElementProps<T>
 }
 
 /**
  * [Dropdown]()
  */
 export default function DropdownDivider<T extends ElementType = 'li'>(props: DropdownItemProps<T>) {
-  const { className, wrapperAs = 'li' as ElementType, wrapperProps, ...rest } = props
+  const {
+    className,
+    brDropdownItemWrapperAs = 'li' as ElementType,
+    brDropdownItemWrapperProps,
+    ...rest
+  } = props
 
   const content = <hr className={classNames('dropdown-divider', className)} {...rest} />
 
-  if (wrapperAs === null) {
+  if (brDropdownItemWrapperAs === null) {
     return content
   }
 
   return (
-    <BrElement as={wrapperAs} {...wrapperProps}>
+    <BrElement as={brDropdownItemWrapperAs} {...brDropdownItemWrapperProps}>
       {content}
     </BrElement>
   )

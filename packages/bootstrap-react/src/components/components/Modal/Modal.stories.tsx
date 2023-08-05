@@ -33,7 +33,7 @@ export const LiveDemo: StoryFn = () => {
 
   return (
     <div>
-      <Button brVariant="primary" onClick={modal.toggle}>
+      <Button brButtonColor="primary" onClick={modal.toggle}>
         Launch demo modal
       </Button>
       <Modal brModal={modal}>
@@ -47,10 +47,10 @@ export const LiveDemo: StoryFn = () => {
             </ModalHeader>
             <ModalBody>Woo-hoo, you're reading this text in a modal!</ModalBody>
             <ModalFooter>
-              <Button brVariant="secondary" onClick={modal.hide}>
+              <Button brButtonColor="secondary" onClick={modal.hide}>
                 Close
               </Button>
-              <Button brVariant="primary">Save changes</Button>
+              <Button brButtonColor="primary">Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -64,7 +64,7 @@ export const StaticBackdrop: StoryFn = () => {
 
   return (
     <div>
-      <Button brVariant="primary" onClick={modal.toggle}>
+      <Button brButtonColor="primary" onClick={modal.toggle}>
         Launch static backdrop modal
       </Button>
       <Modal id="staticBackdrop" aria-labelledby="staticBackdropLabel" brModal={modal}>
@@ -80,10 +80,10 @@ export const StaticBackdrop: StoryFn = () => {
               I will not close if you click outside of me. Don't even try to press escape key.
             </ModalBody>
             <ModalFooter>
-              <Button brVariant="secondary" onClick={modal.hide}>
+              <Button brButtonColor="secondary" onClick={modal.hide}>
                 Close
               </Button>
-              <Button brVariant="primary">Understood</Button>
+              <Button brButtonColor="primary">Understood</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -98,7 +98,7 @@ export const ScrollingLongContent: StoryFn = () => {
 
   return (
     <div>
-      <Button brVariant="primary" onClick={modal1.toggle}>
+      <Button brButtonColor="primary" onClick={modal1.toggle}>
         Launch demo modal
       </Button>
       <Modal id="exampleModalLong" aria-labelledby="exampleModalLongTitle" brModal={modal1}>
@@ -120,16 +120,16 @@ export const ScrollingLongContent: StoryFn = () => {
               </p>
             </ModalBody>
             <ModalFooter>
-              <Button brVariant="secondary" onClick={modal1.hide}>
+              <Button brButtonColor="secondary" onClick={modal1.hide}>
                 Close
               </Button>
-              <Button brVariant="primary">Save changes</Button>
+              <Button brButtonColor="primary">Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
       </Modal>
       <hr />
-      <Button brVariant="primary" onClick={modal2.toggle}>
+      <Button brButtonColor="primary" onClick={modal2.toggle}>
         Launch demo modal
       </Button>
       <Modal
@@ -137,7 +137,7 @@ export const ScrollingLongContent: StoryFn = () => {
         aria-labelledby="exampleModalScrollableTitle"
         brModal={modal2}
       >
-        <ModalDialog brScrollable>
+        <ModalDialog brModalDialogScrollable>
           <ModalContent>
             <ModalHeader>
               <ModalTitle className="fs-5" id="exampleModalScrollableTitle">
@@ -195,10 +195,10 @@ export const ScrollingLongContent: StoryFn = () => {
               <p>This content should appear at the bottom after you scroll.</p>
             </ModalBody>
             <ModalFooter>
-              <Button brVariant="secondary" onClick={modal2.hide}>
+              <Button brButtonColor="secondary" onClick={modal2.hide}>
                 Close
               </Button>
-              <Button brVariant="primary">Save changes</Button>
+              <Button brButtonColor="primary">Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -214,15 +214,15 @@ export const VerticallyCentered: StoryFn = () => {
   return (
     <div>
       <BrElement brDisplay="flex" brFlex={{ gap: 1 }}>
-        <Button brVariant="primary" onClick={modal1.toggle}>
+        <Button brButtonColor="primary" onClick={modal1.toggle}>
           Vertically centered modal
         </Button>
-        <Button brVariant="primary" onClick={modal2.toggle}>
+        <Button brButtonColor="primary" onClick={modal2.toggle}>
           Vertically centered scrollable modal
         </Button>
       </BrElement>
       <Modal id="exampleModalCenter" aria-labelledby="exampleModalCenterTitle" brModal={modal1}>
-        <ModalDialog brCentered>
+        <ModalDialog brModalDialogCentered>
           <ModalContent>
             <ModalHeader>
               <ModalTitle className="fs-5" id="exampleModalCenterTitle">
@@ -234,10 +234,10 @@ export const VerticallyCentered: StoryFn = () => {
               <p>This is a vertically centered modal.</p>
             </ModalBody>
             <ModalFooter>
-              <Button brVariant="secondary" onClick={modal1.hide}>
+              <Button brButtonColor="secondary" onClick={modal1.hide}>
                 Close
               </Button>
-              <Button brVariant="primary">Save changes</Button>
+              <Button brButtonColor="primary">Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -247,7 +247,7 @@ export const VerticallyCentered: StoryFn = () => {
         aria-labelledby="exampleModalCenteredScrollableTitle"
         brModal={modal2}
       >
-        <ModalDialog brCentered brScrollable>
+        <ModalDialog brModalDialogCentered brModalDialogScrollable>
           <ModalContent>
             <ModalHeader>
               <ModalTitle className="fs-5" id="exampleModalCenteredScrollableTitle">
@@ -277,10 +277,10 @@ export const VerticallyCentered: StoryFn = () => {
               <p>Just like that.</p>
             </ModalBody>
             <ModalFooter>
-              <Button brVariant="secondary" onClick={modal2.hide}>
+              <Button brButtonColor="secondary" onClick={modal2.hide}>
                 Close
               </Button>
-              <Button brVariant="primary">Save changes</Button>
+              <Button brButtonColor="primary">Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -297,7 +297,7 @@ export const TooltipsAndPopovers: StoryFn = () => {
 
   return (
     <div>
-      <Button brVariant="primary" onClick={modal.toggle}>
+      <Button brButtonColor="primary" onClick={modal.toggle}>
         Launch demo modal
       </Button>
       <Modal id="exampleModalPopovers" aria-labelledby="exampleModalPopoversLabel" brModal={modal}>
@@ -314,7 +314,7 @@ export const TooltipsAndPopovers: StoryFn = () => {
               <p>
                 This{' '}
                 <Button
-                  brVariant="secondary"
+                  brButtonColor="secondary"
                   ref={popover.target.ref}
                   {...popover.target.getProps()}
                   // data-bs-container="#exampleModalPopovers"
@@ -341,10 +341,10 @@ export const TooltipsAndPopovers: StoryFn = () => {
               </p>
             </ModalBody>
             <ModalFooter>
-              <Button brVariant="secondary" onClick={modal.hide}>
+              <Button brButtonColor="secondary" onClick={modal.hide}>
                 Close
               </Button>
-              <Button brVariant="primary">Save changes</Button>
+              <Button brButtonColor="primary">Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -358,7 +358,7 @@ export const UsingTheGrid: StoryFn = () => {
 
   return (
     <div>
-      <Button brVariant="primary" onClick={modal.toggle}>
+      <Button brButtonColor="primary" onClick={modal.toggle}>
         Launch demo modal
       </Button>
       <Modal id="gridSystemModal" aria-labelledby="gridModalLabel" brModal={modal}>
@@ -371,7 +371,7 @@ export const UsingTheGrid: StoryFn = () => {
               <CloseButton onClick={modal.hide} />
             </ModalHeader>
             <ModalBody>
-              <Container brFluid className="bd-example-row">
+              <Container brContainerFluid className="bd-example-row">
                 <Row>
                   <Col brColsMd={4}>.col-md-4</Col>
                   <Col brColsMd={4} brMargin={{ start: 'auto' }}>
@@ -407,10 +407,10 @@ export const UsingTheGrid: StoryFn = () => {
               </Container>
             </ModalBody>
             <ModalFooter>
-              <Button brVariant="secondary" onClick={modal.hide}>
+              <Button brButtonColor="secondary" onClick={modal.hide}>
                 Close
               </Button>
-              <Button brVariant="primary">Save changes</Button>
+              <Button brButtonColor="primary">Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -425,11 +425,11 @@ export const ToggleBetweenModals: StoryFn = () => {
 
   return (
     <div>
-      <Button brVariant="primary" onClick={modal1.toggle}>
+      <Button brButtonColor="primary" onClick={modal1.toggle}>
         Open first modal
       </Button>
       <Modal id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" brModal={modal1}>
-        <ModalDialog brCentered>
+        <ModalDialog brModalDialogCentered>
           <ModalContent>
             <ModalHeader>
               <ModalTitle className="fs-5" id="exampleModalToggleLabel">
@@ -440,7 +440,7 @@ export const ToggleBetweenModals: StoryFn = () => {
             <ModalBody>Show a second modal and hide this one with the button below.</ModalBody>
             <ModalFooter>
               <Button
-                brVariant="primary"
+                brButtonColor="primary"
                 onClick={() => {
                   modal2.toggle()
                   modal1.hide()
@@ -453,7 +453,7 @@ export const ToggleBetweenModals: StoryFn = () => {
         </ModalDialog>
       </Modal>
       <Modal id="exampleModalToggle2" aria-labelledby="exampleModalToggleLabel2" brModal={modal2}>
-        <ModalDialog brCentered>
+        <ModalDialog brModalDialogCentered>
           <ModalContent>
             <ModalHeader>
               <ModalTitle className="fs-5" id="exampleModalToggleLabel2">
@@ -469,7 +469,7 @@ export const ToggleBetweenModals: StoryFn = () => {
             <ModalBody>Hide this modal and show the first with the button below.</ModalBody>
             <ModalFooter>
               <Button
-                brVariant="primary"
+                brButtonColor="primary"
                 onClick={() => {
                   modal1.show()
                   modal2.hide()
@@ -493,18 +493,18 @@ export const OptionalSizes: StoryFn = () => {
   return (
     <div>
       <BrElement brDisplay="flex" brFlex={{ gap: 1 }}>
-        <Button brVariant="primary" onClick={modalXl.toggle}>
+        <Button brButtonColor="primary" onClick={modalXl.toggle}>
           Extra large modal
         </Button>
-        <Button brVariant="primary" onClick={modalLg.toggle}>
+        <Button brButtonColor="primary" onClick={modalLg.toggle}>
           Large modal
         </Button>
-        <Button brVariant="primary" onClick={modalSm.toggle}>
+        <Button brButtonColor="primary" onClick={modalSm.toggle}>
           Small modal
         </Button>
       </BrElement>
       <Modal id="exampleModalXl" aria-labelledby="exampleModalXlLabel" brModal={modalXl}>
-        <ModalDialog brSize="xl">
+        <ModalDialog brModalDialogSize="xl">
           <ModalContent>
             <ModalHeader>
               <ModalTitle className="fs-4" id="exampleModalXlLabel">
@@ -517,7 +517,7 @@ export const OptionalSizes: StoryFn = () => {
         </ModalDialog>
       </Modal>
       <Modal id="exampleModalLg" aria-labelledby="exampleModalLgLabel" brModal={modalLg}>
-        <ModalDialog brSize="lg">
+        <ModalDialog brModalDialogSize="lg">
           <ModalContent>
             <ModalHeader>
               <ModalTitle className="fs-4" id="exampleModalLgLabel">
@@ -530,7 +530,7 @@ export const OptionalSizes: StoryFn = () => {
         </ModalDialog>
       </Modal>
       <Modal id="exampleModalSm" aria-labelledby="exampleModalSmLabel" brModal={modalSm}>
-        <ModalDialog brSize="sm">
+        <ModalDialog brModalDialogSize="sm">
           <ModalContent>
             <ModalHeader>
               <ModalTitle className="fs-4" id="exampleModalSmLabel">
@@ -548,9 +548,10 @@ export const OptionalSizes: StoryFn = () => {
 
 export const FullscreenModal: StoryFn = () => {
   const modal = useModal()
-  const [breakpoint, setBreakpoint] = useState<ModalDialogProps<'div'>['brFullscreen']>(true)
+  const [breakpoint, setBreakpoint] =
+    useState<ModalDialogProps<'div'>['brModalDialogFullscreen']>(true)
 
-  function toggleForBreakpoint(breakpoint: ModalDialogProps<'div'>['brFullscreen']) {
+  function toggleForBreakpoint(breakpoint: ModalDialogProps<'div'>['brModalDialogFullscreen']) {
     setBreakpoint(breakpoint)
     modal.toggle()
   }
@@ -558,7 +559,7 @@ export const FullscreenModal: StoryFn = () => {
   return (
     <div className="bd-example">
       <Button
-        brVariant="primary"
+        brButtonColor="primary"
         onClick={() => {
           toggleForBreakpoint(true)
         }}
@@ -566,7 +567,7 @@ export const FullscreenModal: StoryFn = () => {
         Full screen
       </Button>
       <Button
-        brVariant="primary"
+        brButtonColor="primary"
         onClick={() => {
           toggleForBreakpoint('sm')
         }}
@@ -574,7 +575,7 @@ export const FullscreenModal: StoryFn = () => {
         Full screen below sm
       </Button>
       <Button
-        brVariant="primary"
+        brButtonColor="primary"
         onClick={() => {
           toggleForBreakpoint('md')
         }}
@@ -582,7 +583,7 @@ export const FullscreenModal: StoryFn = () => {
         Full screen below md
       </Button>
       <Button
-        brVariant="primary"
+        brButtonColor="primary"
         onClick={() => {
           toggleForBreakpoint('lg')
         }}
@@ -590,7 +591,7 @@ export const FullscreenModal: StoryFn = () => {
         Full screen below lg
       </Button>
       <Button
-        brVariant="primary"
+        brButtonColor="primary"
         onClick={() => {
           toggleForBreakpoint('xl')
         }}
@@ -598,7 +599,7 @@ export const FullscreenModal: StoryFn = () => {
         Full screen below xl
       </Button>
       <Button
-        brVariant="primary"
+        brButtonColor="primary"
         onClick={() => {
           toggleForBreakpoint('xxl')
         }}
@@ -610,7 +611,7 @@ export const FullscreenModal: StoryFn = () => {
         aria-labelledby="exampleModalFullscreenLabel"
         brModal={modal}
       >
-        <ModalDialog brFullscreen={breakpoint}>
+        <ModalDialog brModalDialogFullscreen={breakpoint}>
           <ModalContent>
             <ModalHeader>
               <ModalTitle className="fs-4" id="exampleModalFullscreenLabel">
@@ -620,7 +621,7 @@ export const FullscreenModal: StoryFn = () => {
             </ModalHeader>
             <ModalBody>...</ModalBody>
             <ModalFooter>
-              <Button brVariant="secondary" onClick={modal.hide}>
+              <Button brButtonColor="secondary" onClick={modal.hide}>
                 Close
               </Button>
             </ModalFooter>

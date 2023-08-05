@@ -17,22 +17,22 @@ export const BaseExample: StoryFn = () => {
   return (
     <div>
       <FormControl
-        wrapperProps={{ brMargin: { bottom: 3 } }}
-        inputProps={{
+        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlInputProps={{
           type: 'email',
           id: 'exampleFormControlInput1',
           placeholder: 'name@example.com'
         }}
-        labelProps={{ children: 'Email address' }}
+        brFormControlLabelProps={{ children: 'Email address' }}
       />
       <FormControl
-        wrapperProps={{ brMargin: { bottom: 3 } }}
-        inputProps={{
+        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlInputProps={{
           as: 'textarea',
           id: 'exampleFormControlTextarea1',
           rows: 3
         }}
-        labelProps={{ children: 'Example textarea' }}
+        brFormControlLabelProps={{ children: 'Example textarea' }}
       />
     </div>
   )
@@ -41,9 +41,9 @@ export const BaseExample: StoryFn = () => {
 export const Sizing: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Input placeholder=".form-control-lg" aria-label=".form-control-lg example" brLg />
+      <Input placeholder=".form-control-lg" aria-label=".form-control-lg example" brInputLg />
       <Input placeholder="Default input" aria-label="default input example" />
-      <Input placeholder=".form-control-sm" aria-label=".form-control-sm example" brSm />
+      <Input placeholder=".form-control-sm" aria-label=".form-control-sm example" brInputSm />
     </div>
   )
 }
@@ -63,7 +63,7 @@ export const FormTextStory: StoryFn = () => {
       <div>
         <Row brRowGutter={3} className="align-items-center">
           <Col brCols="auto">
-            <Label htmlFor="inputPassword6" brColFormLabel>
+            <Label htmlFor="inputPassword6" brLabelCol>
               Password
             </Label>
           </Col>
@@ -105,15 +105,15 @@ export const ReadOnlyPlainText: StoryFn = () => {
     <div className="bd-example">
       <div>
         <Row brMargin={{ bottom: 3 }}>
-          <Label htmlFor="staticEmail" brColFormLabel className="col-sm-2">
+          <Label htmlFor="staticEmail" brLabelCol className="col-sm-2">
             Email
           </Label>
           <Col brColsSm={10}>
-            <Input id="staticEmail" value="email@example.com" readOnly brPlainText />
+            <Input id="staticEmail" value="email@example.com" readOnly brInputPlainText />
           </Col>
         </Row>
         <Row brMargin={{ bottom: 3 }}>
-          <Label htmlFor="inputPassword" brColFormLabel className="col-sm-2">
+          <Label htmlFor="inputPassword" brLabelCol className="col-sm-2">
             Password
           </Label>
           <Col brColsSm={10}>
@@ -128,7 +128,13 @@ export const ReadOnlyPlainText: StoryFn = () => {
             <Label htmlFor="staticEmail2" className="visually-hidden">
               Email
             </Label>
-            <Input type="text" readOnly brPlainText id="staticEmail2" value="email@example.com" />
+            <Input
+              type="text"
+              readOnly
+              brInputPlainText
+              id="staticEmail2"
+              value="email@example.com"
+            />
           </Col>
           <Col brCols="auto">
             <Label htmlFor="inputPassword2" className="visually-hidden">
@@ -137,7 +143,7 @@ export const ReadOnlyPlainText: StoryFn = () => {
             <Input type="password" id="inputPassword2" placeholder="Password" />
           </Col>
           <Col brCols="auto">
-            <Button type="submit" brMargin={{ bottom: 3 }} brVariant="primary">
+            <Button type="submit" brMargin={{ bottom: 3 }} brButtonColor="primary">
               Confirm identity
             </Button>
           </Col>
@@ -151,33 +157,33 @@ export const FiltInput: StoryFn = () => {
   return (
     <div className="bd-example">
       <FormControl
-        wrapperProps={{ brMargin: { bottom: 3 } }}
-        labelProps={{ children: 'Default file input example' }}
-        inputProps={{ type: 'file', id: 'formFile' }}
+        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlLabelProps={{ children: 'Default file input example' }}
+        brFormControlInputProps={{ type: 'file', id: 'formFile' }}
       />
       <hr />
       <FormControl
-        wrapperProps={{ brMargin: { bottom: 3 } }}
-        labelProps={{ children: 'Multiple files input example' }}
-        inputProps={{ type: 'file', id: 'formFileMultiple', multiple: true }}
+        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlLabelProps={{ children: 'Multiple files input example' }}
+        brFormControlInputProps={{ type: 'file', id: 'formFileMultiple', multiple: true }}
       />
       <hr />
       <FormControl
-        wrapperProps={{ brMargin: { bottom: 3 } }}
-        labelProps={{ children: 'Disabled file input example' }}
-        inputProps={{ type: 'file', id: 'formFileDisabled', disabled: true }}
+        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlLabelProps={{ children: 'Disabled file input example' }}
+        brFormControlInputProps={{ type: 'file', id: 'formFileDisabled', disabled: true }}
       />
       <hr />
       <FormControl
-        wrapperProps={{ brMargin: { bottom: 3 } }}
-        labelProps={{ children: 'Small file input example' }}
-        inputProps={{ type: 'file', id: 'formFileSm', brSm: true }}
+        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlLabelProps={{ children: 'Small file input example' }}
+        brFormControlInputProps={{ type: 'file', id: 'formFileSm', brInputSm: true }}
       />
       <hr />
       <FormControl
-        wrapperProps={{ brMargin: { bottom: 3 } }}
-        labelProps={{ children: 'Large file input example' }}
-        inputProps={{ type: 'file', id: 'formFileLg', brLg: true }}
+        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlLabelProps={{ children: 'Large file input example' }}
+        brFormControlInputProps={{ type: 'file', id: 'formFileLg', brInputLg: true }}
       />
     </div>
   )

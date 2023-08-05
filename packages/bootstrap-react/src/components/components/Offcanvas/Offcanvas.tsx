@@ -10,8 +10,8 @@ export type OffcanvasProps<T extends ElementType> = BrElementProps<
     /** Controlled state can be provided by the return value of `useOffcanvas` */
     brOffcanvas: ReturnType<typeof useOffcanvas>
     /** @default "start" */
-    brPlacement?: 'start' | 'end' | 'top' | 'bottom'
-    brResponsive?: BrBreakpoint
+    brOffcanvasPlacement?: 'start' | 'end' | 'top' | 'bottom'
+    brOffcanvasBreakpoint?: BrBreakpoint
   }
 >
 
@@ -26,7 +26,14 @@ const Offcanvas: OffcanvasComponent = forwardRef(function Offcanvas<T extends El
   props: OffcanvasProps<T>,
   ref?: OffcanvasProps<T>['ref']
 ) {
-  const { as, brOffcanvas, brPlacement = 'start', brResponsive, className, ...rest } = props
+  const {
+    as,
+    brOffcanvas,
+    brOffcanvasPlacement = 'start',
+    brOffcanvasBreakpoint,
+    className,
+    ...rest
+  } = props
   const usedRef = useMultiRef(ref, brOffcanvas.ref)
 
   return (
@@ -34,8 +41,11 @@ const Offcanvas: OffcanvasComponent = forwardRef(function Offcanvas<T extends El
       as={as as ElementType}
       ref={usedRef}
       className={classNames(
-        { offcanvas: !brResponsive, [`offcanvas-${brResponsive}`]: !!brResponsive },
-        `offcanvas-${brPlacement}`,
+        {
+          offcanvas: !brOffcanvasBreakpoint,
+          [`offcanvas-${brOffcanvasBreakpoint}`]: !!brOffcanvasBreakpoint
+        },
+        `offcanvas-${brOffcanvasPlacement}`,
         className
       )}
       {...rest}

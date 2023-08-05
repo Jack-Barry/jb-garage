@@ -23,7 +23,7 @@ export const BaseExample: StoryFn = () => {
 
   return (
     <BrElement brPadding={{ y: 5 }}>
-      <Button ref={target.ref} {...target.getProps()} brVariant="danger" brLg>
+      <Button ref={target.ref} {...target.getProps()} brButtonColor="danger" brButtonLg>
         Click to toggle popover
       </Button>
       <Popover brPopover={floating}>
@@ -42,7 +42,11 @@ export const FourDirections: StoryFn = () => {
 
   return (
     <BrElement brPadding={{ y: 5 }} brDisplay="flex" className="gap-2">
-      <Button ref={popoverTop.target.ref} {...popoverTop.target.getProps()} brVariant="secondary">
+      <Button
+        ref={popoverTop.target.ref}
+        {...popoverTop.target.getProps()}
+        brButtonColor="secondary"
+      >
         Popover on top
       </Button>
       <Popover brPopover={popoverTop.floating}>
@@ -51,7 +55,7 @@ export const FourDirections: StoryFn = () => {
       <Button
         ref={popoverRight.target.ref}
         {...popoverRight.target.getProps()}
-        brVariant="secondary"
+        brButtonColor="secondary"
       >
         Popover on right
       </Button>
@@ -61,14 +65,18 @@ export const FourDirections: StoryFn = () => {
       <Button
         ref={popoverBottom.target.ref}
         {...popoverBottom.target.getProps()}
-        brVariant="secondary"
+        brButtonColor="secondary"
       >
         Popover on bottom
       </Button>
       <Popover brPopover={popoverBottom.floating}>
         <PopoverBody>Bottom popover</PopoverBody>
       </Popover>
-      <Button ref={popoverLeft.target.ref} {...popoverLeft.target.getProps()} brVariant="secondary">
+      <Button
+        ref={popoverLeft.target.ref}
+        {...popoverLeft.target.getProps()}
+        brButtonColor="secondary"
+      >
         Popover on left
       </Button>
       <Popover brPopover={popoverLeft.floating}>
@@ -86,7 +94,12 @@ export const DismissOnNextClick: StoryFn = () => {
 
   return (
     <div>
-      <Button ref={popover.target.ref} {...popover.target.getProps()} brVariant="danger" brLg>
+      <Button
+        ref={popover.target.ref}
+        {...popover.target.getProps()}
+        brButtonColor="danger"
+        brButtonLg
+      >
         Dismissable popover
       </Button>
       <Popover brPopover={popover.floating}>

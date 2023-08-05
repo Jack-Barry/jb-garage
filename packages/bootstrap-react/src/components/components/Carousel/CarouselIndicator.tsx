@@ -5,7 +5,7 @@ import classNames from 'classnames'
 export type CarouselIndicatorProps<T extends ElementType> = BrElementProps<
   T,
   {
-    brActive?: boolean
+    brCarouselIndicatorActive?: boolean
   }
 >
 
@@ -21,7 +21,7 @@ const CarouselIndicator: CarouselIndicatorComponent = forwardRef(function Carous
 >(props: CarouselIndicatorProps<T>, ref?: CarouselIndicatorProps<T>['ref']) {
   const {
     as = 'button' as ElementType,
-    brActive,
+    brCarouselIndicatorActive,
     className,
     type = as === 'button' ? 'button' : undefined,
     ...rest
@@ -32,7 +32,7 @@ const CarouselIndicator: CarouselIndicatorComponent = forwardRef(function Carous
       as={as}
       ref={ref}
       type={type}
-      className={classNames({ active: brActive }, className)}
+      className={classNames({ active: brCarouselIndicatorActive }, className)}
       {...rest}
     />
   )

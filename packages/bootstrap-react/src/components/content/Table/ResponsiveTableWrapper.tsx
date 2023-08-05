@@ -3,18 +3,18 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType } from 'react'
 
 export type ResponsiveTableWrapperProps<T extends ElementType> = BrElementProps<T> & {
-  /** Apply responsive table styling for all breakpoints */
-  brResponsive?: boolean
+  /** Apply responsive table styling for all breakpoints or up to specified breakpoint */
+  brTableResponsive?: boolean
   /** Apply responsive table styling up to sm breakpoint */
-  brResponsiveSm?: boolean
+  brTableResponsiveSm?: boolean
   /** Apply responsive table styling up to md breakpoint */
-  brResponsiveMd?: boolean
+  brTableResponsiveMd?: boolean
   /** Apply responsive table styling up to lg breakpoint */
-  brResponsiveLg?: boolean
+  brTableResponsiveLg?: boolean
   /** Apply responsive table styling up to xl breakpoint */
-  brResponsiveXl?: boolean
+  brTableResponsiveXl?: boolean
   /** Apply responsive table styling up to xxl breakpoint */
-  brResponsiveXxl?: boolean
+  brTableResponsiveXxl?: boolean
 }
 
 export default function ResponsiveTableWrapper<T extends ElementType = 'div'>(
@@ -23,12 +23,12 @@ export default function ResponsiveTableWrapper<T extends ElementType = 'div'>(
   const {
     as = 'div' as ElementType,
     className,
-    brResponsive,
-    brResponsiveSm,
-    brResponsiveMd,
-    brResponsiveLg,
-    brResponsiveXl,
-    brResponsiveXxl,
+    brTableResponsive,
+    brTableResponsiveSm,
+    brTableResponsiveMd,
+    brTableResponsiveLg,
+    brTableResponsiveXl,
+    brTableResponsiveXxl,
     ...rest
   } = props
 
@@ -38,12 +38,12 @@ export default function ResponsiveTableWrapper<T extends ElementType = 'div'>(
       className={classNames(
         'table',
         {
-          'table-responsive': brResponsive,
-          'table-responsive-sm': brResponsiveSm,
-          'table-responsive-md': brResponsiveMd,
-          'table-responsive-lg': brResponsiveLg,
-          'table-responsive-xl': brResponsiveXl,
-          'table-responsive-xxl': brResponsiveXxl
+          'table-responsive': brTableResponsive,
+          'table-responsive-sm': brTableResponsiveSm,
+          'table-responsive-md': brTableResponsiveMd,
+          'table-responsive-lg': brTableResponsiveLg,
+          'table-responsive-xl': brTableResponsiveXl,
+          'table-responsive-xxl': brTableResponsiveXxl
         },
         className
       )}

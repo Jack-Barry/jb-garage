@@ -10,13 +10,13 @@ export type SpinnerProps<T extends ElementType> = BrElementProps<T> & {
    */
   as?: T
   /** Color variant to use for the spinner */
-  brVariant?: string
+  brSpinnerColor?: string
   /** Present as growing spinner */
-  brGrowingSpinner?: boolean
+  brSpinnerGrowing?: boolean
   /** Present smaller spinner that can easily be used inside other components */
-  brSm?: boolean
+  brSpinnerSm?: boolean
   /** Apply size as height and width properties to spinner */
-  brSize?: string
+  brSpinnerSize?: string
 }
 
 /**
@@ -28,10 +28,10 @@ export default function Spinner<T extends ElementType = 'div'>(props: SpinnerPro
     children,
     className,
     role = 'status',
-    brVariant,
-    brGrowingSpinner,
-    brSm,
-    brSize,
+    brSpinnerColor,
+    brSpinnerGrowing,
+    brSpinnerSm,
+    brSpinnerSize,
     style,
     ...rest
   } = props
@@ -41,16 +41,16 @@ export default function Spinner<T extends ElementType = 'div'>(props: SpinnerPro
       as={as}
       className={classNames(
         {
-          'spinner-border': !brGrowingSpinner,
-          'spinner-border-sm': !brGrowingSpinner && brSm,
-          'spinner-grow': brGrowingSpinner,
-          'spinner-grow-sm': brGrowingSpinner && brSm,
-          [`text-${brVariant}`]: !!brVariant
+          'spinner-border': !brSpinnerGrowing,
+          'spinner-border-sm': !brSpinnerGrowing && brSpinnerSm,
+          'spinner-grow': brSpinnerGrowing,
+          'spinner-grow-sm': brSpinnerGrowing && brSpinnerSm,
+          [`text-${brSpinnerColor}`]: !!brSpinnerColor
         },
         className
       )}
       role={role}
-      style={{ width: brSize, height: brSize, ...style }}
+      style={{ width: brSpinnerSize, height: brSpinnerSize, ...style }}
       {...rest}
     >
       {children}

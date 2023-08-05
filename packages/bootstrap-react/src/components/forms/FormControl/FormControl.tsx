@@ -4,9 +4,9 @@ import Input, { InputElementType, InputProps } from './Input'
 import Label, { LabelProps } from './Label'
 
 type FormControlProps<Wrapper extends ElementType, Input extends InputElementType> = {
-  wrapperProps?: BrElementProps<Wrapper>
-  inputProps?: InputProps<Input>
-  labelProps?: LabelProps
+  brFormControlWrapperProps?: BrElementProps<Wrapper>
+  brFormControlInputProps?: InputProps<Input>
+  brFormControlLabelProps?: LabelProps
 }
 
 /**
@@ -23,17 +23,17 @@ export default function FormControl<
   Input extends InputElementType = 'input'
 >(props: FormControlProps<Wrapper, Input>) {
   const {
-    wrapperProps = {} as BrElementProps<Wrapper>,
-    inputProps = {} as InputProps<Input>,
-    labelProps = {}
+    brFormControlWrapperProps = {} as BrElementProps<Wrapper>,
+    brFormControlInputProps = {} as InputProps<Input>,
+    brFormControlLabelProps = {}
   } = props
-  const { as, className: wrapperClassName, ...wrapperRest } = wrapperProps
-  const { htmlFor = inputProps.id, ...labelPropsRest } = labelProps
+  const { as, className: wrapperClassName, ...wrapperRest } = brFormControlWrapperProps
+  const { htmlFor = brFormControlInputProps.id, ...labelPropsRest } = brFormControlLabelProps
 
   return (
     <BrElement as={as as ElementType} className={wrapperClassName} {...wrapperRest}>
       <Label htmlFor={htmlFor} {...labelPropsRest} />
-      <Input {...inputProps} />
+      <Input {...brFormControlInputProps} />
     </BrElement>
   )
 }

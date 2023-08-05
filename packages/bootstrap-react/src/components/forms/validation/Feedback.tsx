@@ -11,7 +11,7 @@ export type FeedbackProps<T extends ElementType> = BrElementProps<T> & {
    */
   brFeedbackType?: BrFeedbackType
   /** Present feedback as a tooltip */
-  brTooltip?: boolean
+  brFeedbackTooltip?: boolean
 }
 
 type FeedbackComponent = <Component extends ElementType = 'div'>(
@@ -27,7 +27,7 @@ const Feedback: FeedbackComponent = forwardRef(function Feedback<T extends Eleme
     className,
     children,
     brFeedbackType = 'invalid',
-    brTooltip,
+    brFeedbackTooltip,
     ...rest
   } = props
 
@@ -36,7 +36,10 @@ const Feedback: FeedbackComponent = forwardRef(function Feedback<T extends Eleme
       as={as}
       ref={ref}
       className={classNames(
-        { [`${brFeedbackType}-feedback`]: !brTooltip, [`${brFeedbackType}-tooltip`]: brTooltip },
+        {
+          [`${brFeedbackType}-feedback`]: !brFeedbackTooltip,
+          [`${brFeedbackType}-tooltip`]: brFeedbackTooltip
+        },
         className
       )}
       {...rest}

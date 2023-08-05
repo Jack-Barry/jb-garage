@@ -22,19 +22,19 @@ export const BasicExample: StoryFn = () => {
   return (
     <div className="bd-example">
       <ButtonGroup aria-label="Basic example">
-        <Button brVariant="primary">Left</Button>
-        <Button brVariant="primary">Middle</Button>
-        <Button brVariant="primary">Right</Button>
+        <Button brButtonColor="primary">Left</Button>
+        <Button brButtonColor="primary">Middle</Button>
+        <Button brButtonColor="primary">Right</Button>
       </ButtonGroup>
       <hr />
       <ButtonGroup>
-        <Button as="a" brVariant="primary" brActive href="#" aria-current="page">
+        <Button as="a" brButtonColor="primary" brButtonActive href="#" aria-current="page">
           Active link
         </Button>
-        <Button as="a" brVariant="primary" href="#">
+        <Button as="a" brButtonColor="primary" href="#">
           Link
         </Button>
-        <Button as="a" brVariant="primary" href="#">
+        <Button as="a" brButtonColor="primary" href="#">
           Link
         </Button>
       </ButtonGroup>
@@ -45,9 +45,9 @@ export const BasicExample: StoryFn = () => {
 export const MixedStyles: StoryFn = () => {
   return (
     <ButtonGroup aria-label="Basic mixed styles example">
-      <Button brVariant="danger">Left</Button>
-      <Button brVariant="warning">Middle</Button>
-      <Button brVariant="success">Right</Button>
+      <Button brButtonColor="danger">Left</Button>
+      <Button brButtonColor="warning">Middle</Button>
+      <Button brButtonColor="success">Right</Button>
     </ButtonGroup>
   )
 }
@@ -55,9 +55,9 @@ export const MixedStyles: StoryFn = () => {
 export const OutlinedStyles: StoryFn = () => {
   return (
     <ButtonGroup aria-label="Basic outlined example">
-      <Button brVariant="outline-primary">Left</Button>
-      <Button brVariant="outline-primary">Middle</Button>
-      <Button brVariant="outline-primary">Right</Button>
+      <Button brButtonColor="outline-primary">Left</Button>
+      <Button brButtonColor="outline-primary">Middle</Button>
+      <Button brButtonColor="outline-primary">Right</Button>
     </ButtonGroup>
   )
 }
@@ -122,27 +122,27 @@ export const Toolbar: StoryFn = () => {
     <div>
       <ButtonToolbar aria-label="Toolbar with button groups">
         <ButtonGroup brMargin={{ end: 2 }} aria-label="First group">
-          <Button brVariant="primary">1</Button>
-          <Button brVariant="primary">2</Button>
-          <Button brVariant="primary">3</Button>
-          <Button brVariant="primary">4</Button>
+          <Button brButtonColor="primary">1</Button>
+          <Button brButtonColor="primary">2</Button>
+          <Button brButtonColor="primary">3</Button>
+          <Button brButtonColor="primary">4</Button>
         </ButtonGroup>
         <ButtonGroup brMargin={{ end: 2 }} aria-label="Second group">
-          <Button brVariant="secondary">5</Button>
-          <Button brVariant="secondary">6</Button>
-          <Button brVariant="secondary">7</Button>
+          <Button brButtonColor="secondary">5</Button>
+          <Button brButtonColor="secondary">6</Button>
+          <Button brButtonColor="secondary">7</Button>
         </ButtonGroup>
         <ButtonGroup aria-label="Third group">
-          <Button brVariant="info">8</Button>
+          <Button brButtonColor="info">8</Button>
         </ButtonGroup>
       </ButtonToolbar>
       <hr />
       <ButtonToolbar brMargin={{ bottom: 3 }} aria-label="Toolbar with button groups">
         <ButtonGroup brMargin={{ end: 2 }} aria-label="First group">
-          <Button brVariant="outline-secondary">1</Button>
-          <Button brVariant="outline-secondary">2</Button>
-          <Button brVariant="outline-secondary">3</Button>
-          <Button brVariant="outline-secondary">4</Button>
+          <Button brButtonColor="outline-secondary">1</Button>
+          <Button brButtonColor="outline-secondary">2</Button>
+          <Button brButtonColor="outline-secondary">3</Button>
+          <Button brButtonColor="outline-secondary">4</Button>
         </ButtonGroup>
         <InputGroup>
           <InputGroupText id="btnGroupAddon">@</InputGroupText>
@@ -155,10 +155,10 @@ export const Toolbar: StoryFn = () => {
       </ButtonToolbar>
       <ButtonToolbar className="justify-content-between" aria-label="Toolbar with button groups">
         <ButtonGroup aria-label="First group">
-          <Button brVariant="outline-secondary">1</Button>
-          <Button brVariant="outline-secondary">2</Button>
-          <Button brVariant="outline-secondary">3</Button>
-          <Button brVariant="outline-secondary">4</Button>
+          <Button brButtonColor="outline-secondary">1</Button>
+          <Button brButtonColor="outline-secondary">2</Button>
+          <Button brButtonColor="outline-secondary">3</Button>
+          <Button brButtonColor="outline-secondary">4</Button>
         </ButtonGroup>
         <InputGroup>
           <InputGroupText id="btnGroupAddon2">@</InputGroupText>
@@ -176,22 +176,22 @@ export const Toolbar: StoryFn = () => {
 export const Sizing: StoryFn = () => {
   return (
     <div className="bd-example">
-      <ButtonGroup brLg aria-label="Large button group">
-        <Button brVariant="outline-primary">Left</Button>
-        <Button brVariant="outline-primary">Middle</Button>
-        <Button brVariant="outline-primary">Right</Button>
+      <ButtonGroup brButtonGroupLg aria-label="Large button group">
+        <Button brButtonColor="outline-primary">Left</Button>
+        <Button brButtonColor="outline-primary">Middle</Button>
+        <Button brButtonColor="outline-primary">Right</Button>
       </ButtonGroup>
       <br />
       <ButtonGroup aria-label="Default button group">
-        <Button brVariant="outline-primary">Left</Button>
-        <Button brVariant="outline-primary">Middle</Button>
-        <Button brVariant="outline-primary">Right</Button>
+        <Button brButtonColor="outline-primary">Left</Button>
+        <Button brButtonColor="outline-primary">Middle</Button>
+        <Button brButtonColor="outline-primary">Right</Button>
       </ButtonGroup>
       <br />
-      <ButtonGroup brSm aria-label="Small button group">
-        <Button brVariant="outline-primary">Left</Button>
-        <Button brVariant="outline-primary">Middle</Button>
-        <Button brVariant="outline-primary">Right</Button>
+      <ButtonGroup brButtonGroupSm aria-label="Small button group">
+        <Button brButtonColor="outline-primary">Left</Button>
+        <Button brButtonColor="outline-primary">Middle</Button>
+        <Button brButtonColor="outline-primary">Right</Button>
       </ButtonGroup>
     </div>
   )
@@ -201,10 +201,10 @@ export const Nesting: StoryFn = () => {
   return (
     <div style={{ minHeight: '120px' }}>
       <ButtonGroup aria-label="Button group with nested dropdown">
-        <Button brVariant="primary">1</Button>
-        <Button brVariant="primary">2</Button>
+        <Button brButtonColor="primary">1</Button>
+        <Button brButtonColor="primary">2</Button>
         <ButtonGroup>
-          <DropdownToggle brVariant="primary" aria-expanded="false">
+          <DropdownToggle brButtonColor="primary" aria-expanded="false">
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -220,20 +220,20 @@ export const Nesting: StoryFn = () => {
 export const VerticalVariation: StoryFn = () => {
   return (
     <div>
-      <ButtonGroup brVertical aria-label="Vertical button group">
-        <Button brVariant="primary">Button</Button>
-        <Button brVariant="primary">Button</Button>
-        <Button brVariant="primary">Button</Button>
-        <Button brVariant="primary">Button</Button>
-        <Button brVariant="primary">Button</Button>
-        <Button brVariant="primary">Button</Button>
+      <ButtonGroup brButtonGroupVertical aria-label="Vertical button group">
+        <Button brButtonColor="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
       </ButtonGroup>
       <hr />
-      <ButtonGroup brVertical aria-label="Vertical button group">
-        <Button brVariant="primary">Button</Button>
-        <Button brVariant="primary">Button</Button>
+      <ButtonGroup brButtonGroupVertical aria-label="Vertical button group">
+        <Button brButtonColor="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
         <ButtonGroup>
-          <DropdownToggle brVariant="primary" aria-expanded="false">
+          <DropdownToggle brButtonColor="primary" aria-expanded="false">
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -241,19 +241,10 @@ export const VerticalVariation: StoryFn = () => {
             <DropdownItem href="#">Dropdown link</DropdownItem>
           </DropdownMenu>
         </ButtonGroup>
-        <Button brVariant="primary">Button</Button>
-        <Button brVariant="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
         <ButtonGroup>
-          <DropdownToggle brVariant="primary" aria-expanded="false">
-            Dropdown
-          </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem href="#">Dropdown link</DropdownItem>
-            <DropdownItem href="#">Dropdown link</DropdownItem>
-          </DropdownMenu>
-        </ButtonGroup>
-        <ButtonGroup>
-          <DropdownToggle brVariant="primary" aria-expanded="false">
+          <DropdownToggle brButtonColor="primary" aria-expanded="false">
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -262,7 +253,16 @@ export const VerticalVariation: StoryFn = () => {
           </DropdownMenu>
         </ButtonGroup>
         <ButtonGroup>
-          <DropdownToggle brVariant="primary" aria-expanded="false">
+          <DropdownToggle brButtonColor="primary" aria-expanded="false">
+            Dropdown
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem href="#">Dropdown link</DropdownItem>
+            <DropdownItem href="#">Dropdown link</DropdownItem>
+          </DropdownMenu>
+        </ButtonGroup>
+        <ButtonGroup>
+          <DropdownToggle brButtonColor="primary" aria-expanded="false">
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -272,7 +272,7 @@ export const VerticalVariation: StoryFn = () => {
         </ButtonGroup>
       </ButtonGroup>
       <hr />
-      <ButtonGroup brVertical aria-label="Vertical radio toggle button group">
+      <ButtonGroup brButtonGroupVertical aria-label="Vertical radio toggle button group">
         <FormCheckInput
           type="radio"
           className="btn-check"

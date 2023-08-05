@@ -19,7 +19,7 @@ const meta: Meta<typeof Image> = {
 export default meta
 export const ResponsiveImages: StoryFn<typeof Image> = () => {
   return (
-    <Image fluid {...placeholderImgSvgProps({ className: 'bd-placeholder-img-lg' })}>
+    <Image brImageFluid {...placeholderImgSvgProps({ className: 'bd-placeholder-img-lg' })}>
       <PlaceholderImgSvgChildren text="Responsive image" />
     </Image>
   )
@@ -30,7 +30,7 @@ ResponsiveImages.decorators = [
 
 export const ImageThumbnails: StoryFn = () => {
   return (
-    <Image thumbnail {...placeholderImgSvgProps({ width: 200, height: 200 })}>
+    <Image brImageThumbnail {...placeholderImgSvgProps({ width: 200, height: 200 })}>
       <PlaceholderImgSvgChildren text="200x200" />
     </Image>
   )

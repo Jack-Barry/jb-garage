@@ -5,7 +5,7 @@ import { useParentAccordion } from './AccordionContext'
 import { useCollapse } from '../Collapse/useCollapse'
 
 export type AccordionCollapseProps<T extends ElementType> = Partial<CollapseProps<T>> & {
-  brDefaultOpen?: boolean
+  brAccordionCollapseDefaultOpen?: boolean
 }
 
 export type AccordionCollapseComponent = <Component extends ElementType = 'div'>(
@@ -18,7 +18,13 @@ export type AccordionCollapseComponent = <Component extends ElementType = 'div'>
 const AccordionCollapse: AccordionCollapseComponent = forwardRef(function AccordionCollapse<
   T extends ElementType = 'div'
 >(props: AccordionCollapseProps<T>, ref?: AccordionCollapseProps<T>['ref']) {
-  const { as, className, brCollapse, brDefaultOpen, ...rest } = props
+  const {
+    as,
+    className,
+    brCollapse,
+    brAccordionCollapseDefaultOpen: brAccordionCollapseDefaultOpen,
+    ...rest
+  } = props
   const { updateCollapse, removeCollapse } = useParentAccordion()
   const collapseId = props['id']
   if (!collapseId) {
@@ -26,7 +32,10 @@ const AccordionCollapse: AccordionCollapseComponent = forwardRef(function Accord
       'AccordionCollapse should be invoked with an id to allow for updating/removing it in its parent accordion'
     )
   }
-  const defaultCollapse = useCollapse({ defaultIsVisible: brDefaultOpen }, !!brCollapse)
+  const defaultCollapse = useCollapse(
+    { defaultIsVisible: brAccordionCollapseDefaultOpen },
+    !!brCollapse
+  )
   const usedCollapse = brCollapse || defaultCollapse
 
   useEffect(() => {

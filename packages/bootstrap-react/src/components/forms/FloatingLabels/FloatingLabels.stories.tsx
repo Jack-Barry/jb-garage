@@ -17,16 +17,16 @@ export default meta
 export const Example: StoryFn = () => {
   return (
     <div>
-      <FormGroup brFloating brMargin={{ bottom: 3 }}>
+      <FormGroup brFormGroupFloatingLabels brMargin={{ bottom: 3 }}>
         <Input type="email" id="floatingInput" placeholder="name@example.com" />
         <Label htmlFor="floatingInput">Email address</Label>
       </FormGroup>
-      <FormGroup brFloating>
+      <FormGroup brFormGroupFloatingLabels>
         <Input type="password" id="floatingPassword" placeholder="Password" />
         <Label htmlFor="floatingPassword">Password</Label>
       </FormGroup>
       <hr />
-      <FormGroup as="form" brFloating>
+      <FormGroup as="form" brFormGroupFloatingLabels>
         <Input
           type="email"
           id="floatingInputValue"
@@ -36,10 +36,10 @@ export const Example: StoryFn = () => {
         <Label htmlFor="floatingInputValue">Input with value</Label>
       </FormGroup>
       <hr />
-      <FormGroup as="form" brFloating>
+      <FormGroup as="form" brFormGroupFloatingLabels>
         <Input
           type="email"
-          brIsInvalid
+          brInputInvalid
           id="floatingInputInvalid"
           placeholder="name@example.com"
           value="test@example.com"
@@ -53,12 +53,12 @@ export const Example: StoryFn = () => {
 export const Textareas: StoryFn = () => {
   return (
     <div>
-      <FormGroup brFloating>
+      <FormGroup brFormGroupFloatingLabels>
         <Input as="textarea" placeholder="Leave a comment here" id="floatingTextarea" />
         <Label htmlFor="floatingTextarea">Comments</Label>
       </FormGroup>
       <hr />
-      <FormGroup brFloating>
+      <FormGroup brFormGroupFloatingLabels>
         <Input
           as="textarea"
           placeholder="Leave a comment here"
@@ -73,7 +73,7 @@ export const Textareas: StoryFn = () => {
 
 export const Selects: StoryFn = () => {
   return (
-    <FormGroup brFloating>
+    <FormGroup brFormGroupFloatingLabels>
       <Select id="floatingSelect" aria-label="Floating label select example">
         <option selected>Open this select menu</option>
         <option value="1">One</option>
@@ -88,11 +88,11 @@ export const Selects: StoryFn = () => {
 export const Disabled: StoryFn = () => {
   return (
     <div>
-      <FormGroup brFloating brMargin={{ bottom: 3 }}>
+      <FormGroup brFormGroupFloatingLabels brMargin={{ bottom: 3 }}>
         <Input type="email" id="floatingInputDisabled" placeholder="name@example.com" disabled />
         <Label htmlFor="floatingInputDisabled">Email address</Label>
       </FormGroup>
-      <FormGroup brFloating brMargin={{ bottom: 3 }}>
+      <FormGroup brFormGroupFloatingLabels brMargin={{ bottom: 3 }}>
         <Input
           as="textarea"
           placeholder="Leave a comment here"
@@ -101,7 +101,7 @@ export const Disabled: StoryFn = () => {
         />
         <Label htmlFor="floatingTextareaDisabled">Comments</Label>
       </FormGroup>
-      <FormGroup brFloating brMargin={{ bottom: 3 }}>
+      <FormGroup brFormGroupFloatingLabels brMargin={{ bottom: 3 }}>
         <Input
           as="textarea"
           placeholder="Leave a comment here"
@@ -111,7 +111,7 @@ export const Disabled: StoryFn = () => {
         />
         <Label htmlFor="floatingTextarea2Disabled">Comments</Label>
       </FormGroup>
-      <FormGroup brFloating>
+      <FormGroup brFormGroupFloatingLabels>
         <Select
           id="floatingSelectDisabled"
           aria-label="Floating label disabled select example"
@@ -131,21 +131,21 @@ export const Disabled: StoryFn = () => {
 export const ReadonlyPlaintext: StoryFn = () => {
   return (
     <div>
-      <FormGroup brMargin={{ bottom: 3 }} brFloating>
+      <FormGroup brMargin={{ bottom: 3 }} brFormGroupFloatingLabels>
         <Input
           type="email"
           readOnly
-          brPlainText
+          brInputPlainText
           id="floatingEmptyPlaintextInput"
           placeholder="name@example.com"
         />
         <Label htmlFor="floatingEmptyPlaintextInput">Empty input</Label>
       </FormGroup>
-      <FormGroup brMargin={{ bottom: 3 }} brFloating>
+      <FormGroup brMargin={{ bottom: 3 }} brFormGroupFloatingLabels>
         <Input
           type="email"
           readOnly
-          brPlainText
+          brInputPlainText
           id="floatingPlaintextInput"
           placeholder="name@example.com"
           value="name@example.com"
@@ -161,16 +161,22 @@ export const InputGroups: StoryFn = () => {
     <div>
       <InputGroup brMargin={{ bottom: 3 }}>
         <InputGroupText>@</InputGroupText>
-        <FormGroup brFloating>
+        <FormGroup brFormGroupFloatingLabels>
           <Input id="floatingInputGroup1" placeholder="Username" />
           <Label htmlFor="floatingInputGroup1">Username</Label>
         </FormGroup>
       </InputGroup>
       <hr />
-      <InputGroup brHasValidation>
+      <InputGroup brInputGroupHasValidation>
         <InputGroupText>@</InputGroupText>
-        <FormGroup brFloating brIsInvalid>
-          <Input type="text" brIsInvalid id="floatingInputGroup2" placeholder="Username" required />
+        <FormGroup brFormGroupFloatingLabels brFormGroupIsInvalid>
+          <Input
+            type="text"
+            brInputInvalid
+            id="floatingInputGroup2"
+            placeholder="Username"
+            required
+          />
           <Label htmlFor="floatingInputGroup2">Username</Label>
         </FormGroup>
         <div className="invalid-feedback">Please choose a username.</div>
@@ -183,7 +189,7 @@ export const Layout: StoryFn = () => {
   return (
     <Row brRowGutter={2}>
       <Col brColsMd>
-        <FormGroup brFloating>
+        <FormGroup brFormGroupFloatingLabels>
           <Input
             type="email"
             id="floatingInputGrid"
@@ -194,7 +200,7 @@ export const Layout: StoryFn = () => {
         </FormGroup>
       </Col>
       <Col brColsMd>
-        <FormGroup brFloating>
+        <FormGroup brFormGroupFloatingLabels>
           <Select id="floatingSelectGrid">
             <option selected>Open this select menu</option>
             <option value="1">One</option>

@@ -5,12 +5,12 @@ import FormCheckInput, { FormCheckInputProps } from './FormCheckInput'
 import FormCheckLabel, { FormCheckLabelProps } from './FormCheckLabel'
 
 type FormCheckProps<T extends ElementType> = PropsWithChildren<{
-  wrapperProps?: Omit<BrElementProps<T>, 'children'> & {
+  brFormCheckWrapperProps?: Omit<BrElementProps<T>, 'children'> & {
     /** Apply Bootstrap disabled styling */
-    brDisabled?: boolean
+    brFormCheckDisabled?: boolean
   }
-  inputProps?: FormCheckInputProps
-  labelProps?: FormCheckLabelProps
+  brFormCheckInputProps?: FormCheckInputProps
+  brFormCheckLabelProps?: FormCheckLabelProps
 }>
 
 /**
@@ -24,26 +24,28 @@ type FormCheckProps<T extends ElementType> = PropsWithChildren<{
  */
 export default function FormCheck<T extends ElementType = 'div'>(props: FormCheckProps<T>) {
   const {
-    wrapperProps = {} as Required<FormCheckProps<T>>['wrapperProps'],
-    inputProps = {},
-    labelProps = {},
+    brFormCheckWrapperProps: wrapperProps = {} as Required<
+      FormCheckProps<T>
+    >['brFormCheckWrapperProps'],
+    brFormCheckInputProps = {},
+    brFormCheckLabelProps = {},
     children
   } = props
   const {
     as = 'div' as ElementType,
     className: wrapperClassName,
-    brDisabled,
+    brFormCheckDisabled,
     ...wrapperRest
   } = wrapperProps
-  const { htmlFor = inputProps.id, ...labelPropsRest } = labelProps
+  const { htmlFor = brFormCheckInputProps.id, ...labelPropsRest } = brFormCheckLabelProps
 
   return (
     <BrElement
       as={as}
-      className={classNames('form-check', { disabled: brDisabled }, wrapperClassName)}
+      className={classNames('form-check', { disabled: brFormCheckDisabled }, wrapperClassName)}
       {...wrapperRest}
     >
-      <FormCheckInput {...inputProps} />
+      <FormCheckInput {...brFormCheckInputProps} />
       <FormCheckLabel htmlFor={htmlFor} {...labelPropsRest} />
       {children}
     </BrElement>

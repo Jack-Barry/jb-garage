@@ -10,9 +10,9 @@ export type PageItemProps<T extends ElementType> = BrElementProps<T> & {
    */
   as?: T
   /** Apply disabled styles */
-  brDisabled?: boolean
+  brPageItemDisabled?: boolean
   /** Apply active styles */
-  brActive?: boolean
+  brPageItemActive?: boolean
 }
 
 export type PageItemComponent = <Component extends ElementType = 'li'>(
@@ -24,13 +24,24 @@ const PageItem: PageItemComponent = forwardRef(function PageItem<T extends Eleme
   props: PageItemProps<T>,
   ref?: PageItemProps<T>['ref']
 ) {
-  const { as = 'li' as ElementType, children, className, brDisabled, brActive, ...rest } = props
+  const {
+    as = 'li' as ElementType,
+    children,
+    className,
+    brPageItemDisabled,
+    brPageItemActive,
+    ...rest
+  } = props
 
   return (
     <BrElement
       as={as}
       ref={ref}
-      className={classNames('page-item', { disabled: brDisabled, active: brActive }, className)}
+      className={classNames(
+        'page-item',
+        { disabled: brPageItemDisabled, active: brPageItemActive },
+        className
+      )}
       {...rest}
     >
       {children}

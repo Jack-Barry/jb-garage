@@ -12,9 +12,9 @@ export type PlaceholderProps<T extends ElementType, U extends ElementType> = BrE
      */
     as?: T
     /** Type of animation to use */
-    animation?: 'glow' | 'wave'
+    brPlaceholderAnimation?: 'glow' | 'wave'
     /** Props to pass to the wrapping element */
-    wrapperProps?: BrElementProps<U>
+    brPlaceholderWrapperProps?: BrElementProps<U>
   }
 >
 
@@ -27,17 +27,26 @@ export type PlaceholderProps<T extends ElementType, U extends ElementType> = BrE
 export default function Placeholder<T extends ElementType = 'span', U extends ElementType = 'p'>(
   props: PlaceholderProps<T, U>
 ) {
-  const { as = 'span' as ElementType, wrapperProps, animation, className, ...rest } = props
+  const {
+    as = 'span' as ElementType,
+    brPlaceholderWrapperProps,
+    brPlaceholderAnimation,
+    className,
+    ...rest
+  } = props
   const {
     as: wrapperAs = 'p' as ElementType,
     className: wrapperClassName,
     ...wrapperRest
-  } = wrapperProps || ({} as BrElementProps<U>)
+  } = brPlaceholderWrapperProps || ({} as BrElementProps<U>)
 
   return (
     <BrElement
       as={wrapperAs}
-      className={classNames({ [`placeholder-${animation}`]: !!animation }, wrapperClassName)}
+      className={classNames(
+        { [`placeholder-${brPlaceholderAnimation}`]: !!brPlaceholderAnimation },
+        wrapperClassName
+      )}
       {...wrapperRest}
     >
       <BrElement as={as} className={classNames('placeholder', className)} {...rest} />

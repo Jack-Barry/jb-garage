@@ -8,7 +8,7 @@ export type ToastProps<T extends ElementType> = BrElementProps<
     /**
      * @default true
      */
-    brFade?: boolean
+    brToastFade?: boolean
   }
 >
 
@@ -23,14 +23,14 @@ const Toast: ToastComponent = forwardRef(function Toast<T extends ElementType = 
   props: ToastProps<T>,
   ref?: ToastProps<T>['ref']
 ) {
-  const { as, className, role = 'alert', brFade = true, ...rest } = props
+  const { as, className, role = 'alert', brToastFade = true, ...rest } = props
 
   return (
     <BrElement
       as={as as ElementType}
       ref={ref}
       role={role}
-      className={classNames('toast', { fade: brFade }, className)}
+      className={classNames('toast', { fade: brToastFade }, className)}
       {...rest}
     />
   )

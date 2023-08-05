@@ -12,7 +12,7 @@ export type BreadcrumbsProps<T extends ElementType> = BrElementProps<
      */
     as?: T
     /** Divider to use in between breadcrumb items */
-    brDivider?: string
+    brBreadcrumbsDivider?: string
   }
 >
 
@@ -31,14 +31,14 @@ const Breadcrumbs: BreadcrumbsComponent = forwardRef(function Breadcrumbs<
     className,
     children,
     style,
-    brDivider,
+    brBreadcrumbsDivider,
     'aria-label': ariaLabel = 'breadcrumb',
     ...rest
   } = props
 
   const usedStyle = { ...style }
-  if (typeof brDivider === 'string') {
-    usedStyle['--bs-breadcrumb-divider'] = brDivider
+  if (typeof brBreadcrumbsDivider === 'string') {
+    usedStyle['--bs-breadcrumb-divider'] = brBreadcrumbsDivider
   }
 
   return (

@@ -33,29 +33,29 @@ export type InputProps<T extends InputElementType> = Omit<BrElementProps<T>, 'ty
     | 'url'
     | 'week'
   /** Present as a large form control */
-  brLg?: boolean
+  brInputLg?: boolean
   /** Present as a small form control */
-  brSm?: boolean
+  brInputSm?: boolean
   /** Input is plaintext */
-  brPlainText?: boolean
+  brInputPlainText?: boolean
   /**
    * Should render Bootstrap color input styles
    *
    * If `type` is `"color"`, this defaults to `true`, but you may set it to `false`
    *   explicitly if needed
    */
-  brColor?: boolean
+  brInputColorStyles?: boolean
   /**
    * Should render Bootstrap range input styles
    *
    * If `type` is `"range"`, this defaults to `true`, but you may set it to `false`
    *   explicitly if needed
    */
-  brRange?: boolean
+  brInputRangeStyles?: boolean
   /** Form input value is invalid */
-  brIsInvalid?: boolean
+  brInputInvalid?: boolean
   /** Form input value is valid */
-  brIsValid?: boolean
+  brInputValid?: boolean
 }
 
 type InputComponent = <Component extends InputElementType = 'input'>(
@@ -71,17 +71,17 @@ const Input: InputComponent = forwardRef(function FormInput<T extends InputEleme
     type = 'text',
     children,
     className,
-    brLg,
-    brSm,
-    brPlainText,
-    brColor,
-    brRange,
-    brIsInvalid,
-    brIsValid,
+    brInputLg,
+    brInputSm,
+    brInputPlainText,
+    brInputColorStyles,
+    brInputRangeStyles,
+    brInputInvalid,
+    brInputValid,
     ...rest
   } = props
 
-  const isRange = brRange ?? type === 'range'
+  const isRange = brInputRangeStyles ?? type === 'range'
 
   return (
     <BrElement
@@ -91,13 +91,13 @@ const Input: InputComponent = forwardRef(function FormInput<T extends InputEleme
       className={classNames(
         {
           'form-control': !isRange,
-          'form-control-lg': brLg,
-          'form-control-sm': brSm,
-          'form-control-plaintext': brPlainText,
-          'form-control-color': brColor ?? type === 'color',
+          'form-control-lg': brInputLg,
+          'form-control-sm': brInputSm,
+          'form-control-plaintext': brInputPlainText,
+          'form-control-color': brInputColorStyles ?? type === 'color',
           'form-range': isRange,
-          'is-invalid': brIsInvalid,
-          'is-valid': brIsValid
+          'is-invalid': brInputInvalid,
+          'is-valid': brInputValid
         },
         className
       )}

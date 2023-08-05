@@ -8,21 +8,21 @@ export type TableEntryProps<T extends TableEntryElementType> = BrElementProps<
     /** Type of HTML element to render */
     as?: T
     /** Apply Bootstrap table row active style to row */
-    brActive?: boolean
+    brTableEntryActive?: boolean
   }
 >
 
 export default function TableEntry<T extends TableEntryElementType = 'tr'>(
   props: TableEntryProps<T>
 ) {
-  const { as = 'tr' as TableEntryElementType, className, brActive, ...rest } = props
+  const { as = 'tr' as TableEntryElementType, className, brTableEntryActive, ...rest } = props
 
   return (
     <BrElement
       as={as}
       className={classNames(
         {
-          'table-active': brActive
+          'table-active': brTableEntryActive
         },
         className
       )}

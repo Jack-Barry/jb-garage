@@ -14,7 +14,7 @@ export type AlertProps<T extends ElementType> = BrElementProps<T> & {
   /** State to manage closing the alert */
   brAlert?: ReturnType<typeof useAlert>
   /** Alert is dismissible */
-  brDismissible?: boolean
+  brAlertDismissible?: boolean
 }
 
 export type AlertComponent = <Component extends ElementType = 'div'>(
@@ -32,7 +32,7 @@ const Alert: AlertComponent = forwardRef(function Alert<T extends ElementType = 
     className,
     role = 'alert',
     brAlert,
-    brDismissible,
+    brAlertDismissible,
     ...rest
   } = props
 
@@ -46,7 +46,7 @@ const Alert: AlertComponent = forwardRef(function Alert<T extends ElementType = 
       ref={usedRef}
       className={classNames(
         'alert',
-        { 'alert-dismissible': brDismissible, show: !isAnimating && !isDismissed },
+        { 'alert-dismissible': brAlertDismissible, show: !isAnimating && !isDismissed },
         className
       )}
       role={role}

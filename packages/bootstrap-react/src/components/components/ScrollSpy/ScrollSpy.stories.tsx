@@ -44,9 +44,9 @@ export const NavbarStory: StoryFn = () => {
           <NavItem>
             <NavLink href="#scrollspyHeading2">Second</NavLink>
           </NavItem>
-          <NavItem brDropdown>
+          <NavItem brNavItemDropdown>
             <NavLink
-              brDropdownToggle
+              brNavLinkDropdownToggle
               href="#"
               role="button"
               aria-expanded={dropdown.isOpen}
@@ -127,9 +127,9 @@ export const NestedNav: StoryFn = () => {
             brPadding={{ end: 4 }}
             brBorder={{ end: true }}
           >
-            <Nav brPills brFlex={{ column: true }}>
+            <Nav brNavPills brFlex={{ column: true }}>
               <NavLink href="#item-1">Item 1</NavLink>
-              <Nav brPills brFlex={{ column: true }}>
+              <Nav brNavPills brFlex={{ column: true }}>
                 <NavLink brMargin={{ start: 3, y: 1 }} href="#item-1-1">
                   Item 1-1
                 </NavLink>
@@ -139,7 +139,7 @@ export const NestedNav: StoryFn = () => {
               </Nav>
               <NavLink href="#item-2">Item 2</NavLink>
               <NavLink href="#item-3">Item 3</NavLink>
-              <Nav brPills brFlex={{ column: true }}>
+              <Nav brNavPills brFlex={{ column: true }}>
                 <NavLink brMargin={{ start: 3, y: 1 }} href="#item-3-1">
                   Item 3-1
                 </NavLink>
@@ -270,16 +270,16 @@ export const ListGroupStory: StoryFn = () => {
       <Row>
         <Col brCols={4}>
           <ListGroup id="list-example">
-            <ListGroupItem as="a" brAction href="#list-item-1">
+            <ListGroupItem as="a" brListGroupItemAction href="#list-item-1">
               Item 1
             </ListGroupItem>
-            <ListGroupItem as="a" brAction href="#list-item-2">
+            <ListGroupItem as="a" brListGroupItemAction href="#list-item-2">
               Item 2
             </ListGroupItem>
-            <ListGroupItem as="a" brAction href="#list-item-3">
+            <ListGroupItem as="a" brListGroupItemAction href="#list-item-3">
               Item 3
             </ListGroupItem>
-            <ListGroupItem as="a" brAction href="#list-item-4">
+            <ListGroupItem as="a" brListGroupItemAction href="#list-item-4">
               Item 4
             </ListGroupItem>
           </ListGroup>

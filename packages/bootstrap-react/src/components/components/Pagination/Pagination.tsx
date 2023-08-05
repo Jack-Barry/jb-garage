@@ -9,7 +9,7 @@ export type PaginationProps<T extends ElementType> = BrElementProps<T> & {
    * @default "ul"
    */
   as?: T
-  brSize?: 'lg' | 'sm'
+  brPaginationSize?: 'lg' | 'sm'
 }
 
 export type PaginationComponent = <Component extends ElementType = 'ul'>(
@@ -20,13 +20,17 @@ export type PaginationComponent = <Component extends ElementType = 'ul'>(
 const Pagination: PaginationComponent = forwardRef(function Pagination<
   T extends ElementType = 'ul'
 >(props: PaginationProps<T>, ref?: PaginationProps<T>['ref']) {
-  const { as = 'ul' as ElementType, children, className, brSize, ...rest } = props
+  const { as = 'ul' as ElementType, children, className, brPaginationSize, ...rest } = props
 
   return (
     <BrElement
       as={as}
       ref={ref}
-      className={classNames('pagination', { [`pagination-${brSize}`]: !!brSize }, className)}
+      className={classNames(
+        'pagination',
+        { [`pagination-${brPaginationSize}`]: !!brPaginationSize },
+        className
+      )}
       {...rest}
     >
       {children}

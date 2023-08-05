@@ -25,42 +25,42 @@ export const BorderSpinner: StoryFn = () => {
 export const Colors: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Spinner brVariant="primary">
+      <Spinner brSpinnerColor="primary">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brVariant="secondary">
+      <Spinner brSpinnerColor="secondary">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brVariant="success">
+      <Spinner brSpinnerColor="success">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brVariant="danger">
+      <Spinner brSpinnerColor="danger">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brVariant="warning">
+      <Spinner brSpinnerColor="warning">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brVariant="info">
+      <Spinner brSpinnerColor="info">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brVariant="light">
+      <Spinner brSpinnerColor="light">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brVariant="dark">
+      <Spinner brSpinnerColor="dark">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
@@ -72,48 +72,48 @@ export const Colors: StoryFn = () => {
 export const GrowingSpinner: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Spinner brGrowingSpinner>
+      <Spinner brSpinnerGrowing>
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
       <hr />
-      <Spinner brGrowingSpinner brVariant="primary">
+      <Spinner brSpinnerGrowing brSpinnerColor="primary">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brGrowingSpinner brVariant="secondary">
+      <Spinner brSpinnerGrowing brSpinnerColor="secondary">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brGrowingSpinner brVariant="success">
+      <Spinner brSpinnerGrowing brSpinnerColor="success">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brGrowingSpinner brVariant="danger">
+      <Spinner brSpinnerGrowing brSpinnerColor="danger">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brGrowingSpinner brVariant="warning">
+      <Spinner brSpinnerGrowing brSpinnerColor="warning">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brGrowingSpinner brVariant="info">
+      <Spinner brSpinnerGrowing brSpinnerColor="info">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brGrowingSpinner brVariant="light">
+      <Spinner brSpinnerGrowing brSpinnerColor="light">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brGrowingSpinner brVariant="dark">
+      <Spinner brSpinnerGrowing brSpinnerColor="dark">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
@@ -182,23 +182,23 @@ export const AlignmentPlacementTextAlign: StoryFn = () => {
 export const Size: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Spinner brSm>
+      <Spinner brSpinnerSm>
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brGrowingSpinner brSm>
+      <Spinner brSpinnerGrowing brSpinnerSm>
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
       <hr />
-      <Spinner brSize="3rem">
+      <Spinner brSpinnerSize="3rem">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brGrowingSpinner brSize="3rem">
+      <Spinner brSpinnerGrowing brSpinnerSize="3rem">
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
@@ -210,24 +210,24 @@ export const Size: StoryFn = () => {
 export const Buttons: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button brVariant="primary" disabled>
-        <Spinner as="span" brSm aria-hidden="true" />
+      <Button brButtonColor="primary" disabled>
+        <Spinner as="span" brSpinnerSm aria-hidden="true" />
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Button>
-      <Button brVariant="primary" disabled>
-        <Spinner as="span" brSm aria-hidden="true" /> Loading...
+      <Button brButtonColor="primary" disabled>
+        <Spinner as="span" brSpinnerSm aria-hidden="true" /> Loading...
       </Button>
       <hr />
-      <Button brVariant="primary" disabled>
-        <Spinner as="span" brGrowingSpinner brSm aria-hidden="true" />
+      <Button brButtonColor="primary" disabled>
+        <Spinner as="span" brSpinnerGrowing brSpinnerSm aria-hidden="true" />
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
       </Button>
-      <Button brVariant="primary" disabled>
-        <Spinner as="span" brGrowingSpinner brSm aria-hidden="true" /> Loading...
+      <Button brButtonColor="primary" disabled>
+        <Spinner as="span" brSpinnerGrowing brSpinnerSm aria-hidden="true" /> Loading...
       </Button>
     </div>
   )

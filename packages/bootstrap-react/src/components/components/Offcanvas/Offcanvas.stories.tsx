@@ -29,14 +29,14 @@ export const LiveDemo: StoryFn = () => {
     <div className="bd-example">
       <Button
         as="a"
-        brVariant="primary"
+        brButtonColor="primary"
         href="#offcanvasExample"
         aria-controls="offcanvasExample"
         onClick={offcanvas.toggle}
       >
         Link with href
       </Button>
-      <Button brVariant="primary" aria-controls="offcanvasExample" onClick={offcanvas.toggle}>
+      <Button brButtonColor="primary" aria-controls="offcanvasExample" onClick={offcanvas.toggle}>
         Button
       </Button>
 
@@ -55,7 +55,7 @@ export const LiveDemo: StoryFn = () => {
             text, images, lists, etc.
           </div>
           <Dropdown brMargin={{ top: 3 }}>
-            <DropdownToggle brVariant="secondary" ref={dropdown.dropdownRef}>
+            <DropdownToggle brButtonColor="secondary" ref={dropdown.dropdownRef}>
               Dropdown button
             </DropdownToggle>
             <DropdownMenu>
@@ -75,7 +75,7 @@ export const BodyScrolling: StoryFn = () => {
 
   return (
     <div>
-      <Button brVariant="primary" aria-controls="offcanvasScrolling" onClick={offcanvas.toggle}>
+      <Button brButtonColor="primary" aria-controls="offcanvasScrolling" onClick={offcanvas.toggle}>
         Enable body scrolling
       </Button>
 
@@ -104,7 +104,7 @@ export const BodyScrollingAndBackdrop: StoryFn = () => {
   return (
     <div>
       <Button
-        brVariant="primary"
+        brButtonColor="primary"
         aria-controls="offcanvasWithBothOptions"
         onClick={offcanvas.toggle}
       >
@@ -135,7 +135,7 @@ export const StaticBackdrop: StoryFn = () => {
 
   return (
     <div>
-      <Button brVariant="primary" aria-controls="staticBackdrop" onClick={offcanvas.toggle}>
+      <Button brButtonColor="primary" aria-controls="staticBackdrop" onClick={offcanvas.toggle}>
         Toggle static offcanvas
       </Button>
 
@@ -158,7 +158,7 @@ export const Responsive: StoryFn = () => {
   return (
     <div>
       <Button
-        brVariant="primary"
+        brButtonColor="primary"
         brDisplayLg="none"
         aria-controls="offcanvasResponsive"
         onClick={offcanvas.toggle}
@@ -174,8 +174,8 @@ export const Responsive: StoryFn = () => {
         id="offcanvasResponsive"
         aria-labelledby="offcanvasResponsiveLabel"
         brOffcanvas={offcanvas}
-        brResponsive="lg"
-        brPlacement="end"
+        brOffcanvasBreakpoint="lg"
+        brOffcanvasPlacement="end"
       >
         <OffcanvasHeader>
           <OffcanvasTitle id="offcanvasResponsiveLabel">Responsive offcanvas</OffcanvasTitle>
@@ -198,7 +198,7 @@ export const Placement: StoryFn = () => {
 
   return (
     <div>
-      <Button brVariant="primary" aria-controls="offcanvasTop" onClick={offcanvasTop.toggle}>
+      <Button brButtonColor="primary" aria-controls="offcanvasTop" onClick={offcanvasTop.toggle}>
         Toggle top offcanvas
       </Button>
 
@@ -206,7 +206,7 @@ export const Placement: StoryFn = () => {
         id="offcanvasTop"
         aria-labelledby="offcanvasTopLabel"
         brOffcanvas={offcanvasTop}
-        brPlacement="top"
+        brOffcanvasPlacement="top"
       >
         <OffcanvasHeader>
           <OffcanvasTitle id="offcanvasTopLabel">Offcanvas top</OffcanvasTitle>
@@ -215,7 +215,7 @@ export const Placement: StoryFn = () => {
         <OffcanvasBody>...</OffcanvasBody>
       </Offcanvas>
       <hr />
-      <Button brVariant="primary" aria-controls="offcanvasEnd" onClick={offcanvasEnd.toggle}>
+      <Button brButtonColor="primary" aria-controls="offcanvasEnd" onClick={offcanvasEnd.toggle}>
         Toggle right offcanvas
       </Button>
 
@@ -223,7 +223,7 @@ export const Placement: StoryFn = () => {
         id="offcanvasEnd"
         aria-labelledby="offcanvasEndLabel"
         brOffcanvas={offcanvasEnd}
-        brPlacement="end"
+        brOffcanvasPlacement="end"
       >
         <OffcanvasHeader>
           <OffcanvasTitle id="offcanvasEndLabel">Offcanvas right</OffcanvasTitle>
@@ -232,7 +232,11 @@ export const Placement: StoryFn = () => {
         <OffcanvasBody>...</OffcanvasBody>
       </Offcanvas>
       <hr />
-      <Button brVariant="primary" aria-controls="offcanvasBottom" onClick={offcanvasBottom.toggle}>
+      <Button
+        brButtonColor="primary"
+        aria-controls="offcanvasBottom"
+        onClick={offcanvasBottom.toggle}
+      >
         Toggle bottom offcanvas
       </Button>
 
@@ -240,7 +244,7 @@ export const Placement: StoryFn = () => {
         id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel"
         brOffcanvas={offcanvasBottom}
-        brPlacement="bottom"
+        brOffcanvasPlacement="bottom"
       >
         <OffcanvasHeader>
           <OffcanvasTitle id="offcanvasBottomLabel">Offcanvas bottom</OffcanvasTitle>

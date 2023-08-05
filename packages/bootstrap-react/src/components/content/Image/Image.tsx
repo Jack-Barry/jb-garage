@@ -6,18 +6,27 @@ export type ImageProps<T extends ImageElementType> = BrElementProps<
   T,
   {
     as?: T
-    fluid?: boolean
-    thumbnail?: boolean
+    brImageFluid?: boolean
+    brImageThumbnail?: boolean
   }
 >
 
 export default function Image<T extends ImageElementType = 'img'>(props: ImageProps<T>) {
-  const { as = 'img' as ImageElementType, fluid, thumbnail, className, ...rest } = props
+  const {
+    as = 'img' as ImageElementType,
+    brImageFluid,
+    brImageThumbnail,
+    className,
+    ...rest
+  } = props
 
   return (
     <BrElement
       as={as}
-      className={classNames({ 'img-fluid': fluid, 'img-thumbnail': thumbnail }, className)}
+      className={classNames(
+        { 'img-fluid': brImageFluid, 'img-thumbnail': brImageThumbnail },
+        className
+      )}
       {...rest}
     />
   )

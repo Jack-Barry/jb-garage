@@ -11,15 +11,19 @@ export type NavProps<T extends ElementType> = BrElementProps<T> & {
    */
   as?: T
   /** Apply pill styles */
-  brPills?: boolean
+  brNavPills?: boolean
 }
 
 /** [Nav]() */
 export default function Nav<T extends ElementType = 'ul'>(props: NavProps<T>) {
-  const { as = 'ul' as ElementType, children, className, brPills, ...rest } = props
+  const { as = 'ul' as ElementType, children, className, brNavPills, ...rest } = props
 
   return (
-    <BrElement as={as} className={classNames('nav', { 'nav-pills': brPills }, className)} {...rest}>
+    <BrElement
+      as={as}
+      className={classNames('nav', { 'nav-pills': brNavPills }, className)}
+      {...rest}
+    >
       {children}
     </BrElement>
   )

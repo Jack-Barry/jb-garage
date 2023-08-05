@@ -10,9 +10,9 @@ export type ListGroupItemProps<T extends ElementType> = Omit<BrElementProps<T>, 
    */
   as?: T
   /** Apply action styles */
-  brAction?: boolean
+  brListGroupItemAction?: boolean
   /** Apply active styles */
-  brActive?: boolean
+  brListGroupItemActive?: boolean
 }
 
 export type ListGroupItemComponent = <Component extends ElementType = 'li'>(
@@ -25,7 +25,14 @@ export type ListGroupItemComponent = <Component extends ElementType = 'li'>(
 const ListGroupItem: ListGroupItemComponent = forwardRef(function ListGroupItem<
   T extends ElementType = 'li'
 >(props: ListGroupItemProps<T>, ref: BrElementProps<T>['ref']) {
-  const { as = 'li' as ElementType, children, className, brAction, brActive, ...rest } = props
+  const {
+    as = 'li' as ElementType,
+    children,
+    className,
+    brListGroupItemAction,
+    brListGroupItemActive,
+    ...rest
+  } = props
 
   return (
     <BrElement
@@ -33,7 +40,7 @@ const ListGroupItem: ListGroupItemComponent = forwardRef(function ListGroupItem<
       ref={ref}
       className={classNames(
         'list-group-item',
-        { 'list-group-item-action': brAction, active: brActive },
+        { 'list-group-item-action': brListGroupItemAction, active: brListGroupItemActive },
         className
       )}
       {...rest}

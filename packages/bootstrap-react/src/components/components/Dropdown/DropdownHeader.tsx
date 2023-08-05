@@ -19,9 +19,9 @@ export type DropdownHeaderProps<
    *
    * @default "li"
    */
-  wrapperAs?: U | null
+  brDropdownHeaderWrapperAs?: U | null
   /** Props to pass along to the wrapper element */
-  wrapperProps?: BrElementProps<U>
+  brDropdownHeaderWrapperProps?: BrElementProps<U>
 }
 
 /**
@@ -34,8 +34,8 @@ export default function DropdownHeader<T extends ElementType = 'h6', U extends E
     as = 'h6' as ElementType,
     children,
     className,
-    wrapperAs = 'li' as ElementType,
-    wrapperProps,
+    brDropdownHeaderWrapperAs = 'li' as ElementType,
+    brDropdownHeaderWrapperProps,
     ...rest
   } = props
 
@@ -45,12 +45,12 @@ export default function DropdownHeader<T extends ElementType = 'h6', U extends E
     </BrElement>
   )
 
-  if (wrapperAs === null) {
+  if (brDropdownHeaderWrapperAs === null) {
     return content
   }
 
   return (
-    <BrElement as={wrapperAs} {...wrapperProps}>
+    <BrElement as={brDropdownHeaderWrapperAs} {...brDropdownHeaderWrapperProps}>
       {content}
     </BrElement>
   )

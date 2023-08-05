@@ -4,11 +4,11 @@ import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type InputGroupProps<T extends ElementType> = BrElementProps<T> & {
   /** Present as a small input group */
-  brSm?: boolean
+  brInputGroupSm?: boolean
   /** Present as a large input group */
-  brLg?: boolean
+  brInputGroupLg?: boolean
   /** Apply Bootstrap has validation styling to input group */
-  brHasValidation?: boolean
+  brInputGroupHasValidation?: boolean
 }
 
 type InputGroupComponent = <Component extends ElementType = 'div'>(
@@ -22,9 +22,9 @@ const InputGroup: InputGroupComponent = forwardRef(function FormInput<
     as = 'div' as ElementType,
     className,
     children,
-    brSm,
-    brLg,
-    brHasValidation,
+    brInputGroupSm,
+    brInputGroupLg,
+    brInputGroupHasValidation,
     ...rest
   } = props
 
@@ -35,9 +35,9 @@ const InputGroup: InputGroupComponent = forwardRef(function FormInput<
       className={classNames(
         'input-group',
         {
-          'input-group-sm': brSm,
-          'input-group-lg': brLg,
-          'has-validation': brHasValidation
+          'input-group-sm': brInputGroupSm,
+          'input-group-lg': brInputGroupLg,
+          'has-validation': brInputGroupHasValidation
         },
         className
       )}

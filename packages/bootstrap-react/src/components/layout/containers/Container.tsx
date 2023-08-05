@@ -10,23 +10,30 @@ export type ContainerProps<T extends ElementType> = BrElementProps<T> & {
    */
   as?: T
   /** Breakpoint size to use */
-  brBreakpoint?: BrBreakpoint
+  brContainerBreakpoint?: BrBreakpoint
   /** Container is fluid */
-  brFluid?: boolean
+  brContainerFluid?: boolean
 }
 
 /** [Container](https://getbootstrap.com/docs/5.3/layout/containers/) */
 export default function Container<T extends ElementType = 'div'>(props: ContainerProps<T>) {
-  const { as = 'div' as ElementType, children, className, brBreakpoint, brFluid, ...rest } = props
+  const {
+    as = 'div' as ElementType,
+    children,
+    className,
+    brContainerBreakpoint,
+    brContainerFluid,
+    ...rest
+  } = props
 
   return (
     <BrElement
       as={as}
       className={classNames(
         {
-          container: !brBreakpoint && !brFluid,
-          [`container-${brBreakpoint}`]: !!brBreakpoint,
-          'container-fluid': brFluid
+          container: !brContainerBreakpoint && !brContainerFluid,
+          [`container-${brContainerBreakpoint}`]: !!brContainerBreakpoint,
+          'container-fluid': brContainerFluid
         },
         className
       )}

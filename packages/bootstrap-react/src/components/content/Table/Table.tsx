@@ -3,31 +3,31 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type TableProps = Omit<BrElementProps<'table'>, 'as'> & {
   /** Apply Bootstrap striped style to table */
-  brStriped?: boolean
+  brTableStriped?: boolean
   /** Apply Bootstrap striped columns style to table */
-  brStripedCols?: boolean
+  brTableStripedCols?: boolean
   /** Apply Bootstrap table row hover style to table */
-  brHover?: boolean
+  brTableRowHover?: boolean
   /** Apply Bootstrap border styling to table */
-  brBordered?: boolean
+  brTableBordered?: boolean
   /** Apply Bootstrap borderless styling to table */
-  brBorderless?: boolean
+  brTableBorderless?: boolean
   /** Apply Bootstrap small styling to table */
-  brSmall?: boolean
+  brTableSmall?: boolean
   /** Place `caption` element at top of table */
-  brCaptionTop?: boolean
+  brTableCaptionTop?: boolean
 }
 
 export default function Table(props: TableProps) {
   const {
     className,
-    brStriped,
-    brStripedCols,
-    brHover,
-    brBordered,
-    brBorderless,
-    brSmall,
-    brCaptionTop,
+    brTableStriped,
+    brTableStripedCols,
+    brTableRowHover,
+    brTableBordered,
+    brTableBorderless,
+    brTableSmall,
+    brTableCaptionTop,
     ...rest
   } = props
 
@@ -37,13 +37,13 @@ export default function Table(props: TableProps) {
       className={classNames(
         'table',
         {
-          'table-striped': brStriped,
-          'table-striped-columns': brStripedCols,
-          'table-hover': brHover,
-          'table-bordered': brBordered,
-          'table-borderless': brBorderless,
-          'table-sm': brSmall,
-          'caption-top': brCaptionTop
+          'table-striped': brTableStriped,
+          'table-striped-columns': brTableStripedCols,
+          'table-hover': brTableRowHover,
+          'table-bordered': brTableBordered,
+          'table-borderless': brTableBorderless,
+          'table-sm': brTableSmall,
+          'caption-top': brTableCaptionTop
         },
         className
       )}

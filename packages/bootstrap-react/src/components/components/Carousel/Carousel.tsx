@@ -9,7 +9,7 @@ export type CarouselProps<T extends ElementType> = BrElementProps<
   {
     /** Controlled state can be provided by the return value of `useCarousel` */
     brCarousel: ReturnType<typeof useCarousel>
-    brFade?: boolean
+    brCarouselFade?: boolean
   }
 >
 
@@ -24,14 +24,14 @@ const Carousel: CarouselComponent = forwardRef(function Carousel<T extends Eleme
   props: CarouselProps<T>,
   ref?: CarouselProps<T>['ref']
 ) {
-  const { as, brCarousel, brFade, className, ...rest } = props
+  const { as, brCarousel, brCarouselFade, className, ...rest } = props
   const usedRef = useMultiRef(ref, brCarousel.ref)
 
   return (
     <BrElement
       as={as as ElementType}
       ref={usedRef}
-      className={classNames('carousel slide', { 'carousel-fade': brFade }, className)}
+      className={classNames('carousel slide', { 'carousel-fade': brCarouselFade }, className)}
       {...rest}
     />
   )

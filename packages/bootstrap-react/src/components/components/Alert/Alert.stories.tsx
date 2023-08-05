@@ -45,7 +45,7 @@ export const LiveExample: StoryFn = () => {
   return (
     <div>
       {alerts.map((alert) => (
-        <Alert key={alert} className="alert-success" brDismissible>
+        <Alert key={alert} className="alert-success" brAlertDismissible>
           <div>Alert {alert}</div>
           <CloseButton
             onClick={() => {
@@ -54,7 +54,7 @@ export const LiveExample: StoryFn = () => {
           />
         </Alert>
       ))}
-      <Button brVariant="primary" id="liveAlertBtn" onClick={addAlert}>
+      <Button brButtonColor="primary" id="liveAlertBtn" onClick={addAlert}>
         Show live alert
       </Button>
     </div>
@@ -176,9 +176,9 @@ export const Icons: StoryFn = () => {
 
 export const Dismissing: StoryFn = () => {
   return (
-    <Alert brDismissible className={classNames('alert-warning fade')}>
+    <Alert brAlertDismissible className={classNames('alert-warning fade')}>
       <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-      <CloseButton brDismiss="alert" />
+      <CloseButton data-bs-dismiss="alert" />
     </Alert>
   )
 }

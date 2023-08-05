@@ -12,7 +12,7 @@ export type BreadcrumbItemProps<T extends ElementType> = BrElementProps<
      */
     as?: T
     /** Item is currently active */
-    brActive?: boolean
+    brBreadcrumbItemActive?: boolean
   }
 >
 
@@ -30,8 +30,8 @@ const BreadcrumbItem: BreadcrumbItemComponent = forwardRef(function BreadcrumbIt
     as = 'li' as ElementType,
     className,
     children,
-    brActive,
-    'aria-current': ariaCurrent = brActive ? 'page' : undefined,
+    brBreadcrumbItemActive,
+    'aria-current': ariaCurrent = brBreadcrumbItemActive ? 'page' : undefined,
     ...rest
   } = props
 
@@ -39,7 +39,7 @@ const BreadcrumbItem: BreadcrumbItemComponent = forwardRef(function BreadcrumbIt
     <BrElement
       as={as}
       ref={ref}
-      className={classNames('breadcrumb-item', { active: brActive }, className)}
+      className={classNames('breadcrumb-item', { active: brBreadcrumbItemActive }, className)}
       aria-current={ariaCurrent}
       {...rest}
     >

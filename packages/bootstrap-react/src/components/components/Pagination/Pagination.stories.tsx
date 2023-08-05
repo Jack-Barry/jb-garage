@@ -67,13 +67,13 @@ export const DisabledAndActiveStates: StoryFn = () => {
     <div>
       <nav aria-label="...">
         <Pagination>
-          <PageItem brDisabled>
+          <PageItem brPageItemDisabled>
             <PageLink>Previous</PageLink>
           </PageItem>
           <PageItem>
             <PageLink href="#">1</PageLink>
           </PageItem>
-          <PageItem brActive aria-current="page">
+          <PageItem brPageItemActive aria-current="page">
             <PageLink href="#">2</PageLink>
           </PageItem>
           <PageItem>
@@ -87,13 +87,13 @@ export const DisabledAndActiveStates: StoryFn = () => {
       <hr />
       <nav aria-label="...">
         <Pagination>
-          <PageItem brDisabled>
+          <PageItem brPageItemDisabled>
             <PageLink as="span">Previous</PageLink>
           </PageItem>
           <PageItem>
             <PageLink href="#">1</PageLink>
           </PageItem>
-          <PageItem brActive aria-current="page">
+          <PageItem brPageItemActive aria-current="page">
             <PageLink as="span">2</PageLink>
           </PageItem>
           <PageItem>
@@ -112,8 +112,8 @@ export const Sizing: StoryFn = () => {
   return (
     <div>
       <nav aria-label="...">
-        <Pagination brSize="lg">
-          <PageItem brActive aria-current="page">
+        <Pagination brPaginationSize="lg">
+          <PageItem brPageItemActive aria-current="page">
             <PageLink as="span">1</PageLink>
           </PageItem>
           <PageItem>
@@ -126,8 +126,8 @@ export const Sizing: StoryFn = () => {
       </nav>
       <hr />
       <nav aria-label="...">
-        <Pagination brSize="sm">
-          <PageItem brActive aria-current="page">
+        <Pagination brPaginationSize="sm">
+          <PageItem brPageItemActive aria-current="page">
             <PageLink as="span">1</PageLink>
           </PageItem>
           <PageItem>
@@ -147,7 +147,7 @@ export const Alignment: StoryFn = () => {
     <div>
       <nav aria-label="Page navigation example">
         <Pagination className="justify-content-center">
-          <PageItem brDisabled>
+          <PageItem brPageItemDisabled>
             <PageLink>Previous</PageLink>
           </PageItem>
           <PageItem>
@@ -167,7 +167,7 @@ export const Alignment: StoryFn = () => {
       <hr />
       <nav aria-label="Page navigation example">
         <Pagination className="justify-content-end">
-          <PageItem brDisabled>
+          <PageItem brPageItemDisabled>
             <PageLink>Previous</PageLink>
           </PageItem>
           <PageItem>

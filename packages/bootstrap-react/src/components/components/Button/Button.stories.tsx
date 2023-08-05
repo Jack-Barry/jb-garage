@@ -22,15 +22,15 @@ export const BaseClass: StoryFn = () => {
 export const Variants: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button brVariant="primary">Primary</Button>
-      <Button brVariant="secondary">Secondary</Button>
-      <Button brVariant="success">Success</Button>
-      <Button brVariant="danger">Danger</Button>
-      <Button brVariant="warning">Warning</Button>
-      <Button brVariant="info">Info</Button>
-      <Button brVariant="light">Light</Button>
-      <Button brVariant="dark">Dark</Button>
-      <Button brVariant="link">Link</Button>
+      <Button brButtonColor="primary">Primary</Button>
+      <Button brButtonColor="secondary">Secondary</Button>
+      <Button brButtonColor="success">Success</Button>
+      <Button brButtonColor="danger">Danger</Button>
+      <Button brButtonColor="warning">Warning</Button>
+      <Button brButtonColor="info">Info</Button>
+      <Button brButtonColor="light">Light</Button>
+      <Button brButtonColor="dark">Dark</Button>
+      <Button brButtonColor="link">Link</Button>
     </div>
   )
 }
@@ -38,15 +38,15 @@ export const Variants: StoryFn = () => {
 export const ButtonTags: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button as="a" brVariant="primary" href="#">
+      <Button as="a" brButtonColor="primary" href="#">
         Link
       </Button>
-      <Button brVariant="primary" type="submit">
+      <Button brButtonColor="primary" type="submit">
         Button
       </Button>
-      <Button as="input" brVariant="primary" type="button" value="Input" />
-      <Button as="input" brVariant="primary" type="submit" value="Submit" />
-      <Button as="input" brVariant="primary" type="reset" value="Reset" />
+      <Button as="input" brButtonColor="primary" type="button" value="Input" />
+      <Button as="input" brButtonColor="primary" type="submit" value="Submit" />
+      <Button as="input" brButtonColor="primary" type="reset" value="Reset" />
     </div>
   )
 }
@@ -54,14 +54,14 @@ export const ButtonTags: StoryFn = () => {
 export const OutlineButtons: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button brVariant="outline-primary">Primary</Button>
-      <Button brVariant="outline-secondary">Secondary</Button>
-      <Button brVariant="outline-success">Success</Button>
-      <Button brVariant="outline-danger">Danger</Button>
-      <Button brVariant="outline-warning">Warning</Button>
-      <Button brVariant="outline-info">Info</Button>
-      <Button brVariant="outline-light">Light</Button>
-      <Button brVariant="outline-dark">Dark</Button>
+      <Button brButtonColor="outline-primary">Primary</Button>
+      <Button brButtonColor="outline-secondary">Secondary</Button>
+      <Button brButtonColor="outline-success">Success</Button>
+      <Button brButtonColor="outline-danger">Danger</Button>
+      <Button brButtonColor="outline-warning">Warning</Button>
+      <Button brButtonColor="outline-info">Info</Button>
+      <Button brButtonColor="outline-light">Light</Button>
+      <Button brButtonColor="outline-dark">Dark</Button>
     </div>
   )
 }
@@ -69,22 +69,22 @@ export const OutlineButtons: StoryFn = () => {
 export const Sizes: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button brVariant="primary" brLg>
+      <Button brButtonColor="primary" brButtonLg>
         Large button
       </Button>
-      <Button brVariant="secondary" brLg>
+      <Button brButtonColor="secondary" brButtonLg>
         Large button
       </Button>
       <hr />
-      <Button brVariant="primary" brSm>
+      <Button brButtonColor="primary" brButtonSm>
         Small button
       </Button>
-      <Button brVariant="secondary" brSm>
+      <Button brButtonColor="secondary" brButtonSm>
         Small button
       </Button>
       <hr />
       <Button
-        brVariant="primary"
+        brButtonColor="primary"
         style={
           {
             '--bs-btn-padding-y': '0.25rem',
@@ -102,23 +102,23 @@ export const Sizes: StoryFn = () => {
 export const DisabledState: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button brVariant="primary" disabled>
+      <Button brButtonColor="primary" disabled>
         Primary button
       </Button>
-      <Button brVariant="secondary" disabled>
+      <Button brButtonColor="secondary" disabled>
         Button
       </Button>
-      <Button brVariant="outline-primary" disabled>
+      <Button brButtonColor="outline-primary" disabled>
         Primary button
       </Button>
-      <Button brVariant="outline-secondary" disabled>
+      <Button brButtonColor="outline-secondary" disabled>
         Button
       </Button>
       <hr />
-      <Button as="a" brVariant="primary" brDisabled>
+      <Button as="a" brButtonColor="primary" brButtonDisabled>
         Primary link
       </Button>
-      <Button as="a" brVariant="secondary" brDisabled>
+      <Button as="a" brButtonColor="secondary" brButtonDisabled>
         Link
       </Button>
     </div>
@@ -129,18 +129,18 @@ export const BlockButtons: StoryFn = () => {
   return (
     <div className="bd-example">
       <BrElement brDisplay="grid" className="gap-2">
-        <Button brVariant="primary">Button</Button>
-        <Button brVariant="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
       </BrElement>
       <hr />
       <BrElement brDisplay="grid" brDisplayMd="block" className="gap-2">
-        <Button brVariant="primary">Button</Button>
-        <Button brVariant="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
       </BrElement>
       <hr />
       <Col brDisplay="grid" brCols={6} brMargin={{ x: 'auto' }} className="gap-2">
-        <Button brVariant="primary">Button</Button>
-        <Button brVariant="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
       </Col>
       <hr />
       <BrElement
@@ -149,10 +149,10 @@ export const BlockButtons: StoryFn = () => {
         brFlexMd={{ justifyContent: 'end' }}
         className="gap-2"
       >
-        <Button brVariant="primary" brMarginMd={{ end: 2 }}>
+        <Button brButtonColor="primary" brMarginMd={{ end: 2 }}>
           Button
         </Button>
-        <Button brVariant="primary">Button</Button>
+        <Button brButtonColor="primary">Button</Button>
       </BrElement>
     </div>
   )

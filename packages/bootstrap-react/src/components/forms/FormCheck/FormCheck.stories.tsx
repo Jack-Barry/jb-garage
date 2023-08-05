@@ -17,12 +17,12 @@ export const BaseExample: StoryFn = () => {
   return (
     <div>
       <FormCheck
-        inputProps={{ id: 'flexCheckDefault' }}
-        labelProps={{ children: 'Default checkbox' }}
+        brFormCheckInputProps={{ id: 'flexCheckDefault' }}
+        brFormCheckLabelProps={{ children: 'Default checkbox' }}
       />
       <FormCheck
-        inputProps={{ id: 'flexCheckChecked', defaultChecked: true }}
-        labelProps={{ children: 'Checked checkbox' }}
+        brFormCheckInputProps={{ id: 'flexCheckChecked', defaultChecked: true }}
+        brFormCheckLabelProps={{ children: 'Checked checkbox' }}
       />
     </div>
   )
@@ -31,7 +31,7 @@ export const BaseExample: StoryFn = () => {
 export const Indeterminate: StoryFn = () => {
   return (
     <FormCheck
-      inputProps={{
+      brFormCheckInputProps={{
         id: 'flexCheckIndeterminate',
         ref: (input) => {
           if (!input) {
@@ -41,7 +41,7 @@ export const Indeterminate: StoryFn = () => {
           input.indeterminate = true
         }
       }}
-      labelProps={{ children: 'Indeterminate checkbox' }}
+      brFormCheckLabelProps={{ children: 'Indeterminate checkbox' }}
     />
   )
 }
@@ -53,7 +53,7 @@ export const Disabled: StoryFn = () => {
   return (
     <div>
       <FormCheck
-        inputProps={{
+        brFormCheckInputProps={{
           id: 'flexCheckIndeterminateDisabled',
           disabled: true,
           ref: (input) => {
@@ -64,17 +64,21 @@ export const Disabled: StoryFn = () => {
             input.indeterminate = true
           }
         }}
-        labelProps={{
+        brFormCheckLabelProps={{
           children: 'Disabled indeterminate checkbox'
         }}
       />
       <FormCheck
-        inputProps={{ id: 'flexCheckDisabled', disabled: true }}
-        labelProps={{ children: 'Disabled checkbox' }}
+        brFormCheckInputProps={{ id: 'flexCheckDisabled', disabled: true }}
+        brFormCheckLabelProps={{ children: 'Disabled checkbox' }}
       />
       <FormCheck
-        inputProps={{ id: 'flexCheckCheckedDisabled', defaultChecked: true, disabled: true }}
-        labelProps={{ children: 'Disabled checked checkbox' }}
+        brFormCheckInputProps={{
+          id: 'flexCheckCheckedDisabled',
+          defaultChecked: true,
+          disabled: true
+        }}
+        brFormCheckLabelProps={{ children: 'Disabled checked checkbox' }}
       />
     </div>
   )
@@ -87,17 +91,17 @@ export const Radios: StoryFn = () => {
   return (
     <div>
       <FormCheck
-        inputProps={{ type: 'radio', name: 'flexRadioDefault', id: 'flexRadioDefault1' }}
-        labelProps={{ children: 'Default radio' }}
+        brFormCheckInputProps={{ type: 'radio', name: 'flexRadioDefault', id: 'flexRadioDefault1' }}
+        brFormCheckLabelProps={{ children: 'Default radio' }}
       />
       <FormCheck
-        inputProps={{
+        brFormCheckInputProps={{
           type: 'radio',
           name: 'flexRadioDefault',
           id: 'flexRadioDefault2',
           defaultChecked: true
         }}
-        labelProps={{ children: 'Default checked radio' }}
+        brFormCheckLabelProps={{ children: 'Default checked radio' }}
       />
     </div>
   )
@@ -110,23 +114,23 @@ export const RadiosDisabled: StoryFn = () => {
   return (
     <div>
       <FormCheck
-        inputProps={{
+        brFormCheckInputProps={{
           type: 'radio',
           name: 'flexRadioDisabled',
           id: 'flexRadioDisabled1',
           disabled: true
         }}
-        labelProps={{ children: 'Disabled radio' }}
+        brFormCheckLabelProps={{ children: 'Disabled radio' }}
       />
       <FormCheck
-        inputProps={{
+        brFormCheckInputProps={{
           type: 'radio',
           name: 'flexRadioDisabled',
           id: 'flexRadioDisabled2',
           defaultChecked: true,
           disabled: true
         }}
-        labelProps={{ children: 'Disabled checked radio' }}
+        brFormCheckLabelProps={{ children: 'Disabled checked radio' }}
       />
     </div>
   )
@@ -139,40 +143,40 @@ export const Switches: StoryFn = () => {
   return (
     <div>
       <FormCheck
-        wrapperProps={{ className: 'form-switch' }}
-        inputProps={{
+        brFormCheckWrapperProps={{ className: 'form-switch' }}
+        brFormCheckInputProps={{
           id: 'flexSwitchCheckDefault',
           role: 'switch'
         }}
-        labelProps={{ children: 'Default switch checkbox input' }}
+        brFormCheckLabelProps={{ children: 'Default switch checkbox input' }}
       />
       <FormCheck
-        wrapperProps={{ className: 'form-switch' }}
-        inputProps={{
+        brFormCheckWrapperProps={{ className: 'form-switch' }}
+        brFormCheckInputProps={{
           id: 'flexSwitchCheckChecked',
           defaultChecked: true,
           role: 'switch'
         }}
-        labelProps={{ children: 'Checked switch checkbox input' }}
+        brFormCheckLabelProps={{ children: 'Checked switch checkbox input' }}
       />
       <FormCheck
-        wrapperProps={{ className: 'form-switch' }}
-        inputProps={{
+        brFormCheckWrapperProps={{ className: 'form-switch' }}
+        brFormCheckInputProps={{
           id: 'flexSwitchCheckDisabled',
           role: 'switch',
           disabled: true
         }}
-        labelProps={{ children: 'Disabled switch checkbox input' }}
+        brFormCheckLabelProps={{ children: 'Disabled switch checkbox input' }}
       />
       <FormCheck
-        wrapperProps={{ className: 'form-switch' }}
-        inputProps={{
+        brFormCheckWrapperProps={{ className: 'form-switch' }}
+        brFormCheckInputProps={{
           id: 'flexSwitchCheckDisabled',
           defaultChecked: true,
           role: 'switch',
           disabled: true
         }}
-        labelProps={{ children: 'Disabled checked switch checkbox input' }}
+        brFormCheckLabelProps={{ children: 'Disabled checked switch checkbox input' }}
       />
     </div>
   )
@@ -185,35 +189,40 @@ export const Inline: StoryFn = () => {
   return (
     <div>
       <FormCheck
-        wrapperProps={{ className: 'form-check-inline' }}
-        inputProps={{ id: 'inlineCheckbox1', value: 'option1' }}
-        labelProps={{ children: '1' }}
+        brFormCheckWrapperProps={{ className: 'form-check-inline' }}
+        brFormCheckInputProps={{ id: 'inlineCheckbox1', value: 'option1' }}
+        brFormCheckLabelProps={{ children: '1' }}
       />
       <FormCheck
-        wrapperProps={{ className: 'form-check-inline' }}
-        inputProps={{ id: 'inlineCheckbox2', value: 'option2' }}
-        labelProps={{ children: '2' }}
+        brFormCheckWrapperProps={{ className: 'form-check-inline' }}
+        brFormCheckInputProps={{ id: 'inlineCheckbox2', value: 'option2' }}
+        brFormCheckLabelProps={{ children: '2' }}
       />
       <FormCheck
-        wrapperProps={{ className: 'form-check-inline' }}
-        inputProps={{ id: 'inlineCheckbox3', value: 'option3', disabled: true }}
-        labelProps={{ children: '3 (disabled)' }}
+        brFormCheckWrapperProps={{ className: 'form-check-inline' }}
+        brFormCheckInputProps={{ id: 'inlineCheckbox3', value: 'option3', disabled: true }}
+        brFormCheckLabelProps={{ children: '3 (disabled)' }}
       />
       <hr />
       <FormCheck
-        wrapperProps={{ className: 'form-check-inline' }}
-        inputProps={{ type: 'radio', id: 'inlineRadio1', value: 'option1' }}
-        labelProps={{ children: '1' }}
+        brFormCheckWrapperProps={{ className: 'form-check-inline' }}
+        brFormCheckInputProps={{ type: 'radio', id: 'inlineRadio1', value: 'option1' }}
+        brFormCheckLabelProps={{ children: '1' }}
       />
       <FormCheck
-        wrapperProps={{ className: 'form-check-inline' }}
-        inputProps={{ type: 'radio', id: 'inlineRadio2', value: 'option2' }}
-        labelProps={{ children: '2' }}
+        brFormCheckWrapperProps={{ className: 'form-check-inline' }}
+        brFormCheckInputProps={{ type: 'radio', id: 'inlineRadio2', value: 'option2' }}
+        brFormCheckLabelProps={{ children: '2' }}
       />
       <FormCheck
-        wrapperProps={{ className: 'form-check-inline' }}
-        inputProps={{ type: 'radio', id: 'inlineRadio3', value: 'option3', disabled: true }}
-        labelProps={{ children: '3 (disabled)' }}
+        brFormCheckWrapperProps={{ className: 'form-check-inline' }}
+        brFormCheckInputProps={{
+          type: 'radio',
+          id: 'inlineRadio3',
+          value: 'option3',
+          disabled: true
+        }}
+        brFormCheckLabelProps={{ children: '3 (disabled)' }}
       />
     </div>
   )
@@ -226,19 +235,19 @@ export const Reverse: StoryFn = () => {
   return (
     <div>
       <FormCheck
-        wrapperProps={{ className: 'form-check-reverse' }}
-        inputProps={{ id: 'reverseCheck1' }}
-        labelProps={{ children: 'Reverse checkbox' }}
+        brFormCheckWrapperProps={{ className: 'form-check-reverse' }}
+        brFormCheckInputProps={{ id: 'reverseCheck1' }}
+        brFormCheckLabelProps={{ children: 'Reverse checkbox' }}
       />
       <FormCheck
-        wrapperProps={{ className: 'form-check-reverse' }}
-        inputProps={{ id: 'reverseCheck2', disabled: true }}
-        labelProps={{ children: 'Disabled reverse checkbox' }}
+        brFormCheckWrapperProps={{ className: 'form-check-reverse' }}
+        brFormCheckInputProps={{ id: 'reverseCheck2', disabled: true }}
+        brFormCheckLabelProps={{ children: 'Disabled reverse checkbox' }}
       />
       <FormCheck
-        wrapperProps={{ className: 'form-switch form-check-reverse' }}
-        inputProps={{ id: 'flexSwitchCheckReverse', disabled: true }}
-        labelProps={{ children: 'Reverse switch checkbox input' }}
+        brFormCheckWrapperProps={{ className: 'form-switch form-check-reverse' }}
+        brFormCheckInputProps={{ id: 'flexSwitchCheckReverse', disabled: true }}
+        brFormCheckLabelProps={{ children: 'Reverse switch checkbox input' }}
       />
     </div>
   )
@@ -267,28 +276,28 @@ export const ToggleButtons: StoryFn = () => {
   return (
     <div>
       <FormCheck
-        inputProps={{ className: 'btn-check', id: 'btn-check', autoComplete: 'off' }}
-        labelProps={{ className: 'btn btn-primary', children: 'Single toggle' }}
+        brFormCheckInputProps={{ className: 'btn-check', id: 'btn-check', autoComplete: 'off' }}
+        brFormCheckLabelProps={{ className: 'btn btn-primary', children: 'Single toggle' }}
       />
       <hr />
       <FormCheck
-        inputProps={{
+        brFormCheckInputProps={{
           className: 'btn-check',
           id: 'btn-check-2',
           defaultChecked: true,
           autoComplete: 'off'
         }}
-        labelProps={{ className: 'btn btn-primary', children: 'Checked' }}
+        brFormCheckLabelProps={{ className: 'btn btn-primary', children: 'Checked' }}
       />
       <hr />
       <FormCheck
-        inputProps={{
+        brFormCheckInputProps={{
           className: 'btn-check',
           id: 'btn-check-3',
           disabled: true,
           autoComplete: 'off'
         }}
-        labelProps={{ className: 'btn btn-primary', children: 'Disabled' }}
+        brFormCheckLabelProps={{ className: 'btn btn-primary', children: 'Disabled' }}
       />
     </div>
   )

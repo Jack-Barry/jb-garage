@@ -4,13 +4,13 @@ import { ReactNode, forwardRef } from 'react'
 
 export type SelectProps = Omit<BrElementProps<'select'>, 'as'> & {
   /** Render select with Bootstrap's small styling */
-  brSm?: boolean
+  brSelectSm?: boolean
   /** Render select with Bootstrap's large styling */
-  brLg?: boolean
+  brSelectLg?: boolean
   /** Form input value is invalid */
-  brIsInvalid?: boolean
+  brSelectInvalid?: boolean
   /** Form input value is valid */
-  brIsValid?: boolean
+  brSelectValid?: boolean
 }
 
 type SelectComponent = (props: SelectProps) => ReactNode | null
@@ -19,7 +19,8 @@ const Select: SelectComponent = forwardRef(function Select(
   props: SelectProps,
   ref?: SelectProps['ref']
 ) {
-  const { children, className, brSm, brLg, brIsInvalid, brIsValid, ...rest } = props
+  const { children, className, brSelectSm, brSelectLg, brSelectInvalid, brSelectValid, ...rest } =
+    props
 
   return (
     <BrElement
@@ -28,10 +29,10 @@ const Select: SelectComponent = forwardRef(function Select(
       className={classNames(
         'form-select',
         {
-          'form-select-sm': brSm,
-          'form-select-lg': brLg,
-          'is-invalid': brIsInvalid,
-          'is-valid': brIsValid
+          'form-select-sm': brSelectSm,
+          'form-select-lg': brSelectLg,
+          'is-invalid': brSelectInvalid,
+          'is-valid': brSelectValid
         },
         className
       )}

@@ -45,7 +45,7 @@ export const CustomStyles: StoryFn = () => {
       </Col>
       <Col brColsMd={4}>
         <Label htmlFor="validationCustomUsername">Username</Label>
-        <InputGroup brHasValidation>
+        <InputGroup brInputGroupHasValidation>
           <InputGroupText id="inputGroupPrepend">@</InputGroupText>
           <Input id="validationCustomUsername" aria-describedby="inputGroupPrepend" required />
           <Feedback>Please choose a username.</Feedback>
@@ -73,12 +73,12 @@ export const CustomStyles: StoryFn = () => {
       </Col>
       <Col brCols={12}>
         <FormCheck
-          inputProps={{ id: 'invalidCheck', required: true }}
-          labelProps={{ children: 'Agree to terms and conditions' }}
+          brFormCheckInputProps={{ id: 'invalidCheck', required: true }}
+          brFormCheckLabelProps={{ children: 'Agree to terms and conditions' }}
         />
       </Col>
       <Col brCols={12}>
-        <Button brVariant="primary" type="submit">
+        <Button brButtonColor="primary" type="submit">
           Submit form
         </Button>
       </Col>
@@ -123,12 +123,12 @@ export const BrowserDefaults: StoryFn = () => {
       </Col>
       <Col brCols={12}>
         <FormCheck
-          inputProps={{ id: 'invalidCheck2', required: true }}
-          labelProps={{ children: 'Agree to terms and conditions' }}
+          brFormCheckInputProps={{ id: 'invalidCheck2', required: true }}
+          brFormCheckLabelProps={{ children: 'Agree to terms and conditions' }}
         />
       </Col>
       <Col brCols={12}>
-        <Button brVariant="primary" type="submit">
+        <Button brButtonColor="primary" type="submit">
           Submit form
         </Button>
       </Col>
@@ -141,20 +141,20 @@ export const ServerSide: StoryFn = () => {
     <Row as="form" brRowGutter={3}>
       <Col brColsMd={4}>
         <Label htmlFor="validationServer01">First name</Label>
-        <Input brIsValid id="validationServer01" defaultValue="Mark" required />
+        <Input brInputValid id="validationServer01" defaultValue="Mark" required />
         <Feedback brFeedbackType="valid">Looks good!</Feedback>
       </Col>
       <Col brColsMd={4}>
         <Label htmlFor="validationServer02">Last name</Label>
-        <Input brIsValid id="validationServer02" defaultValue="Otto" required />
+        <Input brInputValid id="validationServer02" defaultValue="Otto" required />
         <Feedback brFeedbackType="valid">Looks good!</Feedback>
       </Col>
       <Col brColsMd={4}>
         <Label htmlFor="validationServerUsername">Username</Label>
-        <InputGroup brHasValidation>
+        <InputGroup brInputGroupHasValidation>
           <InputGroupText id="inputGroupPrepend3">@</InputGroupText>
           <Input
-            brIsInvalid
+            brInputInvalid
             id="validationServerUsername"
             aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
             required
@@ -165,7 +165,7 @@ export const ServerSide: StoryFn = () => {
       <Col brColsMd={6}>
         <Label htmlFor="validationServer03">City</Label>
         <Input
-          brIsInvalid
+          brInputInvalid
           id="validationServer03"
           aria-describedby="validationServer03Feedback"
           required
@@ -175,7 +175,7 @@ export const ServerSide: StoryFn = () => {
       <Col brColsMd={3}>
         <Label htmlFor="validationServer04">State</Label>
         <Select
-          brIsInvalid
+          brSelectInvalid
           id="validationServer04"
           aria-describedby="validationServer04Feedback"
           required
@@ -191,7 +191,7 @@ export const ServerSide: StoryFn = () => {
       <Col brColsMd={3}>
         <Label htmlFor="validationServer05">Zip</Label>
         <Input
-          brIsInvalid
+          brInputInvalid
           id="validationServer05"
           aria-describedby="validationServer05Feedback"
           required
@@ -200,19 +200,19 @@ export const ServerSide: StoryFn = () => {
       </Col>
       <Col brCols={12}>
         <FormCheck
-          inputProps={{
-            brIsInvalid: true,
+          brFormCheckInputProps={{
+            brFormCheckInputInvalid: true,
             id: 'invalidCheck3',
             'aria-describedby': 'invalidCheck3Feedback',
             required: true
           }}
-          labelProps={{
+          brFormCheckLabelProps={{
             children: 'Agree to terms and conditions'
           }}
         />
       </Col>
       <Col brCols={12}>
-        <Button brVariant="primary" type="submit">
+        <Button brButtonColor="primary" type="submit">
           Submit form
         </Button>
       </Col>
@@ -235,34 +235,34 @@ export const SupportedElements: StoryFn = () => {
       </BrElement>
 
       <FormCheck
-        wrapperProps={{ brMargin: { bottom: 3 } }}
-        inputProps={{
+        brFormCheckWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormCheckInputProps={{
           id: 'validationFormCheck1',
           required: true
         }}
-        labelProps={{ children: 'Check this checkbox' }}
+        brFormCheckLabelProps={{ children: 'Check this checkbox' }}
       >
         <Feedback>Example invalid feedback text</Feedback>
       </FormCheck>
 
       <FormCheck
-        inputProps={{
+        brFormCheckInputProps={{
           type: 'radio',
           id: 'validationFormCheck2',
           name: 'radio-stacked',
           required: true
         }}
-        labelProps={{ children: 'Toggle this radio' }}
+        brFormCheckLabelProps={{ children: 'Toggle this radio' }}
       />
       <FormCheck
-        wrapperProps={{ brMargin: { bottom: 3 } }}
-        inputProps={{
+        brFormCheckWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormCheckInputProps={{
           type: 'radio',
           id: 'validationFormCheck3',
           name: 'radio-stacked',
           required: true
         }}
-        labelProps={{ children: 'Or toggle this other radio' }}
+        brFormCheckLabelProps={{ children: 'Or toggle this other radio' }}
       >
         <Feedback>More example invalid feedback text</Feedback>
       </FormCheck>
@@ -283,7 +283,7 @@ export const SupportedElements: StoryFn = () => {
       </BrElement>
 
       <BrElement brMargin={{ bottom: 3 }}>
-        <Button brVariant="primary" type="submit" disabled>
+        <Button brButtonColor="primary" type="submit" disabled>
           Submit form
         </Button>
       </BrElement>
@@ -308,20 +308,20 @@ export const Tooltips: StoryFn = () => {
       <Col brColsMd={4} className="position-relative">
         <Label htmlFor="validationTooltip01">First name</Label>
         <Input id="validationTooltip01" value="Mark" required />
-        <Feedback brFeedbackType="valid" brTooltip>
+        <Feedback brFeedbackType="valid" brFeedbackTooltip>
           Looks good!
         </Feedback>
       </Col>
       <Col brColsMd={4} className="position-relative">
         <Label htmlFor="validationTooltip02">Last name</Label>
         <Input id="validationTooltip02" value="Otto" required />
-        <Feedback brFeedbackType="valid" brTooltip>
+        <Feedback brFeedbackType="valid" brFeedbackTooltip>
           Looks good!
         </Feedback>
       </Col>
       <Col brColsMd={4} className="position-relative">
         <Label htmlFor="validationTooltipUsername">Username</Label>
-        <InputGroup brHasValidation>
+        <InputGroup brInputGroupHasValidation>
           <InputGroupText id="validationTooltipUsernamePrepend">@</InputGroupText>
           <Input
             type="text"
@@ -329,13 +329,13 @@ export const Tooltips: StoryFn = () => {
             aria-describedby="validationTooltipUsernamePrepend"
             required
           />
-          <Feedback brTooltip>Please choose a unique and valid username.</Feedback>
+          <Feedback brFeedbackTooltip>Please choose a unique and valid username.</Feedback>
         </InputGroup>
       </Col>
       <Col brColsMd={6} className="position-relative">
         <Label htmlFor="validationTooltip03">City</Label>
         <Input id="validationTooltip03" required />
-        <Feedback brTooltip>Please provide a valid city.</Feedback>
+        <Feedback brFeedbackTooltip>Please provide a valid city.</Feedback>
       </Col>
       <Col brColsMd={3} className="position-relative">
         <Label htmlFor="validationTooltip04">State</Label>
@@ -345,15 +345,15 @@ export const Tooltips: StoryFn = () => {
           </option>
           <option>...</option>
         </Select>
-        <Feedback brTooltip>Please select a valid state.</Feedback>
+        <Feedback brFeedbackTooltip>Please select a valid state.</Feedback>
       </Col>
       <Col brColsMd={3} className="position-relative">
         <Label htmlFor="validationTooltip05">Zip</Label>
         <Input id="validationTooltip05" required />
-        <Feedback brTooltip>Please provide a valid zip.</Feedback>
+        <Feedback brFeedbackTooltip>Please provide a valid zip.</Feedback>
       </Col>
       <Col brCols={12}>
-        <Button brVariant="primary" type="submit">
+        <Button brButtonColor="primary" type="submit">
           Submit form
         </Button>
       </Col>

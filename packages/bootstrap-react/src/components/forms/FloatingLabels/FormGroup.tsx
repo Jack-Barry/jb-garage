@@ -4,9 +4,9 @@ import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type FormGroupProps<T extends ElementType> = BrElementProps<T> & {
   /** Form has floating labels */
-  brFloating?: boolean
+  brFormGroupFloatingLabels?: boolean
   /** Apply Bootstrap is invalid styling to form group */
-  brIsInvalid?: boolean
+  brFormGroupIsInvalid?: boolean
 }
 
 type FormGroupComponent = <Component extends ElementType = 'div'>(
@@ -17,7 +17,14 @@ const FormGroup: FormGroupComponent = forwardRef(function FormGroup<T extends El
   props: FormGroupProps<T>,
   ref?: FormGroupProps<T>['ref']
 ) {
-  const { as = 'div' as ElementType, className, children, brFloating, brIsInvalid, ...rest } = props
+  const {
+    as = 'div' as ElementType,
+    className,
+    children,
+    brFormGroupFloatingLabels,
+    brFormGroupIsInvalid,
+    ...rest
+  } = props
 
   return (
     <BrElement
@@ -25,8 +32,8 @@ const FormGroup: FormGroupComponent = forwardRef(function FormGroup<T extends El
       ref={ref}
       className={classNames(
         {
-          'form-floating': brFloating,
-          'is-invalid': brIsInvalid
+          'form-floating': brFormGroupFloatingLabels,
+          'is-invalid': brFormGroupIsInvalid
         },
         className
       )}

@@ -14,7 +14,7 @@ export const Example: StoryFn = () => {
     <div>
       <Breadcrumbs>
         <BreadcrumbList>
-          <BreadcrumbItem brActive>Home</BreadcrumbItem>
+          <BreadcrumbItem brBreadcrumbItemActive>Home</BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
 
@@ -23,7 +23,7 @@ export const Example: StoryFn = () => {
           <BreadcrumbItem>
             <a href="#">Home</a>
           </BreadcrumbItem>
-          <BreadcrumbItem brActive>Library</BreadcrumbItem>
+          <BreadcrumbItem brBreadcrumbItemActive>Library</BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
 
@@ -35,7 +35,7 @@ export const Example: StoryFn = () => {
           <BreadcrumbItem>
             <a href="#">Library</a>
           </BreadcrumbItem>
-          <BreadcrumbItem brActive>Data</BreadcrumbItem>
+          <BreadcrumbItem brBreadcrumbItemActive>Data</BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
     </div>
@@ -45,30 +45,30 @@ export const Example: StoryFn = () => {
 export const Dividers: StoryFn = () => {
   return (
     <div>
-      <Breadcrumbs brDivider="'>'">
+      <Breadcrumbs brBreadcrumbsDivider="'>'">
         <BreadcrumbList>
           <BreadcrumbItem>
             <a href="#">Home</a>
           </BreadcrumbItem>
-          <BreadcrumbItem brActive>Library</BreadcrumbItem>
+          <BreadcrumbItem brBreadcrumbItemActive>Library</BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
       <hr />
-      <Breadcrumbs brDivider="url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;)">
+      <Breadcrumbs brBreadcrumbsDivider="url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;)">
         <BreadcrumbList>
           <BreadcrumbItem>
             <a href="#">Home</a>
           </BreadcrumbItem>
-          <BreadcrumbItem brActive>Library</BreadcrumbItem>
+          <BreadcrumbItem brBreadcrumbItemActive>Library</BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
       <hr />
-      <Breadcrumbs brDivider="''">
+      <Breadcrumbs brBreadcrumbsDivider="''">
         <BreadcrumbList>
           <BreadcrumbItem>
             <a href="#">Home</a>
           </BreadcrumbItem>
-          <BreadcrumbItem brActive>Library</BreadcrumbItem>
+          <BreadcrumbItem brBreadcrumbItemActive>Library</BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
     </div>

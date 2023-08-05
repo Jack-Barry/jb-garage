@@ -10,15 +10,15 @@ export type DropdownItemProps<T extends ElementType, U extends ElementType> = Br
    */
   as?: T
   /** Item is currently active */
-  isActive?: boolean
+  brDropdownItemActive?: boolean
   /** Item is currently disabled */
-  isDisabled?: boolean
+  brDropdownItemDisabled?: boolean
   /**
    * Item is interactive
    *
    * @default true
    */
-  isInteractive?: boolean
+  brDropdownItemInteractive?: boolean
   /**
    * Type of HTML element to wrap the item in
    *
@@ -26,9 +26,9 @@ export type DropdownItemProps<T extends ElementType, U extends ElementType> = Br
    *
    * @default "li"
    */
-  wrapperAs?: U | null
+  brDropdownItemWrapperAs?: U | null
   /** Props to pass along to the wrapper element */
-  wrapperProps?: BrElementProps<U>
+  brDropdownItemWrapperProps?: BrElementProps<U>
 }
 
 /**
@@ -41,11 +41,11 @@ export default function DropdownItem<T extends ElementType = 'a', U extends Elem
     as = 'a' as ElementType,
     children,
     className,
-    isActive,
-    isDisabled,
-    isInteractive = true,
-    wrapperAs = 'li' as ElementType,
-    wrapperProps,
+    brDropdownItemActive,
+    brDropdownItemDisabled,
+    brDropdownItemInteractive = true,
+    brDropdownItemWrapperAs = 'li' as ElementType,
+    brDropdownItemWrapperProps,
     ...rest
   } = props
 
@@ -54,10 +54,10 @@ export default function DropdownItem<T extends ElementType = 'a', U extends Elem
       as={as}
       className={classNames(
         {
-          'dropdown-item': isInteractive,
-          'dropdown-item-text': !isInteractive,
-          active: isActive,
-          disabled: isDisabled
+          'dropdown-item': brDropdownItemInteractive,
+          'dropdown-item-text': !brDropdownItemInteractive,
+          active: brDropdownItemActive,
+          disabled: brDropdownItemDisabled
         },
         className
       )}
@@ -67,12 +67,12 @@ export default function DropdownItem<T extends ElementType = 'a', U extends Elem
     </BrElement>
   )
 
-  if (wrapperAs === null) {
+  if (brDropdownItemWrapperAs === null) {
     return content
   }
 
   return (
-    <BrElement as={wrapperAs} {...wrapperProps}>
+    <BrElement as={brDropdownItemWrapperAs} {...brDropdownItemWrapperProps}>
       {content}
     </BrElement>
   )

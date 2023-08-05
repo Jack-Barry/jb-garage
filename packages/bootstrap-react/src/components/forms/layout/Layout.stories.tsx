@@ -89,10 +89,13 @@ export const Gutters: StoryFn = () => {
           <Input type="text" id="inputZip" />
         </Col>
         <Col brCols={12}>
-          <FormCheck labelProps={{ children: 'Check me out' }} inputProps={{ id: 'gridCheck' }} />
+          <FormCheck
+            brFormCheckLabelProps={{ children: 'Check me out' }}
+            brFormCheckInputProps={{ id: 'gridCheck' }}
+          />
         </Col>
         <Col brCols={12}>
-          <Button type="submit" brVariant="primary">
+          <Button type="submit" brButtonColor="primary">
             Sign in
           </Button>
         </Col>
@@ -126,35 +129,45 @@ export const HorizontalForm: StoryFn = () => {
         </Col>
         <Col brColsSm={10}>
           <FormCheck
-            inputProps={{
+            brFormCheckInputProps={{
               type: 'radio',
               name: 'gridRadios',
               id: 'gridRadios1',
               value: 'option1',
               checked: true
             }}
-            labelProps={{ children: 'First radio' }}
+            brFormCheckLabelProps={{ children: 'First radio' }}
           />
           <FormCheck
-            inputProps={{ type: 'radio', name: 'gridRadios', id: 'gridRadios2', value: 'option2' }}
-            labelProps={{ children: 'Second radio' }}
+            brFormCheckInputProps={{
+              type: 'radio',
+              name: 'gridRadios',
+              id: 'gridRadios2',
+              value: 'option2'
+            }}
+            brFormCheckLabelProps={{ children: 'Second radio' }}
           />
           <FormCheck
-            wrapperProps={{ brDisabled: true }}
-            inputProps={{ type: 'radio', name: 'gridRadios', id: 'gridRadios3', value: 'option3' }}
-            labelProps={{ children: 'Third disabled radio' }}
+            brFormCheckWrapperProps={{ brFormCheckDisabled: true }}
+            brFormCheckInputProps={{
+              type: 'radio',
+              name: 'gridRadios',
+              id: 'gridRadios3',
+              value: 'option3'
+            }}
+            brFormCheckLabelProps={{ children: 'Third disabled radio' }}
           />
         </Col>
       </Row>
       <Row brMargin={{ bottom: 3 }}>
         <Col brColsSm={10} brColOffsetSm={2}>
           <FormCheck
-            inputProps={{ id: 'gridCheck1' }}
-            labelProps={{ children: 'Example checkbox' }}
+            brFormCheckInputProps={{ id: 'gridCheck1' }}
+            brFormCheckLabelProps={{ children: 'Example checkbox' }}
           />
         </Col>
       </Row>
-      <Button type="submit" brVariant="primary">
+      <Button type="submit" brButtonColor="primary">
         Sign in
       </Button>
     </form>
@@ -174,7 +187,7 @@ export const HorizontalFormLabelSizing: StoryFn = () => {
           Email
         </Col>
         <Col brColsSm={10}>
-          <Input type="email" brSm id="colFormLabelSm" placeholder="col-form-label-sm" />
+          <Input type="email" brInputSm id="colFormLabelSm" placeholder="col-form-label-sm" />
         </Col>
       </Row>
       <Row brMargin={{ bottom: 3 }}>
@@ -195,7 +208,7 @@ export const HorizontalFormLabelSizing: StoryFn = () => {
           Email
         </Col>
         <Col brColsSm={10}>
-          <Input type="email" brLg id="colFormLabelLg" placeholder="col-form-label-lg" />
+          <Input type="email" brInputLg id="colFormLabelLg" placeholder="col-form-label-lg" />
         </Col>
       </Row>
     </div>
@@ -252,12 +265,12 @@ export const AutoSizing: StoryFn = () => {
         </Col>
         <Col brCols="auto">
           <FormCheck
-            inputProps={{ id: 'autoSizingCheck' }}
-            labelProps={{ children: 'Remember me' }}
+            brFormCheckInputProps={{ id: 'autoSizingCheck' }}
+            brFormCheckLabelProps={{ children: 'Remember me' }}
           />
         </Col>
         <Col brCols="auto">
-          <Button type="submit" brVariant="primary">
+          <Button type="submit" brButtonColor="primary">
             Submit
           </Button>
         </Col>
@@ -292,12 +305,12 @@ export const AutoSizing: StoryFn = () => {
         </Col>
         <Col brCols="auto">
           <FormCheck
-            inputProps={{ id: 'autoSizingCheck2' }}
-            labelProps={{ children: 'Remember me' }}
+            brFormCheckInputProps={{ id: 'autoSizingCheck2' }}
+            brFormCheckLabelProps={{ children: 'Remember me' }}
           />
         </Col>
         <Col brCols="auto">
-          <Button type="submit" brVariant="primary">
+          <Button type="submit" brButtonColor="primary">
             Submit
           </Button>
         </Col>
@@ -333,13 +346,13 @@ export const InlineForms: StoryFn = () => {
 
       <Col brCols={12}>
         <FormCheck
-          inputProps={{ id: 'inlineFormCheck' }}
-          labelProps={{ children: 'Remember me' }}
+          brFormCheckInputProps={{ id: 'inlineFormCheck' }}
+          brFormCheckLabelProps={{ children: 'Remember me' }}
         />
       </Col>
 
       <Col brCols={12}>
-        <Button type="submit" brVariant="primary">
+        <Button type="submit" brButtonColor="primary">
           Submit
         </Button>
       </Col>

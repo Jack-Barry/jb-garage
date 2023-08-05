@@ -10,11 +10,11 @@ export type ButtonGroupProps<T extends ElementType> = BrElementProps<T> & {
    */
   as?: T
   /** Present as a small button group */
-  brSm?: boolean
+  brButtonGroupSm?: boolean
   /** Present as a large button group */
-  brLg?: boolean
+  brButtonGroupLg?: boolean
   /** Present as a vertical button group */
-  brVertical?: boolean
+  brButtonGroupVertical?: boolean
 }
 
 /** [ButtonGroup]() */
@@ -24,9 +24,9 @@ export default function ButtonGroup<T extends ElementType = 'div'>(props: Button
     children,
     className,
     role = 'group',
-    brSm,
-    brLg,
-    brVertical,
+    brButtonGroupSm,
+    brButtonGroupLg,
+    brButtonGroupVertical,
     ...rest
   } = props
 
@@ -35,10 +35,10 @@ export default function ButtonGroup<T extends ElementType = 'div'>(props: Button
       as={as}
       className={classNames(
         {
-          'btn-group': !brVertical,
-          'btn-group-vertical': brVertical,
-          'btn-group-sm': brSm,
-          'btn-group-lg': brLg
+          'btn-group': !brButtonGroupVertical,
+          'btn-group-vertical': brButtonGroupVertical,
+          'btn-group-sm': brButtonGroupSm,
+          'btn-group-lg': brButtonGroupLg
         },
         className
       )}

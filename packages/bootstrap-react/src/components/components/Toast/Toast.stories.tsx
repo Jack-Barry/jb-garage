@@ -20,7 +20,7 @@ export const Basic: StoryFn = () => {
   const toast = useToast({ bootstrapToast: { autohide: false } })
 
   return (
-    <Toast brFade aria-live="assertive" aria-atomic="true" ref={toast.ref}>
+    <Toast brToastFade aria-live="assertive" aria-atomic="true" ref={toast.ref}>
       <ToastHeader>
         <Image
           as="svg"
@@ -51,7 +51,7 @@ export const LiveExample: StoryFn = () => {
 
   return (
     <div>
-      <Button brVariant="primary" id="liveToastBtn" onClick={toast.show}>
+      <Button brButtonColor="primary" id="liveToastBtn" onClick={toast.show}>
         Show live toast
       </Button>
       <ToastContainer brPosition="fixed" brPadding={3} className="bottom-0 end-0">
@@ -168,10 +168,10 @@ export const CustomContent: StoryFn = () => {
             brPadding={{ top: 2 }}
             brBorder={{ top: true }}
           >
-            <Button brVariant="primary" brSm>
+            <Button brButtonColor="primary" brButtonSm>
               Take action
             </Button>
-            <Button brVariant="secondary" brSm onClick={toast2.hide}>
+            <Button brButtonColor="secondary" brButtonSm onClick={toast2.hide}>
               Close
             </Button>
           </BrElement>

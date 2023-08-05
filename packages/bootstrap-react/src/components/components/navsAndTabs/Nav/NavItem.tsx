@@ -10,17 +10,17 @@ export type NavItemProps<T extends ElementType> = BrElementProps<T> & {
    * @default "li"
    */
   as?: T
-  brDropdown?: boolean
+  brNavItemDropdown?: boolean
 }
 
 /** [Nav]() */
 export default function NavItem<T extends ElementType = 'li'>(props: NavItemProps<T>) {
-  const { as = 'li' as ElementType, brDropdown, children, className, ...rest } = props
+  const { as = 'li' as ElementType, brNavItemDropdown, children, className, ...rest } = props
 
   return (
     <BrElement
       as={as}
-      className={classNames('nav-item', { dropdown: brDropdown }, className)}
+      className={classNames('nav-item', { dropdown: brNavItemDropdown }, className)}
       {...rest}
     >
       {children}

@@ -40,7 +40,10 @@ export default meta
 export const BaseExample: StoryFn<typeof Card> = () => {
   return (
     <Card style={{ width: '18rem' }}>
-      <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+      <CardImage
+        {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+        brCardImagePosition="top"
+      >
         <PlaceholderImgSvgChildren text="Image cap" />
       </CardImage>
       <CardBody>
@@ -49,7 +52,7 @@ export const BaseExample: StoryFn<typeof Card> = () => {
           Some quick example text to build on the card title and make up the bulk of the card's
           content.
         </CardText>
-        <Button as="a" href="#" brVariant="primary">
+        <Button as="a" href="#" brButtonColor="primary">
           Go somewhere
         </Button>
       </CardBody>
@@ -91,7 +94,10 @@ TitlesTextAndLinks.decorators = [
 export const Images: StoryFn = () => {
   return (
     <Card style={{ width: '18rem' }}>
-      <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+      <CardImage
+        {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+        brCardImagePosition="top"
+      >
         <PlaceholderImgSvgChildren text="Image cap" />
       </CardImage>
       <CardBody>
@@ -145,7 +151,10 @@ ListGroups.decorators = [
 export const KitchenSink: StoryFn = () => {
   return (
     <Card style={{ width: '18rem' }}>
-      <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+      <CardImage
+        {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+        brCardImagePosition="top"
+      >
         <PlaceholderImgSvgChildren text="Image cap" />
       </CardImage>
       <CardBody>
@@ -181,7 +190,7 @@ export const HeaderAndFooter: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" brVariant="primary">
+          <Button as="a" href="#" brButtonColor="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -206,7 +215,7 @@ export const HeaderAndFooter: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" brVariant="primary">
+          <Button as="a" href="#" brButtonColor="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -229,7 +238,7 @@ export const SizingUsingGridMarkup: StoryFn = () => {
             <CardText>
               With supporting text below as a natural lead-in to additional content.
             </CardText>
-            <Button as="a" href="#" brVariant="primary">
+            <Button as="a" href="#" brButtonColor="primary">
               Go somewhere
             </Button>
           </CardBody>
@@ -242,7 +251,7 @@ export const SizingUsingGridMarkup: StoryFn = () => {
             <CardText>
               With supporting text below as a natural lead-in to additional content.
             </CardText>
-            <Button as="a" href="#" brVariant="primary">
+            <Button as="a" href="#" brButtonColor="primary">
               Go somewhere
             </Button>
           </CardBody>
@@ -261,7 +270,7 @@ export const SizingUsingUtilities: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" brVariant="primary">
+          <Button as="a" href="#" brButtonColor="primary">
             Button
           </Button>
         </CardBody>
@@ -273,7 +282,7 @@ export const SizingUsingUtilities: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" brVariant="primary">
+          <Button as="a" href="#" brButtonColor="primary">
             Button
           </Button>
         </CardBody>
@@ -288,7 +297,7 @@ export const SizingUsingCustomCss: StoryFn = () => {
       <CardBody>
         <CardTitle>Special title treatment</CardTitle>
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-        <Button as="a" href="#" brVariant="primary">
+        <Button as="a" href="#" brButtonColor="primary">
           Go somewhere
         </Button>
       </CardBody>
@@ -305,7 +314,7 @@ export const TextAlignment: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" brVariant="primary">
+          <Button as="a" href="#" brButtonColor="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -316,7 +325,7 @@ export const TextAlignment: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" brVariant="primary">
+          <Button as="a" href="#" brButtonColor="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -327,7 +336,7 @@ export const TextAlignment: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" brVariant="primary">
+          <Button as="a" href="#" brButtonColor="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -343,7 +352,7 @@ export const Navigation: StoryFn = () => {
         <CardHeader>
           <Nav className="nav-tabs card-header-tabs">
             <NavItem>
-              <NavLink aria-current="true" href="#" brActive>
+              <NavLink aria-current="true" href="#" brNavLinkActive>
                 Active
               </NavLink>
             </NavItem>
@@ -351,7 +360,7 @@ export const Navigation: StoryFn = () => {
               <NavLink href="#">Link</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink brDisabled>Disabled</NavLink>
+              <NavLink brNavLinkDisabled>Disabled</NavLink>
             </NavItem>
           </Nav>
         </CardHeader>
@@ -360,7 +369,7 @@ export const Navigation: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" brVariant="primary">
+          <Button as="a" href="#" brButtonColor="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -370,7 +379,7 @@ export const Navigation: StoryFn = () => {
         <CardHeader>
           <Nav className="nav-pills card-header-pills">
             <NavItem>
-              <NavLink aria-current="true" href="#" brActive>
+              <NavLink aria-current="true" href="#" brNavLinkActive>
                 Active
               </NavLink>
             </NavItem>
@@ -378,7 +387,7 @@ export const Navigation: StoryFn = () => {
               <NavLink href="#">Link</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink brDisabled>Disabled</NavLink>
+              <NavLink brNavLinkDisabled>Disabled</NavLink>
             </NavItem>
           </Nav>
         </CardHeader>
@@ -387,7 +396,7 @@ export const Navigation: StoryFn = () => {
           <CardText>
             With supporting text below as a natural lead-in to additional content.
           </CardText>
-          <Button as="a" href="#" brVariant="primary">
+          <Button as="a" href="#" brButtonColor="primary">
             Go somewhere
           </Button>
         </CardBody>
@@ -400,7 +409,10 @@ export const ImagesImageCaps: StoryFn = () => {
   return (
     <div>
       <Card brMargin={{ bottom: 3 }}>
-        <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+        <CardImage
+          {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+          brCardImagePosition="top"
+        >
           <PlaceholderImgSvgChildren text="Image cap" />
         </CardImage>
         <CardBody>
@@ -425,7 +437,10 @@ export const ImagesImageCaps: StoryFn = () => {
             <small className="text-body-secondary">Last updated 3 mins ago</small>
           </CardText>
         </CardBody>
-        <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="bottom">
+        <CardImage
+          {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+          brCardImagePosition="bottom"
+        >
           <PlaceholderImgSvgChildren text="Image cap" />
         </CardImage>
       </Card>
@@ -459,7 +474,7 @@ export const Horizontal: StoryFn = () => {
       <Row brRowGutter={0}>
         <Col brColsMd={4}>
           <Image
-            fluid
+            brImageFluid
             {...placeholderImgSvgProps({
               width: '100%',
               height: '180',
@@ -601,7 +616,10 @@ export const CardLayoutCardGroups: StoryFn = () => {
     <div>
       <CardGroup>
         <Card>
-          <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+          <CardImage
+            {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+            brCardImagePosition="top"
+          >
             <PlaceholderImgSvgChildren text="Image cap" />
           </CardImage>
           <CardBody>
@@ -616,7 +634,10 @@ export const CardLayoutCardGroups: StoryFn = () => {
           </CardBody>
         </Card>
         <Card>
-          <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+          <CardImage
+            {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+            brCardImagePosition="top"
+          >
             <PlaceholderImgSvgChildren text="Image cap" />
           </CardImage>
           <CardBody>
@@ -631,7 +652,10 @@ export const CardLayoutCardGroups: StoryFn = () => {
           </CardBody>
         </Card>
         <Card>
-          <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+          <CardImage
+            {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+            brCardImagePosition="top"
+          >
             <PlaceholderImgSvgChildren text="Image cap" />
           </CardImage>
           <CardBody>
@@ -649,7 +673,10 @@ export const CardLayoutCardGroups: StoryFn = () => {
       <hr />
       <CardGroup>
         <Card>
-          <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+          <CardImage
+            {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+            brCardImagePosition="top"
+          >
             <PlaceholderImgSvgChildren text="Image cap" />
           </CardImage>
           <CardBody>
@@ -664,7 +691,10 @@ export const CardLayoutCardGroups: StoryFn = () => {
           </CardFooter>
         </Card>
         <Card>
-          <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+          <CardImage
+            {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+            brCardImagePosition="top"
+          >
             <PlaceholderImgSvgChildren text="Image cap" />
           </CardImage>
           <CardBody>
@@ -679,7 +709,10 @@ export const CardLayoutCardGroups: StoryFn = () => {
           </CardFooter>
         </Card>
         <Card>
-          <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+          <CardImage
+            {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+            brCardImagePosition="top"
+          >
             <PlaceholderImgSvgChildren text="Image cap" />
           </CardImage>
           <CardBody>
@@ -704,7 +737,10 @@ export const CardLayoutGridCards: StoryFn = () => {
       <Row brRowCols={1} brRowColsMd={2} brRowGutter={4}>
         <Col>
           <Card>
-            <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+            <CardImage
+              {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+              brCardImagePosition="top"
+            >
               <PlaceholderImgSvgChildren text="Image cap" />
             </CardImage>
             <CardBody>
@@ -732,7 +768,10 @@ export const CardLayoutGridCards: StoryFn = () => {
         <GridCardCol cardClassName="h-100" />
         <Col>
           <Card className="h-100">
-            <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+            <CardImage
+              {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+              brCardImagePosition="top"
+            >
               <PlaceholderImgSvgChildren text="Image cap" />
             </CardImage>
             <CardBody>
@@ -748,7 +787,10 @@ export const CardLayoutGridCards: StoryFn = () => {
       <Row brRowCols={1} brRowColsMd={3} brRowGutter={4}>
         <Col>
           <Card className="h-100">
-            <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+            <CardImage
+              {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+              brCardImagePosition="top"
+            >
               <PlaceholderImgSvgChildren text="Image cap" />
             </CardImage>
             <CardBody>
@@ -765,7 +807,10 @@ export const CardLayoutGridCards: StoryFn = () => {
         </Col>
         <Col>
           <Card className="h-100">
-            <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+            <CardImage
+              {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+              brCardImagePosition="top"
+            >
               <PlaceholderImgSvgChildren text="Image cap" />
             </CardImage>
             <CardBody>
@@ -781,7 +826,10 @@ export const CardLayoutGridCards: StoryFn = () => {
         </Col>
         <Col>
           <Card className="h-100">
-            <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+            <CardImage
+              {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+              brCardImagePosition="top"
+            >
               <PlaceholderImgSvgChildren text="Image cap" />
             </CardImage>
             <CardBody>
@@ -808,7 +856,10 @@ function GridCardCol(props: { cardClassName?: string }) {
   return (
     <Col>
       <Card className={cardClassName}>
-        <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })} position="top">
+        <CardImage
+          {...placeholderImgSvgProps({ width: '100%', height: '180' })}
+          brCardImagePosition="top"
+        >
           <PlaceholderImgSvgChildren text="Image cap" />
         </CardImage>
         <CardBody>

@@ -6,20 +6,27 @@ import { AccordionContextProvider } from './AccordionContext'
 
 export type AccordionProps<T extends ElementType> = BrElementProps<T> & {
   /** Apply flush styling to the accordion */
-  brFlush?: boolean
+  brAccordionFlush?: boolean
   /**
    * Do not collapse other accordion items when opening another
    *
    * @default false
    */
-  brAlwaysOpen?: boolean
+  brAccordionAlwaysOpen?: boolean
 }
 
 /**
  * [Accordion]()
  */
 export default function Accordion<T extends ElementType>(props: AccordionProps<T>) {
-  const { as, className, children, brFlush, brAlwaysOpen = false, ...rest } = props
+  const {
+    as,
+    className,
+    children,
+    brAccordionFlush,
+    brAccordionAlwaysOpen = false,
+    ...rest
+  } = props
 
   return (
     <BrElement
@@ -27,13 +34,15 @@ export default function Accordion<T extends ElementType>(props: AccordionProps<T
       className={classNames(
         'accordion',
         {
-          'accordion-flush': brFlush
+          'accordion-flush': brAccordionFlush
         },
         className
       )}
       {...rest}
     >
-      <AccordionContextProvider maxOneOpen={!brAlwaysOpen}>{children}</AccordionContextProvider>
+      <AccordionContextProvider maxOneOpen={!brAccordionAlwaysOpen}>
+        {children}
+      </AccordionContextProvider>
     </BrElement>
   )
 }

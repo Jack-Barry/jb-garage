@@ -351,20 +351,20 @@ export const CheckboxesAndRadios: StoryFn = () => {
       <ListGroup>
         <ListGroupItem>
           <FormCheck
-            inputProps={{ className: 'me-1', id: 'firstCheckbox' }}
-            labelProps={{ children: 'First checkbox' }}
+            brFormCheckInputProps={{ className: 'me-1', id: 'firstCheckbox' }}
+            brFormCheckLabelProps={{ children: 'First checkbox' }}
           />
         </ListGroupItem>
         <ListGroupItem>
           <FormCheck
-            inputProps={{ className: 'me-1', id: 'secondCheckbox' }}
-            labelProps={{ children: 'Second checkbox' }}
+            brFormCheckInputProps={{ className: 'me-1', id: 'secondCheckbox' }}
+            brFormCheckLabelProps={{ children: 'Second checkbox' }}
           />
         </ListGroupItem>
         <ListGroupItem>
           <FormCheck
-            inputProps={{ className: 'me-1', id: 'thirdCheckbox' }}
-            labelProps={{ children: 'Third checkbox' }}
+            brFormCheckInputProps={{ className: 'me-1', id: 'thirdCheckbox' }}
+            brFormCheckLabelProps={{ children: 'Third checkbox' }}
           />
         </ListGroupItem>
       </ListGroup>
@@ -372,36 +372,36 @@ export const CheckboxesAndRadios: StoryFn = () => {
       <ListGroup>
         <ListGroupItem>
           <FormCheck
-            inputProps={{
+            brFormCheckInputProps={{
               type: 'radio',
               className: 'me-1',
               name: 'listGroupRadio',
               id: 'firstRadio',
               defaultChecked: true
             }}
-            labelProps={{ children: 'First radio' }}
+            brFormCheckLabelProps={{ children: 'First radio' }}
           />
         </ListGroupItem>
         <ListGroupItem>
           <FormCheck
-            inputProps={{
+            brFormCheckInputProps={{
               type: 'radio',
               className: 'me-1',
               name: 'listGroupRadio',
               id: 'secondRadio'
             }}
-            labelProps={{ children: 'Second radio' }}
+            brFormCheckLabelProps={{ children: 'Second radio' }}
           />
         </ListGroupItem>
         <ListGroupItem>
           <FormCheck
-            inputProps={{
+            brFormCheckInputProps={{
               type: 'radio',
               className: 'me-1',
               name: 'listGroupRadio',
               id: 'thirdRadio'
             }}
-            labelProps={{ children: 'Third radio' }}
+            brFormCheckLabelProps={{ children: 'Third radio' }}
           />
         </ListGroupItem>
       </ListGroup>
@@ -409,20 +409,20 @@ export const CheckboxesAndRadios: StoryFn = () => {
       <ListGroup>
         <ListGroupItem>
           <FormCheck
-            inputProps={{ className: 'me-1', id: 'firstCheckboxStretched' }}
-            labelProps={{ className: 'stretched-link', children: 'First checkbox' }}
+            brFormCheckInputProps={{ className: 'me-1', id: 'firstCheckboxStretched' }}
+            brFormCheckLabelProps={{ className: 'stretched-link', children: 'First checkbox' }}
           />
         </ListGroupItem>
         <ListGroupItem>
           <FormCheck
-            inputProps={{ className: 'me-1', id: 'secondCheckboxStretched' }}
-            labelProps={{ className: 'stretched-link', children: 'Second checkbox' }}
+            brFormCheckInputProps={{ className: 'me-1', id: 'secondCheckboxStretched' }}
+            brFormCheckLabelProps={{ className: 'stretched-link', children: 'Second checkbox' }}
           />
         </ListGroupItem>
         <ListGroupItem>
           <FormCheck
-            inputProps={{ className: 'me-1', id: 'thirdCheckboxStretched' }}
-            labelProps={{ className: 'stretched-link', children: 'Third checkbox' }}
+            brFormCheckInputProps={{ className: 'me-1', id: 'thirdCheckboxStretched' }}
+            brFormCheckLabelProps={{ className: 'stretched-link', children: 'Third checkbox' }}
           />
         </ListGroupItem>
       </ListGroup>

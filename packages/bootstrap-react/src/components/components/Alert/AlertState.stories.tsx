@@ -20,7 +20,7 @@ export const Example: StoryFn = () => {
   console.log({ isAnimating: alert.isAnimating, isDismissed: alert.isDismissed })
 
   return (
-    <Alert brDismissible brAlert={alert} className={classNames('alert-warning fade')}>
+    <Alert brAlertDismissible brAlert={alert} className={classNames('alert-warning fade')}>
       If you need to have more control over or access to the alert state outside of the component,
       try the <code>useAlert</code> hook. You'll have access to properties like{' '}
       <code>isAnimating</code>, <code>isDismissed</code>, an <code>alertRef</code> and a{' '}

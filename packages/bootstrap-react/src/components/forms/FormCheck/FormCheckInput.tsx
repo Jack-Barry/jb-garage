@@ -5,16 +5,23 @@ import { forwardRef } from 'react'
 export type FormCheckInputProps = Omit<BrElementProps<'input'>, 'as' | 'type'> & {
   type?: 'checkbox' | 'radio'
   /** Form input value is invalid */
-  brIsInvalid?: boolean
+  brFormCheckInputInvalid?: boolean
   /** Form input value is valid */
-  brIsValid?: boolean
+  brFormCheckInputValid?: boolean
 }
 
 const FormCheckInput = forwardRef<HTMLInputElement, FormCheckInputProps>(function FormCheckInput(
   props: FormCheckInputProps,
   ref
 ) {
-  const { type = 'checkbox', children, className, brIsInvalid, brIsValid, ...rest } = props
+  const {
+    type = 'checkbox',
+    children,
+    className,
+    brFormCheckInputInvalid,
+    brFormCheckInputValid,
+    ...rest
+  } = props
 
   return (
     <BrElement
@@ -23,7 +30,7 @@ const FormCheckInput = forwardRef<HTMLInputElement, FormCheckInputProps>(functio
       ref={ref}
       className={classNames(
         'form-check-input',
-        { 'is-invalid': brIsInvalid, 'is-valid': brIsValid },
+        { 'is-invalid': brFormCheckInputInvalid, 'is-valid': brFormCheckInputValid },
         className
       )}
       {...rest}

@@ -9,9 +9,9 @@ export type AccordionButton<T extends ElementType> = ButtonProps<T> & {
    *
    * @default false
    */
-  brBtn?: boolean
+  brAccordionButtonBtn?: boolean
   /** Button is for accordion section that is currently collapsed */
-  brCollapsed?: boolean
+  brAccordionButtonCollapsed?: boolean
 }
 
 /**
@@ -20,12 +20,18 @@ export type AccordionButton<T extends ElementType> = ButtonProps<T> & {
 export default function AccordionButton<T extends ElementType = 'button'>(
   props: AccordionButton<T>
 ) {
-  const { as = 'button' as ElementType, className, brBtn = false, brCollapsed, ...rest } = props
+  const {
+    as = 'button' as ElementType,
+    className,
+    brAccordionButtonBtn = false,
+    brAccordionButtonCollapsed,
+    ...rest
+  } = props
   const { getCollapseById, toggleById } = useParentAccordion()
 
   const collapseId = props['aria-controls']
   const defaultCollapse = getCollapseById(collapseId)
-  const isCollapsed = brCollapsed ?? !defaultCollapse?.collapse?.isOpen
+  const isCollapsed = brAccordionButtonCollapsed ?? !defaultCollapse?.collapse?.isOpen
   const onClick = props['onClick'] || toggleMatchingCollapse
 
   function toggleMatchingCollapse() {
@@ -42,7 +48,7 @@ export default function AccordionButton<T extends ElementType = 'button'>(
         },
         className
       )}
-      brBtn={brBtn}
+      brButtonBtn={brAccordionButtonBtn}
       onClick={onClick}
       aria-expanded={props['aria-expanded'] || !isCollapsed}
       {...rest}

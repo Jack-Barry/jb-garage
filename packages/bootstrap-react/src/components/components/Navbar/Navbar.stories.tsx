@@ -43,7 +43,7 @@ export const SupportedContent: StoryFn = () => {
 
   return (
     <Navbar className="navbar-expand-lg bg-body-tertiary">
-      <Container brFluid>
+      <Container brContainerFluid>
         <NavbarBrand href="#">Navbar</NavbarBrand>
         <NavbarToggler
           aria-controls="navbarSupportedContent"
@@ -56,16 +56,16 @@ export const SupportedContent: StoryFn = () => {
         <NavbarCollapse id="navbarSupportedContent" brCollapse={collapse}>
           <NavbarNav brMargin={{ end: 'auto', bottom: 2 }} brMarginLg={{ bottom: 0 }}>
             <NavItem>
-              <NavLink brActive aria-current="page" href="#">
+              <NavLink brNavLinkActive aria-current="page" href="#">
                 Home
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="#">Link</NavLink>
             </NavItem>
-            <NavItem brDropdown>
+            <NavItem brNavItemDropdown>
               <NavLink
-                brDropdownToggle
+                brNavLinkDropdownToggle
                 href="#"
                 role="button"
                 aria-expanded={dropdown.isOpen}
@@ -88,7 +88,7 @@ export const SupportedContent: StoryFn = () => {
           </NavbarNav>
           <BrElement as="form" brDisplay="flex" role="search">
             <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
-            <Button brVariant="outline-success" type="submit">
+            <Button brButtonColor="outline-success" type="submit">
               Search
             </Button>
           </BrElement>
@@ -102,12 +102,12 @@ export const BrandText: StoryFn = () => {
   return (
     <div className="bd-example">
       <Navbar className="bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
         </Container>
       </Navbar>
       <Navbar className="bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarBrand as="span" brMargin={{ bottom: 0 }} className="h1">
             Navbar
           </NavbarBrand>
@@ -132,7 +132,7 @@ export const BrandImage: StoryFn = () => {
 export const BrandImageAndText: StoryFn = () => {
   return (
     <Navbar className="bg-body-tertiary">
-      <Container brFluid>
+      <Container brContainerFluid>
         <NavbarBrand href="#">
           <Image
             src="/bootstrap-logo.svg"
@@ -158,7 +158,7 @@ export const Nav: StoryFn = () => {
   return (
     <div className="bd-example">
       <Navbar className="navbar-expand-lg bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
             aria-controls="navbarNav"
@@ -171,7 +171,7 @@ export const Nav: StoryFn = () => {
           <NavbarCollapse brCollapse={collapse1} id="navbarNav">
             <NavbarNav>
               <NavItem>
-                <NavLink brActive aria-current="page" href="#">
+                <NavLink brNavLinkActive aria-current="page" href="#">
                   Home
                 </NavLink>
               </NavItem>
@@ -182,7 +182,7 @@ export const Nav: StoryFn = () => {
                 <NavLink href="#">Pricing</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink brDisabled aria-disabled="true">
+                <NavLink brNavLinkDisabled aria-disabled="true">
                   Disabled
                 </NavLink>
               </NavItem>
@@ -192,7 +192,7 @@ export const Nav: StoryFn = () => {
       </Navbar>
       <hr />
       <Navbar className="navbar-expand-lg bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
             aria-controls="navbarNavAltMarkup"
@@ -204,12 +204,12 @@ export const Nav: StoryFn = () => {
           </NavbarToggler>
           <NavbarCollapse brCollapse={collapse2} id="navbarNavAltMarkup">
             <NavbarNav>
-              <NavLink brActive aria-current="page" href="#">
+              <NavLink brNavLinkActive aria-current="page" href="#">
                 Home
               </NavLink>
               <NavLink href="#">Features</NavLink>
               <NavLink href="#">Pricing</NavLink>
-              <NavLink brDisabled aria-disabled="true">
+              <NavLink brNavLinkDisabled aria-disabled="true">
                 Disabled
               </NavLink>
             </NavbarNav>
@@ -218,7 +218,7 @@ export const Nav: StoryFn = () => {
       </Navbar>
       <hr />
       <Navbar className="navbar-expand-lg bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
             aria-controls="navbarNavDropdown"
@@ -231,7 +231,7 @@ export const Nav: StoryFn = () => {
           <NavbarCollapse brCollapse={collapse3} id="navbarNavDropdown">
             <NavbarNav>
               <NavItem>
-                <NavLink brActive aria-current="page" href="#">
+                <NavLink brNavLinkActive aria-current="page" href="#">
                   Home
                 </NavLink>
               </NavItem>
@@ -241,9 +241,9 @@ export const Nav: StoryFn = () => {
               <NavItem>
                 <NavLink href="#">Pricing</NavLink>
               </NavItem>
-              <NavItem brDropdown>
+              <NavItem brNavItemDropdown>
                 <NavLink
-                  brDropdownToggle
+                  brNavLinkDropdownToggle
                   href="#"
                   aria-expanded={dropdown.isOpen}
                   ref={dropdown.dropdownRef}
@@ -268,10 +268,10 @@ export const Forms: StoryFn = () => {
   return (
     <div className="bd-example">
       <Navbar className="bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <BrElement as="form" brDisplay="flex" role="search">
             <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
-            <Button brVariant="outline-success" type="submit">
+            <Button brButtonColor="outline-success" type="submit">
               Search
             </Button>
           </BrElement>
@@ -279,11 +279,11 @@ export const Forms: StoryFn = () => {
       </Navbar>
       <hr />
       <Navbar className="bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarBrand>Navbar</NavbarBrand>
           <BrElement as="form" brDisplay="flex" role="search">
             <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
-            <Button brVariant="outline-success" type="submit">
+            <Button brButtonColor="outline-success" type="submit">
               Search
             </Button>
           </BrElement>
@@ -291,7 +291,7 @@ export const Forms: StoryFn = () => {
       </Navbar>
       <hr />
       <Navbar className="bg-body-tertiary">
-        <Container as="form" brFluid>
+        <Container as="form" brContainerFluid>
           <InputGroup>
             <InputGroupText id="basic-addon1">@</InputGroupText>
             <Input placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
@@ -300,11 +300,11 @@ export const Forms: StoryFn = () => {
       </Navbar>
       <hr />
       <Navbar className="bg-body-tertiary">
-        <Container as="form" brFluid className="justify-content-start">
-          <Button brVariant="outline-success" brMargin={{ end: 2 }}>
+        <Container as="form" brContainerFluid className="justify-content-start">
+          <Button brButtonColor="outline-success" brMargin={{ end: 2 }}>
             Main button
           </Button>
-          <Button brVariant="outline-secondary" brSm>
+          <Button brButtonColor="outline-secondary" brButtonSm>
             Smaller button
           </Button>
         </Container>
@@ -319,13 +319,13 @@ export const Text: StoryFn = () => {
   return (
     <div className="bd-example">
       <Navbar className="bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarText>Navbar text with an inline element</NavbarText>
         </Container>
       </Navbar>
       <hr />
       <Navbar className="navbar-expand-lg bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarBrand href="#">Navbar w/ text</NavbarBrand>
           <NavbarToggler
             aria-controls="navbarText"
@@ -338,7 +338,7 @@ export const Text: StoryFn = () => {
           <NavbarCollapse brCollapse={collapse} id="navbarText">
             <NavbarNav brMargin={{ end: 'auto', bottom: 2 }} brMarginLg={{ bottom: 0 }}>
               <NavItem>
-                <NavLink brActive aria-current="page" href="#">
+                <NavLink brNavLinkActive aria-current="page" href="#">
                   Home
                 </NavLink>
               </NavItem>
@@ -383,7 +383,7 @@ function ColorSchemeExampleContent() {
   const collapse = useCollapse()
 
   return (
-    <Container brFluid>
+    <Container brContainerFluid>
       <NavbarBrand href="#">Navbar</NavbarBrand>
       <NavbarToggler
         aria-controls="navbarColor01"
@@ -396,7 +396,7 @@ function ColorSchemeExampleContent() {
       <NavbarCollapse brCollapse={collapse} id="navbarColor01">
         <NavbarNav brMargin={{ end: 'auto', bottom: 2 }} brMarginLg={{ bottom: 0 }}>
           <NavItem>
-            <NavLink brActive aria-current="page" href="#">
+            <NavLink brNavLinkActive aria-current="page" href="#">
               Home
             </NavLink>
           </NavItem>
@@ -412,7 +412,7 @@ function ColorSchemeExampleContent() {
         </NavbarNav>
         <BrElement as="form" brDisplay="flex" role="search">
           <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
-          <Button brVariant="outline-light" type="submit">
+          <Button brButtonColor="outline-light" type="submit">
             Search
           </Button>
         </BrElement>
@@ -426,14 +426,14 @@ export const Containers: StoryFn = () => {
     <div>
       <Container>
         <Navbar className="navbar-expand-lg bg-body-tertiary">
-          <Container brFluid>
+          <Container brContainerFluid>
             <NavbarBrand href="#">Navbar</NavbarBrand>
           </Container>
         </Navbar>
       </Container>
       <hr />
       <Navbar className="navbar-expand-lg bg-body-tertiary">
-        <Container brBreakpoint="md">
+        <Container brContainerBreakpoint="md">
           <NavbarBrand href="#">Navbar</NavbarBrand>
         </Container>
       </Navbar>
@@ -444,7 +444,7 @@ export const Containers: StoryFn = () => {
 export const PlacementDefault: StoryFn = () => {
   return (
     <Navbar className="bg-body-tertiary">
-      <Container brFluid>
+      <Container brContainerFluid>
         <NavbarBrand href="#">Default</NavbarBrand>
       </Container>
     </Navbar>
@@ -454,8 +454,8 @@ export const PlacementDefault: StoryFn = () => {
 export const PlacementFixedTop: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brPlacement="fixed-top" className="bg-body-tertiary">
-        <Container brFluid>
+      <Navbar brNavbarPlacement="fixed-top" className="bg-body-tertiary">
+        <Container brContainerFluid>
           <NavbarBrand href="#">Fixed top</NavbarBrand>
         </Container>
       </Navbar>
@@ -466,8 +466,8 @@ export const PlacementFixedTop: StoryFn = () => {
 export const PlacementFixedBottom: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brPlacement="fixed-bottom" className="bg-body-tertiary">
-        <Container brFluid>
+      <Navbar brNavbarPlacement="fixed-bottom" className="bg-body-tertiary">
+        <Container brContainerFluid>
           <NavbarBrand href="#">Fixed bottom</NavbarBrand>
         </Container>
       </Navbar>
@@ -478,8 +478,8 @@ export const PlacementFixedBottom: StoryFn = () => {
 export const PlacementStickyTop: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brPlacement="sticky-top" className="bg-body-tertiary">
-        <Container brFluid>
+      <Navbar brNavbarPlacement="sticky-top" className="bg-body-tertiary">
+        <Container brContainerFluid>
           <NavbarBrand href="#">Sticky top</NavbarBrand>
         </Container>
       </Navbar>
@@ -490,8 +490,8 @@ export const PlacementStickyTop: StoryFn = () => {
 export const PlacementStickyBottom: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brPlacement="sticky-bottom" className="bg-body-tertiary">
-        <Container brFluid>
+      <Navbar brNavbarPlacement="sticky-bottom" className="bg-body-tertiary">
+        <Container brContainerFluid>
           <NavbarBrand href="#">Sticky bottom</NavbarBrand>
         </Container>
       </Navbar>
@@ -505,7 +505,7 @@ export const Scrolling: StoryFn = () => {
 
   return (
     <Navbar className="navbar-expand-lg bg-body-tertiary">
-      <Container brFluid>
+      <Container brContainerFluid>
         <NavbarBrand href="#">Navbar scroll</NavbarBrand>
         <NavbarToggler
           aria-controls="navbarScroll"
@@ -523,16 +523,16 @@ export const Scrolling: StoryFn = () => {
             style={{ '--bs-scroll-height': '100px' } as CSSProperties}
           >
             <NavItem>
-              <NavLink brActive aria-current="page" href="#">
+              <NavLink brNavLinkActive aria-current="page" href="#">
                 Home
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="#">Link</NavLink>
             </NavItem>
-            <NavItem brDropdown>
+            <NavItem brNavItemDropdown>
               <NavLink
-                brDropdownToggle
+                brNavLinkDropdownToggle
                 href="#"
                 aria-expanded={dropdown.isOpen}
                 ref={dropdown.dropdownRef}
@@ -547,14 +547,14 @@ export const Scrolling: StoryFn = () => {
               </DropdownMenu>
             </NavItem>
             <NavItem>
-              <NavLink brDisabled aria-disabled="true">
+              <NavLink brNavLinkDisabled aria-disabled="true">
                 Link
               </NavLink>
             </NavItem>
           </NavbarNav>
           <BrElement brDisplay="flex" role="search">
             <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
-            <Button brVariant="outline-success" type="submit">
+            <Button brButtonColor="outline-success" type="submit">
               Search
             </Button>
           </BrElement>
@@ -572,7 +572,7 @@ export const Toggler: StoryFn = () => {
   return (
     <div>
       <Navbar className="navbar-expand-lg bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarToggler
             aria-controls="navbarTogglerDemo01"
             aria-expanded={collapse1.isOpen}
@@ -589,7 +589,7 @@ export const Toggler: StoryFn = () => {
       </Navbar>
       <hr />
       <Navbar className="navbar-expand-lg bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
             aria-controls="navbarTogglerDemo02"
@@ -606,7 +606,7 @@ export const Toggler: StoryFn = () => {
       </Navbar>
       <hr />
       <Navbar className="navbar-expand-lg bg-body-tertiary">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarToggler
             aria-controls="navbarTogglerDemo03"
             aria-expanded={collapse3.isOpen}
@@ -630,7 +630,7 @@ function TogglerDemoContent() {
     <Fragment>
       <NavbarNav brMargin={{ end: 'auto', bottom: 2 }} brMarginLg={{ bottom: 0 }}>
         <NavItem>
-          <NavLink brActive aria-current="page" href="#">
+          <NavLink brNavLinkActive aria-current="page" href="#">
             Home
           </NavLink>
         </NavItem>
@@ -638,14 +638,14 @@ function TogglerDemoContent() {
           <NavLink href="#">Link</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink brDisabled aria-disabled="true">
+          <NavLink brNavLinkDisabled aria-disabled="true">
             Disabled
           </NavLink>
         </NavItem>
       </NavbarNav>
       <BrElement as="form" brDisplay="flex" role="search">
         <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
-        <Button brVariant="outline-success" type="submit">
+        <Button brButtonColor="outline-success" type="submit">
           Search
         </Button>
       </BrElement>
@@ -665,7 +665,7 @@ export const ExternalContent: StoryFn = () => {
         </BrElement>
       </Collapse>
       <Navbar className="navbar-dark bg-dark">
-        <Container brFluid>
+        <Container brContainerFluid>
           <NavbarToggler
             aria-controls="navbarToggleExternalContent"
             aria-expanded="false"
@@ -686,8 +686,8 @@ export const OffcanvasStory: StoryFn = () => {
 
   return (
     <div className="bd-example">
-      <Navbar brPlacement="fixed-top" className="bg-body-tertiary">
-        <Container brFluid>
+      <Navbar brNavbarPlacement="fixed-top" className="bg-body-tertiary">
+        <Container brContainerFluid>
           <NavbarBrand href="#">Offcanvas navbar</NavbarBrand>
           <NavbarToggler
             aria-controls="offcanvasNavbar"
@@ -698,7 +698,7 @@ export const OffcanvasStory: StoryFn = () => {
           </NavbarToggler>
           <Offcanvas
             brOffcanvas={offcanvas}
-            brPlacement="end"
+            brOffcanvasPlacement="end"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
           >
@@ -712,16 +712,16 @@ export const OffcanvasStory: StoryFn = () => {
                 brPadding={{ end: 3 }} /* class="navbar-nav justify-content-end flex-grow-1 pe-3" */
               >
                 <NavItem>
-                  <NavLink brActive aria-current="page" href="#">
+                  <NavLink brNavLinkActive aria-current="page" href="#">
                     Home
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="#">Link</NavLink>
                 </NavItem>
-                <NavItem brDropdown>
+                <NavItem brNavItemDropdown>
                   <NavLink
-                    brDropdownToggle
+                    brNavLinkDropdownToggle
                     href="#"
                     aria-expanded="false"
                     ref={dropdown.dropdownRef}
@@ -743,7 +743,7 @@ export const OffcanvasStory: StoryFn = () => {
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <Button brVariant="outline-success" type="submit">
+                <Button brButtonColor="outline-success" type="submit">
                   Search
                 </Button>
               </BrElement>

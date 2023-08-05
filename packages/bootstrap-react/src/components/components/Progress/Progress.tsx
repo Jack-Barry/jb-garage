@@ -10,7 +10,7 @@ export type ProgressProps<T extends ElementType, W extends ElementType> = BrElem
    */
   as?: T
   /** Props to use for the progress bar element */
-  brBarProps?: BrElementProps<W>
+  brProgressBarProps?: BrElementProps<W>
   /** Value for the progress bar */
   brProgressValue?: number
   /** Minimum value for the progress bar */
@@ -20,9 +20,9 @@ export type ProgressProps<T extends ElementType, W extends ElementType> = BrElem
   /** Present progress bar as stacked */
   brProgressStacked?: boolean
   /** Apply striped style to progress bar */
-  brStriped?: boolean
+  brProgressStriped?: boolean
   /** Apply animation to progress bar */
-  brAnimated?: boolean
+  brProgressAnimated?: boolean
 }
 
 /**
@@ -37,13 +37,13 @@ export default function Progress<T extends ElementType = 'div', W extends Elemen
     className,
     role = 'progressbar',
     style,
-    brBarProps = {} as BrElementProps<W>,
+    brProgressBarProps: brBarProps = {} as BrElementProps<W>,
     brProgressValue,
     brProgressMin = 0,
     brProgressMax = 100,
     brProgressStacked,
-    brStriped,
-    brAnimated,
+    brProgressStriped: brStriped,
+    brProgressAnimated: brAnimated,
     ...rest
   } = props
   const {

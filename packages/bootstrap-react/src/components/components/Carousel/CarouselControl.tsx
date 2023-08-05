@@ -5,7 +5,7 @@ import classNames from 'classnames'
 export type CarouselControlProps<T extends ElementType> = BrElementProps<
   T,
   {
-    brDirection: 'prev' | 'next'
+    brCarouselControlDirection: 'prev' | 'next'
   }
 >
 
@@ -21,7 +21,7 @@ const CarouselControl: CarouselControlComponent = forwardRef(function CarouselCo
 >(props: CarouselControlProps<T>, ref?: CarouselControlProps<T>['ref']) {
   const {
     as = 'button' as ElementType,
-    brDirection,
+    brCarouselControlDirection,
     className,
     type = as === 'button' ? 'button' : undefined,
     ...rest
@@ -32,7 +32,7 @@ const CarouselControl: CarouselControlComponent = forwardRef(function CarouselCo
       as={as}
       ref={ref}
       type={type}
-      className={classNames(`carousel-control-${brDirection}`, className)}
+      className={classNames(`carousel-control-${brCarouselControlDirection}`, className)}
       {...rest}
     />
   )
