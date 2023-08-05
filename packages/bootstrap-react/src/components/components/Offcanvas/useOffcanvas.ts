@@ -48,6 +48,13 @@ export function useOffcanvas<T extends HTMLElement = HTMLElement>(
   const [offcanvas, setOffcanvas] = useState<Offcanvas | null>(null)
   const [offcanvasNode, setOffcanvasNode] = useState<T | null>(null)
 
+  useEffect(function handleMount() {
+    return function handleUnmount() {
+      // no longer tracking its state, it should be removed
+      offcanvas?.dispose()
+    }
+  }, [])
+
   useEffect(
     function initBootstrapOffcanvas() {
       if (offcanvas && !offcanvasNode) {
