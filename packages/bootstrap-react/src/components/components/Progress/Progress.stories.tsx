@@ -64,49 +64,49 @@ export const Backgrounds: StoryFn = () => {
       <Progress
         aria-label="Success example"
         brProgressValue={25}
-        brProgressBarProps={{ className: 'bg-success ' }}
+        brProgressBarProps={{ brUtilsBackground: 'success' }}
       />
       <Progress
         aria-label="Info example"
         brProgressValue={50}
-        brProgressBarProps={{ className: 'bg-info ' }}
+        brProgressBarProps={{ brUtilsBackground: 'info' }}
       />
       <Progress
         aria-label="Warning example"
         brProgressValue={75}
-        brProgressBarProps={{ className: 'bg-warning' }}
+        brProgressBarProps={{ brUtilsBackground: 'warning' }}
       />
       <Progress
         aria-label="Danger example"
         brProgressValue={100}
-        brProgressBarProps={{ className: 'bg-danger' }}
+        brProgressBarProps={{ brUtilsBackground: 'danger' }}
       />
       <hr />
       <Progress
         aria-label="Success example"
         brProgressValue={25}
-        brProgressBarProps={{ className: 'bg-success' }}
+        brProgressBarProps={{ brUtilsBackground: 'success' }}
       >
         25%
       </Progress>
       <Progress
         aria-label="Info example"
         brProgressValue={50}
-        brProgressBarProps={{ className: 'bg-info text-dark' }}
+        brProgressBarProps={{ className: 'text-dark', brUtilsBackground: 'info' }}
       >
         50%
       </Progress>
       <Progress
         aria-label="Warning example"
         brProgressValue={75}
-        brProgressBarProps={{ className: 'bg-warning text-dark' }}
+        brProgressBarProps={{ className: 'text-dark', brUtilsBackground: 'warning' }}
       >
         75%
       </Progress>
       <Progress
         aria-label="Danger example"
         brProgressValue={100}
-        brProgressBarProps={{ className: 'bg-danger' }}
+        brProgressBarProps={{ brUtilsBackground: 'danger' }}
       >
         100%
       </Progress>
@@ -130,13 +130,13 @@ export const MultipleBars: StoryFn = () => {
         <Progress
           aria-label="Segment two"
           brProgressValue={30}
-          brProgressBarProps={{ className: 'bg-success' }}
+          brProgressBarProps={{ brUtilsBackground: 'success' }}
           brProgressStacked
         />
         <Progress
           aria-label="Segment three"
           brProgressValue={20}
-          brProgressBarProps={{ className: 'bg-info' }}
+          brProgressBarProps={{ brUtilsBackground: 'info' }}
           brProgressStacked
         />
       </ProgressStacked>
@@ -157,25 +157,25 @@ export const Striped: StoryFn = () => {
         aria-label="Success striped example"
         brProgressValue={25}
         brProgressStriped
-        brProgressBarProps={{ className: 'bg-success' }}
+        brProgressBarProps={{ brUtilsBackground: 'success' }}
       />
       <Progress
         aria-label="Info striped example"
         brProgressValue={50}
         brProgressStriped
-        brProgressBarProps={{ className: 'bg-info' }}
+        brProgressBarProps={{ brUtilsBackground: 'info' }}
       />
       <Progress
         aria-label="Warning striped example"
         brProgressValue={75}
         brProgressStriped
-        brProgressBarProps={{ className: 'bg-warning' }}
+        brProgressBarProps={{ brUtilsBackground: 'warning' }}
       />
       <Progress
         aria-label="Danger striped example"
         brProgressValue={100}
         brProgressStriped
-        brProgressBarProps={{ className: 'bg-danger' }}
+        brProgressBarProps={{ brUtilsBackground: 'danger' }}
       />
     </div>
   )

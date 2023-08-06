@@ -83,7 +83,7 @@ export const Color: StoryFn = () => {
       <BrElement
         brPadding={3}
         brBorder={{ color: 'info', start: false, end: { rounded: true } }}
-        className="bg-info bg-opacity-10"
+        brUtilsBackground={{ color: 'info', opacity: '10' }}
       >
         Changing border color and width
       </BrElement>

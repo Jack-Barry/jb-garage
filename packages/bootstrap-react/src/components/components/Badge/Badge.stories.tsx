@@ -51,7 +51,8 @@ export const ExamplesPositioned: StoryFn = () => {
         <Badge
           brPosition="absolute"
           brBorder={{ rounded: 'pill' }}
-          className="top-0 start-100 translate-middle bg-danger"
+          className="top-0 start-100 translate-middle"
+          brUtilsBackground="danger"
         >
           99+
           <BrElement as="span" brVisuallyHidden>
@@ -67,7 +68,8 @@ export const ExamplesPositioned: StoryFn = () => {
           brPosition="absolute"
           brPadding={2}
           brBorder={{ color: 'light', rounded: 'circle' }}
-          className="top-0 start-100 translate-middle bg-danger rounded-circle"
+          className="top-0 start-100 translate-middle rounded-circle"
+          brUtilsBackground="danger"
         >
           <BrElement as="span" brVisuallyHidden>
             New alerts

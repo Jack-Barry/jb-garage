@@ -593,7 +593,7 @@ export const CardStylesMixinsUtilities: StoryFn = () => {
   return (
     <div>
       <Card brMargin={{ bottom: 3 }} brBorder={{ color: 'success' }} style={{ maxWidth: '18rem' }}>
-        <CardHeader brBorder={{ color: 'success' }} className="bg-transparent">
+        <CardHeader brBorder={{ color: 'success' }} brUtilsBackground="transparent">
           Header
         </CardHeader>
         <CardBody className="text-success">
@@ -603,7 +603,7 @@ export const CardStylesMixinsUtilities: StoryFn = () => {
             content.
           </CardText>
         </CardBody>
-        <CardFooter brBorder={{ color: 'success' }} className="bg-transparent">
+        <CardFooter brBorder={{ color: 'success' }} brUtilsBackground="transparent">
           Footer
         </CardFooter>
       </Card>

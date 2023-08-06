@@ -12,6 +12,11 @@ import { BrFlexProp, brFlexClasses } from './bootstrapClasses/flexbox'
 import { BrBorderProp, brBorderClasses } from './bootstrapClasses/border'
 import { BrDisplayProp, brDisplayClasses } from './bootstrapClasses/display'
 import { BrSpacingProp, brSpacingClasses } from './bootstrapClasses/spacing'
+import {
+  BrUtilsBackgroundOptions,
+  brUtilsBackgroundStyles
+} from './bootstrapClasses/utilities/background'
+import { buildBrStyles } from './bootstrapClasses/brStyles'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BrBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | string
@@ -92,6 +97,12 @@ export type BrElementCommonProps = {
   brTheme?: 'light' | 'dark' | string
   /** Apply float clearfix to element */
   brClearfix?: boolean
+  /**
+   * Apply background styles to the element
+   *
+   * [Bootstrap Utilities: Background](https://getbootstrap.com/docs/5.3/utilities/background/)
+   */
+  brUtilsBackground?: BrUtilsBackgroundOptions
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -139,6 +150,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
   const {
     as: Component = 'div',
     className,
+    style,
     children,
     brPosition,
     brDisplay,
@@ -176,8 +188,12 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brFlexXxl,
     brTheme,
     brClearfix,
+    brUtilsBackground,
     ...rest
   } = props
+
+  const brStyles = buildBrStyles([brUtilsBackgroundStyles(brUtilsBackground)])
+
   return (
     <Component
       ref={ref}
@@ -220,9 +236,11 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
           brFlexXl,
           brFlexXxl
         }),
-        clearfix: brClearfix
+        clearfix: brClearfix,
+        ...brStyles.className
       })}
       data-bs-theme={brTheme}
+      style={{ ...brStyles.style, ...style }}
       {...rest}
     >
       {children}

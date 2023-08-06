@@ -42,7 +42,7 @@ export const SupportedContent: StoryFn = () => {
   const dropdown = useDropdown<HTMLAnchorElement>()
 
   return (
-    <Navbar className="navbar-expand-lg bg-body-tertiary">
+    <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
       <Container brContainerFluid>
         <NavbarBrand href="#">Navbar</NavbarBrand>
         <NavbarToggler
@@ -101,12 +101,12 @@ export const SupportedContent: StoryFn = () => {
 export const BrandText: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar className="bg-body-tertiary">
+      <Navbar brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
         </Container>
       </Navbar>
-      <Navbar className="bg-body-tertiary">
+      <Navbar brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand as="span" brMargin={{ bottom: 0 }} className="h1">
             Navbar
@@ -119,7 +119,7 @@ export const BrandText: StoryFn = () => {
 
 export const BrandImage: StoryFn = () => {
   return (
-    <Navbar className="bg-body-tertiary">
+    <Navbar brUtilsBackground="body-tertiary">
       <Container>
         <NavbarBrand href="#">
           <Image src="/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24" />
@@ -131,7 +131,7 @@ export const BrandImage: StoryFn = () => {
 
 export const BrandImageAndText: StoryFn = () => {
   return (
-    <Navbar className="bg-body-tertiary">
+    <Navbar brUtilsBackground="body-tertiary">
       <Container brContainerFluid>
         <NavbarBrand href="#">
           <Image
@@ -157,7 +157,7 @@ export const Nav: StoryFn = () => {
 
   return (
     <div className="bd-example">
-      <Navbar className="navbar-expand-lg bg-body-tertiary">
+      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
@@ -191,7 +191,7 @@ export const Nav: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="navbar-expand-lg bg-body-tertiary">
+      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
@@ -217,7 +217,7 @@ export const Nav: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="navbar-expand-lg bg-body-tertiary">
+      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
@@ -267,7 +267,7 @@ export const Nav: StoryFn = () => {
 export const Forms: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar className="bg-body-tertiary">
+      <Navbar brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <BrElement as="form" brDisplay="flex" role="search">
             <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
@@ -278,7 +278,7 @@ export const Forms: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="bg-body-tertiary">
+      <Navbar brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand>Navbar</NavbarBrand>
           <BrElement as="form" brDisplay="flex" role="search">
@@ -290,7 +290,7 @@ export const Forms: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="bg-body-tertiary">
+      <Navbar brUtilsBackground="body-tertiary">
         <Container as="form" brContainerFluid>
           <InputGroup>
             <InputGroupText id="basic-addon1">@</InputGroupText>
@@ -299,7 +299,7 @@ export const Forms: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="bg-body-tertiary">
+      <Navbar brUtilsBackground="body-tertiary">
         <Container as="form" brContainerFluid className="justify-content-start">
           <Button brButtonColor="outline-success" brMargin={{ end: 2 }}>
             Main button
@@ -318,13 +318,13 @@ export const Text: StoryFn = () => {
 
   return (
     <div className="bd-example">
-      <Navbar className="bg-body-tertiary">
+      <Navbar brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarText>Navbar text with an inline element</NavbarText>
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="navbar-expand-lg bg-body-tertiary">
+      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar w/ text</NavbarBrand>
           <NavbarToggler
@@ -362,13 +362,14 @@ export const ColorSchemes: StoryFn = () => {
     <div>
       <Navbar
         brBorder={{ bottom: true }}
-        className="navbar-expand-lg bg-dark border-body"
+        className="navbar-expand-lg border-body"
         brTheme="dark"
+        brUtilsBackground="dark"
       >
         <ColorSchemeExampleContent />
       </Navbar>
       <hr />
-      <Navbar className="bg-primary" brTheme="dark">
+      <Navbar brTheme="dark" brUtilsBackground="primary">
         <ColorSchemeExampleContent />
       </Navbar>
       <hr />
@@ -425,14 +426,14 @@ export const Containers: StoryFn = () => {
   return (
     <div>
       <Container>
-        <Navbar className="navbar-expand-lg bg-body-tertiary">
+        <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
           <Container brContainerFluid>
             <NavbarBrand href="#">Navbar</NavbarBrand>
           </Container>
         </Navbar>
       </Container>
       <hr />
-      <Navbar className="navbar-expand-lg bg-body-tertiary">
+      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
         <Container brContainerBreakpoint="md">
           <NavbarBrand href="#">Navbar</NavbarBrand>
         </Container>
@@ -443,7 +444,7 @@ export const Containers: StoryFn = () => {
 
 export const PlacementDefault: StoryFn = () => {
   return (
-    <Navbar className="bg-body-tertiary">
+    <Navbar brUtilsBackground="body-tertiary">
       <Container brContainerFluid>
         <NavbarBrand href="#">Default</NavbarBrand>
       </Container>
@@ -454,7 +455,7 @@ export const PlacementDefault: StoryFn = () => {
 export const PlacementFixedTop: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brNavbarPlacement="fixed-top" className="bg-body-tertiary">
+      <Navbar brNavbarPlacement="fixed-top" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Fixed top</NavbarBrand>
         </Container>
@@ -466,7 +467,7 @@ export const PlacementFixedTop: StoryFn = () => {
 export const PlacementFixedBottom: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brNavbarPlacement="fixed-bottom" className="bg-body-tertiary">
+      <Navbar brNavbarPlacement="fixed-bottom" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Fixed bottom</NavbarBrand>
         </Container>
@@ -478,7 +479,7 @@ export const PlacementFixedBottom: StoryFn = () => {
 export const PlacementStickyTop: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brNavbarPlacement="sticky-top" className="bg-body-tertiary">
+      <Navbar brNavbarPlacement="sticky-top" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Sticky top</NavbarBrand>
         </Container>
@@ -490,7 +491,7 @@ export const PlacementStickyTop: StoryFn = () => {
 export const PlacementStickyBottom: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brNavbarPlacement="sticky-bottom" className="bg-body-tertiary">
+      <Navbar brNavbarPlacement="sticky-bottom" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Sticky bottom</NavbarBrand>
         </Container>
@@ -504,7 +505,7 @@ export const Scrolling: StoryFn = () => {
   const dropdown = useDropdown<HTMLAnchorElement>()
 
   return (
-    <Navbar className="navbar-expand-lg bg-body-tertiary">
+    <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
       <Container brContainerFluid>
         <NavbarBrand href="#">Navbar scroll</NavbarBrand>
         <NavbarToggler
@@ -571,7 +572,7 @@ export const Toggler: StoryFn = () => {
 
   return (
     <div>
-      <Navbar className="navbar-expand-lg bg-body-tertiary">
+      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarToggler
             aria-controls="navbarTogglerDemo01"
@@ -588,7 +589,7 @@ export const Toggler: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="navbar-expand-lg bg-body-tertiary">
+      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
@@ -605,7 +606,7 @@ export const Toggler: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="navbar-expand-lg bg-body-tertiary">
+      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarToggler
             aria-controls="navbarTogglerDemo03"
@@ -659,12 +660,12 @@ export const ExternalContent: StoryFn = () => {
   return (
     <div>
       <Collapse brCollapse={collapse} id="navbarToggleExternalContent" brTheme="dark">
-        <BrElement brPadding={4} className="bg-dark">
+        <BrElement brPadding={4} brUtilsBackground="dark">
           <h5 className="text-body-emphasis h4">Collapsed content</h5>
           <span className="text-body-secondary">Toggleable via the navbar brand.</span>
         </BrElement>
       </Collapse>
-      <Navbar className="navbar-dark bg-dark">
+      <Navbar className="navbar-dark" brUtilsBackground="dark">
         <Container brContainerFluid>
           <NavbarToggler
             aria-controls="navbarToggleExternalContent"
@@ -686,7 +687,7 @@ export const OffcanvasStory: StoryFn = () => {
 
   return (
     <div className="bd-example">
-      <Navbar brNavbarPlacement="fixed-top" className="bg-body-tertiary">
+      <Navbar brNavbarPlacement="fixed-top" brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand href="#">Offcanvas navbar</NavbarBrand>
           <NavbarToggler

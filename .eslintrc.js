@@ -26,6 +26,12 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-var-requires': 'off'
       }
+    },
+    {
+      files: ['**/*.test.ts'],
+      rules: {
+        '@typescript-eslint/ban-ts-comment': 'off'
+      }
     }
   ]
 }

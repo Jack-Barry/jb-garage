@@ -145,21 +145,27 @@ export const Numbered: StoryFn = () => {
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
-          <Badge className="bg-primary rounded-pill">14</Badge>
+          <Badge className="rounded-pill" brUtilsBackground="primary">
+            14
+          </Badge>
         </ListGroupItem>
         <ListGroupItem brDisplay="flex" className="justify-content-between align-items-start">
           <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
-          <Badge className="bg-primary rounded-pill">14</Badge>
+          <Badge className="rounded-pill" brUtilsBackground="primary">
+            14
+          </Badge>
         </ListGroupItem>
         <ListGroupItem brDisplay="flex" className="justify-content-between align-items-start">
           <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
-          <Badge className="bg-primary rounded-pill">14</Badge>
+          <Badge className="rounded-pill" brUtilsBackground="primary">
+            14
+          </Badge>
         </ListGroupItem>
       </ListGroup>
     </div>
@@ -284,15 +290,21 @@ export const WithBadges: StoryFn = () => {
     <ListGroup>
       <ListGroupItem brDisplay="flex" className="justify-content-between align-items-center">
         A list item
-        <Badge className="bg-primary rounded-pill">14</Badge>
+        <Badge className="rounded-pill" brUtilsBackground="primary">
+          14
+        </Badge>
       </ListGroupItem>
       <ListGroupItem brDisplay="flex" className="justify-content-between align-items-center">
         A second list item
-        <Badge className="bg-primary rounded-pill">2</Badge>
+        <Badge className="rounded-pill" brUtilsBackground="primary">
+          2
+        </Badge>
       </ListGroupItem>
       <ListGroupItem brDisplay="flex" className="justify-content-between align-items-center">
         A third list item
-        <Badge className="bg-primary rounded-pill">1</Badge>
+        <Badge className="rounded-pill" brUtilsBackground="primary">
+          1
+        </Badge>
       </ListGroupItem>
     </ListGroup>
   )

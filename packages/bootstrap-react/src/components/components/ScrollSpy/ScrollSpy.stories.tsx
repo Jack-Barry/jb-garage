@@ -32,7 +32,8 @@ export const NavbarStory: StoryFn = () => {
         id="navbar-example2"
         brPadding={{ x: 3 }}
         brMargin={{ bottom: 3 }}
-        className="bg-body-tertiary rounded-2"
+        className="rounded-2"
+        brUtilsBackground="body-tertiary"
       >
         <NavbarBrand href="#">Navbar</NavbarBrand>
         <Nav className="nav-pills">
@@ -63,8 +64,10 @@ export const NavbarStory: StoryFn = () => {
           </NavItem>
         </Nav>
       </Navbar>
-      <div
-        className="scrollspy-example bg-body-tertiary p-3 rounded-2"
+      <BrElement
+        className="scrollspy-example rounded-2"
+        brPadding={3}
+        brUtilsBackground="body-tertiary"
         // data-bs-spy="scroll"
         // data-bs-target="#navbar-example2"
         // data-bs-root-margin="0px 0px -40%"
@@ -107,7 +110,7 @@ export const NavbarStory: StoryFn = () => {
           component example. We keep adding some more example copy here to emphasize the scrolling
           and highlighting.
         </p>
-      </div>
+      </BrElement>
     </div>
   )
 }

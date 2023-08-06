@@ -24,15 +24,14 @@ const Badge: BadgeWithRef = forwardRef(function Badge<T extends ElementType>(
   props: BadgeProps<T>,
   ref?: BadgeProps<T>['ref']
 ) {
-  const { as = 'span' as ElementType, children, className, ...rest } = props
+  const { as = 'span' as ElementType, children, className, brUtilsBackground, ...rest } = props
 
   return (
     <BrElement
       as={as}
       ref={ref}
-      className={classNames('badge', className, {
-        'bg-secondary': !className?.includes('bg-')
-      })}
+      brUtilsBackground={brUtilsBackground || className.includes('bg-') ? undefined : 'secondary'}
+      className={classNames('badge', className)}
       {...rest}
     >
       {children}
