@@ -50,7 +50,7 @@ export const ExamplesPositioned: StoryFn = () => {
         Inbox
         <Badge
           brPosition="absolute"
-          brBorder={{ rounded: 'pill' }}
+          brUtilsBorder={{ radius: 'pill' }}
           className="top-0 start-100 translate-middle"
           brUtilsBackground="danger"
         >
@@ -67,7 +67,7 @@ export const ExamplesPositioned: StoryFn = () => {
           as="span"
           brPosition="absolute"
           brPadding={2}
-          brBorder={{ color: 'light', rounded: 'circle' }}
+          brUtilsBorder={{ color: 'light', radius: 'circle' }}
           className="top-0 start-100 translate-middle rounded-circle"
           brUtilsBackground="danger"
         >
@@ -98,28 +98,28 @@ export const BackgroundColors: StoryFn = () => {
 export const PillBadges: StoryFn = () => {
   return (
     <BrElement brDisplay="flex" className="gap-1">
-      <Badge brBorder={{ rounded: 'pill' }} className="text-bg-primary">
+      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-primary">
         Primary
       </Badge>
-      <Badge brBorder={{ rounded: 'pill' }} className="text-bg-secondary">
+      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-secondary">
         Secondary
       </Badge>
-      <Badge brBorder={{ rounded: 'pill' }} className="text-bg-success">
+      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-success">
         Success
       </Badge>
-      <Badge brBorder={{ rounded: 'pill' }} className="text-bg-danger">
+      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-danger">
         Danger
       </Badge>
-      <Badge brBorder={{ rounded: 'pill' }} className="text-bg-warning">
+      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-warning">
         Warning
       </Badge>
-      <Badge brBorder={{ rounded: 'pill' }} className="text-bg-info">
+      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-info">
         Info
       </Badge>
-      <Badge brBorder={{ rounded: 'pill' }} className="text-bg-light">
+      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-light">
         Light
       </Badge>
-      <Badge brBorder={{ rounded: 'pill' }} className="text-bg-dark">
+      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-dark">
         Dark
       </Badge>
     </BrElement>

@@ -9,7 +9,7 @@ import {
   forwardRef
 } from 'react'
 import { BrFlexProp, brFlexClasses } from './bootstrapClasses/flexbox'
-import { BrBorderProp, brBorderClasses } from './bootstrapClasses/border'
+import { BrBorderProp, brUtilsBorderStyles } from './bootstrapClasses/utilities/borders'
 import { BrDisplayProp, brDisplayClasses } from './bootstrapClasses/display'
 import { BrSpacingProp, brSpacingClasses } from './bootstrapClasses/spacing'
 import {
@@ -79,8 +79,6 @@ export type BrElementCommonProps = {
   brPaddingXl?: BrSpacingProp
   /** Padding to apply to the element above the xxl breakpoint using Bootstrap classes */
   brPaddingXxl?: BrSpacingProp
-  /** Border to apply to the element using Bootstrap classes */
-  brBorder?: BrBorderProp
   /** Flex styles to apply to the element using Bootstrap classes */
   brFlex?: BrFlexProp
   /** Flex styles to apply to the element above the sm breakpoint using Bootstrap classes */
@@ -98,11 +96,17 @@ export type BrElementCommonProps = {
   /** Apply float clearfix to element */
   brClearfix?: boolean
   /**
-   * Apply background styles to the element
+   * Apply background styles to the element using Bootstrap classes
    *
    * [Bootstrap Utilities: Background](https://getbootstrap.com/docs/5.3/utilities/background/)
    */
   brUtilsBackground?: BrUtilsBackgroundOptions
+  /**
+   * Border to apply to the element using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Borders](https://getbootstrap.com/docs/5.3/utilities/borders/)
+   */
+  brUtilsBorder?: BrBorderProp
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -179,7 +183,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brPaddingLg,
     brPaddingXl,
     brPaddingXxl,
-    brBorder,
     brFlex,
     brFlexSm,
     brFlexMd,
@@ -189,14 +192,19 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brTheme,
     brClearfix,
     brUtilsBackground,
+    brUtilsBorder,
     ...rest
   } = props
 
-  const brStyles = buildBrStyles([brUtilsBackgroundStyles(brUtilsBackground)])
+  const brStyles = buildBrStyles([
+    brUtilsBackgroundStyles(brUtilsBackground),
+    brUtilsBorderStyles(brUtilsBorder)
+  ])
 
   return (
     <Component
       ref={ref}
+      data-bs-theme={brTheme}
       className={classNames(className, {
         [`position-${brPosition}`]: !!brPosition,
         ...brDisplayClasses({
@@ -227,7 +235,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'lg-' }, brPaddingLg),
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xl-' }, brPaddingXl),
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xxl-' }, brPaddingXxl),
-        ...brBorderClasses(brBorder),
         ...brFlexClasses({
           brFlex,
           brFlexSm,
@@ -237,10 +244,9 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
           brFlexXxl
         }),
         clearfix: brClearfix,
-        ...brStyles.className
+        ...brStyles.classes
       })}
-      data-bs-theme={brTheme}
-      style={{ ...brStyles.style, ...style }}
+      style={{ ...brStyles.inlineStyles, ...style }}
       {...rest}
     >
       {children}

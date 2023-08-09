@@ -128,7 +128,7 @@ export const NestedNav: StoryFn = () => {
             className="h-100"
             brFlex={{ column: true, alignItems: 'stretch' }}
             brPadding={{ end: 4 }}
-            brBorder={{ end: true }}
+            brUtilsBorder={{ end: true }}
           >
             <Nav brNavPills brFlex={{ column: true }}>
               <NavLink href="#item-1">Item 1</NavLink>

@@ -1,20 +1,9 @@
-import { CSSProperties } from 'react'
-
 import { LiteralUnion } from '../../../../types'
 import { logger } from '../../logger'
 import { BrStyles } from '../brStyles'
 import { DEV_WARNING_PREFIX } from '@jb-garage/bootstrap-react/constants'
-
-/** Default Bootstrap theme colors */
-type BootstrapThemeColor =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'danger'
-  | 'light'
-  | 'dark'
+import { getOpacityStyles } from './helpers'
+import { BootstrapOpacity, BootstrapThemeColor } from './types'
 
 /** Default Bootstrap background colors */
 type BootstrapBackgroundColor =
@@ -43,14 +32,11 @@ type BackgroundColor = LiteralUnion<
   string
 >
 
-/** Value that can be used to set background opacity */
-type BootstrapBackgroundOpacity = LiteralUnion<'10' | '25' | '50' | '75' | '100', number | string>
-
 /** Config that can be used for more control over background attributes */
 export type BackgroundColorConfig = {
   color: BackgroundColor
   gradient?: boolean
-  opacity?: BootstrapBackgroundOpacity
+  opacity?: LiteralUnion<BootstrapOpacity, number | string>
 }
 
 /** Options to use for applying Bootstrap background styles */
@@ -63,7 +49,7 @@ export function brUtilsBackgroundStyles(background?: BrUtilsBackgroundOptions): 
   }
 
   if (typeof background === 'string') {
-    return { className: `bg-${background}` }
+    return { classes: { [`bg-${background}`]: true } }
   }
 
   const { color, opacity, gradient } = background
@@ -73,34 +59,28 @@ export function brUtilsBackgroundStyles(background?: BrUtilsBackgroundOptions): 
   }
 
   if (opacity === undefined && gradient === undefined) {
-    return { className: `bg-${color}` }
+    return { classes: { [`bg-${color}`]: true } }
   }
 
-  const className: BrStyles['className'] = { [`bg-${color}`]: true }
+  const classes: BrStyles['classes'] = { [`bg-${color}`]: true }
+  const styles: BrStyles = { classes }
+
   if (typeof gradient === 'boolean') {
-    className['bg-gradient'] = gradient
+    classes['bg-gradient'] = gradient
   }
 
-  const styles: BrStyles = { className }
-  let opacityAsNumber: number | undefined
-
-  if (typeof opacity === 'number') {
-    opacityAsNumber = opacity
-  } else if (typeof opacity === 'string') {
-    const opacityIsPercentage = opacity.endsWith('%')
-    opacityAsNumber = opacityIsPercentage
-      ? parseFloat(opacity.replace('%', '')) / 100
-      : parseFloat(opacity)
+  const opacityStyles = getOpacityStyles(
+    {
+      cssVariableKey: '--bs-bg-opacity',
+      classNamePrefix: 'bg-opacity'
+    },
+    opacity
+  )
+  if (opacityStyles.classes) {
+    styles.classes = { ...styles.classes, ...opacityStyles.classes }
   }
-
-  if (opacityAsNumber !== undefined) {
-    if (opacityAsNumber < 1) {
-      styles.style = { '--bs-bg-opacity': opacityAsNumber } as CSSProperties
-    } else if (opacityAsNumber === 1) {
-      className['bg-opacity-100'] = true
-    } else {
-      className[`bg-opacity-${opacityAsNumber}`] = true
-    }
+  if (opacityStyles.inlineStyles) {
+    styles.inlineStyles = opacityStyles.inlineStyles
   }
 
   return styles

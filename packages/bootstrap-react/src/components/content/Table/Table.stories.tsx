@@ -232,7 +232,7 @@ export const BorderedTables: StoryFn = () => {
         <TableExampleContent />
       </Table>
       <hr />
-      <Table brTableBordered className="border-primary">
+      <Table brTableBordered brUtilsBorder={{ color: 'primary' }}>
         <TableExampleContent />
       </Table>
     </div>

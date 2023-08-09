@@ -548,7 +548,11 @@ function BackgroundAndColorExample(props: { variant: string }) {
 export const CardStylesBorder: StoryFn = () => {
   return (
     <div>
-      <Card brMargin={{ bottom: 3 }} brBorder={{ color: 'primary' }} style={{ maxWidth: '18rem' }}>
+      <Card
+        brMargin={{ bottom: 3 }}
+        brUtilsBorder={{ color: 'primary' }}
+        style={{ maxWidth: '18rem' }}
+      >
         <CardHeader>Header</CardHeader>
         <CardBody className="text-primary">
           <CardTitle>Primary card title</CardTitle>
@@ -573,7 +577,7 @@ function BorderExample(props: { variant: string; cardBodyClass?: string }) {
   const { variant, cardBodyClass } = props
 
   return (
-    <Card brMargin={{ bottom: 3 }} brBorder={{ color: variant }} style={{ maxWidth: '18rem' }}>
+    <Card brMargin={{ bottom: 3 }} brUtilsBorder={{ color: variant }} style={{ maxWidth: '18rem' }}>
       <CardHeader>Header</CardHeader>
       <CardBody className={cardBodyClass}>
         <CardTitle>
@@ -592,8 +596,12 @@ function BorderExample(props: { variant: string; cardBodyClass?: string }) {
 export const CardStylesMixinsUtilities: StoryFn = () => {
   return (
     <div>
-      <Card brMargin={{ bottom: 3 }} brBorder={{ color: 'success' }} style={{ maxWidth: '18rem' }}>
-        <CardHeader brBorder={{ color: 'success' }} brUtilsBackground="transparent">
+      <Card
+        brMargin={{ bottom: 3 }}
+        brUtilsBorder={{ color: 'success' }}
+        style={{ maxWidth: '18rem' }}
+      >
+        <CardHeader brUtilsBorder={{ color: 'success' }} brUtilsBackground="transparent">
           Header
         </CardHeader>
         <CardBody className="text-success">
@@ -603,7 +611,7 @@ export const CardStylesMixinsUtilities: StoryFn = () => {
             content.
           </CardText>
         </CardBody>
-        <CardFooter brBorder={{ color: 'success' }} brUtilsBackground="transparent">
+        <CardFooter brUtilsBorder={{ color: 'success' }} brUtilsBackground="transparent">
           Footer
         </CardFooter>
       </Card>

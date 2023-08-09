@@ -18,11 +18,11 @@ export default meta
 export const Additive: StoryFn = () => {
   return (
     <div className="bd-example-border-utils">
-      <BrElement brBorder />
-      <BrElement brBorder={{ top: true }} />
-      <BrElement brBorder={{ end: true }} />
-      <BrElement brBorder={{ bottom: true }} />
-      <BrElement brBorder={{ start: true }} />
+      <BrElement brUtilsBorder />
+      <BrElement brUtilsBorder={{ top: true }} />
+      <BrElement brUtilsBorder={{ end: true }} />
+      <BrElement brUtilsBorder={{ bottom: true }} />
+      <BrElement brUtilsBorder={{ start: true }} />
     </div>
   )
 }
@@ -30,11 +30,11 @@ export const Additive: StoryFn = () => {
 export const Subtractive: StoryFn = () => {
   return (
     <div className="bd-example-border-utils">
-      <BrElement brBorder={false} />
-      <BrElement brBorder={{ top: false }} />
-      <BrElement brBorder={{ end: false }} />
-      <BrElement brBorder={{ bottom: false }} />
-      <BrElement brBorder={{ start: false }} />
+      <BrElement brUtilsBorder={false} />
+      <BrElement brUtilsBorder={{ top: false }} />
+      <BrElement brUtilsBorder={{ end: false }} />
+      <BrElement brUtilsBorder={{ bottom: false }} />
+      <BrElement brUtilsBorder={{ start: false }} />
     </div>
   )
 }
@@ -42,30 +42,30 @@ export const Subtractive: StoryFn = () => {
 export const Color: StoryFn = () => {
   return (
     <div className="bd-example-border-utils">
-      <BrElement brBorder={{ color: 'primary' }} />
-      <BrElement brBorder={{ color: 'primary-subtle' }} />
-      <BrElement brBorder={{ color: 'secondary' }} />
-      <BrElement brBorder={{ color: 'secondary-subtle' }} />
-      <BrElement brBorder={{ color: 'success' }} />
-      <BrElement brBorder={{ color: 'success-subtle' }} />
-      <BrElement brBorder={{ color: 'danger' }} />
-      <BrElement brBorder={{ color: 'danger-subtle' }} />
-      <BrElement brBorder={{ color: 'warning' }} />
-      <BrElement brBorder={{ color: 'warning-subtle' }} />
-      <BrElement brBorder={{ color: 'info' }} />
-      <BrElement brBorder={{ color: 'info-subtle' }} />
-      <BrElement brBorder={{ color: 'light' }} />
-      <BrElement brBorder={{ color: 'light-subtle' }} />
-      <BrElement brBorder={{ color: 'dark' }} />
-      <BrElement brBorder={{ color: 'dark-subtle' }} />
-      <BrElement brBorder={{ color: 'black' }} />
-      <BrElement brBorder={{ color: 'white' }} />
+      <BrElement brUtilsBorder={{ color: 'primary' }} />
+      <BrElement brUtilsBorder={{ color: 'primary-subtle' }} />
+      <BrElement brUtilsBorder={{ color: 'secondary' }} />
+      <BrElement brUtilsBorder={{ color: 'secondary-subtle' }} />
+      <BrElement brUtilsBorder={{ color: 'success' }} />
+      <BrElement brUtilsBorder={{ color: 'success-subtle' }} />
+      <BrElement brUtilsBorder={{ color: 'danger' }} />
+      <BrElement brUtilsBorder={{ color: 'danger-subtle' }} />
+      <BrElement brUtilsBorder={{ color: 'warning' }} />
+      <BrElement brUtilsBorder={{ color: 'warning-subtle' }} />
+      <BrElement brUtilsBorder={{ color: 'info' }} />
+      <BrElement brUtilsBorder={{ color: 'info-subtle' }} />
+      <BrElement brUtilsBorder={{ color: 'light' }} />
+      <BrElement brUtilsBorder={{ color: 'light-subtle' }} />
+      <BrElement brUtilsBorder={{ color: 'dark' }} />
+      <BrElement brUtilsBorder={{ color: 'dark-subtle' }} />
+      <BrElement brUtilsBorder={{ color: 'black' }} />
+      <BrElement brUtilsBorder={{ color: 'white' }} />
       <hr />
       <BrElement brMargin={{ bottom: 4 }}>
         <Label htmlFor="exampleFormControlInput1">Email address</Label>
         <Input
           type="email"
-          brBorder={{ color: 'success' }}
+          brUtilsBorder={{ color: 'success' }}
           id="exampleFormControlInput1"
           placeholder="name@example.com"
         />
@@ -74,7 +74,7 @@ export const Color: StoryFn = () => {
       <BrElement
         brPadding={{ bottom: 2 }}
         brMargin={{ bottom: 4 }}
-        brBorder={{ bottom: true, color: 'danger' }}
+        brUtilsBorder={{ bottom: true, color: 'danger' }}
         className="h4 text-danger"
       >
         Dangerous heading
@@ -82,7 +82,7 @@ export const Color: StoryFn = () => {
 
       <BrElement
         brPadding={3}
-        brBorder={{ color: 'info', start: false, end: { rounded: true } }}
+        brUtilsBorder={{ color: 'info', start: false, end: { radius: true } }}
         brUtilsBackground={{ color: 'info', opacity: '10' }}
       >
         Changing border color and width
@@ -94,42 +94,42 @@ export const Color: StoryFn = () => {
 export const Opacity: StoryFn = () => {
   return (
     <div className="bd-example">
-      <BrElement brBorder={{ color: 'success' }} brPadding={2} brMargin={{ bottom: 2 }}>
+      <BrElement brUtilsBorder={{ color: 'success' }} brPadding={2} brMargin={{ bottom: 2 }}>
         This is default success border
       </BrElement>
       <BrElement
-        brBorder={{ color: 'success' }}
+        brUtilsBorder={{ color: 'success' }}
         brPadding={2}
         style={{ '--bs-border-opacity': '0.5' } as CSSProperties}
       >
         This is 50% opacity success border
       </BrElement>
       <hr />
-      <BrElement brBorder={{ color: 'success' }} brPadding={2} brMargin={{ bottom: 2 }}>
+      <BrElement brUtilsBorder={{ color: 'success' }} brPadding={2} brMargin={{ bottom: 2 }}>
         This is default success border
       </BrElement>
       <BrElement
-        brBorder={{ color: 'success', opacity: 75 }}
+        brUtilsBorder={{ color: 'success', opacity: '75' }}
         brPadding={2}
         brMargin={{ bottom: 2 }}
       >
         This is 75% opacity success border
       </BrElement>
       <BrElement
-        brBorder={{ color: 'success', opacity: 50 }}
+        brUtilsBorder={{ color: 'success', opacity: '50' }}
         brPadding={2}
         brMargin={{ bottom: 2 }}
       >
         This is 50% opacity success border
       </BrElement>
       <BrElement
-        brBorder={{ color: 'success', opacity: 25 }}
+        brUtilsBorder={{ color: 'success', opacity: '25' }}
         brPadding={2}
         brMargin={{ bottom: 2 }}
       >
         This is 25% opacity success border
       </BrElement>
-      <BrElement brBorder={{ color: 'success', opacity: 10 }} brPadding={2}>
+      <BrElement brUtilsBorder={{ color: 'success', opacity: '10' }} brPadding={2}>
         This is 10% opacity success border
       </BrElement>
     </div>
@@ -139,11 +139,11 @@ export const Opacity: StoryFn = () => {
 export const Width: StoryFn = () => {
   return (
     <div className="bd-example-border-utils">
-      <BrElement brBorder={{ width: 1 }} />
-      <BrElement brBorder={{ width: 2 }} />
-      <BrElement brBorder={{ width: 3 }} />
-      <BrElement brBorder={{ width: 4 }} />
-      <BrElement brBorder={{ width: 5 }} />
+      <BrElement brUtilsBorder={{ width: '1' }} />
+      <BrElement brUtilsBorder={{ width: '2' }} />
+      <BrElement brUtilsBorder={{ width: '3' }} />
+      <BrElement brUtilsBorder={{ width: '4' }} />
+      <BrElement brUtilsBorder={{ width: '5' }} />
     </div>
   )
 }
@@ -151,13 +151,13 @@ export const Width: StoryFn = () => {
 export const Radius: StoryFn = () => {
   return (
     <div className="bd-example-rounded-utils">
-      <RadiusExample brBorder={{ rounded: true }} />
-      <RadiusExample brBorder={{ top: { rounded: true } }} />
-      <RadiusExample brBorder={{ end: { rounded: true } }} />
-      <RadiusExample brBorder={{ bottom: { rounded: true } }} />
-      <RadiusExample brBorder={{ start: { rounded: true } }} />
-      <RadiusExample brBorder={{ rounded: 'circle' }} />
-      <RadiusExample brBorder={{ rounded: 'pill' }} width={150} />
+      <RadiusExample brUtilsBorder={{ radius: true }} />
+      <RadiusExample brUtilsBorder={{ top: { radius: true } }} />
+      <RadiusExample brUtilsBorder={{ end: { radius: true } }} />
+      <RadiusExample brUtilsBorder={{ bottom: { radius: true } }} />
+      <RadiusExample brUtilsBorder={{ start: { radius: true } }} />
+      <RadiusExample brUtilsBorder={{ radius: 'circle' }} />
+      <RadiusExample brUtilsBorder={{ radius: 'pill' }} width={150} />
     </div>
   )
 }
@@ -165,29 +165,29 @@ export const Radius: StoryFn = () => {
 export const RadiusSizes: StoryFn = () => {
   return (
     <div className="bd-example-rounded-utils">
-      <RadiusExample brBorder={{ rounded: 0 }} />
-      <RadiusExample brBorder={{ rounded: 1 }} />
-      <RadiusExample brBorder={{ rounded: 2 }} />
-      <RadiusExample brBorder={{ rounded: 3 }} />
-      <RadiusExample brBorder={{ rounded: 4 }} />
-      <RadiusExample brBorder={{ rounded: 5 }} />
+      <RadiusExample brUtilsBorder={{ radius: 0 }} />
+      <RadiusExample brUtilsBorder={{ radius: 1 }} />
+      <RadiusExample brUtilsBorder={{ radius: 2 }} />
+      <RadiusExample brUtilsBorder={{ radius: 3 }} />
+      <RadiusExample brUtilsBorder={{ radius: 4 }} />
+      <RadiusExample brUtilsBorder={{ radius: 5 }} />
       <hr />
-      <RadiusExample brBorder={{ bottom: { rounded: 1 } }} />
-      <RadiusExample brBorder={{ start: { rounded: 2 } }} />
-      <RadiusExample brBorder={{ end: { rounded: 'circle' } }} />
-      <RadiusExample brBorder={{ start: { rounded: 'pill' } }} />
-      <RadiusExample brBorder={{ rounded: 5, top: { rounded: 0 } }} />
+      <RadiusExample brUtilsBorder={{ bottom: { radius: 1 } }} />
+      <RadiusExample brUtilsBorder={{ start: { radius: 2 } }} />
+      <RadiusExample brUtilsBorder={{ end: { radius: 'circle' } }} />
+      <RadiusExample brUtilsBorder={{ start: { radius: 'pill' } }} />
+      <RadiusExample brUtilsBorder={{ radius: 5, top: { radius: 0 } }} />
     </div>
   )
 }
 
 function RadiusExample(
-  props: { width?: number; height?: number } & Pick<BrElementProps<'svg'>, 'brBorder'>
+  props: { width?: number; height?: number } & Pick<BrElementProps<'svg'>, 'brUtilsBorder'>
 ) {
-  const { width = 75, height = 75, brBorder } = props
+  const { width = 75, height = 75, brUtilsBorder: brBorder } = props
 
   return (
-    <Image brBorder={brBorder} {...placeholderImgSvgProps({ width, height })}>
+    <Image brUtilsBorder={brBorder} {...placeholderImgSvgProps({ width, height })}>
       <PlaceholderImgSvgChildren text={`${width}x${height}`} />
     </Image>
   )

@@ -166,7 +166,7 @@ export const CustomContent: StoryFn = () => {
             brFlex={{ gap: 1 }}
             brMargin={{ top: 2 }}
             brPadding={{ top: 2 }}
-            brBorder={{ top: true }}
+            brUtilsBorder={{ top: true }}
           >
             <Button brButtonColor="primary" brButtonSm>
               Take action
@@ -187,7 +187,7 @@ export const ColorSchemes: StoryFn = () => {
   return (
     <Toast
       className="align-items-center text-bg-primary"
-      brBorder={false}
+      brUtilsBorder={false}
       aria-live="assertive"
       aria-atomic="true"
       ref={toast.ref}

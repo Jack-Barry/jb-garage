@@ -361,10 +361,10 @@ export const ColorSchemes: StoryFn = () => {
   return (
     <div>
       <Navbar
-        brBorder={{ bottom: true }}
-        className="navbar-expand-lg border-body"
+        className="navbar-expand-lg"
         brTheme="dark"
         brUtilsBackground="dark"
+        brUtilsBorder={{ bottom: true, color: 'body' }}
       >
         <ColorSchemeExampleContent />
       </Navbar>
