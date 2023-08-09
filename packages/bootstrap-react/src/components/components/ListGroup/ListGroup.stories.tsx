@@ -331,24 +331,24 @@ export const CustomContent: StoryFn = () => {
           <BrElement as="h5" brMargin={{ bottom: 1 }}>
             List group item heading
           </BrElement>
-          <small className="text-body-secondary">3 days ago</small>
+          <BrElement brUtilsColor="body-secondary">3 days ago</BrElement>
         </BrElement>
         <BrElement as="p" brMargin={{ bottom: 1 }}>
           Some placeholder content in a paragraph.
         </BrElement>
-        <small className="text-body-secondary">And some muted small print.</small>
+        <BrElement brUtilsColor="body-secondary">And some muted small print.</BrElement>
       </ListGroupItem>
       <ListGroupItem as="a" href="#" className="list-group-item-action">
         <BrElement brDisplay="flex" className="w-100 justify-content-between">
           <BrElement as="h5" brMargin={{ bottom: 1 }}>
             List group item heading
           </BrElement>
-          <small className="text-body-secondary">3 days ago</small>
+          <BrElement brUtilsColor="body-secondary">3 days ago</BrElement>
         </BrElement>
         <BrElement as="p" brMargin={{ bottom: 1 }}>
           Some placeholder content in a paragraph.
         </BrElement>
-        <small className="text-body-secondary">And some muted small print.</small>
+        <BrElement brUtilsColor="body-secondary">And some muted small print.</BrElement>
       </ListGroupItem>
     </ListGroup>
   )

@@ -27,20 +27,20 @@ type BootstrapBackgroundColorSubtle =
   | 'dark-subtle'
 
 /** Value that can be used to set background color */
-type BackgroundColor = LiteralUnion<
+type BrBackgroundColor = LiteralUnion<
   BootstrapBackgroundColor | BootstrapBackgroundColorSubtle,
   string
 >
 
 /** Config that can be used for more control over background attributes */
-export type BackgroundColorConfig = {
-  color: BackgroundColor
+export type BrBackgroundColorConfig = {
+  color: BrBackgroundColor
   gradient?: boolean
   opacity?: LiteralUnion<BootstrapOpacity, number | string>
 }
 
 /** Options to use for applying Bootstrap background styles */
-export type BrUtilsBackgroundOptions = BackgroundColor | BackgroundColorConfig
+export type BrUtilsBackgroundOptions = BrBackgroundColor | BrBackgroundColorConfig
 
 /** Returns styles that can be used for Bootstrap background color utilities */
 export function brUtilsBackgroundStyles(background?: BrUtilsBackgroundOptions): BrStyles {

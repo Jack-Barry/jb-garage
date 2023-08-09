@@ -49,7 +49,8 @@ export const Labels: StoryFn = () => {
         aria-label="Example with label"
         brProgressValue={10}
         brProgressBarProps={{
-          className: 'overflow-visible text-dark'
+          brUtilsColor: 'dark',
+          className: 'overflow-visible'
         }}
       >
         Long label text for the progress bar, set to a dark color
@@ -92,14 +93,14 @@ export const Backgrounds: StoryFn = () => {
       <Progress
         aria-label="Info example"
         brProgressValue={50}
-        brProgressBarProps={{ className: 'text-dark', brUtilsBackground: 'info' }}
+        brProgressBarProps={{ brUtilsColor: 'dark', brUtilsBackground: 'info' }}
       >
         50%
       </Progress>
       <Progress
         aria-label="Warning example"
         brProgressValue={75}
-        brProgressBarProps={{ className: 'text-dark', brUtilsBackground: 'warning' }}
+        brProgressBarProps={{ brUtilsColor: 'dark', brUtilsBackground: 'warning' }}
       >
         75%
       </Progress>
@@ -114,7 +115,7 @@ export const Backgrounds: StoryFn = () => {
       <Progress
         aria-label="Warning example"
         brProgressValue={75}
-        brProgressBarProps={{ className: 'text-bg-warning' }}
+        brProgressBarProps={{ brUtilsColor: 'bg-warning' }}
       >
         75%
       </Progress>

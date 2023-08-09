@@ -38,7 +38,7 @@ export const ExamplesHeadings: StoryFn = () => {
 export const ExamplesButtons: StoryFn = () => {
   return (
     <Button brButtonColor="primary">
-      Notifications <Badge className="text-bg-secondary">4</Badge>
+      Notifications <Badge brUtilsColor="bg-secondary">4</Badge>
     </Button>
   )
 }
@@ -83,14 +83,14 @@ export const ExamplesPositioned: StoryFn = () => {
 export const BackgroundColors: StoryFn = () => {
   return (
     <BrElement brDisplay="flex" className="gap-1">
-      <Badge className="text-bg-primary">Primary</Badge>
-      <Badge className="text-bg-secondary">Secondary</Badge>
-      <Badge className="text-bg-success">Success</Badge>
-      <Badge className="text-bg-danger">Danger</Badge>
-      <Badge className="text-bg-warning">Warning</Badge>
-      <Badge className="text-bg-info">Info</Badge>
-      <Badge className="text-bg-light">Light</Badge>
-      <Badge className="text-bg-dark">Dark</Badge>
+      <Badge brUtilsColor="bg-primary">Primary</Badge>
+      <Badge brUtilsColor="bg-secondary">Secondary</Badge>
+      <Badge brUtilsColor="bg-success">Success</Badge>
+      <Badge brUtilsColor="bg-danger">Danger</Badge>
+      <Badge brUtilsColor="bg-warning">Warning</Badge>
+      <Badge brUtilsColor="bg-info">Info</Badge>
+      <Badge brUtilsColor="bg-light">Light</Badge>
+      <Badge brUtilsColor="bg-dark">Dark</Badge>
     </BrElement>
   )
 }
@@ -98,28 +98,28 @@ export const BackgroundColors: StoryFn = () => {
 export const PillBadges: StoryFn = () => {
   return (
     <BrElement brDisplay="flex" className="gap-1">
-      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-primary">
+      <Badge brUtilsBorder={{ radius: 'pill' }} brUtilsColor="bg-primary">
         Primary
       </Badge>
-      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-secondary">
+      <Badge brUtilsBorder={{ radius: 'pill' }} brUtilsColor="bg-secondary">
         Secondary
       </Badge>
-      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-success">
+      <Badge brUtilsBorder={{ radius: 'pill' }} brUtilsColor="bg-success">
         Success
       </Badge>
-      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-danger">
+      <Badge brUtilsBorder={{ radius: 'pill' }} brUtilsColor="bg-danger">
         Danger
       </Badge>
-      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-warning">
+      <Badge brUtilsBorder={{ radius: 'pill' }} brUtilsColor="bg-warning">
         Warning
       </Badge>
-      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-info">
+      <Badge brUtilsBorder={{ radius: 'pill' }} brUtilsColor="bg-info">
         Info
       </Badge>
-      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-light">
+      <Badge brUtilsBorder={{ radius: 'pill' }} brUtilsColor="bg-light">
         Light
       </Badge>
-      <Badge brUtilsBorder={{ radius: 'pill' }} className="text-bg-dark">
+      <Badge brUtilsBorder={{ radius: 'pill' }} brUtilsColor="bg-dark">
         Dark
       </Badge>
     </BrElement>

@@ -17,6 +17,7 @@ import {
   brUtilsBackgroundStyles
 } from './bootstrapClasses/utilities/background'
 import { buildBrStyles } from './bootstrapClasses/brStyles'
+import { BrUtilsColorOptions, brUtilsColorStyles } from './bootstrapClasses/utilities/colors'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BrBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | string
@@ -107,6 +108,12 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Borders](https://getbootstrap.com/docs/5.3/utilities/borders/)
    */
   brUtilsBorder?: BrBorderProp
+  /**
+   * Color to apply to the element text using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Colors](https://getbootstrap.com/docs/5.3/utilities/colors/)
+   */
+  brUtilsColor?: BrUtilsColorOptions
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -193,12 +200,14 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brClearfix,
     brUtilsBackground,
     brUtilsBorder,
+    brUtilsColor,
     ...rest
   } = props
 
   const brStyles = buildBrStyles([
     brUtilsBackgroundStyles(brUtilsBackground),
-    brUtilsBorderStyles(brUtilsBorder)
+    brUtilsBorderStyles(brUtilsBorder),
+    brUtilsColorStyles(brUtilsColor)
   ])
 
   return (

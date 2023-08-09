@@ -107,7 +107,9 @@ export const Stacking: StoryFn = () => {
           <BrElement as="strong" brMargin={{ end: 'auto' }}>
             Bootstrap
           </BrElement>
-          <small className="text-body-secondary">just now</small>
+          <BrElement as="small" brUtilsColor="body-secondary">
+            just now
+          </BrElement>
           <CloseButton onClick={toast1.hide} />
         </ToastHeader>
         <ToastBody>See? Just like this.</ToastBody>
@@ -131,7 +133,9 @@ export const Stacking: StoryFn = () => {
           <BrElement as="strong" brMargin={{ end: 'auto' }}>
             Bootstrap
           </BrElement>
-          <small className="text-body-secondary">2 seconds ago</small>
+          <BrElement as="small" brUtilsColor="body-secondary">
+            2 seconds ago
+          </BrElement>
           <CloseButton onClick={toast2.hide} />
         </ToastHeader>
         <ToastBody>Heads up, toasts will stack automatically</ToastBody>
@@ -186,7 +190,8 @@ export const ColorSchemes: StoryFn = () => {
 
   return (
     <Toast
-      className="align-items-center text-bg-primary"
+      className="align-items-center"
+      brUtilsColor="bg-primary"
       brUtilsBorder={false}
       aria-live="assertive"
       aria-atomic="true"

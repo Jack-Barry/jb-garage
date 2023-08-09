@@ -74,7 +74,7 @@ export const TitlesTextAndLinks: StoryFn = () => {
     <Card style={{ width: '18rem' }}>
       <CardBody>
         <CardTitle>Card title</CardTitle>
-        <CardSubTitle brMargin={{ bottom: 2 }} className="text-body-secondary">
+        <CardSubTitle brMargin={{ bottom: 2 }} brUtilsColor="body-secondary">
           Card subtitle
         </CardSubTitle>
         <CardText>
@@ -219,7 +219,9 @@ export const HeaderAndFooter: StoryFn = () => {
             Go somewhere
           </Button>
         </CardBody>
-        <CardFooter className="text-body-secondary">2 days ago</CardFooter>
+        <BrElement as="small" brUtilsColor="body-secondary">
+          2 days ago
+        </BrElement>
       </Card>
     </div>
   )
@@ -422,7 +424,9 @@ export const ImagesImageCaps: StoryFn = () => {
             content. This content is a little bit longer.
           </CardText>
           <CardText>
-            <small className="text-body-secondary">Last updated 3 mins ago</small>
+            <BrElement as="small" brUtilsColor="body-secondary">
+              Last updated 3 mins ago
+            </BrElement>
           </CardText>
         </CardBody>
       </Card>
@@ -434,7 +438,9 @@ export const ImagesImageCaps: StoryFn = () => {
             content. This content is a little bit longer.
           </CardText>
           <CardText>
-            <small className="text-body-secondary">Last updated 3 mins ago</small>
+            <BrElement as="small" brUtilsColor="body-secondary">
+              Last updated 3 mins ago
+            </BrElement>
           </CardText>
         </CardBody>
         <CardImage
@@ -450,7 +456,7 @@ export const ImagesImageCaps: StoryFn = () => {
 
 export const ImagesImageOverlays: StoryFn = () => {
   return (
-    <Card className="text-bg-dark">
+    <Card brUtilsColor="bg-dark">
       <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })}>
         <PlaceholderImgSvgChildren text="Card image" />
       </CardImage>
@@ -492,7 +498,9 @@ export const Horizontal: StoryFn = () => {
               content. This content is a little bit longer.
             </CardText>
             <CardText>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <BrElement as="small" brUtilsColor="body-secondary">
+                Last updated 3 mins ago
+              </BrElement>
             </CardText>
           </CardBody>
         </Col>
@@ -504,7 +512,7 @@ export const Horizontal: StoryFn = () => {
 export const CardStylesBackgroundAndColor: StoryFn = () => {
   return (
     <div>
-      <Card brMargin={{ bottom: 3 }} className="text-bg-primary" style={{ maxWidth: '18rem' }}>
+      <Card brMargin={{ bottom: 3 }} brUtilsColor="bg-primary" style={{ maxWidth: '18rem' }}>
         <CardHeader>Header</CardHeader>
         <CardBody>
           <CardTitle>Primary card title</CardTitle>
@@ -529,7 +537,7 @@ function BackgroundAndColorExample(props: { variant: string }) {
   const { variant } = props
 
   return (
-    <Card brMargin={{ bottom: 3 }} className={`text-bg-${variant}`} style={{ maxWidth: '18rem' }}>
+    <Card brMargin={{ bottom: 3 }} brUtilsColor={`bg-${variant}`} style={{ maxWidth: '18rem' }}>
       <CardHeader>Header</CardHeader>
       <CardBody>
         <CardTitle>
@@ -554,7 +562,7 @@ export const CardStylesBorder: StoryFn = () => {
         style={{ maxWidth: '18rem' }}
       >
         <CardHeader>Header</CardHeader>
-        <CardBody className="text-primary">
+        <CardBody brUtilsColor="primary">
           <CardTitle>Primary card title</CardTitle>
           <CardText>
             Some quick example text to build on the card title and make up the bulk of the card's
@@ -562,9 +570,9 @@ export const CardStylesBorder: StoryFn = () => {
           </CardText>
         </CardBody>
       </Card>
-      <BorderExample variant="secondary" cardBodyClass="text-secondary" />
-      <BorderExample variant="success" cardBodyClass="text-success" />
-      <BorderExample variant="danger" cardBodyClass="text-danger" />
+      <BorderExample variant="secondary" brUtilsColor="secondary" />
+      <BorderExample variant="success" brUtilsColor="success" />
+      <BorderExample variant="danger" brUtilsColor="danger" />
       <BorderExample variant="warning" />
       <BorderExample variant="info" />
       <BorderExample variant="light" />
@@ -573,13 +581,13 @@ export const CardStylesBorder: StoryFn = () => {
   )
 }
 
-function BorderExample(props: { variant: string; cardBodyClass?: string }) {
-  const { variant, cardBodyClass } = props
+function BorderExample(props: { variant: string; brUtilsColor?: string }) {
+  const { variant, brUtilsColor } = props
 
   return (
     <Card brMargin={{ bottom: 3 }} brUtilsBorder={{ color: variant }} style={{ maxWidth: '18rem' }}>
       <CardHeader>Header</CardHeader>
-      <CardBody className={cardBodyClass}>
+      <CardBody brUtilsColor={brUtilsColor}>
         <CardTitle>
           {variant[0].toUpperCase()}
           {variant.slice(1)} card title
@@ -604,7 +612,7 @@ export const CardStylesMixinsUtilities: StoryFn = () => {
         <CardHeader brUtilsBorder={{ color: 'success' }} brUtilsBackground="transparent">
           Header
         </CardHeader>
-        <CardBody className="text-success">
+        <CardBody brUtilsColor="success">
           <CardTitle>Success card title</CardTitle>
           <CardText>
             Some quick example text to build on the card title and make up the bulk of the card's
@@ -637,7 +645,9 @@ export const CardLayoutCardGroups: StoryFn = () => {
               content. This content is a little bit longer.
             </CardText>
             <CardText>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <BrElement as="small" brUtilsColor="body-secondary">
+                Last updated 3 mins ago
+              </BrElement>
             </CardText>
           </CardBody>
         </Card>
@@ -655,7 +665,9 @@ export const CardLayoutCardGroups: StoryFn = () => {
               content.
             </CardText>
             <CardText>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <BrElement as="small" brUtilsColor="body-secondary">
+                Last updated 3 mins ago
+              </BrElement>
             </CardText>
           </CardBody>
         </Card>
@@ -673,7 +685,9 @@ export const CardLayoutCardGroups: StoryFn = () => {
               content. This content is a little bit longer.
             </CardText>
             <CardText>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <BrElement as="small" brUtilsColor="body-secondary">
+                Last updated 3 mins ago
+              </BrElement>
             </CardText>
           </CardBody>
         </Card>
@@ -695,7 +709,9 @@ export const CardLayoutCardGroups: StoryFn = () => {
             </CardText>
           </CardBody>
           <CardFooter>
-            <small className="text-body-secondary">Last updated 3 mins ago</small>
+            <BrElement as="small" brUtilsColor="body-secondary">
+              Last updated 3 mins ago
+            </BrElement>
           </CardFooter>
         </Card>
         <Card>
@@ -713,7 +729,9 @@ export const CardLayoutCardGroups: StoryFn = () => {
             </CardText>
           </CardBody>
           <CardFooter>
-            <small className="text-body-secondary">Last updated 3 mins ago</small>
+            <BrElement as="small" brUtilsColor="body-secondary">
+              Last updated 3 mins ago
+            </BrElement>
           </CardFooter>
         </Card>
         <Card>
@@ -731,7 +749,9 @@ export const CardLayoutCardGroups: StoryFn = () => {
             </CardText>
           </CardBody>
           <CardFooter>
-            <small className="text-body-secondary">Last updated 3 mins ago</small>
+            <BrElement as="small" brUtilsColor="body-secondary">
+              Last updated 3 mins ago
+            </BrElement>
           </CardFooter>
         </Card>
       </CardGroup>
@@ -809,7 +829,9 @@ export const CardLayoutGridCards: StoryFn = () => {
               </CardText>
             </CardBody>
             <CardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <BrElement as="small" brUtilsColor="body-secondary">
+                Last updated 3 mins ago
+              </BrElement>
             </CardFooter>
           </Card>
         </Col>
@@ -828,7 +850,9 @@ export const CardLayoutGridCards: StoryFn = () => {
               </CardText>
             </CardBody>
             <CardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <BrElement as="small" brUtilsColor="body-secondary">
+                Last updated 3 mins ago
+              </BrElement>
             </CardFooter>
           </Card>
         </Col>
@@ -849,7 +873,9 @@ export const CardLayoutGridCards: StoryFn = () => {
               </CardText>
             </CardBody>
             <CardFooter>
-              <small className="text-body-secondary">Last updated 3 mins ago</small>
+              <BrElement as="small" brUtilsColor="body-secondary">
+                Last updated 3 mins ago
+              </BrElement>
             </CardFooter>
           </Card>
         </Col>

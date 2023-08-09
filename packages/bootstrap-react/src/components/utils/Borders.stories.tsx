@@ -75,7 +75,8 @@ export const Color: StoryFn = () => {
         brPadding={{ bottom: 2 }}
         brMargin={{ bottom: 4 }}
         brUtilsBorder={{ bottom: true, color: 'danger' }}
-        className="h4 text-danger"
+        brUtilsColor="danger"
+        className="h4"
       >
         Dangerous heading
       </BrElement>

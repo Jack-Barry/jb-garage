@@ -661,8 +661,12 @@ export const ExternalContent: StoryFn = () => {
     <div>
       <Collapse brCollapse={collapse} id="navbarToggleExternalContent" brTheme="dark">
         <BrElement brPadding={4} brUtilsBackground="dark">
-          <h5 className="text-body-emphasis h4">Collapsed content</h5>
-          <span className="text-body-secondary">Toggleable via the navbar brand.</span>
+          <BrElement as="h5" brUtilsColor="body-emphasis" className="h4">
+            Collapsed content
+          </BrElement>
+          <BrElement as="span" brUtilsColor="body-secondary">
+            Toggleable via the navbar brand.
+          </BrElement>
         </BrElement>
       </Collapse>
       <Navbar className="navbar-dark" brUtilsBackground="dark">

@@ -518,7 +518,7 @@ export const Dividers: StoryFn = () => {
 export const Text: StoryFn = () => {
   return (
     <div className="bd-example">
-      <DropdownMenu brPadding={3} className="text-body-secondary" style={{ maxWidth: '200px' }}>
+      <DropdownMenu brPadding={3} brUtilsColor="body-secondary" style={{ maxWidth: '200px' }}>
         <p>Some example text that's free-flowing within the dropdown menu.</p>
         <BrElement as="p" brMargin={{ bottom: 0 }}>
           And this is more example text.
