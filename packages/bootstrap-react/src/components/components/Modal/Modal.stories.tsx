@@ -213,7 +213,7 @@ export const VerticallyCentered: StoryFn = () => {
 
   return (
     <div>
-      <BrElement brUtilsDisplay="flex" brFlex={{ gap: 1 }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '1' }}>
         <Button brButtonColor="primary" onClick={modal1.toggle}>
           Vertically centered modal
         </Button>
@@ -492,7 +492,7 @@ export const OptionalSizes: StoryFn = () => {
 
   return (
     <div>
-      <BrElement brUtilsDisplay="flex" brFlex={{ gap: 1 }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '1' }}>
         <Button brButtonColor="primary" onClick={modalXl.toggle}>
           Extra large modal
         </Button>

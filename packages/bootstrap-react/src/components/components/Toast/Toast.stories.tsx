@@ -167,7 +167,7 @@ export const CustomContent: StoryFn = () => {
           Hello, world! This is a toast message.
           <BrElement
             brUtilsDisplay="flex"
-            brFlex={{ gap: 1 }}
+            brUtilsFlex={{ gap: 1 }}
             brMargin={{ top: 2 }}
             brPadding={{ top: 2 }}
             brUtilsBorder={{ top: true }}

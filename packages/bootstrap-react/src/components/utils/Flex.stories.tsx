@@ -25,23 +25,23 @@ export const EnableFlexBehaviors: StoryFn = () => {
 export const Direction: StoryFn = () => {
   return (
     <div className="bd-example-flex">
-      <BrElement brUtilsDisplay="flex" brFlex={{ row: true }} brMargin={{ bottom: 3 }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ row: true }} brMargin={{ bottom: 3 }}>
         <BrElement brPadding={2}>Flex item 1</BrElement>
         <BrElement brPadding={2}>Flex item 2</BrElement>
         <BrElement brPadding={2}>Flex item 3</BrElement>
       </BrElement>
-      <BrElement brUtilsDisplay="flex" brFlex={{ row: 'reverse' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ row: 'reverse' }}>
         <BrElement brPadding={2}>Flex item 1</BrElement>
         <BrElement brPadding={2}>Flex item 2</BrElement>
         <BrElement brPadding={2}>Flex item 3</BrElement>
       </BrElement>
       <hr />
-      <BrElement brUtilsDisplay="flex" brFlex={{ column: true }} brMargin={{ bottom: 3 }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ column: true }} brMargin={{ bottom: 3 }}>
         <BrElement brPadding={2}>Flex item 1</BrElement>
         <BrElement brPadding={2}>Flex item 2</BrElement>
         <BrElement brPadding={2}>Flex item 3</BrElement>
       </BrElement>
-      <BrElement brUtilsDisplay="flex" brFlex={{ column: 'reverse' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ column: 'reverse' }}>
         <BrElement brPadding={2}>Flex item 1</BrElement>
         <BrElement brPadding={2}>Flex item 2</BrElement>
         <BrElement brPadding={2}>Flex item 3</BrElement>
@@ -55,7 +55,7 @@ export const JustifyContent: StoryFn = () => {
     <div className="bd-example-flex">
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ justifyContent: 'start' }}
+        brUtilsFlex={{ justifyContent: 'start' }}
         brMargin={{ bottom: 3 }}
       >
         <BrElement brPadding={2} className="bd-highlight">
@@ -68,7 +68,11 @@ export const JustifyContent: StoryFn = () => {
           Start
         </BrElement>
       </BrElement>
-      <BrElement brUtilsDisplay="flex" brFlex={{ justifyContent: 'end' }} brMargin={{ bottom: 3 }}>
+      <BrElement
+        brUtilsDisplay="flex"
+        brUtilsFlex={{ justifyContent: 'end' }}
+        brMargin={{ bottom: 3 }}
+      >
         <BrElement brPadding={2} className="bd-highlight">
           Justify
         </BrElement>
@@ -81,7 +85,7 @@ export const JustifyContent: StoryFn = () => {
       </BrElement>
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ justifyContent: 'center' }}
+        brUtilsFlex={{ justifyContent: 'center' }}
         brMargin={{ bottom: 3 }}
       >
         <BrElement brPadding={2} className="bd-highlight">
@@ -96,7 +100,7 @@ export const JustifyContent: StoryFn = () => {
       </BrElement>
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ justifyContent: 'between' }}
+        brUtilsFlex={{ justifyContent: 'between' }}
         brMargin={{ bottom: 3 }}
       >
         <BrElement brPadding={2} className="bd-highlight">
@@ -111,7 +115,7 @@ export const JustifyContent: StoryFn = () => {
       </BrElement>
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ justifyContent: 'around' }}
+        brUtilsFlex={{ justifyContent: 'around' }}
         brMargin={{ bottom: 3 }}
       >
         <BrElement brPadding={2} className="bd-highlight">
@@ -126,7 +130,7 @@ export const JustifyContent: StoryFn = () => {
       </BrElement>
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ justifyContent: 'evenly' }}
+        brUtilsFlex={{ justifyContent: 'evenly' }}
         brMargin={{ bottom: 3 }}
       >
         <BrElement brPadding={2} className="bd-highlight">
@@ -148,7 +152,7 @@ export const AlignItems: StoryFn = () => {
     <div className="bd-example-flex">
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignItems: 'start' }}
+        brUtilsFlex={{ alignItems: 'start' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '100px' }}
       >
@@ -158,7 +162,7 @@ export const AlignItems: StoryFn = () => {
       </BrElement>
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignItems: 'end' }}
+        brUtilsFlex={{ alignItems: 'end' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '100px' }}
       >
@@ -168,7 +172,7 @@ export const AlignItems: StoryFn = () => {
       </BrElement>
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignItems: 'center' }}
+        brUtilsFlex={{ alignItems: 'center' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '100px' }}
       >
@@ -178,7 +182,7 @@ export const AlignItems: StoryFn = () => {
       </BrElement>
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignItems: 'baseline' }}
+        brUtilsFlex={{ alignItems: 'baseline' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '100px' }}
       >
@@ -188,7 +192,7 @@ export const AlignItems: StoryFn = () => {
       </BrElement>
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignItems: 'stretch' }}
+        brUtilsFlex={{ alignItems: 'stretch' }}
         style={{ height: '100px' }}
       >
         <BrElement brPadding={2}>Flex item</BrElement>
@@ -204,35 +208,35 @@ export const AlignSelf: StoryFn = () => {
     <div className="bd-example-flex">
       <BrElement brUtilsDisplay="flex" brMargin={{ bottom: 3 }} style={{ height: '100px' }}>
         <BrElement brPadding={2}>Flex item</BrElement>
-        <BrElement brPadding={2} brFlex={{ alignSelf: 'start' }}>
+        <BrElement brPadding={2} brUtilsFlex={{ alignSelf: 'start' }}>
           Aligned flex item
         </BrElement>
         <BrElement brPadding={2}>Flex item</BrElement>
       </BrElement>
       <BrElement brUtilsDisplay="flex" brMargin={{ bottom: 3 }} style={{ height: '100px' }}>
         <BrElement brPadding={2}>Flex item</BrElement>
-        <BrElement brPadding={2} brFlex={{ alignSelf: 'end' }}>
+        <BrElement brPadding={2} brUtilsFlex={{ alignSelf: 'end' }}>
           Aligned flex item
         </BrElement>
         <BrElement brPadding={2}>Flex item</BrElement>
       </BrElement>
       <BrElement brUtilsDisplay="flex" brMargin={{ bottom: 3 }} style={{ height: '100px' }}>
         <BrElement brPadding={2}>Flex item</BrElement>
-        <BrElement brPadding={2} brFlex={{ alignSelf: 'center' }}>
+        <BrElement brPadding={2} brUtilsFlex={{ alignSelf: 'center' }}>
           Aligned flex item
         </BrElement>
         <BrElement brPadding={2}>Flex item</BrElement>
       </BrElement>
       <BrElement brUtilsDisplay="flex" brMargin={{ bottom: 3 }} style={{ height: '100px' }}>
         <BrElement brPadding={2}>Flex item</BrElement>
-        <BrElement brPadding={2} brFlex={{ alignSelf: 'baseline' }}>
+        <BrElement brPadding={2} brUtilsFlex={{ alignSelf: 'baseline' }}>
           Aligned flex item
         </BrElement>
         <BrElement brPadding={2}>Flex item</BrElement>
       </BrElement>
       <BrElement brUtilsDisplay="flex" style={{ height: '100px' }}>
         <BrElement brPadding={2}>Flex item</BrElement>
-        <BrElement brPadding={2} brFlex={{ alignSelf: 'stretch' }}>
+        <BrElement brPadding={2} brUtilsFlex={{ alignSelf: 'stretch' }}>
           Aligned flex item
         </BrElement>
         <BrElement brPadding={2}>Flex item</BrElement>
@@ -245,13 +249,13 @@ export const Fill: StoryFn = () => {
   return (
     <div className="bd-example-flex">
       <BrElement brUtilsDisplay="flex">
-        <BrElement brPadding={2} brFlex={{ fill: true }}>
+        <BrElement brPadding={2} brUtilsFlex={{ fill: true }}>
           Flex item with a lot of content
         </BrElement>
-        <BrElement brPadding={2} brFlex={{ fill: true }}>
+        <BrElement brPadding={2} brUtilsFlex={{ fill: true }}>
           Flex item
         </BrElement>
-        <BrElement brPadding={2} brFlex={{ fill: true }}>
+        <BrElement brPadding={2} brUtilsFlex={{ fill: true }}>
           Flex item
         </BrElement>
       </BrElement>
@@ -263,7 +267,7 @@ export const GrowAndShrink: StoryFn = () => {
   return (
     <div className="bd-example-flex">
       <BrElement brUtilsDisplay="flex">
-        <BrElement brPadding={2} brFlex={{ grow: true }}>
+        <BrElement brPadding={2} brUtilsFlex={{ grow: true }}>
           Flex item
         </BrElement>
         <BrElement brPadding={2}>Flex item</BrElement>
@@ -274,7 +278,7 @@ export const GrowAndShrink: StoryFn = () => {
         <BrElement brPadding={2} className="w-100">
           Flex item
         </BrElement>
-        <BrElement brPadding={2} brFlex={{ shrink: true }}>
+        <BrElement brPadding={2} brUtilsFlex={{ shrink: true }}>
           Flex item
         </BrElement>
       </BrElement>
@@ -313,7 +317,7 @@ export const WithAlignItems: StoryFn = () => {
     <div className="bd-example-flex">
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ column: true, alignItems: 'start' }}
+        brUtilsFlex={{ column: true, alignItems: 'start' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '200px' }}
       >
@@ -326,7 +330,7 @@ export const WithAlignItems: StoryFn = () => {
 
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ column: true, alignItems: 'end' }}
+        brUtilsFlex={{ column: true, alignItems: 'end' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '200px' }}
       >
@@ -343,7 +347,7 @@ export const WithAlignItems: StoryFn = () => {
 export const Wrap: StoryFn = () => {
   return (
     <div className="bd-example-flex">
-      <BrElement brUtilsDisplay="flex" brFlex={{ wrap: 'nowrap' }} style={{ width: '8rem' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ wrap: 'nowrap' }} style={{ width: '8rem' }}>
         <BrElement brPadding={2}>Flex item</BrElement>
         <BrElement brPadding={2}>Flex item</BrElement>
         <BrElement brPadding={2}>Flex item</BrElement>
@@ -351,7 +355,7 @@ export const Wrap: StoryFn = () => {
         <BrElement brPadding={2}>Flex item</BrElement>
       </BrElement>
       <hr />
-      <BrElement brUtilsDisplay="flex" brFlex={{ wrap: 'wrap' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ wrap: 'wrap' }}>
         <BrElement brPadding={2}>Flex item 1</BrElement>
         <BrElement brPadding={2}>Flex item 2</BrElement>
         <BrElement brPadding={2}>Flex item 3</BrElement>
@@ -368,7 +372,7 @@ export const Wrap: StoryFn = () => {
         <BrElement brPadding={2}>Flex item 14</BrElement>
       </BrElement>
       <hr />
-      <BrElement brUtilsDisplay="flex" brFlex={{ wrap: 'wrap-reverse' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ wrap: 'wrap-reverse' }}>
         <BrElement brPadding={2}>Flex item 1</BrElement>
         <BrElement brPadding={2}>Flex item 2</BrElement>
         <BrElement brPadding={2}>Flex item 3</BrElement>
@@ -391,14 +395,14 @@ export const Wrap: StoryFn = () => {
 export const Order: StoryFn = () => {
   return (
     <div className="bd-example-flex">
-      <BrElement brUtilsDisplay="flex" brFlex={{ wrap: 'nowrap' }}>
-        <BrElement brFlex={{ order: 3 }} brPadding={2}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ wrap: 'nowrap' }}>
+        <BrElement brUtilsFlex={{ order: 3 }} brPadding={2}>
           First flex item
         </BrElement>
-        <BrElement brFlex={{ order: 2 }} brPadding={2}>
+        <BrElement brUtilsFlex={{ order: 2 }} brPadding={2}>
           Second flex item
         </BrElement>
-        <BrElement brFlex={{ order: 1 }} brPadding={2}>
+        <BrElement brUtilsFlex={{ order: 1 }} brPadding={2}>
           Third flex item
         </BrElement>
       </BrElement>
@@ -411,7 +415,7 @@ export const AlignContent: StoryFn = () => {
     <div className="bd-example-flex">
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignContent: 'start', wrap: 'wrap' }}
+        brUtilsFlex={{ alignContent: 'start', wrap: 'wrap' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '200px' }}
       >
@@ -420,7 +424,7 @@ export const AlignContent: StoryFn = () => {
       <hr />
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignContent: 'end', wrap: 'wrap' }}
+        brUtilsFlex={{ alignContent: 'end', wrap: 'wrap' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '200px' }}
       >
@@ -429,7 +433,7 @@ export const AlignContent: StoryFn = () => {
       <hr />
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignContent: 'center', wrap: 'wrap' }}
+        brUtilsFlex={{ alignContent: 'center', wrap: 'wrap' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '200px' }}
       >
@@ -438,7 +442,7 @@ export const AlignContent: StoryFn = () => {
       <hr />
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignContent: 'between', wrap: 'wrap' }}
+        brUtilsFlex={{ alignContent: 'between', wrap: 'wrap' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '200px' }}
       >
@@ -447,7 +451,7 @@ export const AlignContent: StoryFn = () => {
       <hr />
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignContent: 'around', wrap: 'wrap' }}
+        brUtilsFlex={{ alignContent: 'around', wrap: 'wrap' }}
         brMargin={{ bottom: 3 }}
         style={{ height: '200px' }}
       >
@@ -456,7 +460,7 @@ export const AlignContent: StoryFn = () => {
       <hr />
       <BrElement
         brUtilsDisplay="flex"
-        brFlex={{ alignContent: 'stretch', wrap: 'wrap' }}
+        brUtilsFlex={{ alignContent: 'stretch', wrap: 'wrap' }}
         style={{ height: '200px' }}
       >
         <FlexItems />

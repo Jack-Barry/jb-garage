@@ -68,7 +68,7 @@ export const Directions: StoryFn = () => {
 
   return (
     <BrElement brMargin={5}>
-      <BrElement brUtilsDisplay="flex" brFlex={{ gap: 2 }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '2' }}>
         <Button brButtonColor="secondary" ref={targetTop.ref} {...targetTop.getProps()}>
           Tooltip on top
         </Button>

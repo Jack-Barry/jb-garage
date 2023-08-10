@@ -137,7 +137,7 @@ export const AlignmentMargin: StoryFn = () => {
 export const AlignmentPlacementFlex: StoryFn = () => {
   return (
     <div className="bd-example">
-      <BrElement brUtilsDisplay="flex" brFlex={{ justifyContent: 'center' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ justifyContent: 'center' }}>
         <Spinner>
           <BrElement as="span" brVisuallyHidden>
             Loading...
@@ -145,7 +145,7 @@ export const AlignmentPlacementFlex: StoryFn = () => {
         </Spinner>
       </BrElement>
       <hr />
-      <BrElement brUtilsDisplay="flex" brFlex={{ alignItems: 'center' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ alignItems: 'center' }}>
         <strong>Loading...</strong>
         <Spinner brMargin={{ start: 'auto' }} aria-hidden="true" />
       </BrElement>

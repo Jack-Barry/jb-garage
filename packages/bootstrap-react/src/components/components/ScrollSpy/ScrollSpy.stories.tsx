@@ -343,35 +343,27 @@ export const SimpleAnchors: StoryFn = () => {
             id="simple-list-example"
             className="simple-list-example-scrollspy text-center"
             brUtilsDisplay="flex"
-            brFlex={{ column: true, gap: 2 }}
+            brUtilsFlex={{ column: true, gap: '2' }}
           >
-            <BrElement as="a" brPadding={1} className="rounded" href="#simple-list-item-1">
+            <BrElement as="a" brPadding={1} brUtilsBorder href="#simple-list-item-1">
               Item 1
             </BrElement>
-            <BrElement as="a" brPadding={1} className="rounded" href="#simple-list-item-2">
+            <BrElement as="a" brPadding={1} brUtilsBorder href="#simple-list-item-2">
               Item 2
             </BrElement>
-            <BrElement as="a" brPadding={1} className="rounded" href="#simple-list-item-3">
+            <BrElement as="a" brPadding={1} brUtilsBorder href="#simple-list-item-3">
               Item 3
             </BrElement>
-            <BrElement as="a" brPadding={1} className="rounded" href="#simple-list-item-4">
+            <BrElement as="a" brPadding={1} brUtilsBorder href="#simple-list-item-4">
               Item 4
             </BrElement>
-            <BrElement as="a" brPadding={1} className="rounded" href="#simple-list-item-5">
+            <BrElement as="a" brPadding={1} brUtilsBorder href="#simple-list-item-5">
               Item 5
             </BrElement>
           </BrElement>
         </Col>
         <Col brCols={8}>
-          <div
-            // data-bs-spy="scroll"
-            // data-bs-target="#simple-list-example"
-            // data-bs-offset="0"
-            // data-bs-smooth-scroll="true"
-            className="scrollspy-example"
-            tabIndex={0}
-            ref={scrollSpy.ref}
-          >
+          <div className="scrollspy-example" tabIndex={0} ref={scrollSpy.ref}>
             <h4 id="simple-list-item-1">Item 1</h4>
             <p>
               This is some placeholder content for the scrollspy page. Note that as you scroll down

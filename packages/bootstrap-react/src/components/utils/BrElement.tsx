@@ -8,7 +8,7 @@ import {
   ReactNode,
   forwardRef
 } from 'react'
-import { BrFlexProp, brFlexClasses } from './bootstrapClasses/flexbox'
+import { BrFlexProp, brUtilsFlexStyles } from './bootstrapClasses/utilities/flexbox'
 import { BrBorderProp, brUtilsBorderStyles } from './bootstrapClasses/utilities/borders'
 import { BrDisplayProp, brUtilsDisplayStyles } from './bootstrapClasses/utilities/display'
 import { BrSpacingProp, brSpacingClasses } from './bootstrapClasses/spacing'
@@ -66,21 +66,13 @@ export type BrElementCommonProps = {
   brPaddingXl?: BrSpacingProp
   /** Padding to apply to the element above the xxl breakpoint using Bootstrap classes */
   brPaddingXxl?: BrSpacingProp
-  /** Flex styles to apply to the element using Bootstrap classes */
-  brFlex?: BrFlexProp
-  /** Flex styles to apply to the element above the sm breakpoint using Bootstrap classes */
-  brFlexSm?: BrFlexProp
-  /** Flex styles to apply to the element above the md breakpoint using Bootstrap classes */
-  brFlexMd?: BrFlexProp
-  /** Flex styles to apply to the element above the lg breakpoint using Bootstrap classes */
-  brFlexLg?: BrFlexProp
-  /** Flex styles to apply to the element above the xl breakpoint using Bootstrap classes */
-  brFlexXl?: BrFlexProp
-  /** Flex styles to apply to the element above the xxl breakpoint using Bootstrap classes */
-  brFlexXxl?: BrFlexProp
-  /** Theme to apply to the element using `bs-data-theme` attribute */
+  /**
+   * Theme to apply to the element using `bs-data-theme` attribute
+   */
   brTheme?: 'light' | 'dark' | string
-  /** Apply float clearfix to element */
+  /**
+   * Apply float clearfix to element
+   */
   brClearfix?: boolean
   /**
    * Apply background styles to the element using Bootstrap classes
@@ -142,6 +134,42 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
    */
   brUtilsDisplayPrint?: BrDisplayProp
+  /**
+   * Flex styles to apply to the element using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
+   */
+  brUtilsFlex?: BrFlexProp
+  /**
+   * Flex styles to apply to the element above the sm breakpoint using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
+   */
+  brUtilsFlexSm?: BrFlexProp
+  /**
+   * Flex styles to apply to the element above the md breakpoint using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
+   */
+  brUtilsFlexMd?: BrFlexProp
+  /**
+   * Flex styles to apply to the element above the lg breakpoint using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
+   */
+  brUtilsFlexLg?: BrFlexProp
+  /**
+   * Flex styles to apply to the element above the xl breakpoint using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
+   */
+  brUtilsFlexXl?: BrFlexProp
+  /**
+   * Flex styles to apply to the element above the xxl breakpoint using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
+   */
+  brUtilsFlexXxl?: BrFlexProp
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -211,12 +239,12 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brPaddingLg,
     brPaddingXl,
     brPaddingXxl,
-    brFlex,
-    brFlexSm,
-    brFlexMd,
-    brFlexLg,
-    brFlexXl,
-    brFlexXxl,
+    brUtilsFlex,
+    brUtilsFlexSm,
+    brUtilsFlexMd,
+    brUtilsFlexLg,
+    brUtilsFlexXl,
+    brUtilsFlexXxl,
     brTheme,
     brClearfix,
     brUtilsBackground,
@@ -237,13 +265,21 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsBorderStyles(brUtilsBorder),
     brUtilsColorStyles(brUtilsColor),
     brUtilsDisplayStyles({
-      brUtilsDisplay: brUtilsDisplay,
-      brUtilsDisplaySm: brUtilsDisplaySm,
-      brUtilsDisplayMd: brUtilsDisplayMd,
-      brUtilsDisplayLg: brUtilsDisplayLg,
-      brUtilsDisplayXl: brUtilsDisplayXl,
-      brUtilsDisplayXxl: brUtilsDisplayXxl,
-      brUtilsDisplayPrint: brUtilsDisplayPrint
+      brUtilsDisplay,
+      brUtilsDisplaySm,
+      brUtilsDisplayMd,
+      brUtilsDisplayLg,
+      brUtilsDisplayXl,
+      brUtilsDisplayXxl,
+      brUtilsDisplayPrint
+    }),
+    brUtilsFlexStyles({
+      brUtilsFlex,
+      brUtilsFlexSm,
+      brUtilsFlexMd,
+      brUtilsFlexLg,
+      brUtilsFlexXl,
+      brUtilsFlexXxl
     })
   ])
 
@@ -272,14 +308,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'lg-' }, brPaddingLg),
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xl-' }, brPaddingXl),
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xxl-' }, brPaddingXxl),
-        ...brFlexClasses({
-          brFlex,
-          brFlexSm,
-          brFlexMd,
-          brFlexLg,
-          brFlexXl,
-          brFlexXxl
-        }),
         clearfix: brClearfix,
         ...brStyles.classes
       })}

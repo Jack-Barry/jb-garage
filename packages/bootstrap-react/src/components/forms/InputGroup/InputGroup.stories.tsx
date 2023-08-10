@@ -68,7 +68,7 @@ export const BasicExample: StoryFn = () => {
 
 export const Wrapping: StoryFn = () => {
   return (
-    <InputGroup className="flex-nowrap">
+    <InputGroup brUtilsFlex={{ wrap: 'nowrap' }}>
       <InputGroupText id="addon-wrapping">@</InputGroupText>
       <Input placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"></Input>
     </InputGroup>

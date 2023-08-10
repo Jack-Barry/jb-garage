@@ -1,6 +1,8 @@
-import { BrElementCommonProps } from '../BrElement'
+import { LiteralUnion } from '@jb-garage/bootstrap-react/types'
+import { BrElementCommonProps } from '../../BrElement'
+import { BrStyles } from '../brStyles'
 
-type BrGapSize = 0 | 1 | 2 | 3 | 4 | 5 | '0' | '1' | '2' | '3' | '4' | '5' | number | string
+type BrGapSize = LiteralUnion<'0' | '1' | '2' | '3' | '4' | '5', number | string>
 
 type BrFlexPropAlignment = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
 export type BrFlexProp = {
@@ -14,34 +16,23 @@ export type BrFlexProp = {
   grow?: boolean
   shrink?: boolean
   wrap?: 'wrap' | 'nowrap' | 'wrap-reverse'
-  order?:
-    | 'first'
-    | 'last'
-    | 0
-    | 1
-    | 2
-    | 3
-    | 4
-    | 5
-    | '0'
-    | '1'
-    | '2'
-    | '3'
-    | '4'
-    | '5'
-    | number
-    | string
+  order?: LiteralUnion<'first' | 'last' | '0' | '1' | '2' | '3' | '4' | '5', number | string>
   gap?: BrGapSize
   gapRow?: BrGapSize
   gapColumn?: BrGapSize
 }
 
-export function brFlexClasses(
+export function brUtilsFlexStyles(
   props: Pick<
     BrElementCommonProps,
-    'brFlex' | 'brFlexSm' | 'brFlexMd' | 'brFlexLg' | 'brFlexXl' | 'brFlexXxl'
+    | 'brUtilsFlex'
+    | 'brUtilsFlexSm'
+    | 'brUtilsFlexMd'
+    | 'brUtilsFlexLg'
+    | 'brUtilsFlexXl'
+    | 'brUtilsFlexXxl'
   >
-) {
+): BrStyles {
   const classes: Record<string, boolean> = {}
 
   for (const [key, flexConfig] of Object.entries(props)) {
@@ -49,7 +40,7 @@ export function brFlexClasses(
       continue
     }
 
-    const size = key.replace('brFlex', '').toLowerCase()
+    const size = key.replace('brUtilsFlex', '').toLowerCase()
     const prefix = size ? `${size}-` : ''
     const {
       row,
@@ -128,5 +119,5 @@ export function brFlexClasses(
     }
   }
 
-  return classes
+  return { classes }
 }

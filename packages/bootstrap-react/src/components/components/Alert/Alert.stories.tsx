@@ -122,11 +122,17 @@ export const Icons: StoryFn = () => {
         </symbol>
       </svg>
 
-      <Alert brUtilsDisplay="flex" className="alert-primary align-items-center" role="alert">
+      <Alert
+        brUtilsDisplay="flex"
+        brUtilsFlex={{ alignItems: 'center' }}
+        className="alert-primary"
+        role="alert"
+      >
         <Image
           as="svg"
           brMargin={{ end: 2 }}
-          className="bi flex-shrink-0"
+          brUtilsFlex={{ shrink: false }}
+          className="bi"
           role="img"
           aria-label="Info:"
         >
@@ -134,11 +140,17 @@ export const Icons: StoryFn = () => {
         </Image>
         <div>An example alert with an icon</div>
       </Alert>
-      <Alert brUtilsDisplay="flex" className="alert-success align-items-center" role="alert">
+      <Alert
+        brUtilsDisplay="flex"
+        brUtilsFlex={{ alignItems: 'center' }}
+        className="alert-success"
+        role="alert"
+      >
         <Image
           as="svg"
           brMargin={{ end: 2 }}
-          className="bi flex-shrink-0"
+          brUtilsFlex={{ shrink: false }}
+          className="bi"
           role="img"
           aria-label="Success:"
         >
@@ -146,11 +158,17 @@ export const Icons: StoryFn = () => {
         </Image>
         <div>An example success alert with an icon</div>
       </Alert>
-      <Alert brUtilsDisplay="flex" className="alert-warning align-items-center" role="alert">
+      <Alert
+        brUtilsDisplay="flex"
+        brUtilsFlex={{ alignItems: 'center' }}
+        className="alert-warning"
+        role="alert"
+      >
         <Image
           as="svg"
           brMargin={{ end: 2 }}
-          className="bi flex-shrink-0"
+          brUtilsFlex={{ shrink: false }}
+          className="bi"
           role="img"
           aria-label="Warning:"
         >
@@ -158,11 +176,17 @@ export const Icons: StoryFn = () => {
         </Image>
         <div>An example warning alert with an icon</div>
       </Alert>
-      <Alert brUtilsDisplay="flex" className="alert-danger align-items-center" role="alert">
+      <Alert
+        brUtilsDisplay="flex"
+        brUtilsFlex={{ alignItems: 'center' }}
+        className="alert-danger"
+        role="alert"
+      >
         <Image
           as="svg"
           brMargin={{ end: 2 }}
-          className="bi flex-shrink-0"
+          brUtilsFlex={{ shrink: false }}
+          className="bi"
           role="img"
           aria-label="Danger:"
         >

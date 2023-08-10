@@ -140,7 +140,10 @@ export const Numbered: StoryFn = () => {
       </ListGroup>
       <hr />
       <ListGroup as="ol" className="list-group-numbered">
-        <ListGroupItem brUtilsDisplay="flex" className="justify-content-between align-items-start">
+        <ListGroupItem
+          brUtilsDisplay="flex"
+          brUtilsFlex={{ justifyContent: 'between', alignItems: 'start' }}
+        >
           <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
@@ -149,7 +152,10 @@ export const Numbered: StoryFn = () => {
             14
           </Badge>
         </ListGroupItem>
-        <ListGroupItem brUtilsDisplay="flex" className="justify-content-between align-items-start">
+        <ListGroupItem
+          brUtilsDisplay="flex"
+          brUtilsFlex={{ justifyContent: 'between', alignItems: 'start' }}
+        >
           <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
@@ -158,7 +164,10 @@ export const Numbered: StoryFn = () => {
             14
           </Badge>
         </ListGroupItem>
-        <ListGroupItem brUtilsDisplay="flex" className="justify-content-between align-items-start">
+        <ListGroupItem
+          brUtilsDisplay="flex"
+          brUtilsFlex={{ justifyContent: 'between', alignItems: 'start' }}
+        >
           <BrElement brMargin={{ start: 2, end: 'auto' }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
@@ -288,19 +297,28 @@ VariantsForLinksAndButtons.decorators = [
 export const WithBadges: StoryFn = () => {
   return (
     <ListGroup>
-      <ListGroupItem brUtilsDisplay="flex" className="justify-content-between align-items-center">
+      <ListGroupItem
+        brUtilsDisplay="flex"
+        brUtilsFlex={{ justifyContent: 'between', alignItems: 'center' }}
+      >
         A list item
         <Badge className="rounded-pill" brUtilsBackground="primary">
           14
         </Badge>
       </ListGroupItem>
-      <ListGroupItem brUtilsDisplay="flex" className="justify-content-between align-items-center">
+      <ListGroupItem
+        brUtilsDisplay="flex"
+        brUtilsFlex={{ justifyContent: 'between', alignItems: 'center' }}
+      >
         A second list item
         <Badge className="rounded-pill" brUtilsBackground="primary">
           2
         </Badge>
       </ListGroupItem>
-      <ListGroupItem brUtilsDisplay="flex" className="justify-content-between align-items-center">
+      <ListGroupItem
+        brUtilsDisplay="flex"
+        brUtilsFlex={{ justifyContent: 'between', alignItems: 'center' }}
+      >
         A third list item
         <Badge className="rounded-pill" brUtilsBackground="primary">
           1
@@ -315,7 +333,11 @@ export const CustomContent: StoryFn = () => {
   return (
     <ListGroup as="div">
       <ListGroupItem as="a" href="#" className="list-group-item-action active" aria-current="true">
-        <BrElement brUtilsDisplay="flex" className="w-100 justify-content-between">
+        <BrElement
+          brUtilsDisplay="flex"
+          brUtilsFlex={{ justifyContent: 'between' }}
+          className="w-100"
+        >
           <BrElement as="h5" brMargin={{ bottom: 1 }}>
             List group item heading
           </BrElement>
@@ -327,7 +349,11 @@ export const CustomContent: StoryFn = () => {
         <small>And some small print.</small>
       </ListGroupItem>
       <ListGroupItem as="a" href="#" className="list-group-item-action">
-        <BrElement brUtilsDisplay="flex" className="w-100 justify-content-between">
+        <BrElement
+          brUtilsDisplay="flex"
+          brUtilsFlex={{ justifyContent: 'between' }}
+          className="w-100"
+        >
           <BrElement as="h5" brMargin={{ bottom: 1 }}>
             List group item heading
           </BrElement>
@@ -339,7 +365,11 @@ export const CustomContent: StoryFn = () => {
         <BrElement brUtilsColor="body-secondary">And some muted small print.</BrElement>
       </ListGroupItem>
       <ListGroupItem as="a" href="#" className="list-group-item-action">
-        <BrElement brUtilsDisplay="flex" className="w-100 justify-content-between">
+        <BrElement
+          brUtilsDisplay="flex"
+          brUtilsFlex={{ justifyContent: 'between' }}
+          className="w-100"
+        >
           <BrElement as="h5" brMargin={{ bottom: 1 }}>
             List group item heading
           </BrElement>

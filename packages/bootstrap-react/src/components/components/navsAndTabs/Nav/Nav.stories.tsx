@@ -94,7 +94,7 @@ export const AvailableStylesHorizontalAlignment: StoryFn = () => {
 export const AvailableStylesVertical: StoryFn = () => {
   return (
     <div>
-      <Nav className="flex-column">
+      <Nav brUtilsFlex={{ column: true }}>
         <NavItem>
           <NavLink aria-current="page" href="#" brNavLinkActive>
             Active
@@ -111,7 +111,7 @@ export const AvailableStylesVertical: StoryFn = () => {
         </NavItem>
       </Nav>
       <hr />
-      <Nav as="nav" className="flex-column">
+      <Nav as="nav" brUtilsFlex={{ column: true }}>
         <NavLink aria-current="page" href="#" brNavLinkActive>
           Active
         </NavLink>
@@ -246,7 +246,7 @@ export const AvailableStylesFillAndJustify: StoryFn = () => {
 
 export const WorkingWithFlexUtilities: StoryFn = () => {
   return (
-    <Nav as="nav" className="nav-pills flex-column flex-sm-row">
+    <Nav as="nav" brUtilsFlex={{ column: true }} brUtilsFlexSm={{ row: true }} brNavPills>
       <NavLink aria-current="page" href="#" brNavLinkActive>
         Active
       </NavLink>

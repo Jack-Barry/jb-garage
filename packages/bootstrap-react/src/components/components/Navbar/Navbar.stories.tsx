@@ -712,10 +712,7 @@ export const OffcanvasStory: StoryFn = () => {
               <CloseButton aria-label="Close" onClick={offcanvas.hide} />
             </OffcanvasHeader>
             <OffcanvasBody>
-              <NavbarNav
-                brFlex={{ justifyContent: 'end', grow: true }}
-                brPadding={{ end: 3 }} /* class="navbar-nav justify-content-end flex-grow-1 pe-3" */
-              >
+              <NavbarNav brUtilsFlex={{ justifyContent: 'end', grow: true }} brPadding={{ end: 3 }}>
                 <NavItem>
                   <NavLink brNavLinkActive aria-current="page" href="#">
                     Home

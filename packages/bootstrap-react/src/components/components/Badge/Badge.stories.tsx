@@ -82,7 +82,7 @@ export const ExamplesPositioned: StoryFn = () => {
 
 export const BackgroundColors: StoryFn = () => {
   return (
-    <BrElement brUtilsDisplay="flex" className="gap-1">
+    <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '1' }}>
       <Badge brUtilsColor="bg-primary">Primary</Badge>
       <Badge brUtilsColor="bg-secondary">Secondary</Badge>
       <Badge brUtilsColor="bg-success">Success</Badge>
@@ -97,7 +97,7 @@ export const BackgroundColors: StoryFn = () => {
 
 export const PillBadges: StoryFn = () => {
   return (
-    <BrElement brUtilsDisplay="flex" className="gap-1">
+    <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '1' }}>
       <Badge brUtilsBorder={{ radius: 'pill' }} brUtilsColor="bg-primary">
         Primary
       </Badge>
