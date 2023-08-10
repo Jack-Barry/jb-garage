@@ -156,7 +156,7 @@ export const CustomContent: StoryFn = () => {
         aria-atomic="true"
         ref={toast1.ref}
       >
-        <BrElement brDisplay="flex">
+        <BrElement brUtilsDisplay="flex">
           <ToastBody>Hello, world! This is a toast message.</ToastBody>
           <CloseButton brMargin={{ end: 2 }} className="m-auto" onClick={toast1.hide} />
         </BrElement>
@@ -166,7 +166,7 @@ export const CustomContent: StoryFn = () => {
         <ToastBody>
           Hello, world! This is a toast message.
           <BrElement
-            brDisplay="flex"
+            brUtilsDisplay="flex"
             brFlex={{ gap: 1 }}
             brMargin={{ top: 2 }}
             brPadding={{ top: 2 }}
@@ -197,7 +197,7 @@ export const ColorSchemes: StoryFn = () => {
       aria-atomic="true"
       ref={toast.ref}
     >
-      <BrElement brDisplay="flex">
+      <BrElement brUtilsDisplay="flex">
         <ToastBody>Hello, world! This is a toast message.</ToastBody>
         <CloseButton
           className="btn-close-white m-auto"

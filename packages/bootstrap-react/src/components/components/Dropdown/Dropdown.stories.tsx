@@ -636,7 +636,7 @@ export const DropdownOptions: StoryFn = () => {
 
   return (
     <div className="bd-example" style={{ minHeight: '220px' }}>
-      <BrElement brDisplay="flex">
+      <BrElement brUtilsDisplay="flex">
         <Dropdown brMargin={{ end: 1 }}>
           <DropdownToggle brButtonColor="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
             Offset

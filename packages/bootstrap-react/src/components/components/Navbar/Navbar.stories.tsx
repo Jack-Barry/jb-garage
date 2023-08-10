@@ -86,7 +86,7 @@ export const SupportedContent: StoryFn = () => {
               </NavLink>
             </NavItem>
           </NavbarNav>
-          <BrElement as="form" brDisplay="flex" role="search">
+          <BrElement as="form" brUtilsDisplay="flex" role="search">
             <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
             <Button brButtonColor="outline-success" type="submit">
               Search
@@ -139,7 +139,7 @@ export const BrandImageAndText: StoryFn = () => {
             alt="Logo"
             width="30"
             height="24"
-            brDisplay="inline-block"
+            brUtilsDisplay="inline-block"
             className="align-text-top"
           />{' '}
           Bootstrap
@@ -269,7 +269,7 @@ export const Forms: StoryFn = () => {
     <div className="bd-example">
       <Navbar brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
-          <BrElement as="form" brDisplay="flex" role="search">
+          <BrElement as="form" brUtilsDisplay="flex" role="search">
             <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
             <Button brButtonColor="outline-success" type="submit">
               Search
@@ -281,7 +281,7 @@ export const Forms: StoryFn = () => {
       <Navbar brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <NavbarBrand>Navbar</NavbarBrand>
-          <BrElement as="form" brDisplay="flex" role="search">
+          <BrElement as="form" brUtilsDisplay="flex" role="search">
             <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
             <Button brButtonColor="outline-success" type="submit">
               Search
@@ -411,7 +411,7 @@ function ColorSchemeExampleContent() {
             <NavLink href="#">About</NavLink>
           </NavItem>
         </NavbarNav>
-        <BrElement as="form" brDisplay="flex" role="search">
+        <BrElement as="form" brUtilsDisplay="flex" role="search">
           <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
           <Button brButtonColor="outline-light" type="submit">
             Search
@@ -553,7 +553,7 @@ export const Scrolling: StoryFn = () => {
               </NavLink>
             </NavItem>
           </NavbarNav>
-          <BrElement brDisplay="flex" role="search">
+          <BrElement brUtilsDisplay="flex" role="search">
             <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
             <Button brButtonColor="outline-success" type="submit">
               Search
@@ -644,7 +644,7 @@ function TogglerDemoContent() {
           </NavLink>
         </NavItem>
       </NavbarNav>
-      <BrElement as="form" brDisplay="flex" role="search">
+      <BrElement as="form" brUtilsDisplay="flex" role="search">
         <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
         <Button brButtonColor="outline-success" type="submit">
           Search
@@ -741,7 +741,7 @@ export const OffcanvasStory: StoryFn = () => {
                   </DropdownMenu>
                 </NavItem>
               </NavbarNav>
-              <BrElement as="form" brDisplay="flex" brMargin={{ top: 3 }} role="search">
+              <BrElement as="form" brUtilsDisplay="flex" brMargin={{ top: 3 }} role="search">
                 <Input
                   brMargin={{ end: 2 }}
                   type="search"

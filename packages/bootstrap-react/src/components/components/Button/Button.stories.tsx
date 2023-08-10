@@ -128,24 +128,24 @@ export const DisabledState: StoryFn = () => {
 export const BlockButtons: StoryFn = () => {
   return (
     <div className="bd-example">
-      <BrElement brDisplay="grid" className="gap-2">
+      <BrElement brUtilsDisplay="grid" className="gap-2">
         <Button brButtonColor="primary">Button</Button>
         <Button brButtonColor="primary">Button</Button>
       </BrElement>
       <hr />
-      <BrElement brDisplay="grid" brDisplayMd="block" className="gap-2">
+      <BrElement brUtilsDisplay="grid" brUtilsDisplayMd="block" className="gap-2">
         <Button brButtonColor="primary">Button</Button>
         <Button brButtonColor="primary">Button</Button>
       </BrElement>
       <hr />
-      <Col brDisplay="grid" brCols={6} brMargin={{ x: 'auto' }} className="gap-2">
+      <Col brUtilsDisplay="grid" brCols={6} brMargin={{ x: 'auto' }} className="gap-2">
         <Button brButtonColor="primary">Button</Button>
         <Button brButtonColor="primary">Button</Button>
       </Col>
       <hr />
       <BrElement
-        brDisplay="grid"
-        brDisplayMd="flex"
+        brUtilsDisplay="grid"
+        brUtilsDisplayMd="flex"
         brFlexMd={{ justifyContent: 'end' }}
         className="gap-2"
       >

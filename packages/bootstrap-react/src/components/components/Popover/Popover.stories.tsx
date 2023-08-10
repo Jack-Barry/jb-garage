@@ -41,7 +41,7 @@ export const FourDirections: StoryFn = () => {
   const popoverLeft = usePopover({ placement: 'left' })
 
   return (
-    <BrElement brPadding={{ y: 5 }} brDisplay="flex" className="gap-2">
+    <BrElement brPadding={{ y: 5 }} brUtilsDisplay="flex" className="gap-2">
       <Button
         ref={popoverTop.target.ref}
         {...popoverTop.target.getProps()}

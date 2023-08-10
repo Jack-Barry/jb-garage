@@ -68,7 +68,7 @@ export const Directions: StoryFn = () => {
 
   return (
     <BrElement brMargin={5}>
-      <BrElement brDisplay="flex" brFlex={{ gap: 2 }}>
+      <BrElement brUtilsDisplay="flex" brFlex={{ gap: 2 }}>
         <Button brButtonColor="secondary" ref={targetTop.ref} {...targetTop.getProps()}>
           Tooltip on top
         </Button>
@@ -96,7 +96,7 @@ export const Directions: StoryFn = () => {
       <hr />
       <BrElement
         as="a"
-        brDisplay="inline-block"
+        brUtilsDisplay="inline-block"
         href="#"
         ref={targetSvg.ref}
         {...targetSvg.getProps()}
@@ -118,7 +118,7 @@ export const DisabledElements: StoryFn = () => {
     <div>
       <BrElement
         as="span"
-        brDisplay="inline-block"
+        brUtilsDisplay="inline-block"
         tabIndex={0}
         ref={target.ref}
         {...target.getProps()}

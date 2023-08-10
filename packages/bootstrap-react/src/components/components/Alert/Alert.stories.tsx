@@ -122,7 +122,7 @@ export const Icons: StoryFn = () => {
         </symbol>
       </svg>
 
-      <Alert brDisplay="flex" className="alert-primary align-items-center" role="alert">
+      <Alert brUtilsDisplay="flex" className="alert-primary align-items-center" role="alert">
         <Image
           as="svg"
           brMargin={{ end: 2 }}
@@ -134,7 +134,7 @@ export const Icons: StoryFn = () => {
         </Image>
         <div>An example alert with an icon</div>
       </Alert>
-      <Alert brDisplay="flex" className="alert-success align-items-center" role="alert">
+      <Alert brUtilsDisplay="flex" className="alert-success align-items-center" role="alert">
         <Image
           as="svg"
           brMargin={{ end: 2 }}
@@ -146,7 +146,7 @@ export const Icons: StoryFn = () => {
         </Image>
         <div>An example success alert with an icon</div>
       </Alert>
-      <Alert brDisplay="flex" className="alert-warning align-items-center" role="alert">
+      <Alert brUtilsDisplay="flex" className="alert-warning align-items-center" role="alert">
         <Image
           as="svg"
           brMargin={{ end: 2 }}
@@ -158,7 +158,7 @@ export const Icons: StoryFn = () => {
         </Image>
         <div>An example warning alert with an icon</div>
       </Alert>
-      <Alert brDisplay="flex" className="alert-danger align-items-center" role="alert">
+      <Alert brUtilsDisplay="flex" className="alert-danger align-items-center" role="alert">
         <Image
           as="svg"
           brMargin={{ end: 2 }}

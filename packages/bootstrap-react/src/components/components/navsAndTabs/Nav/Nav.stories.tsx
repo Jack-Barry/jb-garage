@@ -471,7 +471,7 @@ function JavascriptBehaviorExample(props: { idPrefix: string; className: string 
 
   return (
     <BrElement
-      brDisplay={idPrefix === 'v-pills' ? 'flex' : undefined}
+      brUtilsDisplay={idPrefix === 'v-pills' ? 'flex' : undefined}
       className={classNames({
         'align-items-start': idPrefix === 'v-pills'
       })}

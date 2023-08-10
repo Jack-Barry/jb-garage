@@ -10,7 +10,7 @@ import {
 } from 'react'
 import { BrFlexProp, brFlexClasses } from './bootstrapClasses/flexbox'
 import { BrBorderProp, brUtilsBorderStyles } from './bootstrapClasses/utilities/borders'
-import { BrDisplayProp, brDisplayClasses } from './bootstrapClasses/display'
+import { BrDisplayProp, brUtilsDisplayStyles } from './bootstrapClasses/utilities/display'
 import { BrSpacingProp, brSpacingClasses } from './bootstrapClasses/spacing'
 import {
   BrUtilsBackgroundOptions,
@@ -28,20 +28,6 @@ export type BrPositionProp = 'relative' | 'absolute' | 'static' | 'fixed'
 export type BrElementCommonProps = {
   /** Position to apply to the element using Bootstrap class */
   brPosition?: BrPositionProp
-  /** Display type to apply to the element using Bootstrap class */
-  brDisplay?: BrDisplayProp
-  /** Display type to apply to the element above the sm breakpoint using Bootstrap class */
-  brDisplaySm?: BrDisplayProp
-  /** Display type to apply to the element above the md breakpoint using Bootstrap class */
-  brDisplayMd?: BrDisplayProp
-  /** Display type to apply to the element above the lg breakpoint using Bootstrap class */
-  brDisplayLg?: BrDisplayProp
-  /** Display type to apply to the element above the xl breakpoint using Bootstrap class */
-  brDisplayXl?: BrDisplayProp
-  /** Display type to apply to the element above the xxl breakpoint using Bootstrap class */
-  brDisplayXxl?: BrDisplayProp
-  /** Display type to apply to the element for print using Bootstrap class */
-  brDisplayPrint?: BrDisplayProp
   /** Element should be visually hidden (but present for screen readers) */
   brVisuallyHidden?: boolean
   /** Margin to apply to the element using Bootstrap classes */
@@ -114,6 +100,48 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Colors](https://getbootstrap.com/docs/5.3/utilities/colors/)
    */
   brUtilsColor?: BrUtilsColorOptions
+  /**
+   * Display type to apply to the element using Bootstrap class
+   *
+   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
+   */
+  brUtilsDisplay?: BrDisplayProp
+  /**
+   * Display type to apply to the element above the sm breakpoint using Bootstrap class
+   *
+   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
+   */
+  brUtilsDisplaySm?: BrDisplayProp
+  /**
+   * Display type to apply to the element above the md breakpoint using Bootstrap class
+   *
+   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
+   */
+  brUtilsDisplayMd?: BrDisplayProp
+  /**
+   * Display type to apply to the element above the lg breakpoint using Bootstrap class
+   *
+   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
+   */
+  brUtilsDisplayLg?: BrDisplayProp
+  /**
+   * Display type to apply to the element above the xl breakpoint using Bootstrap class
+   *
+   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
+   */
+  brUtilsDisplayXl?: BrDisplayProp
+  /**
+   * Display type to apply to the element above the xxl breakpoint using Bootstrap class
+   *
+   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
+   */
+  brUtilsDisplayXxl?: BrDisplayProp
+  /**
+   * Display type to apply to the element for print using Bootstrap class
+   *
+   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
+   */
+  brUtilsDisplayPrint?: BrDisplayProp
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -164,13 +192,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     style,
     children,
     brPosition,
-    brDisplay,
-    brDisplaySm,
-    brDisplayMd,
-    brDisplayLg,
-    brDisplayXl,
-    brDisplayXxl,
-    brDisplayPrint,
     brVisuallyHidden,
     brMargin,
     brMarginSm,
@@ -201,13 +222,29 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsBackground,
     brUtilsBorder,
     brUtilsColor,
+    brUtilsDisplay,
+    brUtilsDisplaySm,
+    brUtilsDisplayMd,
+    brUtilsDisplayLg,
+    brUtilsDisplayXl,
+    brUtilsDisplayXxl,
+    brUtilsDisplayPrint,
     ...rest
   } = props
 
   const brStyles = buildBrStyles([
     brUtilsBackgroundStyles(brUtilsBackground),
     brUtilsBorderStyles(brUtilsBorder),
-    brUtilsColorStyles(brUtilsColor)
+    brUtilsColorStyles(brUtilsColor),
+    brUtilsDisplayStyles({
+      brUtilsDisplay: brUtilsDisplay,
+      brUtilsDisplaySm: brUtilsDisplaySm,
+      brUtilsDisplayMd: brUtilsDisplayMd,
+      brUtilsDisplayLg: brUtilsDisplayLg,
+      brUtilsDisplayXl: brUtilsDisplayXl,
+      brUtilsDisplayXxl: brUtilsDisplayXxl,
+      brUtilsDisplayPrint: brUtilsDisplayPrint
+    })
   ])
 
   return (
@@ -216,15 +253,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       data-bs-theme={brTheme}
       className={classNames(className, {
         [`position-${brPosition}`]: !!brPosition,
-        ...brDisplayClasses({
-          brDisplay,
-          brDisplaySm,
-          brDisplayMd,
-          brDisplayLg,
-          brDisplayXl,
-          brDisplayXxl,
-          brDisplayPrint
-        }),
         'visually-hidden': brVisuallyHidden,
         ...brSpacingClasses({ prefix: 'm' }, brMargin),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'sm-' }, brMarginSm),

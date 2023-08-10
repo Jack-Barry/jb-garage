@@ -342,7 +342,7 @@ export const SimpleAnchors: StoryFn = () => {
           <BrElement
             id="simple-list-example"
             className="simple-list-example-scrollspy text-center"
-            brDisplay="flex"
+            brUtilsDisplay="flex"
             brFlex={{ column: true, gap: 2 }}
           >
             <BrElement as="a" brPadding={1} className="rounded" href="#simple-list-item-1">

@@ -35,7 +35,8 @@ export const BasicExamples: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
@@ -46,7 +47,8 @@ export const BasicExamples: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
@@ -57,7 +59,8 @@ export const BasicExamples: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
@@ -119,7 +122,8 @@ export const Indicators: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
@@ -130,7 +134,8 @@ export const Indicators: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
@@ -141,7 +146,8 @@ export const Indicators: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
@@ -203,12 +209,13 @@ export const Captions: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
-          <CarouselCaption className="d-none d-md-block">
+          <CarouselCaption brUtilsDisplay="none" brUtilsDisplayMd="block">
             <h5>First slide label</h5>
             <p>Some representative placeholder content for the first slide.</p>
           </CarouselCaption>
@@ -218,12 +225,13 @@ export const Captions: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
-          <CarouselCaption className="d-none d-md-block">
+          <CarouselCaption brUtilsDisplay="none" brUtilsDisplayMd="block">
             <h5>Second slide label</h5>
             <p>Some representative placeholder content for the second slide.</p>
           </CarouselCaption>
@@ -233,12 +241,13 @@ export const Captions: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
           </Image>
-          <CarouselCaption className="d-none d-md-block">
+          <CarouselCaption brUtilsDisplay="none" brUtilsDisplayMd="block">
             <h5>Third slide label</h5>
             <p>Some representative placeholder content for the third slide.</p>
           </CarouselCaption>
@@ -273,7 +282,8 @@ export const CrossFade: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
@@ -284,7 +294,8 @@ export const CrossFade: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
@@ -295,7 +306,8 @@ export const CrossFade: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
@@ -333,7 +345,8 @@ export const AutoPlayingCarousels: StoryFn = () => {
               {...placeholderImgSvgProps({
                 width: 800,
                 height: 400,
-                className: 'bd-placeholder-img-lg d-block w-100'
+                className: 'bd-placeholder-img-lg w-100',
+                brUtilsDisplay: 'block'
               })}
             >
               <PlaceholderImgSvgChildren text="First slide" />
@@ -344,7 +357,8 @@ export const AutoPlayingCarousels: StoryFn = () => {
               {...placeholderImgSvgProps({
                 width: 800,
                 height: 400,
-                className: 'bd-placeholder-img-lg d-block w-100'
+                className: 'bd-placeholder-img-lg w-100',
+                brUtilsDisplay: 'block'
               })}
             >
               <PlaceholderImgSvgChildren text="Second slide" />
@@ -355,7 +369,8 @@ export const AutoPlayingCarousels: StoryFn = () => {
               {...placeholderImgSvgProps({
                 width: 800,
                 height: 400,
-                className: 'bd-placeholder-img-lg d-block w-100'
+                className: 'bd-placeholder-img-lg w-100',
+                brUtilsDisplay: 'block'
               })}
             >
               <PlaceholderImgSvgChildren text="Third slide" />
@@ -385,7 +400,8 @@ export const AutoPlayingCarousels: StoryFn = () => {
               {...placeholderImgSvgProps({
                 width: 800,
                 height: 400,
-                className: 'bd-placeholder-img-lg d-block w-100'
+                className: 'bd-placeholder-img-lg w-100',
+                brUtilsDisplay: 'block'
               })}
             >
               <PlaceholderImgSvgChildren text="First slide" />
@@ -396,7 +412,8 @@ export const AutoPlayingCarousels: StoryFn = () => {
               {...placeholderImgSvgProps({
                 width: 800,
                 height: 400,
-                className: 'bd-placeholder-img-lg d-block w-100'
+                className: 'bd-placeholder-img-lg w-100',
+                brUtilsDisplay: 'block'
               })}
             >
               <PlaceholderImgSvgChildren text="Second slide" />
@@ -407,7 +424,8 @@ export const AutoPlayingCarousels: StoryFn = () => {
               {...placeholderImgSvgProps({
                 width: 800,
                 height: 400,
-                className: 'bd-placeholder-img-lg d-block w-100'
+                className: 'bd-placeholder-img-lg w-100',
+                brUtilsDisplay: 'block'
               })}
             >
               <PlaceholderImgSvgChildren text="Third slide" />
@@ -445,7 +463,8 @@ export const IndividualCarouselItemInterval: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
@@ -459,7 +478,8 @@ export const IndividualCarouselItemInterval: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
@@ -470,7 +490,8 @@ export const IndividualCarouselItemInterval: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
@@ -506,7 +527,8 @@ export const AutoplayingCarouselsWithoutControls: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
@@ -517,7 +539,8 @@ export const AutoplayingCarouselsWithoutControls: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
@@ -528,7 +551,8 @@ export const AutoplayingCarouselsWithoutControls: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
@@ -552,7 +576,8 @@ export const DisableTouchSwiping: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
@@ -563,7 +588,8 @@ export const DisableTouchSwiping: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
@@ -574,7 +600,8 @@ export const DisableTouchSwiping: StoryFn = () => {
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
-              className: 'bd-placeholder-img-lg d-block w-100'
+              className: 'bd-placeholder-img-lg w-100',
+              brUtilsDisplay: 'block'
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />

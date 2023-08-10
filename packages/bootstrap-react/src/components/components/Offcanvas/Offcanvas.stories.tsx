@@ -159,14 +159,14 @@ export const Responsive: StoryFn = () => {
     <div>
       <Button
         brButtonColor="primary"
-        brDisplayLg="none"
+        brUtilsDisplayLg="none"
         aria-controls="offcanvasResponsive"
         onClick={offcanvas.toggle}
       >
         Toggle offcanvas
       </Button>
 
-      <Alert brDisplay="none" brDisplayLg="block" className="alert-info">
+      <Alert brUtilsDisplay="none" brUtilsDisplayLg="block" className="alert-info">
         Resize your browser to show the responsive offcanvas toggle.
       </Alert>
 
