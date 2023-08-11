@@ -19,6 +19,10 @@ import {
 import { buildBrStyles } from './bootstrapClasses/brStyles'
 import { BrUtilsColorOptions, brUtilsColorStyles } from './bootstrapClasses/utilities/colors'
 import { BrUtilsFloatType, brUtilsFloatStyles } from './bootstrapClasses/utilities/float'
+import {
+  BrUtilsInteractOptions,
+  brUtilsInteractStyles
+} from './bootstrapClasses/utilities/interact'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BrBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | string
@@ -207,6 +211,12 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
    */
   brUtilsFloat2xl?: BrUtilsFloatType
+  /**
+   * Interaction styles to apply to the element using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Interactions](https://getbootstrap.com/docs/5.3/utilities/interactions/)
+   */
+  brUtilsInteract?: BrUtilsInteractOptions
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -300,6 +310,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsFloatLg,
     brUtilsFloatXl,
     brUtilsFloat2xl,
+    brUtilsInteract,
     ...rest
   } = props
 
@@ -331,7 +342,8 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       brUtilsFloatLg,
       brUtilsFloatXl,
       brUtilsFloat2xl
-    })
+    }),
+    brUtilsInteractStyles(brUtilsInteract)
   ])
 
   return (
