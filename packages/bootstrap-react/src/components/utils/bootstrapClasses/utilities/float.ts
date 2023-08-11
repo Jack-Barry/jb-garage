@@ -9,7 +9,7 @@ export type BrUtilsFloatOptions = Pick<
   | 'brUtilsFloatMd'
   | 'brUtilsFloatLg'
   | 'brUtilsFloatXl'
-  | 'brUtilsFloatXxl'
+  | 'brUtilsFloat2xl'
 >
 
 export function brUtilsFloatStyles(options: BrUtilsFloatOptions): BrStyles {

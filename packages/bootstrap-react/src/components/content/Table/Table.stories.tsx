@@ -503,7 +503,7 @@ export const ResponsiveTablesBreakpointSpecific: StoryFn = () => {
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
       <hr />
-      <ResponsiveTableWrapper brTableResponsiveXxl>
+      <ResponsiveTableWrapper brTableResponsive2xl>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
     </div>

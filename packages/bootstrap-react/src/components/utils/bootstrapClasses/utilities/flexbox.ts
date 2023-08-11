@@ -30,7 +30,7 @@ export function brUtilsFlexStyles(
     | 'brUtilsFlexMd'
     | 'brUtilsFlexLg'
     | 'brUtilsFlexXl'
-    | 'brUtilsFlexXxl'
+    | 'brUtilsFlex2xl'
   >
 ): BrStyles {
   const classes: Record<string, boolean> = {}

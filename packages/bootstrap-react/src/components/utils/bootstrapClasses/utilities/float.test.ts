@@ -9,7 +9,7 @@ describe('Bootstrap Classes: Utilities: Float', () => {
         brUtilsFloatMd: 'none',
         brUtilsFloatLg: 'start',
         brUtilsFloatXl: 'end',
-        brUtilsFloatXxl: 'none'
+        brUtilsFloat2xl: 'none'
       })
     ).toStrictEqual({
       classes: {

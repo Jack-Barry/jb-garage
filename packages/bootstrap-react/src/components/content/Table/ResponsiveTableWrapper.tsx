@@ -14,7 +14,7 @@ export type ResponsiveTableWrapperProps<T extends ElementType> = BrElementProps<
   /** Apply responsive table styling up to xl breakpoint */
   brTableResponsiveXl?: boolean
   /** Apply responsive table styling up to xxl breakpoint */
-  brTableResponsiveXxl?: boolean
+  brTableResponsive2xl?: boolean
 }
 
 type ResponsiveTableWrapperWithRef = <Component extends ElementType = 'div'>(
@@ -34,7 +34,7 @@ const ResponsiveTableWrapper: ResponsiveTableWrapperWithRef = forwardRef(
       brTableResponsiveMd,
       brTableResponsiveLg,
       brTableResponsiveXl,
-      brTableResponsiveXxl,
+      brTableResponsive2xl,
       ...rest
     } = props
 
@@ -50,7 +50,7 @@ const ResponsiveTableWrapper: ResponsiveTableWrapperWithRef = forwardRef(
             'table-responsive-md': brTableResponsiveMd,
             'table-responsive-lg': brTableResponsiveLg,
             'table-responsive-xl': brTableResponsiveXl,
-            'table-responsive-xxl': brTableResponsiveXxl
+            'table-responsive-xxl': brTableResponsive2xl
           },
           className
         )}

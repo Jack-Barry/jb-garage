@@ -22,7 +22,7 @@ export type RowProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   /** Number of columns in row above xl breakpoint */
   brRowColsXl?: ColSpan
   /** Number of columns in row above xxl breakpoint */
-  brRowColsXxl?: ColSpan
+  brRowCols2xl?: ColSpan
   /** Size of gutter for the row */
   brRowGutter?: BrSpacingProp
   /** Size of gutter for the row above sm breakpoint */
@@ -34,7 +34,7 @@ export type RowProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   /** Size of gutter for the row above xl breakpoint */
   brRowGutterXl?: BrSpacingProp
   /** Size of gutter for the row above xxl breakpoint */
-  brRowGutterXxl?: BrSpacingProp
+  brRowGutter2xl?: BrSpacingProp
 }
 
 type RowWithRef = <Component extends ElementType = 'div'>(props: RowProps<Component>) => ReactNode
@@ -53,13 +53,13 @@ const Row: RowWithRef = forwardRef(function Row<T extends ElementType = 'div'>(
     brRowColsMd,
     brRowColsLg,
     brRowColsXl,
-    brRowColsXxl,
+    brRowCols2xl,
     brRowGutter,
     brRowGutterSm,
     brRowGutterMd,
     brRowGutterLg,
     brRowGutterXl,
-    brRowGutterXxl,
+    brRowGutter2xl,
     ...rest
   } = props
 
@@ -75,7 +75,7 @@ const Row: RowWithRef = forwardRef(function Row<T extends ElementType = 'div'>(
           [`row-cols-md-${brRowColsMd}`]: !!brRowColsMd,
           [`row-cols-lg-${brRowColsLg}`]: !!brRowColsLg,
           [`row-cols-xl-${brRowColsXl}`]: !!brRowColsXl,
-          [`row-cols-xxl-${brRowColsXxl}`]: !!brRowColsXxl,
+          [`row-cols-xxl-${brRowCols2xl}`]: !!brRowCols2xl,
           [`g-${brRowGutter}`]: typeof brRowGutter === 'number' || typeof brRowGutter === 'string',
           [`gx-${(brRowGutter as BrSpacingConfig)?.x}`]:
             typeof (brRowGutter as BrSpacingConfig)?.x !== 'undefined',
@@ -105,12 +105,12 @@ const Row: RowWithRef = forwardRef(function Row<T extends ElementType = 'div'>(
             typeof (brRowGutterXl as BrSpacingConfig)?.x !== 'undefined',
           [`gy-xl-${(brRowGutterXl as BrSpacingConfig)?.y}`]:
             typeof (brRowGutterXl as BrSpacingConfig)?.y !== 'undefined',
-          [`g-xxl-${brRowGutterXxl}`]:
-            typeof brRowGutterXxl === 'number' || typeof brRowGutterXxl === 'string',
-          [`gx-xxl-${(brRowGutterXxl as BrSpacingConfig)?.x}`]:
-            typeof (brRowGutterXxl as BrSpacingConfig)?.x !== 'undefined',
-          [`gy-xxl-${(brRowGutterXxl as BrSpacingConfig)?.y}`]:
-            typeof (brRowGutterXxl as BrSpacingConfig)?.y !== 'undefined'
+          [`g-xxl-${brRowGutter2xl}`]:
+            typeof brRowGutter2xl === 'number' || typeof brRowGutter2xl === 'string',
+          [`gx-xxl-${(brRowGutter2xl as BrSpacingConfig)?.x}`]:
+            typeof (brRowGutter2xl as BrSpacingConfig)?.x !== 'undefined',
+          [`gy-xxl-${(brRowGutter2xl as BrSpacingConfig)?.y}`]:
+            typeof (brRowGutter2xl as BrSpacingConfig)?.y !== 'undefined'
         },
         className
       )}

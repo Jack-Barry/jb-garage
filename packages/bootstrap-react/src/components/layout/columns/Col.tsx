@@ -50,7 +50,7 @@ export type ColProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   /** Number of columns to span across above xl breakpoint */
   brColsXl?: ColSpan | boolean
   /** Number of columns to span across above xxl breakpoint */
-  brColsXxl?: ColSpan | boolean
+  brCols2xl?: ColSpan | boolean
   /** Order number or position for the column */
   brColOrder?: ColOrder
   /** Order number or position above sm breakpoint */
@@ -62,7 +62,7 @@ export type ColProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   /** Order number or position above xl breakpoint */
   brColOrderXl?: ColOrder
   /** Order number or position above xxl breakpoint */
-  brColOrderXxl?: ColOrder
+  brColOrder2xl?: ColOrder
   /** Size of offset */
   brColOffset?: ColOffset
   /** Offset size above sm breakpoint */
@@ -74,7 +74,7 @@ export type ColProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   /** Offset size above xl breakpoint */
   brColOffsetXl?: ColOffset
   /** Offset size above xxl breakpoint */
-  brColOffsetXxl?: ColOffset
+  brColOffset2xl?: ColOffset
 }
 
 type ColWithRef = <Component extends ElementType = 'div'>(props: ColProps<Component>) => ReactNode
@@ -93,19 +93,19 @@ const Col: ColWithRef = forwardRef(function Col<T extends ElementType = 'div'>(
     brColsMd,
     brColsLg,
     brColsXl,
-    brColsXxl,
+    brCols2xl,
     brColOrder,
     brColOrderSm,
     brColOrderMd,
     brColOrderLg,
     brColOrderXl,
-    brColOrderXxl,
+    brColOrder2xl,
     brColOffset,
     brColOffsetSm,
     brColOffsetMd,
     brColOffsetLg,
     brColOffsetXl,
-    brColOffsetXxl,
+    brColOffset2xl,
     ...rest
   } = props
 
@@ -115,7 +115,7 @@ const Col: ColWithRef = forwardRef(function Col<T extends ElementType = 'div'>(
       ref={ref}
       className={classNames(
         {
-          col: !brCols && !brColsSm && !brColsMd && !brColsLg && !brColsXl && !brColsXxl,
+          col: !brCols && !brColsSm && !brColsMd && !brColsLg && !brColsXl && !brCols2xl,
           [`col-${brCols}`]: !!brCols,
           [`col-sm-${brColsSm}`]: typeof brColsSm !== 'boolean' && !!brColsSm,
           'col-sm': typeof brColsSm === 'boolean' && !!brColsSm,
@@ -125,20 +125,20 @@ const Col: ColWithRef = forwardRef(function Col<T extends ElementType = 'div'>(
           'col-lg': typeof brColsLg === 'boolean' && !!brColsLg,
           [`col-xl-${brColsXl}`]: typeof brColsXl !== 'boolean' && !!brColsXl,
           'col-xl': typeof brColsXl === 'boolean' && !!brColsXl,
-          [`col-xxl-${brColsXxl}`]: typeof brColsXxl !== 'boolean' && !!brColsXxl,
-          'col-xxl': typeof brColsXxl === 'boolean' && !!brColsXxl,
+          [`col-xxl-${brCols2xl}`]: typeof brCols2xl !== 'boolean' && !!brCols2xl,
+          'col-xxl': typeof brCols2xl === 'boolean' && !!brCols2xl,
           [`order-${brColOrder}`]: !!brColOrder,
           [`order-sm-${brColOrderSm}`]: !!brColOrderSm,
           [`order-md-${brColOrderMd}`]: !!brColOrderMd,
           [`order-lg-${brColOrderLg}`]: !!brColOrderLg,
           [`order-xl-${brColOrderXl}`]: !!brColOrderXl,
-          [`order-xxl-${brColOrderXxl}`]: !!brColOrderXxl,
+          [`order-xxl-${brColOrder2xl}`]: !!brColOrder2xl,
           [`offset-${brColOffset}`]: typeof brColOffset !== 'undefined',
           [`offset-sm-${brColOffsetSm}`]: typeof brColOffsetSm !== 'undefined',
           [`offset-md-${brColOffsetMd}`]: typeof brColOffsetMd !== 'undefined',
           [`offset-lg-${brColOffsetLg}`]: typeof brColOffsetLg !== 'undefined',
           [`offset-xl-${brColOffsetXl}`]: typeof brColOffsetXl !== 'undefined',
-          [`offset-xxl-${brColOffsetXxl}`]: typeof brColOffsetXxl !== 'undefined'
+          [`offset-xxl-${brColOffset2xl}`]: typeof brColOffset2xl !== 'undefined'
         },
         className
       )}

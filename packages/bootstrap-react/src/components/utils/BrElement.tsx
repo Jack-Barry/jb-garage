@@ -42,7 +42,7 @@ export type BrElementCommonProps = {
   /** Margin to apply to the element above the xl breakpoint using Bootstrap classes */
   brMarginXl?: BrSpacingProp
   /** Margin to apply to the element above the xxl breakpoint using Bootstrap classes */
-  brMarginXxl?: BrSpacingProp
+  brMargin2xl?: BrSpacingProp
   /** Negative margin to apply to the element using Bootstrap classes */
   brNegativeMargin?: BrSpacingProp
   /** Negative margin to apply to the element above the sm breakpoint using Bootstrap classes */
@@ -54,7 +54,7 @@ export type BrElementCommonProps = {
   /** Negative margin to apply to the element above the xl breakpoint using Bootstrap classes */
   brNegativeMarginXl?: BrSpacingProp
   /** Negative margin to apply to the element above the xxl breakpoint using Bootstrap classes */
-  brNegativeMarginXxl?: BrSpacingProp
+  brNegativeMargin2xl?: BrSpacingProp
   /** Padding to apply to the element using Bootstrap classes */
   brPadding?: BrSpacingProp
   /** Padding to apply to the element above the sm breakpoint using Bootstrap classes */
@@ -66,7 +66,7 @@ export type BrElementCommonProps = {
   /** Padding to apply to the element above the xl breakpoint using Bootstrap classes */
   brPaddingXl?: BrSpacingProp
   /** Padding to apply to the element above the xxl breakpoint using Bootstrap classes */
-  brPaddingXxl?: BrSpacingProp
+  brPadding2xl?: BrSpacingProp
   /**
    * Theme to apply to the element using `bs-data-theme` attribute
    */
@@ -128,7 +128,7 @@ export type BrElementCommonProps = {
    *
    * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
    */
-  brUtilsDisplayXxl?: BrDisplayProp
+  brUtilsDisplay2xl?: BrDisplayProp
   /**
    * Display type to apply to the element for print using Bootstrap class
    *
@@ -170,7 +170,7 @@ export type BrElementCommonProps = {
    *
    * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
    */
-  brUtilsFlexXxl?: BrFlexProp
+  brUtilsFlex2xl?: BrFlexProp
   /**
    * Float style to apply to the element using Bootstrap classes
    *
@@ -206,7 +206,7 @@ export type BrElementCommonProps = {
    *
    * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
    */
-  brUtilsFloatXxl?: BrUtilsFloatType
+  brUtilsFloat2xl?: BrUtilsFloatType
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -263,25 +263,25 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brMarginMd,
     brMarginLg,
     brMarginXl,
-    brMarginXxl,
+    brMargin2xl,
     brNegativeMargin,
     brNegativeMarginSm,
     brNegativeMarginMd,
     brNegativeMarginLg,
     brNegativeMarginXl,
-    brNegativeMarginXxl,
+    brNegativeMargin2xl,
     brPadding,
     brPaddingSm,
     brPaddingMd,
     brPaddingLg,
     brPaddingXl,
-    brPaddingXxl,
+    brPadding2xl,
     brUtilsFlex,
     brUtilsFlexSm,
     brUtilsFlexMd,
     brUtilsFlexLg,
     brUtilsFlexXl,
-    brUtilsFlexXxl,
+    brUtilsFlex2xl,
     brTheme,
     brClearfix,
     brUtilsBackground,
@@ -292,14 +292,14 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsDisplayMd,
     brUtilsDisplayLg,
     brUtilsDisplayXl,
-    brUtilsDisplayXxl,
+    brUtilsDisplay2xl,
     brUtilsDisplayPrint,
     brUtilsFloat,
     brUtilsFloatSm,
     brUtilsFloatMd,
     brUtilsFloatLg,
     brUtilsFloatXl,
-    brUtilsFloatXxl,
+    brUtilsFloat2xl,
     ...rest
   } = props
 
@@ -313,7 +313,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       brUtilsDisplayMd,
       brUtilsDisplayLg,
       brUtilsDisplayXl,
-      brUtilsDisplayXxl,
+      brUtilsDisplay2xl,
       brUtilsDisplayPrint
     }),
     brUtilsFlexStyles({
@@ -322,7 +322,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       brUtilsFlexMd,
       brUtilsFlexLg,
       brUtilsFlexXl,
-      brUtilsFlexXxl
+      brUtilsFlex2xl
     }),
     brUtilsFloatStyles({
       brUtilsFloat,
@@ -330,7 +330,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       brUtilsFloatMd,
       brUtilsFloatLg,
       brUtilsFloatXl,
-      brUtilsFloatXxl
+      brUtilsFloat2xl
     })
   ])
 
@@ -346,19 +346,19 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'md-' }, brMarginMd),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'lg-' }, brMarginLg),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'xl-' }, brMarginXl),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'xxl-' }, brMarginXxl),
+        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'xxl-' }, brMargin2xl),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'n' }, brNegativeMargin),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'sm-n' }, brNegativeMarginSm),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'md-n' }, brNegativeMarginMd),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'lg-n' }, brNegativeMarginLg),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'xl-n' }, brNegativeMarginXl),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'xxl-n' }, brNegativeMarginXxl),
+        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'xxl-n' }, brNegativeMargin2xl),
         ...brSpacingClasses({ prefix: 'p' }, brPadding),
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'sm-' }, brPaddingSm),
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'md-' }, brPaddingMd),
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'lg-' }, brPaddingLg),
         ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xl-' }, brPaddingXl),
-        ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xxl-' }, brPaddingXxl),
+        ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xxl-' }, brPadding2xl),
         clearfix: brClearfix,
         ...brStyles.classes
       })}

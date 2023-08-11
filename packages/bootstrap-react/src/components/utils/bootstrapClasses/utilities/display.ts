@@ -26,7 +26,7 @@ export function brUtilsDisplayStyles(
     | 'brUtilsDisplayMd'
     | 'brUtilsDisplayLg'
     | 'brUtilsDisplayXl'
-    | 'brUtilsDisplayXxl'
+    | 'brUtilsDisplay2xl'
     | 'brUtilsDisplayPrint'
   >
 ): BrStyles {
@@ -36,7 +36,7 @@ export function brUtilsDisplayStyles(
     brUtilsDisplayMd,
     brUtilsDisplayLg,
     brUtilsDisplayXl,
-    brUtilsDisplayXxl,
+    brUtilsDisplay2xl,
     brUtilsDisplayPrint
   } = props
 
@@ -47,7 +47,7 @@ export function brUtilsDisplayStyles(
       [`d-md-${brUtilsDisplayMd}`]: !!brUtilsDisplayMd,
       [`d-lg-${brUtilsDisplayLg}`]: !!brUtilsDisplayLg,
       [`d-xl-${brUtilsDisplayXl}`]: !!brUtilsDisplayXl,
-      [`d-xxl-${brUtilsDisplayXxl}`]: !!brUtilsDisplayXxl,
+      [`d-xxl-${brUtilsDisplay2xl}`]: !!brUtilsDisplay2xl,
       [`d-print-${brUtilsDisplayPrint}`]: !!brUtilsDisplayPrint
     }
   }
