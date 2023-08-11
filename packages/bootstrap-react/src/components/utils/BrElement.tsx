@@ -18,6 +18,7 @@ import {
 } from './bootstrapClasses/utilities/background'
 import { buildBrStyles } from './bootstrapClasses/brStyles'
 import { BrUtilsColorOptions, brUtilsColorStyles } from './bootstrapClasses/utilities/colors'
+import { BrUtilsFloatType, brUtilsFloatStyles } from './bootstrapClasses/utilities/float'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BrBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | string
@@ -170,6 +171,42 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
    */
   brUtilsFlexXxl?: BrFlexProp
+  /**
+   * Float style to apply to the element using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
+   */
+  brUtilsFloat?: BrUtilsFloatType
+  /**
+   * Float style to apply to the element above the sm breakpoint using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
+   */
+  brUtilsFloatSm?: BrUtilsFloatType
+  /**
+   * Float style to apply to the element above the md breakpoint using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
+   */
+  brUtilsFloatMd?: BrUtilsFloatType
+  /**
+   * Float style to apply to the element above the lg breakpoint using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
+   */
+  brUtilsFloatLg?: BrUtilsFloatType
+  /**
+   * Float style to apply to the element above the xl breakpoint using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
+   */
+  brUtilsFloatXl?: BrUtilsFloatType
+  /**
+   * Float style to apply to the element above the xxl breakpoint using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
+   */
+  brUtilsFloatXxl?: BrUtilsFloatType
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -257,6 +294,12 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsDisplayXl,
     brUtilsDisplayXxl,
     brUtilsDisplayPrint,
+    brUtilsFloat,
+    brUtilsFloatSm,
+    brUtilsFloatMd,
+    brUtilsFloatLg,
+    brUtilsFloatXl,
+    brUtilsFloatXxl,
     ...rest
   } = props
 
@@ -280,6 +323,14 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       brUtilsFlexLg,
       brUtilsFlexXl,
       brUtilsFlexXxl
+    }),
+    brUtilsFloatStyles({
+      brUtilsFloat,
+      brUtilsFloatSm,
+      brUtilsFloatMd,
+      brUtilsFloatLg,
+      brUtilsFloatXl,
+      brUtilsFloatXxl
     })
   ])
 
