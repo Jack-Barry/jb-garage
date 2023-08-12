@@ -13,7 +13,7 @@ export type BrUtilsLinkOptions =
   | {
       color?: LinkColor
       opacity?: LinkOpacity
-      underlineColor?: LiteralUnion<LinkColor | 'null', string>
+      underlineColor?: LiteralUnion<LinkColor, string>
       underlineOffset?: LinkUnderlineOffset
       underlineOpacity?: LinkUnderlineOpacity
       hoverOpacity?: LinkOpacity

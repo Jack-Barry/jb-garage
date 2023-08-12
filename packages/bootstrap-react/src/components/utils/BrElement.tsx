@@ -43,6 +43,7 @@ import {
   BrUtilsPositionOptions,
   brUtilsPositionStyles
 } from './bootstrapClasses/utilities/position'
+import { BrUtilsShadowOptions, brUtilsShadowStyles } from './bootstrapClasses/utilities/shadow'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BootstrapBreakpoint = LiteralUnion<'sm' | 'md' | 'lg' | 'xl' | 'xxl', string>
@@ -179,6 +180,12 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Position](https://getbootstrap.com/docs/5.3/utilities/position/)
    */
   brUtilsPosition?: BrUtilsPositionOptions
+  /**
+   * Shadow style to apply to the element using Bootstrap class
+   *
+   * [Bootstrap Utilities: Shadow](https://getbootstrap.com/docs/5.3/utilities/shadow/)
+   */
+  brUtilsShadow?: BrUtilsShadowOptions
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -261,6 +268,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsOpacity,
     brUtilsOverflow,
     brUtilsPosition,
+    brUtilsShadow,
     ...rest
   } = props
 
@@ -276,7 +284,8 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsObjectFitStyles(brUtilsObjectFit),
     getOpacityStyles({ classNamePrefix: 'opacity' }, brUtilsOpacity),
     brUtilsOverflowStyles(brUtilsOverflow),
-    brUtilsPositionStyles(brUtilsPosition)
+    brUtilsPositionStyles(brUtilsPosition),
+    brUtilsShadowStyles(brUtilsShadow)
   ])
 
   return (
