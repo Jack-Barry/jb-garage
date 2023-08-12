@@ -23,6 +23,7 @@ import {
   BrUtilsInteractOptions,
   brUtilsInteractStyles
 } from './bootstrapClasses/utilities/interact'
+import { BrUtilsLinkOptions, brUtilsLinkStyles } from './bootstrapClasses/utilities/link'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BrBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | string
@@ -217,6 +218,12 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Interactions](https://getbootstrap.com/docs/5.3/utilities/interactions/)
    */
   brUtilsInteract?: BrUtilsInteractOptions
+  /**
+   * Link styles to apply to the element using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Link](https://getbootstrap.com/docs/5.3/utilities/link/)
+   */
+  brUtilsLink?: BrUtilsLinkOptions
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -311,6 +318,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsFloatXl,
     brUtilsFloat2xl,
     brUtilsInteract,
+    brUtilsLink,
     ...rest
   } = props
 
@@ -343,7 +351,8 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       brUtilsFloatXl,
       brUtilsFloat2xl
     }),
-    brUtilsInteractStyles(brUtilsInteract)
+    brUtilsInteractStyles(brUtilsInteract),
+    brUtilsLinkStyles(brUtilsLink)
   ])
 
   return (

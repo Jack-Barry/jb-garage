@@ -2,15 +2,16 @@ import { CSSProperties } from 'react'
 import { BrStyles } from '../brStyles'
 
 type OpacityStylesOptions = {
-  cssVariableKey: string
+  cssVariableKey?: string
   classNamePrefix: string
+  classNameSuffix?: string
 }
 
 export function getOpacityStyles(
   options: OpacityStylesOptions,
   opacity?: number | string
 ): BrStyles {
-  const { cssVariableKey, classNamePrefix } = options
+  const { cssVariableKey, classNamePrefix, classNameSuffix = '' } = options
   const opacityIsNumber = typeof opacity === 'number'
   const opacityIsString = typeof opacity === 'string'
   if (!opacityIsNumber && !opacityIsString) {
@@ -30,12 +31,12 @@ export function getOpacityStyles(
   }
 
   if (opacityAsNumber !== undefined) {
-    if (opacityAsNumber < 1) {
+    if (opacityAsNumber < 1 && !!cssVariableKey) {
       brStyles.inlineStyles = { [cssVariableKey]: opacityAsNumber } as CSSProperties
     } else if (opacityAsNumber === 1) {
-      brStyles.classes = { [`${classNamePrefix}-100`]: true }
+      brStyles.classes = { [`${classNamePrefix}-100${classNameSuffix}`]: true }
     } else {
-      brStyles.classes = { [`${classNamePrefix}-${opacityAsNumber}`]: true }
+      brStyles.classes = { [`${classNamePrefix}-${opacityAsNumber}${classNameSuffix}`]: true }
     }
   }
 
