@@ -246,7 +246,11 @@ export const AvailableStylesFillAndJustify: StoryFn = () => {
 
 export const WorkingWithFlexUtilities: StoryFn = () => {
   return (
-    <Nav as="nav" brUtilsFlex={{ column: true }} brUtilsFlexSm={{ row: true }} brNavPills>
+    <Nav
+      as="nav"
+      brUtilsFlex={{ brAllBreakpoints: { column: true }, sm: { row: true } }}
+      brNavPills
+    >
       <NavLink aria-current="page" href="#" brNavLinkActive>
         Active
       </NavLink>

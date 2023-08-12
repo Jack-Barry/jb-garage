@@ -1,14 +1,9 @@
 import { LiteralUnion } from '@jb-garage/bootstrap-react/types'
-import { BootstrapBreakpoint } from '../../BrElement'
+import { BrUtilsBreakpointBasedOptions } from '../../BrElement'
 import { BrStyles } from '../brStyles'
 
 export type BrUtilsFloatType = LiteralUnion<'start' | 'end' | 'none', string>
-export type BrUtilsFloatOptions =
-  | BrUtilsFloatType
-  | (Partial<Record<BootstrapBreakpoint, BrUtilsFloatType>> & {
-      /** Float type to apply at all breakpoints unless overridden */
-      brAllBreakpoints?: BrUtilsFloatType
-    })
+export type BrUtilsFloatOptions = BrUtilsFloatType | BrUtilsBreakpointBasedOptions<BrUtilsFloatType>
 
 export function brUtilsFloatStyles(options?: BrUtilsFloatOptions): BrStyles {
   if (!options) {

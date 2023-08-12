@@ -1,5 +1,5 @@
 import { LiteralUnion } from '@jb-garage/bootstrap-react/types'
-import { BootstrapBreakpoint } from '../../BrElement'
+import { BrUtilsBreakpointBasedOptions } from '../../BrElement'
 import { BrStyles } from '../brStyles'
 
 export type BootstrapObjectFit = LiteralUnion<
@@ -9,10 +9,7 @@ export type BootstrapObjectFit = LiteralUnion<
 
 export type BrUtilsObjectFitOptions =
   | BootstrapObjectFit
-  | (Partial<Record<BootstrapBreakpoint, BootstrapObjectFit>> & {
-      /** Object fit to apply at all breakpoints unless overridden */
-      brAllBreakpoints?: BootstrapObjectFit
-    })
+  | BrUtilsBreakpointBasedOptions<BootstrapObjectFit>
 
 export function brUtilsObjectFitStyles(options?: BrUtilsObjectFitOptions): BrStyles {
   if (!options) {

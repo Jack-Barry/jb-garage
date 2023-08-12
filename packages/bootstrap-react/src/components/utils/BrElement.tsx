@@ -8,7 +8,7 @@ import {
   ReactNode,
   forwardRef
 } from 'react'
-import { BrFlexProp, brUtilsFlexStyles } from './bootstrapClasses/utilities/flexbox'
+import { BrUtilsFlexOptions, brUtilsFlexStyles } from './bootstrapClasses/utilities/flexbox'
 import { BrBorderProp, brUtilsBorderStyles } from './bootstrapClasses/utilities/borders'
 import { BrDisplayProp, brUtilsDisplayStyles } from './bootstrapClasses/utilities/display'
 import { BrSpacingProp, brSpacingClasses } from './bootstrapClasses/spacing'
@@ -38,6 +38,10 @@ import {
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BootstrapBreakpoint = LiteralUnion<'sm' | 'md' | 'lg' | 'xl' | 'xxl', string>
+export type BrUtilsBreakpointBasedOptions<T> = Partial<Record<BootstrapBreakpoint, T>> & {
+  /** Style to apply at all breakpoints unless overridden */
+  brAllBreakpoints?: T
+}
 
 /** Prop that can be accepted by `BrElement` for Bootstrap position utilities */
 export type BrPositionProp = 'relative' | 'absolute' | 'static' | 'fixed'
@@ -156,37 +160,7 @@ export type BrElementCommonProps = {
    *
    * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
    */
-  brUtilsFlex?: BrFlexProp
-  /**
-   * Flex styles to apply to the element above the sm breakpoint using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
-   */
-  brUtilsFlexSm?: BrFlexProp
-  /**
-   * Flex styles to apply to the element above the md breakpoint using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
-   */
-  brUtilsFlexMd?: BrFlexProp
-  /**
-   * Flex styles to apply to the element above the lg breakpoint using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
-   */
-  brUtilsFlexLg?: BrFlexProp
-  /**
-   * Flex styles to apply to the element above the xl breakpoint using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
-   */
-  brUtilsFlexXl?: BrFlexProp
-  /**
-   * Flex styles to apply to the element above the xxl breakpoint using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
-   */
-  brUtilsFlex2xl?: BrFlexProp
+  brUtilsFlex?: BrUtilsFlexOptions
   /**
    * Float style to apply to the element using Bootstrap classes
    *
@@ -293,11 +267,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brPaddingXl,
     brPadding2xl,
     brUtilsFlex,
-    brUtilsFlexSm,
-    brUtilsFlexMd,
-    brUtilsFlexLg,
-    brUtilsFlexXl,
-    brUtilsFlex2xl,
     brTheme,
     brClearfix,
     brUtilsBackground,
@@ -332,14 +301,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       brUtilsDisplay2xl,
       brUtilsDisplayPrint
     }),
-    brUtilsFlexStyles({
-      brUtilsFlex,
-      brUtilsFlexSm,
-      brUtilsFlexMd,
-      brUtilsFlexLg,
-      brUtilsFlexXl,
-      brUtilsFlex2xl
-    }),
+    brUtilsFlexStyles(brUtilsFlex),
     brUtilsFloatStyles(brUtilsFloat),
     brUtilsInteractStyles(brUtilsInteract),
     brUtilsLinkStyles(brUtilsLink),

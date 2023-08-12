@@ -147,7 +147,7 @@ export const BlockButtons: StoryFn = () => {
         brUtilsDisplay="grid"
         className="gap-2"
         brUtilsDisplayMd="flex"
-        brUtilsFlexMd={{ justifyContent: 'end' }}
+        brUtilsFlex={{ md: { justifyContent: 'end' } }}
       >
         <Button brButtonColor="primary" brMarginMd={{ end: 2 }}>
           Button
