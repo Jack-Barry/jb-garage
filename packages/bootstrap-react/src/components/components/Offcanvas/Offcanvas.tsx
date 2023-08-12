@@ -1,5 +1,5 @@
 import { ElementType, ReactNode, forwardRef } from 'react'
-import { BrBreakpoint, BrElement, BrElementProps } from '../../utils/BrElement'
+import { BootstrapBreakpoint, BrElement, BrElementProps } from '../../utils/BrElement'
 import classNames from 'classnames'
 import { useOffcanvas } from './useOffcanvas'
 import { useMultiRef } from '../../utils/useMultiRef'
@@ -11,7 +11,7 @@ export type OffcanvasProps<T extends ElementType> = BrElementProps<
     brOffcanvas: ReturnType<typeof useOffcanvas>
     /** @default "start" */
     brOffcanvasPlacement?: 'start' | 'end' | 'top' | 'bottom'
-    brOffcanvasBreakpoint?: BrBreakpoint
+    brOffcanvasBreakpoint?: BootstrapBreakpoint
   }
 >
 

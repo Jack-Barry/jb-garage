@@ -18,15 +18,20 @@ import {
 } from './bootstrapClasses/utilities/background'
 import { buildBrStyles } from './bootstrapClasses/brStyles'
 import { BrUtilsColorOptions, brUtilsColorStyles } from './bootstrapClasses/utilities/colors'
-import { BrUtilsFloatType, brUtilsFloatStyles } from './bootstrapClasses/utilities/float'
+import { BrUtilsFloatOptions, brUtilsFloatStyles } from './bootstrapClasses/utilities/float'
 import {
   BrUtilsInteractOptions,
   brUtilsInteractStyles
 } from './bootstrapClasses/utilities/interact'
 import { BrUtilsLinkOptions, brUtilsLinkStyles } from './bootstrapClasses/utilities/link'
+import {
+  BrUtilsObjectFitOptions,
+  brUtilsObjectFitStyles
+} from './bootstrapClasses/utilities/objectFit'
+import { LiteralUnion } from '@jb-garage/bootstrap-react/types'
 
 /** Prop representing a Bootstrap viewport breakpoint */
-export type BrBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | string
+export type BootstrapBreakpoint = LiteralUnion<'sm' | 'md' | 'lg' | 'xl' | 'xxl', string>
 
 /** Prop that can be accepted by `BrElement` for Bootstrap position utilities */
 export type BrPositionProp = 'relative' | 'absolute' | 'static' | 'fixed'
@@ -181,37 +186,7 @@ export type BrElementCommonProps = {
    *
    * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
    */
-  brUtilsFloat?: BrUtilsFloatType
-  /**
-   * Float style to apply to the element above the sm breakpoint using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
-   */
-  brUtilsFloatSm?: BrUtilsFloatType
-  /**
-   * Float style to apply to the element above the md breakpoint using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
-   */
-  brUtilsFloatMd?: BrUtilsFloatType
-  /**
-   * Float style to apply to the element above the lg breakpoint using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
-   */
-  brUtilsFloatLg?: BrUtilsFloatType
-  /**
-   * Float style to apply to the element above the xl breakpoint using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
-   */
-  brUtilsFloatXl?: BrUtilsFloatType
-  /**
-   * Float style to apply to the element above the xxl breakpoint using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
-   */
-  brUtilsFloat2xl?: BrUtilsFloatType
+  brUtilsFloat?: BrUtilsFloatOptions
   /**
    * Interaction styles to apply to the element using Bootstrap classes
    *
@@ -224,6 +199,12 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Link](https://getbootstrap.com/docs/5.3/utilities/link/)
    */
   brUtilsLink?: BrUtilsLinkOptions
+  /**
+   * Object fit style to apply to the element using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Object Fit](https://getbootstrap.com/docs/5.3/utilities/object-fit/)
+   */
+  brUtilsObjectFit?: BrUtilsObjectFitOptions
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -312,13 +293,9 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsDisplay2xl,
     brUtilsDisplayPrint,
     brUtilsFloat,
-    brUtilsFloatSm,
-    brUtilsFloatMd,
-    brUtilsFloatLg,
-    brUtilsFloatXl,
-    brUtilsFloat2xl,
     brUtilsInteract,
     brUtilsLink,
+    brUtilsObjectFit,
     ...rest
   } = props
 
@@ -343,16 +320,10 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       brUtilsFlexXl,
       brUtilsFlex2xl
     }),
-    brUtilsFloatStyles({
-      brUtilsFloat,
-      brUtilsFloatSm,
-      brUtilsFloatMd,
-      brUtilsFloatLg,
-      brUtilsFloatXl,
-      brUtilsFloat2xl
-    }),
+    brUtilsFloatStyles(brUtilsFloat),
     brUtilsInteractStyles(brUtilsInteract),
-    brUtilsLinkStyles(brUtilsLink)
+    brUtilsLinkStyles(brUtilsLink),
+    brUtilsObjectFitStyles(brUtilsObjectFit)
   ])
 
   return (

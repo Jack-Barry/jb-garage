@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { BrBreakpoint, BrElement, BrElementProps } from '../../utils/BrElement'
+import { BootstrapBreakpoint, BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 export type ContainerProps<T extends ElementType> = BrElementProps<T> & {
@@ -10,7 +10,7 @@ export type ContainerProps<T extends ElementType> = BrElementProps<T> & {
    */
   as?: T
   /** Breakpoint size to use */
-  brContainerBreakpoint?: BrBreakpoint
+  brContainerBreakpoint?: BootstrapBreakpoint
   /** Container is fluid */
   brContainerFluid?: boolean
 }
