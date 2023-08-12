@@ -39,6 +39,10 @@ import {
   BrUtilsOverflowOptions,
   brUtilsOverflowStyles
 } from './bootstrapClasses/utilities/overflow'
+import {
+  BrUtilsPositionOptions,
+  brUtilsPositionStyles
+} from './bootstrapClasses/utilities/position'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BootstrapBreakpoint = LiteralUnion<'sm' | 'md' | 'lg' | 'xl' | 'xxl', string>
@@ -51,8 +55,6 @@ export type BrUtilsBreakpointBasedOptions<T> = Partial<Record<BootstrapBreakpoin
 export type BrPositionProp = 'relative' | 'absolute' | 'static' | 'fixed'
 
 export type BrElementCommonProps = {
-  /** Position to apply to the element using Bootstrap class */
-  brPosition?: BrPositionProp
   /** Element should be visually hidden (but present for screen readers) */
   brVisuallyHidden?: boolean
   /** Margin to apply to the element using Bootstrap classes */
@@ -171,6 +173,12 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Overflow](https://getbootstrap.com/docs/5.3/utilities/overflow/)
    */
   brUtilsOverflow?: BrUtilsOverflowOptions
+  /**
+   * Position style to apply to the element using Bootstrap class
+   *
+   * [Bootstrap Utilities: Position](https://getbootstrap.com/docs/5.3/utilities/position/)
+   */
+  brUtilsPosition?: BrUtilsPositionOptions
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -220,7 +228,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     className,
     style,
     children,
-    brPosition,
     brVisuallyHidden,
     brMargin,
     brMarginSm,
@@ -253,6 +260,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsObjectFit,
     brUtilsOpacity,
     brUtilsOverflow,
+    brUtilsPosition,
     ...rest
   } = props
 
@@ -267,7 +275,8 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsLinkStyles(brUtilsLink),
     brUtilsObjectFitStyles(brUtilsObjectFit),
     getOpacityStyles({ classNamePrefix: 'opacity' }, brUtilsOpacity),
-    brUtilsOverflowStyles(brUtilsOverflow)
+    brUtilsOverflowStyles(brUtilsOverflow),
+    brUtilsPositionStyles(brUtilsPosition)
   ])
 
   return (
@@ -275,7 +284,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       ref={ref}
       data-bs-theme={brTheme}
       className={classNames(className, {
-        [`position-${brPosition}`]: !!brPosition,
         'visually-hidden': brVisuallyHidden,
         ...brSpacingClasses({ prefix: 'm' }, brMargin),
         ...brSpacingClasses({ prefix: 'm', valuePrefix: 'sm-' }, brMarginSm),

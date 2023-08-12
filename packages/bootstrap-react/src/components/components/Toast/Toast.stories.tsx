@@ -54,7 +54,7 @@ export const LiveExample: StoryFn = () => {
       <Button brButtonColor="primary" id="liveToastBtn" onClick={toast.show}>
         Show live toast
       </Button>
-      <ToastContainer brPosition="fixed" brPadding={3} className="bottom-0 end-0">
+      <ToastContainer brUtilsPosition="fixed" brPadding={3} className="bottom-0 end-0">
         <Toast id="liveToast" aria-live="assertive" aria-atomic="true" ref={toast.ref}>
           <ToastHeader>
             <Image
@@ -88,7 +88,7 @@ export const Stacking: StoryFn = () => {
   const toast2 = useToast({ bootstrapToast: { autohide: false } })
 
   return (
-    <ToastContainer brPosition="static">
+    <ToastContainer brUtilsPosition="static">
       <Toast aria-live="assertive" aria-atomic="true" ref={toast1.ref}>
         <ToastHeader>
           <Image

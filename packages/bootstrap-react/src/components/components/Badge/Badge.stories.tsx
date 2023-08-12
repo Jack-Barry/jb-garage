@@ -46,10 +46,10 @@ export const ExamplesButtons: StoryFn = () => {
 export const ExamplesPositioned: StoryFn = () => {
   return (
     <div>
-      <Button brPosition="relative" brButtonColor="primary">
+      <Button brUtilsPosition="relative" brButtonColor="primary">
         Inbox
         <Badge
-          brPosition="absolute"
+          brUtilsPosition="absolute"
           brUtilsBorder={{ radius: 'pill' }}
           className="top-0 start-100 translate-middle"
           brUtilsBackground="danger"
@@ -61,11 +61,11 @@ export const ExamplesPositioned: StoryFn = () => {
         </Badge>
       </Button>
       <hr />
-      <Button brPosition="relative" brButtonColor="primary">
+      <Button brUtilsPosition="relative" brButtonColor="primary">
         Profile
         <BrElement
           as="span"
-          brPosition="absolute"
+          brUtilsPosition="absolute"
           brPadding={2}
           brUtilsBorder={{ color: 'light', radius: 'circle' }}
           className="top-0 start-100 translate-middle rounded-circle"

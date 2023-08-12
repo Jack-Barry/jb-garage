@@ -1,6 +1,6 @@
 import { brUtilsOverflowStyles } from './overflow'
 
-describe('Bootstrap Classes: Utilities: Link', () => {
+describe('Bootstrap Classes: Utilities: Overflow', () => {
   describe('when no value is provided', () => {
     test('returns empty object', () => {
       expect(brUtilsOverflowStyles()).toStrictEqual({})
