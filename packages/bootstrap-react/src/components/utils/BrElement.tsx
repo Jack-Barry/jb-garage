@@ -10,11 +10,7 @@ import {
 } from 'react'
 import { BrUtilsFlexOptions, brUtilsFlexStyles } from './bootstrapClasses/utilities/flexbox'
 import { BrBorderProp, brUtilsBorderStyles } from './bootstrapClasses/utilities/borders'
-import {
-  BrDisplayProp,
-  BrUtilsDisplayOptions,
-  brUtilsDisplayStyles
-} from './bootstrapClasses/utilities/display'
+import { BrUtilsDisplayOptions, brUtilsDisplayStyles } from './bootstrapClasses/utilities/display'
 import { BrSpacingProp, brSpacingClasses } from './bootstrapClasses/spacing'
 import {
   BrUtilsBackgroundOptions,
@@ -44,6 +40,7 @@ import {
   brUtilsPositionStyles
 } from './bootstrapClasses/utilities/position'
 import { BrUtilsShadowOptions, brUtilsShadowStyles } from './bootstrapClasses/utilities/shadow'
+import { BrUtilsSizeOptions, brUtilsSizeStyles } from './bootstrapClasses/utilities/size'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BootstrapBreakpoint = LiteralUnion<'sm' | 'md' | 'lg' | 'xl' | 'xxl', string>
@@ -127,12 +124,6 @@ export type BrElementCommonProps = {
    */
   brUtilsDisplay?: BrUtilsDisplayOptions
   /**
-   * Display type to apply to the element for print using Bootstrap class
-   *
-   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
-   */
-  brUtilsDisplayPrint?: BrDisplayProp
-  /**
    * Flex styles to apply to the element using Bootstrap classes
    *
    * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
@@ -186,6 +177,12 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Shadow](https://getbootstrap.com/docs/5.3/utilities/shadow/)
    */
   brUtilsShadow?: BrUtilsShadowOptions
+  /**
+   * Sizing style to apply to the element using Bootstrap class
+   *
+   * [Bootstrap Utilities: Sizing](https://getbootstrap.com/docs/5.3/utilities/sizing/)
+   */
+  brUtilsSize?: BrUtilsSizeOptions
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -269,6 +266,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsOverflow,
     brUtilsPosition,
     brUtilsShadow,
+    brUtilsSize,
     ...rest
   } = props
 
@@ -285,7 +283,8 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     getOpacityStyles({ classNamePrefix: 'opacity' }, brUtilsOpacity),
     brUtilsOverflowStyles(brUtilsOverflow),
     brUtilsPositionStyles(brUtilsPosition),
-    brUtilsShadowStyles(brUtilsShadow)
+    brUtilsShadowStyles(brUtilsShadow),
+    brUtilsSizeStyles(brUtilsSize)
   ])
 
   return (
