@@ -140,7 +140,7 @@ export const ColumnBreaks: StoryFn = () => {
             .col-6 .col-sm-4
           </Col>
           {/* Force next columns to break to new line at md breakpoint and up */}
-          <BrElement brUtilsDisplay="none" brUtilsDisplayMd="block" className="w-100" />
+          <BrElement brUtilsDisplay={{ brAllBreakpoints: 'none', md: 'block' }} className="w-100" />
           <Col brCols={6} brColsSm={4}>
             .col-6 .col-sm-4
           </Col>

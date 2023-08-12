@@ -133,7 +133,7 @@ export const BlockButtons: StoryFn = () => {
         <Button brButtonColor="primary">Button</Button>
       </BrElement>
       <hr />
-      <BrElement brUtilsDisplay="grid" brUtilsDisplayMd="block" className="gap-2">
+      <BrElement brUtilsDisplay={{ brAllBreakpoints: 'grid', md: 'block' }} className="gap-2">
         <Button brButtonColor="primary">Button</Button>
         <Button brButtonColor="primary">Button</Button>
       </BrElement>
@@ -144,10 +144,8 @@ export const BlockButtons: StoryFn = () => {
       </Col>
       <hr />
       <BrElement
-        brUtilsDisplay="grid"
-        className="gap-2"
-        brUtilsDisplayMd="flex"
-        brUtilsFlex={{ md: { justifyContent: 'end' } }}
+        brUtilsDisplay={{ brAllBreakpoints: 'grid', md: 'flex' }}
+        brUtilsFlex={{ brAllBreakpoints: { gap: '2' }, md: { justifyContent: 'end' } }}
       >
         <Button brButtonColor="primary" brMarginMd={{ end: 2 }}>
           Button

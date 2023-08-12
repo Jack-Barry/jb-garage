@@ -10,7 +10,11 @@ import {
 } from 'react'
 import { BrUtilsFlexOptions, brUtilsFlexStyles } from './bootstrapClasses/utilities/flexbox'
 import { BrBorderProp, brUtilsBorderStyles } from './bootstrapClasses/utilities/borders'
-import { BrDisplayProp, brUtilsDisplayStyles } from './bootstrapClasses/utilities/display'
+import {
+  BrDisplayProp,
+  BrUtilsDisplayOptions,
+  brUtilsDisplayStyles
+} from './bootstrapClasses/utilities/display'
 import { BrSpacingProp, brSpacingClasses } from './bootstrapClasses/spacing'
 import {
   BrUtilsBackgroundOptions,
@@ -118,37 +122,7 @@ export type BrElementCommonProps = {
    *
    * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
    */
-  brUtilsDisplay?: BrDisplayProp
-  /**
-   * Display type to apply to the element above the sm breakpoint using Bootstrap class
-   *
-   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
-   */
-  brUtilsDisplaySm?: BrDisplayProp
-  /**
-   * Display type to apply to the element above the md breakpoint using Bootstrap class
-   *
-   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
-   */
-  brUtilsDisplayMd?: BrDisplayProp
-  /**
-   * Display type to apply to the element above the lg breakpoint using Bootstrap class
-   *
-   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
-   */
-  brUtilsDisplayLg?: BrDisplayProp
-  /**
-   * Display type to apply to the element above the xl breakpoint using Bootstrap class
-   *
-   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
-   */
-  brUtilsDisplayXl?: BrDisplayProp
-  /**
-   * Display type to apply to the element above the xxl breakpoint using Bootstrap class
-   *
-   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
-   */
-  brUtilsDisplay2xl?: BrDisplayProp
+  brUtilsDisplay?: BrUtilsDisplayOptions
   /**
    * Display type to apply to the element for print using Bootstrap class
    *
@@ -273,12 +247,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsBorder,
     brUtilsColor,
     brUtilsDisplay,
-    brUtilsDisplaySm,
-    brUtilsDisplayMd,
-    brUtilsDisplayLg,
-    brUtilsDisplayXl,
-    brUtilsDisplay2xl,
-    brUtilsDisplayPrint,
     brUtilsFloat,
     brUtilsInteract,
     brUtilsLink,
@@ -292,15 +260,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsBackgroundStyles(brUtilsBackground),
     brUtilsBorderStyles(brUtilsBorder),
     brUtilsColorStyles(brUtilsColor),
-    brUtilsDisplayStyles({
-      brUtilsDisplay,
-      brUtilsDisplaySm,
-      brUtilsDisplayMd,
-      brUtilsDisplayLg,
-      brUtilsDisplayXl,
-      brUtilsDisplay2xl,
-      brUtilsDisplayPrint
-    }),
+    brUtilsDisplayStyles(brUtilsDisplay),
     brUtilsFlexStyles(brUtilsFlex),
     brUtilsFloatStyles(brUtilsFloat),
     brUtilsInteractStyles(brUtilsInteract),
