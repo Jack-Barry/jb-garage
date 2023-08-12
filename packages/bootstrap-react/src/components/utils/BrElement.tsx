@@ -31,6 +31,10 @@ import {
 import { LiteralUnion } from '@jb-garage/bootstrap-react/types'
 import { BootstrapOpacity } from './bootstrapClasses/utilities/types'
 import { getOpacityStyles } from './bootstrapClasses/utilities/helpers'
+import {
+  BrUtilsOverflowOptions,
+  brUtilsOverflowStyles
+} from './bootstrapClasses/utilities/overflow'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BootstrapBreakpoint = LiteralUnion<'sm' | 'md' | 'lg' | 'xl' | 'xxl', string>
@@ -213,6 +217,12 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Opacity](https://getbootstrap.com/docs/5.3/utilities/opacity/)
    */
   brUtilsOpacity?: LiteralUnion<'0' | BootstrapOpacity, string>
+  /**
+   * Overflow style to apply to the element using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Overflow](https://getbootstrap.com/docs/5.3/utilities/overflow/)
+   */
+  brUtilsOverflow?: BrUtilsOverflowOptions
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -305,6 +315,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsLink,
     brUtilsObjectFit,
     brUtilsOpacity,
+    brUtilsOverflow,
     ...rest
   } = props
 
@@ -333,7 +344,8 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsInteractStyles(brUtilsInteract),
     brUtilsLinkStyles(brUtilsLink),
     brUtilsObjectFitStyles(brUtilsObjectFit),
-    getOpacityStyles({ classNamePrefix: 'opacity' }, brUtilsOpacity)
+    getOpacityStyles({ classNamePrefix: 'opacity' }, brUtilsOpacity),
+    brUtilsOverflowStyles(brUtilsOverflow)
   ])
 
   return (
