@@ -29,6 +29,8 @@ import {
   brUtilsObjectFitStyles
 } from './bootstrapClasses/utilities/objectFit'
 import { LiteralUnion } from '@jb-garage/bootstrap-react/types'
+import { BootstrapOpacity } from './bootstrapClasses/utilities/types'
+import { getOpacityStyles } from './bootstrapClasses/utilities/helpers'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BootstrapBreakpoint = LiteralUnion<'sm' | 'md' | 'lg' | 'xl' | 'xxl', string>
@@ -205,6 +207,12 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Object Fit](https://getbootstrap.com/docs/5.3/utilities/object-fit/)
    */
   brUtilsObjectFit?: BrUtilsObjectFitOptions
+  /**
+   * Opacity style to apply to the element using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Opacity](https://getbootstrap.com/docs/5.3/utilities/opacity/)
+   */
+  brUtilsOpacity?: LiteralUnion<'0' | BootstrapOpacity, string>
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -296,6 +304,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsInteract,
     brUtilsLink,
     brUtilsObjectFit,
+    brUtilsOpacity,
     ...rest
   } = props
 
@@ -323,7 +332,8 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsFloatStyles(brUtilsFloat),
     brUtilsInteractStyles(brUtilsInteract),
     brUtilsLinkStyles(brUtilsLink),
-    brUtilsObjectFitStyles(brUtilsObjectFit)
+    brUtilsObjectFitStyles(brUtilsObjectFit),
+    getOpacityStyles({ classNamePrefix: 'opacity' }, brUtilsOpacity)
   ])
 
   return (
