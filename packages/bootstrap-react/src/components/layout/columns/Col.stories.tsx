@@ -255,10 +255,10 @@ export const StandaloneColumnClasses: StoryFn = () => {
   return (
     <div>
       <div className="bd-example-row">
-        <Col brCols={3} brPadding={3} brMargin={{ bottom: 2 }}>
+        <Col brCols={3} brUtilsSpacing={{ margin: { bottom: 2 }, padding: '3' }}>
           .col-3: width of 25%
         </Col>
-        <Col brColsSm={9} brPadding={3}>
+        <Col brColsSm={9} brUtilsSpacing={{ padding: '3' }}>
           .col-sm-9: width of 75% above sm breakpoint
         </Col>
       </div>
@@ -267,8 +267,10 @@ export const StandaloneColumnClasses: StoryFn = () => {
         <Col
           as="svg"
           brColsMd={6}
-          brMargin={{ bottom: 3 }}
-          brMarginMd={{ start: 3 }}
+          brUtilsSpacing={{
+            brAllBreakpoints: { margin: { bottom: '3' } },
+            md: { margin: { start: '3' } }
+          }}
           {...placeholderImgSvgProps({ className: 'float-md-end' })}
         >
           <PlaceholderImgSvgChildren text="Responsive floated image" />

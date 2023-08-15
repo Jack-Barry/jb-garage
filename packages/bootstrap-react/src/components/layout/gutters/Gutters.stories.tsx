@@ -13,13 +13,13 @@ export default meta
 export const HorizontalGutters: StoryFn = () => {
   return (
     <div className="bd-example bd-example-cols">
-      <Container brPadding={{ x: 4 }} className="text-center">
+      <Container brUtilsSpacing={{ padding: { x: '4' } }} className="text-center">
         <Row brRowGutter={{ x: 5 }}>
           <Col>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
         </Row>
       </Container>
@@ -27,10 +27,10 @@ export const HorizontalGutters: StoryFn = () => {
       <Container className="overflow-hidden text-center">
         <Row brRowGutter={{ x: 5 }}>
           <Col>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
         </Row>
       </Container>
@@ -44,16 +44,16 @@ export const VerticalGutters: StoryFn = () => {
       <Container className="overflow-hidden text-center">
         <Row brRowGutter={{ y: 5 }}>
           <Col brCols={6}>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
           <Col brCols={6}>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
           <Col brCols={6}>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
           <Col brCols={6}>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
         </Row>
       </Container>
@@ -67,16 +67,16 @@ export const HorizontalAndVerticalGutters: StoryFn = () => {
       <Container className="text-center">
         <Row brRowGutter={2}>
           <Col brCols={6}>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
           <Col brCols={6}>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
           <Col brCols={6}>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
           <Col brCols={6}>
-            <BrElement brPadding={3}>Custom column padding</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Custom column padding</BrElement>
           </Col>
         </Row>
       </Container>
@@ -90,34 +90,34 @@ export const RowColumnsGutters: StoryFn = () => {
       <Container className="text-center">
         <Row brRowCols={2} brRowColsLg={5} brRowGutter={2} brRowGutterLg={3}>
           <Col>
-            <BrElement brPadding={3}>Row column</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Row column</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Row column</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Row column</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Row column</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Row column</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Row column</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Row column</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Row column</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Row column</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Row column</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Row column</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Row column</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Row column</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Row column</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Row column</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Row column</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Row column</BrElement>
           </Col>
           <Col>
-            <BrElement brPadding={3}>Row column</BrElement>
+            <BrElement brUtilsSpacing={{ padding: '3' }}>Row column</BrElement>
           </Col>
         </Row>
       </Container>

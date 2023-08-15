@@ -100,7 +100,7 @@ export const AdditionalContent: StoryFn = () => {
         content.
       </p>
       <hr />
-      <BrElement as="p" brMargin={{ bottom: 0 }}>
+      <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '0' } }}>
         Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
       </BrElement>
     </Alert>
@@ -130,7 +130,7 @@ export const Icons: StoryFn = () => {
       >
         <Image
           as="svg"
-          brMargin={{ end: 2 }}
+          brUtilsSpacing={{ margin: { end: '2' } }}
           brUtilsFlex={{ shrink: false }}
           className="bi"
           role="img"
@@ -148,7 +148,7 @@ export const Icons: StoryFn = () => {
       >
         <Image
           as="svg"
-          brMargin={{ end: 2 }}
+          brUtilsSpacing={{ margin: { end: '2' } }}
           brUtilsFlex={{ shrink: false }}
           className="bi"
           role="img"
@@ -166,7 +166,7 @@ export const Icons: StoryFn = () => {
       >
         <Image
           as="svg"
-          brMargin={{ end: 2 }}
+          brUtilsSpacing={{ margin: { end: '2' } }}
           brUtilsFlex={{ shrink: false }}
           className="bi"
           role="img"
@@ -184,7 +184,7 @@ export const Icons: StoryFn = () => {
       >
         <Image
           as="svg"
-          brMargin={{ end: 2 }}
+          brUtilsSpacing={{ margin: { end: '2' } }}
           brUtilsFlex={{ shrink: false }}
           className="bi"
           role="img"

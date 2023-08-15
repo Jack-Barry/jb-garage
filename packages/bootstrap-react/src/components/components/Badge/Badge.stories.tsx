@@ -66,7 +66,7 @@ export const ExamplesPositioned: StoryFn = () => {
         <BrElement
           as="span"
           brUtilsPosition="absolute"
-          brPadding={2}
+          brUtilsSpacing={{ padding: '2' }}
           brUtilsBorder={{ color: 'light', radius: 'circle' }}
           className="top-0 start-100 translate-middle rounded-circle"
           brUtilsBackground="danger"
@@ -82,7 +82,7 @@ export const ExamplesPositioned: StoryFn = () => {
 
 export const BackgroundColors: StoryFn = () => {
   return (
-    <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '1' }}>
+    <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '1' }}>
       <Badge brUtilsColor="bg-primary">Primary</Badge>
       <Badge brUtilsColor="bg-secondary">Secondary</Badge>
       <Badge brUtilsColor="bg-success">Success</Badge>
@@ -97,7 +97,7 @@ export const BackgroundColors: StoryFn = () => {
 
 export const PillBadges: StoryFn = () => {
   return (
-    <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '1' }}>
+    <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '1' }}>
       <Badge brUtilsBorder={{ radius: 'pill' }} brUtilsColor="bg-primary">
         Primary
       </Badge>

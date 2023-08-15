@@ -11,7 +11,6 @@ import {
 import { BrUtilsFlexOptions, brUtilsFlexStyles } from './bootstrapClasses/utilities/flexbox'
 import { BrBorderProp, brUtilsBorderStyles } from './bootstrapClasses/utilities/borders'
 import { BrUtilsDisplayOptions, brUtilsDisplayStyles } from './bootstrapClasses/utilities/display'
-import { BrSpacingProp, brSpacingClasses } from './bootstrapClasses/spacing'
 import {
   BrUtilsBackgroundOptions,
   brUtilsBackgroundStyles
@@ -41,9 +40,12 @@ import {
 } from './bootstrapClasses/utilities/position'
 import { BrUtilsShadowOptions, brUtilsShadowStyles } from './bootstrapClasses/utilities/shadow'
 import { BrUtilsSizeOptions, brUtilsSizeStyles } from './bootstrapClasses/utilities/size'
+import { BrUtilsSpacingOptions, brUtilsSpacingStyles } from './bootstrapClasses/utilities/spacingV2'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BootstrapBreakpoint = LiteralUnion<'sm' | 'md' | 'lg' | 'xl' | 'xxl', string>
+
+/** Options that can be applied to all or some breakpoints */
 export type BrUtilsBreakpointBasedOptions<T> = Partial<Record<BootstrapBreakpoint, T>> & {
   /** Style to apply at all breakpoints unless overridden */
   brAllBreakpoints?: T
@@ -55,42 +57,6 @@ export type BrPositionProp = 'relative' | 'absolute' | 'static' | 'fixed'
 export type BrElementCommonProps = {
   /** Element should be visually hidden (but present for screen readers) */
   brVisuallyHidden?: boolean
-  /** Margin to apply to the element using Bootstrap classes */
-  brMargin?: BrSpacingProp
-  /** Margin to apply to the element above the sm breakpoint using Bootstrap classes */
-  brMarginSm?: BrSpacingProp
-  /** Margin to apply to the element above the md breakpoint using Bootstrap classes */
-  brMarginMd?: BrSpacingProp
-  /** Margin to apply to the element above the lg breakpoint using Bootstrap classes */
-  brMarginLg?: BrSpacingProp
-  /** Margin to apply to the element above the xl breakpoint using Bootstrap classes */
-  brMarginXl?: BrSpacingProp
-  /** Margin to apply to the element above the xxl breakpoint using Bootstrap classes */
-  brMargin2xl?: BrSpacingProp
-  /** Negative margin to apply to the element using Bootstrap classes */
-  brNegativeMargin?: BrSpacingProp
-  /** Negative margin to apply to the element above the sm breakpoint using Bootstrap classes */
-  brNegativeMarginSm?: BrSpacingProp
-  /** Negative margin to apply to the element above the md breakpoint using Bootstrap classes */
-  brNegativeMarginMd?: BrSpacingProp
-  /** Negative margin to apply to the element above the lg breakpoint using Bootstrap classes */
-  brNegativeMarginLg?: BrSpacingProp
-  /** Negative margin to apply to the element above the xl breakpoint using Bootstrap classes */
-  brNegativeMarginXl?: BrSpacingProp
-  /** Negative margin to apply to the element above the xxl breakpoint using Bootstrap classes */
-  brNegativeMargin2xl?: BrSpacingProp
-  /** Padding to apply to the element using Bootstrap classes */
-  brPadding?: BrSpacingProp
-  /** Padding to apply to the element above the sm breakpoint using Bootstrap classes */
-  brPaddingSm?: BrSpacingProp
-  /** Padding to apply to the element above the md breakpoint using Bootstrap classes */
-  brPaddingMd?: BrSpacingProp
-  /** Padding to apply to the element above the lg breakpoint using Bootstrap classes */
-  brPaddingLg?: BrSpacingProp
-  /** Padding to apply to the element above the xl breakpoint using Bootstrap classes */
-  brPaddingXl?: BrSpacingProp
-  /** Padding to apply to the element above the xxl breakpoint using Bootstrap classes */
-  brPadding2xl?: BrSpacingProp
   /**
    * Theme to apply to the element using `bs-data-theme` attribute
    */
@@ -183,6 +149,12 @@ export type BrElementCommonProps = {
    * [Bootstrap Utilities: Sizing](https://getbootstrap.com/docs/5.3/utilities/sizing/)
    */
   brUtilsSize?: BrUtilsSizeOptions
+  /**
+   * Spacing styles to apply to the element using Bootstrap classes
+   *
+   * [Bootstrap Utilities: Spacing](https://getbootstrap.com/docs/5.3/utilities/spacing/)
+   */
+  brUtilsSpacing?: BrUtilsSpacingOptions
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -233,24 +205,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     style,
     children,
     brVisuallyHidden,
-    brMargin,
-    brMarginSm,
-    brMarginMd,
-    brMarginLg,
-    brMarginXl,
-    brMargin2xl,
-    brNegativeMargin,
-    brNegativeMarginSm,
-    brNegativeMarginMd,
-    brNegativeMarginLg,
-    brNegativeMarginXl,
-    brNegativeMargin2xl,
-    brPadding,
-    brPaddingSm,
-    brPaddingMd,
-    brPaddingLg,
-    brPaddingXl,
-    brPadding2xl,
     brUtilsFlex,
     brTheme,
     brClearfix,
@@ -267,6 +221,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsPosition,
     brUtilsShadow,
     brUtilsSize,
+    brUtilsSpacing,
     ...rest
   } = props
 
@@ -284,7 +239,8 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     brUtilsOverflowStyles(brUtilsOverflow),
     brUtilsPositionStyles(brUtilsPosition),
     brUtilsShadowStyles(brUtilsShadow),
-    brUtilsSizeStyles(brUtilsSize)
+    brUtilsSizeStyles(brUtilsSize),
+    brUtilsSpacingStyles(brUtilsSpacing)
   ])
 
   return (
@@ -293,24 +249,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       data-bs-theme={brTheme}
       className={classNames(className, {
         'visually-hidden': brVisuallyHidden,
-        ...brSpacingClasses({ prefix: 'm' }, brMargin),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'sm-' }, brMarginSm),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'md-' }, brMarginMd),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'lg-' }, brMarginLg),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'xl-' }, brMarginXl),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'xxl-' }, brMargin2xl),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'n' }, brNegativeMargin),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'sm-n' }, brNegativeMarginSm),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'md-n' }, brNegativeMarginMd),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'lg-n' }, brNegativeMarginLg),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'xl-n' }, brNegativeMarginXl),
-        ...brSpacingClasses({ prefix: 'm', valuePrefix: 'xxl-n' }, brNegativeMargin2xl),
-        ...brSpacingClasses({ prefix: 'p' }, brPadding),
-        ...brSpacingClasses({ prefix: 'p', valuePrefix: 'sm-' }, brPaddingSm),
-        ...brSpacingClasses({ prefix: 'p', valuePrefix: 'md-' }, brPaddingMd),
-        ...brSpacingClasses({ prefix: 'p', valuePrefix: 'lg-' }, brPaddingLg),
-        ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xl-' }, brPaddingXl),
-        ...brSpacingClasses({ prefix: 'p', valuePrefix: 'xxl-' }, brPadding2xl),
         clearfix: brClearfix,
         ...brStyles.classes
       })}

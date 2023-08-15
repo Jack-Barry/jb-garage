@@ -21,10 +21,7 @@ describe('Bootstrap Classes: Utilities: Flexbox', () => {
           grow: false,
           shrink: false,
           wrap: 'nowrap',
-          order: 'first',
-          gap: '0',
-          gapRow: '1',
-          gapColumn: '2'
+          order: 'first'
         })
       ).toStrictEqual({
         classes: {
@@ -38,10 +35,7 @@ describe('Bootstrap Classes: Utilities: Flexbox', () => {
           'flex-grow-0': true,
           'flex-shrink-0': true,
           'flex-nowrap': true,
-          'order-first': true,
-          'gap-0': true,
-          'row-gap-1': true,
-          'column-gap-2': true
+          'order-first': true
         }
       })
     })
@@ -70,12 +64,10 @@ describe('Bootstrap Classes: Utilities: Flexbox', () => {
             wrap: 'nowrap'
           },
           xl: {
-            order: 'first',
-            gap: '0'
+            order: 'first'
           },
           xxl: {
-            gapRow: '1',
-            gapColumn: '2'
+            order: 'last'
           }
         })
       ).toStrictEqual({
@@ -91,9 +83,7 @@ describe('Bootstrap Classes: Utilities: Flexbox', () => {
           'flex-lg-shrink-0': true,
           'flex-lg-nowrap': true,
           'order-xl-first': true,
-          'gap-xl-0': true,
-          'row-gap-xxl-1': true,
-          'column-gap-xxl-2': true
+          'order-xxl-last': true
         }
       })
     })

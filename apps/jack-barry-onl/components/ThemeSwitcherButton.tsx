@@ -28,7 +28,7 @@ export default function ThemeSwitcherButton() {
 
           setTheme(nextTheme)
         }}
-        brPadding={0}
+        brUtilsSpacing={{ padding: '0' }}
         title="Click once to change theme. Double click to follow system theme setting"
       >
         {nextTheme === 'dark' ? '🌚' : '🌞'}

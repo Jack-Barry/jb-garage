@@ -23,12 +23,12 @@ export default meta
 export const BasicExample: StoryFn = () => {
   return (
     <div>
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <InputGroupText id="basic-addon1">@</InputGroupText>
         <Input placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
       </InputGroup>
 
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Input
           placeholder="Recipient's username"
           aria-label="Recipient's username"
@@ -37,7 +37,7 @@ export const BasicExample: StoryFn = () => {
         <InputGroupText id="basic-addon2">@example.com</InputGroupText>
       </InputGroup>
 
-      <BrElement brMargin={{ bottom: 3 }}>
+      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Label htmlFor="basic-url">Your vanity URL</Label>
         <InputGroup>
           <InputGroupText id="basic-addon3">https://example.com/users/</InputGroupText>
@@ -46,13 +46,13 @@ export const BasicExample: StoryFn = () => {
         <FormText id="basic-addon4">Example help text goes outside the input group.</FormText>
       </BrElement>
 
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <InputGroupText>$</InputGroupText>
         <Input type="text" aria-label="Amount (to the nearest dollar)" />
         <InputGroupText>.00</InputGroupText>
       </InputGroup>
 
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Input type="text" placeholder="Username" aria-label="Username" />
         <InputGroupText>@</InputGroupText>
         <Input type="text" placeholder="Server" aria-label="Server" />
@@ -78,12 +78,12 @@ export const Wrapping: StoryFn = () => {
 export const Sizing: StoryFn = () => {
   return (
     <div>
-      <InputGroup brMargin={{ bottom: 3 }} brInputGroupSm>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }} brInputGroupSm>
         <InputGroupText id="inputGroup-sizing-sm">Small</InputGroupText>
         <Input aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
       </InputGroup>
 
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <InputGroupText id="inputGroup-sizing-default">Default</InputGroupText>
         <Input aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
       </InputGroup>
@@ -99,10 +99,10 @@ export const Sizing: StoryFn = () => {
 export const CheckboxesAndRadios: StoryFn = () => {
   return (
     <div>
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <InputGroupText>
           <FormCheckInput
-            brMargin={{ top: 0 }}
+            brUtilsSpacing={{ margin: { top: '0' } }}
             value=""
             aria-label="Checkbox for following text input"
           />
@@ -113,7 +113,7 @@ export const CheckboxesAndRadios: StoryFn = () => {
       <InputGroup>
         <InputGroupText>
           <FormCheckInput
-            brMargin={{ top: 0 }}
+            brUtilsSpacing={{ margin: { top: '0' } }}
             type="radio"
             value=""
             aria-label="Radio button for following text input"
@@ -138,7 +138,7 @@ export const MultipleInputs: StoryFn = () => {
 export const MultipleAddons: StoryFn = () => {
   return (
     <div>
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <InputGroupText>$</InputGroupText>
         <InputGroupText>0.00</InputGroupText>
         <Input aria-label="Dollar amount (with dot and two decimal places)" />
@@ -156,7 +156,7 @@ export const MultipleAddons: StoryFn = () => {
 export const ButtonAddons: StoryFn = () => {
   return (
     <div>
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Button brButtonColor="outline-secondary" id="button-addon1">
           Button
         </Button>
@@ -167,7 +167,7 @@ export const ButtonAddons: StoryFn = () => {
         />
       </InputGroup>
 
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Input
           placeholder="Recipient's username"
           aria-label="Recipient's username"
@@ -178,7 +178,7 @@ export const ButtonAddons: StoryFn = () => {
         </Button>
       </InputGroup>
 
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Button brButtonColor="outline-secondary">Button</Button>
         <Button brButtonColor="outline-secondary">Button</Button>
         <Input placeholder="" aria-label="Example text with two button addons" />
@@ -204,7 +204,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
 
   return (
     <div style={{ minHeight: '300px' }}>
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <DropdownToggle
           ref={dropdownRef1}
           brButtonColor="outline-secondary"
@@ -221,7 +221,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
         </DropdownMenu>
         <Input aria-label="Text input with dropdown button" />
       </InputGroup>
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Input aria-label="Text input with dropdown button" />
         <DropdownToggle
           ref={dropdownRef2}
@@ -280,7 +280,7 @@ export const SegmentedButtons: StoryFn = () => {
 
   return (
     <div style={{ minHeight: '280px' }}>
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Button brButtonColor="outline-secondary">Action</Button>
         <DropdownToggle
           ref={dropdownRef1}
@@ -330,7 +330,7 @@ export const SegmentedButtons: StoryFn = () => {
 export const CustomFormsCustomSelect: StoryFn = () => {
   return (
     <div>
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <InputGroupText as="label" htmlFor="inputGroupSelect01">
           Options
         </InputGroupText>
@@ -342,7 +342,7 @@ export const CustomFormsCustomSelect: StoryFn = () => {
         </Select>
       </InputGroup>
 
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Select id="inputGroupSelect02">
           <option selected>Choose...</option>
           <option value="1">One</option>
@@ -354,7 +354,7 @@ export const CustomFormsCustomSelect: StoryFn = () => {
         </InputGroupText>
       </InputGroup>
 
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Button brButtonColor="outline-secondary">Button</Button>
         <Select id="inputGroupSelect03" aria-label="Example select with button addon">
           <option selected>Choose...</option>
@@ -382,21 +382,21 @@ export const CustomFormsCustomSelect: StoryFn = () => {
 export const CustomFormsCustomFileInput: StoryFn = () => {
   return (
     <div>
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <InputGroupText as="label" htmlFor="inputGroupFile01">
           Upload
         </InputGroupText>
         <Input type="file" id="inputGroupFile01" />
       </InputGroup>
 
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Input type="file" id="inputGroupFile02" />
         <InputGroupText as="label" htmlFor="inputGroupFile02">
           Upload
         </InputGroupText>
       </InputGroup>
 
-      <InputGroup brMargin={{ bottom: 3 }}>
+      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Button brButtonColor="outline-secondary" id="inputGroupFileAddon03">
           Button
         </Button>

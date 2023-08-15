@@ -308,7 +308,7 @@ ToggleButtons.decorators = [
 
 export const RadioToggleButtons: StoryFn = () => {
   return (
-    <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '1' }}>
+    <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '1' }}>
       <FormCheckInput
         type="radio"
         className="btn-check"
@@ -360,7 +360,7 @@ ToggleButtons.decorators = [
 
 export const OutlinedStyles: StoryFn = () => {
   return (
-    <BrElement brUtilsDisplay="flex" brUtilsFlex={{ column: true, gap: '1' }}>
+    <BrElement brUtilsDisplay="flex" brUtilsFlex={{ column: true }} brUtilsSpacing={{ gap: '1' }}>
       <div>
         <FormCheckInput className="btn-check" id="btn-check-outlined" autoComplete="off" />
         <FormCheckLabel className="btn btn-outline-primary" htmlFor="btn-check-outlined">
@@ -378,7 +378,7 @@ export const OutlinedStyles: StoryFn = () => {
           Checked
         </FormCheckLabel>
       </div>
-      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '1' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '1' }}>
         <FormCheckInput
           type="radio"
           className="btn-check"

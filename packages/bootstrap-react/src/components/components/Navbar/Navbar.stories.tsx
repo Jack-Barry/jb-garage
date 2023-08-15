@@ -54,7 +54,12 @@ export const SupportedContent: StoryFn = () => {
           <NavbarTogglerIcon />
         </NavbarToggler>
         <NavbarCollapse id="navbarSupportedContent" brCollapse={collapse}>
-          <NavbarNav brMargin={{ end: 'auto', bottom: 2 }} brMarginLg={{ bottom: 0 }}>
+          <NavbarNav
+            brUtilsSpacing={{
+              brAllBreakpoints: { margin: { end: 'auto', bottom: '2' } },
+              lg: { margin: { bottom: '0' } }
+            }}
+          >
             <NavItem>
               <NavLink brNavLinkActive aria-current="page" href="#">
                 Home
@@ -87,7 +92,12 @@ export const SupportedContent: StoryFn = () => {
             </NavItem>
           </NavbarNav>
           <BrElement as="form" brUtilsDisplay="flex" role="search">
-            <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
+            <Input
+              brUtilsSpacing={{ margin: { end: '2' } }}
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
             <Button brButtonColor="outline-success" type="submit">
               Search
             </Button>
@@ -108,7 +118,7 @@ export const BrandText: StoryFn = () => {
       </Navbar>
       <Navbar brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
-          <NavbarBrand as="span" brMargin={{ bottom: 0 }} className="h1">
+          <NavbarBrand as="span" brUtilsSpacing={{ margin: { bottom: '0' } }} className="h1">
             Navbar
           </NavbarBrand>
         </Container>
@@ -270,7 +280,12 @@ export const Forms: StoryFn = () => {
       <Navbar brUtilsBackground="body-tertiary">
         <Container brContainerFluid>
           <BrElement as="form" brUtilsDisplay="flex" role="search">
-            <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
+            <Input
+              brUtilsSpacing={{ margin: { end: '2' } }}
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
             <Button brButtonColor="outline-success" type="submit">
               Search
             </Button>
@@ -282,7 +297,12 @@ export const Forms: StoryFn = () => {
         <Container brContainerFluid>
           <NavbarBrand>Navbar</NavbarBrand>
           <BrElement as="form" brUtilsDisplay="flex" role="search">
-            <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
+            <Input
+              brUtilsSpacing={{ margin: { end: '2' } }}
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
             <Button brButtonColor="outline-success" type="submit">
               Search
             </Button>
@@ -301,7 +321,7 @@ export const Forms: StoryFn = () => {
       <hr />
       <Navbar brUtilsBackground="body-tertiary">
         <Container as="form" brContainerFluid className="justify-content-start">
-          <Button brButtonColor="outline-success" brMargin={{ end: 2 }}>
+          <Button brButtonColor="outline-success" brUtilsSpacing={{ margin: { end: '2' } }}>
             Main button
           </Button>
           <Button brButtonColor="outline-secondary" brButtonSm>
@@ -336,7 +356,12 @@ export const Text: StoryFn = () => {
             <NavbarTogglerIcon />
           </NavbarToggler>
           <NavbarCollapse brCollapse={collapse} id="navbarText">
-            <NavbarNav brMargin={{ end: 'auto', bottom: 2 }} brMarginLg={{ bottom: 0 }}>
+            <NavbarNav
+              brUtilsSpacing={{
+                brAllBreakpoints: { margin: { end: 'auto', bottom: '2' } },
+                lg: { margin: { bottom: '0' } }
+              }}
+            >
               <NavItem>
                 <NavLink brNavLinkActive aria-current="page" href="#">
                   Home
@@ -395,7 +420,12 @@ function ColorSchemeExampleContent() {
         <NavbarTogglerIcon />
       </NavbarToggler>
       <NavbarCollapse brCollapse={collapse} id="navbarColor01">
-        <NavbarNav brMargin={{ end: 'auto', bottom: 2 }} brMarginLg={{ bottom: 0 }}>
+        <NavbarNav
+          brUtilsSpacing={{
+            brAllBreakpoints: { margin: { end: 'auto', bottom: '2' } },
+            lg: { margin: { bottom: '0' } }
+          }}
+        >
           <NavItem>
             <NavLink brNavLinkActive aria-current="page" href="#">
               Home
@@ -412,7 +442,12 @@ function ColorSchemeExampleContent() {
           </NavItem>
         </NavbarNav>
         <BrElement as="form" brUtilsDisplay="flex" role="search">
-          <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
+          <Input
+            brUtilsSpacing={{ margin: { end: '2' } }}
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
           <Button brButtonColor="outline-light" type="submit">
             Search
           </Button>
@@ -518,8 +553,10 @@ export const Scrolling: StoryFn = () => {
         </NavbarToggler>
         <NavbarCollapse brCollapse={collapse} id="navbarScroll">
           <NavbarNav
-            brMargin={{ end: 'auto', y: 2 }}
-            brMarginLg={{ y: 0 }}
+            brUtilsSpacing={{
+              brAllBreakpoints: { margin: { end: 'auto', y: '2' } },
+              lg: { margin: { y: '0' } }
+            }}
             className="navbar-nav-scroll"
             style={{ '--bs-scroll-height': '100px' } as CSSProperties}
           >
@@ -554,7 +591,12 @@ export const Scrolling: StoryFn = () => {
             </NavItem>
           </NavbarNav>
           <BrElement brUtilsDisplay="flex" role="search">
-            <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
+            <Input
+              brUtilsSpacing={{ margin: { end: '2' } }}
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
             <Button brButtonColor="outline-success" type="submit">
               Search
             </Button>
@@ -629,7 +671,12 @@ export const Toggler: StoryFn = () => {
 function TogglerDemoContent() {
   return (
     <Fragment>
-      <NavbarNav brMargin={{ end: 'auto', bottom: 2 }} brMarginLg={{ bottom: 0 }}>
+      <NavbarNav
+        brUtilsSpacing={{
+          brAllBreakpoints: { margin: { end: 'auto', bottom: '2' } },
+          lg: { margin: { bottom: '0' } }
+        }}
+      >
         <NavItem>
           <NavLink brNavLinkActive aria-current="page" href="#">
             Home
@@ -645,7 +692,12 @@ function TogglerDemoContent() {
         </NavItem>
       </NavbarNav>
       <BrElement as="form" brUtilsDisplay="flex" role="search">
-        <Input brMargin={{ end: 2 }} type="search" placeholder="Search" aria-label="Search" />
+        <Input
+          brUtilsSpacing={{ margin: { end: '2' } }}
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
         <Button brButtonColor="outline-success" type="submit">
           Search
         </Button>
@@ -660,7 +712,7 @@ export const ExternalContent: StoryFn = () => {
   return (
     <div>
       <Collapse brCollapse={collapse} id="navbarToggleExternalContent" brTheme="dark">
-        <BrElement brPadding={4} brUtilsBackground="dark">
+        <BrElement brUtilsSpacing={{ padding: '4' }} brUtilsBackground="dark">
           <BrElement as="h5" brUtilsColor="body-emphasis" className="h4">
             Collapsed content
           </BrElement>
@@ -712,7 +764,10 @@ export const OffcanvasStory: StoryFn = () => {
               <CloseButton aria-label="Close" onClick={offcanvas.hide} />
             </OffcanvasHeader>
             <OffcanvasBody>
-              <NavbarNav brUtilsFlex={{ justifyContent: 'end', grow: true }} brPadding={{ end: 3 }}>
+              <NavbarNav
+                brUtilsFlex={{ justifyContent: 'end', grow: true }}
+                brUtilsSpacing={{ padding: { end: '3' } }}
+              >
                 <NavItem>
                   <NavLink brNavLinkActive aria-current="page" href="#">
                     Home
@@ -738,9 +793,14 @@ export const OffcanvasStory: StoryFn = () => {
                   </DropdownMenu>
                 </NavItem>
               </NavbarNav>
-              <BrElement as="form" brUtilsDisplay="flex" brMargin={{ top: 3 }} role="search">
+              <BrElement
+                as="form"
+                brUtilsDisplay="flex"
+                brUtilsSpacing={{ margin: { top: '3' } }}
+                role="search"
+              >
                 <Input
-                  brMargin={{ end: 2 }}
+                  brUtilsSpacing={{ margin: { end: '2' } }}
                   type="search"
                   placeholder="Search"
                   aria-label="Search"

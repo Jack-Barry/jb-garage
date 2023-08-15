@@ -21,7 +21,11 @@ export const Default: StoryFn = () => {
 export const Sizing: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Select brSelectLg brMargin={{ bottom: 3 }} aria-label=".form-select-lg example">
+      <Select
+        brSelectLg
+        brUtilsSpacing={{ margin: { bottom: 3 } }}
+        aria-label=".form-select-lg example"
+      >
         <option selected>Open this select menu</option>
         <option value="1">One</option>
         <option value="2">Two</option>

@@ -17,7 +17,7 @@ export const BaseExample: StoryFn = () => {
   return (
     <div>
       <FormControl
-        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlWrapperProps={{ brUtilsSpacing: { margin: { bottom: '3' } } }}
         brFormControlInputProps={{
           type: 'email',
           id: 'exampleFormControlInput1',
@@ -26,7 +26,7 @@ export const BaseExample: StoryFn = () => {
         brFormControlLabelProps={{ children: 'Email address' }}
       />
       <FormControl
-        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlWrapperProps={{ brUtilsSpacing: { margin: { bottom: '3' } } }}
         brFormControlInputProps={{
           as: 'textarea',
           id: 'exampleFormControlTextarea1',
@@ -104,7 +104,7 @@ export const ReadOnlyPlainText: StoryFn = () => {
   return (
     <div className="bd-example">
       <div>
-        <Row brMargin={{ bottom: 3 }}>
+        <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
           <Label htmlFor="staticEmail" brLabelCol className="col-sm-2">
             Email
           </Label>
@@ -112,7 +112,7 @@ export const ReadOnlyPlainText: StoryFn = () => {
             <Input id="staticEmail" value="email@example.com" readOnly brInputPlainText />
           </Col>
         </Row>
-        <Row brMargin={{ bottom: 3 }}>
+        <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
           <Label htmlFor="inputPassword" brLabelCol className="col-sm-2">
             Password
           </Label>
@@ -143,7 +143,11 @@ export const ReadOnlyPlainText: StoryFn = () => {
             <Input type="password" id="inputPassword2" placeholder="Password" />
           </Col>
           <Col brCols="auto">
-            <Button type="submit" brMargin={{ bottom: 3 }} brButtonColor="primary">
+            <Button
+              type="submit"
+              brUtilsSpacing={{ margin: { bottom: '3' } }}
+              brButtonColor="primary"
+            >
               Confirm identity
             </Button>
           </Col>
@@ -157,31 +161,31 @@ export const FiltInput: StoryFn = () => {
   return (
     <div className="bd-example">
       <FormControl
-        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlWrapperProps={{ brUtilsSpacing: { margin: { bottom: '3' } } }}
         brFormControlLabelProps={{ children: 'Default file input example' }}
         brFormControlInputProps={{ type: 'file', id: 'formFile' }}
       />
       <hr />
       <FormControl
-        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlWrapperProps={{ brUtilsSpacing: { margin: { bottom: '3' } } }}
         brFormControlLabelProps={{ children: 'Multiple files input example' }}
         brFormControlInputProps={{ type: 'file', id: 'formFileMultiple', multiple: true }}
       />
       <hr />
       <FormControl
-        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlWrapperProps={{ brUtilsSpacing: { margin: { bottom: '3' } } }}
         brFormControlLabelProps={{ children: 'Disabled file input example' }}
         brFormControlInputProps={{ type: 'file', id: 'formFileDisabled', disabled: true }}
       />
       <hr />
       <FormControl
-        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlWrapperProps={{ brUtilsSpacing: { margin: { bottom: '3' } } }}
         brFormControlLabelProps={{ children: 'Small file input example' }}
         brFormControlInputProps={{ type: 'file', id: 'formFileSm', brInputSm: true }}
       />
       <hr />
       <FormControl
-        brFormControlWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormControlWrapperProps={{ brUtilsSpacing: { margin: { bottom: '3' } } }}
         brFormControlLabelProps={{ children: 'Large file input example' }}
         brFormControlInputProps={{ type: 'file', id: 'formFileLg', brInputLg: true }}
       />

@@ -74,7 +74,7 @@ export const TitlesTextAndLinks: StoryFn = () => {
     <Card style={{ width: '18rem' }}>
       <CardBody>
         <CardTitle>Card title</CardTitle>
-        <CardSubTitle brMargin={{ bottom: 2 }} brUtilsColor="body-secondary">
+        <CardSubTitle brUtilsSpacing={{ margin: { bottom: '2' } }} brUtilsColor="body-secondary">
           Card subtitle
         </CardSubTitle>
         <CardText>
@@ -199,7 +199,11 @@ export const HeaderAndFooter: StoryFn = () => {
       <Card>
         <CardHeader>Quote</CardHeader>
         <CardBody>
-          <BrElement as="blockquote" brMargin={{ bottom: 0 }} className="blockquote">
+          <BrElement
+            as="blockquote"
+            brUtilsSpacing={{ margin: { bottom: '0' } }}
+            className="blockquote"
+          >
             <p>A well-known quote, contained in a blockquote element.</p>
             <footer className="blockquote-footer">
               Someone famous in <cite title="Source Title">Source Title</cite>
@@ -233,7 +237,13 @@ HeaderAndFooter.decorators = [
 export const SizingUsingGridMarkup: StoryFn = () => {
   return (
     <Row>
-      <Col brColsSm={6} brMargin={{ bottom: 3 }} brMarginSm={{ bottom: 0 }}>
+      <Col
+        brColsSm={6}
+        brUtilsSpacing={{
+          brAllBreakpoints: { margin: { bottom: '3' } },
+          sm: { margin: { bottom: '0' } }
+        }}
+      >
         <Card>
           <CardBody>
             <CardTitle>Special title treatment</CardTitle>
@@ -266,7 +276,7 @@ export const SizingUsingGridMarkup: StoryFn = () => {
 export const SizingUsingUtilities: StoryFn = () => {
   return (
     <div>
-      <Card brMargin={{ bottom: 3 }} className="w-75">
+      <Card brUtilsSpacing={{ margin: { bottom: '3' } }} brUtilsSize={{ width: '75' }}>
         <CardBody>
           <CardTitle>Card title</CardTitle>
           <CardText>
@@ -278,7 +288,7 @@ export const SizingUsingUtilities: StoryFn = () => {
         </CardBody>
       </Card>
 
-      <Card className="w-50">
+      <Card brUtilsSize={{ width: '50' }}>
         <CardBody>
           <CardTitle>Card title</CardTitle>
           <CardText>
@@ -310,7 +320,7 @@ export const SizingUsingCustomCss: StoryFn = () => {
 export const TextAlignment: StoryFn = () => {
   return (
     <div>
-      <Card brMargin={{ bottom: 3 }} style={{ width: '18rem' }}>
+      <Card brUtilsSpacing={{ margin: { bottom: '3' } }} style={{ width: '18rem' }}>
         <CardBody>
           <CardTitle>Special title treatment</CardTitle>
           <CardText>
@@ -321,7 +331,11 @@ export const TextAlignment: StoryFn = () => {
           </Button>
         </CardBody>
       </Card>
-      <Card brMargin={{ bottom: 3 }} className="text-center" style={{ width: '18rem' }}>
+      <Card
+        brUtilsSpacing={{ margin: { bottom: '3' } }}
+        className="text-center"
+        style={{ width: '18rem' }}
+      >
         <CardBody>
           <CardTitle>Special title treatment</CardTitle>
           <CardText>
@@ -410,7 +424,7 @@ export const Navigation: StoryFn = () => {
 export const ImagesImageCaps: StoryFn = () => {
   return (
     <div>
-      <Card brMargin={{ bottom: 3 }}>
+      <Card brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <CardImage
           {...placeholderImgSvgProps({ width: '100%', height: '180' })}
           brCardImagePosition="top"
@@ -476,7 +490,7 @@ export const ImagesImageOverlays: StoryFn = () => {
 
 export const Horizontal: StoryFn = () => {
   return (
-    <Card brMargin={{ bottom: 3 }} style={{ maxWidth: '540px' }}>
+    <Card brUtilsSpacing={{ margin: { bottom: '3' } }} style={{ maxWidth: '540px' }}>
       <Row brRowGutter={0}>
         <Col brColsMd={4}>
           <Image
@@ -512,7 +526,11 @@ export const Horizontal: StoryFn = () => {
 export const CardStylesBackgroundAndColor: StoryFn = () => {
   return (
     <div>
-      <Card brMargin={{ bottom: 3 }} brUtilsColor="bg-primary" style={{ maxWidth: '18rem' }}>
+      <Card
+        brUtilsSpacing={{ margin: { bottom: '3' } }}
+        brUtilsColor="bg-primary"
+        style={{ maxWidth: '18rem' }}
+      >
         <CardHeader>Header</CardHeader>
         <CardBody>
           <CardTitle>Primary card title</CardTitle>
@@ -537,7 +555,11 @@ function BackgroundAndColorExample(props: { variant: string }) {
   const { variant } = props
 
   return (
-    <Card brMargin={{ bottom: 3 }} brUtilsColor={`bg-${variant}`} style={{ maxWidth: '18rem' }}>
+    <Card
+      brUtilsSpacing={{ margin: { bottom: '3' } }}
+      brUtilsColor={`bg-${variant}`}
+      style={{ maxWidth: '18rem' }}
+    >
       <CardHeader>Header</CardHeader>
       <CardBody>
         <CardTitle>
@@ -557,7 +579,7 @@ export const CardStylesBorder: StoryFn = () => {
   return (
     <div>
       <Card
-        brMargin={{ bottom: 3 }}
+        brUtilsSpacing={{ margin: { bottom: '3' } }}
         brUtilsBorder={{ color: 'primary' }}
         style={{ maxWidth: '18rem' }}
       >
@@ -585,7 +607,11 @@ function BorderExample(props: { variant: string; brUtilsColor?: string }) {
   const { variant, brUtilsColor } = props
 
   return (
-    <Card brMargin={{ bottom: 3 }} brUtilsBorder={{ color: variant }} style={{ maxWidth: '18rem' }}>
+    <Card
+      brUtilsSpacing={{ margin: { bottom: '3' } }}
+      brUtilsBorder={{ color: variant }}
+      style={{ maxWidth: '18rem' }}
+    >
       <CardHeader>Header</CardHeader>
       <CardBody brUtilsColor={brUtilsColor}>
         <CardTitle>
@@ -605,7 +631,7 @@ export const CardStylesMixinsUtilities: StoryFn = () => {
   return (
     <div>
       <Card
-        brMargin={{ bottom: 3 }}
+        brUtilsSpacing={{ margin: { bottom: '3' } }}
         brUtilsBorder={{ color: 'success' }}
         style={{ maxWidth: '18rem' }}
       >

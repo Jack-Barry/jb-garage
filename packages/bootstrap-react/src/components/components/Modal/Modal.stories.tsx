@@ -213,7 +213,7 @@ export const VerticallyCentered: StoryFn = () => {
 
   return (
     <div>
-      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '1' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '1' }}>
         <Button brButtonColor="primary" onClick={modal1.toggle}>
           Vertically centered modal
         </Button>
@@ -374,20 +374,20 @@ export const UsingTheGrid: StoryFn = () => {
               <Container brContainerFluid className="bd-example-row">
                 <Row>
                   <Col brColsMd={4}>.col-md-4</Col>
-                  <Col brColsMd={4} brMargin={{ start: 'auto' }}>
+                  <Col brColsMd={4} brUtilsSpacing={{ margin: { start: 'auto' } }}>
                     .col-md-4 .ms-auto
                   </Col>
                 </Row>
                 <Row>
-                  <Col brColsMd={3} brMargin={{ start: 'auto' }}>
+                  <Col brColsMd={3} brUtilsSpacing={{ margin: { start: 'auto' } }}>
                     .col-md-3 .ms-auto
                   </Col>
-                  <Col brColsMd={2} brMargin={{ start: 'auto' }}>
+                  <Col brColsMd={2} brUtilsSpacing={{ margin: { start: 'auto' } }}>
                     .col-md-2 .ms-auto
                   </Col>
                 </Row>
                 <Row>
-                  <Col brColsMd={6} brMargin={{ start: 'auto' }}>
+                  <Col brColsMd={6} brUtilsSpacing={{ margin: { start: 'auto' } }}>
                     .col-md-6 .ms-auto
                   </Col>
                 </Row>
@@ -492,7 +492,7 @@ export const OptionalSizes: StoryFn = () => {
 
   return (
     <div>
-      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '1' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '1' }}>
         <Button brButtonColor="primary" onClick={modalXl.toggle}>
           Extra large modal
         </Button>

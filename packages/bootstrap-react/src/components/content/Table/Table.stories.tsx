@@ -314,7 +314,7 @@ export const Nesting: StoryFn = () => {
         </TableRow>
         <TableRow>
           <TableData colSpan={4}>
-            <Table brMargin={{ bottom: 0 }}>
+            <Table brUtilsSpacing={{ margin: { bottom: 0 } }}>
               <TableHead>
                 <TableRow>
                   <TableHeader scope="col">Header</TableHeader>

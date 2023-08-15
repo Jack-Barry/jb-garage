@@ -128,26 +128,30 @@ export const DisabledState: StoryFn = () => {
 export const BlockButtons: StoryFn = () => {
   return (
     <div className="bd-example">
-      <BrElement brUtilsDisplay="grid" className="gap-2">
+      <BrElement brUtilsDisplay="grid" brUtilsSpacing={{ gap: '2' }}>
         <Button brButtonColor="primary">Button</Button>
         <Button brButtonColor="primary">Button</Button>
       </BrElement>
       <hr />
-      <BrElement brUtilsDisplay={{ brAllBreakpoints: 'grid', md: 'block' }} className="gap-2">
+      <BrElement
+        brUtilsDisplay={{ brAllBreakpoints: 'grid', md: 'block' }}
+        brUtilsSpacing={{ gap: '2' }}
+      >
         <Button brButtonColor="primary">Button</Button>
         <Button brButtonColor="primary">Button</Button>
       </BrElement>
       <hr />
-      <Col brUtilsDisplay="grid" brCols={6} brMargin={{ x: 'auto' }} className="gap-2">
+      <Col brUtilsDisplay="grid" brCols={6} brUtilsSpacing={{ margin: { x: 'auto' }, gap: '2' }}>
         <Button brButtonColor="primary">Button</Button>
         <Button brButtonColor="primary">Button</Button>
       </Col>
       <hr />
       <BrElement
         brUtilsDisplay={{ brAllBreakpoints: 'grid', md: 'flex' }}
-        brUtilsFlex={{ brAllBreakpoints: { gap: '2' }, md: { justifyContent: 'end' } }}
+        brUtilsSpacing={{ gap: '2' }}
+        brUtilsFlex={{ md: { justifyContent: 'end' } }}
       >
-        <Button brButtonColor="primary" brMarginMd={{ end: 2 }}>
+        <Button brButtonColor="primary" brUtilsSpacing={{ md: { margin: { end: '2' } } }}>
           Button
         </Button>
         <Button brButtonColor="primary">Button</Button>

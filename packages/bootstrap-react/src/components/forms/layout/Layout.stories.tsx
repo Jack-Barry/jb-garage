@@ -19,11 +19,11 @@ export default meta
 export const Utilities: StoryFn = () => {
   return (
     <div>
-      <BrElement brMargin={{ bottom: 3 }}>
+      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Label htmlFor="formGroupExampleInput">Example label</Label>
         <Input id="formGroupExampleInput" placeholder="Example input placeholder" />
       </BrElement>
-      <BrElement brMargin={{ bottom: 3 }}>
+      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Label htmlFor="formGroupExampleInput2">Another label</Label>
         <Input id="formGroupExampleInput2" placeholder="Another input placeholder" />
       </BrElement>
@@ -107,7 +107,7 @@ export const Gutters: StoryFn = () => {
 export const HorizontalForm: StoryFn = () => {
   return (
     <form>
-      <Row brMargin={{ bottom: 3 }}>
+      <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Col as="label" brColsSm={2} htmlFor="inputEmail3" className="col-form-label">
           Email
         </Col>
@@ -115,7 +115,7 @@ export const HorizontalForm: StoryFn = () => {
           <Input type="email" id="inputEmail3" />
         </Col>
       </Row>
-      <Row brMargin={{ bottom: 3 }}>
+      <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Col as="label" brColsSm={2} htmlFor="inputPassword3" className="col-form-label">
           Password
         </Col>
@@ -123,8 +123,13 @@ export const HorizontalForm: StoryFn = () => {
           <Input type="password" id="inputPassword3" />
         </Col>
       </Row>
-      <Row as="fieldset" brMargin={{ bottom: 3 }}>
-        <Col as="legend" brColsSm={2} brPadding={{ top: 0 }} className="col-form-label">
+      <Row as="fieldset" brUtilsSpacing={{ margin: { bottom: '3' } }}>
+        <Col
+          as="legend"
+          brColsSm={2}
+          brUtilsSpacing={{ padding: { top: '0' } }}
+          className="col-form-label"
+        >
           Radios
         </Col>
         <Col brColsSm={10}>
@@ -159,7 +164,7 @@ export const HorizontalForm: StoryFn = () => {
           />
         </Col>
       </Row>
-      <Row brMargin={{ bottom: 3 }}>
+      <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Col brColsSm={10} brColOffsetSm={2}>
           <FormCheck
             brFormCheckInputProps={{ id: 'gridCheck1' }}
@@ -177,7 +182,7 @@ export const HorizontalForm: StoryFn = () => {
 export const HorizontalFormLabelSizing: StoryFn = () => {
   return (
     <div>
-      <Row brMargin={{ bottom: 3 }}>
+      <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Col
           as="label"
           htmlFor="colFormLabelSm"
@@ -190,7 +195,7 @@ export const HorizontalFormLabelSizing: StoryFn = () => {
           <Input type="email" brInputSm id="colFormLabelSm" placeholder="col-form-label-sm" />
         </Col>
       </Row>
-      <Row brMargin={{ bottom: 3 }}>
+      <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Col as="label" htmlFor="colFormLabel" brColsSm={2} className="col-form-label">
           Email
         </Col>

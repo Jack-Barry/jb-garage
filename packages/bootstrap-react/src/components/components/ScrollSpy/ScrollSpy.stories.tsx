@@ -30,8 +30,7 @@ export const NavbarStory: StoryFn = () => {
     <div className="bd-example">
       <Navbar
         id="navbar-example2"
-        brPadding={{ x: 3 }}
-        brMargin={{ bottom: 3 }}
+        brUtilsSpacing={{ margin: { bottom: '3' }, padding: { x: '3' } }}
         className="rounded-2"
         brUtilsBackground="body-tertiary"
       >
@@ -66,12 +65,8 @@ export const NavbarStory: StoryFn = () => {
       </Navbar>
       <BrElement
         className="scrollspy-example rounded-2"
-        brPadding={3}
+        brUtilsSpacing={{ padding: '3' }}
         brUtilsBackground="body-tertiary"
-        // data-bs-spy="scroll"
-        // data-bs-target="#navbar-example2"
-        // data-bs-root-margin="0px 0px -40%"
-        // data-bs-smooth-scroll="true"
         tabIndex={0}
         ref={scrollSpy.ref}
       >
@@ -126,27 +121,27 @@ export const NestedNav: StoryFn = () => {
           <Navbar
             id="navbar-example3"
             className="h-100"
-            brFlex={{ column: true, alignItems: 'stretch' }}
-            brPadding={{ end: 4 }}
+            brUtilsFlex={{ column: true, alignItems: 'stretch' }}
+            brUtilsSpacing={{ padding: { end: '4' } }}
             brUtilsBorder={{ end: true }}
           >
-            <Nav brNavPills brFlex={{ column: true }}>
+            <Nav brNavPills brUtilsFlex={{ column: true }}>
               <NavLink href="#item-1">Item 1</NavLink>
-              <Nav brNavPills brFlex={{ column: true }}>
-                <NavLink brMargin={{ start: 3, y: 1 }} href="#item-1-1">
+              <Nav brNavPills brUtilsFlex={{ column: true }}>
+                <NavLink brUtilsSpacing={{ margin: { start: '3', y: '1' } }} href="#item-1-1">
                   Item 1-1
                 </NavLink>
-                <NavLink brMargin={{ start: 3, y: 1 }} href="#item-1-2">
+                <NavLink brUtilsSpacing={{ margin: { start: '3', y: '1' } }} href="#item-1-2">
                   Item 1-2
                 </NavLink>
               </Nav>
               <NavLink href="#item-2">Item 2</NavLink>
               <NavLink href="#item-3">Item 3</NavLink>
-              <Nav brNavPills brFlex={{ column: true }}>
-                <NavLink brMargin={{ start: 3, y: 1 }} href="#item-3-1">
+              <Nav brNavPills brUtilsFlex={{ column: true }}>
+                <NavLink brUtilsSpacing={{ margin: { start: '3', y: '1' } }} href="#item-3-1">
                   Item 3-1
                 </NavLink>
-                <NavLink brMargin={{ start: 3, y: 1 }} href="#item-3-2">
+                <NavLink brUtilsSpacing={{ margin: { start: '3', y: '1' } }} href="#item-3-2">
                   Item 3-2
                 </NavLink>
               </Nav>
@@ -343,21 +338,47 @@ export const SimpleAnchors: StoryFn = () => {
             id="simple-list-example"
             className="simple-list-example-scrollspy text-center"
             brUtilsDisplay="flex"
-            brUtilsFlex={{ column: true, gap: '2' }}
+            brUtilsSpacing={{ gap: '2' }}
+            brUtilsFlex={{ column: true }}
           >
-            <BrElement as="a" brPadding={1} brUtilsBorder href="#simple-list-item-1">
+            <BrElement
+              as="a"
+              brUtilsSpacing={{ padding: '1' }}
+              brUtilsBorder
+              href="#simple-list-item-1"
+            >
               Item 1
             </BrElement>
-            <BrElement as="a" brPadding={1} brUtilsBorder href="#simple-list-item-2">
+            <BrElement
+              as="a"
+              brUtilsSpacing={{ padding: '1' }}
+              brUtilsBorder
+              href="#simple-list-item-2"
+            >
               Item 2
             </BrElement>
-            <BrElement as="a" brPadding={1} brUtilsBorder href="#simple-list-item-3">
+            <BrElement
+              as="a"
+              brUtilsSpacing={{ padding: '1' }}
+              brUtilsBorder
+              href="#simple-list-item-3"
+            >
               Item 3
             </BrElement>
-            <BrElement as="a" brPadding={1} brUtilsBorder href="#simple-list-item-4">
+            <BrElement
+              as="a"
+              brUtilsSpacing={{ padding: '1' }}
+              brUtilsBorder
+              href="#simple-list-item-4"
+            >
               Item 4
             </BrElement>
-            <BrElement as="a" brPadding={1} brUtilsBorder href="#simple-list-item-5">
+            <BrElement
+              as="a"
+              brUtilsSpacing={{ padding: '1' }}
+              brUtilsBorder
+              href="#simple-list-item-5"
+            >
               Item 5
             </BrElement>
           </BrElement>

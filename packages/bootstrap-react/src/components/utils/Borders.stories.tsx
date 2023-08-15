@@ -61,7 +61,7 @@ export const Color: StoryFn = () => {
       <BrElement brUtilsBorder={{ color: 'black' }} />
       <BrElement brUtilsBorder={{ color: 'white' }} />
       <hr />
-      <BrElement brMargin={{ bottom: 4 }}>
+      <BrElement brUtilsSpacing={{ margin: { bottom: '4' } }}>
         <Label htmlFor="exampleFormControlInput1">Email address</Label>
         <Input
           type="email"
@@ -72,8 +72,7 @@ export const Color: StoryFn = () => {
       </BrElement>
 
       <BrElement
-        brPadding={{ bottom: 2 }}
-        brMargin={{ bottom: 4 }}
+        brUtilsSpacing={{ margin: { bottom: '4' }, padding: { bottom: '2' } }}
         brUtilsBorder={{ bottom: true, color: 'danger' }}
         brUtilsColor="danger"
         className="h4"
@@ -82,7 +81,7 @@ export const Color: StoryFn = () => {
       </BrElement>
 
       <BrElement
-        brPadding={3}
+        brUtilsSpacing={{ padding: '3' }}
         brUtilsBorder={{ color: 'info', start: false, end: { radius: true } }}
         brUtilsBackground={{ color: 'info', opacity: '10' }}
       >
@@ -95,42 +94,48 @@ export const Color: StoryFn = () => {
 export const Opacity: StoryFn = () => {
   return (
     <div className="bd-example">
-      <BrElement brUtilsBorder={{ color: 'success' }} brPadding={2} brMargin={{ bottom: 2 }}>
+      <BrElement
+        brUtilsBorder={{ color: 'success' }}
+        brUtilsSpacing={{ margin: { bottom: '2' }, padding: '2' }}
+      >
         This is default success border
       </BrElement>
       <BrElement
         brUtilsBorder={{ color: 'success' }}
-        brPadding={2}
+        brUtilsSpacing={{ padding: '2' }}
         style={{ '--bs-border-opacity': '0.5' } as CSSProperties}
       >
         This is 50% opacity success border
       </BrElement>
       <hr />
-      <BrElement brUtilsBorder={{ color: 'success' }} brPadding={2} brMargin={{ bottom: 2 }}>
+      <BrElement
+        brUtilsBorder={{ color: 'success' }}
+        brUtilsSpacing={{ margin: { bottom: '2' }, padding: '2' }}
+      >
         This is default success border
       </BrElement>
       <BrElement
         brUtilsBorder={{ color: 'success', opacity: '75' }}
-        brPadding={2}
-        brMargin={{ bottom: 2 }}
+        brUtilsSpacing={{ margin: { bottom: '2' }, padding: '2' }}
       >
         This is 75% opacity success border
       </BrElement>
       <BrElement
         brUtilsBorder={{ color: 'success', opacity: '50' }}
-        brPadding={2}
-        brMargin={{ bottom: 2 }}
+        brUtilsSpacing={{ margin: { bottom: '2' }, padding: '2' }}
       >
         This is 50% opacity success border
       </BrElement>
       <BrElement
         brUtilsBorder={{ color: 'success', opacity: '25' }}
-        brPadding={2}
-        brMargin={{ bottom: 2 }}
+        brUtilsSpacing={{ margin: { bottom: '2' }, padding: '2' }}
       >
         This is 25% opacity success border
       </BrElement>
-      <BrElement brUtilsBorder={{ color: 'success', opacity: '10' }} brPadding={2}>
+      <BrElement
+        brUtilsBorder={{ color: 'success', opacity: '10' }}
+        brUtilsSpacing={{ padding: '2' }}
+      >
         This is 10% opacity success border
       </BrElement>
     </div>

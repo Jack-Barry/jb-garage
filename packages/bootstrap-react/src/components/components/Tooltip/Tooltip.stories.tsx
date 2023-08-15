@@ -67,8 +67,8 @@ export const Directions: StoryFn = () => {
   const { target: targetSvg, floating: tooltipSvg } = useTooltip()
 
   return (
-    <BrElement brMargin={5}>
-      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ gap: '2' }}>
+    <BrElement brUtilsSpacing={{ margin: '5' }}>
+      <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '2' }}>
         <Button brButtonColor="secondary" ref={targetTop.ref} {...targetTop.getProps()}>
           Tooltip on top
         </Button>

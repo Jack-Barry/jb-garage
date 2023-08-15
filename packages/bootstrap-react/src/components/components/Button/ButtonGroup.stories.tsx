@@ -121,13 +121,13 @@ export const Toolbar: StoryFn = () => {
   return (
     <div>
       <ButtonToolbar aria-label="Toolbar with button groups">
-        <ButtonGroup brMargin={{ end: 2 }} aria-label="First group">
+        <ButtonGroup brUtilsSpacing={{ margin: { end: '2' } }} aria-label="First group">
           <Button brButtonColor="primary">1</Button>
           <Button brButtonColor="primary">2</Button>
           <Button brButtonColor="primary">3</Button>
           <Button brButtonColor="primary">4</Button>
         </ButtonGroup>
-        <ButtonGroup brMargin={{ end: 2 }} aria-label="Second group">
+        <ButtonGroup brUtilsSpacing={{ margin: { end: '2' } }} aria-label="Second group">
           <Button brButtonColor="secondary">5</Button>
           <Button brButtonColor="secondary">6</Button>
           <Button brButtonColor="secondary">7</Button>
@@ -137,8 +137,11 @@ export const Toolbar: StoryFn = () => {
         </ButtonGroup>
       </ButtonToolbar>
       <hr />
-      <ButtonToolbar brMargin={{ bottom: 3 }} aria-label="Toolbar with button groups">
-        <ButtonGroup brMargin={{ end: 2 }} aria-label="First group">
+      <ButtonToolbar
+        brUtilsSpacing={{ margin: { bottom: '3' } }}
+        aria-label="Toolbar with button groups"
+      >
+        <ButtonGroup brUtilsSpacing={{ margin: { end: '2' } }} aria-label="First group">
           <Button brButtonColor="outline-secondary">1</Button>
           <Button brButtonColor="outline-secondary">2</Button>
           <Button brButtonColor="outline-secondary">3</Button>

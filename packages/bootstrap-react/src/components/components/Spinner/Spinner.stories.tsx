@@ -125,7 +125,7 @@ export const GrowingSpinner: StoryFn = () => {
 export const AlignmentMargin: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Spinner brMargin={5}>
+      <Spinner brUtilsSpacing={{ margin: '5' }}>
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
@@ -147,7 +147,7 @@ export const AlignmentPlacementFlex: StoryFn = () => {
       <hr />
       <BrElement brUtilsDisplay="flex" brUtilsFlex={{ alignItems: 'center' }}>
         <strong>Loading...</strong>
-        <Spinner brMargin={{ start: 'auto' }} aria-hidden="true" />
+        <Spinner brUtilsSpacing={{ margin: { start: 'auto' } }} aria-hidden="true" />
       </BrElement>
     </div>
   )

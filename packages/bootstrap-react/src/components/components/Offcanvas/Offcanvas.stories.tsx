@@ -54,7 +54,7 @@ export const LiveDemo: StoryFn = () => {
             Some text as placeholder. In real life you can have the elements you have chosen. Like,
             text, images, lists, etc.
           </div>
-          <Dropdown brMargin={{ top: 3 }}>
+          <Dropdown brUtilsSpacing={{ margin: { top: '3' } }}>
             <DropdownToggle brButtonColor="secondary" ref={dropdown.dropdownRef}>
               Dropdown button
             </DropdownToggle>
@@ -182,7 +182,7 @@ export const Responsive: StoryFn = () => {
           <CloseButton onClick={offcanvas.hide} />
         </OffcanvasHeader>
         <OffcanvasBody>
-          <BrElement as="p" brMargin={{ bottom: 0 }}>
+          <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '0' } }}>
             This is content within an <code>.offcanvas-lg</code>.
           </BrElement>
         </OffcanvasBody>

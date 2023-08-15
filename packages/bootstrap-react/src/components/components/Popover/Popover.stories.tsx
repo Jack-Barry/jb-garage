@@ -22,7 +22,7 @@ export const BaseExample: StoryFn = () => {
   const { target, floating } = usePopover()
 
   return (
-    <BrElement brPadding={{ y: 5 }}>
+    <BrElement brUtilsSpacing={{ padding: { y: '5' } }}>
       <Button ref={target.ref} {...target.getProps()} brButtonColor="danger" brButtonLg>
         Click to toggle popover
       </Button>
@@ -41,7 +41,7 @@ export const FourDirections: StoryFn = () => {
   const popoverLeft = usePopover({ placement: 'left' })
 
   return (
-    <BrElement brPadding={{ y: 5 }} brUtilsDisplay="flex" brUtilsFlex={{ gap: '2' }}>
+    <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ padding: { y: '5' }, gap: '2' }}>
       <Button
         ref={popoverTop.target.ref}
         {...popoverTop.target.getProps()}

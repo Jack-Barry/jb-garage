@@ -10,7 +10,7 @@ export function linkToBootstrapDocs(href: string, text?: string): Decorator {
             Bootstrap Docs: {text || Context.name}
           </a>
         </div>
-        <BrElement as="hr" brMargin={{ top: 0 }} />
+        <BrElement as="hr" brUtilsSpacing={{ margin: { top: '0' } }} />
         <Story />
       </BrElement>
     )

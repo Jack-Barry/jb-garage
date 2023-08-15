@@ -144,7 +144,7 @@ export const Numbered: StoryFn = () => {
           brUtilsDisplay="flex"
           brUtilsFlex={{ justifyContent: 'between', alignItems: 'start' }}
         >
-          <BrElement brMargin={{ start: 2, end: 'auto' }}>
+          <BrElement brUtilsSpacing={{ margin: { start: '2', end: 'auto' } }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
@@ -156,7 +156,7 @@ export const Numbered: StoryFn = () => {
           brUtilsDisplay="flex"
           brUtilsFlex={{ justifyContent: 'between', alignItems: 'start' }}
         >
-          <BrElement brMargin={{ start: 2, end: 'auto' }}>
+          <BrElement brUtilsSpacing={{ margin: { start: '2', end: 'auto' } }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
@@ -168,7 +168,7 @@ export const Numbered: StoryFn = () => {
           brUtilsDisplay="flex"
           brUtilsFlex={{ justifyContent: 'between', alignItems: 'start' }}
         >
-          <BrElement brMargin={{ start: 2, end: 'auto' }}>
+          <BrElement brUtilsSpacing={{ margin: { start: '2', end: 'auto' } }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
@@ -338,12 +338,12 @@ export const CustomContent: StoryFn = () => {
           brUtilsFlex={{ justifyContent: 'between' }}
           className="w-100"
         >
-          <BrElement as="h5" brMargin={{ bottom: 1 }}>
+          <BrElement as="h5" brUtilsSpacing={{ margin: { bottom: '1' } }}>
             List group item heading
           </BrElement>
           <small>3 days ago</small>
         </BrElement>
-        <BrElement as="p" brMargin={{ bottom: 1 }}>
+        <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '1' } }}>
           Some placeholder content in a paragraph.
         </BrElement>
         <small>And some small print.</small>
@@ -354,12 +354,12 @@ export const CustomContent: StoryFn = () => {
           brUtilsFlex={{ justifyContent: 'between' }}
           className="w-100"
         >
-          <BrElement as="h5" brMargin={{ bottom: 1 }}>
+          <BrElement as="h5" brUtilsSpacing={{ margin: { bottom: '1' } }}>
             List group item heading
           </BrElement>
           <BrElement brUtilsColor="body-secondary">3 days ago</BrElement>
         </BrElement>
-        <BrElement as="p" brMargin={{ bottom: 1 }}>
+        <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '1' } }}>
           Some placeholder content in a paragraph.
         </BrElement>
         <BrElement brUtilsColor="body-secondary">And some muted small print.</BrElement>
@@ -370,12 +370,12 @@ export const CustomContent: StoryFn = () => {
           brUtilsFlex={{ justifyContent: 'between' }}
           className="w-100"
         >
-          <BrElement as="h5" brMargin={{ bottom: 1 }}>
+          <BrElement as="h5" brUtilsSpacing={{ margin: { bottom: '1' } }}>
             List group item heading
           </BrElement>
           <BrElement brUtilsColor="body-secondary">3 days ago</BrElement>
         </BrElement>
-        <BrElement as="p" brMargin={{ bottom: 1 }}>
+        <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '1' } }}>
           Some placeholder content in a paragraph.
         </BrElement>
         <BrElement brUtilsColor="body-secondary">And some muted small print.</BrElement>

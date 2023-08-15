@@ -223,7 +223,7 @@ export const ServerSide: StoryFn = () => {
 export const SupportedElements: StoryFn = () => {
   return (
     <form className="was-validated">
-      <BrElement brMargin={{ bottom: 3 }}>
+      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Label htmlFor="validationTextarea">Textarea</Label>
         <Input
           as="textarea"
@@ -235,7 +235,7 @@ export const SupportedElements: StoryFn = () => {
       </BrElement>
 
       <FormCheck
-        brFormCheckWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormCheckWrapperProps={{ brUtilsSpacing: { margin: { bottom: '3' } } }}
         brFormCheckInputProps={{
           id: 'validationFormCheck1',
           required: true
@@ -255,7 +255,7 @@ export const SupportedElements: StoryFn = () => {
         brFormCheckLabelProps={{ children: 'Toggle this radio' }}
       />
       <FormCheck
-        brFormCheckWrapperProps={{ brMargin: { bottom: 3 } }}
+        brFormCheckWrapperProps={{ brUtilsSpacing: { margin: { bottom: 3 } } }}
         brFormCheckInputProps={{
           type: 'radio',
           id: 'validationFormCheck3',
@@ -267,7 +267,7 @@ export const SupportedElements: StoryFn = () => {
         <Feedback>More example invalid feedback text</Feedback>
       </FormCheck>
 
-      <BrElement brMargin={{ bottom: 3 }}>
+      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Select required aria-label="select example">
           <option value="">Open this select menu</option>
           <option value="1">One</option>
@@ -277,12 +277,12 @@ export const SupportedElements: StoryFn = () => {
         <Feedback>Example invalid select feedback</Feedback>
       </BrElement>
 
-      <BrElement brMargin={{ bottom: 3 }}>
+      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Input type="file" aria-label="file example" required />
         <Feedback>Example invalid form file feedback</Feedback>
       </BrElement>
 
-      <BrElement brMargin={{ bottom: 3 }}>
+      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
         <Button brButtonColor="primary" type="submit" disabled>
           Submit form
         </Button>
