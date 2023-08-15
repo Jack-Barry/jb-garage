@@ -1,0 +1,39 @@
+{
+  "name": "bootstrap-js",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bootstrap-js/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/bootstrap-js/**/*.ts"]
+      }
+    },
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/bootstrap-js",
+        "main": "packages/bootstrap-js/src/index.ts",
+        "tsConfig": "packages/bootstrap-js/tsconfig.lib.json",
+        "assets": ["packages/bootstrap-js/*.md"],
+        "generatePackageJson": true
+      },
+      "dependsOn": ["lint"]
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx semantic-release --extends=./packages/bootstrap-js/release.config.js"
+          }
+        ]
+      },
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

@@ -10,6 +10,7 @@ const config = {
     scopes: [
       'global',
       'bootstrap',
+      'bootstrap-js',
       'bootstrap-react',
       'jack-barry-onl',
       'style-dictionary',
