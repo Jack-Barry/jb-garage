@@ -1,4 +1,6 @@
 import { BootstrapJs } from './BootstrapJs'
+import { ALL_BREAKPOINTS_KEY } from './constants'
+import { emptyStyles } from './utils/emptyStyles'
 
 describe('Bootstrap Classes: Utilities: Background', () => {
   let bs: BootstrapJs
@@ -15,7 +17,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
 
   describe('when value is provided as string', () => {
     test('returns appropriate background class', () => {
-      expect(bs.bsJs({ bsJsAll: { background: 'test' } })).toStrictEqual({
+      expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: 'test' } })).toStrictEqual({
         classes: { 'bg-test': true },
         inlineStyles: {}
       })
@@ -26,15 +28,12 @@ describe('Bootstrap Classes: Utilities: Background', () => {
     describe('when object is empty', () => {
       test('returns empty object', () => {
         // @ts-ignore
-        expect(bs.bsJs({ bsJsAll: { background: {} } })).toStrictEqual({
-          classes: {},
-          inlineStyles: {}
-        })
+        expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: {} } })).toStrictEqual(emptyStyles())
       })
     })
 
     test('returns appropriate background class', () => {
-      expect(bs.bsJs({ bsJsAll: { background: { color: 'test' } } })).toStrictEqual({
+      expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test' } } })).toStrictEqual({
         classes: { 'bg-test': true },
         inlineStyles: {}
       })
@@ -45,7 +44,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
         describe('when opacity is less than 1', () => {
           test('provides opacity as CSS variable', () => {
             expect(
-              bs.bsJs({ bsJsAll: { background: { color: 'test', opacity: 0.9 } } })
+              bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: 0.9 } } })
             ).toStrictEqual({
               classes: { 'bg-test': true },
               inlineStyles: { '--bs-bg-opacity': 0.9 }
@@ -53,7 +52,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
 
             expect(
               new BootstrapJs('custom').bsJs({
-                bsJsAll: { background: { color: 'test', opacity: 0.9 } }
+                [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: 0.9 } }
               })
             ).toStrictEqual({
               classes: { 'bg-test': true },
@@ -65,7 +64,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
         describe('when opacity is equal to 1', () => {
           test('provides opacity as class name', () => {
             expect(
-              bs.bsJs({ bsJsAll: { background: { color: 'test', opacity: 1 } } })
+              bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: 1 } } })
             ).toStrictEqual({
               classes: { 'bg-test': true, 'bg-opacity-100': true },
               inlineStyles: {}
@@ -76,7 +75,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
         describe('when opacity is more than 1', () => {
           test('provides opacity as class name', () => {
             expect(
-              bs.bsJs({ bsJsAll: { background: { color: 'test', opacity: 100 } } })
+              bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: 100 } } })
             ).toStrictEqual({
               classes: { 'bg-test': true, 'bg-opacity-100': true },
               inlineStyles: {}
@@ -90,7 +89,9 @@ describe('Bootstrap Classes: Utilities: Background', () => {
           describe('when opacity is less than 1', () => {
             test('provides opacity as CSS variable', () => {
               expect(
-                bs.bsJs({ bsJsAll: { background: { color: 'test', opacity: '0.9' } } })
+                bs.bsJs({
+                  [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: '0.9' } }
+                })
               ).toStrictEqual({
                 classes: { 'bg-test': true },
                 inlineStyles: { '--bs-bg-opacity': 0.9 }
@@ -98,7 +99,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
 
               expect(
                 new BootstrapJs('custom').bsJs({
-                  bsJsAll: { background: { color: 'test', opacity: '0.9' } }
+                  [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: '0.9' } }
                 })
               ).toStrictEqual({
                 classes: { 'bg-test': true },
@@ -110,7 +111,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
           describe('when opacity is equal to 1', () => {
             test('provides opacity as class name', () => {
               expect(
-                bs.bsJs({ bsJsAll: { background: { color: 'test', opacity: '1' } } })
+                bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: '1' } } })
               ).toStrictEqual({
                 classes: { 'bg-test': true, 'bg-opacity-100': true },
                 inlineStyles: {}
@@ -121,7 +122,9 @@ describe('Bootstrap Classes: Utilities: Background', () => {
           describe('when opacity is more than 1', () => {
             test('provides opacity as class name', () => {
               expect(
-                bs.bsJs({ bsJsAll: { background: { color: 'test', opacity: '100' } } })
+                bs.bsJs({
+                  [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: '100' } }
+                })
               ).toStrictEqual({
                 classes: { 'bg-test': true, 'bg-opacity-100': true },
                 inlineStyles: {}
@@ -133,7 +136,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
         describe('when string is a percentage', () => {
           test('provides opacity as CSS variable', () => {
             expect(
-              bs.bsJs({ bsJsAll: { background: { color: 'test', opacity: '90%' } } })
+              bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: '90%' } } })
             ).toStrictEqual({
               classes: { 'bg-test': true },
               inlineStyles: { '--bs-bg-opacity': 0.9 }
@@ -141,7 +144,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
 
             expect(
               new BootstrapJs('custom').bsJs({
-                bsJsAll: { background: { color: 'test', opacity: '90%' } }
+                [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: '90%' } }
               })
             ).toStrictEqual({
               classes: { 'bg-test': true },
@@ -155,7 +158,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
     describe('when gradient is included', () => {
       test('returns appropriate background class when gradient is true', () => {
         expect(
-          bs.bsJs({ bsJsAll: { background: { color: 'test', gradient: true } } })
+          bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', gradient: true } } })
         ).toStrictEqual({
           classes: { 'bg-test': true, 'bg-gradient': true },
           inlineStyles: {}
@@ -164,7 +167,7 @@ describe('Bootstrap Classes: Utilities: Background', () => {
 
       test('returns appropriate background class when gradient is false', () => {
         expect(
-          bs.bsJs({ bsJsAll: { background: { color: 'test', gradient: false } } })
+          bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', gradient: false } } })
         ).toStrictEqual({
           classes: { 'bg-test': true, 'bg-gradient': false },
           inlineStyles: {}

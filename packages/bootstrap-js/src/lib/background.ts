@@ -1,5 +1,7 @@
-import { BootstrapThemeColor } from '../bootstrapTypes'
-import { BsJsStyles, LiteralUnion } from '../libTypes'
+import { isEmptyObject } from '@jb-garage/utils-generic'
+import { BootstrapThemeColor } from '../bootstrap.types'
+import { BsJsStyles, LiteralUnion } from '../lib.types'
+import { emptyStyles } from './utils/emptyStyles'
 import { getOpacityStyles } from './utils/getOpacityStyles'
 
 /** Default Bootstrap background color */
@@ -45,28 +47,31 @@ export function bsJsBackgroundStyles(
   background?: BsJsBackgroundOptions
 ): BsJsStyles {
   if (!background) {
-    return {}
+    return emptyStyles()
   }
 
   if (typeof background === 'string') {
-    return { classes: { [`bg-${background}`]: true } }
+    return { classes: { [`bg-${background}`]: true }, inlineStyles: {} }
+  }
+
+  if (isEmptyObject(background)) {
+    return emptyStyles()
   }
 
   const { color, opacity, gradient } = background
   if (color === undefined) {
     // logger.warn(`${DEV_WARNING_PREFIX}Color is expected when providing background styles as object`)
-    return {}
+    return emptyStyles()
   }
 
   if (opacity === undefined && gradient === undefined) {
-    return { classes: { [`bg-${color}`]: true } }
+    return { classes: { [`bg-${color}`]: true }, inlineStyles: {} }
   }
 
-  const classes: BsJsStyles['classes'] = { [`bg-${color}`]: true }
-  const styles: BsJsStyles = { classes }
+  const styles: BsJsStyles = { classes: { [`bg-${color}`]: true }, inlineStyles: {} }
 
   if (typeof gradient === 'boolean') {
-    classes['bg-gradient'] = gradient
+    styles.classes['bg-gradient'] = gradient
   }
 
   const opacityStyles = getOpacityStyles(

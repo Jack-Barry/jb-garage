@@ -1,4 +1,5 @@
-import { BsJsStyles } from '../../libTypes'
+import { BsJsStyles } from '../../lib.types'
+import { emptyStyles } from '../utils/emptyStyles'
 
 type OpacityStylesOptions = {
   cssVariableKey?: string
@@ -14,10 +15,10 @@ export function getOpacityStyles(
   const opacityIsNumber = typeof opacity === 'number'
   const opacityIsString = typeof opacity === 'string'
   if (!opacityIsNumber && !opacityIsString) {
-    return {}
+    return emptyStyles()
   }
 
-  const brStyles: BsJsStyles = {}
+  const brStyles: BsJsStyles = emptyStyles()
   let opacityAsNumber: number | undefined
 
   if (opacityIsNumber) {
@@ -31,11 +32,11 @@ export function getOpacityStyles(
 
   if (opacityAsNumber !== undefined) {
     if (opacityAsNumber < 1 && !!cssVariableKey) {
-      brStyles.inlineStyles = { [cssVariableKey]: opacityAsNumber }
+      brStyles.inlineStyles[cssVariableKey] = opacityAsNumber
     } else if (opacityAsNumber === 1) {
-      brStyles.classes = { [`${classNamePrefix}-100${classNameSuffix}`]: true }
+      brStyles.classes[`${classNamePrefix}-100${classNameSuffix}`] = true
     } else {
-      brStyles.classes = { [`${classNamePrefix}-${opacityAsNumber}${classNameSuffix}`]: true }
+      brStyles.classes[`${classNamePrefix}-${opacityAsNumber}${classNameSuffix}`] = true
     }
   }
 

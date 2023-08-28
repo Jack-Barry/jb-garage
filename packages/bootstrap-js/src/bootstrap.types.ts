@@ -11,3 +11,13 @@ export type BootstrapThemeColor =
   | 'danger'
   | 'light'
   | 'dark'
+
+export type BootstrapThemeColorSubtle =
+  | 'primary-subtle'
+  | 'secondary-subtle'
+  | 'success-subtle'
+  | 'danger-subtle'
+  | 'warning-subtle'
+  | 'info-subtle'
+  | 'light-subtle'
+  | 'dark-subtle'
