@@ -1,7 +1,7 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
-import { BsJsConfig, BsJsStyles, LiteralUnion } from '../lib.types'
-import { ALL_BREAKPOINTS_KEY } from './constants'
-import { emptyStyles } from './utils/emptyStyles'
+import { BsJsConfig, BsJsStyles, LiteralUnion } from '../../_types'
+import { ALL_BREAKPOINTS_KEY } from '../constants'
+import { emptyStyles } from '../utils/emptyStyles'
 
 export type BsJsDisplayOption = LiteralUnion<
   | 'none'
@@ -17,8 +17,6 @@ export type BsJsDisplayOption = LiteralUnion<
   | 'inline-flex',
   string
 >
-
-// export type BsJsDisplayOptions = BsJsBreakpointBasedOptions<BsJsDisplayOption>
 
 export function bsJsDisplayStyles(options?: BsJsConfig): BsJsStyles {
   if (!options || isEmptyObject(options)) {

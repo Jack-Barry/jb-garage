@@ -1,8 +1,8 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
-import { BootstrapThemeColor, BootstrapThemeColorSubtle } from '../bootstrap.types'
-import { BsJsStyles, LiteralUnion } from '../lib.types'
-import { emptyStyles } from './utils/emptyStyles'
-import { getOpacityStyles } from './utils/getOpacityStyles'
+import { BootstrapThemeColor, BootstrapThemeColorSubtle } from './_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
+import { emptyStyles } from '../utils/emptyStyles'
+import { getOpacityStyles } from '../utils/getOpacityStyles'
 
 /** Value that can be used to configure a border width */
 type BootstrapBorderWidth = LiteralUnion<'0' | '1' | '2' | '3' | '4' | '5', string | number>
@@ -15,6 +15,7 @@ type BsJsBorderConfig = {
   width?: BootstrapBorderWidth
   radius?: 'circle' | 'pill' | boolean | BootstrapBorderWidth
 }
+
 /** Prop that can be accepted by `BrElement` for Bootstrap border utilities */
 export type BsJsBorderOptions =
   | boolean

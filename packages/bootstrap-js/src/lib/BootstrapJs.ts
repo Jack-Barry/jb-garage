@@ -1,11 +1,11 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
-import { AllBreakpointsOptions, BsJsConfig, BsJsStyles } from '../lib.types'
-import { bsJsBackgroundStyles } from './background'
-import { bsJsBorderStyles } from './borders'
-import { bsJsColorStyles } from './colors'
+import { AllBreakpointsOptions, BsJsConfig, BsJsStyles } from '../_types'
+import { bsJsBackgroundStyles } from './bootstrap-utils/background'
+import { bsJsBorderStyles } from './bootstrap-utils/borders'
+import { bsJsColorStyles } from './bootstrap-utils/colors'
+import { bsJsDisplayStyles } from './bootstrap-utils/display'
+import { bsJsFlexStyles } from './bootstrap-utils/flexbox'
 import { ALL_BREAKPOINTS_KEY } from './constants'
-import { bsJsDisplayStyles } from './display'
-import { bsJsFlexStyles } from './flexbox'
 import { emptyStyles } from './utils/emptyStyles'
 
 /**
@@ -15,9 +15,7 @@ import { emptyStyles } from './utils/emptyStyles'
 export class BootstrapJs {
   constructor(private _prefix = 'bs') {}
 
-  /**
-   * Translates provided config into Bootstrap classes and inline styles
-   */
+  /** Translates provided config into Bootstrap classes and inline styles */
   bsJs = (config: BsJsConfig = {}): BsJsStyles => {
     if (isEmptyObject(config)) {
       return emptyStyles()

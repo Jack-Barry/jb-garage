@@ -1,16 +1,13 @@
 import * as CSS from 'csstype'
-import { BootstrapDefaultBreakpoint } from './bootstrap.types'
-import { BsJsBackgroundOptions } from './lib/background'
-import { BsJsBorderOptions } from './lib/borders'
-import { BsJsColorOptions } from './lib/colors'
-import { BsJsDisplayOption } from './lib/display'
+import { BootstrapDefaultBreakpoint } from './lib/bootstrap-utils/_types'
+import { BsJsBackgroundOptions } from './lib/bootstrap-utils/background'
+import { BsJsBorderOptions } from './lib/bootstrap-utils/borders'
+import { BsJsColorOptions } from './lib/bootstrap-utils/colors'
+import { BsJsDisplayOption } from './lib/bootstrap-utils/display'
+import { BsJsFlexOptions } from './lib/bootstrap-utils/flexbox'
 import { ALL_BREAKPOINTS_KEY } from './lib/constants'
-import { BsJsFlexOptions } from './lib/flexbox'
 
-/**
- * Utility type for allowing literal unions while still providing intellisense
- *   suggestions
- */
+/** Utility type for allowing literal unions while still providing intellisense suggestions */
 export type LiteralUnion<T, U> = T | (U & Record<never, never>)
 
 /** Object representing styles that can be applied to an HTML element */

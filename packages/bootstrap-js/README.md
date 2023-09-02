@@ -14,7 +14,7 @@ reach for what's already there. For example, if you've never worked with Bootstr
 name `px-1 ms-2` may not be as clear to you as seeing something like
 
 ```ts
-{ 
+const bsStyles = { 
   bsJsAll: { spacing: { padding: { x: 1 }, margin: { start: 2 } } },
   lg: { spacing: { margin: { end: 3 } } }
 }
@@ -38,8 +38,9 @@ lib, you're already invoking functions to compute class strings 🙂
 To get an object of `classes` and `inlineStyles`
 
 ```ts
-import { BootstrapJs, BsJsConfig, bsJs } from '@jb-garage/bootstrap-js'
+import { BootstrapJs, BsJsConfig } from '@jb-garage/bootstrap-js'
 
+const bsJs = new BootstrapJs().bsJs
 const config: BsJsConfig = {
   bsJsAll: {
     // options that will apply to all breakpoints
@@ -53,8 +54,11 @@ const config: BsJsConfig = {
 
 const { classes, inlineStyles } = bsJs(config)
 
-// If you're using your own custom Bootstrap prefix instead of `"bs"`, initialize
-//   your own instance of `BootstrapJs`. This will ensure that CSS variables get
-//   constructed properly
+// If you're using your own custom Bootstrap prefix instead of `"bs"`, initialize your instance of 
+//   `BootstrapJs` with it. This will ensure that CSS variablesget constructed properly
 const { classes, inlineStyles } = new BootstrapJs('custom').bsJs(config)
 ```
+
+`classes` and `inlineStyles` are provided as objects so that you can easily perform
+any transformations you need on them, instead of having to do a bunch of string
+parsing shenanigans.

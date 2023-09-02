@@ -1,7 +1,7 @@
-import { BootstrapJs } from './BootstrapJs'
-import { ALL_BREAKPOINTS_KEY } from './constants'
+import { BootstrapJs } from '../BootstrapJs'
+import { ALL_BREAKPOINTS_KEY } from '../constants'
 
-describe('Bootstrap Classes: Utilities: Flexbox', () => {
+describe('Bootstrap Utilities: Flexbox', () => {
   let bs: BootstrapJs
 
   beforeEach(() => {

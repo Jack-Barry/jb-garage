@@ -1,4 +1,4 @@
-import { BsJsStyles } from '../../lib.types'
+import { BsJsStyles } from '../../_types'
 
 /** Returns a `BsJsStyles` object with no defined styles */
 export function emptyStyles(): BsJsStyles {

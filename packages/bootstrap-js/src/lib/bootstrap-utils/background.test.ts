@@ -1,8 +1,8 @@
-import { BootstrapJs } from './BootstrapJs'
-import { ALL_BREAKPOINTS_KEY } from './constants'
-import { emptyStyles } from './utils/emptyStyles'
+import { BootstrapJs } from '../BootstrapJs'
+import { ALL_BREAKPOINTS_KEY } from '../constants'
+import { emptyStyles } from '../utils/emptyStyles'
 
-describe('Bootstrap Classes: Utilities: Background', () => {
+describe('Bootstrap Utilities: Background', () => {
   let bs: BootstrapJs
 
   beforeEach(() => {

@@ -1,6 +1,6 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
-import { BsJsConfig, BsJsStyles, LiteralUnion } from '../lib.types'
-import { ALL_BREAKPOINTS_KEY } from './constants'
+import { BsJsConfig, BsJsStyles, LiteralUnion } from '../../_types'
+import { ALL_BREAKPOINTS_KEY } from '../constants'
 
 type BsJsFlexOptionAlignment = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
 

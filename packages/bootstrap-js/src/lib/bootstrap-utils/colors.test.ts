@@ -1,7 +1,7 @@
-import { BootstrapJs } from './BootstrapJs'
-import { ALL_BREAKPOINTS_KEY } from './constants'
+import { BootstrapJs } from '../BootstrapJs'
+import { ALL_BREAKPOINTS_KEY } from '../constants'
 
-describe('Bootstrap Classes: Utilities: Colors', () => {
+describe('Bootstrap Utilities: Colors', () => {
   let bs: BootstrapJs
 
   beforeEach(() => {

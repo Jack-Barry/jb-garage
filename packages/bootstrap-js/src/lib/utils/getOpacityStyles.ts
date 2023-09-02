@@ -1,14 +1,23 @@
-import { BsJsStyles } from '../../lib.types'
+import { BsJsStyles } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 
 type OpacityStylesOptions = {
+  /** CSS variable key that will be used to set opacity */
   cssVariableKey?: string
+  /** Prefix for the class name this opacity is used for */
   classNamePrefix: string
+  /** Suffix for the class name this opacity is used for */
   classNameSuffix?: string
 }
 
+/**
+ * Translates options into opacity styles that are used in several Bootstrap utilities, e.g. background,
+ *   borders, text color, etc.
+ */
 export function getOpacityStyles(
+  /** Options used to generate the `BsJsStyles` attributes */
   options: OpacityStylesOptions,
+  /** Value used for the opacity */
   opacity?: number | string
 ): BsJsStyles {
   const { cssVariableKey, classNamePrefix, classNameSuffix = '' } = options
