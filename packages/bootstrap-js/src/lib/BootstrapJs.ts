@@ -10,6 +10,7 @@ import { bsJsFlexStyles } from './bootstrap-utils/flexbox'
 import { bsJsFloatStyles } from './bootstrap-utils/float'
 import { bsJsInteractStyles } from './bootstrap-utils/interact'
 import { bsJsLinkStyles } from './bootstrap-utils/link'
+import { bsJsObjectFitStyles } from './bootstrap-utils/objectFit'
 import { ALL_BREAKPOINTS_KEY } from './constants'
 import { emptyStyles } from './utils/emptyStyles'
 
@@ -35,10 +36,19 @@ export class BootstrapJs {
     const float = bsJsFloatStyles(config)
     const interactions = bsJsInteractStyles(config)
     const link = bsJsLinkStyles(config)
+    const objectFit = bsJsObjectFitStyles(config)
 
-    const bsJsStyles = [background, border, color, display, flex, float, interactions, link].reduce<
-      Required<BsJsStyles>
-    >((result, { classes, inlineStyles }) => {
+    const bsJsStyles = [
+      background,
+      border,
+      color,
+      display,
+      flex,
+      float,
+      interactions,
+      link,
+      objectFit
+    ].reduce<Required<BsJsStyles>>((result, { classes, inlineStyles }) => {
       return {
         classes: {
           ...result.classes,
