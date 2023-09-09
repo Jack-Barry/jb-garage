@@ -2,6 +2,7 @@ import { isEmptyObject } from '@jb-garage/utils-generic'
 
 import { BsJsConfig, BsJsStyles, LiteralUnion } from '../../_types'
 import { ALL_BREAKPOINTS_KEY } from '../constants'
+import { emptyStyles } from '../utils/emptyStyles'
 
 type BsJsFlexOptionAlignment = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
 
@@ -21,7 +22,7 @@ export type BsJsFlexOptions = {
 
 export function bsJsFlexStyles(props?: BsJsConfig): BsJsStyles {
   if (!props || isEmptyObject(props)) {
-    return { classes: {}, inlineStyles: {} }
+    return emptyStyles()
   }
 
   const classes: Record<string, boolean> = {}

@@ -7,6 +7,7 @@ import { BsJsColorOptions } from './lib/bootstrap-utils/colors'
 import { BsJsDisplayOption } from './lib/bootstrap-utils/display'
 import { BsJsFlexOptions } from './lib/bootstrap-utils/flexbox'
 import { BsJsFloatType } from './lib/bootstrap-utils/float'
+import { BsJsInteractOptions } from './lib/bootstrap-utils/interact'
 import { ALL_BREAKPOINTS_KEY } from './lib/constants'
 
 /** Utility type for allowing literal unions while still providing intellisense suggestions */
@@ -30,7 +31,6 @@ type IndividualBreakpointOptions = {
   display?: BsJsDisplayOption
   flex?: BsJsFlexOptions
   float?: BsJsFloatType
-  // interactions?: {}
   // link?: {}
   // objectFit?: {}
   // opacity?: {}
@@ -50,6 +50,7 @@ export type AllBreakpointsOptions = IndividualBreakpointOptions & {
   background?: BsJsBackgroundOptions
   border?: BsJsBorderOptions
   color?: BsJsColorOptions
+  interactions?: BsJsInteractOptions
 }
 
 type BsJsConfigBase = {
