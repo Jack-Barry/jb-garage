@@ -8,8 +8,26 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['@typescript-eslint'],
-  rules: {},
+  plugins: ['@typescript-eslint', 'import'],
+  rules: {
+    'import/order': [
+      'warn',
+      {
+        alphabetize: {
+          order: 'asc'
+        },
+        'newlines-between': 'always',
+        groups: ['builtin', 'external', 'internal', 'parent', ['sibling', 'index']],
+        pathGroups: [
+          { pattern: 'src/**', group: 'internal' },
+          { pattern: 'stories/**', group: 'internal' },
+          { pattern: 'styles/**', group: 'internal' },
+          { pattern: 'testing/**', group: 'internal' }
+        ],
+        pathGroupsExcludedImportTypes: []
+      }
+    ]
+  },
   overrides: [
     {
       env: {

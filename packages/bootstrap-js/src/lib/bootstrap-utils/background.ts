@@ -1,8 +1,10 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
-import { BootstrapThemeColor } from './_types'
+
 import { BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 import { getOpacityStyles } from '../utils/getOpacityStyles'
+
+import { BootstrapThemeColor } from './_types'
 
 /** Default Bootstrap background color */
 type BootstrapBackgroundColor =

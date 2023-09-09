@@ -1,5 +1,7 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
+
 import { AllBreakpointsOptions, BsJsConfig, BsJsStyles } from '../_types'
+
 import { bsJsBackgroundStyles } from './bootstrap-utils/background'
 import { bsJsBorderStyles } from './bootstrap-utils/borders'
 import { bsJsColorStyles } from './bootstrap-utils/colors'
