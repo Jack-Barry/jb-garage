@@ -11,6 +11,7 @@ import { bsJsFloatStyles } from './bootstrap-utils/float'
 import { bsJsInteractStyles } from './bootstrap-utils/interact'
 import { bsJsLinkStyles } from './bootstrap-utils/link'
 import { bsJsObjectFitStyles } from './bootstrap-utils/objectFit'
+import { bsJsOverflowStyles } from './bootstrap-utils/overflow'
 import { ALL_BREAKPOINTS_KEY } from './constants'
 import { emptyStyles } from './utils/emptyStyles'
 
@@ -37,6 +38,7 @@ export class BootstrapJs {
     const interactions = bsJsInteractStyles(config)
     const link = bsJsLinkStyles(config)
     const objectFit = bsJsObjectFitStyles(config)
+    const overflow = bsJsOverflowStyles(config)
 
     const bsJsStyles = [
       background,
@@ -47,7 +49,8 @@ export class BootstrapJs {
       float,
       interactions,
       link,
-      objectFit
+      objectFit,
+      overflow
     ].reduce<Required<BsJsStyles>>((result, { classes, inlineStyles }) => {
       return {
         classes: {

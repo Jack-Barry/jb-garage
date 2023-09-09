@@ -8,6 +8,7 @@ import {
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 import { getOpacityStyles } from '../utils/getOpacityStyles'
+import { isAllBreakpointsOptions } from '../utils/isAllBreakpointsOptions'
 
 import { BootstrapThemeColor } from './_types'
 
@@ -33,11 +34,7 @@ export type BsJsLinkOptions =
 export function bsJsLinkStyles(options?: BsJsConfig): BsJsStyles {
   const styles = emptyStyles()
 
-  if (
-    !options ||
-    !options[ALL_BREAKPOINTS_KEY] ||
-    !(options[ALL_BREAKPOINTS_KEY] as AllBreakpointsOptions).link
-  ) {
+  if (!options || !isAllBreakpointsOptions(options[ALL_BREAKPOINTS_KEY], 'link')) {
     return styles
   }
 
