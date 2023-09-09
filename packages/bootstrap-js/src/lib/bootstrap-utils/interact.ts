@@ -1,5 +1,5 @@
 import { isEmptyObject } from '../../../../utils-generic/src'
-import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '../../_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 
 export type BsJsInteractOptions = {
@@ -7,9 +7,7 @@ export type BsJsInteractOptions = {
   pointer?: LiteralUnion<'none' | 'auto', string>
 }
 
-export function bsJsInteractStyles(
-  options: AllBreakpointsOptions['interactions']
-): BsJsStyles | null {
+export function bsJsInteractStyles(options?: BsJsInteractOptions): BsJsStyles | null {
   if (!options || isEmptyObject(options)) {
     return null
   }

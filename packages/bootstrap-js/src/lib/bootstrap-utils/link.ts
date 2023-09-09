@@ -1,5 +1,5 @@
 import { isEmptyObject } from '../../../../utils-generic/src'
-import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '../../_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 import { getOpacityStyles } from '../utils/getOpacityStyles'
 
@@ -24,7 +24,7 @@ export type BsJsLinkOptions =
     }
 
 /** Returns styles that can be used for Bootstrap link utilities */
-export function bsJsLinkStyles(options: AllBreakpointsOptions['link']): BsJsStyles | null {
+export function bsJsLinkStyles(options?: BsJsLinkOptions): BsJsStyles | null {
   if (!options) {
     return null
   }

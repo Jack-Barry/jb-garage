@@ -1,5 +1,5 @@
 import { isEmptyObject } from '../../../../utils-generic/src'
-import { BsJsStyles, IndividualBreakpointOptions, LiteralUnion } from '../../_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 
@@ -19,10 +19,7 @@ export type BsJsFlexOptions = {
   order?: LiteralUnion<'first' | 'last' | '0' | '1' | '2' | '3' | '4' | '5', number | string>
 }
 
-export function bsJsFlexStyles(
-  breakpoint: string,
-  options: IndividualBreakpointOptions['flex']
-): BsJsStyles | null {
+export function bsJsFlexStyles(breakpoint: string, options?: BsJsFlexOptions): BsJsStyles | null {
   if (!options || isEmptyObject(options)) {
     return null
   }

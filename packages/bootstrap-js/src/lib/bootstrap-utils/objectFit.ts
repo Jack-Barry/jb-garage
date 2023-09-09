@@ -1,4 +1,4 @@
-import { BsJsStyles, IndividualBreakpointOptions, LiteralUnion } from '../../_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 
@@ -6,7 +6,7 @@ export type BsJsObjectFit = LiteralUnion<'contain' | 'cover' | 'fill' | 'scale '
 
 export function bsJsObjectFitStyles(
   breakpoint: string,
-  objectFit: IndividualBreakpointOptions['objectFit']
+  objectFit?: BsJsObjectFit
 ): BsJsStyles | null {
   if (!objectFit) {
     return null

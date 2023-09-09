@@ -1,13 +1,10 @@
-import { BsJsStyles, IndividualBreakpointOptions, LiteralUnion } from '../../_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 
 export type BsJsFloatType = LiteralUnion<'start' | 'end' | 'none', string>
 
-export function bsJsFloatStyles(
-  breakpoint: string,
-  floatType: IndividualBreakpointOptions['float']
-): BsJsStyles | null {
+export function bsJsFloatStyles(breakpoint: string, floatType?: BsJsFloatType): BsJsStyles | null {
   if (!floatType) {
     return null
   }

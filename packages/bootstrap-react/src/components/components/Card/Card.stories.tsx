@@ -280,7 +280,7 @@ export const SizingUsingGridMarkup: StoryFn = () => {
 export const SizingUsingUtilities: StoryFn = () => {
   return (
     <div>
-      <Card bsJs={{ bsJsAll: { size: { width: '75' }, spacing: { margin: { bottom: '3' } } } }}>
+      <Card bsJs={{ bsJsAll: { sizing: { width: '75' }, spacing: { margin: { bottom: '3' } } } }}>
         <CardBody>
           <CardTitle>Card title</CardTitle>
           <CardText>
@@ -292,7 +292,7 @@ export const SizingUsingUtilities: StoryFn = () => {
         </CardBody>
       </Card>
 
-      <Card bsJs={{ bsJsAll: { size: { width: '50' } } }}>
+      <Card bsJs={{ bsJsAll: { sizing: { width: '50' } } }}>
         <CardBody>
           <CardTitle>Card title</CardTitle>
           <CardText>

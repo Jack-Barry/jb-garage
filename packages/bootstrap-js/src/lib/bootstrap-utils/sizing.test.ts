@@ -2,7 +2,7 @@ import { BootstrapJs } from '../BootstrapJs'
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 
-describe('Bootstrap Utilities: Size', () => {
+describe('Bootstrap Utilities: Sizing', () => {
   let bs: BootstrapJs
 
   beforeEach(() => {
@@ -11,7 +11,7 @@ describe('Bootstrap Utilities: Size', () => {
 
   describe('when no value is provided', () => {
     test('returns empty object', () => {
-      expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { size: undefined } })).toStrictEqual(emptyStyles())
+      expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { sizing: undefined } })).toStrictEqual(emptyStyles())
     })
   })
 
@@ -20,7 +20,7 @@ describe('Bootstrap Utilities: Size', () => {
       expect(
         bs.bsJs({
           [ALL_BREAKPOINTS_KEY]: {
-            size: {
+            sizing: {
               width: 'auto',
               maxWidth: '100',
               viewportWidth: '99',

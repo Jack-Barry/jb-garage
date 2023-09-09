@@ -1,4 +1,4 @@
-import { BsJsStyles, IndividualBreakpointOptions, LiteralUnion } from '../../_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 
@@ -31,7 +31,7 @@ export type BsJsSpacingOptions = {
 
 export function bsJsSpacingStyles(
   breakpoint: string,
-  options: IndividualBreakpointOptions['spacing']
+  options?: BsJsSpacingOptions
 ): BsJsStyles | null {
   if (!options) {
     return null

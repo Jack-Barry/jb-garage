@@ -13,8 +13,9 @@ import { bsJsObjectFitStyles } from './bootstrap-utils/objectFit'
 import { bsJsOverflowStyles } from './bootstrap-utils/overflow'
 import { bsJsPositionStyles } from './bootstrap-utils/position'
 import { bsJsShadowStyles } from './bootstrap-utils/shadow'
-import { bsJsSizeStyles } from './bootstrap-utils/size'
+import { bsJsSizeStyles } from './bootstrap-utils/sizing'
 import { bsJsSpacingStyles } from './bootstrap-utils/spacing'
+import { bsJsTextStyles } from './bootstrap-utils/text'
 import { ALL_BREAKPOINTS_KEY } from './constants'
 import { emptyStyles } from './utils/emptyStyles'
 import { mergeStyles } from './utils/mergeStyles'
@@ -81,7 +82,7 @@ export class BootstrapJs {
           styles = mergeStyles(styles, shadow)
         }
 
-        const size = bsJsSizeStyles(allBreakpointOptions.size)
+        const size = bsJsSizeStyles(allBreakpointOptions.sizing)
         if (size) {
           styles = mergeStyles(styles, size)
         }
@@ -110,6 +111,11 @@ export class BootstrapJs {
       const spacing = bsJsSpacingStyles(breakpoint, breakpointOptions.spacing)
       if (spacing) {
         styles = mergeStyles(styles, spacing)
+      }
+
+      const text = bsJsTextStyles(breakpoint, breakpointOptions.text)
+      if (text) {
+        styles = mergeStyles(styles, text)
       }
     }
 

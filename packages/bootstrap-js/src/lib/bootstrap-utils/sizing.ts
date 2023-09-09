@@ -15,7 +15,7 @@ export type BsJsSizeOptions = {
   minViewportHeight?: OneHundred
 }
 
-export function bsJsSizeStyles(options: AllBreakpointsOptions['size']): BsJsStyles | null {
+export function bsJsSizeStyles(options: AllBreakpointsOptions['sizing']): BsJsStyles | null {
   if (typeof options === 'undefined') {
     return null
   }

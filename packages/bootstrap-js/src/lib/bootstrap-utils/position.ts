@@ -1,4 +1,4 @@
-import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '../../_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 
 type BootstrapPosition = LiteralUnion<
@@ -20,7 +20,7 @@ export type BsJsPositionOptions =
       translateMiddleY?: true
     }
 
-export function bsJsPositionStyles(options: AllBreakpointsOptions['position']): BsJsStyles | null {
+export function bsJsPositionStyles(options?: BsJsPositionOptions): BsJsStyles | null {
   const styles = emptyStyles()
   if (typeof options === 'undefined') {
     return null

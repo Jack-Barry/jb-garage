@@ -1,4 +1,4 @@
-import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '../../_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 
 export type BootstrapOverflowType = LiteralUnion<'auto' | 'hidden' | 'visible' | 'scroll', string>
@@ -7,7 +7,7 @@ export type BsJsOverflowOptions =
   | BootstrapOverflowType
   | { x?: BootstrapOverflowType; y?: BootstrapOverflowType }
 
-export function bsJsOverflowStyles(options: AllBreakpointsOptions['overflow']): BsJsStyles | null {
+export function bsJsOverflowStyles(options?: BsJsOverflowOptions): BsJsStyles | null {
   if (!options) {
     return null
   }

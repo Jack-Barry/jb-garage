@@ -1,4 +1,4 @@
-import { BsJsStyles, IndividualBreakpointOptions, LiteralUnion } from '../../_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 
@@ -19,7 +19,7 @@ export type BsJsDisplayOption = LiteralUnion<
 
 export function bsJsDisplayStyles(
   breakpoint: string,
-  option: IndividualBreakpointOptions['display']
+  option?: BsJsDisplayOption
 ): BsJsStyles | null {
   if (typeof option === 'undefined') {
     return null

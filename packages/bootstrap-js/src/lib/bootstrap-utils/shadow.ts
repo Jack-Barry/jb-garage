@@ -1,10 +1,10 @@
-import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '../../_types'
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 
 type BootstrapShadowSize = LiteralUnion<'sm' | 'lg' | 'none', string>
 export type BsJsShadowOptions = true | BootstrapShadowSize
 
-export function bsJsShadowStyles(options: AllBreakpointsOptions['shadow']): BsJsStyles | null {
+export function bsJsShadowStyles(options?: BsJsShadowOptions): BsJsStyles | null {
   if (!options) {
     return null
   }
