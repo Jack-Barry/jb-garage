@@ -1,5 +1,5 @@
 import { isEmptyObject } from '../../../utils-generic/src'
-import { AllBreakpointsOptions, BsJsConfig, BsJsStyles } from '../_types'
+import { AllBreakpointsOptions, BsJsConfig, BsJsImageOptions, BsJsStyles } from '../_types'
 
 import { bsJsBackgroundStyles } from './bootstrap-utils/background'
 import { bsJsBorderStyles } from './bootstrap-utils/borders'
@@ -135,6 +135,28 @@ export class BootstrapJs {
       if (text) {
         styles = mergeStyles(styles, text)
       }
+    }
+
+    return styles
+  }
+
+  /**
+   * Translates provided options into Bootstrap classes and inline styles for images
+   *
+   * - https://getbootstrap.com/docs/5.3/content/images/
+   */
+  bsJsImage = (options: BsJsImageOptions = {}): BsJsStyles => {
+    const styles = emptyStyles()
+    if (isEmptyObject(options)) {
+      return styles
+    }
+
+    if (options.fluid) {
+      styles.classes['img-fluid'] = true
+    }
+
+    if (options.thumbnail) {
+      styles.classes['img-thumbnail'] = true
     }
 
     return styles

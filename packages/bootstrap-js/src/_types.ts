@@ -44,7 +44,6 @@ export type IndividualBreakpointOptions = {
   objectFit?: BsJsObjectFit
   spacing?: BsJsSpacingOptions
   text?: Pick<BsJsTextOptions, 'align'>
-  // zIndex?: {}
 }
 
 /** Options that can be applied to all breakpoints */
@@ -76,3 +75,8 @@ type BsJsConfigForBreakpoints<Breakpoint extends string = BootstrapDefaultBreakp
 export type BsJsConfig<Breakpoint extends string = BootstrapDefaultBreakpoint> =
   | BsJsConfigBase
   | BsJsConfigForBreakpoints<Breakpoint>
+
+export type BsJsImageOptions = {
+  fluid?: boolean
+  thumbnail?: boolean
+}

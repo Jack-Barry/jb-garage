@@ -1,34 +1,35 @@
 import { Meta, StoryFn } from '@storybook/react'
 import { CSSProperties, Fragment } from 'react'
 
-import Navbar from './Navbar'
+import Image from '../../content/Image/Image'
+import Input from '../../forms/FormControl/Input'
+import InputGroup from '../../forms/InputGroup/InputGroup'
+import InputGroupText from '../../forms/InputGroup/InputGroupText'
 import Container from '../../layout/containers/Container'
-import NavbarBrand from './NavbarBrand'
-import NavbarToggler from './NavbarToggler'
-import NavbarTogglerIcon from './NavbarTogglerIcon'
+import { BrElement } from '../../utils/BrElement'
+import Button from '../Button/Button'
+import CloseButton from '../CloseButton/CloseButton'
+import Collapse from '../Collapse/Collapse'
 import { useCollapse } from '../Collapse/useCollapse'
-import NavbarCollapse from './NavbarCollapse'
-import NavbarNav from './NavbarNav'
-import NavItem from '../navsAndTabs/Nav/NavItem'
-import NavLink from '../navsAndTabs/Nav/NavLink'
+import DropdownDivider from '../Dropdown/DropdownDivider'
 import DropdownItem from '../Dropdown/DropdownItem'
 import DropdownMenu from '../Dropdown/DropdownMenu'
-import DropdownDivider from '../Dropdown/DropdownDivider'
 import { useDropdown } from '../Dropdown/useDropdown'
-import { BrElement } from '../../utils/BrElement'
-import Input from '../../forms/FormControl/Input'
-import Button from '../Button/Button'
-import Image from '../../content/Image/Image'
-import InputGroupText from '../../forms/InputGroup/InputGroupText'
-import InputGroup from '../../forms/InputGroup/InputGroup'
-import NavbarText from './NavbarText'
-import Collapse from '../Collapse/Collapse'
 import Offcanvas from '../Offcanvas/Offcanvas'
-import { useOffcanvas } from '../Offcanvas/useOffcanvas'
+import OffcanvasBody from '../Offcanvas/OffcanvasBody'
 import OffcanvasHeader from '../Offcanvas/OffcanvasHeader'
 import OffcanvasTitle from '../Offcanvas/OffcanvasTitle'
-import CloseButton from '../CloseButton/CloseButton'
-import OffcanvasBody from '../Offcanvas/OffcanvasBody'
+import { useOffcanvas } from '../Offcanvas/useOffcanvas'
+import NavItem from '../navsAndTabs/Nav/NavItem'
+import NavLink from '../navsAndTabs/Nav/NavLink'
+
+import Navbar from './Navbar'
+import NavbarBrand from './NavbarBrand'
+import NavbarCollapse from './NavbarCollapse'
+import NavbarNav from './NavbarNav'
+import NavbarText from './NavbarText'
+import NavbarToggler from './NavbarToggler'
+import NavbarTogglerIcon from './NavbarTogglerIcon'
 
 const meta: Meta = {
   title: 'Navbar',
@@ -42,7 +43,7 @@ export const SupportedContent: StoryFn = () => {
   const dropdown = useDropdown<HTMLAnchorElement>()
 
   return (
-    <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+    <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
       <Container brContainerFluid>
         <NavbarBrand href="#">Navbar</NavbarBrand>
         <NavbarToggler
@@ -55,9 +56,9 @@ export const SupportedContent: StoryFn = () => {
         </NavbarToggler>
         <NavbarCollapse id="navbarSupportedContent" brCollapse={collapse}>
           <NavbarNav
-            brUtilsSpacing={{
-              brAllBreakpoints: { margin: { end: 'auto', bottom: '2' } },
-              lg: { margin: { bottom: '0' } }
+            bsJs={{
+              bsJsAll: { spacing: { margin: { end: 'auto', bottom: '2' } } },
+              lg: { spacing: { margin: { bottom: '0' } } }
             }}
           >
             <NavItem>
@@ -91,9 +92,9 @@ export const SupportedContent: StoryFn = () => {
               </NavLink>
             </NavItem>
           </NavbarNav>
-          <BrElement as="form" brUtilsDisplay="flex" role="search">
+          <BrElement as="form" bsJs={{ bsJsAll: { display: 'flex' } }} role="search">
             <Input
-              brUtilsSpacing={{ margin: { end: '2' } }}
+              bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -111,14 +112,18 @@ export const SupportedContent: StoryFn = () => {
 export const BrandText: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brUtilsBackground="body-tertiary">
+      <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
         </Container>
       </Navbar>
-      <Navbar brUtilsBackground="body-tertiary">
+      <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
-          <NavbarBrand as="span" brUtilsSpacing={{ margin: { bottom: '0' } }} className="h1">
+          <NavbarBrand
+            as="span"
+            bsJs={{ bsJsAll: { spacing: { margin: { bottom: '0' } } } }}
+            className="h1"
+          >
             Navbar
           </NavbarBrand>
         </Container>
@@ -129,7 +134,7 @@ export const BrandText: StoryFn = () => {
 
 export const BrandImage: StoryFn = () => {
   return (
-    <Navbar brUtilsBackground="body-tertiary">
+    <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
       <Container>
         <NavbarBrand href="#">
           <Image src="/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24" />
@@ -141,7 +146,7 @@ export const BrandImage: StoryFn = () => {
 
 export const BrandImageAndText: StoryFn = () => {
   return (
-    <Navbar brUtilsBackground="body-tertiary">
+    <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
       <Container brContainerFluid>
         <NavbarBrand href="#">
           <Image
@@ -149,7 +154,7 @@ export const BrandImageAndText: StoryFn = () => {
             alt="Logo"
             width="30"
             height="24"
-            brUtilsDisplay="inline-block"
+            bsJs={{ bsJsAll: { display: 'inline-block' } }}
             className="align-text-top"
           />{' '}
           Bootstrap
@@ -167,7 +172,7 @@ export const Nav: StoryFn = () => {
 
   return (
     <div className="bd-example">
-      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+      <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
@@ -201,7 +206,7 @@ export const Nav: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+      <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
@@ -227,7 +232,7 @@ export const Nav: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+      <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
@@ -277,11 +282,11 @@ export const Nav: StoryFn = () => {
 export const Forms: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brUtilsBackground="body-tertiary">
+      <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
-          <BrElement as="form" brUtilsDisplay="flex" role="search">
+          <BrElement as="form" bsJs={{ bsJsAll: { display: 'flex' } }} role="search">
             <Input
-              brUtilsSpacing={{ margin: { end: '2' } }}
+              bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -293,12 +298,12 @@ export const Forms: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar brUtilsBackground="body-tertiary">
+      <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand>Navbar</NavbarBrand>
-          <BrElement as="form" brUtilsDisplay="flex" role="search">
+          <BrElement as="form" bsJs={{ bsJsAll: { display: 'flex' } }} role="search">
             <Input
-              brUtilsSpacing={{ margin: { end: '2' } }}
+              bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -310,7 +315,7 @@ export const Forms: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar brUtilsBackground="body-tertiary">
+      <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container as="form" brContainerFluid>
           <InputGroup>
             <InputGroupText id="basic-addon1">@</InputGroupText>
@@ -319,9 +324,12 @@ export const Forms: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar brUtilsBackground="body-tertiary">
+      <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container as="form" brContainerFluid className="justify-content-start">
-          <Button brButtonColor="outline-success" brUtilsSpacing={{ margin: { end: '2' } }}>
+          <Button
+            brButtonColor="outline-success"
+            bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
+          >
             Main button
           </Button>
           <Button brButtonColor="outline-secondary" brButtonSm>
@@ -338,13 +346,13 @@ export const Text: StoryFn = () => {
 
   return (
     <div className="bd-example">
-      <Navbar brUtilsBackground="body-tertiary">
+      <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarText>Navbar text with an inline element</NavbarText>
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+      <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar w/ text</NavbarBrand>
           <NavbarToggler
@@ -357,9 +365,9 @@ export const Text: StoryFn = () => {
           </NavbarToggler>
           <NavbarCollapse brCollapse={collapse} id="navbarText">
             <NavbarNav
-              brUtilsSpacing={{
-                brAllBreakpoints: { margin: { end: 'auto', bottom: '2' } },
-                lg: { margin: { bottom: '0' } }
+              bsJs={{
+                bsJsAll: { spacing: { margin: { end: 'auto', bottom: '2' } } },
+                lg: { spacing: { margin: { bottom: '0' } } }
               }}
             >
               <NavItem>
@@ -388,13 +396,12 @@ export const ColorSchemes: StoryFn = () => {
       <Navbar
         className="navbar-expand-lg"
         brTheme="dark"
-        brUtilsBackground="dark"
-        brUtilsBorder={{ bottom: true, color: 'body' }}
+        bsJs={{ bsJsAll: { background: 'dark', border: { bottom: true, color: 'body' } } }}
       >
         <ColorSchemeExampleContent />
       </Navbar>
       <hr />
-      <Navbar brTheme="dark" brUtilsBackground="primary">
+      <Navbar brTheme="dark" bsJs={{ bsJsAll: { background: 'primary' } }}>
         <ColorSchemeExampleContent />
       </Navbar>
       <hr />
@@ -421,9 +428,9 @@ function ColorSchemeExampleContent() {
       </NavbarToggler>
       <NavbarCollapse brCollapse={collapse} id="navbarColor01">
         <NavbarNav
-          brUtilsSpacing={{
-            brAllBreakpoints: { margin: { end: 'auto', bottom: '2' } },
-            lg: { margin: { bottom: '0' } }
+          bsJs={{
+            bsJsAll: { spacing: { margin: { end: 'auto', bottom: '2' } } },
+            lg: { spacing: { margin: { bottom: '0' } } }
           }}
         >
           <NavItem>
@@ -441,9 +448,9 @@ function ColorSchemeExampleContent() {
             <NavLink href="#">About</NavLink>
           </NavItem>
         </NavbarNav>
-        <BrElement as="form" brUtilsDisplay="flex" role="search">
+        <BrElement as="form" bsJs={{ bsJsAll: { display: 'flex' } }} role="search">
           <Input
-            brUtilsSpacing={{ margin: { end: '2' } }}
+            bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
             type="search"
             placeholder="Search"
             aria-label="Search"
@@ -461,14 +468,14 @@ export const Containers: StoryFn = () => {
   return (
     <div>
       <Container>
-        <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+        <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
           <Container brContainerFluid>
             <NavbarBrand href="#">Navbar</NavbarBrand>
           </Container>
         </Navbar>
       </Container>
       <hr />
-      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+      <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerBreakpoint="md">
           <NavbarBrand href="#">Navbar</NavbarBrand>
         </Container>
@@ -479,7 +486,7 @@ export const Containers: StoryFn = () => {
 
 export const PlacementDefault: StoryFn = () => {
   return (
-    <Navbar brUtilsBackground="body-tertiary">
+    <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
       <Container brContainerFluid>
         <NavbarBrand href="#">Default</NavbarBrand>
       </Container>
@@ -490,7 +497,7 @@ export const PlacementDefault: StoryFn = () => {
 export const PlacementFixedTop: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brNavbarPlacement="fixed-top" brUtilsBackground="body-tertiary">
+      <Navbar brNavbarPlacement="fixed-top" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Fixed top</NavbarBrand>
         </Container>
@@ -502,7 +509,7 @@ export const PlacementFixedTop: StoryFn = () => {
 export const PlacementFixedBottom: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brNavbarPlacement="fixed-bottom" brUtilsBackground="body-tertiary">
+      <Navbar brNavbarPlacement="fixed-bottom" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Fixed bottom</NavbarBrand>
         </Container>
@@ -514,7 +521,7 @@ export const PlacementFixedBottom: StoryFn = () => {
 export const PlacementStickyTop: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brNavbarPlacement="sticky-top" brUtilsBackground="body-tertiary">
+      <Navbar brNavbarPlacement="sticky-top" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Sticky top</NavbarBrand>
         </Container>
@@ -526,7 +533,7 @@ export const PlacementStickyTop: StoryFn = () => {
 export const PlacementStickyBottom: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Navbar brNavbarPlacement="sticky-bottom" brUtilsBackground="body-tertiary">
+      <Navbar brNavbarPlacement="sticky-bottom" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Sticky bottom</NavbarBrand>
         </Container>
@@ -540,7 +547,7 @@ export const Scrolling: StoryFn = () => {
   const dropdown = useDropdown<HTMLAnchorElement>()
 
   return (
-    <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+    <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
       <Container brContainerFluid>
         <NavbarBrand href="#">Navbar scroll</NavbarBrand>
         <NavbarToggler
@@ -553,9 +560,9 @@ export const Scrolling: StoryFn = () => {
         </NavbarToggler>
         <NavbarCollapse brCollapse={collapse} id="navbarScroll">
           <NavbarNav
-            brUtilsSpacing={{
-              brAllBreakpoints: { margin: { end: 'auto', y: '2' } },
-              lg: { margin: { y: '0' } }
+            bsJs={{
+              bsJsAll: { spacing: { margin: { end: 'auto', y: '2' } } },
+              lg: { spacing: { margin: { y: '0' } } }
             }}
             className="navbar-nav-scroll"
             style={{ '--bs-scroll-height': '100px' } as CSSProperties}
@@ -590,9 +597,9 @@ export const Scrolling: StoryFn = () => {
               </NavLink>
             </NavItem>
           </NavbarNav>
-          <BrElement brUtilsDisplay="flex" role="search">
+          <BrElement bsJs={{ bsJsAll: { display: 'flex' } }} role="search">
             <Input
-              brUtilsSpacing={{ margin: { end: '2' } }}
+              bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -614,7 +621,7 @@ export const Toggler: StoryFn = () => {
 
   return (
     <div>
-      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+      <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarToggler
             aria-controls="navbarTogglerDemo01"
@@ -631,7 +638,7 @@ export const Toggler: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+      <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Navbar</NavbarBrand>
           <NavbarToggler
@@ -648,7 +655,7 @@ export const Toggler: StoryFn = () => {
         </Container>
       </Navbar>
       <hr />
-      <Navbar className="navbar-expand-lg" brUtilsBackground="body-tertiary">
+      <Navbar className="navbar-expand-lg" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarToggler
             aria-controls="navbarTogglerDemo03"
@@ -672,9 +679,9 @@ function TogglerDemoContent() {
   return (
     <Fragment>
       <NavbarNav
-        brUtilsSpacing={{
-          brAllBreakpoints: { margin: { end: 'auto', bottom: '2' } },
-          lg: { margin: { bottom: '0' } }
+        bsJs={{
+          bsJsAll: { spacing: { margin: { end: 'auto', bottom: '2' } } },
+          lg: { spacing: { margin: { bottom: '0' } } }
         }}
       >
         <NavItem>
@@ -691,9 +698,9 @@ function TogglerDemoContent() {
           </NavLink>
         </NavItem>
       </NavbarNav>
-      <BrElement as="form" brUtilsDisplay="flex" role="search">
+      <BrElement as="form" bsJs={{ bsJsAll: { display: 'flex' } }} role="search">
         <Input
-          brUtilsSpacing={{ margin: { end: '2' } }}
+          bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
           type="search"
           placeholder="Search"
           aria-label="Search"
@@ -712,16 +719,16 @@ export const ExternalContent: StoryFn = () => {
   return (
     <div>
       <Collapse brCollapse={collapse} id="navbarToggleExternalContent" brTheme="dark">
-        <BrElement brUtilsSpacing={{ padding: '4' }} brUtilsBackground="dark">
-          <BrElement as="h5" brUtilsColor="body-emphasis" className="h4">
+        <BrElement bsJs={{ bsJsAll: { background: 'dark', spacing: { padding: '4' } } }}>
+          <BrElement as="h5" bsJs={{ bsJsAll: { color: 'body-emphasis' } }} className="h4">
             Collapsed content
           </BrElement>
-          <BrElement as="span" brUtilsColor="body-secondary">
+          <BrElement as="span" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
             Toggleable via the navbar brand.
           </BrElement>
         </BrElement>
       </Collapse>
-      <Navbar className="navbar-dark" brUtilsBackground="dark">
+      <Navbar className="navbar-dark" bsJs={{ bsJsAll: { background: 'dark' } }}>
         <Container brContainerFluid>
           <NavbarToggler
             aria-controls="navbarToggleExternalContent"
@@ -743,7 +750,7 @@ export const OffcanvasStory: StoryFn = () => {
 
   return (
     <div className="bd-example">
-      <Navbar brNavbarPlacement="fixed-top" brUtilsBackground="body-tertiary">
+      <Navbar brNavbarPlacement="fixed-top" bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container brContainerFluid>
           <NavbarBrand href="#">Offcanvas navbar</NavbarBrand>
           <NavbarToggler
@@ -765,8 +772,12 @@ export const OffcanvasStory: StoryFn = () => {
             </OffcanvasHeader>
             <OffcanvasBody>
               <NavbarNav
-                brUtilsFlex={{ justifyContent: 'end', grow: true }}
-                brUtilsSpacing={{ padding: { end: '3' } }}
+                bsJs={{
+                  bsJsAll: {
+                    flex: { justifyContent: 'end', grow: true },
+                    spacing: { padding: { end: '3' } }
+                  }
+                }}
               >
                 <NavItem>
                   <NavLink brNavLinkActive aria-current="page" href="#">
@@ -795,12 +806,11 @@ export const OffcanvasStory: StoryFn = () => {
               </NavbarNav>
               <BrElement
                 as="form"
-                brUtilsDisplay="flex"
-                brUtilsSpacing={{ margin: { top: '3' } }}
+                bsJs={{ bsJsAll: { display: 'flex', spacing: { margin: { top: '3' } } } }}
                 role="search"
               >
                 <Input
-                  brUtilsSpacing={{ margin: { end: '2' } }}
+                  bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
                   type="search"
                   placeholder="Search"
                   aria-label="Search"

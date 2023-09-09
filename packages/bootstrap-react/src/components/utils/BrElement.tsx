@@ -62,7 +62,7 @@ type BrComponent = <Component extends ElementType = 'div'>(
 ) => ReactNode | null
 
 /** TODO: This needs to be provided via context or a hook somehow so that it is configurable */
-const bsJsSingleton = new BootstrapJs()
+export const bsJsSingleton = new BootstrapJs()
 
 /**
  * Bootstrap React lib utility component

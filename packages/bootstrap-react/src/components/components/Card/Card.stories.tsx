@@ -501,7 +501,7 @@ export const Horizontal: StoryFn = () => {
       <Row brRowGutter={0}>
         <Col brColsMd={4}>
           <Image
-            brImageFluid
+            bsJsImage={{ fluid: true }}
             {...placeholderImgSvgProps({
               width: '100%',
               height: '180',
