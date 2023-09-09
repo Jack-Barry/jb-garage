@@ -18,6 +18,7 @@ import { bsJsSpacingStyles } from './bootstrap-utils/spacing'
 import { bsJsTextStyles } from './bootstrap-utils/text'
 import { bsJsVerticalAlignStyles } from './bootstrap-utils/verticalAlign'
 import { bsJsVisibilityStyles } from './bootstrap-utils/visibility'
+import { bsJsZIndexStyles } from './bootstrap-utils/zIndex'
 import { ALL_BREAKPOINTS_KEY } from './constants'
 import { emptyStyles } from './utils/emptyStyles'
 import { mergeStyles } from './utils/mergeStyles'
@@ -97,6 +98,11 @@ export class BootstrapJs {
         const visibility = bsJsVisibilityStyles(allBreakpointOptions.visibility)
         if (visibility) {
           styles = mergeStyles(styles, visibility)
+        }
+
+        const zIndex = bsJsZIndexStyles(allBreakpointOptions.zIndex)
+        if (zIndex) {
+          styles = mergeStyles(styles, zIndex)
         }
       }
 
