@@ -1,7 +1,6 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
 
 import { BsJsStyles, LiteralUnion } from '../../_types'
-import { emptyStyles } from '../utils/emptyStyles'
 import { getOpacityStyles } from '../utils/getOpacityStyles'
 
 import { BootstrapThemeColor } from './_types'
@@ -47,9 +46,9 @@ export type BsJsBackgroundOptions = BsJsBackgroundColor | BsJsBackgroundColorCon
 export function bsJsBackgroundStyles(
   bsPrefix: string,
   background?: BsJsBackgroundOptions
-): BsJsStyles {
+): BsJsStyles | null {
   if (!background) {
-    return emptyStyles()
+    return null
   }
 
   if (typeof background === 'string') {
@@ -57,13 +56,13 @@ export function bsJsBackgroundStyles(
   }
 
   if (isEmptyObject(background)) {
-    return emptyStyles()
+    return null
   }
 
   const { color, opacity, gradient } = background
   if (color === undefined) {
     // logger.warn(`${DEV_WARNING_PREFIX}Color is expected when providing background styles as object`)
-    return emptyStyles()
+    return null
   }
 
   if (opacity === undefined && gradient === undefined) {

@@ -1,30 +1,21 @@
-import {
-  AllBreakpointsOptions,
-  BsJsConfig,
-  BsJsStyles,
-  LiteralUnion
-} from '@jb-garage/bootstrap-js/_types'
+import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '@jb-garage/bootstrap-js/_types'
 
-import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
-import { isAllBreakpointsOptions } from '../utils/isAllBreakpointsOptions'
 
 type BootstrapShadowSize = LiteralUnion<'sm' | 'lg' | 'none', string>
 export type BsJsShadowOptions = true | BootstrapShadowSize
 
-export function bsJsShadowStyles(config: BsJsConfig): BsJsStyles {
-  const styles = emptyStyles()
-
-  if (!config || !isAllBreakpointsOptions(config[ALL_BREAKPOINTS_KEY], 'shadow')) {
-    return styles
+export function bsJsShadowStyles(options: AllBreakpointsOptions['shadow']): BsJsStyles | null {
+  if (!options) {
+    return null
   }
 
-  const shadowOptions = (config[ALL_BREAKPOINTS_KEY] as Required<AllBreakpointsOptions>).shadow
+  const styles = emptyStyles()
 
-  if (shadowOptions === true) {
+  if (options === true) {
     styles.classes = { shadow: true }
   } else {
-    styles.classes = { [`shadow-${shadowOptions}`]: true }
+    styles.classes = { [`shadow-${options}`]: true }
   }
 
   return styles

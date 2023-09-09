@@ -1,13 +1,6 @@
-import {
-  AllBreakpointsOptions,
-  BsJsConfig,
-  BsJsStyles,
-  LiteralUnion
-} from '@jb-garage/bootstrap-js/_types'
+import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '@jb-garage/bootstrap-js/_types'
 
-import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
-import { isAllBreakpointsOptions } from '../utils/isAllBreakpointsOptions'
 
 export type BootstrapOverflowType = LiteralUnion<'auto' | 'hidden' | 'visible' | 'scroll', string>
 
@@ -15,19 +8,17 @@ export type BsJsOverflowOptions =
   | BootstrapOverflowType
   | { x?: BootstrapOverflowType; y?: BootstrapOverflowType }
 
-export function bsJsOverflowStyles(config?: BsJsConfig): BsJsStyles {
+export function bsJsOverflowStyles(options: AllBreakpointsOptions['overflow']): BsJsStyles | null {
+  if (!options) {
+    return null
+  }
+
+  if (typeof options === 'string') {
+    return { classes: { [`overflow-${options}`]: true }, inlineStyles: {} }
+  }
+
   const styles = emptyStyles()
-  if (!config || !isAllBreakpointsOptions(config[ALL_BREAKPOINTS_KEY], 'overflow')) {
-    return styles
-  }
-
-  const overflowOptions = (config[ALL_BREAKPOINTS_KEY] as Required<AllBreakpointsOptions>).overflow
-
-  if (typeof overflowOptions === 'string') {
-    return { classes: { [`overflow-${overflowOptions}`]: true }, inlineStyles: {} }
-  }
-
-  styles.classes = Object.entries(overflowOptions).reduce((result, [axis, overflowType]) => {
+  styles.classes = Object.entries(options).reduce((result, [axis, overflowType]) => {
     result[`overflow-${axis}-${overflowType}`] = true
     return result
   }, {} as BsJsStyles['classes'])

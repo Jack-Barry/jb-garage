@@ -47,9 +47,9 @@ export type BsJsColorConfig = {
 export type BsJsColorOptions = BsJsTextColor | BsJsColorConfig
 
 /** Returns styles that can be used for Bootstrap text color utilities */
-export function bsJsColorStyles(prefix: string, color?: BsJsColorOptions): BsJsStyles {
+export function bsJsColorStyles(prefix: string, color?: BsJsColorOptions): BsJsStyles | null {
   if (!color) {
-    return emptyStyles()
+    return null
   }
 
   if (typeof color === 'string') {
@@ -57,7 +57,7 @@ export function bsJsColorStyles(prefix: string, color?: BsJsColorOptions): BsJsS
   }
 
   if (isEmptyObject(color)) {
-    return emptyStyles()
+    return null
   }
 
   const styles: BsJsStyles = emptyStyles()

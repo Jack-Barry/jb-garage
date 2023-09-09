@@ -1,13 +1,6 @@
-import {
-  AllBreakpointsOptions,
-  BsJsConfig,
-  BsJsStyles,
-  LiteralUnion
-} from '@jb-garage/bootstrap-js/_types'
+import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '@jb-garage/bootstrap-js/_types'
 
-import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
-import { isAllBreakpointsOptions } from '../utils/isAllBreakpointsOptions'
 
 type BootstrapSize = LiteralUnion<'25' | '50' | '75' | '100' | 'auto', string | number>
 type OneHundred = LiteralUnion<'100', string | number>
@@ -23,13 +16,12 @@ export type BsJsSizeOptions = {
   minViewportHeight?: OneHundred
 }
 
-export function bsJsSizeStyles(config?: BsJsConfig): BsJsStyles {
-  const styles = emptyStyles()
-  if (!config || !isAllBreakpointsOptions(config[ALL_BREAKPOINTS_KEY], 'size')) {
-    return styles
+export function bsJsSizeStyles(options: AllBreakpointsOptions['size']): BsJsStyles | null {
+  if (typeof options === 'undefined') {
+    return null
   }
 
-  const sizeOptions = (config[ALL_BREAKPOINTS_KEY] as Required<AllBreakpointsOptions>).size
+  const styles = emptyStyles()
   const {
     width,
     maxWidth,
@@ -39,7 +31,7 @@ export function bsJsSizeStyles(config?: BsJsConfig): BsJsStyles {
     maxHeight,
     viewportHeight,
     minViewportHeight
-  } = sizeOptions
+  } = options
 
   if (width) {
     styles.classes[`w-${width}`] = true

@@ -1,14 +1,8 @@
-import {
-  AllBreakpointsOptions,
-  BsJsConfig,
-  BsJsStyles,
-  LiteralUnion
-} from '@jb-garage/bootstrap-js/_types'
+import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '@jb-garage/bootstrap-js/_types'
+import { isEmptyObject } from '@jb-garage/utils-generic'
 
-import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 import { getOpacityStyles } from '../utils/getOpacityStyles'
-import { isAllBreakpointsOptions } from '../utils/isAllBreakpointsOptions'
 
 import { BootstrapThemeColor } from './_types'
 
@@ -31,52 +25,53 @@ export type BsJsLinkOptions =
     }
 
 /** Returns styles that can be used for Bootstrap link utilities */
-export function bsJsLinkStyles(options?: BsJsConfig): BsJsStyles {
+export function bsJsLinkStyles(options: AllBreakpointsOptions['link']): BsJsStyles | null {
+  if (!options) {
+    return null
+  }
+
+  if (typeof options === 'string') {
+    return { classes: { [`link-${options}`]: true }, inlineStyles: {} }
+  }
+
+  if (isEmptyObject(options)) {
+    return null
+  }
+
   const styles = emptyStyles()
-
-  if (!options || !isAllBreakpointsOptions(options[ALL_BREAKPOINTS_KEY], 'link')) {
-    return styles
-  }
-
-  const linkOptions = (options[ALL_BREAKPOINTS_KEY] as Required<AllBreakpointsOptions>).link
-
-  if (typeof linkOptions === 'string') {
-    return { classes: { [`link-${linkOptions}`]: true }, inlineStyles: {} }
-  }
-
-  const linkOpacity = getOpacityStyles({ classNamePrefix: 'link-opacity' }, linkOptions.opacity)
+  const linkOpacity = getOpacityStyles({ classNamePrefix: 'link-opacity' }, options.opacity)
   const hoverOpacity = getOpacityStyles(
     {
       classNamePrefix: 'link-opacity',
       classNameSuffix: '-hover'
     },
-    linkOptions.hoverOpacity
+    options.hoverOpacity
   )
 
-  if (linkOptions.color) {
-    styles.classes[`link-${linkOptions.color}`] = true
+  if (options.color) {
+    styles.classes[`link-${options.color}`] = true
   }
 
-  if (linkOptions.underlineColor) {
-    styles.classes[`link-underline-${linkOptions.underlineColor}`] = true
+  if (options.underlineColor) {
+    styles.classes[`link-underline-${options.underlineColor}`] = true
   }
 
-  if (linkOptions.underlineOffset) {
-    styles.classes[`link-offset-${linkOptions.underlineOffset}`] = true
+  if (options.underlineOffset) {
+    styles.classes[`link-offset-${options.underlineOffset}`] = true
   }
 
   const underlineOpacity = getOpacityStyles(
     { classNamePrefix: 'link-underline-opacity' },
-    linkOptions.underlineOpacity
+    options.underlineOpacity
   )
 
-  if (linkOptions.hoverUnderlineOffset) {
-    styles.classes[`link-offset-${linkOptions.hoverUnderlineOffset}-hover`] = true
+  if (options.hoverUnderlineOffset) {
+    styles.classes[`link-offset-${options.hoverUnderlineOffset}-hover`] = true
   }
 
   const hoverUnderlineOpacity = getOpacityStyles(
     { classNamePrefix: 'link-underline-opacity', classNameSuffix: '-hover' },
-    linkOptions.hoverUnderlineOpacity
+    options.hoverUnderlineOpacity
   )
 
   styles.classes = {

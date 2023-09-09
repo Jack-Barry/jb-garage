@@ -1,26 +1,22 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
 
-import { BsJsConfig, BsJsStyles, LiteralUnion } from '../../_types'
-import { ALL_BREAKPOINTS_KEY } from '../constants'
+import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
-import { isAllBreakpointsOptions } from '../utils/isAllBreakpointsOptions'
 
 export type BsJsInteractOptions = {
   select?: LiteralUnion<'all' | 'auto' | 'none', string>
   pointer?: LiteralUnion<'none' | 'auto', string>
 }
 
-export function bsJsInteractStyles(config: BsJsConfig): BsJsStyles {
-  const styles = emptyStyles()
-  if (
-    !config ||
-    isEmptyObject(config) ||
-    !isAllBreakpointsOptions(config[ALL_BREAKPOINTS_KEY], 'interactions')
-  ) {
-    return styles
+export function bsJsInteractStyles(
+  options: AllBreakpointsOptions['interactions']
+): BsJsStyles | null {
+  if (!options || isEmptyObject(options)) {
+    return null
   }
 
-  const { select, pointer } = config[ALL_BREAKPOINTS_KEY].interactions || {}
+  const styles = emptyStyles()
+  const { select, pointer } = options
 
   if (select) {
     styles.classes[`user-select-${select}`] = true

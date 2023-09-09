@@ -1,7 +1,5 @@
-import { AllBreakpointsOptions, BsJsConfig, BsJsStyles, LiteralUnion } from '../../_types'
-import { ALL_BREAKPOINTS_KEY } from '../constants'
+import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
-import { isAllBreakpointsOptions } from '../utils/isAllBreakpointsOptions'
 
 type BootstrapPosition = LiteralUnion<
   'static' | 'relative' | 'absolute' | 'fixed' | 'sticky',
@@ -22,20 +20,18 @@ export type BsJsPositionOptions =
       translateMiddleY?: true
     }
 
-export function bsJsPositionStyles(config?: BsJsConfig): BsJsStyles {
+export function bsJsPositionStyles(options: AllBreakpointsOptions['position']): BsJsStyles | null {
   const styles = emptyStyles()
-  if (!config || !isAllBreakpointsOptions(config[ALL_BREAKPOINTS_KEY], 'position')) {
-    return styles
+  if (typeof options === 'undefined') {
+    return null
   }
 
-  const positionOptions = (config[ALL_BREAKPOINTS_KEY] as Required<AllBreakpointsOptions>).position
-
-  if (typeof positionOptions === 'string') {
-    return { classes: { [`position-${positionOptions}`]: true }, inlineStyles: {} }
+  if (typeof options === 'string') {
+    return { classes: { [`position-${options}`]: true }, inlineStyles: {} }
   }
 
   const { position, start, top, end, bottom, translateMiddle, translateMiddleX, translateMiddleY } =
-    positionOptions
+    options
   styles.classes = {
     [`position-${position}`]: true
   }

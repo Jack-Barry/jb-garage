@@ -30,7 +30,10 @@ export type BsJsBorderOptions =
       start?: boolean | BsJsBorderConfig
     })
 
-export function bsJsBorderStyles(prefix: string, options: BsJsBorderOptions = {}): BsJsStyles {
+export function bsJsBorderStyles(
+  prefix: string,
+  options: BsJsBorderOptions = {}
+): BsJsStyles | null {
   const borderStyles: BsJsStyles = emptyStyles()
   if (typeof options === 'boolean') {
     borderStyles.classes = { border: true }
@@ -42,7 +45,7 @@ export function bsJsBorderStyles(prefix: string, options: BsJsBorderOptions = {}
   }
 
   if (isEmptyObject(options)) {
-    return borderStyles
+    return null
   }
 
   const { width, radius, opacity, color, ...rest } = options
