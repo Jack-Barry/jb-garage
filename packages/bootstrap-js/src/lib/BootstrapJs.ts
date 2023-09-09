@@ -9,6 +9,7 @@ import { bsJsDisplayStyles } from './bootstrap-utils/display'
 import { bsJsFlexStyles } from './bootstrap-utils/flexbox'
 import { bsJsFloatStyles } from './bootstrap-utils/float'
 import { bsJsInteractStyles } from './bootstrap-utils/interact'
+import { bsJsLinkStyles } from './bootstrap-utils/link'
 import { ALL_BREAKPOINTS_KEY } from './constants'
 import { emptyStyles } from './utils/emptyStyles'
 
@@ -33,8 +34,9 @@ export class BootstrapJs {
     const flex = bsJsFlexStyles(config)
     const float = bsJsFloatStyles(config)
     const interactions = bsJsInteractStyles(config)
+    const link = bsJsLinkStyles(config)
 
-    const bsJsStyles = [background, border, color, display, flex, float, interactions].reduce<
+    const bsJsStyles = [background, border, color, display, flex, float, interactions, link].reduce<
       Required<BsJsStyles>
     >((result, { classes, inlineStyles }) => {
       return {
