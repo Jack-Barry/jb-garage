@@ -43,7 +43,6 @@ export type IndividualBreakpointOptions = {
   objectFit?: BsJsObjectFit
   spacing?: BsJsSpacingOptions
   text?: Pick<BsJsTextOptions, 'align'>
-  // visibility?: {}
   // zIndex?: {}
 }
 
@@ -60,6 +59,7 @@ export type AllBreakpointsOptions = IndividualBreakpointOptions & {
   sizing?: BsJsSizeOptions
   text?: BsJsTextOptions
   verticalAlign?: BootstrapVerticalAlign
+  visibility?: boolean
 }
 
 type BsJsConfigBase = {
