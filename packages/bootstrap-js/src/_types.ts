@@ -6,6 +6,7 @@ import { BsJsBorderOptions } from './lib/bootstrap-utils/borders'
 import { BsJsColorOptions } from './lib/bootstrap-utils/colors'
 import { BsJsDisplayOption } from './lib/bootstrap-utils/display'
 import { BsJsFlexOptions } from './lib/bootstrap-utils/flexbox'
+import { BsJsFloatType } from './lib/bootstrap-utils/float'
 import { ALL_BREAKPOINTS_KEY } from './lib/constants'
 
 /** Utility type for allowing literal unions while still providing intellisense suggestions */
@@ -28,7 +29,7 @@ export type BsJsStyles = {
 type IndividualBreakpointOptions = {
   display?: BsJsDisplayOption
   flex?: BsJsFlexOptions
-  // float?: {}
+  float?: BsJsFloatType
   // interactions?: {}
   // link?: {}
   // objectFit?: {}

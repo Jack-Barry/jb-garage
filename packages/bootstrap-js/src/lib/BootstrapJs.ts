@@ -7,6 +7,7 @@ import { bsJsBorderStyles } from './bootstrap-utils/borders'
 import { bsJsColorStyles } from './bootstrap-utils/colors'
 import { bsJsDisplayStyles } from './bootstrap-utils/display'
 import { bsJsFlexStyles } from './bootstrap-utils/flexbox'
+import { bsJsFloatStyles } from './bootstrap-utils/float'
 import { ALL_BREAKPOINTS_KEY } from './constants'
 import { emptyStyles } from './utils/emptyStyles'
 
@@ -29,22 +30,22 @@ export class BootstrapJs {
     const color = bsJsColorStyles(this._prefix, bsJsAll?.color)
     const display = bsJsDisplayStyles(config)
     const flex = bsJsFlexStyles(config)
+    const float = bsJsFloatStyles(config)
 
-    const bsJsStyles = [background, border, color, display, flex].reduce<Required<BsJsStyles>>(
-      (result, { classes, inlineStyles }) => {
-        return {
-          classes: {
-            ...result.classes,
-            ...classes
-          },
-          inlineStyles: {
-            ...result.inlineStyles,
-            ...inlineStyles
-          }
+    const bsJsStyles = [background, border, color, display, flex, float].reduce<
+      Required<BsJsStyles>
+    >((result, { classes, inlineStyles }) => {
+      return {
+        classes: {
+          ...result.classes,
+          ...classes
+        },
+        inlineStyles: {
+          ...result.inlineStyles,
+          ...inlineStyles
         }
-      },
-      emptyStyles()
-    )
+      }
+    }, emptyStyles())
 
     return bsJsStyles
   }
