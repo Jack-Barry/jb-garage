@@ -1,7 +1,8 @@
+import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js/lib/bootstrap-utils/_types'
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
-import { BootstrapBreakpoint, BrElement, BrElementProps } from '../../utils/BrElement'
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type ContainerProps<T extends ElementType> = BrElementProps<T> & {
   /**
@@ -11,7 +12,7 @@ export type ContainerProps<T extends ElementType> = BrElementProps<T> & {
    */
   as?: T
   /** Breakpoint size to use */
-  brContainerBreakpoint?: BootstrapBreakpoint
+  brContainerBreakpoint?: BootstrapDefaultBreakpoint
   /** Container is fluid */
   brContainerFluid?: boolean
 }

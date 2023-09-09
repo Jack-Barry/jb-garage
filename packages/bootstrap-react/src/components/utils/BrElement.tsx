@@ -1,7 +1,6 @@
 // Heavily inspired by https://blog.logrocket.com/build-strongly-typed-polymorphic-components-react-typescript/#supporting-refs-polymorphic-components
 import { BsJsConfig } from '@jb-garage/bootstrap-js/_types'
 import { BootstrapJs } from '@jb-garage/bootstrap-js/index'
-import { LiteralUnion } from '@jb-garage/bootstrap-react/types'
 import classNames from 'classnames'
 import {
   ComponentPropsWithRef,
@@ -11,18 +10,6 @@ import {
   ReactNode,
   forwardRef
 } from 'react'
-
-/** Prop representing a Bootstrap viewport breakpoint */
-export type BootstrapBreakpoint = LiteralUnion<'sm' | 'md' | 'lg' | 'xl' | 'xxl', string>
-
-/** Options that can be applied to all or some breakpoints */
-export type BrUtilsBreakpointBasedOptions<T> = Partial<Record<BootstrapBreakpoint, T>> & {
-  /** Style to apply at all breakpoints unless overridden */
-  brAllBreakpoints?: T
-}
-
-/** Prop that can be accepted by `BrElement` for Bootstrap position utilities */
-export type BrPositionProp = 'relative' | 'absolute' | 'static' | 'fixed'
 
 export type BrElementCommonProps = {
   /** Element should be visually hidden (but present for screen readers) */

@@ -1,7 +1,8 @@
+import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js/lib/bootstrap-utils/_types'
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
-import { BootstrapBreakpoint, BrElement, BrElementProps } from '../../utils/BrElement'
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { useMultiRef } from '../../utils/useMultiRef'
 
 import { useOffcanvas } from './useOffcanvas'
@@ -13,7 +14,7 @@ export type OffcanvasProps<T extends ElementType> = BrElementProps<
     brOffcanvas: ReturnType<typeof useOffcanvas>
     /** @default "start" */
     brOffcanvasPlacement?: 'start' | 'end' | 'top' | 'bottom'
-    brOffcanvasBreakpoint?: BootstrapBreakpoint
+    brOffcanvasBreakpoint?: BootstrapDefaultBreakpoint
   }
 >
 
