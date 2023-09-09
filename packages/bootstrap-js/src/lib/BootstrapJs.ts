@@ -16,6 +16,7 @@ import { bsJsShadowStyles } from './bootstrap-utils/shadow'
 import { bsJsSizeStyles } from './bootstrap-utils/sizing'
 import { bsJsSpacingStyles } from './bootstrap-utils/spacing'
 import { bsJsTextStyles } from './bootstrap-utils/text'
+import { bsJsVerticalAlignStyles } from './bootstrap-utils/verticalAlign'
 import { ALL_BREAKPOINTS_KEY } from './constants'
 import { emptyStyles } from './utils/emptyStyles'
 import { mergeStyles } from './utils/mergeStyles'
@@ -85,6 +86,11 @@ export class BootstrapJs {
         const size = bsJsSizeStyles(allBreakpointOptions.sizing)
         if (size) {
           styles = mergeStyles(styles, size)
+        }
+
+        const verticalAlign = bsJsVerticalAlignStyles(allBreakpointOptions.verticalAlign)
+        if (verticalAlign) {
+          styles = mergeStyles(styles, verticalAlign)
         }
       }
 

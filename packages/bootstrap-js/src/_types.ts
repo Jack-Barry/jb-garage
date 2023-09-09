@@ -16,6 +16,7 @@ import { BsJsShadowOptions } from './lib/bootstrap-utils/shadow'
 import { BsJsSizeOptions } from './lib/bootstrap-utils/sizing'
 import { BsJsSpacingOptions } from './lib/bootstrap-utils/spacing'
 import { BsJsTextOptions } from './lib/bootstrap-utils/text'
+import { BootstrapVerticalAlign } from './lib/bootstrap-utils/verticalAlign'
 import { ALL_BREAKPOINTS_KEY } from './lib/constants'
 
 /** Utility type for allowing literal unions while still providing intellisense suggestions */
@@ -42,7 +43,6 @@ export type IndividualBreakpointOptions = {
   objectFit?: BsJsObjectFit
   spacing?: BsJsSpacingOptions
   text?: Pick<BsJsTextOptions, 'align'>
-  // verticalAlign?: {}
   // visibility?: {}
   // zIndex?: {}
 }
@@ -59,6 +59,7 @@ export type AllBreakpointsOptions = IndividualBreakpointOptions & {
   shadow?: BsJsShadowOptions
   sizing?: BsJsSizeOptions
   text?: BsJsTextOptions
+  verticalAlign?: BootstrapVerticalAlign
 }
 
 type BsJsConfigBase = {
