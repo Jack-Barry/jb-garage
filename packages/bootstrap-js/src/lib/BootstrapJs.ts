@@ -13,6 +13,7 @@ import { bsJsLinkStyles } from './bootstrap-utils/link'
 import { bsJsObjectFitStyles } from './bootstrap-utils/objectFit'
 import { bsJsOverflowStyles } from './bootstrap-utils/overflow'
 import { bsJsPositionStyles } from './bootstrap-utils/position'
+import { bsJsShadowStyles } from './bootstrap-utils/shadow'
 import { ALL_BREAKPOINTS_KEY } from './constants'
 import { emptyStyles } from './utils/emptyStyles'
 
@@ -41,6 +42,7 @@ export class BootstrapJs {
     const objectFit = bsJsObjectFitStyles(config)
     const overflow = bsJsOverflowStyles(config)
     const position = bsJsPositionStyles(config)
+    const shadow = bsJsShadowStyles(config)
 
     const bsJsStyles = [
       background,
@@ -53,7 +55,8 @@ export class BootstrapJs {
       link,
       objectFit,
       overflow,
-      position
+      position,
+      shadow
     ].reduce<Required<BsJsStyles>>((result, { classes, inlineStyles }) => {
       return {
         classes: {

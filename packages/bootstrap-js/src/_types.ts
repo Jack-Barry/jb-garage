@@ -12,6 +12,7 @@ import { BsJsLinkOptions } from './lib/bootstrap-utils/link'
 import { BsJsObjectFit } from './lib/bootstrap-utils/objectFit'
 import { BsJsOverflowOptions } from './lib/bootstrap-utils/overflow'
 import { BsJsPositionOptions } from './lib/bootstrap-utils/position'
+import { BsJsShadowOptions } from './lib/bootstrap-utils/shadow'
 import { ALL_BREAKPOINTS_KEY } from './lib/constants'
 
 /** Utility type for allowing literal unions while still providing intellisense suggestions */
@@ -36,7 +37,6 @@ type IndividualBreakpointOptions = {
   flex?: BsJsFlexOptions
   float?: BsJsFloatType
   objectFit?: BsJsObjectFit
-  // shadows?: {}
   // sizing?: {}
   // spacing?: {}
   // text?: {}
@@ -54,6 +54,7 @@ export type AllBreakpointsOptions = IndividualBreakpointOptions & {
   link?: BsJsLinkOptions
   overflow?: BsJsOverflowOptions
   position?: BsJsPositionOptions
+  shadow?: BsJsShadowOptions
 }
 
 type BsJsConfigBase = {
