@@ -1,15 +1,16 @@
+import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
 import type { Meta, StoryFn } from '@storybook/react'
 
 import { as } from '../../../storybook/utils'
+import Col from '../../layout/columns/Col'
+import Row from '../../layout/grid/Row'
+import { BrElement } from '../../utils/BrElement'
+import Button from '../Button/Button'
+import Card from '../Card/Card'
+import CardBody from '../Card/CardBody'
+
 import Collapse from './Collapse'
 import { useCollapse } from './useCollapse'
-import Button from '../Button/Button'
-import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
-import CardBody from '../Card/CardBody'
-import Card from '../Card/Card'
-import Row from '../../layout/grid/Row'
-import Col from '../../layout/columns/Col'
-import { BrElement } from '../../utils/BrElement'
 
 const meta: Meta<typeof Collapse> = {
   component: Collapse,
@@ -67,7 +68,7 @@ export const MultipleTogglesAndTargets: StoryFn = () => {
 
   return (
     <div style={{ minHeight: '200px' }}>
-      <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '2' }}>
+      <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '2' } } }}>
         <Button onClick={collapse1.toggle}>Toggle first element</Button>
         <Button onClick={collapse2.toggle}>Toggle second element</Button>
         <Button

@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType, ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type ResponsiveTableWrapperProps<T extends ElementType> = BrElementProps<T> & {
   /** Apply responsive table styling for all breakpoints or up to specified breakpoint */

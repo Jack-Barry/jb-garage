@@ -1,7 +1,9 @@
 import { Meta, StoryFn } from '@storybook/react'
-import Spinner from './Spinner'
+
 import { BrElement } from '../../utils/BrElement'
 import Button from '../Button/Button'
+
+import Spinner from './Spinner'
 
 const meta: Meta = {
   title: 'Spinner',
@@ -125,7 +127,7 @@ export const GrowingSpinner: StoryFn = () => {
 export const AlignmentMargin: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Spinner brUtilsSpacing={{ margin: '5' }}>
+      <Spinner bsJs={{ bsJsAll: { spacing: { margin: '5' } } }}>
         <BrElement as="span" brVisuallyHidden>
           Loading...
         </BrElement>
@@ -137,7 +139,7 @@ export const AlignmentMargin: StoryFn = () => {
 export const AlignmentPlacementFlex: StoryFn = () => {
   return (
     <div className="bd-example">
-      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ justifyContent: 'center' }}>
+      <BrElement bsJs={{ bsJsAll: { display: 'flex', flex: { justifyContent: 'center' } } }}>
         <Spinner>
           <BrElement as="span" brVisuallyHidden>
             Loading...
@@ -145,9 +147,12 @@ export const AlignmentPlacementFlex: StoryFn = () => {
         </Spinner>
       </BrElement>
       <hr />
-      <BrElement brUtilsDisplay="flex" brUtilsFlex={{ alignItems: 'center' }}>
+      <BrElement bsJs={{ bsJsAll: { display: 'flex', flex: { alignItems: 'center' } } }}>
         <strong>Loading...</strong>
-        <Spinner brUtilsSpacing={{ margin: { start: 'auto' } }} aria-hidden="true" />
+        <Spinner
+          bsJs={{ bsJsAll: { spacing: { margin: { start: 'auto' } } } }}
+          aria-hidden="true"
+        />
       </BrElement>
     </div>
   )

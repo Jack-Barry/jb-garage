@@ -1,16 +1,17 @@
+import { useTabs } from '@jb-garage/bootstrap-react/hooks/useTabs'
+import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
 import type { Meta, StoryFn } from '@storybook/react'
+import { MouseEvent } from 'react'
 
 import { as } from '../../../storybook/utils'
+import FormCheck from '../../forms/FormCheck/FormCheck'
+import Col from '../../layout/columns/Col'
+import Row from '../../layout/grid/Row'
+import { BrElement } from '../../utils/BrElement'
+import Badge from '../Badge/Badge'
+
 import ListGroup from './ListGroup'
 import ListGroupItem from './ListGroupItem'
-import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
-import Badge from '../Badge/Badge'
-import FormCheck from '../../forms/FormCheck/FormCheck'
-import { MouseEvent } from 'react'
-import { useTabs } from '@jb-garage/bootstrap-react/hooks/useTabs'
-import { BrElement } from '../../utils/BrElement'
-import Row from '../../layout/grid/Row'
-import Col from '../../layout/columns/Col'
 
 const meta: Meta<typeof ListGroup> = {
   component: ListGroup,
@@ -141,38 +142,41 @@ export const Numbered: StoryFn = () => {
       <hr />
       <ListGroup as="ol" className="list-group-numbered">
         <ListGroupItem
-          brUtilsDisplay="flex"
-          brUtilsFlex={{ justifyContent: 'between', alignItems: 'start' }}
+          bsJs={{
+            bsJsAll: { display: 'flex', flex: { justifyContent: 'between', alignItems: 'start' } }
+          }}
         >
-          <BrElement brUtilsSpacing={{ margin: { start: '2', end: 'auto' } }}>
+          <BrElement bsJs={{ bsJsAll: { spacing: { margin: { start: '2', end: 'auto' } } } }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
-          <Badge className="rounded-pill" brUtilsBackground="primary">
+          <Badge className="rounded-pill" bsJs={{ bsJsAll: { background: 'primary' } }}>
             14
           </Badge>
         </ListGroupItem>
         <ListGroupItem
-          brUtilsDisplay="flex"
-          brUtilsFlex={{ justifyContent: 'between', alignItems: 'start' }}
+          bsJs={{
+            bsJsAll: { display: 'flex', flex: { justifyContent: 'between', alignItems: 'start' } }
+          }}
         >
-          <BrElement brUtilsSpacing={{ margin: { start: '2', end: 'auto' } }}>
+          <BrElement bsJs={{ bsJsAll: { spacing: { margin: { start: '2', end: 'auto' } } } }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
-          <Badge className="rounded-pill" brUtilsBackground="primary">
+          <Badge className="rounded-pill" bsJs={{ bsJsAll: { background: 'primary' } }}>
             14
           </Badge>
         </ListGroupItem>
         <ListGroupItem
-          brUtilsDisplay="flex"
-          brUtilsFlex={{ justifyContent: 'between', alignItems: 'start' }}
+          bsJs={{
+            bsJsAll: { display: 'flex', flex: { justifyContent: 'between', alignItems: 'start' } }
+          }}
         >
-          <BrElement brUtilsSpacing={{ margin: { start: '2', end: 'auto' } }}>
+          <BrElement bsJs={{ bsJsAll: { spacing: { margin: { start: '2', end: 'auto' } } } }}>
             <div className="fw-bold">Subheading</div>
             Content for list item
           </BrElement>
-          <Badge className="rounded-pill" brUtilsBackground="primary">
+          <Badge className="rounded-pill" bsJs={{ bsJsAll: { background: 'primary' } }}>
             14
           </Badge>
         </ListGroupItem>
@@ -298,29 +302,32 @@ export const WithBadges: StoryFn = () => {
   return (
     <ListGroup>
       <ListGroupItem
-        brUtilsDisplay="flex"
-        brUtilsFlex={{ justifyContent: 'between', alignItems: 'center' }}
+        bsJs={{
+          bsJsAll: { display: 'flex', flex: { justifyContent: 'between', alignItems: 'center' } }
+        }}
       >
         A list item
-        <Badge className="rounded-pill" brUtilsBackground="primary">
+        <Badge className="rounded-pill" bsJs={{ bsJsAll: { background: 'primary' } }}>
           14
         </Badge>
       </ListGroupItem>
       <ListGroupItem
-        brUtilsDisplay="flex"
-        brUtilsFlex={{ justifyContent: 'between', alignItems: 'center' }}
+        bsJs={{
+          bsJsAll: { display: 'flex', flex: { justifyContent: 'between', alignItems: 'center' } }
+        }}
       >
         A second list item
-        <Badge className="rounded-pill" brUtilsBackground="primary">
+        <Badge className="rounded-pill" bsJs={{ bsJsAll: { background: 'primary' } }}>
           2
         </Badge>
       </ListGroupItem>
       <ListGroupItem
-        brUtilsDisplay="flex"
-        brUtilsFlex={{ justifyContent: 'between', alignItems: 'center' }}
+        bsJs={{
+          bsJsAll: { display: 'flex', flex: { justifyContent: 'between', alignItems: 'center' } }
+        }}
       >
         A third list item
-        <Badge className="rounded-pill" brUtilsBackground="primary">
+        <Badge className="rounded-pill" bsJs={{ bsJsAll: { background: 'primary' } }}>
           1
         </Badge>
       </ListGroupItem>
@@ -334,51 +341,52 @@ export const CustomContent: StoryFn = () => {
     <ListGroup as="div">
       <ListGroupItem as="a" href="#" className="list-group-item-action active" aria-current="true">
         <BrElement
-          brUtilsDisplay="flex"
-          brUtilsFlex={{ justifyContent: 'between' }}
+          bsJs={{ bsJsAll: { display: 'flex', flex: { justifyContent: 'between' } } }}
           className="w-100"
         >
-          <BrElement as="h5" brUtilsSpacing={{ margin: { bottom: '1' } }}>
+          <BrElement as="h5" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '1' } } } }}>
             List group item heading
           </BrElement>
           <small>3 days ago</small>
         </BrElement>
-        <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '1' } }}>
+        <BrElement as="p" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '1' } } } }}>
           Some placeholder content in a paragraph.
         </BrElement>
         <small>And some small print.</small>
       </ListGroupItem>
       <ListGroupItem as="a" href="#" className="list-group-item-action">
         <BrElement
-          brUtilsDisplay="flex"
-          brUtilsFlex={{ justifyContent: 'between' }}
+          bsJs={{ bsJsAll: { display: 'flex', flex: { justifyContent: 'between' } } }}
           className="w-100"
         >
-          <BrElement as="h5" brUtilsSpacing={{ margin: { bottom: '1' } }}>
+          <BrElement as="h5" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '1' } } } }}>
             List group item heading
           </BrElement>
-          <BrElement brUtilsColor="body-secondary">3 days ago</BrElement>
+          <BrElement bsJs={{ bsJsAll: { color: 'body-secondary' } }}>3 days ago</BrElement>
         </BrElement>
-        <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '1' } }}>
+        <BrElement as="p" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '1' } } } }}>
           Some placeholder content in a paragraph.
         </BrElement>
-        <BrElement brUtilsColor="body-secondary">And some muted small print.</BrElement>
+        <BrElement bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
+          And some muted small print.
+        </BrElement>
       </ListGroupItem>
       <ListGroupItem as="a" href="#" className="list-group-item-action">
         <BrElement
-          brUtilsDisplay="flex"
-          brUtilsFlex={{ justifyContent: 'between' }}
+          bsJs={{ bsJsAll: { display: 'flex', flex: { justifyContent: 'between' } } }}
           className="w-100"
         >
-          <BrElement as="h5" brUtilsSpacing={{ margin: { bottom: '1' } }}>
+          <BrElement as="h5" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '1' } } } }}>
             List group item heading
           </BrElement>
-          <BrElement brUtilsColor="body-secondary">3 days ago</BrElement>
+          <BrElement bsJs={{ bsJsAll: { color: 'body-secondary' } }}>3 days ago</BrElement>
         </BrElement>
-        <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '1' } }}>
+        <BrElement as="p" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '1' } } } }}>
           Some placeholder content in a paragraph.
         </BrElement>
-        <BrElement brUtilsColor="body-secondary">And some muted small print.</BrElement>
+        <BrElement bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
+          And some muted small print.
+        </BrElement>
       </ListGroupItem>
     </ListGroup>
   )

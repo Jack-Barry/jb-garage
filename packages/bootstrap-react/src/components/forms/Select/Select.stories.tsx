@@ -1,4 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react'
+
 import Select from './Select'
 
 const meta: Meta = {
@@ -23,7 +24,7 @@ export const Sizing: StoryFn = () => {
     <div className="bd-example">
       <Select
         brSelectLg
-        brUtilsSpacing={{ margin: { bottom: 3 } }}
+        bsJs={{ bsJsAll: { spacing: { margin: { bottom: 3 } } } }}
         aria-label=".form-select-lg example"
       >
         <option selected>Open this select menu</option>

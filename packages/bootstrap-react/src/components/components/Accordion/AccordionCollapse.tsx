@@ -1,8 +1,10 @@
-import { ElementType, ReactNode, forwardRef, useEffect } from 'react'
 import classNames from 'classnames'
+import { ElementType, ReactNode, forwardRef, useEffect } from 'react'
+
 import Collapse, { CollapseProps } from '../Collapse/Collapse'
-import { useParentAccordion } from './AccordionContext'
 import { useCollapse } from '../Collapse/useCollapse'
+
+import { useParentAccordion } from './AccordionContext'
 
 export type AccordionCollapseProps<T extends ElementType> = Partial<CollapseProps<T>> & {
   brAccordionCollapseDefaultOpen?: boolean

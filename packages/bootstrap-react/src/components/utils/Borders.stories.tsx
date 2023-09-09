@@ -1,13 +1,15 @@
-import { Meta, StoryFn } from '@storybook/react'
-import { BrElement, BrElementProps } from './BrElement'
-import Label from '../forms/FormControl/Label'
-import Input from '../forms/FormControl/Input'
-import { CSSProperties } from 'react'
 import {
   PlaceholderImgSvgChildren,
   placeholderImgSvgProps
 } from '@jb-garage/bootstrap-react/storybook/components/PlaceholderImgSvg'
+import { Meta, StoryFn } from '@storybook/react'
+import { CSSProperties } from 'react'
+
 import Image from '../content/Image/Image'
+import Input from '../forms/FormControl/Input'
+import Label from '../forms/FormControl/Label'
+
+import { BrElement, BrElementProps } from './BrElement'
 
 const meta: Meta = {
   title: 'Borders',
@@ -18,11 +20,11 @@ export default meta
 export const Additive: StoryFn = () => {
   return (
     <div className="bd-example-border-utils">
-      <BrElement brUtilsBorder />
-      <BrElement brUtilsBorder={{ top: true }} />
-      <BrElement brUtilsBorder={{ end: true }} />
-      <BrElement brUtilsBorder={{ bottom: true }} />
-      <BrElement brUtilsBorder={{ start: true }} />
+      <BrElement bsJs={{ bsJsAll: { border: true } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { top: true } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { end: true } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { bottom: true } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { start: true } } }} />
     </div>
   )
 }
@@ -30,11 +32,11 @@ export const Additive: StoryFn = () => {
 export const Subtractive: StoryFn = () => {
   return (
     <div className="bd-example-border-utils">
-      <BrElement brUtilsBorder={false} />
-      <BrElement brUtilsBorder={{ top: false }} />
-      <BrElement brUtilsBorder={{ end: false }} />
-      <BrElement brUtilsBorder={{ bottom: false }} />
-      <BrElement brUtilsBorder={{ start: false }} />
+      <BrElement bsJs={{ bsJsAll: { border: false } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { top: false } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { end: false } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { bottom: false } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { start: false } } }} />
     </div>
   )
 }
@@ -42,48 +44,61 @@ export const Subtractive: StoryFn = () => {
 export const Color: StoryFn = () => {
   return (
     <div className="bd-example-border-utils">
-      <BrElement brUtilsBorder={{ color: 'primary' }} />
-      <BrElement brUtilsBorder={{ color: 'primary-subtle' }} />
-      <BrElement brUtilsBorder={{ color: 'secondary' }} />
-      <BrElement brUtilsBorder={{ color: 'secondary-subtle' }} />
-      <BrElement brUtilsBorder={{ color: 'success' }} />
-      <BrElement brUtilsBorder={{ color: 'success-subtle' }} />
-      <BrElement brUtilsBorder={{ color: 'danger' }} />
-      <BrElement brUtilsBorder={{ color: 'danger-subtle' }} />
-      <BrElement brUtilsBorder={{ color: 'warning' }} />
-      <BrElement brUtilsBorder={{ color: 'warning-subtle' }} />
-      <BrElement brUtilsBorder={{ color: 'info' }} />
-      <BrElement brUtilsBorder={{ color: 'info-subtle' }} />
-      <BrElement brUtilsBorder={{ color: 'light' }} />
-      <BrElement brUtilsBorder={{ color: 'light-subtle' }} />
-      <BrElement brUtilsBorder={{ color: 'dark' }} />
-      <BrElement brUtilsBorder={{ color: 'dark-subtle' }} />
-      <BrElement brUtilsBorder={{ color: 'black' }} />
-      <BrElement brUtilsBorder={{ color: 'white' }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'primary' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'primary-subtle' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'secondary' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'secondary-subtle' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'success' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'success-subtle' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'danger' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'danger-subtle' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'warning' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'warning-subtle' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'info' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'info-subtle' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'light' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'light-subtle' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'dark' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'dark-subtle' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'black' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { color: 'white' } } }} />
       <hr />
-      <BrElement brUtilsSpacing={{ margin: { bottom: '4' } }}>
+      <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '4' } } } }}>
         <Label htmlFor="exampleFormControlInput1">Email address</Label>
         <Input
           type="email"
-          brUtilsBorder={{ color: 'success' }}
+          bsJs={{ bsJsAll: { border: { color: 'success' } } }}
           id="exampleFormControlInput1"
           placeholder="name@example.com"
         />
       </BrElement>
 
       <BrElement
-        brUtilsSpacing={{ margin: { bottom: '4' }, padding: { bottom: '2' } }}
-        brUtilsBorder={{ bottom: true, color: 'danger' }}
-        brUtilsColor="danger"
+        bsJs={{
+          bsJsAll: {
+            border: { bottom: true, color: 'danger' },
+            color: 'danger',
+            spacing: {
+              margin: { bottom: '4' },
+              padding: { bottom: '2' }
+            }
+          }
+        }}
         className="h4"
       >
         Dangerous heading
       </BrElement>
 
       <BrElement
-        brUtilsSpacing={{ padding: '3' }}
-        brUtilsBorder={{ color: 'info', start: false, end: { radius: true } }}
-        brUtilsBackground={{ color: 'info', opacity: '10' }}
+        bsJs={{
+          bsJsAll: {
+            background: { color: 'info', opacity: '10' },
+            border: { color: 'info', start: false, end: { radius: true } },
+            spacing: {
+              padding: '3'
+            }
+          }
+        }}
       >
         Changing border color and width
       </BrElement>
@@ -95,46 +110,72 @@ export const Opacity: StoryFn = () => {
   return (
     <div className="bd-example">
       <BrElement
-        brUtilsBorder={{ color: 'success' }}
-        brUtilsSpacing={{ margin: { bottom: '2' }, padding: '2' }}
+        bsJs={{
+          bsJsAll: {
+            border: { color: 'success' },
+            spacing: {
+              margin: { bottom: '2' },
+              padding: '2'
+            }
+          }
+        }}
       >
         This is default success border
       </BrElement>
       <BrElement
-        brUtilsBorder={{ color: 'success' }}
-        brUtilsSpacing={{ padding: '2' }}
+        bsJs={{ bsJsAll: { border: { color: 'success' }, spacing: { padding: '2' } } }}
         style={{ '--bs-border-opacity': '0.5' } as CSSProperties}
       >
         This is 50% opacity success border
       </BrElement>
       <hr />
       <BrElement
-        brUtilsBorder={{ color: 'success' }}
-        brUtilsSpacing={{ margin: { bottom: '2' }, padding: '2' }}
+        bsJs={{
+          bsJsAll: {
+            border: { color: 'success' },
+            spacing: { margin: { bottom: '2' }, padding: '2' }
+          }
+        }}
       >
         This is default success border
       </BrElement>
       <BrElement
-        brUtilsBorder={{ color: 'success', opacity: '75' }}
-        brUtilsSpacing={{ margin: { bottom: '2' }, padding: '2' }}
+        bsJs={{
+          bsJsAll: {
+            border: { color: 'success', opacity: '75' },
+            spacing: { margin: { bottom: '2' }, padding: '2' }
+          }
+        }}
       >
         This is 75% opacity success border
       </BrElement>
       <BrElement
-        brUtilsBorder={{ color: 'success', opacity: '50' }}
-        brUtilsSpacing={{ margin: { bottom: '2' }, padding: '2' }}
+        bsJs={{
+          bsJsAll: {
+            border: { color: 'success', opacity: '50' },
+            spacing: { margin: { bottom: '2' }, padding: '2' }
+          }
+        }}
       >
         This is 50% opacity success border
       </BrElement>
       <BrElement
-        brUtilsBorder={{ color: 'success', opacity: '25' }}
-        brUtilsSpacing={{ margin: { bottom: '2' }, padding: '2' }}
+        bsJs={{
+          bsJsAll: {
+            border: { color: 'success', opacity: '25' },
+            spacing: { margin: { bottom: '2' }, padding: '2' }
+          }
+        }}
       >
         This is 25% opacity success border
       </BrElement>
       <BrElement
-        brUtilsBorder={{ color: 'success', opacity: '10' }}
-        brUtilsSpacing={{ padding: '2' }}
+        bsJs={{
+          bsJsAll: {
+            border: { color: 'success', opacity: '10' },
+            spacing: { margin: { bottom: '2' }, padding: '2' }
+          }
+        }}
       >
         This is 10% opacity success border
       </BrElement>
@@ -145,11 +186,11 @@ export const Opacity: StoryFn = () => {
 export const Width: StoryFn = () => {
   return (
     <div className="bd-example-border-utils">
-      <BrElement brUtilsBorder={{ width: '1' }} />
-      <BrElement brUtilsBorder={{ width: '2' }} />
-      <BrElement brUtilsBorder={{ width: '3' }} />
-      <BrElement brUtilsBorder={{ width: '4' }} />
-      <BrElement brUtilsBorder={{ width: '5' }} />
+      <BrElement bsJs={{ bsJsAll: { border: { width: '1' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { width: '2' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { width: '3' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { width: '4' } } }} />
+      <BrElement bsJs={{ bsJsAll: { border: { width: '5' } } }} />
     </div>
   )
 }
@@ -157,13 +198,13 @@ export const Width: StoryFn = () => {
 export const Radius: StoryFn = () => {
   return (
     <div className="bd-example-rounded-utils">
-      <RadiusExample brUtilsBorder={{ radius: true }} />
-      <RadiusExample brUtilsBorder={{ top: { radius: true } }} />
-      <RadiusExample brUtilsBorder={{ end: { radius: true } }} />
-      <RadiusExample brUtilsBorder={{ bottom: { radius: true } }} />
-      <RadiusExample brUtilsBorder={{ start: { radius: true } }} />
-      <RadiusExample brUtilsBorder={{ radius: 'circle' }} />
-      <RadiusExample brUtilsBorder={{ radius: 'pill' }} width={150} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { radius: true } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { top: { radius: true } } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { end: { radius: true } } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { bottom: { radius: true } } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { start: { radius: true } } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { radius: 'circle' } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { radius: 'pill' } } }} width={150} />
     </div>
   )
 }
@@ -171,29 +212,29 @@ export const Radius: StoryFn = () => {
 export const RadiusSizes: StoryFn = () => {
   return (
     <div className="bd-example-rounded-utils">
-      <RadiusExample brUtilsBorder={{ radius: 0 }} />
-      <RadiusExample brUtilsBorder={{ radius: 1 }} />
-      <RadiusExample brUtilsBorder={{ radius: 2 }} />
-      <RadiusExample brUtilsBorder={{ radius: 3 }} />
-      <RadiusExample brUtilsBorder={{ radius: 4 }} />
-      <RadiusExample brUtilsBorder={{ radius: 5 }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { radius: 0 } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { radius: 1 } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { radius: 2 } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { radius: 3 } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { radius: 4 } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { radius: 5 } } }} />
       <hr />
-      <RadiusExample brUtilsBorder={{ bottom: { radius: 1 } }} />
-      <RadiusExample brUtilsBorder={{ start: { radius: 2 } }} />
-      <RadiusExample brUtilsBorder={{ end: { radius: 'circle' } }} />
-      <RadiusExample brUtilsBorder={{ start: { radius: 'pill' } }} />
-      <RadiusExample brUtilsBorder={{ radius: 5, top: { radius: 0 } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { bottom: { radius: 1 } } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { start: { radius: 2 } } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { end: { radius: 'circle' } } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { start: { radius: 'pill' } } } }} />
+      <RadiusExample bsJs={{ bsJsAll: { border: { radius: 5, top: { radius: 0 } } } }} />
     </div>
   )
 }
 
 function RadiusExample(
-  props: { width?: number; height?: number } & Pick<BrElementProps<'svg'>, 'brUtilsBorder'>
+  props: { width?: number; height?: number } & Pick<BrElementProps<'svg'>, 'bsJs'>
 ) {
-  const { width = 75, height = 75, brUtilsBorder: brBorder } = props
+  const { width = 75, height = 75, bsJs } = props
 
   return (
-    <Image brUtilsBorder={brBorder} {...placeholderImgSvgProps({ width, height })}>
+    <Image bsJs={bsJs} {...placeholderImgSvgProps({ width, height })}>
       <PlaceholderImgSvgChildren text={`${width}x${height}`} />
     </Image>
   )

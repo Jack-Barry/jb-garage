@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType, ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type ColSpan =
   | 1

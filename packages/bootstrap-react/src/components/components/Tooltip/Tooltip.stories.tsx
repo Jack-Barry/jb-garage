@@ -1,8 +1,10 @@
 import { Meta, StoryFn } from '@storybook/react'
-import { useTooltip } from './useTooltip'
-import Tooltip from './Tooltip'
-import Button from '../Button/Button'
+
 import { BrElement } from '../../utils/BrElement'
+import Button from '../Button/Button'
+
+import Tooltip from './Tooltip'
+import { useTooltip } from './useTooltip'
 
 const meta: Meta = {
   title: 'Tooltip',
@@ -67,8 +69,8 @@ export const Directions: StoryFn = () => {
   const { target: targetSvg, floating: tooltipSvg } = useTooltip()
 
   return (
-    <BrElement brUtilsSpacing={{ margin: '5' }}>
-      <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '2' }}>
+    <BrElement bsJs={{ bsJsAll: { spacing: { margin: '5' } } }}>
+      <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '2' } } }}>
         <Button brButtonColor="secondary" ref={targetTop.ref} {...targetTop.getProps()}>
           Tooltip on top
         </Button>
@@ -96,7 +98,7 @@ export const Directions: StoryFn = () => {
       <hr />
       <BrElement
         as="a"
-        brUtilsDisplay="inline-block"
+        bsJs={{ bsJsAll: { display: 'inline-block' } }}
         href="#"
         ref={targetSvg.ref}
         {...targetSvg.getProps()}
@@ -118,7 +120,7 @@ export const DisabledElements: StoryFn = () => {
     <div>
       <BrElement
         as="span"
-        brUtilsDisplay="inline-block"
+        bsJs={{ bsJsAll: { display: 'inline-block' } }}
         tabIndex={0}
         ref={target.ref}
         {...target.getProps()}

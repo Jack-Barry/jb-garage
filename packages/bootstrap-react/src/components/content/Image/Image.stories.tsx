@@ -1,11 +1,12 @@
 import type { Meta, StoryFn } from '@storybook/react'
 
-import { as } from '../../../storybook/utils'
 import {
   PlaceholderImgSvgChildren,
   placeholderImgSvgProps
 } from '../../../storybook/components/PlaceholderImgSvg'
 import { linkToBootstrapDocs } from '../../../storybook/decorators/linkToBootstrapDocs'
+import { as } from '../../../storybook/utils'
+
 import Image from './Image'
 
 const meta: Meta<typeof Image> = {

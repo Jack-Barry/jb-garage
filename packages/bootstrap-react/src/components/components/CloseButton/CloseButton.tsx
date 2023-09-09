@@ -1,5 +1,6 @@
-import { BrElementProps } from '../../utils/BrElement'
 import { ReactNode, forwardRef } from 'react'
+
+import { BrElementProps } from '../../utils/BrElement'
 import Button from '../Button/Button'
 
 export type CloseButtonProps = BrElementProps<'button'> & {

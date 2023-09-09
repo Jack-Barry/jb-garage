@@ -1,16 +1,18 @@
+import { BrElement } from '@jb-garage/bootstrap-react/components/utils/BrElement'
+import { useTabs } from '@jb-garage/bootstrap-react/hooks/useTabs'
 import { Meta, StoryFn } from '@storybook/react'
+import classNames from 'classnames'
+import { MouseEvent } from 'react'
+
+import DropdownDivider from '../../Dropdown/DropdownDivider'
+import DropdownItem from '../../Dropdown/DropdownItem'
+import DropdownMenu from '../../Dropdown/DropdownMenu'
+import DropdownToggle from '../../Dropdown/DropdownToggle'
+import { useDropdown } from '../../Dropdown/useDropdown'
+
 import Nav from './Nav'
 import NavItem from './NavItem'
 import NavLink from './NavLink'
-import DropdownToggle from '../../Dropdown/DropdownToggle'
-import { useDropdown } from '../../Dropdown/useDropdown'
-import DropdownMenu from '../../Dropdown/DropdownMenu'
-import DropdownItem from '../../Dropdown/DropdownItem'
-import DropdownDivider from '../../Dropdown/DropdownDivider'
-import { useTabs } from '@jb-garage/bootstrap-react/hooks/useTabs'
-import { MouseEvent } from 'react'
-import classNames from 'classnames'
-import { BrElement } from '@jb-garage/bootstrap-react/components/utils/BrElement'
 
 const meta: Meta<typeof Nav> = {
   title: 'Navs & Tabs/Nav',
@@ -94,7 +96,7 @@ export const AvailableStylesHorizontalAlignment: StoryFn = () => {
 export const AvailableStylesVertical: StoryFn = () => {
   return (
     <div>
-      <Nav brUtilsFlex={{ column: true }}>
+      <Nav bsJs={{ bsJsAll: { flex: { column: true } } }}>
         <NavItem>
           <NavLink aria-current="page" href="#" brNavLinkActive>
             Active
@@ -111,7 +113,7 @@ export const AvailableStylesVertical: StoryFn = () => {
         </NavItem>
       </Nav>
       <hr />
-      <Nav as="nav" brUtilsFlex={{ column: true }}>
+      <Nav as="nav" bsJs={{ bsJsAll: { flex: { column: true } } }}>
         <NavLink aria-current="page" href="#" brNavLinkActive>
           Active
         </NavLink>
@@ -248,7 +250,7 @@ export const WorkingWithFlexUtilities: StoryFn = () => {
   return (
     <Nav
       as="nav"
-      brUtilsFlex={{ brAllBreakpoints: { column: true }, sm: { row: true } }}
+      bsJs={{ bsJsAll: { flex: { column: true } }, sm: { flex: { row: true } } }}
       brNavPills
     >
       <NavLink aria-current="page" href="#" brNavLinkActive>
@@ -475,7 +477,7 @@ function JavascriptBehaviorExample(props: { idPrefix: string; className: string 
 
   return (
     <BrElement
-      brUtilsDisplay={idPrefix === 'v-pills' ? 'flex' : undefined}
+      bsJs={{ bsJsAll: { display: idPrefix === 'v-pills' ? 'flex' : undefined } }}
       className={classNames({
         'align-items-start': idPrefix === 'v-pills'
       })}

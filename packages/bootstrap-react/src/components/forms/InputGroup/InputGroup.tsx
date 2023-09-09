@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType, ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type InputGroupProps<T extends ElementType> = BrElementProps<T> & {
   /** Present as a small input group */

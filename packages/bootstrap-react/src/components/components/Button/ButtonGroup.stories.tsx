@@ -1,15 +1,17 @@
 import { Meta, StoryFn } from '@storybook/react'
-import ButtonGroup from './ButtonGroup'
-import ButtonToolbar from './ButtonToolbar'
-import Button from './Button'
+
 import FormCheckInput from '../../forms/FormCheck/FormCheckInput'
 import FormCheckLabel from '../../forms/FormCheck/FormCheckLabel'
+import Input from '../../forms/FormControl/Input'
 import InputGroup from '../../forms/InputGroup/InputGroup'
 import InputGroupText from '../../forms/InputGroup/InputGroupText'
-import Input from '../../forms/FormControl/Input'
-import DropdownToggle from '../Dropdown/DropdownToggle'
-import DropdownMenu from '../Dropdown/DropdownMenu'
 import DropdownItem from '../Dropdown/DropdownItem'
+import DropdownMenu from '../Dropdown/DropdownMenu'
+import DropdownToggle from '../Dropdown/DropdownToggle'
+
+import Button from './Button'
+import ButtonGroup from './ButtonGroup'
+import ButtonToolbar from './ButtonToolbar'
 
 const meta: Meta = {
   title: 'Button Group',
@@ -121,13 +123,19 @@ export const Toolbar: StoryFn = () => {
   return (
     <div>
       <ButtonToolbar aria-label="Toolbar with button groups">
-        <ButtonGroup brUtilsSpacing={{ margin: { end: '2' } }} aria-label="First group">
+        <ButtonGroup
+          bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
+          aria-label="First group"
+        >
           <Button brButtonColor="primary">1</Button>
           <Button brButtonColor="primary">2</Button>
           <Button brButtonColor="primary">3</Button>
           <Button brButtonColor="primary">4</Button>
         </ButtonGroup>
-        <ButtonGroup brUtilsSpacing={{ margin: { end: '2' } }} aria-label="Second group">
+        <ButtonGroup
+          bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
+          aria-label="Second group"
+        >
           <Button brButtonColor="secondary">5</Button>
           <Button brButtonColor="secondary">6</Button>
           <Button brButtonColor="secondary">7</Button>
@@ -138,10 +146,13 @@ export const Toolbar: StoryFn = () => {
       </ButtonToolbar>
       <hr />
       <ButtonToolbar
-        brUtilsSpacing={{ margin: { bottom: '3' } }}
+        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
         aria-label="Toolbar with button groups"
       >
-        <ButtonGroup brUtilsSpacing={{ margin: { end: '2' } }} aria-label="First group">
+        <ButtonGroup
+          bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
+          aria-label="First group"
+        >
           <Button brButtonColor="outline-secondary">1</Button>
           <Button brButtonColor="outline-secondary">2</Button>
           <Button brButtonColor="outline-secondary">3</Button>

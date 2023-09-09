@@ -1,25 +1,27 @@
 import { Meta, StoryFn } from '@storybook/react'
-import { useModal } from './useModal'
-import Button from '../Button/Button'
-import Modal from './Modal'
-import ModalDialog, { ModalDialogProps } from './ModalDialog'
-import CloseButton from '../CloseButton/CloseButton'
-import ModalContent from './ModalContent'
-import ModalHeader from './ModalHeader'
-import ModalTitle from './ModalTitle'
-import ModalBody from './ModalBody'
-import ModalFooter from './ModalFooter'
-import { BrElement } from '../../utils/BrElement'
-import Popover from '../Popover/Popover'
-import { usePopover } from '../Popover/usePopover'
-import PopoverHeader from '../Popover/PopoverHeader'
-import PopoverBody from '../Popover/PopoverBody'
-import { useTooltip } from '../Tooltip/useTooltip'
-import Tooltip from '../Tooltip/Tooltip'
+import { useState } from 'react'
+
+import Col from '../../layout/columns/Col'
 import Container from '../../layout/containers/Container'
 import Row from '../../layout/grid/Row'
-import Col from '../../layout/columns/Col'
-import { useState } from 'react'
+import { BrElement } from '../../utils/BrElement'
+import Button from '../Button/Button'
+import CloseButton from '../CloseButton/CloseButton'
+import Popover from '../Popover/Popover'
+import PopoverBody from '../Popover/PopoverBody'
+import PopoverHeader from '../Popover/PopoverHeader'
+import { usePopover } from '../Popover/usePopover'
+import Tooltip from '../Tooltip/Tooltip'
+import { useTooltip } from '../Tooltip/useTooltip'
+
+import Modal from './Modal'
+import ModalBody from './ModalBody'
+import ModalContent from './ModalContent'
+import ModalDialog, { ModalDialogProps } from './ModalDialog'
+import ModalFooter from './ModalFooter'
+import ModalHeader from './ModalHeader'
+import ModalTitle from './ModalTitle'
+import { useModal } from './useModal'
 
 const meta: Meta = {
   title: 'Modal',
@@ -213,7 +215,7 @@ export const VerticallyCentered: StoryFn = () => {
 
   return (
     <div>
-      <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '1' }}>
+      <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '1' } } }}>
         <Button brButtonColor="primary" onClick={modal1.toggle}>
           Vertically centered modal
         </Button>
@@ -374,20 +376,20 @@ export const UsingTheGrid: StoryFn = () => {
               <Container brContainerFluid className="bd-example-row">
                 <Row>
                   <Col brColsMd={4}>.col-md-4</Col>
-                  <Col brColsMd={4} brUtilsSpacing={{ margin: { start: 'auto' } }}>
+                  <Col brColsMd={4} bsJs={{ bsJsAll: { spacing: { margin: { start: 'auto' } } } }}>
                     .col-md-4 .ms-auto
                   </Col>
                 </Row>
                 <Row>
-                  <Col brColsMd={3} brUtilsSpacing={{ margin: { start: 'auto' } }}>
+                  <Col brColsMd={3} bsJs={{ bsJsAll: { spacing: { margin: { start: 'auto' } } } }}>
                     .col-md-3 .ms-auto
                   </Col>
-                  <Col brColsMd={2} brUtilsSpacing={{ margin: { start: 'auto' } }}>
+                  <Col brColsMd={2} bsJs={{ bsJsAll: { spacing: { margin: { start: 'auto' } } } }}>
                     .col-md-2 .ms-auto
                   </Col>
                 </Row>
                 <Row>
-                  <Col brColsMd={6} brUtilsSpacing={{ margin: { start: 'auto' } }}>
+                  <Col brColsMd={6} bsJs={{ bsJsAll: { spacing: { margin: { start: 'auto' } } } }}>
                     .col-md-6 .ms-auto
                   </Col>
                 </Row>
@@ -492,7 +494,7 @@ export const OptionalSizes: StoryFn = () => {
 
   return (
     <div>
-      <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '1' }}>
+      <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '1' } } }}>
         <Button brButtonColor="primary" onClick={modalXl.toggle}>
           Extra large modal
         </Button>

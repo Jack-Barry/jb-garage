@@ -1,13 +1,15 @@
 import { Meta, StoryFn } from '@storybook/react'
-import { useToast } from './useToast'
-import Toast from './Toast'
-import ToastHeader from './ToastHeader'
+
 import Image from '../../content/Image/Image'
 import { BrElement } from '../../utils/BrElement'
-import CloseButton from '../CloseButton/CloseButton'
-import ToastBody from './ToastBody'
 import Button from '../Button/Button'
+import CloseButton from '../CloseButton/CloseButton'
+
+import Toast from './Toast'
+import ToastBody from './ToastBody'
 import ToastContainer from './ToastContainer'
+import ToastHeader from './ToastHeader'
+import { useToast } from './useToast'
 
 const meta: Meta = {
   title: 'Toast',
@@ -24,7 +26,7 @@ export const Basic: StoryFn = () => {
       <ToastHeader>
         <Image
           as="svg"
-          brUtilsSpacing={{ margin: { end: '2' } }}
+          bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
           className="bd-placeholder-img rounded"
           width="20"
           height="20"
@@ -35,7 +37,7 @@ export const Basic: StoryFn = () => {
         >
           <rect width="100%" height="100%" fill="#007aff" />
         </Image>
-        <BrElement as="strong" brUtilsSpacing={{ margin: { end: 'auto' } }}>
+        <BrElement as="strong" bsJs={{ bsJsAll: { spacing: { margin: { end: 'auto' } } } }}>
           Bootstrap
         </BrElement>
         <small>11 mins ago</small>
@@ -55,15 +57,14 @@ export const LiveExample: StoryFn = () => {
         Show live toast
       </Button>
       <ToastContainer
-        brUtilsPosition="fixed"
-        brUtilsSpacing={{ padding: '3' }}
+        bsJs={{ bsJsAll: { spacing: { padding: '3' }, position: 'fixed' } }}
         className="bottom-0 end-0"
       >
         <Toast id="liveToast" aria-live="assertive" aria-atomic="true" ref={toast.ref}>
           <ToastHeader>
             <Image
               as="svg"
-              brUtilsSpacing={{ margin: { end: '2' } }}
+              bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
               className="bd-placeholder-img rounded"
               width="20"
               height="20"
@@ -74,7 +75,7 @@ export const LiveExample: StoryFn = () => {
             >
               <rect width="100%" height="100%" fill="#007aff" />
             </Image>
-            <BrElement as="strong" brUtilsSpacing={{ margin: { end: 'auto' } }}>
+            <BrElement as="strong" bsJs={{ bsJsAll: { spacing: { margin: { end: 'auto' } } } }}>
               Bootstrap
             </BrElement>
             <small>11 mins ago</small>
@@ -92,13 +93,13 @@ export const Stacking: StoryFn = () => {
   const toast2 = useToast({ bootstrapToast: { autohide: false } })
 
   return (
-    <ToastContainer brUtilsPosition="static">
+    <ToastContainer bsJs={{ bsJsAll: { position: 'static' } }}>
       <Toast aria-live="assertive" aria-atomic="true" ref={toast1.ref}>
         <ToastHeader>
           <Image
             as="svg"
             className="bd-placeholder-img rounded"
-            brUtilsSpacing={{ margin: { end: '2' } }}
+            bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
             width="20"
             height="20"
             xmlns="http://www.w3.org/2000/svg"
@@ -108,10 +109,10 @@ export const Stacking: StoryFn = () => {
           >
             <rect width="100%" height="100%" fill="#007aff"></rect>
           </Image>
-          <BrElement as="strong" brUtilsSpacing={{ margin: { end: 'auto' } }}>
+          <BrElement as="strong" bsJs={{ bsJsAll: { spacing: { margin: { end: 'auto' } } } }}>
             Bootstrap
           </BrElement>
-          <BrElement as="small" brUtilsColor="body-secondary">
+          <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
             just now
           </BrElement>
           <CloseButton onClick={toast1.hide} />
@@ -124,7 +125,7 @@ export const Stacking: StoryFn = () => {
           <Image
             as="svg"
             className="bd-placeholder-img rounded"
-            brUtilsSpacing={{ margin: { end: '2' } }}
+            bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
             width="20"
             height="20"
             xmlns="http://www.w3.org/2000/svg"
@@ -134,10 +135,10 @@ export const Stacking: StoryFn = () => {
           >
             <rect width="100%" height="100%" fill="#007aff"></rect>
           </Image>
-          <BrElement as="strong" brUtilsSpacing={{ margin: { end: 'auto' } }}>
+          <BrElement as="strong" bsJs={{ bsJsAll: { spacing: { margin: { end: 'auto' } } } }}>
             Bootstrap
           </BrElement>
-          <BrElement as="small" brUtilsColor="body-secondary">
+          <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
             2 seconds ago
           </BrElement>
           <CloseButton onClick={toast2.hide} />
@@ -160,10 +161,10 @@ export const CustomContent: StoryFn = () => {
         aria-atomic="true"
         ref={toast1.ref}
       >
-        <BrElement brUtilsDisplay="flex">
+        <BrElement bsJs={{ bsJsAll: { display: 'flex' } }}>
           <ToastBody>Hello, world! This is a toast message.</ToastBody>
           <CloseButton
-            brUtilsSpacing={{ margin: { end: '2' } }}
+            bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
             className="m-auto"
             onClick={toast1.hide}
           />
@@ -174,9 +175,13 @@ export const CustomContent: StoryFn = () => {
         <ToastBody>
           Hello, world! This is a toast message.
           <BrElement
-            brUtilsDisplay="flex"
-            brUtilsSpacing={{ margin: { top: '2' }, padding: { top: '2' }, gap: '1' }}
-            brUtilsBorder={{ top: true }}
+            bsJs={{
+              bsJsAll: {
+                border: { top: true },
+                display: 'flex',
+                spacing: { margin: { top: '2' }, padding: { top: '2' }, gap: '1' }
+              }
+            }}
           >
             <Button brButtonColor="primary" brButtonSm>
               Take action
@@ -197,17 +202,16 @@ export const ColorSchemes: StoryFn = () => {
   return (
     <Toast
       className="align-items-center"
-      brUtilsColor="bg-primary"
-      brUtilsBorder={false}
+      bsJs={{ bsJsAll: { border: false, color: 'bg-primary' } }}
       aria-live="assertive"
       aria-atomic="true"
       ref={toast.ref}
     >
-      <BrElement brUtilsDisplay="flex">
+      <BrElement bsJs={{ bsJsAll: { display: 'flex' } }}>
         <ToastBody>Hello, world! This is a toast message.</ToastBody>
         <CloseButton
           className="btn-close-white m-auto"
-          brUtilsSpacing={{ margin: { end: '2' } }}
+          bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
           onClick={toast.hide}
         />
       </BrElement>

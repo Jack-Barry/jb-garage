@@ -1,4 +1,5 @@
 import { ReactNode, forwardRef } from 'react'
+
 import TableEntry, { TableEntryProps } from './TableEntry'
 
 export type TableDataProps = Omit<TableEntryProps<'td'>, 'as'>

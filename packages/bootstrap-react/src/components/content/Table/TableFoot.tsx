@@ -1,4 +1,5 @@
 import { ReactNode, forwardRef } from 'react'
+
 import TableGroup, { TableGroupProps } from './TableGroup'
 
 export type TableFootProps = Omit<TableGroupProps<'tfoot'>, 'as'>

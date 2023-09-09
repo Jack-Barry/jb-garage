@@ -1,5 +1,4 @@
-import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '@jb-garage/bootstrap-js/_types'
-
+import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 
 type BootstrapShadowSize = LiteralUnion<'sm' | 'lg' | 'none', string>

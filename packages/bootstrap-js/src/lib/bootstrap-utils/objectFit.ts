@@ -1,9 +1,4 @@
-import {
-  BsJsStyles,
-  IndividualBreakpointOptions,
-  LiteralUnion
-} from '@jb-garage/bootstrap-js/_types'
-
+import { BsJsStyles, IndividualBreakpointOptions, LiteralUnion } from '../../_types'
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 

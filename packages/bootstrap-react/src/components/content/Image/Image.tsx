@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type ImageElementType = 'img' | 'svg'
 export type ImageProps<T extends ImageElementType> = BrElementProps<

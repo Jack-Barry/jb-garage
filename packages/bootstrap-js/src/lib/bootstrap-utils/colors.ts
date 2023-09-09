@@ -1,5 +1,4 @@
-import { isEmptyObject } from '@jb-garage/utils-generic'
-
+import { isEmptyObject } from '../../../../utils-generic/src'
 import { BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 import { getOpacityStyles } from '../utils/getOpacityStyles'
@@ -33,7 +32,7 @@ type BootstrapTextColor =
   | 'body-emphasis'
   | 'reset'
 
-type BsJsTextColor = LiteralUnion<BootstrapTextColor, string>
+export type BsJsTextColor = LiteralUnion<BootstrapTextColor, string>
 
 /** Default Bootstrap text opacities */
 type BsJsTextOpacity = '25' | '50' | '75' | '100'

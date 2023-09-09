@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 type TableEntryElementType = 'tr' | 'td' | 'th' | 'thead' | 'tbody' | 'tfoot'
 export type TableEntryProps<T extends TableEntryElementType> = BrElementProps<

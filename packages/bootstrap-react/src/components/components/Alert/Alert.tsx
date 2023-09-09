@@ -1,8 +1,10 @@
 import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType, ReactNode, forwardRef } from 'react'
-import { useAlert } from './useAlert'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { useMultiRef } from '../../utils/useMultiRef'
+
+import { useAlert } from './useAlert'
 
 export type AlertProps<T extends ElementType> = BrElementProps<T> & {
   /**

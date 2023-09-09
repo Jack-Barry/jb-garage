@@ -2,12 +2,12 @@ import { BsJsStyles, IndividualBreakpointOptions, LiteralUnion } from '../../_ty
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 
-type BootstrapSpacingValue = LiteralUnion<
+export type BootstrapSpacingValue = LiteralUnion<
   '0' | '1' | '2' | '3' | '4' | '5' | 'auto',
   number | string
 >
 
-type BsJsSpacingConfig = {
+export type BsJsSpacingConfig = {
   allSides?: BootstrapSpacingValue
   x?: BootstrapSpacingValue
   y?: BootstrapSpacingValue

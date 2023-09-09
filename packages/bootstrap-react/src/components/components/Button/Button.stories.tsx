@@ -1,9 +1,10 @@
 import type { Meta, StoryFn } from '@storybook/react'
+import { CSSProperties } from 'react'
+
+import Col from '../../layout/columns/Col'
+import { BrElement } from '../../utils/BrElement'
 
 import Button from './Button'
-import { CSSProperties } from 'react'
-import { BrElement } from '../../utils/BrElement'
-import Col from '../../layout/columns/Col'
 
 const meta: Meta = {
   title: 'Buttons',
@@ -128,30 +129,33 @@ export const DisabledState: StoryFn = () => {
 export const BlockButtons: StoryFn = () => {
   return (
     <div className="bd-example">
-      <BrElement brUtilsDisplay="grid" brUtilsSpacing={{ gap: '2' }}>
+      <BrElement bsJs={{ bsJsAll: { display: 'grid', spacing: { gap: '2' } } }}>
         <Button brButtonColor="primary">Button</Button>
         <Button brButtonColor="primary">Button</Button>
       </BrElement>
       <hr />
       <BrElement
-        brUtilsDisplay={{ brAllBreakpoints: 'grid', md: 'block' }}
-        brUtilsSpacing={{ gap: '2' }}
+        bsJs={{ bsJsAll: { display: 'grid', spacing: { gap: '2' } }, md: { display: 'block' } }}
       >
         <Button brButtonColor="primary">Button</Button>
         <Button brButtonColor="primary">Button</Button>
       </BrElement>
       <hr />
-      <Col brUtilsDisplay="grid" brCols={6} brUtilsSpacing={{ margin: { x: 'auto' }, gap: '2' }}>
+      <Col
+        bsJs={{ bsJsAll: { display: 'grid', spacing: { margin: { x: 'auto' }, gap: '2' } } }}
+        brCols={6}
+      >
         <Button brButtonColor="primary">Button</Button>
         <Button brButtonColor="primary">Button</Button>
       </Col>
       <hr />
       <BrElement
-        brUtilsDisplay={{ brAllBreakpoints: 'grid', md: 'flex' }}
-        brUtilsSpacing={{ gap: '2' }}
-        brUtilsFlex={{ md: { justifyContent: 'end' } }}
+        bsJs={{
+          bsJsAll: { display: 'grid', spacing: { gap: '2' } },
+          md: { display: 'flex', flex: { justifyContent: 'end' } }
+        }}
       >
-        <Button brButtonColor="primary" brUtilsSpacing={{ md: { margin: { end: '2' } } }}>
+        <Button brButtonColor="primary" bsJs={{ md: { spacing: { margin: { end: '2' } } } }}>
           Button
         </Button>
         <Button brButtonColor="primary">Button</Button>

@@ -1,8 +1,10 @@
-import { ElementType, ReactNode, forwardRef } from 'react'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import classNames from 'classnames'
-import { usePopover } from './usePopover'
+import { ElementType, ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { useMultiRef } from '../../utils/useMultiRef'
+
+import { usePopover } from './usePopover'
 
 export type PopoverProps<T extends ElementType> = BrElementProps<
   T,

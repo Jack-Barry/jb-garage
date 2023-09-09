@@ -1,16 +1,18 @@
 import { Meta, StoryFn } from '@storybook/react'
-import Row from '../../layout/grid/Row'
+import classNames from 'classnames'
+import { FormEvent, useState } from 'react'
+
+import Button from '../../components/Button/Button'
 import Col from '../../layout/columns/Col'
-import Label from '../FormControl/Label'
+import Row from '../../layout/grid/Row'
+import { BrElement } from '../../utils/BrElement'
+import FormCheck from '../FormCheck/FormCheck'
 import Input from '../FormControl/Input'
+import Label from '../FormControl/Label'
 import InputGroup from '../InputGroup/InputGroup'
 import InputGroupText from '../InputGroup/InputGroupText'
 import Select from '../Select/Select'
-import FormCheck from '../FormCheck/FormCheck'
-import Button from '../../components/Button/Button'
-import { FormEvent, useState } from 'react'
-import classNames from 'classnames'
-import { BrElement } from '../../utils/BrElement'
+
 import Feedback from './Feedback'
 
 const meta: Meta = {
@@ -223,7 +225,7 @@ export const ServerSide: StoryFn = () => {
 export const SupportedElements: StoryFn = () => {
   return (
     <form className="was-validated">
-      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Label htmlFor="validationTextarea">Textarea</Label>
         <Input
           as="textarea"
@@ -235,7 +237,7 @@ export const SupportedElements: StoryFn = () => {
       </BrElement>
 
       <FormCheck
-        brFormCheckWrapperProps={{ brUtilsSpacing: { margin: { bottom: '3' } } }}
+        brFormCheckWrapperProps={{ bsJs: { bsJsAll: { spacing: { margin: { bottom: '3' } } } } }}
         brFormCheckInputProps={{
           id: 'validationFormCheck1',
           required: true
@@ -255,7 +257,7 @@ export const SupportedElements: StoryFn = () => {
         brFormCheckLabelProps={{ children: 'Toggle this radio' }}
       />
       <FormCheck
-        brFormCheckWrapperProps={{ brUtilsSpacing: { margin: { bottom: 3 } } }}
+        brFormCheckWrapperProps={{ bsJs: { bsJsAll: { spacing: { margin: { bottom: 3 } } } } }}
         brFormCheckInputProps={{
           type: 'radio',
           id: 'validationFormCheck3',
@@ -267,7 +269,7 @@ export const SupportedElements: StoryFn = () => {
         <Feedback>More example invalid feedback text</Feedback>
       </FormCheck>
 
-      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Select required aria-label="select example">
           <option value="">Open this select menu</option>
           <option value="1">One</option>
@@ -277,12 +279,12 @@ export const SupportedElements: StoryFn = () => {
         <Feedback>Example invalid select feedback</Feedback>
       </BrElement>
 
-      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Input type="file" aria-label="file example" required />
         <Feedback>Example invalid form file feedback</Feedback>
       </BrElement>
 
-      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Button brButtonColor="primary" type="submit" disabled>
           Submit form
         </Button>

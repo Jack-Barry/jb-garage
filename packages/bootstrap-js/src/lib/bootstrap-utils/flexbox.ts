@@ -1,5 +1,4 @@
-import { isEmptyObject } from '@jb-garage/utils-generic'
-
+import { isEmptyObject } from '../../../../utils-generic/src'
 import { BsJsStyles, IndividualBreakpointOptions, LiteralUnion } from '../../_types'
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'

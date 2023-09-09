@@ -1,8 +1,10 @@
-import { ElementType, ReactNode, forwardRef } from 'react'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import classNames from 'classnames'
-import { useModal } from './useModal'
+import { ElementType, ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { useMultiRef } from '../../utils/useMultiRef'
+
+import { useModal } from './useModal'
 
 export type ModalProps<T extends ElementType> = BrElementProps<
   T,

@@ -1,18 +1,20 @@
 import { Meta, StoryFn } from '@storybook/react'
-import { useOffcanvas } from './useOffcanvas'
-import Offcanvas from './Offcanvas'
+
+import { BrElement } from '../../utils/BrElement'
+import Alert from '../Alert/Alert'
 import Button from '../Button/Button'
-import OffcanvasHeader from './OffcanvasHeader'
-import OffcanvasTitle from './OffcanvasTitle'
 import CloseButton from '../CloseButton/CloseButton'
-import OffcanvasBody from './OffcanvasBody'
 import Dropdown from '../Dropdown/Dropdown'
+import DropdownItem from '../Dropdown/DropdownItem'
+import DropdownMenu from '../Dropdown/DropdownMenu'
 import DropdownToggle from '../Dropdown/DropdownToggle'
 import { useDropdown } from '../Dropdown/useDropdown'
-import DropdownMenu from '../Dropdown/DropdownMenu'
-import DropdownItem from '../Dropdown/DropdownItem'
-import Alert from '../Alert/Alert'
-import { BrElement } from '../../utils/BrElement'
+
+import Offcanvas from './Offcanvas'
+import OffcanvasBody from './OffcanvasBody'
+import OffcanvasHeader from './OffcanvasHeader'
+import OffcanvasTitle from './OffcanvasTitle'
+import { useOffcanvas } from './useOffcanvas'
 
 const meta: Meta = {
   title: 'Offcanvas',
@@ -54,7 +56,7 @@ export const LiveDemo: StoryFn = () => {
             Some text as placeholder. In real life you can have the elements you have chosen. Like,
             text, images, lists, etc.
           </div>
-          <Dropdown brUtilsSpacing={{ margin: { top: '3' } }}>
+          <Dropdown bsJs={{ bsJsAll: { spacing: { margin: { top: '3' } } } }}>
             <DropdownToggle brButtonColor="secondary" ref={dropdown.dropdownRef}>
               Dropdown button
             </DropdownToggle>
@@ -159,14 +161,17 @@ export const Responsive: StoryFn = () => {
     <div>
       <Button
         brButtonColor="primary"
-        brUtilsDisplay={{ lg: 'none' }}
+        bsJs={{ lg: { display: 'none' } }}
         aria-controls="offcanvasResponsive"
         onClick={offcanvas.toggle}
       >
         Toggle offcanvas
       </Button>
 
-      <Alert brUtilsDisplay={{ brAllBreakpoints: 'none', lg: 'block' }} className="alert-info">
+      <Alert
+        bsJs={{ bsJsAll: { display: 'none' }, lg: { display: 'block' } }}
+        className="alert-info"
+      >
         Resize your browser to show the responsive offcanvas toggle.
       </Alert>
 
@@ -182,7 +187,7 @@ export const Responsive: StoryFn = () => {
           <CloseButton onClick={offcanvas.hide} />
         </OffcanvasHeader>
         <OffcanvasBody>
-          <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '0' } }}>
+          <BrElement as="p" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '0' } } } }}>
             This is content within an <code>.offcanvas-lg</code>.
           </BrElement>
         </OffcanvasBody>

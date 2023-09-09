@@ -1,13 +1,14 @@
-import type { Meta, StoryFn } from '@storybook/react'
-
-import Col from './Col'
-import Container from '../containers/Container'
-import Row from '../grid/Row'
 import {
   PlaceholderImgSvgChildren,
   placeholderImgSvgProps
 } from '@jb-garage/bootstrap-react/storybook/components/PlaceholderImgSvg'
+import type { Meta, StoryFn } from '@storybook/react'
+
 import { BrElement } from '../../utils/BrElement'
+import Container from '../containers/Container'
+import Row from '../grid/Row'
+
+import Col from './Col'
 
 const meta: Meta = {
   title: 'Columns',
@@ -140,7 +141,10 @@ export const ColumnBreaks: StoryFn = () => {
             .col-6 .col-sm-4
           </Col>
           {/* Force next columns to break to new line at md breakpoint and up */}
-          <BrElement brUtilsDisplay={{ brAllBreakpoints: 'none', md: 'block' }} className="w-100" />
+          <BrElement
+            bsJs={{ bsJsAll: { display: 'none' }, md: { display: 'block' } }}
+            className="w-100"
+          />
           <Col brCols={6} brColsSm={4}>
             .col-6 .col-sm-4
           </Col>
@@ -255,10 +259,10 @@ export const StandaloneColumnClasses: StoryFn = () => {
   return (
     <div>
       <div className="bd-example-row">
-        <Col brCols={3} brUtilsSpacing={{ margin: { bottom: 2 }, padding: '3' }}>
+        <Col brCols={3} bsJs={{ bsJsAll: { spacing: { margin: { bottom: 2 }, padding: '3' } } }}>
           .col-3: width of 25%
         </Col>
-        <Col brColsSm={9} brUtilsSpacing={{ padding: '3' }}>
+        <Col brColsSm={9} bsJs={{ bsJsAll: { spacing: { padding: '3' } } }}>
           .col-sm-9: width of 75% above sm breakpoint
         </Col>
       </div>
@@ -267,9 +271,9 @@ export const StandaloneColumnClasses: StoryFn = () => {
         <Col
           as="svg"
           brColsMd={6}
-          brUtilsSpacing={{
-            brAllBreakpoints: { margin: { bottom: '3' } },
-            md: { margin: { start: '3' } }
+          bsJs={{
+            bsJsAll: { spacing: { margin: { bottom: '3' } } },
+            md: { spacing: { margin: { start: '3' } } }
           }}
           {...placeholderImgSvgProps({ className: 'float-md-end' })}
         >

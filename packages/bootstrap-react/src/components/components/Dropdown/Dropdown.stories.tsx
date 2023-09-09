@@ -1,18 +1,19 @@
 import type { Meta, StoryFn } from '@storybook/react'
 
 import { as } from '../../../storybook/utils'
-import Dropdown from './Dropdown'
-import { useDropdown } from './useDropdown'
-import DropdownMenu from './DropdownMenu'
-import DropdownItem from './DropdownItem'
-import ButtonGroup from '../Button/ButtonGroup'
-import DropdownDivider from './DropdownDivider'
-import DropdownToggle from './DropdownToggle'
-import Button from '../Button/Button'
-import DropdownHeader from './DropdownHeader'
-import FormControl from '../../forms/FormControl/FormControl'
 import FormCheck from '../../forms/FormCheck/FormCheck'
+import FormControl from '../../forms/FormControl/FormControl'
 import { BrElement } from '../../utils/BrElement'
+import Button from '../Button/Button'
+import ButtonGroup from '../Button/ButtonGroup'
+
+import Dropdown from './Dropdown'
+import DropdownDivider from './DropdownDivider'
+import DropdownHeader from './DropdownHeader'
+import DropdownItem from './DropdownItem'
+import DropdownMenu from './DropdownMenu'
+import DropdownToggle from './DropdownToggle'
+import { useDropdown } from './useDropdown'
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
@@ -519,12 +520,11 @@ export const Text: StoryFn = () => {
   return (
     <div className="bd-example">
       <DropdownMenu
-        brUtilsSpacing={{ padding: '3' }}
-        brUtilsColor="body-secondary"
+        bsJs={{ bsJsAll: { color: 'body-secondary', spacing: { padding: '3' } } }}
         style={{ maxWidth: '200px' }}
       >
         <p>Some example text that's free-flowing within the dropdown menu.</p>
-        <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '0' } }}>
+        <BrElement as="p" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '0' } } } }}>
           And this is more example text.
         </BrElement>
       </DropdownMenu>
@@ -536,10 +536,10 @@ export const Forms: StoryFn = () => {
   return (
     <div className="bd-example">
       <DropdownMenu>
-        <BrElement as="form" brUtilsSpacing={{ padding: { x: '4', y: '3' } }}>
+        <BrElement as="form" bsJs={{ bsJsAll: { spacing: { padding: { x: '4', y: '3' } } } }}>
           <FormControl
             brFormControlWrapperProps={{
-              brUtilsSpacing: { margin: { bottom: 3 } }
+              bsJs: { bsJsAll: { spacing: { margin: { bottom: 3 } } } }
             }}
             brFormControlInputProps={{
               type: 'email',
@@ -552,7 +552,7 @@ export const Forms: StoryFn = () => {
           />
           <FormControl
             brFormControlWrapperProps={{
-              brUtilsSpacing: { margin: { bottom: 3 } }
+              bsJs: { bsJsAll: { spacing: { margin: { bottom: 3 } } } }
             }}
             brFormControlInputProps={{
               type: 'password',
@@ -565,7 +565,7 @@ export const Forms: StoryFn = () => {
           />
           <FormCheck
             brFormCheckWrapperProps={{
-              brUtilsSpacing: { margin: { bottom: 3 } }
+              bsJs: { bsJsAll: { spacing: { margin: { bottom: 3 } } } }
             }}
             brFormCheckInputProps={{ id: 'dropdownCheck1' }}
             brFormCheckLabelProps={{ children: 'Remember me' }}
@@ -586,10 +586,10 @@ export const Forms: StoryFn = () => {
       <div style={{ minHeight: '320px' }}>
         <Dropdown>
           <DropdownToggle brButtonColor="primary">Dropdown form</DropdownToggle>
-          <DropdownMenu as="form" brUtilsSpacing={{ padding: '4' }}>
+          <DropdownMenu as="form" bsJs={{ bsJsAll: { spacing: { padding: '4' } } }}>
             <FormControl
               brFormControlWrapperProps={{
-                brUtilsSpacing: { margin: { bottom: 3 } }
+                bsJs: { bsJsAll: { spacing: { margin: { bottom: 3 } } } }
               }}
               brFormControlInputProps={{
                 type: 'email',
@@ -602,7 +602,7 @@ export const Forms: StoryFn = () => {
             />
             <FormControl
               brFormControlWrapperProps={{
-                brUtilsSpacing: { margin: { bottom: 3 } }
+                bsJs: { bsJsAll: { spacing: { margin: { bottom: 3 } } } }
               }}
               brFormControlInputProps={{
                 type: 'password',
@@ -615,7 +615,7 @@ export const Forms: StoryFn = () => {
             />
             <FormCheck
               brFormCheckWrapperProps={{
-                brUtilsSpacing: { margin: { bottom: 3 } }
+                bsJs: { bsJsAll: { spacing: { margin: { bottom: 3 } } } }
               }}
               brFormCheckInputProps={{ id: 'dropdownCheck2' }}
               brFormCheckLabelProps={{ children: 'Remember me' }}
@@ -640,8 +640,8 @@ export const DropdownOptions: StoryFn = () => {
 
   return (
     <div className="bd-example" style={{ minHeight: '220px' }}>
-      <BrElement brUtilsDisplay="flex">
-        <Dropdown brUtilsSpacing={{ margin: { end: '1' } }}>
+      <BrElement bsJs={{ bsJsAll: { display: 'flex' } }}>
+        <Dropdown bsJs={{ bsJsAll: { spacing: { margin: { end: '1' } } } }}>
           <DropdownToggle brButtonColor="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
             Offset
           </DropdownToggle>

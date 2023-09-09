@@ -1,10 +1,11 @@
 import { Meta, StoryFn } from '@storybook/react'
+
 import Accordion from './Accordion'
+import AccordionBody from './AccordionBody'
 import AccordionButton from './AccordionButton'
 import AccordionCollapse from './AccordionCollapse'
-import AccordionItem from './AccordionItem'
 import AccordionHeader from './AccordionHeader'
-import AccordionBody from './AccordionBody'
+import AccordionItem from './AccordionItem'
 
 const meta: Meta = {
   title: 'Accordion',

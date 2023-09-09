@@ -1,4 +1,7 @@
 // Heavily inspired by https://blog.logrocket.com/build-strongly-typed-polymorphic-components-react-typescript/#supporting-refs-polymorphic-components
+import { BsJsConfig } from '@jb-garage/bootstrap-js/_types'
+import { BootstrapJs } from '@jb-garage/bootstrap-js/index'
+import { LiteralUnion } from '@jb-garage/bootstrap-react/types'
 import classNames from 'classnames'
 import {
   ComponentPropsWithRef,
@@ -8,39 +11,6 @@ import {
   ReactNode,
   forwardRef
 } from 'react'
-import { BrUtilsFlexOptions, brUtilsFlexStyles } from './bootstrapClasses/utilities/flexbox'
-import { BrBorderProp, brUtilsBorderStyles } from './bootstrapClasses/utilities/borders'
-import { BrUtilsDisplayOptions, brUtilsDisplayStyles } from './bootstrapClasses/utilities/display'
-import {
-  BrUtilsBackgroundOptions,
-  brUtilsBackgroundStyles
-} from './bootstrapClasses/utilities/background'
-import { buildBrStyles } from './bootstrapClasses/brStyles'
-import { BrUtilsColorOptions, brUtilsColorStyles } from './bootstrapClasses/utilities/colors'
-import { BrUtilsFloatOptions, brUtilsFloatStyles } from './bootstrapClasses/utilities/float'
-import {
-  BrUtilsInteractOptions,
-  brUtilsInteractStyles
-} from './bootstrapClasses/utilities/interact'
-import { BrUtilsLinkOptions, brUtilsLinkStyles } from './bootstrapClasses/utilities/link'
-import {
-  BrUtilsObjectFitOptions,
-  brUtilsObjectFitStyles
-} from './bootstrapClasses/utilities/objectFit'
-import { LiteralUnion } from '@jb-garage/bootstrap-react/types'
-import { BootstrapOpacity } from './bootstrapClasses/utilities/types'
-import { getOpacityStyles } from './bootstrapClasses/utilities/helpers'
-import {
-  BrUtilsOverflowOptions,
-  brUtilsOverflowStyles
-} from './bootstrapClasses/utilities/overflow'
-import {
-  BrUtilsPositionOptions,
-  brUtilsPositionStyles
-} from './bootstrapClasses/utilities/position'
-import { BrUtilsShadowOptions, brUtilsShadowStyles } from './bootstrapClasses/utilities/shadow'
-import { BrUtilsSizeOptions, brUtilsSizeStyles } from './bootstrapClasses/utilities/size'
-import { BrUtilsSpacingOptions, brUtilsSpacingStyles } from './bootstrapClasses/utilities/spacingV2'
 
 /** Prop representing a Bootstrap viewport breakpoint */
 export type BootstrapBreakpoint = LiteralUnion<'sm' | 'md' | 'lg' | 'xl' | 'xxl', string>
@@ -66,95 +36,11 @@ export type BrElementCommonProps = {
    */
   brClearfix?: boolean
   /**
-   * Apply background styles to the element using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Background](https://getbootstrap.com/docs/5.3/utilities/background/)
+   * Optionally, you can pass in a `BsJsConfig` object to calculate Bootstrap classes
+   *   to apply on the element. Otherwise, you can still just hand-write the classes
+   *   yourself as the `className` prop.
    */
-  brUtilsBackground?: BrUtilsBackgroundOptions
-  /**
-   * Border to apply to the element using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Borders](https://getbootstrap.com/docs/5.3/utilities/borders/)
-   */
-  brUtilsBorder?: BrBorderProp
-  /**
-   * Color to apply to the element text using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Colors](https://getbootstrap.com/docs/5.3/utilities/colors/)
-   */
-  brUtilsColor?: BrUtilsColorOptions
-  /**
-   * Display type to apply to the element using Bootstrap class
-   *
-   * [Bootstrap Utilities: Display](https://getbootstrap.com/docs/5.3/utilities/display/)
-   */
-  brUtilsDisplay?: BrUtilsDisplayOptions
-  /**
-   * Flex styles to apply to the element using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Flex](https://getbootstrap.com/docs/5.3/utilities/flex/)
-   */
-  brUtilsFlex?: BrUtilsFlexOptions
-  /**
-   * Float style to apply to the element using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Float](https://getbootstrap.com/docs/5.3/utilities/float/)
-   */
-  brUtilsFloat?: BrUtilsFloatOptions
-  /**
-   * Interaction styles to apply to the element using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Interactions](https://getbootstrap.com/docs/5.3/utilities/interactions/)
-   */
-  brUtilsInteract?: BrUtilsInteractOptions
-  /**
-   * Link styles to apply to the element using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Link](https://getbootstrap.com/docs/5.3/utilities/link/)
-   */
-  brUtilsLink?: BrUtilsLinkOptions
-  /**
-   * Object fit style to apply to the element using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Object Fit](https://getbootstrap.com/docs/5.3/utilities/object-fit/)
-   */
-  brUtilsObjectFit?: BrUtilsObjectFitOptions
-  /**
-   * Opacity style to apply to the element using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Opacity](https://getbootstrap.com/docs/5.3/utilities/opacity/)
-   */
-  brUtilsOpacity?: LiteralUnion<'0' | BootstrapOpacity, string>
-  /**
-   * Overflow style to apply to the element using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Overflow](https://getbootstrap.com/docs/5.3/utilities/overflow/)
-   */
-  brUtilsOverflow?: BrUtilsOverflowOptions
-  /**
-   * Position style to apply to the element using Bootstrap class
-   *
-   * [Bootstrap Utilities: Position](https://getbootstrap.com/docs/5.3/utilities/position/)
-   */
-  brUtilsPosition?: BrUtilsPositionOptions
-  /**
-   * Shadow style to apply to the element using Bootstrap class
-   *
-   * [Bootstrap Utilities: Shadow](https://getbootstrap.com/docs/5.3/utilities/shadow/)
-   */
-  brUtilsShadow?: BrUtilsShadowOptions
-  /**
-   * Sizing style to apply to the element using Bootstrap class
-   *
-   * [Bootstrap Utilities: Sizing](https://getbootstrap.com/docs/5.3/utilities/sizing/)
-   */
-  brUtilsSize?: BrUtilsSizeOptions
-  /**
-   * Spacing styles to apply to the element using Bootstrap classes
-   *
-   * [Bootstrap Utilities: Spacing](https://getbootstrap.com/docs/5.3/utilities/spacing/)
-   */
-  brUtilsSpacing?: BrUtilsSpacingOptions
+  bsJs?: BsJsConfig
 }
 
 export type BrPropsWithAs<Component extends ElementType | undefined> = {
@@ -188,6 +74,9 @@ type BrComponent = <Component extends ElementType = 'div'>(
   props: BrElementProps<Component>
 ) => ReactNode | null
 
+/** TODO: This needs to be provided via context or a hook somehow so that it is configurable */
+const bsJsSingleton = new BootstrapJs()
+
 /**
  * Bootstrap React lib utility component
  *
@@ -205,43 +94,13 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     style,
     children,
     brVisuallyHidden,
-    brUtilsFlex,
     brTheme,
     brClearfix,
-    brUtilsBackground,
-    brUtilsBorder,
-    brUtilsColor,
-    brUtilsDisplay,
-    brUtilsFloat,
-    brUtilsInteract,
-    brUtilsLink,
-    brUtilsObjectFit,
-    brUtilsOpacity,
-    brUtilsOverflow,
-    brUtilsPosition,
-    brUtilsShadow,
-    brUtilsSize,
-    brUtilsSpacing,
+    bsJs,
     ...rest
   } = props
 
-  const brStyles = buildBrStyles([
-    brUtilsBackgroundStyles(brUtilsBackground),
-    brUtilsBorderStyles(brUtilsBorder),
-    brUtilsColorStyles(brUtilsColor),
-    brUtilsDisplayStyles(brUtilsDisplay),
-    brUtilsFlexStyles(brUtilsFlex),
-    brUtilsFloatStyles(brUtilsFloat),
-    brUtilsInteractStyles(brUtilsInteract),
-    brUtilsLinkStyles(brUtilsLink),
-    brUtilsObjectFitStyles(brUtilsObjectFit),
-    getOpacityStyles({ classNamePrefix: 'opacity' }, brUtilsOpacity),
-    brUtilsOverflowStyles(brUtilsOverflow),
-    brUtilsPositionStyles(brUtilsPosition),
-    brUtilsShadowStyles(brUtilsShadow),
-    brUtilsSizeStyles(brUtilsSize),
-    brUtilsSpacingStyles(brUtilsSpacing)
-  ])
+  const styles = bsJsSingleton.bsJs(bsJs)
 
   return (
     <Component
@@ -250,9 +109,9 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       className={classNames(className, {
         'visually-hidden': brVisuallyHidden,
         clearfix: brClearfix,
-        ...brStyles.classes
+        ...styles.classes
       })}
-      style={{ ...brStyles.inlineStyles, ...style }}
+      style={{ ...styles.inlineStyles, ...style }}
       {...rest}
     >
       {children}

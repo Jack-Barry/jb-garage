@@ -1,8 +1,10 @@
-import { ElementType, ReactNode, forwardRef } from 'react'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import classNames from 'classnames'
-import { useTooltip } from './useTooltip'
+import { ElementType, ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { useMultiRef } from '../../utils/useMultiRef'
+
+import { useTooltip } from './useTooltip'
 
 export type TooltipProps<T extends ElementType> = BrElementProps<
   T,

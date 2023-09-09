@@ -1,8 +1,12 @@
+import {
+  BootstrapSpacingValue,
+  BsJsSpacingConfig
+} from '@jb-garage/bootstrap-js/lib/bootstrap-utils/spacing'
 import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType, ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ColSpan } from '../columns/Col'
-import { BrSpacingConfig, BrSpacingProp } from '../../utils/bootstrapClasses/utilities/spacing'
 
 export type RowProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   /**
@@ -24,17 +28,17 @@ export type RowProps<T extends ElementType = 'div'> = BrElementProps<T> & {
   /** Number of columns in row above xxl breakpoint */
   brRowCols2xl?: ColSpan
   /** Size of gutter for the row */
-  brRowGutter?: BrSpacingProp
+  brRowGutter?: BsJsSpacingConfig | BootstrapSpacingValue
   /** Size of gutter for the row above sm breakpoint */
-  brRowGutterSm?: BrSpacingProp
+  brRowGutterSm?: BsJsSpacingConfig | BootstrapSpacingValue
   /** Size of gutter for the row above md breakpoint */
-  brRowGutterMd?: BrSpacingProp
+  brRowGutterMd?: BsJsSpacingConfig | BootstrapSpacingValue
   /** Size of gutter for the row above lg breakpoint */
-  brRowGutterLg?: BrSpacingProp
+  brRowGutterLg?: BsJsSpacingConfig | BootstrapSpacingValue
   /** Size of gutter for the row above xl breakpoint */
-  brRowGutterXl?: BrSpacingProp
+  brRowGutterXl?: BsJsSpacingConfig | BootstrapSpacingValue
   /** Size of gutter for the row above xxl breakpoint */
-  brRowGutter2xl?: BrSpacingProp
+  brRowGutter2xl?: BsJsSpacingConfig | BootstrapSpacingValue
 }
 
 type RowWithRef = <Component extends ElementType = 'div'>(props: RowProps<Component>) => ReactNode
@@ -77,40 +81,40 @@ const Row: RowWithRef = forwardRef(function Row<T extends ElementType = 'div'>(
           [`row-cols-xl-${brRowColsXl}`]: !!brRowColsXl,
           [`row-cols-xxl-${brRowCols2xl}`]: !!brRowCols2xl,
           [`g-${brRowGutter}`]: typeof brRowGutter === 'number' || typeof brRowGutter === 'string',
-          [`gx-${(brRowGutter as BrSpacingConfig)?.x}`]:
-            typeof (brRowGutter as BrSpacingConfig)?.x !== 'undefined',
-          [`gy-${(brRowGutter as BrSpacingConfig)?.y}`]:
-            typeof (brRowGutter as BrSpacingConfig)?.y !== 'undefined',
+          [`gx-${(brRowGutter as BsJsSpacingConfig)?.x}`]:
+            typeof (brRowGutter as BsJsSpacingConfig)?.x !== 'undefined',
+          [`gy-${(brRowGutter as BsJsSpacingConfig)?.y}`]:
+            typeof (brRowGutter as BsJsSpacingConfig)?.y !== 'undefined',
           [`g-sm-${brRowGutterSm}`]:
             typeof brRowGutterSm === 'number' || typeof brRowGutterSm === 'string',
-          [`gx-sm-${(brRowGutterSm as BrSpacingConfig)?.x}`]:
-            typeof (brRowGutterSm as BrSpacingConfig)?.x !== 'undefined',
-          [`gy-sm-${(brRowGutterSm as BrSpacingConfig)?.y}`]:
-            typeof (brRowGutterSm as BrSpacingConfig)?.y !== 'undefined',
+          [`gx-sm-${(brRowGutterSm as BsJsSpacingConfig)?.x}`]:
+            typeof (brRowGutterSm as BsJsSpacingConfig)?.x !== 'undefined',
+          [`gy-sm-${(brRowGutterSm as BsJsSpacingConfig)?.y}`]:
+            typeof (brRowGutterSm as BsJsSpacingConfig)?.y !== 'undefined',
           [`g-md-${brRowGutterMd}`]:
             typeof brRowGutterMd === 'number' || typeof brRowGutterMd === 'string',
-          [`gx-md-${(brRowGutterMd as BrSpacingConfig)?.x}`]:
-            typeof (brRowGutterMd as BrSpacingConfig)?.x !== 'undefined',
-          [`gy-md-${(brRowGutterMd as BrSpacingConfig)?.y}`]:
-            typeof (brRowGutterMd as BrSpacingConfig)?.y !== 'undefined',
+          [`gx-md-${(brRowGutterMd as BsJsSpacingConfig)?.x}`]:
+            typeof (brRowGutterMd as BsJsSpacingConfig)?.x !== 'undefined',
+          [`gy-md-${(brRowGutterMd as BsJsSpacingConfig)?.y}`]:
+            typeof (brRowGutterMd as BsJsSpacingConfig)?.y !== 'undefined',
           [`g-lg-${brRowGutterLg}`]:
             typeof brRowGutterLg === 'number' || typeof brRowGutterLg === 'string',
-          [`gx-lg-${(brRowGutterLg as BrSpacingConfig)?.x}`]:
-            typeof (brRowGutterLg as BrSpacingConfig)?.x !== 'undefined',
-          [`gy-lg-${(brRowGutterLg as BrSpacingConfig)?.y}`]:
-            typeof (brRowGutterLg as BrSpacingConfig)?.y !== 'undefined',
+          [`gx-lg-${(brRowGutterLg as BsJsSpacingConfig)?.x}`]:
+            typeof (brRowGutterLg as BsJsSpacingConfig)?.x !== 'undefined',
+          [`gy-lg-${(brRowGutterLg as BsJsSpacingConfig)?.y}`]:
+            typeof (brRowGutterLg as BsJsSpacingConfig)?.y !== 'undefined',
           [`g-xl-${brRowGutterXl}`]:
             typeof brRowGutterXl === 'number' || typeof brRowGutterXl === 'string',
-          [`gx-xl-${(brRowGutterXl as BrSpacingConfig)?.x}`]:
-            typeof (brRowGutterXl as BrSpacingConfig)?.x !== 'undefined',
-          [`gy-xl-${(brRowGutterXl as BrSpacingConfig)?.y}`]:
-            typeof (brRowGutterXl as BrSpacingConfig)?.y !== 'undefined',
+          [`gx-xl-${(brRowGutterXl as BsJsSpacingConfig)?.x}`]:
+            typeof (brRowGutterXl as BsJsSpacingConfig)?.x !== 'undefined',
+          [`gy-xl-${(brRowGutterXl as BsJsSpacingConfig)?.y}`]:
+            typeof (brRowGutterXl as BsJsSpacingConfig)?.y !== 'undefined',
           [`g-xxl-${brRowGutter2xl}`]:
             typeof brRowGutter2xl === 'number' || typeof brRowGutter2xl === 'string',
-          [`gx-xxl-${(brRowGutter2xl as BrSpacingConfig)?.x}`]:
-            typeof (brRowGutter2xl as BrSpacingConfig)?.x !== 'undefined',
-          [`gy-xxl-${(brRowGutter2xl as BrSpacingConfig)?.y}`]:
-            typeof (brRowGutter2xl as BrSpacingConfig)?.y !== 'undefined'
+          [`gx-xxl-${(brRowGutter2xl as BsJsSpacingConfig)?.x}`]:
+            typeof (brRowGutter2xl as BsJsSpacingConfig)?.x !== 'undefined',
+          [`gy-xxl-${(brRowGutter2xl as BsJsSpacingConfig)?.y}`]:
+            typeof (brRowGutter2xl as BsJsSpacingConfig)?.y !== 'undefined'
         },
         className
       )}

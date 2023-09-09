@@ -1,14 +1,14 @@
 import type { Meta, StoryFn } from '@storybook/react'
-
-import Table from './Table'
 import { Fragment } from 'react'
-import TableRow from './TableRow'
-import TableData from './TableData'
-import TableHeader from './TableHeader'
-import TableHead from './TableHead'
-import TableBody from './TableBody'
-import TableFoot from './TableFoot'
+
 import ResponsiveTableWrapper from './ResponsiveTableWrapper'
+import Table from './Table'
+import TableBody from './TableBody'
+import TableData from './TableData'
+import TableFoot from './TableFoot'
+import TableHead from './TableHead'
+import TableHeader from './TableHeader'
+import TableRow from './TableRow'
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -232,7 +232,7 @@ export const BorderedTables: StoryFn = () => {
         <TableExampleContent />
       </Table>
       <hr />
-      <Table brTableBordered brUtilsBorder={{ color: 'primary' }}>
+      <Table brTableBordered bsJs={{ bsJsAll: { border: { color: 'primary' } } }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -314,7 +314,7 @@ export const Nesting: StoryFn = () => {
         </TableRow>
         <TableRow>
           <TableData colSpan={4}>
-            <Table brUtilsSpacing={{ margin: { bottom: 0 } }}>
+            <Table bsJs={{ bsJsAll: { spacing: { margin: { bottom: 0 } } } }}>
               <TableHead>
                 <TableRow>
                   <TableHeader scope="col">Header</TableHeader>

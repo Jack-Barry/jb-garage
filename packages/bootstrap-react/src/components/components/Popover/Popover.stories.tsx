@@ -2,12 +2,13 @@ import type { Meta, StoryFn } from '@storybook/react'
 
 import { linkToBootstrapDocs } from '../../../storybook/decorators/linkToBootstrapDocs'
 import { as } from '../../../storybook/utils'
+import { BrElement } from '../../utils/BrElement'
 import Button from '../Button/Button'
+
+import Popover from './Popover'
 import PopoverBody from './PopoverBody'
 import PopoverHeader from './PopoverHeader'
-import { BrElement } from '../../utils/BrElement'
 import { usePopover } from './usePopover'
-import Popover from './Popover'
 
 const meta: Meta = {
   title: 'Popover',
@@ -22,7 +23,7 @@ export const BaseExample: StoryFn = () => {
   const { target, floating } = usePopover()
 
   return (
-    <BrElement brUtilsSpacing={{ padding: { y: '5' } }}>
+    <BrElement bsJs={{ bsJsAll: { spacing: { padding: { y: '5' } } } }}>
       <Button ref={target.ref} {...target.getProps()} brButtonColor="danger" brButtonLg>
         Click to toggle popover
       </Button>
@@ -41,7 +42,7 @@ export const FourDirections: StoryFn = () => {
   const popoverLeft = usePopover({ placement: 'left' })
 
   return (
-    <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ padding: { y: '5' }, gap: '2' }}>
+    <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { padding: { y: '5' }, gap: '2' } } }}>
       <Button
         ref={popoverTop.target.ref}
         {...popoverTop.target.getProps()}

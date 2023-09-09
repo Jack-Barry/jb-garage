@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
+
 import Collapse, { CollapseProps } from '../Collapse/Collapse'
 
 export type NavbarCollapseProps<T extends ElementType> = CollapseProps<T>

@@ -1,5 +1,4 @@
-import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '@jb-garage/bootstrap-js/_types'
-
+import { AllBreakpointsOptions, BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 
 export type BootstrapOverflowType = LiteralUnion<'auto' | 'hidden' | 'visible' | 'scroll', string>

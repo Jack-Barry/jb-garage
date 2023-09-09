@@ -1,8 +1,9 @@
 import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
-export type ListGroupItemProps<T extends ElementType> = Omit<BrElementProps<T>, 'ref'> & {
+import { BrElement, BrElementProps } from '../../utils/BrElement'
+
+export type ListGroupItemProps<T extends ElementType> = BrElementProps<T> & {
   /**
    * Type of HTML element to render
    *
@@ -24,7 +25,7 @@ export type ListGroupItemWithRef = <Component extends ElementType = 'li'>(
  */
 const ListGroupItem: ListGroupItemWithRef = forwardRef(function ListGroupItem<
   T extends ElementType = 'li'
->(props: ListGroupItemProps<T>, ref: BrElementProps<T>['ref']) {
+>(props: ListGroupItemProps<T>, ref?: ListGroupItemProps<T>['ref']) {
   const {
     as = 'li' as ElementType,
     children,

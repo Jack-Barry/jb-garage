@@ -13,13 +13,7 @@
     "resolveJsonModule": true
   },
   "files": [],
-  "include": [
-    "./scripts/*.ts",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./.storybook/**/*.ts",
-    "src/components/utils/logger.ts"
-  ],
+  "include": ["./scripts/*.ts", "./src/**/*.ts", "./src/**/*.tsx", "./.storybook/**/*.ts"],
   "exclude": ["repos"],
   "references": [
     {

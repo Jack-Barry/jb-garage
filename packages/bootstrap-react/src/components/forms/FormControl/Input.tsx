@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type InputElementType = 'input' | 'textarea'
 export type InputProps<T extends InputElementType> = Omit<BrElementProps<T>, 'type'> & {

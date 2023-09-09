@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
+
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type NavbarProps<T extends ElementType> = BrElementProps<T> & {

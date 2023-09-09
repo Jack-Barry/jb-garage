@@ -1,8 +1,10 @@
 import { Meta, StoryFn } from '@storybook/react'
-import { useAlert } from './useAlert'
-import Alert from './Alert'
 import classNames from 'classnames'
+
 import CloseButton from '../CloseButton/CloseButton'
+
+import Alert from './Alert'
+import { useAlert } from './useAlert'
 
 const meta: Meta = {
   title: 'Alert/Controlled State',

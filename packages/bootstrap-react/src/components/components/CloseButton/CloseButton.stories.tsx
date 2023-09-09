@@ -1,6 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react'
-import CloseButton from './CloseButton'
+
 import { BrElement } from '../../utils/BrElement'
+
+import CloseButton from './CloseButton'
 
 const meta: Meta = {
   title: 'Close Button',

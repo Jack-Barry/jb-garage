@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import Image, { ImageElementType, ImageProps } from '../../content/Image/Image'
 import { ReactNode, forwardRef } from 'react'
+
+import Image, { ImageElementType, ImageProps } from '../../content/Image/Image'
 
 export type CardImageProps<T extends ImageElementType> = ImageProps<T> & {
   /** Position of the image on the card */

@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react'
+
 import Progress from './Progress'
 import ProgressStacked from './ProgressStacked'
 
@@ -49,7 +50,7 @@ export const Labels: StoryFn = () => {
         aria-label="Example with label"
         brProgressValue={10}
         brProgressBarProps={{
-          brUtilsColor: 'dark',
+          bsJs: { bsJsAll: { color: 'dark' } },
           className: 'overflow-visible'
         }}
       >
@@ -65,49 +66,49 @@ export const Backgrounds: StoryFn = () => {
       <Progress
         aria-label="Success example"
         brProgressValue={25}
-        brProgressBarProps={{ brUtilsBackground: 'success' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'success' } } }}
       />
       <Progress
         aria-label="Info example"
         brProgressValue={50}
-        brProgressBarProps={{ brUtilsBackground: 'info' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'info' } } }}
       />
       <Progress
         aria-label="Warning example"
         brProgressValue={75}
-        brProgressBarProps={{ brUtilsBackground: 'warning' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'warning' } } }}
       />
       <Progress
         aria-label="Danger example"
         brProgressValue={100}
-        brProgressBarProps={{ brUtilsBackground: 'danger' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'danger' } } }}
       />
       <hr />
       <Progress
         aria-label="Success example"
         brProgressValue={25}
-        brProgressBarProps={{ brUtilsBackground: 'success' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'success' } } }}
       >
         25%
       </Progress>
       <Progress
         aria-label="Info example"
         brProgressValue={50}
-        brProgressBarProps={{ brUtilsColor: 'dark', brUtilsBackground: 'info' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'info', color: 'dark' } } }}
       >
         50%
       </Progress>
       <Progress
         aria-label="Warning example"
         brProgressValue={75}
-        brProgressBarProps={{ brUtilsColor: 'dark', brUtilsBackground: 'warning' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'warning', color: 'dark' } } }}
       >
         75%
       </Progress>
       <Progress
         aria-label="Danger example"
         brProgressValue={100}
-        brProgressBarProps={{ brUtilsBackground: 'danger' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'danger' } } }}
       >
         100%
       </Progress>
@@ -115,7 +116,7 @@ export const Backgrounds: StoryFn = () => {
       <Progress
         aria-label="Warning example"
         brProgressValue={75}
-        brProgressBarProps={{ brUtilsColor: 'bg-warning' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { color: 'bg-warning' } } }}
       >
         75%
       </Progress>
@@ -131,13 +132,13 @@ export const MultipleBars: StoryFn = () => {
         <Progress
           aria-label="Segment two"
           brProgressValue={30}
-          brProgressBarProps={{ brUtilsBackground: 'success' }}
+          brProgressBarProps={{ bsJs: { bsJsAll: { background: 'success' } } }}
           brProgressStacked
         />
         <Progress
           aria-label="Segment three"
           brProgressValue={20}
-          brProgressBarProps={{ brUtilsBackground: 'info' }}
+          brProgressBarProps={{ bsJs: { bsJsAll: { background: 'info' } } }}
           brProgressStacked
         />
       </ProgressStacked>
@@ -158,25 +159,25 @@ export const Striped: StoryFn = () => {
         aria-label="Success striped example"
         brProgressValue={25}
         brProgressStriped
-        brProgressBarProps={{ brUtilsBackground: 'success' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'success' } } }}
       />
       <Progress
         aria-label="Info striped example"
         brProgressValue={50}
         brProgressStriped
-        brProgressBarProps={{ brUtilsBackground: 'info' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'info' } } }}
       />
       <Progress
         aria-label="Warning striped example"
         brProgressValue={75}
         brProgressStriped
-        brProgressBarProps={{ brUtilsBackground: 'warning' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'warning' } } }}
       />
       <Progress
         aria-label="Danger striped example"
         brProgressValue={100}
         brProgressStriped
-        brProgressBarProps={{ brUtilsBackground: 'danger' }}
+        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'danger' } } }}
       />
     </div>
   )

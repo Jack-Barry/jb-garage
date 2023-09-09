@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
+
 import { AccordionContextProvider } from './AccordionContext'
 
 export type AccordionProps<T extends ElementType> = BrElementProps<T> & {

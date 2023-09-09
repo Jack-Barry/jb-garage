@@ -1,13 +1,15 @@
 import { Meta, StoryFn } from '@storybook/react'
-import Alert from './Alert'
-import { useState } from 'react'
-import Button from '../Button/Button'
-import AlertLink from './AlertLink'
-import AlertHeading from './AlertHeading'
-import { BrElement } from '../../utils/BrElement'
-import Image from '../../content/Image/Image'
 import classNames from 'classnames'
+import { useState } from 'react'
+
+import Image from '../../content/Image/Image'
+import { BrElement } from '../../utils/BrElement'
+import Button from '../Button/Button'
 import CloseButton from '../CloseButton/CloseButton'
+
+import Alert from './Alert'
+import AlertHeading from './AlertHeading'
+import AlertLink from './AlertLink'
 
 const meta: Meta = {
   title: 'Alert',
@@ -100,7 +102,7 @@ export const AdditionalContent: StoryFn = () => {
         content.
       </p>
       <hr />
-      <BrElement as="p" brUtilsSpacing={{ margin: { bottom: '0' } }}>
+      <BrElement as="p" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '0' } } } }}>
         Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
       </BrElement>
     </Alert>
@@ -123,15 +125,13 @@ export const Icons: StoryFn = () => {
       </svg>
 
       <Alert
-        brUtilsDisplay="flex"
-        brUtilsFlex={{ alignItems: 'center' }}
+        bsJs={{ bsJsAll: { display: 'flex', flex: { alignItems: 'center' } } }}
         className="alert-primary"
         role="alert"
       >
         <Image
           as="svg"
-          brUtilsSpacing={{ margin: { end: '2' } }}
-          brUtilsFlex={{ shrink: false }}
+          bsJs={{ bsJsAll: { flex: { shrink: false }, spacing: { margin: { end: '2' } } } }}
           className="bi"
           role="img"
           aria-label="Info:"
@@ -141,15 +141,13 @@ export const Icons: StoryFn = () => {
         <div>An example alert with an icon</div>
       </Alert>
       <Alert
-        brUtilsDisplay="flex"
-        brUtilsFlex={{ alignItems: 'center' }}
+        bsJs={{ bsJsAll: { display: 'flex', flex: { alignItems: 'center' } } }}
         className="alert-success"
         role="alert"
       >
         <Image
           as="svg"
-          brUtilsSpacing={{ margin: { end: '2' } }}
-          brUtilsFlex={{ shrink: false }}
+          bsJs={{ bsJsAll: { flex: { shrink: false }, spacing: { margin: { end: '2' } } } }}
           className="bi"
           role="img"
           aria-label="Success:"
@@ -159,15 +157,13 @@ export const Icons: StoryFn = () => {
         <div>An example success alert with an icon</div>
       </Alert>
       <Alert
-        brUtilsDisplay="flex"
-        brUtilsFlex={{ alignItems: 'center' }}
+        bsJs={{ bsJsAll: { display: 'flex', flex: { alignItems: 'center' } } }}
         className="alert-warning"
         role="alert"
       >
         <Image
           as="svg"
-          brUtilsSpacing={{ margin: { end: '2' } }}
-          brUtilsFlex={{ shrink: false }}
+          bsJs={{ bsJsAll: { flex: { shrink: false }, spacing: { margin: { end: '2' } } } }}
           className="bi"
           role="img"
           aria-label="Warning:"
@@ -177,15 +173,13 @@ export const Icons: StoryFn = () => {
         <div>An example warning alert with an icon</div>
       </Alert>
       <Alert
-        brUtilsDisplay="flex"
-        brUtilsFlex={{ alignItems: 'center' }}
+        bsJs={{ bsJsAll: { display: 'flex', flex: { alignItems: 'center' } } }}
         className="alert-danger"
         role="alert"
       >
         <Image
           as="svg"
-          brUtilsSpacing={{ margin: { end: '2' } }}
-          brUtilsFlex={{ shrink: false }}
+          bsJs={{ bsJsAll: { flex: { shrink: false }, spacing: { margin: { end: '2' } } } }}
           className="bi"
           role="img"
           aria-label="Danger:"

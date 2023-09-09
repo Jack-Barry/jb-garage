@@ -1,32 +1,34 @@
-import type { Meta, StoryFn } from '@storybook/react'
-
-import { as } from '../../../storybook/utils'
-import Button from '../Button/Button'
-import CardBody from '../Card/CardBody'
-import Card from '../Card/Card'
-import CardTitle from './CardTitle'
-import CardText from './CardText'
-import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
-import CardSubTitle from './CardSubTitle'
-import CardLink from './CardLink'
-import CardImage from './CardImage'
+import { BsJsTextColor } from '@jb-garage/bootstrap-js/lib/bootstrap-utils/colors'
 import {
   PlaceholderImgSvgChildren,
   placeholderImgSvgProps
 } from '@jb-garage/bootstrap-react/storybook/components/PlaceholderImgSvg'
-import ListGroup from '../ListGroup/ListGroup'
-import ListGroupItem from '../ListGroup/ListGroupItem'
-import CardHeader from './CardHeader'
-import CardFooter from './CardFooter'
+import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
+import type { Meta, StoryFn } from '@storybook/react'
+
+import { as } from '../../../storybook/utils'
+import Image from '../../content/Image/Image'
 import Col from '../../layout/columns/Col'
 import Row from '../../layout/grid/Row'
+import { BrElement } from '../../utils/BrElement'
+import Button from '../Button/Button'
+import Card from '../Card/Card'
+import CardBody from '../Card/CardBody'
+import ListGroup from '../ListGroup/ListGroup'
+import ListGroupItem from '../ListGroup/ListGroupItem'
 import Nav from '../navsAndTabs/Nav/Nav'
 import NavItem from '../navsAndTabs/Nav/NavItem'
 import NavLink from '../navsAndTabs/Nav/NavLink'
-import CardImageOverlay from './CardImageOverlay'
-import Image from '../../content/Image/Image'
+
+import CardFooter from './CardFooter'
 import CardGroup from './CardGroup'
-import { BrElement } from '../../utils/BrElement'
+import CardHeader from './CardHeader'
+import CardImage from './CardImage'
+import CardImageOverlay from './CardImageOverlay'
+import CardLink from './CardLink'
+import CardSubTitle from './CardSubTitle'
+import CardText from './CardText'
+import CardTitle from './CardTitle'
 
 const meta: Meta<typeof Card> = {
   component: Card,
@@ -74,7 +76,9 @@ export const TitlesTextAndLinks: StoryFn = () => {
     <Card style={{ width: '18rem' }}>
       <CardBody>
         <CardTitle>Card title</CardTitle>
-        <CardSubTitle brUtilsSpacing={{ margin: { bottom: '2' } }} brUtilsColor="body-secondary">
+        <CardSubTitle
+          bsJs={{ bsJsAll: { color: 'body-secondary', spacing: { margin: { bottom: '2' } } } }}
+        >
           Card subtitle
         </CardSubTitle>
         <CardText>
@@ -201,7 +205,7 @@ export const HeaderAndFooter: StoryFn = () => {
         <CardBody>
           <BrElement
             as="blockquote"
-            brUtilsSpacing={{ margin: { bottom: '0' } }}
+            bsJs={{ bsJsAll: { spacing: { margin: { bottom: '0' } } } }}
             className="blockquote"
           >
             <p>A well-known quote, contained in a blockquote element.</p>
@@ -223,7 +227,7 @@ export const HeaderAndFooter: StoryFn = () => {
             Go somewhere
           </Button>
         </CardBody>
-        <BrElement as="small" brUtilsColor="body-secondary">
+        <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
           2 days ago
         </BrElement>
       </Card>
@@ -239,9 +243,9 @@ export const SizingUsingGridMarkup: StoryFn = () => {
     <Row>
       <Col
         brColsSm={6}
-        brUtilsSpacing={{
-          brAllBreakpoints: { margin: { bottom: '3' } },
-          sm: { margin: { bottom: '0' } }
+        bsJs={{
+          bsJsAll: { spacing: { margin: { bottom: '3' } } },
+          sm: { spacing: { margin: { bottom: '0' } } }
         }}
       >
         <Card>
@@ -276,7 +280,7 @@ export const SizingUsingGridMarkup: StoryFn = () => {
 export const SizingUsingUtilities: StoryFn = () => {
   return (
     <div>
-      <Card brUtilsSpacing={{ margin: { bottom: '3' } }} brUtilsSize={{ width: '75' }}>
+      <Card bsJs={{ bsJsAll: { size: { width: '75' }, spacing: { margin: { bottom: '3' } } } }}>
         <CardBody>
           <CardTitle>Card title</CardTitle>
           <CardText>
@@ -288,7 +292,7 @@ export const SizingUsingUtilities: StoryFn = () => {
         </CardBody>
       </Card>
 
-      <Card brUtilsSize={{ width: '50' }}>
+      <Card bsJs={{ bsJsAll: { size: { width: '50' } } }}>
         <CardBody>
           <CardTitle>Card title</CardTitle>
           <CardText>
@@ -320,7 +324,7 @@ export const SizingUsingCustomCss: StoryFn = () => {
 export const TextAlignment: StoryFn = () => {
   return (
     <div>
-      <Card brUtilsSpacing={{ margin: { bottom: '3' } }} style={{ width: '18rem' }}>
+      <Card bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }} style={{ width: '18rem' }}>
         <CardBody>
           <CardTitle>Special title treatment</CardTitle>
           <CardText>
@@ -332,7 +336,7 @@ export const TextAlignment: StoryFn = () => {
         </CardBody>
       </Card>
       <Card
-        brUtilsSpacing={{ margin: { bottom: '3' } }}
+        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
         className="text-center"
         style={{ width: '18rem' }}
       >
@@ -424,7 +428,7 @@ export const Navigation: StoryFn = () => {
 export const ImagesImageCaps: StoryFn = () => {
   return (
     <div>
-      <Card brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <Card bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <CardImage
           {...placeholderImgSvgProps({ width: '100%', height: '180' })}
           brCardImagePosition="top"
@@ -438,7 +442,7 @@ export const ImagesImageCaps: StoryFn = () => {
             content. This content is a little bit longer.
           </CardText>
           <CardText>
-            <BrElement as="small" brUtilsColor="body-secondary">
+            <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
               Last updated 3 mins ago
             </BrElement>
           </CardText>
@@ -452,7 +456,7 @@ export const ImagesImageCaps: StoryFn = () => {
             content. This content is a little bit longer.
           </CardText>
           <CardText>
-            <BrElement as="small" brUtilsColor="body-secondary">
+            <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
               Last updated 3 mins ago
             </BrElement>
           </CardText>
@@ -470,7 +474,7 @@ export const ImagesImageCaps: StoryFn = () => {
 
 export const ImagesImageOverlays: StoryFn = () => {
   return (
-    <Card brUtilsColor="bg-dark">
+    <Card bsJs={{ bsJsAll: { color: 'bg-dark' } }}>
       <CardImage {...placeholderImgSvgProps({ width: '100%', height: '180' })}>
         <PlaceholderImgSvgChildren text="Card image" />
       </CardImage>
@@ -490,7 +494,10 @@ export const ImagesImageOverlays: StoryFn = () => {
 
 export const Horizontal: StoryFn = () => {
   return (
-    <Card brUtilsSpacing={{ margin: { bottom: '3' } }} style={{ maxWidth: '540px' }}>
+    <Card
+      bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
+      style={{ maxWidth: '540px' }}
+    >
       <Row brRowGutter={0}>
         <Col brColsMd={4}>
           <Image
@@ -512,7 +519,7 @@ export const Horizontal: StoryFn = () => {
               content. This content is a little bit longer.
             </CardText>
             <CardText>
-              <BrElement as="small" brUtilsColor="body-secondary">
+              <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
                 Last updated 3 mins ago
               </BrElement>
             </CardText>
@@ -527,8 +534,7 @@ export const CardStylesBackgroundAndColor: StoryFn = () => {
   return (
     <div>
       <Card
-        brUtilsSpacing={{ margin: { bottom: '3' } }}
-        brUtilsColor="bg-primary"
+        bsJs={{ bsJsAll: { color: 'bg-primary', spacing: { margin: { bottom: '3' } } } }}
         style={{ maxWidth: '18rem' }}
       >
         <CardHeader>Header</CardHeader>
@@ -556,8 +562,7 @@ function BackgroundAndColorExample(props: { variant: string }) {
 
   return (
     <Card
-      brUtilsSpacing={{ margin: { bottom: '3' } }}
-      brUtilsColor={`bg-${variant}`}
+      bsJs={{ bsJsAll: { color: `bg-${variant}`, spacing: { margin: { bottom: '3' } } } }}
       style={{ maxWidth: '18rem' }}
     >
       <CardHeader>Header</CardHeader>
@@ -579,12 +584,11 @@ export const CardStylesBorder: StoryFn = () => {
   return (
     <div>
       <Card
-        brUtilsSpacing={{ margin: { bottom: '3' } }}
-        brUtilsBorder={{ color: 'primary' }}
+        bsJs={{ bsJsAll: { border: { color: 'primary' }, spacing: { margin: { bottom: '3' } } } }}
         style={{ maxWidth: '18rem' }}
       >
         <CardHeader>Header</CardHeader>
-        <CardBody brUtilsColor="primary">
+        <CardBody bsJs={{ bsJsAll: { color: 'primary' } }}>
           <CardTitle>Primary card title</CardTitle>
           <CardText>
             Some quick example text to build on the card title and make up the bulk of the card's
@@ -592,9 +596,9 @@ export const CardStylesBorder: StoryFn = () => {
           </CardText>
         </CardBody>
       </Card>
-      <BorderExample variant="secondary" brUtilsColor="secondary" />
-      <BorderExample variant="success" brUtilsColor="success" />
-      <BorderExample variant="danger" brUtilsColor="danger" />
+      <BorderExample variant="secondary" color="secondary" />
+      <BorderExample variant="success" color="success" />
+      <BorderExample variant="danger" color="danger" />
       <BorderExample variant="warning" />
       <BorderExample variant="info" />
       <BorderExample variant="light" />
@@ -603,17 +607,16 @@ export const CardStylesBorder: StoryFn = () => {
   )
 }
 
-function BorderExample(props: { variant: string; brUtilsColor?: string }) {
-  const { variant, brUtilsColor } = props
+function BorderExample(props: { variant: string; color?: BsJsTextColor }) {
+  const { variant, color } = props
 
   return (
     <Card
-      brUtilsSpacing={{ margin: { bottom: '3' } }}
-      brUtilsBorder={{ color: variant }}
+      bsJs={{ bsJsAll: { color, spacing: { margin: { bottom: '3' } } } }}
       style={{ maxWidth: '18rem' }}
     >
       <CardHeader>Header</CardHeader>
-      <CardBody brUtilsColor={brUtilsColor}>
+      <CardBody bsJs={{ bsJsAll: { color } }}>
         <CardTitle>
           {variant[0].toUpperCase()}
           {variant.slice(1)} card title
@@ -631,21 +634,20 @@ export const CardStylesMixinsUtilities: StoryFn = () => {
   return (
     <div>
       <Card
-        brUtilsSpacing={{ margin: { bottom: '3' } }}
-        brUtilsBorder={{ color: 'success' }}
+        bsJs={{ bsJsAll: { border: { color: 'success' }, spacing: { margin: { bottom: '3' } } } }}
         style={{ maxWidth: '18rem' }}
       >
-        <CardHeader brUtilsBorder={{ color: 'success' }} brUtilsBackground="transparent">
+        <CardHeader bsJs={{ bsJsAll: { background: 'transparent', border: { color: 'success' } } }}>
           Header
         </CardHeader>
-        <CardBody brUtilsColor="success">
+        <CardBody bsJs={{ bsJsAll: { color: 'success' } }}>
           <CardTitle>Success card title</CardTitle>
           <CardText>
             Some quick example text to build on the card title and make up the bulk of the card's
             content.
           </CardText>
         </CardBody>
-        <CardFooter brUtilsBorder={{ color: 'success' }} brUtilsBackground="transparent">
+        <CardFooter bsJs={{ bsJsAll: { background: 'transparent', border: { color: 'success' } } }}>
           Footer
         </CardFooter>
       </Card>
@@ -671,7 +673,7 @@ export const CardLayoutCardGroups: StoryFn = () => {
               content. This content is a little bit longer.
             </CardText>
             <CardText>
-              <BrElement as="small" brUtilsColor="body-secondary">
+              <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
                 Last updated 3 mins ago
               </BrElement>
             </CardText>
@@ -691,7 +693,7 @@ export const CardLayoutCardGroups: StoryFn = () => {
               content.
             </CardText>
             <CardText>
-              <BrElement as="small" brUtilsColor="body-secondary">
+              <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
                 Last updated 3 mins ago
               </BrElement>
             </CardText>
@@ -711,7 +713,7 @@ export const CardLayoutCardGroups: StoryFn = () => {
               content. This content is a little bit longer.
             </CardText>
             <CardText>
-              <BrElement as="small" brUtilsColor="body-secondary">
+              <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
                 Last updated 3 mins ago
               </BrElement>
             </CardText>
@@ -735,7 +737,7 @@ export const CardLayoutCardGroups: StoryFn = () => {
             </CardText>
           </CardBody>
           <CardFooter>
-            <BrElement as="small" brUtilsColor="body-secondary">
+            <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
               Last updated 3 mins ago
             </BrElement>
           </CardFooter>
@@ -755,7 +757,7 @@ export const CardLayoutCardGroups: StoryFn = () => {
             </CardText>
           </CardBody>
           <CardFooter>
-            <BrElement as="small" brUtilsColor="body-secondary">
+            <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
               Last updated 3 mins ago
             </BrElement>
           </CardFooter>
@@ -775,7 +777,7 @@ export const CardLayoutCardGroups: StoryFn = () => {
             </CardText>
           </CardBody>
           <CardFooter>
-            <BrElement as="small" brUtilsColor="body-secondary">
+            <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
               Last updated 3 mins ago
             </BrElement>
           </CardFooter>
@@ -855,7 +857,7 @@ export const CardLayoutGridCards: StoryFn = () => {
               </CardText>
             </CardBody>
             <CardFooter>
-              <BrElement as="small" brUtilsColor="body-secondary">
+              <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
                 Last updated 3 mins ago
               </BrElement>
             </CardFooter>
@@ -876,7 +878,7 @@ export const CardLayoutGridCards: StoryFn = () => {
               </CardText>
             </CardBody>
             <CardFooter>
-              <BrElement as="small" brUtilsColor="body-secondary">
+              <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
                 Last updated 3 mins ago
               </BrElement>
             </CardFooter>
@@ -899,7 +901,7 @@ export const CardLayoutGridCards: StoryFn = () => {
               </CardText>
             </CardBody>
             <CardFooter>
-              <BrElement as="small" brUtilsColor="body-secondary">
+              <BrElement as="small" bsJs={{ bsJsAll: { color: 'body-secondary' } }}>
                 Last updated 3 mins ago
               </BrElement>
             </CardFooter>

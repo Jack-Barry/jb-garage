@@ -1,8 +1,10 @@
-import { ElementType, ReactNode, forwardRef } from 'react'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
-import { useCollapse } from './useCollapse'
 import classNames from 'classnames'
+import { ElementType, ReactNode, forwardRef } from 'react'
+
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 import { useMultiRef } from '../../utils/useMultiRef'
+
+import { useCollapse } from './useCollapse'
 
 export type CollapseProps<T extends ElementType> = BrElementProps<
   T,

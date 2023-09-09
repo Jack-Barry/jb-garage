@@ -1,4 +1,4 @@
-import { AllBreakpointsOptions } from '@jb-garage/bootstrap-js/_types'
+import { AllBreakpointsOptions } from '../../_types'
 
 export function isAllBreakpointsOptions(
   options: unknown,

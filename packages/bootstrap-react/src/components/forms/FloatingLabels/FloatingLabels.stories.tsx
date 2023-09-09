@@ -1,12 +1,14 @@
 import { Meta, StoryFn } from '@storybook/react'
-import FormGroup from './FormGroup'
+
+import Col from '../../layout/columns/Col'
+import Row from '../../layout/grid/Row'
 import Input from '../FormControl/Input'
 import Label from '../FormControl/Label'
-import Select from '../Select/Select'
 import InputGroup from '../InputGroup/InputGroup'
 import InputGroupText from '../InputGroup/InputGroupText'
-import Row from '../../layout/grid/Row'
-import Col from '../../layout/columns/Col'
+import Select from '../Select/Select'
+
+import FormGroup from './FormGroup'
 
 const meta: Meta = {
   title: 'Floating Labels',
@@ -17,7 +19,10 @@ export default meta
 export const Example: StoryFn = () => {
   return (
     <div>
-      <FormGroup brFormGroupFloatingLabels brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <FormGroup
+        brFormGroupFloatingLabels
+        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
+      >
         <Input type="email" id="floatingInput" placeholder="name@example.com" />
         <Label htmlFor="floatingInput">Email address</Label>
       </FormGroup>
@@ -88,11 +93,17 @@ export const Selects: StoryFn = () => {
 export const Disabled: StoryFn = () => {
   return (
     <div>
-      <FormGroup brFormGroupFloatingLabels brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <FormGroup
+        brFormGroupFloatingLabels
+        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
+      >
         <Input type="email" id="floatingInputDisabled" placeholder="name@example.com" disabled />
         <Label htmlFor="floatingInputDisabled">Email address</Label>
       </FormGroup>
-      <FormGroup brFormGroupFloatingLabels brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <FormGroup
+        brFormGroupFloatingLabels
+        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
+      >
         <Input
           as="textarea"
           placeholder="Leave a comment here"
@@ -101,7 +112,10 @@ export const Disabled: StoryFn = () => {
         />
         <Label htmlFor="floatingTextareaDisabled">Comments</Label>
       </FormGroup>
-      <FormGroup brFormGroupFloatingLabels brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <FormGroup
+        brFormGroupFloatingLabels
+        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
+      >
         <Input
           as="textarea"
           placeholder="Leave a comment here"
@@ -131,7 +145,10 @@ export const Disabled: StoryFn = () => {
 export const ReadonlyPlaintext: StoryFn = () => {
   return (
     <div>
-      <FormGroup brUtilsSpacing={{ margin: { bottom: '3' } }} brFormGroupFloatingLabels>
+      <FormGroup
+        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
+        brFormGroupFloatingLabels
+      >
         <Input
           type="email"
           readOnly
@@ -141,7 +158,10 @@ export const ReadonlyPlaintext: StoryFn = () => {
         />
         <Label htmlFor="floatingEmptyPlaintextInput">Empty input</Label>
       </FormGroup>
-      <FormGroup brUtilsSpacing={{ margin: { bottom: '3' } }} brFormGroupFloatingLabels>
+      <FormGroup
+        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
+        brFormGroupFloatingLabels
+      >
         <Input
           type="email"
           readOnly
@@ -159,7 +179,7 @@ export const ReadonlyPlaintext: StoryFn = () => {
 export const InputGroups: StoryFn = () => {
   return (
     <div>
-      <InputGroup brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <InputGroupText>@</InputGroupText>
         <FormGroup brFormGroupFloatingLabels>
           <Input id="floatingInputGroup1" placeholder="Username" />

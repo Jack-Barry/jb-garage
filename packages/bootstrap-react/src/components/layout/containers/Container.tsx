@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import { BootstrapBreakpoint, BrElement, BrElementProps } from '../../utils/BrElement'
 import { ElementType, ReactNode, forwardRef } from 'react'
+
+import { BootstrapBreakpoint, BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type ContainerProps<T extends ElementType> = BrElementProps<T> & {
   /**

@@ -1,14 +1,15 @@
 import { Meta, StoryFn } from '@storybook/react'
-import { BrElement } from '../../utils/BrElement'
-import Label from '../FormControl/Label'
-import Input from '../FormControl/Input'
-import Row from '../../layout/grid/Row'
-import Col from '../../layout/columns/Col'
-import Select from '../Select/Select'
-import FormCheck from '../FormCheck/FormCheck'
+
 import Button from '../../components/Button/Button'
+import Col from '../../layout/columns/Col'
+import Row from '../../layout/grid/Row'
+import { BrElement } from '../../utils/BrElement'
+import FormCheck from '../FormCheck/FormCheck'
+import Input from '../FormControl/Input'
+import Label from '../FormControl/Label'
 import InputGroup from '../InputGroup/InputGroup'
 import InputGroupText from '../InputGroup/InputGroupText'
+import Select from '../Select/Select'
 
 const meta: Meta = {
   title: 'Layout',
@@ -19,11 +20,11 @@ export default meta
 export const Utilities: StoryFn = () => {
   return (
     <div>
-      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Label htmlFor="formGroupExampleInput">Example label</Label>
         <Input id="formGroupExampleInput" placeholder="Example input placeholder" />
       </BrElement>
-      <BrElement brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Label htmlFor="formGroupExampleInput2">Another label</Label>
         <Input id="formGroupExampleInput2" placeholder="Another input placeholder" />
       </BrElement>
@@ -107,7 +108,7 @@ export const Gutters: StoryFn = () => {
 export const HorizontalForm: StoryFn = () => {
   return (
     <form>
-      <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Col as="label" brColsSm={2} htmlFor="inputEmail3" className="col-form-label">
           Email
         </Col>
@@ -115,7 +116,7 @@ export const HorizontalForm: StoryFn = () => {
           <Input type="email" id="inputEmail3" />
         </Col>
       </Row>
-      <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Col as="label" brColsSm={2} htmlFor="inputPassword3" className="col-form-label">
           Password
         </Col>
@@ -123,11 +124,11 @@ export const HorizontalForm: StoryFn = () => {
           <Input type="password" id="inputPassword3" />
         </Col>
       </Row>
-      <Row as="fieldset" brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <Row as="fieldset" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Col
           as="legend"
           brColsSm={2}
-          brUtilsSpacing={{ padding: { top: '0' } }}
+          bsJs={{ bsJsAll: { spacing: { padding: { top: '0' } } } }}
           className="col-form-label"
         >
           Radios
@@ -164,7 +165,7 @@ export const HorizontalForm: StoryFn = () => {
           />
         </Col>
       </Row>
-      <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Col brColsSm={10} brColOffsetSm={2}>
           <FormCheck
             brFormCheckInputProps={{ id: 'gridCheck1' }}
@@ -182,7 +183,7 @@ export const HorizontalForm: StoryFn = () => {
 export const HorizontalFormLabelSizing: StoryFn = () => {
   return (
     <div>
-      <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Col
           as="label"
           htmlFor="colFormLabelSm"
@@ -195,7 +196,7 @@ export const HorizontalFormLabelSizing: StoryFn = () => {
           <Input type="email" brInputSm id="colFormLabelSm" placeholder="col-form-label-sm" />
         </Col>
       </Row>
-      <Row brUtilsSpacing={{ margin: { bottom: '3' } }}>
+      <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <Col as="label" htmlFor="colFormLabel" brColsSm={2} className="col-form-label">
           Email
         </Col>

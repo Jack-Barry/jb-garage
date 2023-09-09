@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type TableProps = Omit<BrElementProps<'table'>, 'as'> & {

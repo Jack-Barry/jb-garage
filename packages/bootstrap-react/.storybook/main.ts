@@ -1,5 +1,6 @@
-import { StorybookConfig } from '@storybook/react-vite'
 import { resolve } from 'path'
+
+import { StorybookConfig } from '@storybook/react-vite'
 import viteTsConfigPathsPlugin from 'vite-tsconfig-paths'
 
 const config: StorybookConfig = {
@@ -45,4 +46,5 @@ const config: StorybookConfig = {
     return config
   }
 }
+console.log({ tsconfig: resolve(__dirname, '..', 'tsconfig.json') })
 export default config

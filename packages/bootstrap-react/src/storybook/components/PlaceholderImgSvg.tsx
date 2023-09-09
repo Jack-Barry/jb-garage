@@ -1,6 +1,7 @@
-import { CSSProperties, Fragment } from 'react'
-import { ImageProps } from '../../components/content/Image/Image'
 import classNames from 'classnames'
+import { CSSProperties, Fragment } from 'react'
+
+import { ImageProps } from '../../components/content/Image/Image'
 
 /** Class used in Bootstrap docs for image placeholders */
 export const stylesBdPlaceholderImg: CSSProperties = {

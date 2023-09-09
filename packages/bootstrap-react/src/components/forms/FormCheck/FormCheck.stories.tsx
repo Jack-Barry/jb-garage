@@ -1,10 +1,11 @@
 import type { Meta, StoryFn } from '@storybook/react'
 
 import { linkToBootstrapDocs } from '../../../storybook/decorators/linkToBootstrapDocs'
+import { BrElement } from '../../utils/BrElement'
+
 import FormCheck from './FormCheck'
 import FormCheckInput from './FormCheckInput'
 import FormCheckLabel from './FormCheckLabel'
-import { BrElement } from '../../utils/BrElement'
 
 const meta: Meta<typeof FormCheck> = {
   component: FormCheck,
@@ -308,7 +309,7 @@ ToggleButtons.decorators = [
 
 export const RadioToggleButtons: StoryFn = () => {
   return (
-    <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '1' }}>
+    <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '1' } } }}>
       <FormCheckInput
         type="radio"
         className="btn-check"
@@ -360,7 +361,9 @@ ToggleButtons.decorators = [
 
 export const OutlinedStyles: StoryFn = () => {
   return (
-    <BrElement brUtilsDisplay="flex" brUtilsFlex={{ column: true }} brUtilsSpacing={{ gap: '1' }}>
+    <BrElement
+      bsJs={{ bsJsAll: { display: 'flex', flex: { column: true }, spacing: { gap: '1' } } }}
+    >
       <div>
         <FormCheckInput className="btn-check" id="btn-check-outlined" autoComplete="off" />
         <FormCheckLabel className="btn btn-outline-primary" htmlFor="btn-check-outlined">
@@ -378,7 +381,7 @@ export const OutlinedStyles: StoryFn = () => {
           Checked
         </FormCheckLabel>
       </div>
-      <BrElement brUtilsDisplay="flex" brUtilsSpacing={{ gap: '1' }}>
+      <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '1' } } }}>
         <FormCheckInput
           type="radio"
           className="btn-check"

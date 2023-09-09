@@ -1,6 +1,7 @@
 import classNames from 'classnames'
-import TableEntry, { TableEntryProps } from './TableEntry'
 import { ReactNode, forwardRef } from 'react'
+
+import TableEntry, { TableEntryProps } from './TableEntry'
 
 type TableGroupElementType = 'thead' | 'tbody' | 'tfoot'
 export type TableGroupProps<T extends TableGroupElementType> = TableEntryProps<T> & {
