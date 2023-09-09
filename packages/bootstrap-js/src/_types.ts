@@ -34,7 +34,7 @@ export type BsJsStyles = {
 }
 
 /** Options that can be applied per Bootstrap layout breakpoint */
-type IndividualBreakpointOptions = {
+export type IndividualBreakpointOptions = {
   display?: BsJsDisplayOption
   flex?: BsJsFlexOptions
   float?: BsJsFloatType

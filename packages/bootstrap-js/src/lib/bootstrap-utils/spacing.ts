@@ -1,4 +1,4 @@
-import { BsJsConfig, BsJsStyles, LiteralUnion } from '../../_types'
+import { BsJsStyles, IndividualBreakpointOptions, LiteralUnion } from '../../_types'
 import { ALL_BREAKPOINTS_KEY } from '../constants'
 import { emptyStyles } from '../utils/emptyStyles'
 
@@ -29,31 +29,16 @@ export type BsJsSpacingOptions = {
   gap?: BootstrapSpacingValue | BsJsGapConfig
 }
 
-export function bsJsSpacingStyles(config?: BsJsConfig): BsJsStyles {
-  const styles = emptyStyles()
-
-  if (!config) {
-    return styles
+export function bsJsSpacingStyles(
+  breakpoint: string,
+  options: IndividualBreakpointOptions['spacing']
+): BsJsStyles | null {
+  if (!options) {
+    return null
   }
 
-  styles.classes = Object.entries(config).reduce((result, [breakpoint, prop]) => {
-    if (!prop?.spacing) {
-      return result
-    }
-
-    const newResult = {
-      ...result,
-      ...stylesForSpacingProp(prop.spacing, breakpoint).classes
-    }
-
-    return newResult
-  }, {} as BsJsStyles['classes'])
-
-  return styles
-}
-
-function stylesForSpacingProp(prop: BsJsSpacingOptions, breakpoint?: string) {
-  const { margin, negativeMargin, padding, gap } = prop
+  const styles = emptyStyles()
+  const { margin, negativeMargin, padding, gap } = options
   const marginClasses = getSpacingClasses({ prefix: 'm', breakpoint }, margin)
   const negativeMarginClasses = getSpacingClasses(
     { prefix: 'm', valuePrefix: 'n', breakpoint },
@@ -62,14 +47,14 @@ function stylesForSpacingProp(prop: BsJsSpacingOptions, breakpoint?: string) {
   const paddingClasses = getSpacingClasses({ prefix: 'p', breakpoint }, padding)
   const gapClasses = getGapClasses(gap, breakpoint)
 
-  return {
-    classes: {
-      ...marginClasses,
-      ...negativeMarginClasses,
-      ...paddingClasses,
-      ...gapClasses
-    }
+  styles.classes = {
+    ...marginClasses,
+    ...negativeMarginClasses,
+    ...paddingClasses,
+    ...gapClasses
   }
+
+  return styles
 }
 
 function getSpacingClasses(

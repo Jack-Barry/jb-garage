@@ -35,6 +35,10 @@ export class BootstrapJs {
     }
 
     for (const [breakpoint, breakpointOptions] of Object.entries(config)) {
+      if (!breakpointOptions || isEmptyObject(breakpointOptions)) {
+        continue
+      }
+
       if (breakpoint === ALL_BREAKPOINTS_KEY) {
         const allBreakpointOptions = breakpointOptions as AllBreakpointsOptions
 
@@ -84,40 +88,32 @@ export class BootstrapJs {
         }
       }
 
-      if (breakpointOptions?.display) {
-        //
+      const display = bsJsDisplayStyles(breakpoint, breakpointOptions.display)
+      if (display) {
+        styles = mergeStyles(styles, display)
       }
 
-      if (breakpointOptions?.flex) {
-        //
+      const flex = bsJsFlexStyles(breakpoint, breakpointOptions.flex)
+      if (flex) {
+        styles = mergeStyles(styles, flex)
       }
 
-      if (breakpointOptions?.float) {
-        //
+      const float = bsJsFloatStyles(breakpoint, breakpointOptions.float)
+      if (float) {
+        styles = mergeStyles(styles, float)
       }
 
-      if (breakpointOptions?.objectFit) {
-        //
+      const objectFit = bsJsObjectFitStyles(breakpoint, breakpointOptions.objectFit)
+      if (objectFit) {
+        styles = mergeStyles(styles, objectFit)
       }
 
-      if (breakpointOptions?.spacing) {
-        //
+      const spacing = bsJsSpacingStyles(breakpoint, breakpointOptions.spacing)
+      if (spacing) {
+        styles = mergeStyles(styles, spacing)
       }
     }
 
-    const display = bsJsDisplayStyles(config)
-    const flex = bsJsFlexStyles(config)
-    const float = bsJsFloatStyles(config)
-    const objectFit = bsJsObjectFitStyles(config)
-    const spacing = bsJsSpacingStyles(config)
-
-    const bsJsStyles = [display, flex, float, objectFit, spacing].reduce<Required<BsJsStyles>>(
-      (result, { classes, inlineStyles }) => {
-        return mergeStyles(result, { classes, inlineStyles })
-      },
-      styles
-    )
-
-    return bsJsStyles
+    return styles
   }
 }
