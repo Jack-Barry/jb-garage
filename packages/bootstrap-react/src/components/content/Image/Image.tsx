@@ -1,16 +1,12 @@
-import { BsJsImageOptions } from '@jb-garage/bootstrap-js/_types'
-import classNames from 'classnames'
+import { BsJsConfig } from '@jb-garage/bootstrap-js/_types'
 import { ReactNode, forwardRef } from 'react'
 
-import { BrElement, BrElementProps, bsJsSingleton } from '../../utils/BrElement'
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type ImageElementType = 'img' | 'svg'
-export type ImageProps<T extends ImageElementType> = BrElementProps<
-  T,
-  {
-    bsJsImage?: BsJsImageOptions
-  }
->
+export type ImageProps<T extends ImageElementType> = Omit<BrElementProps<T>, 'bsJs'> & {
+  bsJs?: BsJsConfig<'image'>
+}
 
 type ImageWithRef = <Component extends ImageElementType = 'img'>(
   props: ImageProps<Component>
@@ -20,10 +16,8 @@ const Image: ImageWithRef = forwardRef(function Image<T extends ImageElementType
   props: ImageProps<T>,
   ref?: ImageProps<T>['ref']
 ) {
-  const { as = 'img' as ImageElementType, bsJsImage, className, ...rest } = props
+  const { as = 'img' as ImageElementType, ...rest } = props
 
-  const styles = bsJsSingleton.bsJsImage(bsJsImage)
-
-  return <BrElement as={as} ref={ref} className={classNames(styles.classes, className)} {...rest} />
+  return <BrElement as={as} ref={ref} {...rest} />
 })
 export default Image

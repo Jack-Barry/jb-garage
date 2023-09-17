@@ -1,5 +1,11 @@
 import { isEmptyObject } from '../../../utils-generic/src'
-import { AllBreakpointsOptions, BsJsConfig, BsJsImageOptions, BsJsStyles } from '../_types'
+import {
+  BsJsImageOptions,
+  BsJsTableEntryOptions,
+  BsJsTableGroupOptions,
+  BsJsTableOptions
+} from '../_componentTypes'
+import { AllBreakpointsOptions, BootstrapComponentType, BsJsConfig, BsJsStyles } from '../_types'
 
 import { bsJsBackgroundStyles } from './bootstrap-utils/background'
 import { bsJsBorderStyles } from './bootstrap-utils/borders'
@@ -31,7 +37,9 @@ export class BootstrapJs {
   constructor(private _prefix = 'bs') {}
 
   /** Translates provided config into Bootstrap classes and inline styles */
-  bsJs = (config: BsJsConfig = {}): BsJsStyles => {
+  bsJs = <Component extends BootstrapComponentType = 'none'>(
+    config: BsJsConfig<Component> = {}
+  ): BsJsStyles => {
     let styles = emptyStyles()
     if (isEmptyObject(config)) {
       return styles
@@ -43,7 +51,7 @@ export class BootstrapJs {
       }
 
       if (breakpoint === ALL_BREAKPOINTS_KEY) {
-        const allBreakpointOptions = breakpointOptions as AllBreakpointsOptions
+        const allBreakpointOptions = breakpointOptions as AllBreakpointsOptions<'none'>
 
         const background = bsJsBackgroundStyles(this._prefix, allBreakpointOptions.background)
         if (background) {
@@ -104,6 +112,28 @@ export class BootstrapJs {
         if (zIndex) {
           styles = mergeStyles(styles, zIndex)
         }
+
+        const imageOptions = (allBreakpointOptions as AllBreakpointsOptions<'image'>).image
+        if (imageOptions) {
+          styles = mergeStyles(styles, this._image(imageOptions))
+        }
+
+        const tableOptions = (allBreakpointOptions as AllBreakpointsOptions<'table'>).table
+        if (tableOptions) {
+          styles = mergeStyles(styles, this._table(tableOptions))
+        }
+
+        const tableEntryOptions = (allBreakpointOptions as AllBreakpointsOptions<'table-entry'>)
+          .tableEntry
+        if (tableEntryOptions) {
+          styles = mergeStyles(styles, this._tableEntry(tableEntryOptions))
+        }
+
+        const tableGroupOptions = (allBreakpointOptions as AllBreakpointsOptions<'table-group'>)
+          .tableGroup
+        if (tableGroupOptions) {
+          styles = mergeStyles(styles, this._tableGroup(tableGroupOptions))
+        }
       }
 
       const display = bsJsDisplayStyles(breakpoint, breakpointOptions.display)
@@ -145,7 +175,7 @@ export class BootstrapJs {
    *
    * - https://getbootstrap.com/docs/5.3/content/images/
    */
-  bsJsImage = (options: BsJsImageOptions = {}): BsJsStyles => {
+  private _image = (options: BsJsImageOptions = {}): BsJsStyles => {
     const styles = emptyStyles()
     if (isEmptyObject(options)) {
       return styles
@@ -157,6 +187,63 @@ export class BootstrapJs {
 
     if (options.thumbnail) {
       styles.classes['img-thumbnail'] = true
+    }
+
+    return styles
+  }
+
+  private _table = (options: BsJsTableOptions = {}): BsJsStyles => {
+    const styles = emptyStyles()
+    if (isEmptyObject(options)) {
+      return styles
+    }
+
+    if (options.striped) {
+      styles.classes['table-striped'] = true
+    }
+
+    if (options.stripedCols) {
+      styles.classes['table-striped-columns'] = true
+    }
+
+    if (options.rowHover) {
+      styles.classes['table-hover'] = true
+    }
+
+    if (options.bordered) {
+      styles.classes['table-bordered'] = true
+    }
+
+    if (options.borderless) {
+      styles.classes['table-borderless'] = true
+    }
+
+    if (options.small) {
+      styles.classes['table-sm'] = true
+    }
+
+    if (options.captionTop) {
+      styles.classes['caption-top'] = true
+    }
+
+    return styles
+  }
+
+  private _tableEntry = (options: BsJsTableEntryOptions = {}): BsJsStyles => {
+    const styles = emptyStyles()
+
+    if (options.active) {
+      styles.classes['table-active'] = true
+    }
+
+    return styles
+  }
+
+  private _tableGroup = (options: BsJsTableGroupOptions = {}): BsJsStyles => {
+    const styles = emptyStyles()
+
+    if (options.groupDivider) {
+      styles.classes['table-group-divider'] = true
     }
 
     return styles

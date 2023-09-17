@@ -1,5 +1,11 @@
 import * as CSS from 'csstype'
 
+import {
+  BsJsImageOptions,
+  BsJsTableEntryOptions,
+  BsJsTableGroupOptions,
+  BsJsTableOptions
+} from './_componentTypes'
 import { BootstrapDefaultBreakpoint } from './lib/bootstrap-utils/_types'
 import { BsJsBackgroundOptions } from './lib/bootstrap-utils/background'
 import { BsJsBorderOptions } from './lib/bootstrap-utils/borders'
@@ -46,25 +52,39 @@ export type IndividualBreakpointOptions = {
   text?: Pick<BsJsTextOptions, 'align'>
 }
 
-/** Options that can be applied to all breakpoints */
-export type AllBreakpointsOptions = IndividualBreakpointOptions & {
-  background?: BsJsBackgroundOptions
-  border?: BsJsBorderOptions
-  color?: BsJsColorOptions
-  interactions?: BsJsInteractOptions
-  link?: BsJsLinkOptions
-  overflow?: BsJsOverflowOptions
-  position?: BsJsPositionOptions
-  shadow?: BsJsShadowOptions
-  sizing?: BsJsSizeOptions
-  text?: BsJsTextOptions
-  verticalAlign?: BootstrapVerticalAlign
-  visibility?: boolean
-  zIndex?: BootstrapZIndex
-}
+export type BootstrapComponentType = 'none' | 'image' | 'table' | 'table-entry' | 'table-group'
 
-type BsJsConfigBase = {
-  [ALL_BREAKPOINTS_KEY]?: AllBreakpointsOptions
+/** Options that can be applied to all breakpoints */
+export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'none'> =
+  IndividualBreakpointOptions & {
+    background?: BsJsBackgroundOptions
+    border?: BsJsBorderOptions
+    color?: BsJsColorOptions
+    interactions?: BsJsInteractOptions
+    link?: BsJsLinkOptions
+    overflow?: BsJsOverflowOptions
+    position?: BsJsPositionOptions
+    shadow?: BsJsShadowOptions
+    sizing?: BsJsSizeOptions
+    text?: BsJsTextOptions
+    verticalAlign?: BootstrapVerticalAlign
+    visibility?: boolean
+    zIndex?: BootstrapZIndex
+  } & (Component extends 'image'
+      ? { image?: BsJsImageOptions }
+      : Component extends 'table'
+      ? { table?: BsJsTableOptions }
+      : Component extends 'table-entry'
+      ? { tableEntry?: BsJsTableEntryOptions }
+      : Component extends 'table-group'
+      ? {
+          tableEntry?: BsJsTableEntryOptions
+          tableGroup?: BsJsTableGroupOptions
+        }
+      : Record<string, unknown>)
+
+type BsJsConfigBase<Component extends BootstrapComponentType> = {
+  [ALL_BREAKPOINTS_KEY]?: AllBreakpointsOptions<Component>
 }
 
 type BsJsConfigForBreakpoints<Breakpoint extends string = BootstrapDefaultBreakpoint> = Partial<{
@@ -72,11 +92,7 @@ type BsJsConfigForBreakpoints<Breakpoint extends string = BootstrapDefaultBreakp
 }>
 
 /** Object that can be used to generate Bootstrap classes and inline styles for an HTML element */
-export type BsJsConfig<Breakpoint extends string = BootstrapDefaultBreakpoint> =
-  | BsJsConfigBase
-  | BsJsConfigForBreakpoints<Breakpoint>
-
-export type BsJsImageOptions = {
-  fluid?: boolean
-  thumbnail?: boolean
-}
+export type BsJsConfig<
+  Component extends BootstrapComponentType = 'none',
+  Breakpoint extends string = BootstrapDefaultBreakpoint
+> = BsJsConfigBase<Component> | BsJsConfigForBreakpoints<Breakpoint>

@@ -21,7 +21,7 @@ export default meta
 export const ResponsiveImages: StoryFn<typeof Image> = () => {
   return (
     <Image
-      bsJsImage={{ fluid: true }}
+      bsJs={{ bsJsAll: { image: { fluid: true } } }}
       {...placeholderImgSvgProps({ className: 'bd-placeholder-img-lg' })}
     >
       <PlaceholderImgSvgChildren text="Responsive image" />
@@ -34,7 +34,10 @@ ResponsiveImages.decorators = [
 
 export const ImageThumbnails: StoryFn = () => {
   return (
-    <Image bsJsImage={{ thumbnail: true }} {...placeholderImgSvgProps({ width: 200, height: 200 })}>
+    <Image
+      bsJs={{ bsJsAll: { image: { thumbnail: true } } }}
+      {...placeholderImgSvgProps({ width: 200, height: 200 })}
+    >
       <PlaceholderImgSvgChildren text="200x200" />
     </Image>
   )

@@ -101,7 +101,7 @@ function VariantExample(props: { variant: string }) {
 
 export const StripedRows: StoryFn = () => {
   return (
-    <Table brTableStriped>
+    <Table bsJs={{ bsJsAll: { table: { striped: true } } }}>
       <TableExampleContent />
     </Table>
   )
@@ -109,7 +109,7 @@ export const StripedRows: StoryFn = () => {
 
 export const StripedColumns: StoryFn = () => {
   return (
-    <Table brTableStripedCols>
+    <Table bsJs={{ bsJsAll: { table: { stripedCols: true } } }}>
       <TableExampleContent />
     </Table>
   )
@@ -118,19 +118,19 @@ export const StripedColumns: StoryFn = () => {
 export const StripedVariants: StoryFn = () => {
   return (
     <div>
-      <Table className="table-dark" brTableStriped>
+      <Table className="table-dark" bsJs={{ bsJsAll: { table: { striped: true } } }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" brTableStripedCols>
+      <Table className="table-dark" bsJs={{ bsJsAll: { table: { stripedCols: true } } }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-success" brTableStriped>
+      <Table className="table-success" bsJs={{ bsJsAll: { table: { striped: true } } }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-success" brTableStripedCols>
+      <Table className="table-success" bsJs={{ bsJsAll: { table: { stripedCols: true } } }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -140,15 +140,15 @@ export const StripedVariants: StoryFn = () => {
 export const HoverableRows: StoryFn = () => {
   return (
     <div>
-      <Table brTableRowHover>
+      <Table bsJs={{ bsJsAll: { table: { rowHover: true } } }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" brTableRowHover>
+      <Table className="table-dark" bsJs={{ bsJsAll: { table: { rowHover: true } } }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table brTableRowHover brTableStriped>
+      <Table bsJs={{ bsJsAll: { table: { rowHover: true, striped: true } } }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -160,7 +160,7 @@ export const TableActive: StoryFn = () => {
     <div>
       <Table>
         <TableHead>
-          <TableRow brTableEntryActive>
+          <TableRow bsJs={{ bsJsAll: { tableEntry: { active: true } } }}>
             <TableHeader scope="col">#</TableHeader>
             <TableHeader scope="col">First</TableHeader>
             <TableHeader scope="col">Last</TableHeader>
@@ -182,7 +182,7 @@ export const TableActive: StoryFn = () => {
           </TableRow>
           <TableRow>
             <TableHeader scope="row">3</TableHeader>
-            <TableData colSpan={2} brTableEntryActive>
+            <TableData colSpan={2} bsJs={{ bsJsAll: { tableEntry: { active: true } } }}>
               Larry the Bird
             </TableData>
             <TableData>@twitter</TableData>
@@ -192,7 +192,7 @@ export const TableActive: StoryFn = () => {
       <hr />
       <Table className="table-dark">
         <TableHead>
-          <TableRow brTableEntryActive>
+          <TableRow bsJs={{ bsJsAll: { tableEntry: { active: true } } }}>
             <TableHeader scope="col">#</TableHeader>
             <TableHeader scope="col">First</TableHeader>
             <TableHeader scope="col">Last</TableHeader>
@@ -214,7 +214,7 @@ export const TableActive: StoryFn = () => {
           </TableRow>
           <TableRow>
             <TableHeader scope="row">3</TableHeader>
-            <TableData colSpan={2} brTableEntryActive>
+            <TableData colSpan={2} bsJs={{ bsJsAll: { tableEntry: { active: true } } }}>
               Larry the Bird
             </TableData>
             <TableData>@twitter</TableData>
@@ -228,11 +228,11 @@ export const TableActive: StoryFn = () => {
 export const BorderedTables: StoryFn = () => {
   return (
     <div>
-      <Table brTableBordered>
+      <Table bsJs={{ bsJsAll: { table: { bordered: true } } }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table brTableBordered bsJs={{ bsJsAll: { border: { color: 'primary' } } }}>
+      <Table bsJs={{ bsJsAll: { border: { color: 'primary' }, table: { bordered: true } } }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -242,11 +242,11 @@ export const BorderedTables: StoryFn = () => {
 export const TablesWithoutBorders: StoryFn = () => {
   return (
     <div>
-      <Table brTableBorderless>
+      <Table bsJs={{ bsJsAll: { table: { borderless: true } } }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" brTableBorderless>
+      <Table className="table-dark" bsJs={{ bsJsAll: { table: { borderless: true } } }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -256,11 +256,11 @@ export const TablesWithoutBorders: StoryFn = () => {
 export const SmallTables: StoryFn = () => {
   return (
     <div>
-      <Table brTableSmall>
+      <Table bsJs={{ bsJsAll: { table: { small: true } } }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" brTableSmall>
+      <Table className="table-dark" bsJs={{ bsJsAll: { table: { small: true } } }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -271,7 +271,7 @@ export const TableGroupDividers: StoryFn = () => {
   return (
     <Table>
       <TableExampleHead />
-      <TableBody brTableGroupDivider>
+      <TableBody bsJs={{ bsJsAll: { tableGroup: { groupDivider: true } } }}>
         <TableRow>
           <TableHeader scope="row">1</TableHeader>
           <TableData>Mark</TableData>
@@ -296,7 +296,7 @@ export const TableGroupDividers: StoryFn = () => {
 
 export const Nesting: StoryFn = () => {
   return (
-    <Table brTableStriped brTableBordered>
+    <Table bsJs={{ bsJsAll: { table: { striped: true, bordered: true } } }}>
       <TableHead>
         <TableRow>
           <TableHeader scope="col">#</TableHeader>
@@ -410,12 +410,12 @@ export const AnatomyTableFoot: StoryFn = () => {
 export const Captions: StoryFn = () => {
   return (
     <div>
-      <Table brTableSmall>
+      <Table bsJs={{ bsJsAll: { table: { small: true } } }}>
         <caption>List of users</caption>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table brTableCaptionTop>
+      <Table bsJs={{ bsJsAll: { table: { captionTop: true } } }}>
         <caption>List of users</caption>
         <TableExampleContent />
       </Table>
