@@ -9,6 +9,10 @@ export function mergeStyles(configA: BsJsStyles, configB: BsJsStyles): BsJsStyle
     inlineStyles: {
       ...configA.inlineStyles,
       ...configB.inlineStyles
+    },
+    dataAttributes: {
+      ...configA.dataAttributes,
+      ...configB.dataAttributes
     }
   }
 }

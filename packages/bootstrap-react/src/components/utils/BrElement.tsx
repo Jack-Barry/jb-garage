@@ -13,10 +13,6 @@ import {
 
 export type BrElementCommonProps = {
   /**
-   * Theme to apply to the element using `bs-data-theme` attribute
-   */
-  brTheme?: 'light' | 'dark' | string
-  /**
    * Optionally, you can pass in a `BsJsConfig` object to calculate Bootstrap classes
    *   to apply on the element. Otherwise, you can still just hand-write the classes
    *   yourself as the `className` prop.
@@ -69,14 +65,14 @@ export const bsJsSingleton = new BootstrapJs()
 export const BrElement: BrComponent = forwardRef(function BrElement<
   Component extends ElementType = 'div'
 >(props: BrElementProps<Component>, ref?: BrElementProps<Component>['ref']) {
-  const { as: Component = 'div', className, style, children, brTheme, bsJs, ...rest } = props
+  const { as: Component = 'div', className, style, children, bsJs, ...rest } = props
 
   const styles = bsJsSingleton.bsJs(bsJs)
 
   return (
     <Component
       ref={ref}
-      data-bs-theme={brTheme}
+      {...styles.dataAttributes}
       className={classNames(className, styles.classes)}
       style={{ ...styles.inlineStyles, ...style }}
       {...rest}

@@ -28,6 +28,7 @@ import { bsJsVerticalAlignStyles } from './bootstrap-utils/verticalAlign'
 import { bsJsVisibilityStyles } from './bootstrap-utils/visibility'
 import { bsJsZIndexStyles } from './bootstrap-utils/zIndex'
 import { ALL_BREAKPOINTS_KEY } from './constants'
+import { bsJsTheme } from './theme'
 import { emptyStyles } from './utils/emptyStyles'
 import { mergeStyles } from './utils/mergeStyles'
 
@@ -54,6 +55,11 @@ export class BootstrapJs {
 
       if (breakpoint === ALL_BREAKPOINTS_KEY) {
         const allBreakpointOptions = breakpointOptions as AllBreakpointsOptions<'none'>
+
+        const theme = bsJsTheme(this._prefix, allBreakpointOptions.theme)
+        if (theme) {
+          styles = mergeStyles(styles, theme)
+        }
 
         // helpers
         const clearfix = bsJsClearfixStyles(allBreakpointOptions.clearfix)

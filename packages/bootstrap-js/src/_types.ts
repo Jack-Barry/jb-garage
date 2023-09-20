@@ -40,6 +40,8 @@ export type BsJsStyles = {
   classes: Record<string, boolean>
   /** Object representing inline styles that should be applied to the element */
   inlineStyles: ElementStyle
+  /** Object of `data-` prefixed attributes to apply to the element */
+  dataAttributes: Record<string, string>
 }
 
 /** Options that can be applied per Bootstrap layout breakpoint */
@@ -57,6 +59,7 @@ export type BootstrapComponentType = 'none' | 'image' | 'table' | 'table-entry' 
 /** Options that can be applied to all breakpoints */
 export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'none'> =
   IndividualBreakpointOptions & {
+    theme?: LiteralUnion<'dark' | 'light', string>
     // Helpers
     clearfix?: boolean
     visuallyHidden?: boolean

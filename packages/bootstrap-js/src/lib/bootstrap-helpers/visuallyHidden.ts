@@ -5,5 +5,5 @@ export function bsJsVisuallyHiddenStyles(applyVisuallyHidden?: boolean): BsJsSty
     return null
   }
 
-  return { classes: { 'visually-hidden': true }, inlineStyles: {} }
+  return { classes: { 'visually-hidden': true }, inlineStyles: {}, dataAttributes: {} }
 }

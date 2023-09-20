@@ -5,5 +5,5 @@ export function bsJsClearfixStyles(applyClearfix?: boolean): BsJsStyles | null {
     return null
   }
 
-  return { classes: { clearfix: true }, inlineStyles: {} }
+  return { classes: { clearfix: true }, inlineStyles: {}, dataAttributes: {} }
 }

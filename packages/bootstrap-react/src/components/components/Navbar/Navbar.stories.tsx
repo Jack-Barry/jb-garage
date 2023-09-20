@@ -395,17 +395,18 @@ export const ColorSchemes: StoryFn = () => {
     <div>
       <Navbar
         className="navbar-expand-lg"
-        brTheme="dark"
-        bsJs={{ bsJsAll: { background: 'dark', border: { bottom: true, color: 'body' } } }}
+        bsJs={{
+          bsJsAll: { background: 'dark', border: { bottom: true, color: 'body' }, theme: 'dark' }
+        }}
       >
         <ColorSchemeExampleContent />
       </Navbar>
       <hr />
-      <Navbar brTheme="dark" bsJs={{ bsJsAll: { background: 'primary' } }}>
+      <Navbar bsJs={{ bsJsAll: { background: 'primary', theme: 'dark' } }}>
         <ColorSchemeExampleContent />
       </Navbar>
       <hr />
-      <Navbar style={{ backgroundColor: '#e3f2fd' }} brTheme="light">
+      <Navbar style={{ backgroundColor: '#e3f2fd' }} bsJs={{ bsJsAll: { theme: 'light' } }}>
         <ColorSchemeExampleContent />
       </Navbar>
     </div>
@@ -718,7 +719,11 @@ export const ExternalContent: StoryFn = () => {
 
   return (
     <div>
-      <Collapse brCollapse={collapse} id="navbarToggleExternalContent" brTheme="dark">
+      <Collapse
+        brCollapse={collapse}
+        id="navbarToggleExternalContent"
+        bsJs={{ bsJsAll: { theme: 'dark' } }}
+      >
         <BrElement bsJs={{ bsJsAll: { background: 'dark', spacing: { padding: '4' } } }}>
           <BrElement as="h5" bsJs={{ bsJsAll: { color: 'body-emphasis' } }} className="h4">
             Collapsed content
