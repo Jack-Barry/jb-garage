@@ -7,6 +7,7 @@ import {
 } from '../_componentTypes'
 import { AllBreakpointsOptions, BootstrapComponentType, BsJsConfig, BsJsStyles } from '../_types'
 
+import { bsJsClearfixStyles } from './bootstrap-helpers/clearfix'
 import { bsJsBackgroundStyles } from './bootstrap-utils/background'
 import { bsJsBorderStyles } from './bootstrap-utils/borders'
 import { bsJsColorStyles } from './bootstrap-utils/colors'
@@ -53,6 +54,13 @@ export class BootstrapJs {
       if (breakpoint === ALL_BREAKPOINTS_KEY) {
         const allBreakpointOptions = breakpointOptions as AllBreakpointsOptions<'none'>
 
+        // helpers
+        const clearfix = bsJsClearfixStyles(allBreakpointOptions.clearfix)
+        if (clearfix) {
+          styles = mergeStyles(styles, clearfix)
+        }
+
+        // utilities
         const background = bsJsBackgroundStyles(this._prefix, allBreakpointOptions.background)
         if (background) {
           styles = mergeStyles(styles, background)

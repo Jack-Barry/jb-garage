@@ -267,7 +267,7 @@ export const StandaloneColumnClasses: StoryFn = () => {
         </Col>
       </div>
       <hr />
-      <BrElement brClearfix>
+      <BrElement bsJs={{ bsJsAll: { clearfix: true } }}>
         <Col
           as="svg"
           brColsMd={6}

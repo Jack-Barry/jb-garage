@@ -19,10 +19,6 @@ export type BrElementCommonProps = {
    */
   brTheme?: 'light' | 'dark' | string
   /**
-   * Apply float clearfix to element
-   */
-  brClearfix?: boolean
-  /**
    * Optionally, you can pass in a `BsJsConfig` object to calculate Bootstrap classes
    *   to apply on the element. Otherwise, you can still just hand-write the classes
    *   yourself as the `className` prop.
@@ -82,7 +78,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     children,
     brVisuallyHidden,
     brTheme,
-    brClearfix,
     bsJs,
     ...rest
   } = props
@@ -95,7 +90,6 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
       data-bs-theme={brTheme}
       className={classNames(className, {
         'visually-hidden': brVisuallyHidden,
-        clearfix: brClearfix,
         ...styles.classes
       })}
       style={{ ...styles.inlineStyles, ...style }}

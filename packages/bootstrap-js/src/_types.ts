@@ -57,6 +57,9 @@ export type BootstrapComponentType = 'none' | 'image' | 'table' | 'table-entry' 
 /** Options that can be applied to all breakpoints */
 export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'none'> =
   IndividualBreakpointOptions & {
+    // Helpers
+    clearfix?: boolean
+    // Utilities
     background?: BsJsBackgroundOptions
     border?: BsJsBorderOptions
     color?: BsJsColorOptions
