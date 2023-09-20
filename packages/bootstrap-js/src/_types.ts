@@ -59,6 +59,7 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
   IndividualBreakpointOptions & {
     // Helpers
     clearfix?: boolean
+    visuallyHidden?: boolean
     // Utilities
     background?: BsJsBackgroundOptions
     border?: BsJsBorderOptions

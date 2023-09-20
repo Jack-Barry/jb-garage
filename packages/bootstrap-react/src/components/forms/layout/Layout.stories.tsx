@@ -244,13 +244,13 @@ export const AutoSizing: StoryFn = () => {
     <div>
       <Row as="form" brRowGutter={{ x: 3, y: 2 }} className="align-items-center">
         <Col brCols="auto">
-          <Label brVisuallyHidden htmlFor="autoSizingInput">
+          <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="autoSizingInput">
             Name
           </Label>
           <Input id="autoSizingInput" placeholder="Jane Doe" />
         </Col>
         <Col brCols="auto">
-          <Label brVisuallyHidden htmlFor="autoSizingInputGroup">
+          <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="autoSizingInputGroup">
             Username
           </Label>
           <InputGroup>
@@ -259,7 +259,7 @@ export const AutoSizing: StoryFn = () => {
           </InputGroup>
         </Col>
         <Col brCols="auto">
-          <Label brVisuallyHidden htmlFor="autoSizingSelect">
+          <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="autoSizingSelect">
             Preference
           </Label>
           <Select id="autoSizingSelect">
@@ -284,13 +284,16 @@ export const AutoSizing: StoryFn = () => {
       <hr />
       <Row as="form" brRowGutter={{ x: 3, y: 2 }} className="align-items-center">
         <Col brColsSm={3}>
-          <Label brVisuallyHidden htmlFor="specificSizeInputName">
+          <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="specificSizeInputName">
             Name
           </Label>
           <Input type="text" id="specificSizeInputName" placeholder="Jane Doe" />
         </Col>
         <Col brColsSm={3}>
-          <Label brVisuallyHidden htmlFor="specificSizeInputGroupUsername">
+          <Label
+            bsJs={{ bsJsAll: { visuallyHidden: true } }}
+            htmlFor="specificSizeInputGroupUsername"
+          >
             Username
           </Label>
           <InputGroup>
@@ -299,7 +302,7 @@ export const AutoSizing: StoryFn = () => {
           </InputGroup>
         </Col>
         <Col brColsSm={3}>
-          <Label brVisuallyHidden htmlFor="specificSizeSelect">
+          <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="specificSizeSelect">
             Preference
           </Label>
           <Select id="specificSizeSelect">
@@ -329,7 +332,7 @@ export const InlineForms: StoryFn = () => {
   return (
     <Row as="form" brRowColsLg="auto" brRowGutter={3} className="align-items-center">
       <Col brCols={12}>
-        <Label brVisuallyHidden htmlFor="inlineFormInputGroupUsername">
+        <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="inlineFormInputGroupUsername">
           Username
         </Label>
         <InputGroup>
@@ -339,7 +342,7 @@ export const InlineForms: StoryFn = () => {
       </Col>
 
       <Col brCols={12}>
-        <Label brVisuallyHidden htmlFor="inlineFormSelectPref">
+        <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="inlineFormSelectPref">
           Preference
         </Label>
         <Select id="inlineFormSelectPref">

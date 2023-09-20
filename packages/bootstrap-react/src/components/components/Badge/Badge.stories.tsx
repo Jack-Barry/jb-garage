@@ -56,7 +56,7 @@ export const ExamplesPositioned: StoryFn = () => {
           className="top-0 start-100 translate-middle"
         >
           99+
-          <BrElement as="span" brVisuallyHidden>
+          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             unread messages
           </BrElement>
         </Badge>
@@ -76,7 +76,7 @@ export const ExamplesPositioned: StoryFn = () => {
           }}
           className="top-0 start-100 translate-middle rounded-circle"
         >
-          <BrElement as="span" brVisuallyHidden>
+          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             New alerts
           </BrElement>
         </BrElement>

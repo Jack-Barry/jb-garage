@@ -290,7 +290,7 @@ export const SegmentedButtons: StoryFn = () => {
           brButtonColor="outline-secondary"
           aria-expanded={isOpen1}
         >
-          <BrElement as="span" brVisuallyHidden>
+          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             Toggle Dropdown
           </BrElement>
         </DropdownToggle>
@@ -313,7 +313,7 @@ export const SegmentedButtons: StoryFn = () => {
           brButtonColor="outline-secondary"
           aria-expanded={isOpen2}
         >
-          <BrElement as="span" brVisuallyHidden>
+          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             Toggle Dropdown
           </BrElement>
         </DropdownToggle>

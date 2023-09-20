@@ -12,8 +12,6 @@ import {
 } from 'react'
 
 export type BrElementCommonProps = {
-  /** Element should be visually hidden (but present for screen readers) */
-  brVisuallyHidden?: boolean
   /**
    * Theme to apply to the element using `bs-data-theme` attribute
    */
@@ -71,16 +69,7 @@ export const bsJsSingleton = new BootstrapJs()
 export const BrElement: BrComponent = forwardRef(function BrElement<
   Component extends ElementType = 'div'
 >(props: BrElementProps<Component>, ref?: BrElementProps<Component>['ref']) {
-  const {
-    as: Component = 'div',
-    className,
-    style,
-    children,
-    brVisuallyHidden,
-    brTheme,
-    bsJs,
-    ...rest
-  } = props
+  const { as: Component = 'div', className, style, children, brTheme, bsJs, ...rest } = props
 
   const styles = bsJsSingleton.bsJs(bsJs)
 
@@ -88,10 +77,7 @@ export const BrElement: BrComponent = forwardRef(function BrElement<
     <Component
       ref={ref}
       data-bs-theme={brTheme}
-      className={classNames(className, {
-        'visually-hidden': brVisuallyHidden,
-        ...styles.classes
-      })}
+      className={classNames(className, styles.classes)}
       style={{ ...styles.inlineStyles, ...style }}
       {...rest}
     >

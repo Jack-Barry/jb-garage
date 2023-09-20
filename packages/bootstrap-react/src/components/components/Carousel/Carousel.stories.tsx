@@ -71,13 +71,13 @@ export const BasicExamples: StoryFn = () => {
       </CarouselInner>
       <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
         <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
       <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
         <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
       </CarouselControl>
@@ -158,13 +158,13 @@ export const Indicators: StoryFn = () => {
       </CarouselInner>
       <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
         <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
       <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
         <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
       </CarouselControl>
@@ -257,13 +257,13 @@ export const Captions: StoryFn = () => {
       </CarouselInner>
       <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
         <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
       <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
         <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
       </CarouselControl>
@@ -318,13 +318,13 @@ export const CrossFade: StoryFn = () => {
       </CarouselInner>
       <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
         <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
       <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
         <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
       </CarouselControl>
@@ -381,13 +381,13 @@ export const AutoPlayingCarousels: StoryFn = () => {
         </CarouselInner>
         <CarouselControl brCarouselControlDirection="prev" onClick={carousel1.prev}>
           <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
-          <BrElement as="span" brVisuallyHidden>
+          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             Previous
           </BrElement>
         </CarouselControl>
         <CarouselControl brCarouselControlDirection="next" onClick={carousel1.next}>
           <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
-          <BrElement as="span" brVisuallyHidden>
+          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             Next
           </BrElement>
         </CarouselControl>
@@ -436,13 +436,13 @@ export const AutoPlayingCarousels: StoryFn = () => {
         </CarouselInner>
         <CarouselControl brCarouselControlDirection="prev" onClick={carousel2.prev}>
           <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
-          <BrElement as="span" brVisuallyHidden>
+          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             Previous
           </BrElement>
         </CarouselControl>
         <CarouselControl brCarouselControlDirection="next" onClick={carousel2.next}>
           <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
-          <BrElement as="span" brVisuallyHidden>
+          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             Next
           </BrElement>
         </CarouselControl>
@@ -502,13 +502,13 @@ export const IndividualCarouselItemInterval: StoryFn = () => {
       </CarouselInner>
       <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
         <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
       <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
         <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
       </CarouselControl>
@@ -612,13 +612,13 @@ export const DisableTouchSwiping: StoryFn = () => {
       </CarouselInner>
       <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
         <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
       <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
         <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
-        <BrElement as="span" brVisuallyHidden>
+        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
       </CarouselControl>
