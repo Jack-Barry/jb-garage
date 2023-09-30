@@ -10,6 +10,7 @@ import { AllBreakpointsOptions, BootstrapComponentType, BsJsConfig, BsJsStyles }
 
 import { bsJsClearfixStyles } from './bootstrap-helpers/clearfix'
 import { bsJsColorAndBackgroundStyles } from './bootstrap-helpers/colorAndBackground'
+import { bsJsFocusRingStyles } from './bootstrap-helpers/focusRing'
 import { bsJsVisuallyHiddenStyles } from './bootstrap-helpers/visuallyHidden'
 import { bsJsBackgroundStyles } from './bootstrap-utils/background'
 import { bsJsBorderStyles } from './bootstrap-utils/borders'
@@ -74,6 +75,11 @@ export class BootstrapJs {
         )
         if (colorAndBackground) {
           styles = mergeStyles(styles, colorAndBackground)
+        }
+
+        const focusRing = bsJsFocusRingStyles(this._prefix, allBreakpointOptions.focusRing)
+        if (focusRing) {
+          styles = mergeStyles(styles, focusRing)
         }
 
         const visuallyHidden = bsJsVisuallyHiddenStyles(allBreakpointOptions.visuallyHidden)

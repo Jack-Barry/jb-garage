@@ -5,7 +5,7 @@ import { getOpacityStyles } from '../utils/getOpacityStyles'
 
 import { BootstrapThemeColor } from './_types'
 
-type LinkColor = BootstrapThemeColor
+type LinkColor = LiteralUnion<BootstrapThemeColor | 'body-emphasis', string>
 type LinkOpacity = LiteralUnion<'10' | '25' | '50' | '75' | '100', string | number>
 type LinkUnderlineOffset = LiteralUnion<'1' | '2' | '3', string | number>
 type LinkUnderlineOpacity = LiteralUnion<'0' | LinkOpacity, string | number>

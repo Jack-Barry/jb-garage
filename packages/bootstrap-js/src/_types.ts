@@ -7,6 +7,7 @@ import {
   BsJsTableOptions
 } from './_componentTypes'
 import { BsJsColorAndBackgroundOption } from './lib/bootstrap-helpers/colorAndBackground'
+import { BsJsFocusRingOptions } from './lib/bootstrap-helpers/focusRing'
 import { BootstrapDefaultBreakpoint } from './lib/bootstrap-utils/_types'
 import { BsJsBackgroundOptions } from './lib/bootstrap-utils/background'
 import { BsJsBorderOptions } from './lib/bootstrap-utils/borders'
@@ -63,8 +64,9 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
     theme?: LiteralUnion<'dark' | 'light', string>
     // Helpers
     clearfix?: boolean
-    visuallyHidden?: boolean
     colorAndBackground?: BsJsColorAndBackgroundOption
+    focusRing?: BsJsFocusRingOptions
+    visuallyHidden?: boolean
     // Utilities
     background?: BsJsBackgroundOptions
     border?: BsJsBorderOptions
