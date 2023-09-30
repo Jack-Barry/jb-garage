@@ -17,6 +17,7 @@ import { bsJsRatioStyles } from './bootstrap-helpers/ratio'
 import { bsJsStackStyles } from './bootstrap-helpers/stack'
 import { bsJsStretchedLinkStyles } from './bootstrap-helpers/stretchedLink'
 import { bsJsTextTruncationStyles } from './bootstrap-helpers/textTruncation'
+import { bsJsVerticalRuleStyles } from './bootstrap-helpers/verticalRule'
 import { bsJsVisuallyHiddenStyles } from './bootstrap-helpers/visuallyHidden'
 import { bsJsBackgroundStyles } from './bootstrap-utils/background'
 import { bsJsBorderStyles } from './bootstrap-utils/borders'
@@ -111,6 +112,11 @@ export class BootstrapJs {
         const textTruncation = bsJsTextTruncationStyles(allBreakpointOptions.truncateText)
         if (textTruncation) {
           styles = mergeStyles(styles, textTruncation)
+        }
+
+        const verticalRule = bsJsVerticalRuleStyles(allBreakpointOptions.truncateText)
+        if (verticalRule) {
+          styles = mergeStyles(styles, verticalRule)
         }
 
         const visuallyHidden = bsJsVisuallyHiddenStyles(allBreakpointOptions.visuallyHidden)
