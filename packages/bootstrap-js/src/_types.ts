@@ -9,6 +9,10 @@ import {
 import { BsJsColorAndBackgroundOption } from './lib/bootstrap-helpers/colorAndBackground'
 import { BsJsFocusRingOptions } from './lib/bootstrap-helpers/focusRing'
 import { BsJsIconLinkOptions } from './lib/bootstrap-helpers/iconLink'
+import {
+  BsJsPositionHelperOptions,
+  BsJsResponsivePositionHelperOptions
+} from './lib/bootstrap-helpers/position'
 import { BootstrapDefaultBreakpoint } from './lib/bootstrap-utils/_types'
 import { BsJsBackgroundOptions } from './lib/bootstrap-utils/background'
 import { BsJsBorderOptions } from './lib/bootstrap-utils/borders'
@@ -49,6 +53,9 @@ export type BsJsStyles = {
 
 /** Options that can be applied per Bootstrap layout breakpoint */
 export type IndividualBreakpointOptions = {
+  // helpers
+  positionHelper?: BsJsResponsivePositionHelperOptions
+  // utils
   display?: BsJsDisplayOption
   flex?: BsJsFlexOptions
   float?: BsJsFloatType
@@ -68,6 +75,7 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
     colorAndBackground?: BsJsColorAndBackgroundOption
     focusRing?: BsJsFocusRingOptions
     iconLink?: BsJsIconLinkOptions
+    positionHelper?: BsJsPositionHelperOptions
     visuallyHidden?: boolean
     // Utilities
     background?: BsJsBackgroundOptions

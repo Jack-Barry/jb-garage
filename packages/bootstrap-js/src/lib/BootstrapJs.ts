@@ -12,6 +12,7 @@ import { bsJsClearfixStyles } from './bootstrap-helpers/clearfix'
 import { bsJsColorAndBackgroundStyles } from './bootstrap-helpers/colorAndBackground'
 import { bsJsFocusRingStyles } from './bootstrap-helpers/focusRing'
 import { bsJsIconLinkStyles } from './bootstrap-helpers/iconLink'
+import { bsJsPositionHelperStyles } from './bootstrap-helpers/position'
 import { bsJsVisuallyHiddenStyles } from './bootstrap-helpers/visuallyHidden'
 import { bsJsBackgroundStyles } from './bootstrap-utils/background'
 import { bsJsBorderStyles } from './bootstrap-utils/borders'
@@ -175,6 +176,11 @@ export class BootstrapJs {
         if (tableGroupOptions) {
           styles = mergeStyles(styles, this._tableGroup(tableGroupOptions))
         }
+      }
+
+      const positionHelper = bsJsPositionHelperStyles(breakpoint, breakpointOptions.positionHelper)
+      if (positionHelper) {
+        styles = mergeStyles(styles, positionHelper)
       }
 
       const display = bsJsDisplayStyles(breakpoint, breakpointOptions.display)
