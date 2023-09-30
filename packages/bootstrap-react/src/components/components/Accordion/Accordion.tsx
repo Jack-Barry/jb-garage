@@ -1,3 +1,4 @@
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
@@ -5,9 +6,8 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 import { AccordionContextProvider } from './AccordionContext'
 
-export type AccordionProps<T extends ElementType> = BrElementProps<T> & {
-  /** Apply flush styling to the accordion */
-  brAccordionFlush?: boolean
+export type AccordionProps<T extends ElementType> = Omit<BrElementProps<T>, 'bsJs'> & {
+  bsJs?: BsJsConfig<'accordion'>
   /**
    * Do not collapse other accordion items when opening another
    *
@@ -31,24 +31,12 @@ const Accordion: AccordionWithRef = forwardRef(function Accordion<T extends Elem
     as = 'div' as ElementType,
     className,
     children,
-    brAccordionFlush,
     brAccordionAlwaysOpen = false,
     ...rest
   } = props
 
   return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames(
-        'accordion',
-        {
-          'accordion-flush': brAccordionFlush
-        },
-        className
-      )}
-      {...rest}
-    >
+    <BrElement as={as} ref={ref} className={classNames('accordion', className)} {...rest}>
       <AccordionContextProvider maxOneOpen={!brAccordionAlwaysOpen}>
         {children}
       </AccordionContextProvider>

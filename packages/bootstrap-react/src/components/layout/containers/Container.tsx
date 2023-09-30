@@ -1,4 +1,4 @@
-import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js/lib/bootstrap-utils/_types'
+import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
 

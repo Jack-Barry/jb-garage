@@ -24,7 +24,7 @@ const AccordionCollapse: AccordionCollapseWithRef = forwardRef(function Accordio
     as = 'div' as ElementType,
     className,
     brCollapse,
-    brAccordionCollapseDefaultOpen: brAccordionCollapseDefaultOpen,
+    brAccordionCollapseDefaultOpen,
     ...rest
   } = props
   const { updateCollapse, removeCollapse } = useParentAccordion()

@@ -1,4 +1,4 @@
-import { BsJsConfig } from '@jb-garage/bootstrap-js/_types'
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'

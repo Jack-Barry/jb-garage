@@ -1,6 +1,10 @@
-import { BsJsTextColor } from '@jb-garage/bootstrap-js/lib/bootstrap-utils/colors'
 import type { Meta, StoryFn } from '@storybook/react'
 
+import {
+  PlaceholderImgSvgChildren,
+  placeholderImgSvgProps
+} from '../../../storybook/components/PlaceholderImgSvg'
+import { linkToBootstrapDocs } from '../../../storybook/decorators/linkToBootstrapDocs'
 import { as } from '../../../storybook/utils'
 import Image from '../../content/Image/Image'
 import Col from '../../layout/columns/Col'
@@ -14,11 +18,6 @@ import ListGroupItem from '../ListGroup/ListGroupItem'
 import Nav from '../navsAndTabs/Nav/Nav'
 import NavItem from '../navsAndTabs/Nav/NavItem'
 import NavLink from '../navsAndTabs/Nav/NavLink'
-import {
-  PlaceholderImgSvgChildren,
-  placeholderImgSvgProps
-} from '../storybook/components/PlaceholderImgSvg'
-import { linkToBootstrapDocs } from '../storybook/decorators/linkToBootstrapDocs'
 
 import CardFooter from './CardFooter'
 import CardGroup from './CardGroup'
@@ -607,7 +606,7 @@ export const CardStylesBorder: StoryFn = () => {
   )
 }
 
-function BorderExample(props: { variant: string; color?: BsJsTextColor }) {
+function BorderExample(props: { variant: string; color?: string }) {
   const { variant, color } = props
 
   return (

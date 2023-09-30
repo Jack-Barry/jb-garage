@@ -1,6 +1,8 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
 
 import {
+  BsJsAccordionButtonOptions,
+  BsJsAccordionOptions,
   BsJsImageOptions,
   BsJsTableEntryOptions,
   BsJsTableGroupOptions,
@@ -185,6 +187,20 @@ export class BootstrapJs {
           styles = mergeStyles(styles, zIndex)
         }
 
+        // component styles
+        const accordionOptions = (allBreakpointOptions as AllBreakpointsOptions<'accordion'>)
+          .accordion
+        if (accordionOptions) {
+          styles = mergeStyles(styles, this._accordion(accordionOptions))
+        }
+
+        const accordionButtonOptions = (
+          allBreakpointOptions as AllBreakpointsOptions<'accordion-button'>
+        ).accordionButton
+        if (accordionButtonOptions) {
+          styles = mergeStyles(styles, this._accordionButton(accordionButtonOptions))
+        }
+
         const imageOptions = (allBreakpointOptions as AllBreakpointsOptions<'image'>).image
         if (imageOptions) {
           styles = mergeStyles(styles, this._image(imageOptions))
@@ -242,6 +258,36 @@ export class BootstrapJs {
       if (text) {
         styles = mergeStyles(styles, text)
       }
+    }
+
+    return styles
+  }
+
+  private _accordion = (options: BsJsAccordionOptions = {}): BsJsStyles => {
+    const styles = emptyStyles()
+    if (isEmptyObject(options)) {
+      return styles
+    }
+
+    if (options.flush) {
+      styles.classes['accordion-flush'] = true
+    }
+
+    return styles
+  }
+
+  private _accordionButton = (options: BsJsAccordionButtonOptions = {}): BsJsStyles => {
+    const styles = emptyStyles()
+    if (isEmptyObject(options)) {
+      return styles
+    }
+
+    if (options.collapsed) {
+      styles.classes['collapsed'] = true
+    }
+
+    if (options.asBtn) {
+      styles.classes['btn'] = true
     }
 
     return styles

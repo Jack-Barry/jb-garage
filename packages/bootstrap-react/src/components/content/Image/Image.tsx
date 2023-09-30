@@ -1,4 +1,4 @@
-import { BsJsConfig } from '@jb-garage/bootstrap-js/_types'
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import { ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'

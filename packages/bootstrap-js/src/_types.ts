@@ -1,6 +1,8 @@
 import * as CSS from 'csstype'
 
 import {
+  BsJsAccordionButtonOptions,
+  BsJsAccordionOptions,
   BsJsImageOptions,
   BsJsTableEntryOptions,
   BsJsTableGroupOptions,
@@ -66,7 +68,14 @@ export type IndividualBreakpointOptions = {
   text?: Pick<BsJsTextOptions, 'align'>
 }
 
-export type BootstrapComponentType = 'none' | 'image' | 'table' | 'table-entry' | 'table-group'
+export type BootstrapComponentType =
+  | 'none'
+  | 'accordion'
+  | 'accordion-button'
+  | 'image'
+  | 'table'
+  | 'table-entry'
+  | 'table-group'
 
 /** Options that can be applied to all breakpoints */
 export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'none'> =
@@ -98,7 +107,11 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
     verticalAlign?: BootstrapVerticalAlign
     visibility?: boolean
     zIndex?: BootstrapZIndex
-  } & (Component extends 'image'
+  } & (Component extends 'accordion'
+      ? { accordion?: BsJsAccordionOptions }
+      : Component extends 'accordion-button'
+      ? { accordionButton?: BsJsAccordionButtonOptions }
+      : Component extends 'image'
       ? { image?: BsJsImageOptions }
       : Component extends 'table'
       ? { table?: BsJsTableOptions }
