@@ -8,6 +8,7 @@ import {
 } from './_componentTypes'
 import { BsJsColorAndBackgroundOption } from './lib/bootstrap-helpers/colorAndBackground'
 import { BsJsFocusRingOptions } from './lib/bootstrap-helpers/focusRing'
+import { BsJsIconLinkOptions } from './lib/bootstrap-helpers/iconLink'
 import { BootstrapDefaultBreakpoint } from './lib/bootstrap-utils/_types'
 import { BsJsBackgroundOptions } from './lib/bootstrap-utils/background'
 import { BsJsBorderOptions } from './lib/bootstrap-utils/borders'
@@ -66,6 +67,7 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
     clearfix?: boolean
     colorAndBackground?: BsJsColorAndBackgroundOption
     focusRing?: BsJsFocusRingOptions
+    iconLink?: BsJsIconLinkOptions
     visuallyHidden?: boolean
     // Utilities
     background?: BsJsBackgroundOptions
