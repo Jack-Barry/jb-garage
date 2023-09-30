@@ -9,6 +9,7 @@ import {
 import { AllBreakpointsOptions, BootstrapComponentType, BsJsConfig, BsJsStyles } from '../_types'
 
 import { bsJsClearfixStyles } from './bootstrap-helpers/clearfix'
+import { bsJsColorAndBackgroundStyles } from './bootstrap-helpers/colorAndBackground'
 import { bsJsVisuallyHiddenStyles } from './bootstrap-helpers/visuallyHidden'
 import { bsJsBackgroundStyles } from './bootstrap-utils/background'
 import { bsJsBorderStyles } from './bootstrap-utils/borders'
@@ -66,6 +67,13 @@ export class BootstrapJs {
         const clearfix = bsJsClearfixStyles(allBreakpointOptions.clearfix)
         if (clearfix) {
           styles = mergeStyles(styles, clearfix)
+        }
+
+        const colorAndBackground = bsJsColorAndBackgroundStyles(
+          allBreakpointOptions.colorAndBackground
+        )
+        if (colorAndBackground) {
+          styles = mergeStyles(styles, colorAndBackground)
         }
 
         const visuallyHidden = bsJsVisuallyHiddenStyles(allBreakpointOptions.visuallyHidden)
