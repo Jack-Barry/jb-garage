@@ -13,6 +13,7 @@ import { bsJsColorAndBackgroundStyles } from './bootstrap-helpers/colorAndBackgr
 import { bsJsFocusRingStyles } from './bootstrap-helpers/focusRing'
 import { bsJsIconLinkStyles } from './bootstrap-helpers/iconLink'
 import { bsJsPositionHelperStyles } from './bootstrap-helpers/position'
+import { bsJsRatioStyles } from './bootstrap-helpers/ratio'
 import { bsJsVisuallyHiddenStyles } from './bootstrap-helpers/visuallyHidden'
 import { bsJsBackgroundStyles } from './bootstrap-utils/background'
 import { bsJsBorderStyles } from './bootstrap-utils/borders'
@@ -87,6 +88,11 @@ export class BootstrapJs {
         const iconLink = bsJsIconLinkStyles(this._prefix, allBreakpointOptions.iconLink)
         if (iconLink) {
           styles = mergeStyles(styles, iconLink)
+        }
+
+        const ratio = bsJsRatioStyles(this._prefix, allBreakpointOptions.ratio)
+        if (ratio) {
+          styles = mergeStyles(styles, ratio)
         }
 
         const visuallyHidden = bsJsVisuallyHiddenStyles(allBreakpointOptions.visuallyHidden)

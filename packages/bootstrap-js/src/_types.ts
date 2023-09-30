@@ -13,6 +13,7 @@ import {
   BsJsPositionHelperOptions,
   BsJsResponsivePositionHelperOptions
 } from './lib/bootstrap-helpers/position'
+import { BsJsRatioOptions } from './lib/bootstrap-helpers/ratio'
 import { BootstrapDefaultBreakpoint } from './lib/bootstrap-utils/_types'
 import { BsJsBackgroundOptions } from './lib/bootstrap-utils/background'
 import { BsJsBorderOptions } from './lib/bootstrap-utils/borders'
@@ -76,6 +77,7 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
     focusRing?: BsJsFocusRingOptions
     iconLink?: BsJsIconLinkOptions
     positionHelper?: BsJsPositionHelperOptions
+    ratio?: BsJsRatioOptions
     visuallyHidden?: boolean
     // Utilities
     background?: BsJsBackgroundOptions
