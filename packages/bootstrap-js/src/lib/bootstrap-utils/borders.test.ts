@@ -19,14 +19,16 @@ describe('Bootstrap Utilities: Borders', () => {
     test('sets border class when value is true', () => {
       expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: true } })).toStrictEqual({
         classes: { border: true },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
 
     test('sets border-0 class when value is false', () => {
       expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: false } })).toStrictEqual({
         classes: { border: true, 'border-0': true },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })
@@ -36,7 +38,8 @@ describe('Bootstrap Utilities: Borders', () => {
       test('sets border width', () => {
         expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { width: '0' } } })).toStrictEqual({
           classes: { border: true, 'border-0': true },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         })
       })
     })
@@ -45,7 +48,8 @@ describe('Bootstrap Utilities: Borders', () => {
       test('sets border width', () => {
         expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { width: '1' } } })).toStrictEqual({
           classes: { border: true, 'border-1': true },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         })
       })
     })
@@ -54,14 +58,16 @@ describe('Bootstrap Utilities: Borders', () => {
       test('does not set roundedness if rounded is false', () => {
         expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { radius: false } } })).toStrictEqual({
           classes: { rounded: false },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         })
       })
 
       test('sets roundedness if rounded is true', () => {
         expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { radius: true } } })).toStrictEqual({
           classes: { rounded: true },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         })
       })
     })
@@ -70,7 +76,8 @@ describe('Bootstrap Utilities: Borders', () => {
       test('sets roundedness appropriately', () => {
         expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { radius: 'circle' } } })).toStrictEqual({
           classes: { 'rounded-circle': true },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         })
       })
     })
@@ -79,7 +86,8 @@ describe('Bootstrap Utilities: Borders', () => {
       test('sets roundedness appropriately', () => {
         expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { radius: 0 } } })).toStrictEqual({
           classes: { 'rounded-0': true },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         })
       })
     })
@@ -89,14 +97,16 @@ describe('Bootstrap Utilities: Borders', () => {
         test('provides opacity as CSS variable', () => {
           expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { opacity: 0.9 } } })).toStrictEqual({
             classes: {},
-            inlineStyles: { '--bs-border-opacity': 0.9 }
+            inlineStyles: { '--bs-border-opacity': 0.9 },
+            dataAttributes: {}
           })
 
           expect(
             new BootstrapJs('custom').bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { opacity: 0.9 } } })
           ).toStrictEqual({
             classes: {},
-            inlineStyles: { '--custom-border-opacity': 0.9 }
+            inlineStyles: { '--custom-border-opacity': 0.9 },
+            dataAttributes: {}
           })
         })
       })
@@ -105,7 +115,8 @@ describe('Bootstrap Utilities: Borders', () => {
         test('provides opacity as class name', () => {
           expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { opacity: 1 } } })).toStrictEqual({
             classes: { 'border-opacity-100': true },
-            inlineStyles: {}
+            inlineStyles: {},
+            dataAttributes: {}
           })
         })
       })
@@ -114,7 +125,8 @@ describe('Bootstrap Utilities: Borders', () => {
         test('provides opacity as class name', () => {
           expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { opacity: 100 } } })).toStrictEqual({
             classes: { 'border-opacity-100': true },
-            inlineStyles: {}
+            inlineStyles: {},
+            dataAttributes: {}
           })
         })
       })
@@ -128,7 +140,8 @@ describe('Bootstrap Utilities: Borders', () => {
               bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { opacity: '0.9' } } })
             ).toStrictEqual({
               classes: {},
-              inlineStyles: { '--bs-border-opacity': 0.9 }
+              inlineStyles: { '--bs-border-opacity': 0.9 },
+              dataAttributes: {}
             })
 
             expect(
@@ -137,7 +150,8 @@ describe('Bootstrap Utilities: Borders', () => {
               })
             ).toStrictEqual({
               classes: {},
-              inlineStyles: { '--custom-border-opacity': 0.9 }
+              inlineStyles: { '--custom-border-opacity': 0.9 },
+              dataAttributes: {}
             })
           })
         })
@@ -146,7 +160,8 @@ describe('Bootstrap Utilities: Borders', () => {
           test('provides opacity as class name', () => {
             expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { opacity: '1' } } })).toStrictEqual({
               classes: { 'border-opacity-100': true },
-              inlineStyles: {}
+              inlineStyles: {},
+              dataAttributes: {}
             })
           })
         })
@@ -157,7 +172,8 @@ describe('Bootstrap Utilities: Borders', () => {
               bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { opacity: '100' } } })
             ).toStrictEqual({
               classes: { 'border-opacity-100': true },
-              inlineStyles: {}
+              inlineStyles: {},
+              dataAttributes: {}
             })
           })
         })
@@ -167,7 +183,8 @@ describe('Bootstrap Utilities: Borders', () => {
         test('provides opacity as CSS variable', () => {
           expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { opacity: '90%' } } })).toStrictEqual({
             classes: {},
-            inlineStyles: { '--bs-border-opacity': 0.9 }
+            inlineStyles: { '--bs-border-opacity': 0.9 },
+            dataAttributes: {}
           })
 
           expect(
@@ -176,7 +193,8 @@ describe('Bootstrap Utilities: Borders', () => {
             })
           ).toStrictEqual({
             classes: {},
-            inlineStyles: { '--custom-border-opacity': 0.9 }
+            inlineStyles: { '--custom-border-opacity': 0.9 },
+            dataAttributes: {}
           })
         })
       })
@@ -186,7 +204,8 @@ describe('Bootstrap Utilities: Borders', () => {
       test('uses color for border', () => {
         expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { color: 'primary' } } })).toStrictEqual({
           classes: { border: true, 'border-primary': true },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         })
       })
     })
@@ -200,7 +219,8 @@ describe('Bootstrap Utilities: Borders', () => {
               'border-top-0': false,
               border: false
             },
-            inlineStyles: {}
+            inlineStyles: {},
+            dataAttributes: {}
           })
         })
 
@@ -211,7 +231,8 @@ describe('Bootstrap Utilities: Borders', () => {
               'border-top-0': true,
               border: true
             },
-            inlineStyles: {}
+            inlineStyles: {},
+            dataAttributes: {}
           })
         })
       })
@@ -222,7 +243,8 @@ describe('Bootstrap Utilities: Borders', () => {
             bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { border: { bottom: { width: '0' } } } })
           ).toStrictEqual({
             classes: { 'border-bottom-0': true },
-            inlineStyles: {}
+            inlineStyles: {},
+            dataAttributes: {}
           })
         })
       })

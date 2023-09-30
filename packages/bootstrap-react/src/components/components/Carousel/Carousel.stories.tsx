@@ -1,9 +1,9 @@
+import { Meta, StoryFn } from '@storybook/react'
+
 import {
   PlaceholderImgSvgChildren,
   placeholderImgSvgProps
-} from '@jb-garage/bootstrap-react/storybook/components/PlaceholderImgSvg'
-import { Meta, StoryFn } from '@storybook/react'
-
+} from '../../../storybook/components/PlaceholderImgSvg'
 import Image from '../../content/Image/Image'
 import { BrElement } from '../../utils/BrElement'
 

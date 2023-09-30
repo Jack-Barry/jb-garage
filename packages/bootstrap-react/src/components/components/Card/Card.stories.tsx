@@ -1,9 +1,4 @@
 import { BsJsTextColor } from '@jb-garage/bootstrap-js/lib/bootstrap-utils/colors'
-import {
-  PlaceholderImgSvgChildren,
-  placeholderImgSvgProps
-} from '@jb-garage/bootstrap-react/storybook/components/PlaceholderImgSvg'
-import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
 import type { Meta, StoryFn } from '@storybook/react'
 
 import { as } from '../../../storybook/utils'
@@ -19,6 +14,11 @@ import ListGroupItem from '../ListGroup/ListGroupItem'
 import Nav from '../navsAndTabs/Nav/Nav'
 import NavItem from '../navsAndTabs/Nav/NavItem'
 import NavLink from '../navsAndTabs/Nav/NavLink'
+import {
+  PlaceholderImgSvgChildren,
+  placeholderImgSvgProps
+} from '../storybook/components/PlaceholderImgSvg'
+import { linkToBootstrapDocs } from '../storybook/decorators/linkToBootstrapDocs'
 
 import CardFooter from './CardFooter'
 import CardGroup from './CardGroup'

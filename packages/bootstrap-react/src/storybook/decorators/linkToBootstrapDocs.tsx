@@ -1,5 +1,6 @@
-import { BrElement } from '@jb-garage/bootstrap-react/components/utils/BrElement'
 import { Decorator } from '@storybook/react'
+
+import { BrElement } from '../../components/utils/BrElement'
 
 export function linkToBootstrapDocs(href: string, text?: string): Decorator {
   return function (Story, Context) {

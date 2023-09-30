@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+
 import { ThemeSwitcherContext } from './ThemeSwitcherContext'
 
 /** Hook for interacting with `ThemeSwitcherContext` state */

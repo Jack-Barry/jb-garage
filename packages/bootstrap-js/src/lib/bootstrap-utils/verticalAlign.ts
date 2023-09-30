@@ -1,5 +1,4 @@
-import { BsJsStyles, LiteralUnion } from '@jb-garage/bootstrap-js/_types'
-
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 
 export type BootstrapVerticalAlign = LiteralUnion<

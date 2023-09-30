@@ -1,9 +1,9 @@
+import type { Meta, StoryFn } from '@storybook/react'
+
 import {
   PlaceholderImgSvgChildren,
   placeholderImgSvgProps
-} from '@jb-garage/bootstrap-react/storybook/components/PlaceholderImgSvg'
-import type { Meta, StoryFn } from '@storybook/react'
-
+} from '../../../storybook/components/PlaceholderImgSvg'
 import { BrElement } from '../../utils/BrElement'
 import Container from '../containers/Container'
 import Row from '../grid/Row'

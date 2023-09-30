@@ -1,5 +1,4 @@
-import { BsJsStyles } from '@jb-garage/bootstrap-js/_types'
-
+import { BsJsStyles } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 
 export function bsJsVisibilityStyles(visibility?: boolean): BsJsStyles | null {

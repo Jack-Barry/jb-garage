@@ -13,8 +13,8 @@
     "resolveJsonModule": true
   },
   "files": [],
-  "include": ["./scripts/*.ts", "./src/**/*.ts", "./src/**/*.tsx", "./.storybook/**/*.ts"],
-  "exclude": ["repos"],
+  "include": ["src/*", "src/**/*"],
+  "exclude": [],
   "references": [
     {
       "path": "./tsconfig.lib.json"

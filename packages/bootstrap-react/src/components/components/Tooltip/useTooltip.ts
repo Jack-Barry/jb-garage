@@ -2,7 +2,7 @@ import {
   FLOATING_TRIGGER_DEFAULTS,
   UseFloatingElementOptions,
   useFloatingElement
-} from '@jb-garage/bootstrap-react/hooks/useFloatingElement'
+} from '../../../hooks/useFloatingElement'
 
 const TOOLTIP_TRIGGER_DEFAULTS = FLOATING_TRIGGER_DEFAULTS
 

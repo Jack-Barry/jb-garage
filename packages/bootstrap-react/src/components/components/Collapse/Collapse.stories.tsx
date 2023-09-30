@@ -1,6 +1,6 @@
-import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
 import type { Meta, StoryFn } from '@storybook/react'
 
+import { linkToBootstrapDocs } from '../../../storybook/decorators/linkToBootstrapDocs'
 import { as } from '../../../storybook/utils'
 import Col from '../../layout/columns/Col'
 import Row from '../../layout/grid/Row'

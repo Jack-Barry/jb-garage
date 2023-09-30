@@ -1,7 +1,4 @@
-import {
-  UseFloatingElementOptions,
-  useFloatingElement
-} from '@jb-garage/bootstrap-react/hooks/useFloatingElement'
+import { UseFloatingElementOptions, useFloatingElement } from '../../../hooks/useFloatingElement'
 
 type UsePopoverOptions = UseFloatingElementOptions & {
   /**

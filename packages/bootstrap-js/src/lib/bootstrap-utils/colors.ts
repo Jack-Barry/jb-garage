@@ -52,7 +52,7 @@ export function bsJsColorStyles(prefix: string, color?: BsJsColorOptions): BsJsS
   }
 
   if (typeof color === 'string') {
-    return { classes: { [`text-${color}`]: true }, inlineStyles: {} }
+    return { classes: { [`text-${color}`]: true }, inlineStyles: {}, dataAttributes: {} }
   }
 
   if (isEmptyObject(color)) {

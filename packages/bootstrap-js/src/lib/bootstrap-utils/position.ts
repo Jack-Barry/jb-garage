@@ -27,7 +27,7 @@ export function bsJsPositionStyles(options?: BsJsPositionOptions): BsJsStyles | 
   }
 
   if (typeof options === 'string') {
-    return { classes: { [`position-${options}`]: true }, inlineStyles: {} }
+    return { classes: { [`position-${options}`]: true }, inlineStyles: {}, dataAttributes: {} }
   }
 
   const { position, start, top, end, bottom, translateMiddle, translateMiddleX, translateMiddleY } =

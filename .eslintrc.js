@@ -30,6 +30,13 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['*.json'],
+      parser: 'jsonc-eslint-parser',
+      rules: {
+        '@nx/dependency-checks': 'error'
+      }
+    },
+    {
       env: {
         node: true
       },

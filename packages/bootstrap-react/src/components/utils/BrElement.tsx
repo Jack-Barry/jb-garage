@@ -1,6 +1,5 @@
 // Heavily inspired by https://blog.logrocket.com/build-strongly-typed-polymorphic-components-react-typescript/#supporting-refs-polymorphic-components
-import { BsJsConfig } from '@jb-garage/bootstrap-js/_types'
-import { BootstrapJs } from '@jb-garage/bootstrap-js/index'
+import { BsJsConfig, BootstrapJs } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import {
   ComponentPropsWithRef,
@@ -20,7 +19,7 @@ export type BrElementCommonProps = {
   bsJs?: BsJsConfig
 }
 
-export type BrPropsWithAs<Component extends ElementType | undefined> = {
+export type BrPropsWithAs<Component extends ElementType> = {
   /** Type of HTML element to render */
   as?: Component
 } & BrElementCommonProps
@@ -33,7 +32,7 @@ export type BrPropsWithAs<Component extends ElementType | undefined> = {
 type BrPropsToOmit<Component extends ElementType, Props> = keyof (BrPropsWithAs<Component> & Props)
 
 /** Type of `ref` that can be used based on element type */
-export type BrRef<Component extends ElementType | undefined> = Component extends ElementType
+export type BrRef<Component extends ElementType> = Component extends ElementType
   ? ComponentPropsWithRef<Component>['ref']
   : never
 

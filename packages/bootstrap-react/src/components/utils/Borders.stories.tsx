@@ -1,10 +1,10 @@
-import {
-  PlaceholderImgSvgChildren,
-  placeholderImgSvgProps
-} from '@jb-garage/bootstrap-react/storybook/components/PlaceholderImgSvg'
 import { Meta, StoryFn } from '@storybook/react'
 import { CSSProperties } from 'react'
 
+import {
+  PlaceholderImgSvgChildren,
+  placeholderImgSvgProps
+} from '../../storybook/components/PlaceholderImgSvg'
 import Image from '../content/Image/Image'
 import Input from '../forms/FormControl/Input'
 import Label from '../forms/FormControl/Label'

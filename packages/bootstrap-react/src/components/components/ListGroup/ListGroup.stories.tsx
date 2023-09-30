@@ -1,8 +1,8 @@
-import { useTabs } from '@jb-garage/bootstrap-react/hooks/useTabs'
-import { linkToBootstrapDocs } from '@jb-garage/bootstrap-react/storybook/decorators/linkToBootstrapDocs'
 import type { Meta, StoryFn } from '@storybook/react'
 import { MouseEvent } from 'react'
 
+import { useTabs } from '../../../hooks/useTabs'
+import { linkToBootstrapDocs } from '../../../storybook/decorators/linkToBootstrapDocs'
 import { as } from '../../../storybook/utils'
 import FormCheck from '../../forms/FormCheck/FormCheck'
 import Col from '../../layout/columns/Col'

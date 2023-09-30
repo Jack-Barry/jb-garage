@@ -6,5 +6,8 @@
     "type": "git",
     "url": "https://github.com/jack-barry/jb-garage.git",
     "directory": "packages/bootstrap-react"
+  },
+  "dependencies": {
+    "@jb-garage/bootstrap-js": "0.0.1"
   }
 }

@@ -1,9 +1,9 @@
-import { BrElement } from '@jb-garage/bootstrap-react/components/utils/BrElement'
-import { useTabs } from '@jb-garage/bootstrap-react/hooks/useTabs'
 import { Meta, StoryFn } from '@storybook/react'
 import classNames from 'classnames'
 import { MouseEvent } from 'react'
 
+import { BrElement } from '../../../../components/utils/BrElement'
+import { useTabs } from '../../../../hooks/useTabs'
 import DropdownDivider from '../../Dropdown/DropdownDivider'
 import DropdownItem from '../../Dropdown/DropdownItem'
 import DropdownMenu from '../../Dropdown/DropdownMenu'

@@ -51,7 +51,7 @@ export function bsJsBackgroundStyles(
   }
 
   if (typeof background === 'string') {
-    return { classes: { [`bg-${background}`]: true }, inlineStyles: {} }
+    return { classes: { [`bg-${background}`]: true }, inlineStyles: {}, dataAttributes: {} }
   }
 
   if (isEmptyObject(background)) {
@@ -65,10 +65,14 @@ export function bsJsBackgroundStyles(
   }
 
   if (opacity === undefined && gradient === undefined) {
-    return { classes: { [`bg-${color}`]: true }, inlineStyles: {} }
+    return { classes: { [`bg-${color}`]: true }, inlineStyles: {}, dataAttributes: {} }
   }
 
-  const styles: BsJsStyles = { classes: { [`bg-${color}`]: true }, inlineStyles: {} }
+  const styles: BsJsStyles = {
+    classes: { [`bg-${color}`]: true },
+    inlineStyles: {},
+    dataAttributes: {}
+  }
 
   if (typeof gradient === 'boolean') {
     styles.classes['bg-gradient'] = gradient

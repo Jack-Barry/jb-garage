@@ -11,7 +11,7 @@ describe('Bootstrap Utilities: Background', () => {
 
   describe('when no value is provided', () => {
     test('returns empty objects', () => {
-      expect(bs.bsJs()).toStrictEqual({ classes: {}, inlineStyles: {} })
+      expect(bs.bsJs()).toStrictEqual({ classes: {}, inlineStyles: {}, dataAttributes: {} })
     })
   })
 
@@ -19,7 +19,8 @@ describe('Bootstrap Utilities: Background', () => {
     test('returns appropriate background class', () => {
       expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: 'test' } })).toStrictEqual({
         classes: { 'bg-test': true },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })
@@ -35,7 +36,8 @@ describe('Bootstrap Utilities: Background', () => {
     test('returns appropriate background class', () => {
       expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test' } } })).toStrictEqual({
         classes: { 'bg-test': true },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
 
@@ -67,7 +69,8 @@ describe('Bootstrap Utilities: Background', () => {
               bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: 1 } } })
             ).toStrictEqual({
               classes: { 'bg-test': true, 'bg-opacity-100': true },
-              inlineStyles: {}
+              inlineStyles: {},
+              dataAttributes: {}
             })
           })
         })
@@ -78,7 +81,8 @@ describe('Bootstrap Utilities: Background', () => {
               bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: 100 } } })
             ).toStrictEqual({
               classes: { 'bg-test': true, 'bg-opacity-100': true },
-              inlineStyles: {}
+              inlineStyles: {},
+              dataAttributes: {}
             })
           })
         })
@@ -114,7 +118,8 @@ describe('Bootstrap Utilities: Background', () => {
                 bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', opacity: '1' } } })
               ).toStrictEqual({
                 classes: { 'bg-test': true, 'bg-opacity-100': true },
-                inlineStyles: {}
+                inlineStyles: {},
+                dataAttributes: {}
               })
             })
           })
@@ -127,7 +132,8 @@ describe('Bootstrap Utilities: Background', () => {
                 })
               ).toStrictEqual({
                 classes: { 'bg-test': true, 'bg-opacity-100': true },
-                inlineStyles: {}
+                inlineStyles: {},
+                dataAttributes: {}
               })
             })
           })
@@ -161,7 +167,8 @@ describe('Bootstrap Utilities: Background', () => {
           bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', gradient: true } } })
         ).toStrictEqual({
           classes: { 'bg-test': true, 'bg-gradient': true },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         })
       })
 
@@ -170,7 +177,8 @@ describe('Bootstrap Utilities: Background', () => {
           bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { background: { color: 'test', gradient: false } } })
         ).toStrictEqual({
           classes: { 'bg-test': true, 'bg-gradient': false },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         })
       })
     })

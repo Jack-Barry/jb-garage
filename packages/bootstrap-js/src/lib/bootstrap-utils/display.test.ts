@@ -37,7 +37,8 @@ describe('Bootstrap Utilities: Display', () => {
           'd-xl-inline-block': true,
           'd-xxl-inline-flex': true
         },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })

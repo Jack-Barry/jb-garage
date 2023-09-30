@@ -1,5 +1,4 @@
-import { BsJsStyles, LiteralUnion } from '@jb-garage/bootstrap-js/_types'
-
+import { BsJsStyles, LiteralUnion } from '../../_types'
 import { emptyStyles } from '../utils/emptyStyles'
 
 export type BootstrapZIndex = LiteralUnion<'n1' | '0' | '1' | '2' | '3', number | string>

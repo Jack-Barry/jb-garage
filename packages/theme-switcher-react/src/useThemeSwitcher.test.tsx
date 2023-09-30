@@ -1,7 +1,6 @@
 import { EventEmitter } from 'node:events'
 
 import { act, renderHook } from '@testing-library/react'
-
 import { DEFAULT_THEME_KEY } from 'packages/theme-switcher/src/storage'
 
 import { ThemeSwitcherContextProvider } from './ThemeSwitcherContext'

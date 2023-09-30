@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jb-garage/bootstrap-js/*": ["packages/bootstrap-js/src/*"],
+      "@jb-garage/bootstrap-js": ["packages/bootstrap-js/src/index.ts"],
       "@jb-garage/bootstrap-react/*": ["packages/bootstrap-react/src/*"],
       "@jb-garage/bootstrap/*": ["packages/bootstrap/*"],
       "@jb-garage/style-dictionary/*": ["dist/packages/style-dictionary/*"],
@@ -26,7 +26,7 @@
       "@jb-garage/utils-node": ["packages/utils-node/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"],
+  "exclude": ["node_modules", "tmp", "dist"],
   "ts-node": {
     "experimentalSpecifierResolution": "node"
   }

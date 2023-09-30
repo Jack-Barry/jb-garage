@@ -30,7 +30,7 @@ export function bsJsLinkStyles(options?: BsJsLinkOptions): BsJsStyles | null {
   }
 
   if (typeof options === 'string') {
-    return { classes: { [`link-${options}`]: true }, inlineStyles: {} }
+    return { classes: { [`link-${options}`]: true }, inlineStyles: {}, dataAttributes: {} }
   }
 
   if (isEmptyObject(options)) {

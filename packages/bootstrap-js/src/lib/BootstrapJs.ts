@@ -1,4 +1,5 @@
-import { isEmptyObject } from '../../../utils-generic/src'
+import { isEmptyObject } from '@jb-garage/utils-generic'
+
 import {
   BsJsImageOptions,
   BsJsTableEntryOptions,

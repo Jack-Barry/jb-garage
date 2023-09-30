@@ -25,7 +25,8 @@ describe('BootstrapJs Class', () => {
           classes: {
             'img-fluid': true
           },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         }
       )
     })
@@ -37,7 +38,8 @@ describe('BootstrapJs Class', () => {
         classes: {
           'img-thumbnail': true
         },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })
@@ -77,7 +79,8 @@ describe('BootstrapJs Class', () => {
           'table-sm': true,
           'caption-top': true
         },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })
@@ -105,7 +108,8 @@ describe('BootstrapJs Class', () => {
         classes: {
           'table-active': true
         },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })
@@ -133,7 +137,8 @@ describe('BootstrapJs Class', () => {
         classes: {
           'table-group-divider': true
         },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })

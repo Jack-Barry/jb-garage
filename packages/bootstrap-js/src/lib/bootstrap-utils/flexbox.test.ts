@@ -12,7 +12,8 @@ describe('Bootstrap Utilities: Flexbox', () => {
     test('returns empty object', () => {
       expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { flex: undefined } })).toStrictEqual({
         classes: {},
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })
@@ -51,7 +52,8 @@ describe('Bootstrap Utilities: Flexbox', () => {
           'flex-nowrap': true,
           'order-first': true
         },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })
@@ -112,7 +114,8 @@ describe('Bootstrap Utilities: Flexbox', () => {
           'order-xl-first': true,
           'order-xxl-last': true
         },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })

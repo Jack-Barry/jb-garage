@@ -13,7 +13,7 @@ export function bsJsOverflowStyles(options?: BsJsOverflowOptions): BsJsStyles | 
   }
 
   if (typeof options === 'string') {
-    return { classes: { [`overflow-${options}`]: true }, inlineStyles: {} }
+    return { classes: { [`overflow-${options}`]: true }, inlineStyles: {}, dataAttributes: {} }
   }
 
   const styles = emptyStyles()

@@ -12,7 +12,8 @@ describe('Bootstrap Utilities: Colors', () => {
     test('returns empty object', () => {
       expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { color: undefined } })).toStrictEqual({
         classes: {},
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })
@@ -21,7 +22,8 @@ describe('Bootstrap Utilities: Colors', () => {
     test('sets text color class', () => {
       expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { color: 'stuff' } })).toStrictEqual({
         classes: { 'text-stuff': true },
-        inlineStyles: {}
+        inlineStyles: {},
+        dataAttributes: {}
       })
     })
   })
@@ -31,7 +33,8 @@ describe('Bootstrap Utilities: Colors', () => {
       test('sets color for text', () => {
         expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { color: { color: 'stuff' } } })).toStrictEqual({
           classes: { 'text-stuff': true },
-          inlineStyles: {}
+          inlineStyles: {},
+          dataAttributes: {}
         })
       })
     })
@@ -42,14 +45,16 @@ describe('Bootstrap Utilities: Colors', () => {
           test('provides opacity as CSS variable', () => {
             expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { color: { opacity: 0.9 } } })).toStrictEqual({
               classes: {},
-              inlineStyles: { '--bs-text-opacity': 0.9 }
+              inlineStyles: { '--bs-text-opacity': 0.9 },
+              dataAttributes: {}
             })
 
             expect(
               new BootstrapJs('custom').bsJs({ [ALL_BREAKPOINTS_KEY]: { color: { opacity: 0.9 } } })
             ).toStrictEqual({
               classes: {},
-              inlineStyles: { '--custom-text-opacity': 0.9 }
+              inlineStyles: { '--custom-text-opacity': 0.9 },
+              dataAttributes: {}
             })
           })
         })
@@ -58,7 +63,8 @@ describe('Bootstrap Utilities: Colors', () => {
           test('provides opacity as class name', () => {
             expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { color: { opacity: 1 } } })).toStrictEqual({
               classes: { 'text-opacity-100': true },
-              inlineStyles: {}
+              inlineStyles: {},
+              dataAttributes: {}
             })
           })
         })
@@ -67,7 +73,8 @@ describe('Bootstrap Utilities: Colors', () => {
           test('provides opacity as class name', () => {
             expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { color: { opacity: 100 } } })).toStrictEqual({
               classes: { 'text-opacity-100': true },
-              inlineStyles: {}
+              inlineStyles: {},
+              dataAttributes: {}
             })
           })
         })
@@ -81,7 +88,8 @@ describe('Bootstrap Utilities: Colors', () => {
                 bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { color: { opacity: '0.9' } } })
               ).toStrictEqual({
                 classes: {},
-                inlineStyles: { '--bs-text-opacity': 0.9 }
+                inlineStyles: { '--bs-text-opacity': 0.9 },
+                dataAttributes: {}
               })
 
               expect(
@@ -90,7 +98,8 @@ describe('Bootstrap Utilities: Colors', () => {
                 })
               ).toStrictEqual({
                 classes: {},
-                inlineStyles: { '--custom-text-opacity': 0.9 }
+                inlineStyles: { '--custom-text-opacity': 0.9 },
+                dataAttributes: {}
               })
             })
           })
@@ -100,7 +109,8 @@ describe('Bootstrap Utilities: Colors', () => {
               expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { color: { opacity: '1' } } })).toStrictEqual(
                 {
                   classes: { 'text-opacity-100': true },
-                  inlineStyles: {}
+                  inlineStyles: {},
+                  dataAttributes: {}
                 }
               )
             })
@@ -112,7 +122,8 @@ describe('Bootstrap Utilities: Colors', () => {
                 bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { color: { opacity: '100' } } })
               ).toStrictEqual({
                 classes: { 'text-opacity-100': true },
-                inlineStyles: {}
+                inlineStyles: {},
+                dataAttributes: {}
               })
             })
           })
@@ -123,7 +134,8 @@ describe('Bootstrap Utilities: Colors', () => {
             expect(bs.bsJs({ [ALL_BREAKPOINTS_KEY]: { color: { opacity: '90%' } } })).toStrictEqual(
               {
                 classes: {},
-                inlineStyles: { '--bs-text-opacity': 0.9 }
+                inlineStyles: { '--bs-text-opacity': 0.9 },
+                dataAttributes: {}
               }
             )
 
@@ -133,7 +145,8 @@ describe('Bootstrap Utilities: Colors', () => {
               })
             ).toStrictEqual({
               classes: {},
-              inlineStyles: { '--custom-text-opacity': 0.9 }
+              inlineStyles: { '--custom-text-opacity': 0.9 },
+              dataAttributes: {}
             })
           })
         })

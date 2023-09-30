@@ -11,7 +11,7 @@
     "allowSyntheticDefaultImports": true
   },
   "files": [],
-  "include": [],
+  "include": ["src/*", "src/**/*"],
   "references": [
     {
       "path": "./tsconfig.lib.json"

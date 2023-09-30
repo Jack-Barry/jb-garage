@@ -1,4 +1,4 @@
-import { BsJsStyles } from '@jb-garage/bootstrap-js/_types'
+import { BsJsStyles } from '../../_types'
 
 export function bsJsClearfixStyles(applyClearfix?: boolean): BsJsStyles | null {
   if (!applyClearfix) {
