@@ -15,6 +15,7 @@ import { bsJsIconLinkStyles } from './bootstrap-helpers/iconLink'
 import { bsJsPositionHelperStyles } from './bootstrap-helpers/position'
 import { bsJsRatioStyles } from './bootstrap-helpers/ratio'
 import { bsJsStackStyles } from './bootstrap-helpers/stack'
+import { bsJsStretchedLinkStyles } from './bootstrap-helpers/stretchedLink'
 import { bsJsVisuallyHiddenStyles } from './bootstrap-helpers/visuallyHidden'
 import { bsJsBackgroundStyles } from './bootstrap-utils/background'
 import { bsJsBorderStyles } from './bootstrap-utils/borders'
@@ -99,6 +100,11 @@ export class BootstrapJs {
         const stack = bsJsStackStyles(allBreakpointOptions.stack)
         if (stack) {
           styles = mergeStyles(styles, stack)
+        }
+
+        const stretchLink = bsJsStretchedLinkStyles(allBreakpointOptions.stretchLink)
+        if (stretchLink) {
+          styles = mergeStyles(styles, stretchLink)
         }
 
         const visuallyHidden = bsJsVisuallyHiddenStyles(allBreakpointOptions.visuallyHidden)

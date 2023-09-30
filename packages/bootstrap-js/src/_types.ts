@@ -80,6 +80,7 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
     positionHelper?: BsJsPositionHelperOptions
     ratio?: BsJsRatioOptions
     stack?: BsJsStackDirection
+    stretchLink?: boolean
     visuallyHidden?: boolean
     // Utilities
     background?: BsJsBackgroundOptions
