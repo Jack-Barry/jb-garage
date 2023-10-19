@@ -29,6 +29,7 @@ import { BootstrapVerticalAlign } from './lib/bootstrap-utils/verticalAlign'
 import { BootstrapZIndex } from './lib/bootstrap-utils/zIndex'
 import { BsJsAccordionButtonOptions, BsJsAccordionOptions } from './lib/component-utils/accordion'
 import { BsJsAlertOptions } from './lib/component-utils/alert'
+import { BsJsBreadcrumbItemOptions, BsJsBreadcrumbsOptions } from './lib/component-utils/breadcrumb'
 import { BsJsImageOptions } from './lib/component-utils/image'
 import {
   BsJsTableEntryOptions,
@@ -73,6 +74,8 @@ export type BootstrapComponentType =
   | 'accordion'
   | 'accordion-button'
   | 'alert'
+  | 'breadcrumb'
+  | 'breadcrumb-item'
   | 'image'
   | 'table'
   | 'table-entry'
@@ -114,6 +117,10 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
       ? { accordionButton?: BsJsAccordionButtonOptions }
       : Component extends 'alert'
       ? { alert?: BsJsAlertOptions }
+      : Component extends 'breadcrumb'
+      ? { breadcrumbs?: BsJsBreadcrumbsOptions }
+      : Component extends 'breadcrumb-item'
+      ? { breadcrumbItem?: BsJsBreadcrumbItemOptions }
       : Component extends 'image'
       ? { image?: BsJsImageOptions }
       : Component extends 'table'

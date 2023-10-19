@@ -33,6 +33,7 @@ import { bsJsVisibilityStyles } from './bootstrap-utils/visibility'
 import { bsJsZIndexStyles } from './bootstrap-utils/zIndex'
 import { accordionStyles, accordionButtonStyles } from './component-utils/accordion'
 import { alertStyles } from './component-utils/alert'
+import { breadcrumbItemStyles, breadcrumbsStyles } from './component-utils/breadcrumb'
 import { imageStyles } from './component-utils/image'
 import { tableStyles, tableEntryStyles, tableGroupStyles } from './component-utils/table'
 import { ALL_BREAKPOINTS_KEY } from './constants'
@@ -200,6 +201,19 @@ export class BootstrapJs {
         const alertOptions = (allBreakpointOptions as AllBreakpointsOptions<'alert'>).alert
         if (alertOptions) {
           styles = mergeStyles(styles, alertStyles(alertOptions))
+        }
+
+        const breadcrumbsOptions = (allBreakpointOptions as AllBreakpointsOptions<'breadcrumb'>)
+          .breadcrumbs
+        if (breadcrumbsOptions) {
+          styles = mergeStyles(styles, breadcrumbsStyles(this._prefix, breadcrumbsOptions))
+        }
+
+        const breadcrumbItemOptions = (
+          allBreakpointOptions as AllBreakpointsOptions<'breadcrumb-item'>
+        ).breadcrumbItem
+        if (breadcrumbItemOptions) {
+          styles = mergeStyles(styles, breadcrumbItemStyles(breadcrumbItemOptions))
         }
 
         const imageOptions = (allBreakpointOptions as AllBreakpointsOptions<'image'>).image

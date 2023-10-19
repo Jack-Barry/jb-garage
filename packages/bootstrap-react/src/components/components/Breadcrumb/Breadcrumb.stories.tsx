@@ -15,7 +15,9 @@ export const Example: StoryFn = () => {
     <div>
       <Breadcrumbs>
         <BreadcrumbList>
-          <BreadcrumbItem brBreadcrumbItemActive>Home</BreadcrumbItem>
+          <BreadcrumbItem bsJs={{ bsJsAll: { breadcrumbItem: { active: true } } }}>
+            Home
+          </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
 
@@ -24,7 +26,9 @@ export const Example: StoryFn = () => {
           <BreadcrumbItem>
             <a href="#">Home</a>
           </BreadcrumbItem>
-          <BreadcrumbItem brBreadcrumbItemActive>Library</BreadcrumbItem>
+          <BreadcrumbItem bsJs={{ bsJsAll: { breadcrumbItem: { active: true } } }}>
+            Library
+          </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
 
@@ -36,7 +40,9 @@ export const Example: StoryFn = () => {
           <BreadcrumbItem>
             <a href="#">Library</a>
           </BreadcrumbItem>
-          <BreadcrumbItem brBreadcrumbItemActive>Data</BreadcrumbItem>
+          <BreadcrumbItem bsJs={{ bsJsAll: { breadcrumbItem: { active: true } } }}>
+            Data
+          </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
     </div>
@@ -46,30 +52,45 @@ export const Example: StoryFn = () => {
 export const Dividers: StoryFn = () => {
   return (
     <div>
-      <Breadcrumbs brBreadcrumbsDivider="'>'">
+      <Breadcrumbs bsJs={{ bsJsAll: { breadcrumbs: { divider: "'>'" } } }}>
         <BreadcrumbList>
           <BreadcrumbItem>
             <a href="#">Home</a>
           </BreadcrumbItem>
-          <BreadcrumbItem brBreadcrumbItemActive>Library</BreadcrumbItem>
+          <BreadcrumbItem bsJs={{ bsJsAll: { breadcrumbItem: { active: true } } }}>
+            Library
+          </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
       <hr />
-      <Breadcrumbs brBreadcrumbsDivider="url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;)">
+      <Breadcrumbs
+        bsJs={{
+          bsJsAll: {
+            breadcrumbs: {
+              divider:
+                "url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;)"
+            }
+          }
+        }}
+      >
         <BreadcrumbList>
           <BreadcrumbItem>
             <a href="#">Home</a>
           </BreadcrumbItem>
-          <BreadcrumbItem brBreadcrumbItemActive>Library</BreadcrumbItem>
+          <BreadcrumbItem bsJs={{ bsJsAll: { breadcrumbItem: { active: true } } }}>
+            Library
+          </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
       <hr />
-      <Breadcrumbs brBreadcrumbsDivider="''">
+      <Breadcrumbs bsJs={{ bsJsAll: { breadcrumbs: { divider: "''" } } }}>
         <BreadcrumbList>
           <BreadcrumbItem>
             <a href="#">Home</a>
           </BreadcrumbItem>
-          <BreadcrumbItem brBreadcrumbItemActive>Library</BreadcrumbItem>
+          <BreadcrumbItem bsJs={{ bsJsAll: { breadcrumbItem: { active: true } } }}>
+            Library
+          </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumbs>
     </div>

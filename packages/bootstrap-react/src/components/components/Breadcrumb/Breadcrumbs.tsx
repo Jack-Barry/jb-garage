@@ -1,3 +1,4 @@
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
@@ -12,8 +13,7 @@ export type BreadcrumbsProps<T extends ElementType> = BrElementProps<
      * @default "nav"
      */
     as?: T
-    /** Divider to use in between breadcrumb items */
-    brBreadcrumbsDivider?: string
+    bsJs?: BsJsConfig<'breadcrumb'>
   }
 >
 
@@ -31,23 +31,15 @@ const Breadcrumbs: BreadcrumbsWithRef = forwardRef(function Breadcrumbs<
     as = 'nav' as ElementType,
     className,
     children,
-    style,
-    brBreadcrumbsDivider,
     'aria-label': ariaLabel = 'breadcrumb',
     ...rest
   } = props
-
-  const usedStyle = { ...style }
-  if (typeof brBreadcrumbsDivider === 'string') {
-    usedStyle['--bs-breadcrumb-divider'] = brBreadcrumbsDivider
-  }
 
   return (
     <BrElement
       as={as}
       ref={ref}
       className={classNames('breadcrumb', className)}
-      style={usedStyle}
       aria-label={ariaLabel}
       {...rest}
     >

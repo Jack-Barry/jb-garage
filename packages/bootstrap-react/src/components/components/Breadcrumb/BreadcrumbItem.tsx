@@ -1,4 +1,6 @@
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
+import { AllBreakpointsOptions } from 'packages/bootstrap-js/src/_types'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -12,8 +14,7 @@ export type BreadcrumbItemProps<T extends ElementType> = BrElementProps<
      * @default "li"
      */
     as?: T
-    /** Item is currently active */
-    brBreadcrumbItemActive?: boolean
+    bsJs?: BsJsConfig<'breadcrumb-item'>
   }
 >
 
@@ -27,12 +28,13 @@ type BreadcrumbItemWithRef = <Component extends ElementType = 'li'>(
 const BreadcrumbItem: BreadcrumbItemWithRef = forwardRef(function BreadcrumbItem<
   T extends ElementType = 'li'
 >(props: BreadcrumbItemProps<T>, ref?: BreadcrumbItemProps<T>['ref']) {
+  const isActive = (props.bsJs?.bsJsAll as AllBreakpointsOptions<'breadcrumb-item'>).breadcrumbItem
+    ?.active
   const {
     as = 'li' as ElementType,
     className,
     children,
-    brBreadcrumbItemActive,
-    'aria-current': ariaCurrent = brBreadcrumbItemActive ? 'page' : undefined,
+    'aria-current': ariaCurrent = isActive ? 'page' : undefined,
     ...rest
   } = props
 
@@ -40,7 +42,7 @@ const BreadcrumbItem: BreadcrumbItemWithRef = forwardRef(function BreadcrumbItem
     <BrElement
       as={as}
       ref={ref}
-      className={classNames('breadcrumb-item', { active: brBreadcrumbItemActive }, className)}
+      className={classNames('breadcrumb-item', className)}
       aria-current={ariaCurrent}
       {...rest}
     >
