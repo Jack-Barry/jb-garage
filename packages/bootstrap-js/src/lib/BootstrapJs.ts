@@ -1,13 +1,5 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
 
-import {
-  BsJsAccordionButtonOptions,
-  BsJsAccordionOptions,
-  BsJsImageOptions,
-  BsJsTableEntryOptions,
-  BsJsTableGroupOptions,
-  BsJsTableOptions
-} from '../_componentTypes'
 import { AllBreakpointsOptions, BootstrapComponentType, BsJsConfig, BsJsStyles } from '../_types'
 
 import { bsJsClearfixStyles } from './bootstrap-helpers/clearfix'
@@ -39,6 +31,10 @@ import { bsJsTextStyles } from './bootstrap-utils/text'
 import { bsJsVerticalAlignStyles } from './bootstrap-utils/verticalAlign'
 import { bsJsVisibilityStyles } from './bootstrap-utils/visibility'
 import { bsJsZIndexStyles } from './bootstrap-utils/zIndex'
+import { accordionStyles, accordionButtonStyles } from './component-utils/accordion'
+import { alertStyles } from './component-utils/alert'
+import { imageStyles } from './component-utils/image'
+import { tableStyles, tableEntryStyles, tableGroupStyles } from './component-utils/table'
 import { ALL_BREAKPOINTS_KEY } from './constants'
 import { bsJsTheme } from './theme'
 import { emptyStyles } from './utils/emptyStyles'
@@ -191,36 +187,41 @@ export class BootstrapJs {
         const accordionOptions = (allBreakpointOptions as AllBreakpointsOptions<'accordion'>)
           .accordion
         if (accordionOptions) {
-          styles = mergeStyles(styles, this._accordion(accordionOptions))
+          styles = mergeStyles(styles, accordionStyles(accordionOptions))
         }
 
         const accordionButtonOptions = (
           allBreakpointOptions as AllBreakpointsOptions<'accordion-button'>
         ).accordionButton
         if (accordionButtonOptions) {
-          styles = mergeStyles(styles, this._accordionButton(accordionButtonOptions))
+          styles = mergeStyles(styles, accordionButtonStyles(accordionButtonOptions))
+        }
+
+        const alertOptions = (allBreakpointOptions as AllBreakpointsOptions<'alert'>).alert
+        if (alertOptions) {
+          styles = mergeStyles(styles, alertStyles(alertOptions))
         }
 
         const imageOptions = (allBreakpointOptions as AllBreakpointsOptions<'image'>).image
         if (imageOptions) {
-          styles = mergeStyles(styles, this._image(imageOptions))
+          styles = mergeStyles(styles, imageStyles(imageOptions))
         }
 
         const tableOptions = (allBreakpointOptions as AllBreakpointsOptions<'table'>).table
         if (tableOptions) {
-          styles = mergeStyles(styles, this._table(tableOptions))
+          styles = mergeStyles(styles, tableStyles(tableOptions))
         }
 
         const tableEntryOptions = (allBreakpointOptions as AllBreakpointsOptions<'table-entry'>)
           .tableEntry
         if (tableEntryOptions) {
-          styles = mergeStyles(styles, this._tableEntry(tableEntryOptions))
+          styles = mergeStyles(styles, tableEntryStyles(tableEntryOptions))
         }
 
         const tableGroupOptions = (allBreakpointOptions as AllBreakpointsOptions<'table-group'>)
           .tableGroup
         if (tableGroupOptions) {
-          styles = mergeStyles(styles, this._tableGroup(tableGroupOptions))
+          styles = mergeStyles(styles, tableGroupStyles(tableGroupOptions))
         }
       }
 
@@ -258,115 +259,6 @@ export class BootstrapJs {
       if (text) {
         styles = mergeStyles(styles, text)
       }
-    }
-
-    return styles
-  }
-
-  private _accordion = (options: BsJsAccordionOptions = {}): BsJsStyles => {
-    const styles = emptyStyles()
-    if (isEmptyObject(options)) {
-      return styles
-    }
-
-    if (options.flush) {
-      styles.classes['accordion-flush'] = true
-    }
-
-    return styles
-  }
-
-  private _accordionButton = (options: BsJsAccordionButtonOptions = {}): BsJsStyles => {
-    const styles = emptyStyles()
-    if (isEmptyObject(options)) {
-      return styles
-    }
-
-    if (options.collapsed) {
-      styles.classes['collapsed'] = true
-    }
-
-    if (options.asBtn) {
-      styles.classes['btn'] = true
-    }
-
-    return styles
-  }
-
-  /**
-   * Translates provided options into Bootstrap classes and inline styles for images
-   *
-   * - https://getbootstrap.com/docs/5.3/content/images/
-   */
-  private _image = (options: BsJsImageOptions = {}): BsJsStyles => {
-    const styles = emptyStyles()
-    if (isEmptyObject(options)) {
-      return styles
-    }
-
-    if (options.fluid) {
-      styles.classes['img-fluid'] = true
-    }
-
-    if (options.thumbnail) {
-      styles.classes['img-thumbnail'] = true
-    }
-
-    return styles
-  }
-
-  private _table = (options: BsJsTableOptions = {}): BsJsStyles => {
-    const styles = emptyStyles()
-    if (isEmptyObject(options)) {
-      return styles
-    }
-
-    if (options.striped) {
-      styles.classes['table-striped'] = true
-    }
-
-    if (options.stripedCols) {
-      styles.classes['table-striped-columns'] = true
-    }
-
-    if (options.rowHover) {
-      styles.classes['table-hover'] = true
-    }
-
-    if (options.bordered) {
-      styles.classes['table-bordered'] = true
-    }
-
-    if (options.borderless) {
-      styles.classes['table-borderless'] = true
-    }
-
-    if (options.small) {
-      styles.classes['table-sm'] = true
-    }
-
-    if (options.captionTop) {
-      styles.classes['caption-top'] = true
-    }
-
-    return styles
-  }
-
-  private _tableEntry = (options: BsJsTableEntryOptions = {}): BsJsStyles => {
-    const styles = emptyStyles()
-
-    if (options.active) {
-      styles.classes['table-active'] = true
-    }
-
-    return styles
-  }
-
-  private _tableGroup = (options: BsJsTableGroupOptions = {}): BsJsStyles => {
-    const styles = emptyStyles()
-
-    if (options.groupDivider) {
-      styles.classes['table-group-divider'] = true
     }
 
     return styles

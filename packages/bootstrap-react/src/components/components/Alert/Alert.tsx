@@ -1,4 +1,6 @@
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
+import { AllBreakpointsOptions } from 'packages/bootstrap-js/src/_types'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -6,7 +8,7 @@ import { useMultiRef } from '../../utils/useMultiRef'
 
 import { useAlert } from './useAlert'
 
-export type AlertProps<T extends ElementType> = BrElementProps<T> & {
+export type AlertProps<T extends ElementType> = Omit<BrElementProps<T>, 'bsJs'> & {
   /**
    * Type of HTML element to render
    *
@@ -15,8 +17,7 @@ export type AlertProps<T extends ElementType> = BrElementProps<T> & {
   as?: T
   /** State to manage closing the alert */
   brAlert?: ReturnType<typeof useAlert>
-  /** Alert is dismissible */
-  brAlertDismissible?: boolean
+  bsJs?: BsJsConfig<'alert'>
 }
 
 export type AlertWithRef = <Component extends ElementType = 'div'>(
@@ -34,7 +35,7 @@ const Alert: AlertWithRef = forwardRef(function Alert<T extends ElementType = 'd
     className,
     role = 'alert',
     brAlert,
-    brAlertDismissible,
+    bsJs,
     ...rest
   } = props
 
@@ -46,9 +47,14 @@ const Alert: AlertWithRef = forwardRef(function Alert<T extends ElementType = 'd
     <BrElement
       as={as}
       ref={usedRef}
+      bsJs={bsJs}
       className={classNames(
         'alert',
-        { 'alert-dismissible': brAlertDismissible, show: !isAnimating && !isDismissed },
+        {
+          show:
+            (bsJs?.bsJsAll as AllBreakpointsOptions<'alert'>)?.alert?.show ||
+            (!isAnimating && !isDismissed)
+        },
         className
       )}
       role={role}

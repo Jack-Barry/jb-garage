@@ -47,7 +47,11 @@ export const LiveExample: StoryFn = () => {
   return (
     <div>
       {alerts.map((alert) => (
-        <Alert key={alert} className="alert-success" brAlertDismissible>
+        <Alert
+          key={alert}
+          className="alert-success"
+          bsJs={{ bsJsAll: { alert: { dismissible: true } } }}
+        >
           <div>Alert {alert}</div>
           <CloseButton
             onClick={() => {
@@ -194,7 +198,10 @@ export const Icons: StoryFn = () => {
 
 export const Dismissing: StoryFn = () => {
   return (
-    <Alert brAlertDismissible className={classNames('alert-warning fade')}>
+    <Alert
+      className={classNames('alert-warning fade')}
+      bsJs={{ bsJsAll: { alert: { dismissible: true } } }}
+    >
       <strong>Holy guacamole!</strong> You should check in on some of those fields below.
       <CloseButton data-bs-dismiss="alert" />
     </Alert>

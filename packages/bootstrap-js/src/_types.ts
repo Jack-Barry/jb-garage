@@ -1,13 +1,5 @@
 import * as CSS from 'csstype'
 
-import {
-  BsJsAccordionButtonOptions,
-  BsJsAccordionOptions,
-  BsJsImageOptions,
-  BsJsTableEntryOptions,
-  BsJsTableGroupOptions,
-  BsJsTableOptions
-} from './_componentTypes'
 import { BsJsColorAndBackgroundOption } from './lib/bootstrap-helpers/colorAndBackground'
 import { BsJsFocusRingOptions } from './lib/bootstrap-helpers/focusRing'
 import { BsJsIconLinkOptions } from './lib/bootstrap-helpers/iconLink'
@@ -35,6 +27,14 @@ import { BsJsSpacingOptions } from './lib/bootstrap-utils/spacing'
 import { BsJsTextOptions } from './lib/bootstrap-utils/text'
 import { BootstrapVerticalAlign } from './lib/bootstrap-utils/verticalAlign'
 import { BootstrapZIndex } from './lib/bootstrap-utils/zIndex'
+import { BsJsAccordionButtonOptions, BsJsAccordionOptions } from './lib/component-utils/accordion'
+import { BsJsAlertOptions } from './lib/component-utils/alert'
+import { BsJsImageOptions } from './lib/component-utils/image'
+import {
+  BsJsTableEntryOptions,
+  BsJsTableGroupOptions,
+  BsJsTableOptions
+} from './lib/component-utils/table'
 import { ALL_BREAKPOINTS_KEY } from './lib/constants'
 
 /** Utility type for allowing literal unions while still providing intellisense suggestions */
@@ -72,6 +72,7 @@ export type BootstrapComponentType =
   | 'none'
   | 'accordion'
   | 'accordion-button'
+  | 'alert'
   | 'image'
   | 'table'
   | 'table-entry'
@@ -111,6 +112,8 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
       ? { accordion?: BsJsAccordionOptions }
       : Component extends 'accordion-button'
       ? { accordionButton?: BsJsAccordionButtonOptions }
+      : Component extends 'alert'
+      ? { alert?: BsJsAlertOptions }
       : Component extends 'image'
       ? { image?: BsJsImageOptions }
       : Component extends 'table'
