@@ -38,7 +38,7 @@ export const ExamplesHeadings: StoryFn = () => {
 
 export const ExamplesButtons: StoryFn = () => {
   return (
-    <Button brButtonColor="primary">
+    <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
       Notifications <Badge bsJs={{ bsJsAll: { color: 'bg-secondary' } }}>4</Badge>
     </Button>
   )
@@ -47,7 +47,7 @@ export const ExamplesButtons: StoryFn = () => {
 export const ExamplesPositioned: StoryFn = () => {
   return (
     <div>
-      <Button bsJs={{ bsJsAll: { position: 'relative' } }} brButtonColor="primary">
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' }, position: 'relative' } }}>
         Inbox
         <Badge
           bsJs={{
@@ -62,7 +62,7 @@ export const ExamplesPositioned: StoryFn = () => {
         </Badge>
       </Button>
       <hr />
-      <Button bsJs={{ bsJsAll: { position: 'relative' } }} brButtonColor="primary">
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' }, position: 'relative' } }}>
         Profile
         <BrElement
           as="span"

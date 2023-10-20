@@ -34,6 +34,7 @@ import { bsJsZIndexStyles } from './bootstrap-utils/zIndex'
 import { accordionStyles, accordionButtonStyles } from './component-utils/accordion'
 import { alertStyles } from './component-utils/alert'
 import { breadcrumbItemStyles, breadcrumbsStyles } from './component-utils/breadcrumb'
+import { buttonStyles } from './component-utils/button'
 import { imageStyles } from './component-utils/image'
 import { tableStyles, tableEntryStyles, tableGroupStyles } from './component-utils/table'
 import { ALL_BREAKPOINTS_KEY } from './constants'
@@ -214,6 +215,11 @@ export class BootstrapJs {
         ).breadcrumbItem
         if (breadcrumbItemOptions) {
           styles = mergeStyles(styles, breadcrumbItemStyles(breadcrumbItemOptions))
+        }
+
+        const buttonOptions = (allBreakpointOptions as AllBreakpointsOptions<'button'>).button
+        if (buttonOptions) {
+          styles = mergeStyles(styles, buttonStyles(buttonOptions))
         }
 
         const imageOptions = (allBreakpointOptions as AllBreakpointsOptions<'image'>).image

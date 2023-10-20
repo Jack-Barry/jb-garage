@@ -23,15 +23,15 @@ export const BaseClass: StoryFn = () => {
 export const Variants: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button brButtonColor="primary">Primary</Button>
-      <Button brButtonColor="secondary">Secondary</Button>
-      <Button brButtonColor="success">Success</Button>
-      <Button brButtonColor="danger">Danger</Button>
-      <Button brButtonColor="warning">Warning</Button>
-      <Button brButtonColor="info">Info</Button>
-      <Button brButtonColor="light">Light</Button>
-      <Button brButtonColor="dark">Dark</Button>
-      <Button brButtonColor="link">Link</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Primary</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}>Secondary</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'success' } } }}>Success</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'danger' } } }}>Danger</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'warning' } } }}>Warning</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'info' } } }}>Info</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'light' } } }}>Light</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'dark' } } }}>Dark</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'link' } } }}>Link</Button>
     </div>
   )
 }
@@ -39,15 +39,30 @@ export const Variants: StoryFn = () => {
 export const ButtonTags: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button as="a" brButtonColor="primary" href="#">
+      <Button as="a" bsJs={{ bsJsAll: { button: { color: 'primary' } } }} href="#">
         Link
       </Button>
-      <Button brButtonColor="primary" type="submit">
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} type="submit">
         Button
       </Button>
-      <Button as="input" brButtonColor="primary" type="button" value="Input" />
-      <Button as="input" brButtonColor="primary" type="submit" value="Submit" />
-      <Button as="input" brButtonColor="primary" type="reset" value="Reset" />
+      <Button
+        as="input"
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        type="button"
+        value="Input"
+      />
+      <Button
+        as="input"
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        type="submit"
+        value="Submit"
+      />
+      <Button
+        as="input"
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        type="reset"
+        value="Reset"
+      />
     </div>
   )
 }
@@ -55,14 +70,14 @@ export const ButtonTags: StoryFn = () => {
 export const OutlineButtons: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button brButtonColor="outline-primary">Primary</Button>
-      <Button brButtonColor="outline-secondary">Secondary</Button>
-      <Button brButtonColor="outline-success">Success</Button>
-      <Button brButtonColor="outline-danger">Danger</Button>
-      <Button brButtonColor="outline-warning">Warning</Button>
-      <Button brButtonColor="outline-info">Info</Button>
-      <Button brButtonColor="outline-light">Light</Button>
-      <Button brButtonColor="outline-dark">Dark</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Primary</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Secondary</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-success' } } }}>Success</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-danger' } } }}>Danger</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-warning' } } }}>Warning</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-info' } } }}>Info</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-light' } } }}>Light</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-dark' } } }}>Dark</Button>
     </div>
   )
 }
@@ -70,22 +85,18 @@ export const OutlineButtons: StoryFn = () => {
 export const Sizes: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button brButtonColor="primary" brButtonLg>
-        Large button
-      </Button>
-      <Button brButtonColor="secondary" brButtonLg>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary', size: 'lg' } } }}>Large button</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'secondary', size: 'lg' } } }}>
         Large button
       </Button>
       <hr />
-      <Button brButtonColor="primary" brButtonSm>
-        Small button
-      </Button>
-      <Button brButtonColor="secondary" brButtonSm>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary', size: 'sm' } } }}>Small button</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'secondary', size: 'sm' } } }}>
         Small button
       </Button>
       <hr />
       <Button
-        brButtonColor="primary"
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
         style={
           {
             '--bs-btn-padding-y': '0.25rem',
@@ -103,23 +114,23 @@ export const Sizes: StoryFn = () => {
 export const DisabledState: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button brButtonColor="primary" disabled>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} disabled>
         Primary button
       </Button>
-      <Button brButtonColor="secondary" disabled>
+      <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }} disabled>
         Button
       </Button>
-      <Button brButtonColor="outline-primary" disabled>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }} disabled>
         Primary button
       </Button>
-      <Button brButtonColor="outline-secondary" disabled>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }} disabled>
         Button
       </Button>
       <hr />
-      <Button as="a" brButtonColor="primary" brButtonDisabled>
+      <Button as="a" bsJs={{ bsJsAll: { button: { color: 'primary', disabled: true } } }}>
         Primary link
       </Button>
-      <Button as="a" brButtonColor="secondary" brButtonDisabled>
+      <Button as="a" bsJs={{ bsJsAll: { button: { color: 'secondary', disabled: true } } }}>
         Link
       </Button>
     </div>
@@ -130,23 +141,23 @@ export const BlockButtons: StoryFn = () => {
   return (
     <div className="bd-example">
       <BrElement bsJs={{ bsJsAll: { display: 'grid', spacing: { gap: '2' } } }}>
-        <Button brButtonColor="primary">Button</Button>
-        <Button brButtonColor="primary">Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
       </BrElement>
       <hr />
       <BrElement
         bsJs={{ bsJsAll: { display: 'grid', spacing: { gap: '2' } }, md: { display: 'block' } }}
       >
-        <Button brButtonColor="primary">Button</Button>
-        <Button brButtonColor="primary">Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
       </BrElement>
       <hr />
       <Col
         bsJs={{ bsJsAll: { display: 'grid', spacing: { margin: { x: 'auto' }, gap: '2' } } }}
         brCols={6}
       >
-        <Button brButtonColor="primary">Button</Button>
-        <Button brButtonColor="primary">Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
       </Col>
       <hr />
       <BrElement
@@ -155,10 +166,15 @@ export const BlockButtons: StoryFn = () => {
           md: { display: 'flex', flex: { justifyContent: 'end' } }
         }}
       >
-        <Button brButtonColor="primary" bsJs={{ md: { spacing: { margin: { end: '2' } } } }}>
+        <Button
+          bsJs={{
+            bsJsAll: { button: { color: 'primary' } },
+            md: { spacing: { margin: { end: '2' } } }
+          }}
+        >
           Button
         </Button>
-        <Button brButtonColor="primary">Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
       </BrElement>
     </div>
   )

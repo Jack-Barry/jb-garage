@@ -30,6 +30,7 @@ import { BootstrapZIndex } from './lib/bootstrap-utils/zIndex'
 import { BsJsAccordionButtonOptions, BsJsAccordionOptions } from './lib/component-utils/accordion'
 import { BsJsAlertOptions } from './lib/component-utils/alert'
 import { BsJsBreadcrumbItemOptions, BsJsBreadcrumbsOptions } from './lib/component-utils/breadcrumb'
+import { BsJsButtonOptions } from './lib/component-utils/button'
 import { BsJsImageOptions } from './lib/component-utils/image'
 import {
   BsJsTableEntryOptions,
@@ -76,6 +77,7 @@ export type BootstrapComponentType =
   | 'alert'
   | 'breadcrumb'
   | 'breadcrumb-item'
+  | 'button'
   | 'image'
   | 'table'
   | 'table-entry'
@@ -119,6 +121,8 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
       ? { alert?: BsJsAlertOptions }
       : Component extends 'breadcrumb'
       ? { breadcrumbs?: BsJsBreadcrumbsOptions }
+      : Component extends 'button'
+      ? { button?: BsJsButtonOptions }
       : Component extends 'breadcrumb-item'
       ? { breadcrumbItem?: BsJsBreadcrumbItemOptions }
       : Component extends 'image'
