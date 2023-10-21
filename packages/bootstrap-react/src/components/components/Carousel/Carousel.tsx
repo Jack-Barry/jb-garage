@@ -1,3 +1,4 @@
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
@@ -11,7 +12,7 @@ export type CarouselProps<T extends ElementType> = BrElementProps<
   {
     /** Controlled state can be provided by the return value of `useCarousel` */
     brCarousel: ReturnType<typeof useCarousel>
-    brCarouselFade?: boolean
+    bsJs?: BsJsConfig<'carousel'>
   }
 >
 
@@ -26,14 +27,14 @@ const Carousel: CarouselWithRef = forwardRef(function Carousel<T extends Element
   props: CarouselProps<T>,
   ref?: CarouselProps<T>['ref']
 ) {
-  const { as = 'div' as ElementType, brCarousel, brCarouselFade, className, ...rest } = props
+  const { as = 'div' as ElementType, brCarousel, className, ...rest } = props
   const usedRef = useMultiRef(ref, brCarousel.ref)
 
   return (
     <BrElement
       as={as}
       ref={usedRef}
-      className={classNames('carousel slide', { 'carousel-fade': brCarouselFade }, className)}
+      className={classNames('carousel slide', className)}
       {...rest}
     />
   )

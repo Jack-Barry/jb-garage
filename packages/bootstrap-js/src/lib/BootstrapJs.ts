@@ -35,6 +35,13 @@ import { accordionStyles, accordionButtonStyles } from './component-utils/accord
 import { alertStyles } from './component-utils/alert'
 import { breadcrumbItemStyles, breadcrumbsStyles } from './component-utils/breadcrumb'
 import { buttonGroupStyles, buttonStyles } from './component-utils/button'
+import { cardImageStyles } from './component-utils/card'
+import {
+  carouselControlIconStyles,
+  carouselItemStyles,
+  carouselControlStyles,
+  carouselStyles
+} from './component-utils/carousel'
 import { imageStyles } from './component-utils/image'
 import { tableStyles, tableEntryStyles, tableGroupStyles } from './component-utils/table'
 import { ALL_BREAKPOINTS_KEY } from './constants'
@@ -226,6 +233,44 @@ export class BootstrapJs {
           .buttonGroup
         if (buttonGroupOptions) {
           styles = mergeStyles(styles, buttonGroupStyles(buttonGroupOptions))
+        }
+
+        const cardImageOptions = (allBreakpointOptions as AllBreakpointsOptions<'card-image'>)
+          .cardImage
+        if (cardImageOptions) {
+          styles = mergeStyles(styles, cardImageStyles(cardImageOptions))
+        }
+
+        const carouselOptions = (allBreakpointOptions as AllBreakpointsOptions<'carousel'>).carousel
+        if (carouselOptions) {
+          styles = mergeStyles(styles, carouselStyles(carouselOptions))
+        }
+
+        const carouselControlOptions = (
+          allBreakpointOptions as AllBreakpointsOptions<'carousel-control'>
+        ).carouselControl
+        if (carouselControlOptions) {
+          styles = mergeStyles(styles, carouselControlStyles(carouselControlOptions))
+        }
+
+        const carouselControlIconOptions = (
+          allBreakpointOptions as AllBreakpointsOptions<'carousel-control-icon'>
+        ).carouselControlIcon
+        if (carouselControlIconOptions) {
+          styles = mergeStyles(styles, carouselControlIconStyles(carouselControlIconOptions))
+        }
+
+        const carouselIndicatorOptions = (
+          allBreakpointOptions as AllBreakpointsOptions<'carousel-indicator'>
+        ).carouselIndicator
+        if (carouselIndicatorOptions) {
+          styles = mergeStyles(styles, carouselItemStyles(carouselIndicatorOptions))
+        }
+
+        const carouselItemOptions = (allBreakpointOptions as AllBreakpointsOptions<'carousel-item'>)
+          .carouselItem
+        if (carouselItemOptions) {
+          styles = mergeStyles(styles, carouselItemStyles(carouselItemOptions))
         }
 
         const imageOptions = (allBreakpointOptions as AllBreakpointsOptions<'image'>).image

@@ -1,5 +1,4 @@
 import { BsJsConfig } from '@jb-garage/bootstrap-js'
-import classNames from 'classnames'
 import { ReactNode, forwardRef } from 'react'
 
 import Image, { ImageElementType, ImageProps } from '../../content/Image/Image'

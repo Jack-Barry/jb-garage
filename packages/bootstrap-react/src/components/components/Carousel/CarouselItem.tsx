@@ -1,3 +1,4 @@
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
@@ -6,7 +7,7 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 export type CarouselItemProps<T extends ElementType> = BrElementProps<
   T,
   {
-    brCarouselItemActive?: boolean
+    bsJs?: BsJsConfig<'carousel-item'>
     brCarouselItemInterval?: number
   }
 >
@@ -21,19 +22,13 @@ export type CarouselItemWithRef = <Component extends ElementType = 'div'>(
 const CarouselItem: CarouselItemWithRef = forwardRef(function CarouselItem<
   T extends ElementType = 'div'
 >(props: CarouselItemProps<T>, ref?: CarouselItemProps<T>['ref']) {
-  const {
-    as = 'div' as ElementType,
-    brCarouselItemActive,
-    brCarouselItemInterval,
-    className,
-    ...rest
-  } = props
+  const { as = 'div' as ElementType, brCarouselItemInterval, className, ...rest } = props
 
   return (
     <BrElement
       as={as}
       ref={ref}
-      className={classNames('carousel-item', { active: brCarouselItemActive }, className)}
+      className={classNames('carousel-item', className)}
       data-bs-interval={brCarouselItemInterval}
       {...rest}
     />

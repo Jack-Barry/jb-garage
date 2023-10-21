@@ -7,7 +7,7 @@ import { emptyStyles } from '../utils/emptyStyles'
 export type BsJsCardImageOptions = {
   imagePosition?: LiteralUnion<'top' | 'bottom', string>
 }
-export function buttonCardImageStyles(options: BsJsCardImageOptions = {}): BsJsStyles {
+export function cardImageStyles(options: BsJsCardImageOptions = {}): BsJsStyles {
   const styles = emptyStyles()
 
   if (isEmptyObject(options)) {

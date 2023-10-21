@@ -31,7 +31,11 @@ export const BasicExamples: StoryFn = () => {
     <Carousel id="carouselExample" brCarousel={carousel}>
       <CarouselInner>
         <CarouselItem
-          brCarouselItemActive={carousel.currentIndex === -1 || carousel.currentIndex === 0}
+          bsJs={{
+            bsJsAll: {
+              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
+            }
+          }}
         >
           <Image
             {...placeholderImgSvgProps({
@@ -44,7 +48,7 @@ export const BasicExamples: StoryFn = () => {
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 1}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -56,7 +60,7 @@ export const BasicExamples: StoryFn = () => {
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 2}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -69,14 +73,26 @@ export const BasicExamples: StoryFn = () => {
           </Image>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
-        <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
+        onClick={carousel.prev}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
-        <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
+        onClick={carousel.next}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
@@ -92,7 +108,13 @@ export const Indicators: StoryFn = () => {
     <Carousel id="carouselExampleIndicators" brCarousel={carousel}>
       <CarouselIndicators>
         <CarouselIndicator
-          brCarouselIndicatorActive={carousel.currentIndex === -1 || carousel.currentIndex === 0}
+          bsJs={{
+            bsJsAll: {
+              carouselIndicator: {
+                active: carousel.currentIndex === -1 || carousel.currentIndex === 0
+              }
+            }
+          }}
           onClick={() => {
             carousel.to(0)
           }}
@@ -100,7 +122,7 @@ export const Indicators: StoryFn = () => {
           data-bs-target="#carouselExampleIndicators"
         />
         <CarouselIndicator
-          brCarouselIndicatorActive={carousel.currentIndex === 1}
+          bsJs={{ bsJsAll: { carouselIndicator: { active: carousel.currentIndex === 1 } } }}
           onClick={() => {
             carousel.to(1)
           }}
@@ -108,7 +130,7 @@ export const Indicators: StoryFn = () => {
           data-bs-target="#carouselExampleIndicators"
         />
         <CarouselIndicator
-          brCarouselIndicatorActive={carousel.currentIndex === 2}
+          bsJs={{ bsJsAll: { carouselIndicator: { active: carousel.currentIndex === 2 } } }}
           onClick={() => {
             carousel.to(2)
           }}
@@ -118,7 +140,11 @@ export const Indicators: StoryFn = () => {
       </CarouselIndicators>
       <CarouselInner>
         <CarouselItem
-          brCarouselItemActive={carousel.currentIndex === -1 || carousel.currentIndex === 0}
+          bsJs={{
+            bsJsAll: {
+              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
+            }
+          }}
         >
           <Image
             {...placeholderImgSvgProps({
@@ -131,7 +157,7 @@ export const Indicators: StoryFn = () => {
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 1}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -143,7 +169,7 @@ export const Indicators: StoryFn = () => {
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 2}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -156,14 +182,26 @@ export const Indicators: StoryFn = () => {
           </Image>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
-        <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
+        onClick={carousel.prev}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
-        <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
+        onClick={carousel.next}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
@@ -179,7 +217,13 @@ export const Captions: StoryFn = () => {
     <Carousel id="carouselExampleIndicators" brCarousel={carousel}>
       <CarouselIndicators>
         <CarouselIndicator
-          brCarouselIndicatorActive={carousel.currentIndex === -1 || carousel.currentIndex === 0}
+          bsJs={{
+            bsJsAll: {
+              carouselIndicator: {
+                active: carousel.currentIndex === -1 || carousel.currentIndex === 0
+              }
+            }
+          }}
           onClick={() => {
             carousel.to(0)
           }}
@@ -187,7 +231,7 @@ export const Captions: StoryFn = () => {
           data-bs-target="#carouselExampleIndicators"
         />
         <CarouselIndicator
-          brCarouselIndicatorActive={carousel.currentIndex === 1}
+          bsJs={{ bsJsAll: { carouselIndicator: { active: carousel.currentIndex === 1 } } }}
           onClick={() => {
             carousel.to(1)
           }}
@@ -195,7 +239,7 @@ export const Captions: StoryFn = () => {
           data-bs-target="#carouselExampleIndicators"
         />
         <CarouselIndicator
-          brCarouselIndicatorActive={carousel.currentIndex === 2}
+          bsJs={{ bsJsAll: { carouselIndicator: { active: carousel.currentIndex === 2 } } }}
           onClick={() => {
             carousel.to(2)
           }}
@@ -205,7 +249,11 @@ export const Captions: StoryFn = () => {
       </CarouselIndicators>
       <CarouselInner>
         <CarouselItem
-          brCarouselItemActive={carousel.currentIndex === -1 || carousel.currentIndex === 0}
+          bsJs={{
+            bsJsAll: {
+              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
+            }
+          }}
         >
           <Image
             {...placeholderImgSvgProps({
@@ -222,7 +270,7 @@ export const Captions: StoryFn = () => {
             <p>Some representative placeholder content for the first slide.</p>
           </CarouselCaption>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 1}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -238,7 +286,7 @@ export const Captions: StoryFn = () => {
             <p>Some representative placeholder content for the second slide.</p>
           </CarouselCaption>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 2}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -255,14 +303,26 @@ export const Captions: StoryFn = () => {
           </CarouselCaption>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
-        <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
+        onClick={carousel.prev}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
-        <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
+        onClick={carousel.next}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
@@ -275,10 +335,18 @@ export const CrossFade: StoryFn = () => {
   const carousel = useCarousel()
 
   return (
-    <Carousel id="carouselExampleFade" brCarousel={carousel} brCarouselFade>
+    <Carousel
+      id="carouselExampleFade"
+      brCarousel={carousel}
+      bsJs={{ bsJsAll: { carousel: { fade: true } } }}
+    >
       <CarouselInner>
         <CarouselItem
-          brCarouselItemActive={carousel.currentIndex === -1 || carousel.currentIndex === 0}
+          bsJs={{
+            bsJsAll: {
+              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
+            }
+          }}
         >
           <Image
             {...placeholderImgSvgProps({
@@ -291,7 +359,7 @@ export const CrossFade: StoryFn = () => {
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 1}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -303,7 +371,7 @@ export const CrossFade: StoryFn = () => {
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 2}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -316,14 +384,26 @@ export const CrossFade: StoryFn = () => {
           </Image>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
-        <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
+        onClick={carousel.prev}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
-        <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
+        onClick={carousel.next}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
@@ -341,7 +421,13 @@ export const AutoPlayingCarousels: StoryFn = () => {
       <Carousel id="carouselExampleAutoplaying" brCarousel={carousel1}>
         <CarouselInner>
           <CarouselItem
-            brCarouselItemActive={carousel1.currentIndex === -1 || carousel1.currentIndex === 0}
+            bsJs={{
+              bsJsAll: {
+                carouselItem: {
+                  active: carousel1.currentIndex === -1 || carousel1.currentIndex === 0
+                }
+              }
+            }}
           >
             <Image
               {...placeholderImgSvgProps({
@@ -354,7 +440,9 @@ export const AutoPlayingCarousels: StoryFn = () => {
               <PlaceholderImgSvgChildren text="First slide" />
             </Image>
           </CarouselItem>
-          <CarouselItem brCarouselItemActive={carousel1.currentIndex === 1}>
+          <CarouselItem
+            bsJs={{ bsJsAll: { carouselItem: { active: carousel1.currentIndex === 1 } } }}
+          >
             <Image
               {...placeholderImgSvgProps({
                 width: 800,
@@ -366,7 +454,9 @@ export const AutoPlayingCarousels: StoryFn = () => {
               <PlaceholderImgSvgChildren text="Second slide" />
             </Image>
           </CarouselItem>
-          <CarouselItem brCarouselItemActive={carousel1.currentIndex === 2}>
+          <CarouselItem
+            bsJs={{ bsJsAll: { carouselItem: { active: carousel1.currentIndex === 2 } } }}
+          >
             <Image
               {...placeholderImgSvgProps({
                 width: 800,
@@ -379,14 +469,26 @@ export const AutoPlayingCarousels: StoryFn = () => {
             </Image>
           </CarouselItem>
         </CarouselInner>
-        <CarouselControl brCarouselControlDirection="prev" onClick={carousel1.prev}>
-          <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
+        <CarouselControl
+          bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
+          onClick={carousel1.prev}
+        >
+          <CarouselControlIcon
+            bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
+            aria-hidden={true}
+          />
           <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             Previous
           </BrElement>
         </CarouselControl>
-        <CarouselControl brCarouselControlDirection="next" onClick={carousel1.next}>
-          <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
+        <CarouselControl
+          bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
+          onClick={carousel1.next}
+        >
+          <CarouselControlIcon
+            bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
+            aria-hidden={true}
+          />
           <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             Next
           </BrElement>
@@ -396,7 +498,13 @@ export const AutoPlayingCarousels: StoryFn = () => {
       <Carousel id="carouselExampleRide" brCarousel={carousel2}>
         <CarouselInner>
           <CarouselItem
-            brCarouselItemActive={carousel2.currentIndex === -1 || carousel2.currentIndex === 0}
+            bsJs={{
+              bsJsAll: {
+                carouselItem: {
+                  active: carousel2.currentIndex === -1 || carousel2.currentIndex === 0
+                }
+              }
+            }}
           >
             <Image
               {...placeholderImgSvgProps({
@@ -409,7 +517,9 @@ export const AutoPlayingCarousels: StoryFn = () => {
               <PlaceholderImgSvgChildren text="First slide" />
             </Image>
           </CarouselItem>
-          <CarouselItem brCarouselItemActive={carousel2.currentIndex === 1}>
+          <CarouselItem
+            bsJs={{ bsJsAll: { carouselItem: { active: carousel2.currentIndex === 1 } } }}
+          >
             <Image
               {...placeholderImgSvgProps({
                 width: 800,
@@ -421,7 +531,9 @@ export const AutoPlayingCarousels: StoryFn = () => {
               <PlaceholderImgSvgChildren text="Second slide" />
             </Image>
           </CarouselItem>
-          <CarouselItem brCarouselItemActive={carousel2.currentIndex === 2}>
+          <CarouselItem
+            bsJs={{ bsJsAll: { carouselItem: { active: carousel2.currentIndex === 2 } } }}
+          >
             <Image
               {...placeholderImgSvgProps({
                 width: 800,
@@ -434,14 +546,26 @@ export const AutoPlayingCarousels: StoryFn = () => {
             </Image>
           </CarouselItem>
         </CarouselInner>
-        <CarouselControl brCarouselControlDirection="prev" onClick={carousel2.prev}>
-          <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
+        <CarouselControl
+          bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
+          onClick={carousel2.prev}
+        >
+          <CarouselControlIcon
+            bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
+            aria-hidden={true}
+          />
           <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             Previous
           </BrElement>
         </CarouselControl>
-        <CarouselControl brCarouselControlDirection="next" onClick={carousel2.next}>
-          <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
+        <CarouselControl
+          bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
+          onClick={carousel2.next}
+        >
+          <CarouselControlIcon
+            bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
+            aria-hidden={true}
+          />
           <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
             Next
           </BrElement>
@@ -458,7 +582,11 @@ export const IndividualCarouselItemInterval: StoryFn = () => {
     <Carousel id="carouselExampleInterval" brCarousel={carousel}>
       <CarouselInner>
         <CarouselItem
-          brCarouselItemActive={carousel.currentIndex === -1 || carousel.currentIndex === 0}
+          bsJs={{
+            bsJsAll: {
+              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
+            }
+          }}
           brCarouselItemInterval={10000}
         >
           <Image
@@ -473,7 +601,7 @@ export const IndividualCarouselItemInterval: StoryFn = () => {
           </Image>
         </CarouselItem>
         <CarouselItem
-          brCarouselItemActive={carousel.currentIndex === 1}
+          bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}
           brCarouselItemInterval={2000}
         >
           <Image
@@ -487,7 +615,7 @@ export const IndividualCarouselItemInterval: StoryFn = () => {
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 2}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -500,14 +628,26 @@ export const IndividualCarouselItemInterval: StoryFn = () => {
           </Image>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
-        <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
+        onClick={carousel.prev}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
-        <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
+        onClick={carousel.next}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>
@@ -523,7 +663,11 @@ export const AutoplayingCarouselsWithoutControls: StoryFn = () => {
     <Carousel id="carouselExampleSlidesOnly" brCarousel={carousel}>
       <CarouselInner>
         <CarouselItem
-          brCarouselItemActive={carousel.currentIndex === -1 || carousel.currentIndex === 0}
+          bsJs={{
+            bsJsAll: {
+              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
+            }
+          }}
         >
           <Image
             {...placeholderImgSvgProps({
@@ -536,7 +680,7 @@ export const AutoplayingCarouselsWithoutControls: StoryFn = () => {
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 1}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -548,7 +692,7 @@ export const AutoplayingCarouselsWithoutControls: StoryFn = () => {
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 2}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -572,7 +716,11 @@ export const DisableTouchSwiping: StoryFn = () => {
     <Carousel id="carouselExampleControlsNoTouching" brCarousel={carousel}>
       <CarouselInner>
         <CarouselItem
-          brCarouselItemActive={carousel.currentIndex === -1 || carousel.currentIndex === 0}
+          bsJs={{
+            bsJsAll: {
+              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
+            }
+          }}
         >
           <Image
             {...placeholderImgSvgProps({
@@ -585,7 +733,7 @@ export const DisableTouchSwiping: StoryFn = () => {
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 1}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -597,7 +745,7 @@ export const DisableTouchSwiping: StoryFn = () => {
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem brCarouselItemActive={carousel.currentIndex === 2}>
+        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
@@ -610,14 +758,26 @@ export const DisableTouchSwiping: StoryFn = () => {
           </Image>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl brCarouselControlDirection="prev" onClick={carousel.prev}>
-        <CarouselControlIcon brCarouselControlIconDirection="prev" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
+        onClick={carousel.prev}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl brCarouselControlDirection="next" onClick={carousel.next}>
-        <CarouselControlIcon brCarouselControlIconDirection="next" aria-hidden={true} />
+      <CarouselControl
+        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
+        onClick={carousel.next}
+      >
+        <CarouselControlIcon
+          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
+          aria-hidden={true}
+        />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Next
         </BrElement>

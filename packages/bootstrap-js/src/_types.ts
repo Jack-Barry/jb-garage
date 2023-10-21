@@ -31,7 +31,12 @@ import { BsJsAccordionButtonOptions, BsJsAccordionOptions } from './lib/componen
 import { BsJsAlertOptions } from './lib/component-utils/alert'
 import { BsJsBreadcrumbItemOptions, BsJsBreadcrumbsOptions } from './lib/component-utils/breadcrumb'
 import { BsJsButtonGroupOptions, BsJsButtonOptions } from './lib/component-utils/button'
-import { BsJsCardImageOptions } from './lib/component-utils/cards'
+import { BsJsCardImageOptions } from './lib/component-utils/card'
+import {
+  BsJsCarouselControlOptions,
+  BsJsCarouselItemOptions,
+  BsJsCarouselOptions
+} from './lib/component-utils/carousel'
 import { BsJsImageOptions } from './lib/component-utils/image'
 import {
   BsJsTableEntryOptions,
@@ -81,6 +86,11 @@ export type BootstrapComponentType =
   | 'button'
   | 'button-group'
   | 'card-image'
+  | 'carousel'
+  | 'carousel-control'
+  | 'carousel-control-icon'
+  | 'carousel-indicator'
+  | 'carousel-item'
   | 'image'
   | 'table'
   | 'table-entry'
@@ -132,6 +142,16 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
       ? { breadcrumbItem?: BsJsBreadcrumbItemOptions }
       : Component extends 'card-image'
       ? { cardImage?: BsJsCardImageOptions }
+      : Component extends 'carousel'
+      ? { carousel?: BsJsCarouselOptions }
+      : Component extends 'carousel-control'
+      ? { carouselControl?: BsJsCarouselControlOptions }
+      : Component extends 'carousel-control-icon'
+      ? { carouselControlIcon?: BsJsCarouselControlOptions }
+      : Component extends 'carousel-indicator'
+      ? { carouselIndicator?: BsJsCarouselItemOptions }
+      : Component extends 'carousel-item'
+      ? { carouselItem?: BsJsCarouselItemOptions }
       : Component extends 'image'
       ? { image?: BsJsImageOptions }
       : Component extends 'table'

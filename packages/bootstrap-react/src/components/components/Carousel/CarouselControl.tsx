@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -6,7 +6,7 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 export type CarouselControlProps<T extends ElementType> = BrElementProps<
   T,
   {
-    brCarouselControlDirection: 'prev' | 'next'
+    bsJs?: BsJsConfig<'carousel-control'>
   }
 >
 
@@ -22,20 +22,10 @@ const CarouselControl: CarouselControlWithRef = forwardRef(function CarouselCont
 >(props: CarouselControlProps<T>, ref?: CarouselControlProps<T>['ref']) {
   const {
     as = 'button' as ElementType,
-    brCarouselControlDirection,
-    className,
     type = as === 'button' ? 'button' : undefined,
     ...rest
   } = props
 
-  return (
-    <BrElement
-      as={as}
-      ref={ref}
-      type={type}
-      className={classNames(`carousel-control-${brCarouselControlDirection}`, className)}
-      {...rest}
-    />
-  )
+  return <BrElement as={as} ref={ref} type={type} {...rest} />
 })
 export default CarouselControl

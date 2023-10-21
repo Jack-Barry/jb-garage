@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -6,7 +6,7 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 export type CarouselControlIconProps<T extends ElementType> = BrElementProps<
   T,
   {
-    brCarouselControlIconDirection: 'prev' | 'next'
+    bsJs?: BsJsConfig<'carousel-control-icon'>
   }
 >
 
@@ -20,15 +20,8 @@ export type CarouselControlIconWithRef = <Component extends ElementType = 'span'
 const CarouselControlIcon: CarouselControlIconWithRef = forwardRef(function CarouselControlIcon<
   T extends ElementType = 'span'
 >(props: CarouselControlIconProps<T>, ref?: CarouselControlIconProps<T>['ref']) {
-  const { as = 'span' as ElementType, brCarouselControlIconDirection, className, ...rest } = props
+  const { as = 'span' as ElementType, ...rest } = props
 
-  return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames(`carousel-control-${brCarouselControlIconDirection}-icon`, className)}
-      {...rest}
-    />
-  )
+  return <BrElement as={as} ref={ref} {...rest} />
 })
 export default CarouselControlIcon
