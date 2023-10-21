@@ -1,5 +1,5 @@
-import { BootstrapJs } from '../BootstrapJs'
-import { emptyStyles } from '../utils'
+import { BootstrapJs } from '../../BootstrapJs'
+import { emptyStyles } from '../../utils'
 
 describe('Utilities: Link', () => {
   const bsJs = new BootstrapJs().bsJs

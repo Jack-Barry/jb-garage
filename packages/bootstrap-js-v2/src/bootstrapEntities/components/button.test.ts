@@ -1,4 +1,4 @@
-import { BootstrapJs } from '../BootstrapJs'
+import { BootstrapJs } from '../../BootstrapJs'
 
 describe('Element Components: Buttons', () => {
   const bsJs = new BootstrapJs().bsJs

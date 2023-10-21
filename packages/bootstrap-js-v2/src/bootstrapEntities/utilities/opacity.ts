@@ -1,5 +1,5 @@
-import { BsJsAsCssVar, BsJsStyles } from '../_types'
-import { isCssVar } from '../utils'
+import { BsJsAsCssVar, BsJsStyles } from '../../_types'
+import { isCssVar } from '../../utils'
 
 export type BsJsOpacityValue = number | string
 

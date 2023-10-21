@@ -1,5 +1,5 @@
-import { BootstrapJs } from '../BootstrapJs'
-import { emptyStyles } from '../utils'
+import { BootstrapJs } from '../../BootstrapJs'
+import { emptyStyles } from '../../utils'
 
 describe('Element Components: Image', () => {
   const bsJs = new BootstrapJs().bsJs

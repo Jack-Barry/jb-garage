@@ -1,4 +1,4 @@
-import { BsJsOptions, BsJsStyles } from '../_types'
+import { BsJsOptions, BsJsStyles } from '../../_types'
 
 export type BsJsImageOptions = {
   /**  */

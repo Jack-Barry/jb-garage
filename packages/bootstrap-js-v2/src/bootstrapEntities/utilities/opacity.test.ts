@@ -1,5 +1,5 @@
-import { BsJsStyles } from '../_types'
-import { emptyStyles } from '../utils'
+import { BsJsStyles } from '../../_types'
+import { emptyStyles } from '../../utils'
 
 import { BsJsOpacityStylesOptions, applyOpacityStyles } from './opacity'
 

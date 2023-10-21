@@ -1,7 +1,7 @@
 import { LiteralUnion } from '@jb-garage/utils-generic'
 
-import { BootstrapThemeColor } from '../_bootstrapTypes'
-import { BsJsAsCssVar, BsJsOptions, BsJsStyles } from '../_types'
+import { BootstrapThemeColor } from '../../_bootstrapTypes'
+import { BsJsAsCssVar, BsJsOptions, BsJsStyles } from '../../_types'
 
 import { applyOpacityStyles } from './opacity'
 

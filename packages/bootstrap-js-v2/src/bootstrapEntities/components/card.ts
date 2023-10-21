@@ -1,10 +1,10 @@
 import { LiteralUnion } from '@jb-garage/utils-generic'
 
-import { BsJsOptions, BsJsStyles } from '../_types'
-import { applyElementNameAsClass } from '../elements/utils'
+import { BsJsOptions, BsJsStyles } from '../../_types'
+import { applyElementNameAsClass } from '../../elements/utils'
 import { applyLinkStyles } from '../utilities/link'
 
-import { BsJsImageOptions } from './image'
+import { BsJsImageOptions } from '../content/image'
 
 export type BsJsCardImagePosition = 'top' | 'bottom'
 

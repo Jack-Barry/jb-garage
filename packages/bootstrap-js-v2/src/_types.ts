@@ -2,10 +2,10 @@ import { LiteralUnion } from '@jb-garage/utils-generic'
 import * as CSS from 'csstype'
 
 import { BootstrapElement, BootstrapTheme } from './_bootstrapTypes'
-import { BsJsButtonGroupOptions, BsJsButtonOptions } from './components/button'
-import { BsJsCardImageOptions } from './components/card'
-import { BsJsImageOptions } from './components/image'
-import { BsJsLinkOptions } from './utilities/link'
+import { BsJsButtonGroupOptions, BsJsButtonOptions } from './bootstrapEntities/components/button'
+import { BsJsCardImageOptions } from './bootstrapEntities/components/card'
+import { BsJsImageOptions } from './bootstrapEntities/content/image'
+import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {

@@ -1,9 +1,9 @@
 import { BsJsElement, BsJsOptions, BsJsStyles } from '../_types'
-import { applyAlertStyles } from '../components/alert'
-import { applyButtonGroupStyles, applyButtonStyles } from '../components/button'
-import { applyCardImageStyles, applyCardLinkStyles } from '../components/card'
-import { applyImageStyles } from '../components/image'
-import { applyLinkStyles } from '../utilities/link'
+import { applyAlertStyles } from '../bootstrapEntities/components/alert'
+import { applyButtonGroupStyles, applyButtonStyles } from '../bootstrapEntities/components/button'
+import { applyCardImageStyles, applyCardLinkStyles } from '../bootstrapEntities/components/card'
+import { applyImageStyles } from '../bootstrapEntities/content/image'
+import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
 import { applyElementNameAsClass } from './utils'
 

@@ -1,13 +1,17 @@
 import { LiteralUnion } from '@jb-garage/utils-generic'
 
-import { BootstrapButtonColor, BootstrapButtonSize } from '../_bootstrapTypes'
+import { BootstrapButtonColor, BootstrapButtonSize } from '../../_bootstrapTypes'
 import {
   BsJsActivatableElementOptions,
   BsJsDisableableElementOptions,
   BsJsOptions,
   BsJsStyles
-} from '../_types'
-import { applyActiveStyles, applyDisabledStyles, applyElementNameAsClass } from '../elements/utils'
+} from '../../_types'
+import {
+  applyActiveStyles,
+  applyDisabledStyles,
+  applyElementNameAsClass
+} from '../../elements/utils'
 
 type BsJsButtonColor = LiteralUnion<BootstrapButtonColor, string>
 
