@@ -31,6 +31,7 @@ import { BsJsAccordionButtonOptions, BsJsAccordionOptions } from './lib/componen
 import { BsJsAlertOptions } from './lib/component-utils/alert'
 import { BsJsBreadcrumbItemOptions, BsJsBreadcrumbsOptions } from './lib/component-utils/breadcrumb'
 import { BsJsButtonGroupOptions, BsJsButtonOptions } from './lib/component-utils/button'
+import { BsJsCardImageOptions } from './lib/component-utils/cards'
 import { BsJsImageOptions } from './lib/component-utils/image'
 import {
   BsJsTableEntryOptions,
@@ -79,6 +80,7 @@ export type BootstrapComponentType =
   | 'breadcrumb-item'
   | 'button'
   | 'button-group'
+  | 'card-image'
   | 'image'
   | 'table'
   | 'table-entry'
@@ -128,6 +130,8 @@ export type AllBreakpointsOptions<Component extends BootstrapComponentType = 'no
       ? { buttonGroup?: BsJsButtonGroupOptions }
       : Component extends 'breadcrumb-item'
       ? { breadcrumbItem?: BsJsBreadcrumbItemOptions }
+      : Component extends 'card-image'
+      ? { cardImage?: BsJsCardImageOptions }
       : Component extends 'image'
       ? { image?: BsJsImageOptions }
       : Component extends 'table'

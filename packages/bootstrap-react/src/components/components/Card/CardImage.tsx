@@ -1,11 +1,11 @@
+import { BsJsConfig } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import { ReactNode, forwardRef } from 'react'
 
 import Image, { ImageElementType, ImageProps } from '../../content/Image/Image'
 
 export type CardImageProps<T extends ImageElementType> = ImageProps<T> & {
-  /** Position of the image on the card */
-  brCardImagePosition?: 'top' | 'bottom'
+  bsJs?: BsJsConfig<'card-image'>
 }
 
 type CardImageWithRef = <Component extends ImageElementType = 'img'>(
@@ -16,20 +16,8 @@ type CardImageWithRef = <Component extends ImageElementType = 'img'>(
 const CardImage: CardImageWithRef = forwardRef(function CardImage<
   T extends ImageElementType = 'img'
 >(props: CardImageProps<T>, ref?: CardImageProps<T>['ref']) {
-  const { brCardImagePosition, className, ...rest } = props
+  const { ...rest } = props
 
-  return (
-    <Image
-      ref={ref}
-      className={classNames(
-        {
-          'card-img': !brCardImagePosition,
-          [`card-img-${brCardImagePosition}`]: !!brCardImagePosition
-        },
-        className
-      )}
-      {...rest}
-    />
-  )
+  return <Image ref={ref} {...rest} />
 })
 export default CardImage
