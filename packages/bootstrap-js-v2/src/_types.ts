@@ -4,6 +4,11 @@ import * as CSS from 'csstype'
 import { BootstrapElement, BootstrapTheme } from './_bootstrapTypes'
 import { BsJsButtonGroupOptions, BsJsButtonOptions } from './bootstrapEntities/components/button'
 import { BsJsCardImageOptions } from './bootstrapEntities/components/card'
+import {
+  BsJsCarouselControlOptions,
+  BsJsCarouselItemOptions,
+  BsJsCarouselOptions
+} from './bootstrapEntities/components/carousel'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
@@ -58,6 +63,12 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsButtonGroupOptions
     : Element extends 'card-img'
     ? BsJsCardImageOptions
+    : Element extends 'carousel'
+    ? BsJsCarouselOptions
+    : Element extends 'carousel-control' | 'carousel-control-icon'
+    ? BsJsCarouselControlOptions
+    : Element extends 'carousel-item'
+    ? BsJsCarouselItemOptions
     : Element extends 'img'
     ? BsJsImageOptions
     : Element extends 'link' | 'card-link'

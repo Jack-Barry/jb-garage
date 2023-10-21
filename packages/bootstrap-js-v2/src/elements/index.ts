@@ -2,6 +2,12 @@ import { BsJsElement, BsJsOptions, BsJsStyles } from '../_types'
 import { applyAlertStyles } from '../bootstrapEntities/components/alert'
 import { applyButtonGroupStyles, applyButtonStyles } from '../bootstrapEntities/components/button'
 import { applyCardImageStyles, applyCardLinkStyles } from '../bootstrapEntities/components/card'
+import {
+  applyCarouselControlIconStyles,
+  applyCarouselControlStyles,
+  applyCarouselItemStyles,
+  applyCarouselStyles
+} from '../bootstrapEntities/components/carousel'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -37,6 +43,21 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'card-link':
       applyCardLinkStyles(prefix, result, options as BsJsOptions<'card-link'>)
+      break
+    case 'carousel':
+      applyCarouselStyles(result, options as BsJsOptions<'carousel'>)
+      break
+    case 'carousel-control':
+      applyCarouselControlStyles(result, options as unknown as BsJsOptions<'carousel-control'>)
+      break
+    case 'carousel-control-icon':
+      applyCarouselControlIconStyles(
+        result,
+        options as unknown as BsJsOptions<'carousel-control-icon'>
+      )
+      break
+    case 'carousel-item':
+      applyCarouselItemStyles(result, options as BsJsOptions<'carousel-item'>)
       break
     case 'img':
       applyImageStyles(result, options as BsJsOptions<'img'>)

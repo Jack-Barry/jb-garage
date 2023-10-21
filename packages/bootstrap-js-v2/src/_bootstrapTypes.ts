@@ -19,12 +19,20 @@ export type BootstrapElement =
   | 'card-footer'
   | 'card-group'
   | 'card-header'
-  | 'card-img' // TODO
+  | 'card-img'
   | 'card-img-overlay'
-  | 'card-link' // TODO
+  | 'card-link'
   | 'card-subtitle'
   | 'card-text'
   | 'card-title'
+  | 'carousel'
+  | 'carousel-caption'
+  | 'carousel-control'
+  | 'carousel-control-icon'
+  | 'carousel-indicator'
+  | 'carousel-indicators'
+  | 'carousel-inner'
+  | 'carousel-item'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

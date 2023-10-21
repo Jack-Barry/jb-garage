@@ -26,7 +26,10 @@ describe('Elements', () => {
       'card-img-overlay',
       'card-subtitle',
       'card-text',
-      'card-title'
+      'card-title',
+      'carousel-caption',
+      'carousel-indicators',
+      'carousel-inner'
     ]
 
     for (const elementType of elementTypes) {
