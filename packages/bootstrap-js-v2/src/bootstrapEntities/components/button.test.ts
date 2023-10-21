@@ -41,7 +41,7 @@ describe('Element Components: Buttons', () => {
     })
 
     test('applies "color" class name', () => {
-      expect(bsJs({ elementType: 'btn', color: 'danger' })).toStrictEqual({
+      expect(bsJs({ elementType: 'btn', variant: 'danger' })).toStrictEqual({
         classes: { btn: true, 'btn-danger': true },
         inlineStyles: {},
         elementAttributes: {}

@@ -8,6 +8,10 @@ import {
   applyCarouselItemStyles,
   applyCarouselStyles
 } from '../bootstrapEntities/components/carousel'
+import {
+  applyDropdownItemStyles,
+  applyDropdownToggleStyles
+} from '../bootstrapEntities/components/dropdown'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -58,6 +62,12 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'carousel-item':
       applyCarouselItemStyles(result, options as BsJsOptions<'carousel-item'>)
+      break
+    case 'dropdown-item':
+      applyDropdownItemStyles(result, options as BsJsOptions<'dropdown-item'>)
+      break
+    case 'dropdown-toggle':
+      applyDropdownToggleStyles(result, options as BsJsOptions<'dropdown-toggle'>)
       break
     case 'img':
       applyImageStyles(result, options as BsJsOptions<'img'>)

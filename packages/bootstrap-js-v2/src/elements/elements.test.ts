@@ -29,7 +29,12 @@ describe('Elements', () => {
       'card-title',
       'carousel-caption',
       'carousel-indicators',
-      'carousel-inner'
+      'carousel-inner',
+      'collapse',
+      'dropdown',
+      'dropdown-divider',
+      'dropdown-header',
+      'dropdown-menu'
     ]
 
     for (const elementType of elementTypes) {

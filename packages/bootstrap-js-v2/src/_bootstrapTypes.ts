@@ -33,6 +33,13 @@ export type BootstrapElement =
   | 'carousel-indicators'
   | 'carousel-inner'
   | 'carousel-item'
+  | 'collapse'
+  | 'dropdown'
+  | 'dropdown-divider'
+  | 'dropdown-header'
+  | 'dropdown-item'
+  | 'dropdown-menu'
+  | 'dropdown-toggle'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'
@@ -63,7 +70,7 @@ export type BootstrapThemeColorSubtle =
   | 'dark-subtle'
 
 /** Button colors included in Bootstrap by default */
-export type BootstrapButtonColor = BootstrapThemeColor | 'link'
+export type BootstrapButtonColor = BootstrapThemeColor | 'close' | 'link'
 
 /** Button sizes included in Bootstrap by default */
 export type BootstrapButtonSize = 'sm' | 'lg'

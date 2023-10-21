@@ -9,6 +9,10 @@ import {
   BsJsCarouselItemOptions,
   BsJsCarouselOptions
 } from './bootstrapEntities/components/carousel'
+import {
+  BsJsDropdownItemOptions,
+  BsJsDropdownToggleOptions
+} from './bootstrapEntities/components/dropdown'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
@@ -69,6 +73,10 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsCarouselControlOptions
     : Element extends 'carousel-item'
     ? BsJsCarouselItemOptions
+    : Element extends 'dropdown-item'
+    ? BsJsDropdownItemOptions
+    : Element extends 'dropdown-toggle'
+    ? BsJsDropdownToggleOptions
     : Element extends 'img'
     ? BsJsImageOptions
     : Element extends 'link' | 'card-link'
