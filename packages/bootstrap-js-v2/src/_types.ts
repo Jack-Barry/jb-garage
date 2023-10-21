@@ -15,6 +15,11 @@ import {
 } from './bootstrapEntities/components/dropdown'
 import { BsJsListGroupItemOptions } from './bootstrapEntities/components/listGroup'
 import { BsJsModalDialogOptions, BsJsModalOptions } from './bootstrapEntities/components/modal'
+import {
+  BsJsNavItemOptions,
+  BsJsNavLinkOptions,
+  BsJsNavOptions
+} from './bootstrapEntities/components/nav'
 import { BsJsNavbarOptions } from './bootstrapEntities/components/navbar'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
@@ -86,6 +91,12 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsModalOptions
     : Element extends 'modal-dialog'
     ? BsJsModalDialogOptions
+    : Element extends 'nav'
+    ? BsJsNavOptions
+    : Element extends 'nav-item'
+    ? BsJsNavItemOptions
+    : Element extends 'nav-link'
+    ? BsJsNavLinkOptions
     : Element extends 'navbar'
     ? BsJsNavbarOptions
     : Element extends 'img'

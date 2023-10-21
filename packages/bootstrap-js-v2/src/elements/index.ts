@@ -14,6 +14,11 @@ import {
 } from '../bootstrapEntities/components/dropdown'
 import { applyListGroupItemStyles } from '../bootstrapEntities/components/listGroup'
 import { applyModalDialogStyles, applyModalStyles } from '../bootstrapEntities/components/modal'
+import {
+  applyNavItemStyles,
+  applyNavLinkStyles,
+  applyNavStyles
+} from '../bootstrapEntities/components/nav'
 import { applyNavbarStyles } from '../bootstrapEntities/components/navbar'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
@@ -86,6 +91,15 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'modal-dialog':
       applyModalDialogStyles(result, options as BsJsOptions<'modal-dialog'>)
+      break
+    case 'nav':
+      applyNavStyles(result, options as BsJsOptions<'nav'>)
+      break
+    case 'nav-item':
+      applyNavItemStyles(result, options as BsJsOptions<'nav-item'>)
+      break
+    case 'nav-link':
+      applyNavLinkStyles(result, options as BsJsOptions<'nav-link'>)
       break
     case 'navbar':
       applyNavbarStyles(result, options as BsJsOptions<'navbar'>)
