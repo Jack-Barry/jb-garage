@@ -13,6 +13,7 @@ import {
   applyDropdownToggleStyles
 } from '../bootstrapEntities/components/dropdown'
 import { applyListGroupItemStyles } from '../bootstrapEntities/components/listGroup'
+import { applyModalDialogStyles, applyModalStyles } from '../bootstrapEntities/components/modal'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -72,6 +73,12 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'list-group-item':
       applyListGroupItemStyles(result, options as BsJsOptions<'list-group-item'>)
+      break
+    case 'modal':
+      applyModalStyles(result, options as BsJsOptions<'modal'>)
+      break
+    case 'modal-dialog':
+      applyModalDialogStyles(result, options as BsJsOptions<'modal-dialog'>)
       break
     case 'img':
       applyImageStyles(result, options as BsJsOptions<'img'>)

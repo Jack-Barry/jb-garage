@@ -42,6 +42,13 @@ export type BootstrapElement =
   | 'dropdown-toggle'
   | 'list-group'
   | 'list-group-item'
+  | 'modal'
+  | 'modal-body' //
+  | 'modal-content' //
+  | 'modal-dialog'
+  | 'modal-footer' //
+  | 'modal-header' //
+  | 'modal-title' //
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

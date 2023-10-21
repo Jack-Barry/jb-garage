@@ -35,7 +35,12 @@ describe('Elements', () => {
       'dropdown-divider',
       'dropdown-header',
       'dropdown-menu',
-      'list-group'
+      'list-group',
+      'modal-body',
+      'modal-content',
+      'modal-footer',
+      'modal-header',
+      'modal-title'
     ]
 
     for (const elementType of elementTypes) {
