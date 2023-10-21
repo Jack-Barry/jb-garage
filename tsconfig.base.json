@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@jb-garage/bootstrap-js": ["packages/bootstrap-js/src/index.ts"],
+      "@jb-garage/bootstrap-js-v2": ["packages/bootstrap-js-v2/src/index.ts"],
       "@jb-garage/bootstrap-react/*": ["packages/bootstrap-react/src/*"],
       "@jb-garage/bootstrap/*": ["packages/bootstrap/*"],
       "@jb-garage/style-dictionary/*": ["dist/packages/style-dictionary/*"],
