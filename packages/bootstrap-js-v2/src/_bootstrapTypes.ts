@@ -40,6 +40,8 @@ export type BootstrapElement =
   | 'dropdown-item'
   | 'dropdown-menu'
   | 'dropdown-toggle'
+  | 'list-group'
+  | 'list-group-item'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

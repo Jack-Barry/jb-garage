@@ -13,6 +13,7 @@ import {
   BsJsDropdownItemOptions,
   BsJsDropdownToggleOptions
 } from './bootstrapEntities/components/dropdown'
+import { BsJsListGroupItemOptions } from './bootstrapEntities/components/listGroup'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
@@ -77,6 +78,8 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsDropdownItemOptions
     : Element extends 'dropdown-toggle'
     ? BsJsDropdownToggleOptions
+    : Element extends 'list-group-item'
+    ? BsJsListGroupItemOptions
     : Element extends 'img'
     ? BsJsImageOptions
     : Element extends 'link' | 'card-link'

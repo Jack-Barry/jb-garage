@@ -12,6 +12,7 @@ import {
   applyDropdownItemStyles,
   applyDropdownToggleStyles
 } from '../bootstrapEntities/components/dropdown'
+import { applyListGroupItemStyles } from '../bootstrapEntities/components/listGroup'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -68,6 +69,9 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'dropdown-toggle':
       applyDropdownToggleStyles(result, options as BsJsOptions<'dropdown-toggle'>)
+      break
+    case 'list-group-item':
+      applyListGroupItemStyles(result, options as BsJsOptions<'list-group-item'>)
       break
     case 'img':
       applyImageStyles(result, options as BsJsOptions<'img'>)
