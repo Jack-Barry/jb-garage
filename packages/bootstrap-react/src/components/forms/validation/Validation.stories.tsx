@@ -80,7 +80,7 @@ export const CustomStyles: StoryFn = () => {
         />
       </Col>
       <Col brCols={12}>
-        <Button brButtonColor="primary" type="submit">
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} type="submit">
           Submit form
         </Button>
       </Col>
@@ -130,7 +130,7 @@ export const BrowserDefaults: StoryFn = () => {
         />
       </Col>
       <Col brCols={12}>
-        <Button brButtonColor="primary" type="submit">
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} type="submit">
           Submit form
         </Button>
       </Col>
@@ -214,7 +214,7 @@ export const ServerSide: StoryFn = () => {
         />
       </Col>
       <Col brCols={12}>
-        <Button brButtonColor="primary" type="submit">
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} type="submit">
           Submit form
         </Button>
       </Col>
@@ -285,7 +285,7 @@ export const SupportedElements: StoryFn = () => {
       </BrElement>
 
       <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button brButtonColor="primary" type="submit" disabled>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} type="submit" disabled>
           Submit form
         </Button>
       </BrElement>
@@ -355,7 +355,7 @@ export const Tooltips: StoryFn = () => {
         <Feedback brFeedbackTooltip>Please provide a valid zip.</Feedback>
       </Col>
       <Col brCols={12}>
-        <Button brButtonColor="primary" type="submit">
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} type="submit">
           Submit form
         </Button>
       </Col>

@@ -159,7 +159,7 @@ export const ButtonAddons: StoryFn = () => {
   return (
     <div>
       <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button brButtonColor="outline-secondary" id="button-addon1">
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }} id="button-addon1">
           Button
         </Button>
         <Input
@@ -175,14 +175,14 @@ export const ButtonAddons: StoryFn = () => {
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
         />
-        <Button brButtonColor="outline-secondary" id="button-addon2">
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }} id="button-addon2">
           Button
         </Button>
       </InputGroup>
 
       <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button brButtonColor="outline-secondary">Button</Button>
-        <Button brButtonColor="outline-secondary">Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Button</Button>
         <Input placeholder="" aria-label="Example text with two button addons" />
       </InputGroup>
 
@@ -191,8 +191,8 @@ export const ButtonAddons: StoryFn = () => {
           placeholder="Recipient's username"
           aria-label="Recipient's username with two button addons"
         />
-        <Button brButtonColor="outline-secondary">Button</Button>
-        <Button brButtonColor="outline-secondary">Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Button</Button>
       </InputGroup>
     </div>
   )
@@ -209,7 +209,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
       <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
         <DropdownToggle
           ref={dropdownRef1}
-          brButtonColor="outline-secondary"
+          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
           aria-expanded={isOpen1}
         >
           Dropdown
@@ -227,7 +227,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
         <Input aria-label="Text input with dropdown button" />
         <DropdownToggle
           ref={dropdownRef2}
-          brButtonColor="outline-secondary"
+          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
           aria-expanded={isOpen2}
         >
           Dropdown
@@ -244,7 +244,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
       <InputGroup>
         <DropdownToggle
           ref={dropdownRef3}
-          brButtonColor="outline-secondary"
+          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
           aria-expanded={isOpen3}
         >
           Dropdown
@@ -259,7 +259,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
         <Input aria-label="Text input with 2 dropdown buttons" />
         <DropdownToggle
           ref={dropdownRef4}
-          brButtonColor="outline-secondary"
+          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
           aria-expanded={isOpen4}
         >
           Dropdown
@@ -283,11 +283,11 @@ export const SegmentedButtons: StoryFn = () => {
   return (
     <div style={{ minHeight: '280px' }}>
       <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button brButtonColor="outline-secondary">Action</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Action</Button>
         <DropdownToggle
           ref={dropdownRef1}
           brDropdownToggleSplit
-          brButtonColor="outline-secondary"
+          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
           aria-expanded={isOpen1}
         >
           <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
@@ -306,11 +306,11 @@ export const SegmentedButtons: StoryFn = () => {
 
       <InputGroup>
         <Input aria-label="Text input with segmented dropdown button" />
-        <Button brButtonColor="outline-secondary">Action</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Action</Button>
         <DropdownToggle
           ref={dropdownRef2}
           brDropdownToggleSplit
-          brButtonColor="outline-secondary"
+          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
           aria-expanded={isOpen2}
         >
           <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
@@ -357,7 +357,7 @@ export const CustomFormsCustomSelect: StoryFn = () => {
       </InputGroup>
 
       <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button brButtonColor="outline-secondary">Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Button</Button>
         <Select id="inputGroupSelect03" aria-label="Example select with button addon">
           <option selected>Choose...</option>
           <option value="1">One</option>
@@ -373,7 +373,7 @@ export const CustomFormsCustomSelect: StoryFn = () => {
           <option value="2">Two</option>
           <option value="3">Three</option>
         </Select>
-        <Button brButtonColor="outline-secondary" type="button">
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }} type="button">
           Button
         </Button>
       </InputGroup>
@@ -399,7 +399,10 @@ export const CustomFormsCustomFileInput: StoryFn = () => {
       </InputGroup>
 
       <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button brButtonColor="outline-secondary" id="inputGroupFileAddon03">
+        <Button
+          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
+          id="inputGroupFileAddon03"
+        >
           Button
         </Button>
         <Input
@@ -417,7 +420,10 @@ export const CustomFormsCustomFileInput: StoryFn = () => {
           aria-describedby="inputGroupFileAddon04"
           aria-label="Upload"
         />
-        <Button brButtonColor="outline-secondary" id="inputGroupFileAddon04">
+        <Button
+          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
+          id="inputGroupFileAddon04"
+        >
           Button
         </Button>
       </InputGroup>

@@ -24,7 +24,11 @@ export const BaseExample: StoryFn = () => {
 
   return (
     <BrElement bsJs={{ bsJsAll: { spacing: { padding: { y: '5' } } } }}>
-      <Button ref={target.ref} {...target.getProps()} brButtonColor="danger" brButtonLg>
+      <Button
+        ref={target.ref}
+        {...target.getProps()}
+        bsJs={{ bsJsAll: { button: { color: 'danger', size: 'lg' } } }}
+      >
         Click to toggle popover
       </Button>
       <Popover brPopover={floating}>
@@ -46,7 +50,7 @@ export const FourDirections: StoryFn = () => {
       <Button
         ref={popoverTop.target.ref}
         {...popoverTop.target.getProps()}
-        brButtonColor="secondary"
+        bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
       >
         Popover on top
       </Button>
@@ -56,7 +60,7 @@ export const FourDirections: StoryFn = () => {
       <Button
         ref={popoverRight.target.ref}
         {...popoverRight.target.getProps()}
-        brButtonColor="secondary"
+        bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
       >
         Popover on right
       </Button>
@@ -66,7 +70,7 @@ export const FourDirections: StoryFn = () => {
       <Button
         ref={popoverBottom.target.ref}
         {...popoverBottom.target.getProps()}
-        brButtonColor="secondary"
+        bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
       >
         Popover on bottom
       </Button>
@@ -76,7 +80,7 @@ export const FourDirections: StoryFn = () => {
       <Button
         ref={popoverLeft.target.ref}
         {...popoverLeft.target.getProps()}
-        brButtonColor="secondary"
+        bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
       >
         Popover on left
       </Button>
@@ -98,8 +102,7 @@ export const DismissOnNextClick: StoryFn = () => {
       <Button
         ref={popover.target.ref}
         {...popover.target.getProps()}
-        brButtonColor="danger"
-        brButtonLg
+        bsJs={{ bsJsAll: { button: { color: 'danger', size: 'lg' } } }}
       >
         Dismissable popover
       </Button>

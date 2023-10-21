@@ -24,19 +24,24 @@ export const BasicExample: StoryFn = () => {
   return (
     <div className="bd-example">
       <ButtonGroup aria-label="Basic example">
-        <Button brButtonColor="primary">Left</Button>
-        <Button brButtonColor="primary">Middle</Button>
-        <Button brButtonColor="primary">Right</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Left</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Middle</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Right</Button>
       </ButtonGroup>
       <hr />
       <ButtonGroup>
-        <Button as="a" brButtonColor="primary" brButtonActive href="#" aria-current="page">
+        <Button
+          as="a"
+          bsJs={{ bsJsAll: { button: { color: 'primary', active: true } } }}
+          href="#"
+          aria-current="page"
+        >
           Active link
         </Button>
-        <Button as="a" brButtonColor="primary" href="#">
+        <Button as="a" bsJs={{ bsJsAll: { button: { color: 'primary' } } }} href="#">
           Link
         </Button>
-        <Button as="a" brButtonColor="primary" href="#">
+        <Button as="a" bsJs={{ bsJsAll: { button: { color: 'primary' } } }} href="#">
           Link
         </Button>
       </ButtonGroup>
@@ -47,9 +52,9 @@ export const BasicExample: StoryFn = () => {
 export const MixedStyles: StoryFn = () => {
   return (
     <ButtonGroup aria-label="Basic mixed styles example">
-      <Button brButtonColor="danger">Left</Button>
-      <Button brButtonColor="warning">Middle</Button>
-      <Button brButtonColor="success">Right</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'danger' } } }}>Left</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'warning' } } }}>Middle</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'success' } } }}>Right</Button>
     </ButtonGroup>
   )
 }
@@ -57,9 +62,9 @@ export const MixedStyles: StoryFn = () => {
 export const OutlinedStyles: StoryFn = () => {
   return (
     <ButtonGroup aria-label="Basic outlined example">
-      <Button brButtonColor="outline-primary">Left</Button>
-      <Button brButtonColor="outline-primary">Middle</Button>
-      <Button brButtonColor="outline-primary">Right</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Left</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Middle</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Right</Button>
     </ButtonGroup>
   )
 }
@@ -127,21 +132,21 @@ export const Toolbar: StoryFn = () => {
           bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
           aria-label="First group"
         >
-          <Button brButtonColor="primary">1</Button>
-          <Button brButtonColor="primary">2</Button>
-          <Button brButtonColor="primary">3</Button>
-          <Button brButtonColor="primary">4</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>1</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>2</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>3</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>4</Button>
         </ButtonGroup>
         <ButtonGroup
           bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
           aria-label="Second group"
         >
-          <Button brButtonColor="secondary">5</Button>
-          <Button brButtonColor="secondary">6</Button>
-          <Button brButtonColor="secondary">7</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}>5</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}>6</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}>7</Button>
         </ButtonGroup>
         <ButtonGroup aria-label="Third group">
-          <Button brButtonColor="info">8</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'info' } } }}>8</Button>
         </ButtonGroup>
       </ButtonToolbar>
       <hr />
@@ -153,10 +158,10 @@ export const Toolbar: StoryFn = () => {
           bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
           aria-label="First group"
         >
-          <Button brButtonColor="outline-secondary">1</Button>
-          <Button brButtonColor="outline-secondary">2</Button>
-          <Button brButtonColor="outline-secondary">3</Button>
-          <Button brButtonColor="outline-secondary">4</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>1</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>2</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>3</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>4</Button>
         </ButtonGroup>
         <InputGroup>
           <InputGroupText id="btnGroupAddon">@</InputGroupText>
@@ -169,10 +174,10 @@ export const Toolbar: StoryFn = () => {
       </ButtonToolbar>
       <ButtonToolbar className="justify-content-between" aria-label="Toolbar with button groups">
         <ButtonGroup aria-label="First group">
-          <Button brButtonColor="outline-secondary">1</Button>
-          <Button brButtonColor="outline-secondary">2</Button>
-          <Button brButtonColor="outline-secondary">3</Button>
-          <Button brButtonColor="outline-secondary">4</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>1</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>2</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>3</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>4</Button>
         </ButtonGroup>
         <InputGroup>
           <InputGroupText id="btnGroupAddon2">@</InputGroupText>
@@ -190,22 +195,28 @@ export const Toolbar: StoryFn = () => {
 export const Sizing: StoryFn = () => {
   return (
     <div className="bd-example">
-      <ButtonGroup brButtonGroupLg aria-label="Large button group">
-        <Button brButtonColor="outline-primary">Left</Button>
-        <Button brButtonColor="outline-primary">Middle</Button>
-        <Button brButtonColor="outline-primary">Right</Button>
+      <ButtonGroup
+        bsJs={{ bsJsAll: { buttonGroup: { size: 'lg' } } }}
+        aria-label="Large button group"
+      >
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Left</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Middle</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Right</Button>
       </ButtonGroup>
       <br />
       <ButtonGroup aria-label="Default button group">
-        <Button brButtonColor="outline-primary">Left</Button>
-        <Button brButtonColor="outline-primary">Middle</Button>
-        <Button brButtonColor="outline-primary">Right</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Left</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Middle</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Right</Button>
       </ButtonGroup>
       <br />
-      <ButtonGroup brButtonGroupSm aria-label="Small button group">
-        <Button brButtonColor="outline-primary">Left</Button>
-        <Button brButtonColor="outline-primary">Middle</Button>
-        <Button brButtonColor="outline-primary">Right</Button>
+      <ButtonGroup
+        bsJs={{ bsJsAll: { buttonGroup: { size: 'sm' } } }}
+        aria-label="Small button group"
+      >
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Left</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Middle</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-primary' } } }}>Right</Button>
       </ButtonGroup>
     </div>
   )
@@ -215,10 +226,13 @@ export const Nesting: StoryFn = () => {
   return (
     <div style={{ minHeight: '120px' }}>
       <ButtonGroup aria-label="Button group with nested dropdown">
-        <Button brButtonColor="primary">1</Button>
-        <Button brButtonColor="primary">2</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>1</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>2</Button>
         <ButtonGroup>
-          <DropdownToggle brButtonColor="primary" aria-expanded="false">
+          <DropdownToggle
+            bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+            aria-expanded="false"
+          >
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -234,20 +248,29 @@ export const Nesting: StoryFn = () => {
 export const VerticalVariation: StoryFn = () => {
   return (
     <div>
-      <ButtonGroup brButtonGroupVertical aria-label="Vertical button group">
-        <Button brButtonColor="primary">Button</Button>
-        <Button brButtonColor="primary">Button</Button>
-        <Button brButtonColor="primary">Button</Button>
-        <Button brButtonColor="primary">Button</Button>
-        <Button brButtonColor="primary">Button</Button>
-        <Button brButtonColor="primary">Button</Button>
+      <ButtonGroup
+        bsJs={{ bsJsAll: { buttonGroup: { vertical: true } } }}
+        aria-label="Vertical button group"
+      >
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
       </ButtonGroup>
       <hr />
-      <ButtonGroup brButtonGroupVertical aria-label="Vertical button group">
-        <Button brButtonColor="primary">Button</Button>
-        <Button brButtonColor="primary">Button</Button>
+      <ButtonGroup
+        bsJs={{ bsJsAll: { buttonGroup: { vertical: true } } }}
+        aria-label="Vertical button group"
+      >
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
         <ButtonGroup>
-          <DropdownToggle brButtonColor="primary" aria-expanded="false">
+          <DropdownToggle
+            bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+            aria-expanded="false"
+          >
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -255,10 +278,13 @@ export const VerticalVariation: StoryFn = () => {
             <DropdownItem href="#">Dropdown link</DropdownItem>
           </DropdownMenu>
         </ButtonGroup>
-        <Button brButtonColor="primary">Button</Button>
-        <Button brButtonColor="primary">Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Button</Button>
         <ButtonGroup>
-          <DropdownToggle brButtonColor="primary" aria-expanded="false">
+          <DropdownToggle
+            bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+            aria-expanded="false"
+          >
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -267,7 +293,10 @@ export const VerticalVariation: StoryFn = () => {
           </DropdownMenu>
         </ButtonGroup>
         <ButtonGroup>
-          <DropdownToggle brButtonColor="primary" aria-expanded="false">
+          <DropdownToggle
+            bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+            aria-expanded="false"
+          >
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -276,7 +305,10 @@ export const VerticalVariation: StoryFn = () => {
           </DropdownMenu>
         </ButtonGroup>
         <ButtonGroup>
-          <DropdownToggle brButtonColor="primary" aria-expanded="false">
+          <DropdownToggle
+            bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+            aria-expanded="false"
+          >
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -286,7 +318,10 @@ export const VerticalVariation: StoryFn = () => {
         </ButtonGroup>
       </ButtonGroup>
       <hr />
-      <ButtonGroup brButtonGroupVertical aria-label="Vertical radio toggle button group">
+      <ButtonGroup
+        bsJs={{ bsJsAll: { buttonGroup: { vertical: true } } }}
+        aria-label="Vertical radio toggle button group"
+      >
         <FormCheckInput
           type="radio"
           className="btn-check"

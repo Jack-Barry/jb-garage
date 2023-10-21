@@ -60,7 +60,11 @@ export const LiveExample: StoryFn = () => {
           />
         </Alert>
       ))}
-      <Button brButtonColor="primary" id="liveAlertBtn" onClick={addAlert}>
+      <Button
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        id="liveAlertBtn"
+        onClick={addAlert}
+      >
         Show live alert
       </Button>
     </div>

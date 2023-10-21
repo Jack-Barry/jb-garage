@@ -35,7 +35,7 @@ export const LiveDemo: StoryFn = () => {
 
   return (
     <div>
-      <Button brButtonColor="primary" onClick={modal.toggle}>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modal.toggle}>
         Launch demo modal
       </Button>
       <Modal brModal={modal}>
@@ -49,10 +49,10 @@ export const LiveDemo: StoryFn = () => {
             </ModalHeader>
             <ModalBody>Woo-hoo, you're reading this text in a modal!</ModalBody>
             <ModalFooter>
-              <Button brButtonColor="secondary" onClick={modal.hide}>
+              <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }} onClick={modal.hide}>
                 Close
               </Button>
-              <Button brButtonColor="primary">Save changes</Button>
+              <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -66,7 +66,7 @@ export const StaticBackdrop: StoryFn = () => {
 
   return (
     <div>
-      <Button brButtonColor="primary" onClick={modal.toggle}>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modal.toggle}>
         Launch static backdrop modal
       </Button>
       <Modal id="staticBackdrop" aria-labelledby="staticBackdropLabel" brModal={modal}>
@@ -82,10 +82,10 @@ export const StaticBackdrop: StoryFn = () => {
               I will not close if you click outside of me. Don't even try to press escape key.
             </ModalBody>
             <ModalFooter>
-              <Button brButtonColor="secondary" onClick={modal.hide}>
+              <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }} onClick={modal.hide}>
                 Close
               </Button>
-              <Button brButtonColor="primary">Understood</Button>
+              <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Understood</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -100,7 +100,7 @@ export const ScrollingLongContent: StoryFn = () => {
 
   return (
     <div>
-      <Button brButtonColor="primary" onClick={modal1.toggle}>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modal1.toggle}>
         Launch demo modal
       </Button>
       <Modal id="exampleModalLong" aria-labelledby="exampleModalLongTitle" brModal={modal1}>
@@ -122,16 +122,16 @@ export const ScrollingLongContent: StoryFn = () => {
               </p>
             </ModalBody>
             <ModalFooter>
-              <Button brButtonColor="secondary" onClick={modal1.hide}>
+              <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }} onClick={modal1.hide}>
                 Close
               </Button>
-              <Button brButtonColor="primary">Save changes</Button>
+              <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
       </Modal>
       <hr />
-      <Button brButtonColor="primary" onClick={modal2.toggle}>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modal2.toggle}>
         Launch demo modal
       </Button>
       <Modal
@@ -197,10 +197,10 @@ export const ScrollingLongContent: StoryFn = () => {
               <p>This content should appear at the bottom after you scroll.</p>
             </ModalBody>
             <ModalFooter>
-              <Button brButtonColor="secondary" onClick={modal2.hide}>
+              <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }} onClick={modal2.hide}>
                 Close
               </Button>
-              <Button brButtonColor="primary">Save changes</Button>
+              <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -216,10 +216,10 @@ export const VerticallyCentered: StoryFn = () => {
   return (
     <div>
       <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '1' } } }}>
-        <Button brButtonColor="primary" onClick={modal1.toggle}>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modal1.toggle}>
           Vertically centered modal
         </Button>
-        <Button brButtonColor="primary" onClick={modal2.toggle}>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modal2.toggle}>
           Vertically centered scrollable modal
         </Button>
       </BrElement>
@@ -236,10 +236,10 @@ export const VerticallyCentered: StoryFn = () => {
               <p>This is a vertically centered modal.</p>
             </ModalBody>
             <ModalFooter>
-              <Button brButtonColor="secondary" onClick={modal1.hide}>
+              <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }} onClick={modal1.hide}>
                 Close
               </Button>
-              <Button brButtonColor="primary">Save changes</Button>
+              <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -279,10 +279,10 @@ export const VerticallyCentered: StoryFn = () => {
               <p>Just like that.</p>
             </ModalBody>
             <ModalFooter>
-              <Button brButtonColor="secondary" onClick={modal2.hide}>
+              <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }} onClick={modal2.hide}>
                 Close
               </Button>
-              <Button brButtonColor="primary">Save changes</Button>
+              <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -299,7 +299,7 @@ export const TooltipsAndPopovers: StoryFn = () => {
 
   return (
     <div>
-      <Button brButtonColor="primary" onClick={modal.toggle}>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modal.toggle}>
         Launch demo modal
       </Button>
       <Modal id="exampleModalPopovers" aria-labelledby="exampleModalPopoversLabel" brModal={modal}>
@@ -316,7 +316,7 @@ export const TooltipsAndPopovers: StoryFn = () => {
               <p>
                 This{' '}
                 <Button
-                  brButtonColor="secondary"
+                  bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
                   ref={popover.target.ref}
                   {...popover.target.getProps()}
                   // data-bs-container="#exampleModalPopovers"
@@ -343,10 +343,10 @@ export const TooltipsAndPopovers: StoryFn = () => {
               </p>
             </ModalBody>
             <ModalFooter>
-              <Button brButtonColor="secondary" onClick={modal.hide}>
+              <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }} onClick={modal.hide}>
                 Close
               </Button>
-              <Button brButtonColor="primary">Save changes</Button>
+              <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -360,7 +360,7 @@ export const UsingTheGrid: StoryFn = () => {
 
   return (
     <div>
-      <Button brButtonColor="primary" onClick={modal.toggle}>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modal.toggle}>
         Launch demo modal
       </Button>
       <Modal id="gridSystemModal" aria-labelledby="gridModalLabel" brModal={modal}>
@@ -409,10 +409,10 @@ export const UsingTheGrid: StoryFn = () => {
               </Container>
             </ModalBody>
             <ModalFooter>
-              <Button brButtonColor="secondary" onClick={modal.hide}>
+              <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }} onClick={modal.hide}>
                 Close
               </Button>
-              <Button brButtonColor="primary">Save changes</Button>
+              <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Save changes</Button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
@@ -427,7 +427,7 @@ export const ToggleBetweenModals: StoryFn = () => {
 
   return (
     <div>
-      <Button brButtonColor="primary" onClick={modal1.toggle}>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modal1.toggle}>
         Open first modal
       </Button>
       <Modal id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" brModal={modal1}>
@@ -442,7 +442,7 @@ export const ToggleBetweenModals: StoryFn = () => {
             <ModalBody>Show a second modal and hide this one with the button below.</ModalBody>
             <ModalFooter>
               <Button
-                brButtonColor="primary"
+                bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
                 onClick={() => {
                   modal2.toggle()
                   modal1.hide()
@@ -471,7 +471,7 @@ export const ToggleBetweenModals: StoryFn = () => {
             <ModalBody>Hide this modal and show the first with the button below.</ModalBody>
             <ModalFooter>
               <Button
-                brButtonColor="primary"
+                bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
                 onClick={() => {
                   modal1.show()
                   modal2.hide()
@@ -495,13 +495,13 @@ export const OptionalSizes: StoryFn = () => {
   return (
     <div>
       <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '1' } } }}>
-        <Button brButtonColor="primary" onClick={modalXl.toggle}>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modalXl.toggle}>
           Extra large modal
         </Button>
-        <Button brButtonColor="primary" onClick={modalLg.toggle}>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modalLg.toggle}>
           Large modal
         </Button>
-        <Button brButtonColor="primary" onClick={modalSm.toggle}>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} onClick={modalSm.toggle}>
           Small modal
         </Button>
       </BrElement>
@@ -561,7 +561,7 @@ export const FullscreenModal: StoryFn = () => {
   return (
     <div className="bd-example">
       <Button
-        brButtonColor="primary"
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
         onClick={() => {
           toggleForBreakpoint(true)
         }}
@@ -569,7 +569,7 @@ export const FullscreenModal: StoryFn = () => {
         Full screen
       </Button>
       <Button
-        brButtonColor="primary"
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
         onClick={() => {
           toggleForBreakpoint('sm')
         }}
@@ -577,7 +577,7 @@ export const FullscreenModal: StoryFn = () => {
         Full screen below sm
       </Button>
       <Button
-        brButtonColor="primary"
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
         onClick={() => {
           toggleForBreakpoint('md')
         }}
@@ -585,7 +585,7 @@ export const FullscreenModal: StoryFn = () => {
         Full screen below md
       </Button>
       <Button
-        brButtonColor="primary"
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
         onClick={() => {
           toggleForBreakpoint('lg')
         }}
@@ -593,7 +593,7 @@ export const FullscreenModal: StoryFn = () => {
         Full screen below lg
       </Button>
       <Button
-        brButtonColor="primary"
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
         onClick={() => {
           toggleForBreakpoint('xl')
         }}
@@ -601,7 +601,7 @@ export const FullscreenModal: StoryFn = () => {
         Full screen below xl
       </Button>
       <Button
-        brButtonColor="primary"
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
         onClick={() => {
           toggleForBreakpoint('xxl')
         }}
@@ -623,7 +623,7 @@ export const FullscreenModal: StoryFn = () => {
             </ModalHeader>
             <ModalBody>...</ModalBody>
             <ModalFooter>
-              <Button brButtonColor="secondary" onClick={modal.hide}>
+              <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }} onClick={modal.hide}>
                 Close
               </Button>
             </ModalFooter>

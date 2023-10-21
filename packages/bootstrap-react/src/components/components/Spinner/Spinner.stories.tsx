@@ -215,23 +215,23 @@ export const Size: StoryFn = () => {
 export const Buttons: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button brButtonColor="primary" disabled>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} disabled>
         <Spinner as="span" brSpinnerSm aria-hidden="true" />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Loading...
         </BrElement>
       </Button>
-      <Button brButtonColor="primary" disabled>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} disabled>
         <Spinner as="span" brSpinnerSm aria-hidden="true" /> Loading...
       </Button>
       <hr />
-      <Button brButtonColor="primary" disabled>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} disabled>
         <Spinner as="span" brSpinnerGrowing brSpinnerSm aria-hidden="true" />
         <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
           Loading...
         </BrElement>
       </Button>
-      <Button brButtonColor="primary" disabled>
+      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} disabled>
         <Spinner as="span" brSpinnerGrowing brSpinnerSm aria-hidden="true" /> Loading...
       </Button>
     </div>

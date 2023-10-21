@@ -42,3 +42,27 @@ export function buttonStyles(options: BsJsButtonOptions = {}): BsJsStyles {
 
   return styles
 }
+
+export type BsJsButtonGroupOptions = {
+  size?: BsJsButtonSize
+  vertical?: boolean
+}
+export function buttonGroupStyles(options: BsJsButtonGroupOptions = {}): BsJsStyles {
+  const styles = emptyStyles()
+
+  if (isEmptyObject(options)) {
+    return styles
+  }
+
+  if (options.vertical) {
+    styles.classes['btn-group-vertical'] = true
+  } else {
+    styles.classes['btn-group'] = true
+  }
+
+  if (options.size) {
+    styles.classes[`btn-group-${options.size}`] = true
+  }
+
+  return styles
+}

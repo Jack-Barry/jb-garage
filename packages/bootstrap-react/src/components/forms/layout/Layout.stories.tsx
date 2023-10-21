@@ -96,7 +96,7 @@ export const Gutters: StoryFn = () => {
           />
         </Col>
         <Col brCols={12}>
-          <Button type="submit" brButtonColor="primary">
+          <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
             Sign in
           </Button>
         </Col>
@@ -173,7 +173,7 @@ export const HorizontalForm: StoryFn = () => {
           />
         </Col>
       </Row>
-      <Button type="submit" brButtonColor="primary">
+      <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
         Sign in
       </Button>
     </form>
@@ -276,7 +276,7 @@ export const AutoSizing: StoryFn = () => {
           />
         </Col>
         <Col brCols="auto">
-          <Button type="submit" brButtonColor="primary">
+          <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
             Submit
           </Button>
         </Col>
@@ -319,7 +319,7 @@ export const AutoSizing: StoryFn = () => {
           />
         </Col>
         <Col brCols="auto">
-          <Button type="submit" brButtonColor="primary">
+          <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
             Submit
           </Button>
         </Col>
@@ -361,7 +361,7 @@ export const InlineForms: StoryFn = () => {
       </Col>
 
       <Col brCols={12}>
-        <Button type="submit" brButtonColor="primary">
+        <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
           Submit
         </Button>
       </Col>

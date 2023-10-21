@@ -31,7 +31,11 @@ export const SingleButton: StoryFn = () => {
     <div>
       <div style={{ minHeight: '150px' }}>
         <Dropdown>
-          <DropdownToggle brButtonColor="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+          <DropdownToggle
+            bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+            ref={dropdownRef1}
+            aria-expanded={isOpen1}
+          >
             Dropdown button
           </DropdownToggle>
           <DropdownMenu>
@@ -46,7 +50,7 @@ export const SingleButton: StoryFn = () => {
         <Dropdown>
           <DropdownToggle
             as="a"
-            brButtonColor="secondary"
+            bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
             href="#"
             role="button"
             ref={dropdownRef2}
@@ -64,7 +68,11 @@ export const SingleButton: StoryFn = () => {
       <hr />
       <div className="bd-example" style={{ minHeight: '250px' }}>
         <ButtonGroup>
-          <DropdownToggle brButtonColor="primary" ref={dropdownRef3} aria-expanded={isOpen3}>
+          <DropdownToggle
+            bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+            ref={dropdownRef3}
+            aria-expanded={isOpen3}
+          >
             Primary
           </DropdownToggle>
           <DropdownMenu>
@@ -92,7 +100,11 @@ function DropdownVariantExample(props: { variant: string }) {
 
   return (
     <ButtonGroup>
-      <DropdownToggle brButtonColor={variant} ref={dropdownRef} aria-expanded={isOpen}>
+      <DropdownToggle
+        bsJs={{ bsJsAll: { button: { color: variant } } }}
+        ref={dropdownRef}
+        aria-expanded={isOpen}
+      >
         {variant[0].toUpperCase() + variant.slice(1)}
       </DropdownToggle>
       <DropdownMenu>
@@ -112,9 +124,9 @@ export const SplitButton: StoryFn = () => {
   return (
     <div className="bd-example" style={{ minHeight: '150px' }}>
       <ButtonGroup>
-        <Button brButtonColor="primary">Action</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>Action</Button>
         <DropdownToggle
-          brButtonColor="primary"
+          bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
           ref={dropdownRef}
           aria-expanded={isOpen}
           brDropdownToggleSplit
@@ -141,9 +153,11 @@ function DropdownSplitButtonExample(props: { variant: string }) {
 
   return (
     <ButtonGroup>
-      <Button brButtonColor={variant}>{variant[0].toUpperCase() + variant.slice(1)}</Button>
+      <Button bsJs={{ bsJsAll: { button: { color: variant } } }}>
+        {variant[0].toUpperCase() + variant.slice(1)}
+      </Button>
       <DropdownToggle
-        brButtonColor={variant}
+        bsJs={{ bsJsAll: { button: { color: variant } } }}
         ref={dropdownRef}
         aria-expanded={isOpen}
         brDropdownToggleSplit
@@ -167,8 +181,7 @@ export const Sizing: StoryFn = () => {
       <div className="bd-example" style={{ minHeight: '250px' }}>
         <ButtonGroup>
           <DropdownToggle
-            brButtonColor="secondary"
-            brButtonLg
+            bsJs={{ bsJsAll: { button: { color: 'secondary', size: 'lg' } } }}
             ref={dropdownRef1}
             aria-expanded={isOpen1}
           >
@@ -177,12 +190,11 @@ export const Sizing: StoryFn = () => {
           <DropdownMenuWithSeparatedLink />
         </ButtonGroup>
         <ButtonGroup>
-          <Button brButtonColor="secondary" brButtonLg>
+          <Button bsJs={{ bsJsAll: { button: { color: 'secondary', size: 'lg' } } }}>
             Large split button
           </Button>
           <DropdownToggle
-            brButtonColor="secondary"
-            brButtonLg
+            bsJs={{ bsJsAll: { button: { color: 'secondary', size: 'lg' } } }}
             ref={dropdownRef2}
             aria-expanded={isOpen2}
             brDropdownToggleSplit
@@ -193,8 +205,7 @@ export const Sizing: StoryFn = () => {
       <div className="bd-example" style={{ minHeight: '250px' }}>
         <ButtonGroup>
           <DropdownToggle
-            brButtonColor="secondary"
-            brButtonSm
+            bsJs={{ bsJsAll: { button: { color: 'secondary', size: 'sm' } } }}
             ref={dropdownRef3}
             aria-expanded={isOpen3}
           >
@@ -203,12 +214,11 @@ export const Sizing: StoryFn = () => {
           <DropdownMenuWithSeparatedLink />
         </ButtonGroup>
         <ButtonGroup>
-          <Button brButtonColor="secondary" brButtonSm>
+          <Button bsJs={{ bsJsAll: { button: { color: 'secondary', size: 'sm' } } }}>
             Small split button
           </Button>
           <DropdownToggle
-            brButtonColor="secondary"
-            brButtonSm
+            bsJs={{ bsJsAll: { button: { color: 'secondary', size: 'sm' } } }}
             ref={dropdownRef4}
             aria-expanded={isOpen4}
             brDropdownToggleSplit
@@ -238,7 +248,11 @@ export const DirectionsCentered: StoryFn = () => {
   return (
     <div style={{ minHeight: '150px' }}>
       <div className="dropdown-center">
-        <DropdownToggle brButtonColor="secondary" ref={dropdownRef} aria-expanded={isOpen}>
+        <DropdownToggle
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+          ref={dropdownRef}
+          aria-expanded={isOpen}
+        >
           Centered dropdown
         </DropdownToggle>
         <DropdownMenu>
@@ -258,7 +272,11 @@ export const DirectionsDropup: StoryFn = () => {
   return (
     <div className="bd-example" style={{ paddingTop: '150px' }}>
       <ButtonGroup className="dropup">
-        <DropdownToggle brButtonColor="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+        <DropdownToggle
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+          ref={dropdownRef1}
+          aria-expanded={isOpen1}
+        >
           Dropup
         </DropdownToggle>
         <DropdownMenu>
@@ -268,9 +286,9 @@ export const DirectionsDropup: StoryFn = () => {
         </DropdownMenu>
       </ButtonGroup>
       <ButtonGroup className="dropup">
-        <Button brButtonColor="secondary">Split dropup</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}>Split dropup</Button>
         <DropdownToggle
-          brButtonColor="secondary"
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
           ref={dropdownRef2}
           aria-expanded={isOpen2}
           brDropdownToggleSplit
@@ -291,7 +309,11 @@ export const DropupCentered: StoryFn = () => {
   return (
     <div style={{ paddingTop: '150px' }}>
       <div className="dropup dropdup-center">
-        <DropdownToggle brButtonColor="secondary" ref={dropdownRef} aria-expanded={isOpen}>
+        <DropdownToggle
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+          ref={dropdownRef}
+          aria-expanded={isOpen}
+        >
           Centered dropup
         </DropdownToggle>
         <DropdownMenu>
@@ -311,7 +333,11 @@ export const Dropend: StoryFn = () => {
   return (
     <div className="bd-example" style={{ minHeight: '150px' }}>
       <ButtonGroup className="dropend">
-        <DropdownToggle brButtonColor="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+        <DropdownToggle
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+          ref={dropdownRef1}
+          aria-expanded={isOpen1}
+        >
           Dropend
         </DropdownToggle>
         <DropdownMenu>
@@ -321,9 +347,9 @@ export const Dropend: StoryFn = () => {
         </DropdownMenu>
       </ButtonGroup>
       <ButtonGroup className="dropend">
-        <Button brButtonColor="secondary">Split dropend</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}>Split dropend</Button>
         <DropdownToggle
-          brButtonColor="secondary"
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
           ref={dropdownRef2}
           aria-expanded={isOpen2}
           brDropdownToggleSplit
@@ -345,7 +371,11 @@ export const Dropstart: StoryFn = () => {
   return (
     <div className="bd-example" style={{ paddingLeft: '150px', minHeight: '150px' }}>
       <ButtonGroup className="dropstart">
-        <DropdownToggle brButtonColor="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+        <DropdownToggle
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+          ref={dropdownRef1}
+          aria-expanded={isOpen1}
+        >
           Dropstart
         </DropdownToggle>
         <DropdownMenu>
@@ -356,7 +386,7 @@ export const Dropstart: StoryFn = () => {
       </ButtonGroup>
       <ButtonGroup className="dropstart">
         <DropdownToggle
-          brButtonColor="secondary"
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
           ref={dropdownRef2}
           aria-expanded={isOpen2}
           brDropdownToggleSplit
@@ -366,7 +396,7 @@ export const Dropstart: StoryFn = () => {
           <DropdownItem href="#">Action two</DropdownItem>
           <DropdownItem href="#">Action three</DropdownItem>
         </DropdownMenu>
-        <Button brButtonColor="secondary">Split dropstart</Button>
+        <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}>Split dropstart</Button>
       </ButtonGroup>
     </div>
   )
@@ -379,7 +409,11 @@ export const MenuItems: StoryFn = () => {
     <div className="bd-example">
       <div style={{ minHeight: '175px' }}>
         <Dropdown>
-          <DropdownToggle brButtonColor="secondary" ref={dropdownRef} aria-expanded={isOpen}>
+          <DropdownToggle
+            bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+            ref={dropdownRef}
+            aria-expanded={isOpen}
+          >
             Dropdown
           </DropdownToggle>
           <DropdownMenu>
@@ -433,7 +467,11 @@ export const MenuAlignment: StoryFn = () => {
   return (
     <div className="bd-example" style={{ minHeight: '200px' }}>
       <ButtonGroup>
-        <DropdownToggle brButtonColor="secondary" ref={dropdownRef} aria-expanded={isOpen}>
+        <DropdownToggle
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+          ref={dropdownRef}
+          aria-expanded={isOpen}
+        >
           Right-aligned menu example
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
@@ -454,7 +492,7 @@ export const ResponsiveAlignment: StoryFn = () => {
       <div style={{ minHeight: '200px' }}>
         <ButtonGroup>
           <DropdownToggle
-            brButtonColor="secondary"
+            bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
             data-bs-display="static"
             ref={dropdownRef}
             aria-expanded={isOpen}
@@ -472,7 +510,7 @@ export const ResponsiveAlignment: StoryFn = () => {
       <div style={{ minHeight: '200px' }}>
         <ButtonGroup>
           <DropdownToggle
-            brButtonColor="secondary"
+            bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
             data-bs-display="static"
             ref={dropdownRef}
             aria-expanded={isOpen}
@@ -570,7 +608,7 @@ export const Forms: StoryFn = () => {
             brFormCheckInputProps={{ id: 'dropdownCheck1' }}
             brFormCheckLabelProps={{ children: 'Remember me' }}
           />
-          <Button type="submit" brButtonColor="primary">
+          <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
             Sign in
           </Button>
         </BrElement>
@@ -585,7 +623,9 @@ export const Forms: StoryFn = () => {
       <hr />
       <div style={{ minHeight: '320px' }}>
         <Dropdown>
-          <DropdownToggle brButtonColor="primary">Dropdown form</DropdownToggle>
+          <DropdownToggle bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
+            Dropdown form
+          </DropdownToggle>
           <DropdownMenu as="form" bsJs={{ bsJsAll: { spacing: { padding: '4' } } }}>
             <FormControl
               brFormControlWrapperProps={{
@@ -620,7 +660,7 @@ export const Forms: StoryFn = () => {
               brFormCheckInputProps={{ id: 'dropdownCheck2' }}
               brFormCheckLabelProps={{ children: 'Remember me' }}
             />
-            <Button type="submit" brButtonColor="primary">
+            <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
               Sign in
             </Button>
           </DropdownMenu>
@@ -642,7 +682,11 @@ export const DropdownOptions: StoryFn = () => {
     <div className="bd-example" style={{ minHeight: '220px' }}>
       <BrElement bsJs={{ bsJsAll: { display: 'flex' } }}>
         <Dropdown bsJs={{ bsJsAll: { spacing: { margin: { end: '1' } } } }}>
-          <DropdownToggle brButtonColor="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+          <DropdownToggle
+            bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+            ref={dropdownRef1}
+            aria-expanded={isOpen1}
+          >
             Offset
           </DropdownToggle>
           <DropdownMenu>
@@ -652,9 +696,9 @@ export const DropdownOptions: StoryFn = () => {
           </DropdownMenu>
         </Dropdown>
         <ButtonGroup>
-          <Button brButtonColor="secondary">Reference</Button>
+          <Button bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}>Reference</Button>
           <DropdownToggle
-            brButtonColor="secondary"
+            bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
             ref={dropdownRef2}
             aria-expanded={isOpen2}
             brDropdownToggleSplit
@@ -689,7 +733,11 @@ export const AutoCloseBehavior: StoryFn = () => {
   return (
     <div className="bd-example" style={{ minHeight: '200px' }}>
       <ButtonGroup>
-        <DropdownToggle brButtonColor="secondary" ref={dropdownRef1} aria-expanded={isOpen1}>
+        <DropdownToggle
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+          ref={dropdownRef1}
+          aria-expanded={isOpen1}
+        >
           Default dropdown
         </DropdownToggle>
         <DropdownMenu>
@@ -699,7 +747,11 @@ export const AutoCloseBehavior: StoryFn = () => {
         </DropdownMenu>
       </ButtonGroup>
       <ButtonGroup>
-        <DropdownToggle brButtonColor="secondary" ref={dropdownRef2} aria-expanded={isOpen2}>
+        <DropdownToggle
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+          ref={dropdownRef2}
+          aria-expanded={isOpen2}
+        >
           Clickable inside
         </DropdownToggle>
         <DropdownMenu>
@@ -709,7 +761,11 @@ export const AutoCloseBehavior: StoryFn = () => {
         </DropdownMenu>
       </ButtonGroup>
       <ButtonGroup>
-        <DropdownToggle brButtonColor="secondary" ref={dropdownRef3} aria-expanded={isOpen3}>
+        <DropdownToggle
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+          ref={dropdownRef3}
+          aria-expanded={isOpen3}
+        >
           Clickable outside
         </DropdownToggle>
         <DropdownMenu>
@@ -719,7 +775,11 @@ export const AutoCloseBehavior: StoryFn = () => {
         </DropdownMenu>
       </ButtonGroup>
       <ButtonGroup>
-        <DropdownToggle brButtonColor="secondary" ref={dropdownRef4} aria-expanded={isOpen4}>
+        <DropdownToggle
+          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+          ref={dropdownRef4}
+          aria-expanded={isOpen4}
+        >
           Manual close
         </DropdownToggle>
         <DropdownMenu>

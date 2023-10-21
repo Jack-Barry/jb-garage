@@ -99,7 +99,7 @@ export const SupportedContent: StoryFn = () => {
               placeholder="Search"
               aria-label="Search"
             />
-            <Button brButtonColor="outline-success" type="submit">
+            <Button bsJs={{ bsJsAll: { button: { color: 'outline-success' } } }} type="submit">
               Search
             </Button>
           </BrElement>
@@ -291,7 +291,7 @@ export const Forms: StoryFn = () => {
               placeholder="Search"
               aria-label="Search"
             />
-            <Button brButtonColor="outline-success" type="submit">
+            <Button bsJs={{ bsJsAll: { button: { color: 'outline-success' } } }} type="submit">
               Search
             </Button>
           </BrElement>
@@ -308,7 +308,7 @@ export const Forms: StoryFn = () => {
               placeholder="Search"
               aria-label="Search"
             />
-            <Button brButtonColor="outline-success" type="submit">
+            <Button bsJs={{ bsJsAll: { button: { color: 'outline-success' } } }} type="submit">
               Search
             </Button>
           </BrElement>
@@ -327,12 +327,13 @@ export const Forms: StoryFn = () => {
       <Navbar bsJs={{ bsJsAll: { background: 'body-tertiary' } }}>
         <Container as="form" brContainerFluid className="justify-content-start">
           <Button
-            brButtonColor="outline-success"
-            bsJs={{ bsJsAll: { spacing: { margin: { end: '2' } } } }}
+            bsJs={{
+              bsJsAll: { button: { color: 'outline-success' }, spacing: { margin: { end: '2' } } }
+            }}
           >
             Main button
           </Button>
-          <Button brButtonColor="outline-secondary" brButtonSm>
+          <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary', size: 'sm' } } }}>
             Smaller button
           </Button>
         </Container>
@@ -456,7 +457,7 @@ function ColorSchemeExampleContent() {
             placeholder="Search"
             aria-label="Search"
           />
-          <Button brButtonColor="outline-light" type="submit">
+          <Button bsJs={{ bsJsAll: { button: { color: 'outline-light' } } }} type="submit">
             Search
           </Button>
         </BrElement>
@@ -605,7 +606,7 @@ export const Scrolling: StoryFn = () => {
               placeholder="Search"
               aria-label="Search"
             />
-            <Button brButtonColor="outline-success" type="submit">
+            <Button bsJs={{ bsJsAll: { button: { color: 'outline-success' } } }} type="submit">
               Search
             </Button>
           </BrElement>
@@ -706,7 +707,7 @@ function TogglerDemoContent() {
           placeholder="Search"
           aria-label="Search"
         />
-        <Button brButtonColor="outline-success" type="submit">
+        <Button bsJs={{ bsJsAll: { button: { color: 'outline-success' } } }} type="submit">
           Search
         </Button>
       </BrElement>
@@ -820,7 +821,7 @@ export const OffcanvasStory: StoryFn = () => {
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <Button brButtonColor="outline-success" type="submit">
+                <Button bsJs={{ bsJsAll: { button: { color: 'outline-success' } } }} type="submit">
                   Search
                 </Button>
               </BrElement>

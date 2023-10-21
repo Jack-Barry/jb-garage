@@ -53,7 +53,11 @@ export const LiveExample: StoryFn = () => {
 
   return (
     <div>
-      <Button brButtonColor="primary" id="liveToastBtn" onClick={toast.show}>
+      <Button
+        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        id="liveToastBtn"
+        onClick={toast.show}
+      >
         Show live toast
       </Button>
       <ToastContainer
@@ -183,10 +187,13 @@ export const CustomContent: StoryFn = () => {
               }
             }}
           >
-            <Button brButtonColor="primary" brButtonSm>
+            <Button bsJs={{ bsJsAll: { button: { color: 'primary', size: 'sm' } } }}>
               Take action
             </Button>
-            <Button brButtonColor="secondary" brButtonSm onClick={toast2.hide}>
+            <Button
+              bsJs={{ bsJsAll: { button: { color: 'secondary', size: 'sm' } } }}
+              onClick={toast2.hide}
+            >
               Close
             </Button>
           </BrElement>

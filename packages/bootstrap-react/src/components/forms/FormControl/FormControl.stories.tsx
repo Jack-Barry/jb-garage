@@ -147,8 +147,9 @@ export const ReadOnlyPlainText: StoryFn = () => {
           <Col brCols="auto">
             <Button
               type="submit"
-              bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
-              brButtonColor="primary"
+              bsJs={{
+                bsJsAll: { spacing: { margin: { bottom: '3' } }, button: { color: 'primary' } }
+              }}
             >
               Confirm identity
             </Button>
