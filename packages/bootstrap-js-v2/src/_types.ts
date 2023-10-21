@@ -1,13 +1,12 @@
 import { LiteralUnion } from '@jb-garage/utils-generic'
 import * as CSS from 'csstype'
 
-/** TODO: lock this down to supported Bootstrap components */
-export type BsJsComponent = string
+import { BootstrapElement, BootstrapTheme } from './_bootstrapTypes'
+import { BsJsButtonGroupOptions, BsJsButtonOptions } from './elements/components/button'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
-  theme?: LiteralUnion<'light' | 'dark', string>
-  //
+  theme?: LiteralUnion<BootstrapTheme, string>
 }
 
 /** Options that can be applied to specific breakpoints */
@@ -15,14 +14,27 @@ export type BsJsBreakpointDependentOptions = {
   //
 }
 
+/** Types of elements with a `show` class */
+export type BsJsShowableElement = 'alert'
+
+/** Types of elements with an `active` class */
+export type BsJsActivatableElement = 'btn'
+
+/** Types of elements with a `disabled` class */
+export type BsJsDisableableElement = 'btn'
+
 /** Options to provide when calculating Bootstrap styles for a given element */
-export type BsJsOptions<Component extends BsJsComponent | undefined> =
+export type BsJsOptions<Element extends BootstrapElement | undefined> =
   BsJsBreakpointAgnosticOptions & {
-    /** Type of Bootstrap component */
-    componentType?: Component
+    /** Type of Bootstrap element */
+    elementType?: Element
     /** Breakpoint-dependent style options */
     breakpoints?: BsJsBreakpointDependentOptions
-  }
+  } & (Element extends BsJsShowableElement ? { show?: boolean } : unknown) &
+    (Element extends BsJsActivatableElement ? { active?: boolean } : unknown) &
+    (Element extends BsJsDisableableElement ? { disabled?: boolean } : unknown) &
+    (Element extends 'btn' ? BsJsButtonOptions : unknown) &
+    (Element extends 'btn-group' ? BsJsButtonGroupOptions : unknown)
 
 /** Object representing styles that can be applied to an HTML element */
 export type ElementStyle = CSS.Properties<string | number> &
