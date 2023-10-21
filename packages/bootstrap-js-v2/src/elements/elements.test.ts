@@ -40,7 +40,12 @@ describe('Elements', () => {
       'modal-content',
       'modal-footer',
       'modal-header',
-      'modal-title'
+      'modal-title',
+      'navbar-brand',
+      'navbar-collapse',
+      'navbar-nav',
+      'navbar-text',
+      'navbar-toggler-icon'
     ]
 
     for (const elementType of elementTypes) {

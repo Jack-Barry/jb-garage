@@ -14,6 +14,7 @@ import {
 } from '../bootstrapEntities/components/dropdown'
 import { applyListGroupItemStyles } from '../bootstrapEntities/components/listGroup'
 import { applyModalDialogStyles, applyModalStyles } from '../bootstrapEntities/components/modal'
+import { applyNavbarStyles } from '../bootstrapEntities/components/navbar'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -71,6 +72,12 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
     case 'dropdown-toggle':
       applyDropdownToggleStyles(result, options as BsJsOptions<'dropdown-toggle'>)
       break
+    case 'img':
+      applyImageStyles(result, options as BsJsOptions<'img'>)
+      break
+    case 'link':
+      applyLinkStyles(prefix, result, options as BsJsOptions<'link' | 'card-link'>)
+      break
     case 'list-group-item':
       applyListGroupItemStyles(result, options as BsJsOptions<'list-group-item'>)
       break
@@ -80,11 +87,8 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
     case 'modal-dialog':
       applyModalDialogStyles(result, options as BsJsOptions<'modal-dialog'>)
       break
-    case 'img':
-      applyImageStyles(result, options as BsJsOptions<'img'>)
-      break
-    case 'link':
-      applyLinkStyles(prefix, result, options as BsJsOptions<'link' | 'card-link'>)
+    case 'navbar':
+      applyNavbarStyles(result, options as BsJsOptions<'navbar'>)
       break
     default:
       applyElementNameAsClass(result, options.elementType)

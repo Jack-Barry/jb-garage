@@ -43,12 +43,18 @@ export type BootstrapElement =
   | 'list-group'
   | 'list-group-item'
   | 'modal'
-  | 'modal-body' //
-  | 'modal-content' //
+  | 'modal-body'
+  | 'modal-content'
   | 'modal-dialog'
-  | 'modal-footer' //
-  | 'modal-header' //
-  | 'modal-title' //
+  | 'modal-footer'
+  | 'modal-header'
+  | 'modal-title'
+  | 'navbar'
+  | 'navbar-brand'
+  | 'navbar-collapse'
+  | 'navbar-nav'
+  | 'navbar-text'
+  | 'navbar-toggler-icon'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'
