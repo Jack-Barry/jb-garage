@@ -1,26 +1,19 @@
-import { BootstrapElement } from '../_bootstrapTypes'
-import {
-  BsJsActivatableElement,
-  BsJsDisableableElement,
-  BsJsOptions,
-  BsJsShowableElement,
-  BsJsStyles
-} from '../_types'
+import { BsJsElement, BsJsOptions, BsJsStyles } from '../_types'
+import { applyAlertStyles } from '../components/alert'
+import { applyButtonGroupStyles, applyButtonStyles } from '../components/button'
+import { applyCardImageStyles, applyCardLinkStyles } from '../components/card'
+import { applyImageStyles } from '../components/image'
+import { applyLinkStyles } from '../utilities/link'
 
-import {
-  BsJsButtonGroupOptions,
-  BsJsButtonOptions,
-  applyButtonGroupStyles,
-  applyButtonStyles
-} from './components/button'
+import { applyElementNameAsClass } from './utils'
 
-export type ElementStyleOptions<Element extends BootstrapElement | undefined> = Omit<
+export type ElementStyleOptions<Element extends BsJsElement | undefined> = Omit<
   BsJsOptions<Element>,
   'breakpoints'
 >
 
 /** Modifies the provided `result` object with element-specific styles */
-export function applyElementStyles<Element extends BootstrapElement | undefined>(
+export function applyElementStyles<Element extends BsJsElement | undefined>(
   prefix: string,
   result: BsJsStyles,
   options: ElementStyleOptions<Element>
@@ -31,55 +24,28 @@ export function applyElementStyles<Element extends BootstrapElement | undefined>
 
   switch (options.elementType) {
     case 'alert':
-      applyElementNameAsClass(result, options.elementType)
-      applyShowableStyles(result, options as BsJsOptions<BsJsShowableElement>)
+      applyAlertStyles(result, options as BsJsOptions<'alert'>)
       break
     case 'btn':
-      applyElementNameAsClass(result, options.elementType)
-      applyButtonStyles(result, options as BsJsButtonOptions)
-      applyActiveStyles(result, options as BsJsButtonOptions)
-      applyDisabledStyles(result, options as BsJsButtonOptions)
+      applyButtonStyles(result, options as BsJsOptions<'btn'>)
       break
     case 'btn-group':
-      applyButtonGroupStyles(result, options as BsJsButtonGroupOptions)
+      applyButtonGroupStyles(result, options as BsJsOptions<'btn-group'>)
+      break
+    case 'card-img':
+      applyCardImageStyles(result, options as BsJsOptions<'card-img'>)
+      break
+    case 'card-link':
+      applyCardLinkStyles(prefix, result, options as BsJsOptions<'card-link'>)
+      break
+    case 'img':
+      applyImageStyles(result, options as BsJsOptions<'img'>)
+      break
+    case 'link':
+      applyLinkStyles(prefix, result, options as BsJsOptions<'link' | 'card-link'>)
       break
     default:
       applyElementNameAsClass(result, options.elementType)
       break
-  }
-}
-
-/** Applies the provided element name as a class name in `result` */
-function applyElementNameAsClass(result: BsJsStyles, elementName: BootstrapElement) {
-  result.classes[elementName] = true
-}
-
-/** Applies `show` class if applicable */
-function applyShowableStyles(
-  result: BsJsStyles,
-  options: ElementStyleOptions<BsJsShowableElement>
-) {
-  if (options.show) {
-    result.classes['show'] = true
-  }
-}
-
-/** Applies `active` class if applicable */
-function applyActiveStyles(
-  result: BsJsStyles,
-  options: ElementStyleOptions<BsJsActivatableElement>
-) {
-  if (options.active) {
-    result.classes['active'] = true
-  }
-}
-
-/** Applies `disabled` class if applicable */
-function applyDisabledStyles(
-  result: BsJsStyles,
-  options: ElementStyleOptions<BsJsDisableableElement>
-) {
-  if (options.disabled) {
-    result.classes['disabled'] = true
   }
 }

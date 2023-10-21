@@ -2,7 +2,10 @@ import { LiteralUnion } from '@jb-garage/utils-generic'
 import * as CSS from 'csstype'
 
 import { BootstrapElement, BootstrapTheme } from './_bootstrapTypes'
-import { BsJsButtonGroupOptions, BsJsButtonOptions } from './elements/components/button'
+import { BsJsButtonGroupOptions, BsJsButtonOptions } from './components/button'
+import { BsJsCardImageOptions } from './components/card'
+import { BsJsImageOptions } from './components/image'
+import { BsJsLinkOptions } from './utilities/link'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
@@ -14,27 +17,52 @@ export type BsJsBreakpointDependentOptions = {
   //
 }
 
-/** Types of elements with a `show` class */
-export type BsJsShowableElement = 'alert'
+/** Object that can used as an option to set a custom CSS variable value */
+export type BsJsAsCssVar<T> = {
+  /** Custom value that can be used for a CSS variable */
+  asCssVar: T
+}
 
-/** Types of elements with an `active` class */
-export type BsJsActivatableElement = 'btn'
+/** Options for elements with a `show` class */
+export type BsJsShowableElementOptions = { show?: boolean }
 
-/** Types of elements with a `disabled` class */
-export type BsJsDisableableElement = 'btn'
+/** Options for elements with an `active` class */
+export type BsJsActivatableElementOptions = {
+  /** Apply active styles to element */
+  active?: boolean
+}
+
+/** Options for element with a `disabled` class */
+export type BsJsDisableableElementOptions = {
+  /** Apply disabled styles to element */
+  disabled?: boolean
+}
+
+export type BsJsElement = BootstrapElement | 'img' | 'link'
 
 /** Options to provide when calculating Bootstrap styles for a given element */
-export type BsJsOptions<Element extends BootstrapElement | undefined> =
-  BsJsBreakpointAgnosticOptions & {
-    /** Type of Bootstrap element */
-    elementType?: Element
+export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpointAgnosticOptions &
+  (Element extends BsJsElement
+    ? {
+        /** Type of Bootstrap element */
+        elementType: Element
+      }
+    : { elementType?: undefined }) & {
     /** Breakpoint-dependent style options */
     breakpoints?: BsJsBreakpointDependentOptions
-  } & (Element extends BsJsShowableElement ? { show?: boolean } : unknown) &
-    (Element extends BsJsActivatableElement ? { active?: boolean } : unknown) &
-    (Element extends BsJsDisableableElement ? { disabled?: boolean } : unknown) &
-    (Element extends 'btn' ? BsJsButtonOptions : unknown) &
-    (Element extends 'btn-group' ? BsJsButtonGroupOptions : unknown)
+  } & (Element extends 'alert'
+    ? BsJsShowableElementOptions
+    : Element extends 'btn'
+    ? BsJsButtonOptions
+    : Element extends 'btn-group'
+    ? BsJsButtonGroupOptions
+    : Element extends 'card-img'
+    ? BsJsCardImageOptions
+    : Element extends 'img'
+    ? BsJsImageOptions
+    : Element extends 'link' | 'card-link'
+    ? BsJsLinkOptions
+    : unknown)
 
 /** Object representing styles that can be applied to an HTML element */
 export type ElementStyle = CSS.Properties<string | number> &

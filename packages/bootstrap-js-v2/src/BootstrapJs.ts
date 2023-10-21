@@ -1,5 +1,4 @@
-import { BootstrapElement } from './_bootstrapTypes'
-import { BsJsOptions, BsJsStyles } from './_types'
+import { BsJsElement, BsJsOptions, BsJsStyles } from './_types'
 import { applyBreakpointSpecificStyles } from './breakpointSpecific'
 import { applyCommonStyles } from './common'
 import { ElementStyleOptions, applyElementStyles } from './elements'
@@ -11,8 +10,8 @@ export class BootstrapJs {
   /**
    * Translates provided config into Bootstrap style attributes for an HTML element
    */
-  bsJs = <Element extends BootstrapElement | undefined = undefined>(
-    options: BsJsOptions<Element> = {}
+  bsJs = <Element extends BsJsElement | undefined = undefined>(
+    options: BsJsOptions<Element> = {} as BsJsOptions<Element>
   ) => {
     const result: BsJsStyles = emptyStyles()
     if (Object.keys(options).length === 0) {

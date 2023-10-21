@@ -14,6 +14,17 @@ export type BootstrapElement =
   | 'btn'
   | 'btn-group'
   | 'btn-toolbar'
+  | 'card'
+  | 'card-body'
+  | 'card-footer'
+  | 'card-group'
+  | 'card-header'
+  | 'card-img' // TODO
+  | 'card-img-overlay'
+  | 'card-link' // TODO
+  | 'card-subtitle'
+  | 'card-text'
+  | 'card-title'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

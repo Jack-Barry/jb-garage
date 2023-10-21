@@ -1,11 +1,11 @@
 import { BootstrapJs } from '../BootstrapJs'
-import { BootstrapElement } from '../_bootstrapTypes'
+import { BsJsElement, BsJsOptions } from '../_types'
 
 describe('Elements', () => {
   const bsJs = new BootstrapJs().bsJs
 
   test('applies class name for expected simple element types', () => {
-    const elementTypes: BootstrapElement[] = [
+    const elementTypes: BsJsElement[] = [
       'accordion',
       'accordion-body',
       'accordion-button',
@@ -17,39 +17,24 @@ describe('Elements', () => {
       'badge',
       'breadcrumb',
       'breadcrumb-item',
-      'btn-toolbar'
+      'btn-toolbar',
+      'card',
+      'card-body',
+      'card-footer',
+      'card-group',
+      'card-header',
+      'card-img-overlay',
+      'card-subtitle',
+      'card-text',
+      'card-title'
     ]
 
     for (const elementType of elementTypes) {
-      expect(bsJs({ elementType })).toStrictEqual({
+      expect(bsJs({ elementType } as BsJsOptions<typeof elementType>)).toStrictEqual({
         classes: { [elementType]: true },
         inlineStyles: {},
         elementAttributes: {}
       })
     }
-  })
-
-  describe('Alerts', () => {
-    test('applies base class name', () => {
-      expect(bsJs({ elementType: 'alert' })).toStrictEqual({
-        classes: { alert: true },
-        inlineStyles: {},
-        elementAttributes: {}
-      })
-    })
-
-    test('applies "show" class name', () => {
-      expect(bsJs({ elementType: 'alert', show: true })).toStrictEqual({
-        classes: { alert: true, show: true },
-        inlineStyles: {},
-        elementAttributes: {}
-      })
-
-      expect(bsJs({ elementType: 'alert', show: false })).toStrictEqual({
-        classes: { alert: true },
-        inlineStyles: {},
-        elementAttributes: {}
-      })
-    })
   })
 })

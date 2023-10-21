@@ -1,24 +1,31 @@
 import { LiteralUnion } from '@jb-garage/utils-generic'
 
-import { BootstrapButtonColor, BootstrapButtonSize } from '../../_bootstrapTypes'
-import { BsJsStyles } from '../../_types'
+import { BootstrapButtonColor, BootstrapButtonSize } from '../_bootstrapTypes'
+import {
+  BsJsActivatableElementOptions,
+  BsJsDisableableElementOptions,
+  BsJsOptions,
+  BsJsStyles
+} from '../_types'
+import { applyActiveStyles, applyDisabledStyles, applyElementNameAsClass } from '../elements/utils'
 
 type BsJsButtonColor = LiteralUnion<BootstrapButtonColor, string>
 
 type BsJsButtonSize = LiteralUnion<BootstrapButtonSize, string>
 
-export type BsJsButtonOptions = {
-  /** Color to apply to the button */
-  color?: BsJsButtonColor
-  /** Size of the button */
-  size?: BsJsButtonSize
-  /** Apply active styles to button */
-  active?: boolean
-  /** Apply disabled styles to button */
-  disabled?: boolean
-}
+export type BsJsButtonOptions = BsJsActivatableElementOptions &
+  BsJsDisableableElementOptions & {
+    /** Color to apply to the button */
+    color?: BsJsButtonColor
+    /** Size of the button */
+    size?: BsJsButtonSize
+  }
 
-export function applyButtonStyles(result: BsJsStyles, options: BsJsButtonOptions) {
+export function applyButtonStyles(result: BsJsStyles, options: BsJsOptions<'btn'>) {
+  applyElementNameAsClass(result, options.elementType)
+  applyActiveStyles(result, options)
+  applyDisabledStyles(result, options)
+
   if (options.color) {
     result.classes[`btn-${options.color}`] = true
   }
