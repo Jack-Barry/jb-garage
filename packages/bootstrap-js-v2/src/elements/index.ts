@@ -51,6 +51,7 @@ import { applyFormLabelStyles } from '../bootstrapEntities/forms/formLabel'
 import { applyFormSelectStyles } from '../bootstrapEntities/forms/formSelect'
 import { applyFormValidationStyles } from '../bootstrapEntities/forms/formValidation'
 import { applyInputGroupStyles } from '../bootstrapEntities/forms/inputGroup'
+import { applyContainerStyles } from '../bootstrapEntities/layout/container'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
 import { applyElementNameAsClass } from './utils'
@@ -100,6 +101,9 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'carousel-item':
       applyCarouselItemStyles(result, options as BsJsOptions<'carousel-item'>)
+      break
+    case 'container':
+      applyContainerStyles(result, options as BsJsOptions<'container'>)
       break
     case 'dropdown-item':
       applyDropdownItemStyles(result, options as BsJsOptions<'dropdown-item'>)

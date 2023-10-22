@@ -50,6 +50,7 @@ import { BsJsFormLabelOptions } from './bootstrapEntities/forms/formLabel'
 import { BsJsFormSelectOptions } from './bootstrapEntities/forms/formSelect'
 import { BsJsFormFeedbackOptions } from './bootstrapEntities/forms/formValidation'
 import { BsJsInputGroupOptions } from './bootstrapEntities/forms/inputGroup'
+import { BsJsContainerOptions } from './bootstrapEntities/layout/container'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
@@ -125,6 +126,8 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsCarouselControlOptions
     : Element extends 'carousel-item'
     ? BsJsCarouselItemOptions
+    : Element extends 'container'
+    ? BsJsContainerOptions
     : Element extends 'dropdown-item'
     ? BsJsDropdownItemOptions
     : Element extends 'dropdown-toggle'

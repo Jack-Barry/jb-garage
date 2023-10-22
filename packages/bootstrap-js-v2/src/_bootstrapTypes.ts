@@ -34,6 +34,7 @@ export type BootstrapElement =
   | 'carousel-inner'
   | 'carousel-item'
   | 'collapse'
+  | 'container'
   | 'dropdown'
   | 'dropdown-divider'
   | 'dropdown-header'
