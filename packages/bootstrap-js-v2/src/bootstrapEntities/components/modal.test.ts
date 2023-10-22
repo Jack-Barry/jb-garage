@@ -6,7 +6,7 @@ describe('Element Components: Modals', () => {
   describe('Modal', () => {
     test('applies element class name', () => {
       expect(bsJs({ elementType: 'modal' })).toStrictEqual({
-        classes: { modal: true },
+        classes: { modal: true, fade: true },
         inlineStyles: {},
         elementAttributes: {}
       })

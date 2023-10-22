@@ -1,11 +1,14 @@
-import { BsJsActivatableElementOptions, BsJsOptions, BsJsStyles } from '../../_types'
+import {
+  BsJsActivatableElementOptions,
+  BsJsFadeableElementOptions,
+  BsJsOptions,
+  BsJsStyles
+} from '../../_types'
 import { applyActiveStyles, applyElementNameAsClass } from '../../elements/utils'
 
-export type BsJsCarouselOptions = {
+export type BsJsCarouselOptions = BsJsFadeableElementOptions & {
   /** @default true */
   slide?: boolean
-  /** Apply a fade transition instead of a slide */
-  fade?: boolean
 }
 export function applyCarouselStyles(result: BsJsStyles, options: BsJsOptions<'carousel'>) {
   applyElementNameAsClass(result, options.elementType)

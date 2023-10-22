@@ -67,6 +67,9 @@ export type BootstrapElement =
   | 'pagination'
   | 'placeholder'
   | 'placeholder-animation'
+  | 'popover'
+  | 'popover-body'
+  | 'popover-header'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

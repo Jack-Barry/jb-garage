@@ -15,7 +15,7 @@ export type BsJsModalOptions = {
 export function applyModalStyles(result: BsJsStyles, options: BsJsOptions<'modal'>) {
   applyElementNameAsClass(result, options.elementType)
 
-  if (options.fade) {
+  if (options.fade !== false) {
     result.classes['fade'] = true
   }
 }

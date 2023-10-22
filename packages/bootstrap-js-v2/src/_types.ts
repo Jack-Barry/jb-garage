@@ -27,6 +27,7 @@ import {
   BsJsPaginationOptions
 } from './bootstrapEntities/components/pagination'
 import { BsJsPlaceholderAnimationOptions } from './bootstrapEntities/components/placeholder'
+import { BsJsPopoverOptions } from './bootstrapEntities/components/popover'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
@@ -59,6 +60,12 @@ export type BsJsActivatableElementOptions = {
 export type BsJsDisableableElementOptions = {
   /** Apply disabled styles to element */
   disabled?: boolean
+}
+
+/** Options for element with a fade class */
+export type BsJsFadeableElementOptions = {
+  /** Apply fade styles to element */
+  fade?: boolean
 }
 
 export type BsJsElement = BootstrapElement | 'img' | 'link'
@@ -117,6 +124,8 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsPaginationOptions
     : Element extends 'placeholder-animation'
     ? BsJsPlaceholderAnimationOptions
+    : Element extends 'popover'
+    ? BsJsPopoverOptions
     : unknown)
 
 /** Object representing styles that can be applied to an HTML element */

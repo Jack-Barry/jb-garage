@@ -26,6 +26,7 @@ import {
   applyPaginationStyles
 } from '../bootstrapEntities/components/pagination'
 import { applyPlaceholderAnimationStyles } from '../bootstrapEntities/components/placeholder'
+import { applyPopoverStyles } from '../bootstrapEntities/components/popover'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -124,6 +125,9 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
         result,
         options as unknown as BsJsOptions<'placeholder-animation'>
       )
+      break
+    case 'popover':
+      applyPopoverStyles(result, options as BsJsOptions<'popover'>)
       break
     default:
       applyElementNameAsClass(result, options.elementType)

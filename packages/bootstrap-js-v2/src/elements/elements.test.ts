@@ -50,7 +50,9 @@ describe('Elements', () => {
       'offcanvas-header',
       'offcanvas-title',
       'page-link',
-      'placeholder'
+      'placeholder',
+      'popover-body',
+      'popover-header'
     ]
 
     for (const elementType of elementTypes) {
