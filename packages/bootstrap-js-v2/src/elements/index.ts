@@ -41,6 +41,13 @@ import {
   applyTableResponsiveStyles,
   applyTableStyles
 } from '../bootstrapEntities/content/table'
+import {
+  applyFormCheckInputStyles,
+  applyFormCheckStyles
+} from '../bootstrapEntities/forms/formCheck'
+import { applyFormControlStyles } from '../bootstrapEntities/forms/formControl'
+import { applyFormGroupStyles } from '../bootstrapEntities/forms/formGroup'
+import { applyFormLabelStyles } from '../bootstrapEntities/forms/formLabel'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
 import { applyElementNameAsClass } from './utils'
@@ -96,6 +103,22 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'dropdown-toggle':
       applyDropdownToggleStyles(result, options as BsJsOptions<'dropdown-toggle'>)
+      break
+    case 'form-check':
+      applyFormCheckStyles(result, options as BsJsOptions<'form-check'>)
+      break
+    case 'form-check-input':
+      applyFormCheckInputStyles(result, options as BsJsOptions<'form-check-input'>)
+      break
+    case 'form-group':
+      applyFormGroupStyles(result, options as BsJsOptions<'form-group'>)
+      break
+    case 'form-control':
+    case 'form-range':
+      applyFormControlStyles(result, options as BsJsOptions<'form-control' | 'form-range'>)
+      break
+    case 'form-label':
+      applyFormLabelStyles(result, options as BsJsOptions<'form-label'>)
       break
     case 'img':
       applyImageStyles(result, options as BsJsOptions<'img'>)

@@ -35,6 +35,8 @@ describe('Elements', () => {
       'dropdown-divider',
       'dropdown-header',
       'dropdown-menu',
+      'form-check-label',
+      'form-text',
       'list-group',
       'modal-body',
       'modal-content',

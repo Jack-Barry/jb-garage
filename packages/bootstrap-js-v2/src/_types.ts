@@ -40,6 +40,13 @@ import {
   BsJsTableOptions,
   BsJsTableResponsiveOptions
 } from './bootstrapEntities/content/table'
+import {
+  BsJsFormCheckInputOptions,
+  BsJsFormCheckOptions
+} from './bootstrapEntities/forms/formCheck'
+import { BsJsFormControlOptions } from './bootstrapEntities/forms/formControl'
+import { BsJsFormGroupOptions } from './bootstrapEntities/forms/formGroup'
+import { BsJsFormLabelOptions } from './bootstrapEntities/forms/formLabel'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
@@ -82,7 +89,13 @@ export type BsJsFadeableElementOptions = {
   fade?: boolean
 }
 
-export type BsJsElement = BootstrapElement | 'img' | 'link' | 'table-entry' | 'table-group'
+export type BsJsElement =
+  | BootstrapElement
+  | 'form-group'
+  | 'img'
+  | 'link'
+  | 'table-entry'
+  | 'table-group'
 
 /** Options to provide when calculating Bootstrap styles for a given element */
 export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpointAgnosticOptions &
@@ -112,6 +125,16 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsDropdownItemOptions
     : Element extends 'dropdown-toggle'
     ? BsJsDropdownToggleOptions
+    : Element extends 'form-check'
+    ? BsJsFormCheckOptions
+    : Element extends 'form-check-input'
+    ? BsJsFormCheckInputOptions
+    : Element extends 'form-control' | 'form-range'
+    ? BsJsFormControlOptions
+    : Element extends 'form-group'
+    ? BsJsFormGroupOptions
+    : Element extends 'form-label'
+    ? BsJsFormLabelOptions
     : Element extends 'img'
     ? BsJsImageOptions
     : Element extends 'link' | 'card-link'
