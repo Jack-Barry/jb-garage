@@ -78,6 +78,9 @@ export type BootstrapElement =
   | 'toast-body'
   | 'toast-container'
   | 'toast-header'
+  | 'tooltip'
+  | 'tooltip-arrow'
+  | 'tooltip-inner'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

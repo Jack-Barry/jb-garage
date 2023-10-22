@@ -56,7 +56,9 @@ describe('Elements', () => {
       'progress-stacked',
       'toast-body',
       'toast-container',
-      'toast-header'
+      'toast-header',
+      'tooltip-arrow',
+      'tooltip-inner'
     ]
 
     for (const elementType of elementTypes) {

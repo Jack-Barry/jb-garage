@@ -132,7 +132,7 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsPaginationOptions
     : Element extends 'placeholder-animation'
     ? BsJsPlaceholderAnimationOptions
-    : Element extends 'popover'
+    : Element extends 'popover' | 'tooltip'
     ? BsJsPopoverOptions
     : Element extends 'progress'
     ? BsJsProgressOptions
