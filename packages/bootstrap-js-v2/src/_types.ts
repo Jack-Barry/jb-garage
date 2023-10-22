@@ -22,6 +22,10 @@ import {
 } from './bootstrapEntities/components/nav'
 import { BsJsNavbarOptions } from './bootstrapEntities/components/navbar'
 import { BsJsOffcanvasOptions } from './bootstrapEntities/components/offcanvas'
+import {
+  BsJsPageItemOptions,
+  BsJsPaginationOptions
+} from './bootstrapEntities/components/pagination'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
@@ -106,6 +110,10 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsNavbarOptions
     : Element extends 'offcanvas'
     ? BsJsOffcanvasOptions
+    : Element extends 'page-item'
+    ? BsJsPageItemOptions
+    : Element extends 'pagination'
+    ? BsJsPaginationOptions
     : unknown)
 
 /** Object representing styles that can be applied to an HTML element */
@@ -116,7 +124,7 @@ export type ElementStyle = CSS.Properties<string | number> &
 /** Bootstrap styles to apply to an HTML element */
 export type BsJsStyles = {
   /** Object wherein each key represents a class name to apply to the element */
-  classes: Record<string, boolean>
+  classes: Record<string, true>
   /** Object representing inline styles to apply to the element */
   inlineStyles: ElementStyle
   /** Attributes other than `class` or `style` (e.g. `data-` prefixed attributes) */

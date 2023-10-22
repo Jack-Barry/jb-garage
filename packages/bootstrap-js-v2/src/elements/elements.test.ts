@@ -48,7 +48,8 @@ describe('Elements', () => {
       'navbar-toggler-icon',
       'offcanvas-body',
       'offcanvas-header',
-      'offcanvas-title'
+      'offcanvas-title',
+      'page-link'
     ]
 
     for (const elementType of elementTypes) {

@@ -62,6 +62,9 @@ export type BootstrapElement =
   | 'offcanvas-body'
   | 'offcanvas-header'
   | 'offcanvas-title'
+  | 'page-item'
+  | 'page-link'
+  | 'pagination'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

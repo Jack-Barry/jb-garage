@@ -10,7 +10,9 @@ export type BsJsCarouselOptions = {
 export function applyCarouselStyles(result: BsJsStyles, options: BsJsOptions<'carousel'>) {
   applyElementNameAsClass(result, options.elementType)
 
-  result.classes['slide'] = options.slide ?? true
+  if (options.slide !== false) {
+    result.classes['slide'] = true
+  }
 
   if (options.fade) {
     result.classes['carousel-fade'] = true

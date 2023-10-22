@@ -20,7 +20,7 @@ describe('Element Components: Carousel', () => {
       })
 
       expect(bsJs({ elementType: 'carousel', slide: false })).toStrictEqual({
-        classes: { carousel: true, slide: false },
+        classes: { carousel: true },
         inlineStyles: {},
         elementAttributes: {}
       })

@@ -21,6 +21,10 @@ import {
 } from '../bootstrapEntities/components/nav'
 import { applyNavbarStyles } from '../bootstrapEntities/components/navbar'
 import { applyOffcanvasStyles } from '../bootstrapEntities/components/offcanvas'
+import {
+  applyPageItemStyles,
+  applyPaginationStyles
+} from '../bootstrapEntities/components/pagination'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -107,6 +111,12 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'offcanvas':
       applyOffcanvasStyles(result, options as BsJsOptions<'offcanvas'>)
+      break
+    case 'page-item':
+      applyPageItemStyles(result, options as BsJsOptions<'page-item'>)
+      break
+    case 'pagination':
+      applyPaginationStyles(result, options as BsJsOptions<'pagination'>)
       break
     default:
       applyElementNameAsClass(result, options.elementType)
