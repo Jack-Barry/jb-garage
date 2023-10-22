@@ -45,7 +45,10 @@ describe('Elements', () => {
       'navbar-collapse',
       'navbar-nav',
       'navbar-text',
-      'navbar-toggler-icon'
+      'navbar-toggler-icon',
+      'offcanvas-body',
+      'offcanvas-header',
+      'offcanvas-title'
     ]
 
     for (const elementType of elementTypes) {

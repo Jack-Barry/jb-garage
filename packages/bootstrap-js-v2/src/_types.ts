@@ -21,6 +21,7 @@ import {
   BsJsNavOptions
 } from './bootstrapEntities/components/nav'
 import { BsJsNavbarOptions } from './bootstrapEntities/components/navbar'
+import { BsJsOffcanvasOptions } from './bootstrapEntities/components/offcanvas'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
@@ -85,6 +86,10 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsDropdownItemOptions
     : Element extends 'dropdown-toggle'
     ? BsJsDropdownToggleOptions
+    : Element extends 'img'
+    ? BsJsImageOptions
+    : Element extends 'link' | 'card-link'
+    ? BsJsLinkOptions
     : Element extends 'list-group-item'
     ? BsJsListGroupItemOptions
     : Element extends 'modal'
@@ -99,10 +104,8 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsNavLinkOptions
     : Element extends 'navbar'
     ? BsJsNavbarOptions
-    : Element extends 'img'
-    ? BsJsImageOptions
-    : Element extends 'link' | 'card-link'
-    ? BsJsLinkOptions
+    : Element extends 'offcanvas'
+    ? BsJsOffcanvasOptions
     : unknown)
 
 /** Object representing styles that can be applied to an HTML element */

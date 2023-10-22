@@ -20,6 +20,7 @@ import {
   applyNavStyles
 } from '../bootstrapEntities/components/nav'
 import { applyNavbarStyles } from '../bootstrapEntities/components/navbar'
+import { applyOffcanvasStyles } from '../bootstrapEntities/components/offcanvas'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -103,6 +104,9 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'navbar':
       applyNavbarStyles(result, options as BsJsOptions<'navbar'>)
+      break
+    case 'offcanvas':
+      applyOffcanvasStyles(result, options as BsJsOptions<'offcanvas'>)
       break
     default:
       applyElementNameAsClass(result, options.elementType)

@@ -58,6 +58,10 @@ export type BootstrapElement =
   | 'navbar-nav'
   | 'navbar-text'
   | 'navbar-toggler-icon'
+  | 'offcanvas'
+  | 'offcanvas-body'
+  | 'offcanvas-header'
+  | 'offcanvas-title'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'
