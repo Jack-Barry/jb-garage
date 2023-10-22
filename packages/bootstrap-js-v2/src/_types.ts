@@ -34,6 +34,12 @@ import {
 } from './bootstrapEntities/components/progress'
 import { BsJsSpinnerOptions } from './bootstrapEntities/components/spinner'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
+import {
+  BsJsTableEntryOptions,
+  BsJsTableGroupOptions,
+  BsJsTableOptions,
+  BsJsTableResponsiveOptions
+} from './bootstrapEntities/content/table'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
@@ -76,7 +82,7 @@ export type BsJsFadeableElementOptions = {
   fade?: boolean
 }
 
-export type BsJsElement = BootstrapElement | 'img' | 'link'
+export type BsJsElement = BootstrapElement | 'img' | 'link' | 'table-entry' | 'table-group'
 
 /** Options to provide when calculating Bootstrap styles for a given element */
 export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpointAgnosticOptions &
@@ -142,6 +148,14 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsSpinnerOptions
     : Element extends 'toast'
     ? BsJsFadeableElementOptions
+    : Element extends 'table'
+    ? BsJsTableOptions
+    : Element extends 'table-entry'
+    ? BsJsTableEntryOptions
+    : Element extends 'table-group'
+    ? BsJsTableGroupOptions
+    : Element extends 'table-responsive'
+    ? BsJsTableResponsiveOptions
     : unknown)
 
 /** Object representing styles that can be applied to an HTML element */

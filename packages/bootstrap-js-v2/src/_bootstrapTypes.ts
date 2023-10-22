@@ -81,6 +81,8 @@ export type BootstrapElement =
   | 'tooltip'
   | 'tooltip-arrow'
   | 'tooltip-inner'
+  | 'table'
+  | 'table-responsive'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

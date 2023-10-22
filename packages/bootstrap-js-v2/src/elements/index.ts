@@ -35,6 +35,12 @@ import { applySpinnerStyles } from '../bootstrapEntities/components/spinner'
 import { applyToastStyles } from '../bootstrapEntities/components/toast'
 import { applyTooltipStyles } from '../bootstrapEntities/components/tooltip'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
+import {
+  applyTableEntryStyles,
+  applyTableGroupStyles,
+  applyTableResponsiveStyles,
+  applyTableStyles
+} from '../bootstrapEntities/content/table'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
 import { applyElementNameAsClass } from './utils'
@@ -144,6 +150,18 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'spinner':
       applySpinnerStyles(result, options as unknown as BsJsOptions<'spinner'>)
+      break
+    case 'table':
+      applyTableStyles(result, options as unknown as BsJsOptions<'table'>)
+      break
+    case 'table-entry':
+      applyTableEntryStyles(result, options as unknown as BsJsOptions<'table-entry'>)
+      break
+    case 'table-group':
+      applyTableGroupStyles(result, options as unknown as BsJsOptions<'table-group'>)
+      break
+    case 'table-responsive':
+      applyTableResponsiveStyles(result, options as unknown as BsJsOptions<'table-responsive'>)
       break
     case 'toast':
       applyToastStyles(result, options as unknown as BsJsOptions<'toast'>)
