@@ -11,8 +11,8 @@ type LinkUnderlineOffset = LiteralUnion<'1' | '2' | '3', string | number>
 type LinkUnderlineOpacity = LiteralUnion<'0' | LinkOpacity, string | number>
 
 export type BsJsLinkOptions = {
-  color?: LinkColor
-  opacity?: LinkOpacity | BsJsAsCssVar<LinkOpacity>
+  linkColor?: LinkColor
+  linkOpacity?: LinkOpacity | BsJsAsCssVar<LinkOpacity>
   underlineColor?: LiteralUnion<LinkColor, string>
   underlineOffset?: LinkUnderlineOffset
   underlineOpacity?: LinkUnderlineOpacity | BsJsAsCssVar<LinkUnderlineOpacity>
@@ -27,8 +27,8 @@ export function applyLinkStyles(
   options: BsJsOptions<'link' | 'card-link'>
 ) {
   const {
-    color,
-    opacity,
+    linkColor,
+    linkOpacity,
     underlineColor,
     underlineOffset,
     underlineOpacity,
@@ -37,15 +37,15 @@ export function applyLinkStyles(
     hoverUnderlineOpacity
   } = options
 
-  if (color) {
-    result.classes[`link-${color}`] = true
+  if (linkColor) {
+    result.classes[`link-${linkColor}`] = true
   }
 
-  if (opacity) {
+  if (linkOpacity) {
     applyOpacityStyles(
       result,
       { classNamePrefix: 'link-opacity', cssVariableKey: `--${prefix}-link-opacity` },
-      opacity
+      linkOpacity
     )
   }
 

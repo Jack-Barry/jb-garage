@@ -31,7 +31,7 @@ describe('Element Components: Cards', () => {
     })
 
     test('applies link styles', () => {
-      expect(bsJs({ elementType: 'card-link', color: 'primary' })).toStrictEqual({
+      expect(bsJs({ elementType: 'card-link', linkColor: 'primary' })).toStrictEqual({
         classes: { 'card-link': true, 'link-primary': true },
         inlineStyles: {},
         elementAttributes: {}

@@ -31,6 +31,7 @@ import {
   applyProgressBarStyles,
   applyProgressStyles
 } from '../bootstrapEntities/components/progress'
+import { applySpinnerStyles } from '../bootstrapEntities/components/spinner'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -138,6 +139,9 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'progress-bar':
       applyProgressBarStyles(result, options as unknown as BsJsOptions<'progress-bar'>)
+      break
+    case 'spinner':
+      applySpinnerStyles(result, options as unknown as BsJsOptions<'spinner'>)
       break
     default:
       applyElementNameAsClass(result, options.elementType)

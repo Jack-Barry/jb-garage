@@ -1,7 +1,12 @@
 import { LiteralUnion } from '@jb-garage/utils-generic'
 import * as CSS from 'csstype'
 
-import { BootstrapElement, BootstrapTheme } from './_bootstrapTypes'
+import {
+  BootstrapElement,
+  BootstrapTextColor,
+  BootstrapTheme,
+  BootstrapThemeColor
+} from './_bootstrapTypes'
 import { BsJsButtonGroupOptions, BsJsButtonOptions } from './bootstrapEntities/components/button'
 import { BsJsCardImageOptions } from './bootstrapEntities/components/card'
 import {
@@ -32,12 +37,16 @@ import {
   BsJsProgressBarOptions,
   BsJsProgressOptions
 } from './bootstrapEntities/components/progress'
+import { BsJsSpinnerOptions } from './bootstrapEntities/components/spinner'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
+  /** Theme to apply */
   theme?: LiteralUnion<BootstrapTheme, string>
+  /** Text color to apply */
+  color?: LiteralUnion<BootstrapTextColor, string>
 }
 
 /** Options that can be applied to specific breakpoints */
@@ -134,6 +143,8 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsProgressOptions
     : Element extends 'progress-bar'
     ? BsJsProgressBarOptions
+    : Element extends 'spinner'
+    ? BsJsSpinnerOptions
     : unknown)
 
 /** Object representing styles that can be applied to an HTML element */

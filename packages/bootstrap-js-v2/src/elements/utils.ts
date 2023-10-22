@@ -2,7 +2,6 @@ import {
   BsJsActivatableElementOptions,
   BsJsDisableableElementOptions,
   BsJsElement,
-  BsJsFadeableElementOptions,
   BsJsShowableElementOptions,
   BsJsStyles
 } from '../_types'

@@ -18,10 +18,10 @@ export class BootstrapJs {
       return result
     }
 
-    const { theme, breakpoints, ...rest } = options
+    const { theme, color, breakpoints, ...rest } = options
 
     applyElementStyles(this._prefix, result, rest as ElementStyleOptions<Element>)
-    applyCommonStyles(this._prefix, result, { theme })
+    applyCommonStyles(this._prefix, result, { theme, color })
     applyBreakpointSpecificStyles(this._prefix, result, breakpoints)
 
     return result

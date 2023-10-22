@@ -73,6 +73,7 @@ export type BootstrapElement =
   | 'progress'
   | 'progress-bar'
   | 'progress-stacked'
+  | 'spinner'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'
@@ -107,3 +108,30 @@ export type BootstrapButtonColor = BootstrapThemeColor | 'close' | 'link'
 
 /** Button sizes included in Bootstrap by default */
 export type BootstrapButtonSize = 'sm' | 'lg'
+
+/** Text colors included in Bootstrap by default */
+export type BootstrapTextColor =
+  | BootstrapThemeColor
+  | 'primary-emphasis'
+  | 'secondary-emphasis'
+  | 'success-emphasis'
+  | 'info-emphasis'
+  | 'warning-emphasis'
+  | 'danger-emphasis'
+  | 'light-emphasis'
+  | 'dark-emphasis'
+  | 'bg-primary'
+  | 'bg-secondary'
+  | 'bg-success'
+  | 'bg-info'
+  | 'bg-warning'
+  | 'bg-danger'
+  | 'bg-light'
+  | 'bg-dark'
+  | 'black'
+  | 'white'
+  | 'body'
+  | 'body-secondary'
+  | 'body-tertiary'
+  | 'body-emphasis'
+  | 'reset'

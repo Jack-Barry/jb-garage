@@ -1,6 +1,7 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
 
 import { BsJsBreakpointAgnosticOptions, BsJsStyles } from '../_types'
+import { applyTextColor } from '../bootstrapEntities/utilities/colors'
 
 import { applyTheme } from './theme'
 
@@ -15,4 +16,5 @@ export function applyCommonStyles(
   }
 
   applyTheme(prefix, result, options.theme)
+  applyTextColor(result, options)
 }

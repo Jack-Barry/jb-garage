@@ -9,7 +9,7 @@ describe('Utilities: Link', () => {
   })
 
   test('applies color styles', () => {
-    expect(bsJs({ elementType: 'link', color: 'primary' })).toStrictEqual({
+    expect(bsJs({ elementType: 'link', linkColor: 'primary' })).toStrictEqual({
       classes: { 'link-primary': true },
       inlineStyles: {},
       elementAttributes: {}
@@ -17,13 +17,13 @@ describe('Utilities: Link', () => {
   })
 
   test('applies opacity styles', () => {
-    expect(bsJs({ elementType: 'link', opacity: '10' })).toStrictEqual({
+    expect(bsJs({ elementType: 'link', linkOpacity: '10' })).toStrictEqual({
       classes: { 'link-opacity-10': true },
       inlineStyles: {},
       elementAttributes: {}
     })
 
-    expect(bsJs({ elementType: 'link', opacity: { asCssVar: '10' } })).toStrictEqual({
+    expect(bsJs({ elementType: 'link', linkOpacity: { asCssVar: '10' } })).toStrictEqual({
       classes: {},
       inlineStyles: {
         '--bs-link-opacity': '10'
