@@ -52,7 +52,8 @@ describe('Elements', () => {
       'page-link',
       'placeholder',
       'popover-body',
-      'popover-header'
+      'popover-header',
+      'progress-stacked'
     ]
 
     for (const elementType of elementTypes) {

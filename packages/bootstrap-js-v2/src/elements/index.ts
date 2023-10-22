@@ -27,6 +27,10 @@ import {
 } from '../bootstrapEntities/components/pagination'
 import { applyPlaceholderAnimationStyles } from '../bootstrapEntities/components/placeholder'
 import { applyPopoverStyles } from '../bootstrapEntities/components/popover'
+import {
+  applyProgressBarStyles,
+  applyProgressStyles
+} from '../bootstrapEntities/components/progress'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -128,6 +132,12 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'popover':
       applyPopoverStyles(result, options as BsJsOptions<'popover'>)
+      break
+    case 'progress':
+      applyProgressStyles(result, options as unknown as BsJsOptions<'progress'>)
+      break
+    case 'progress-bar':
+      applyProgressBarStyles(result, options as unknown as BsJsOptions<'progress-bar'>)
       break
     default:
       applyElementNameAsClass(result, options.elementType)

@@ -70,6 +70,9 @@ export type BootstrapElement =
   | 'popover'
   | 'popover-body'
   | 'popover-header'
+  | 'progress'
+  | 'progress-bar'
+  | 'progress-stacked'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

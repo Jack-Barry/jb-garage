@@ -28,6 +28,10 @@ import {
 } from './bootstrapEntities/components/pagination'
 import { BsJsPlaceholderAnimationOptions } from './bootstrapEntities/components/placeholder'
 import { BsJsPopoverOptions } from './bootstrapEntities/components/popover'
+import {
+  BsJsProgressBarOptions,
+  BsJsProgressOptions
+} from './bootstrapEntities/components/progress'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
@@ -126,6 +130,10 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsPlaceholderAnimationOptions
     : Element extends 'popover'
     ? BsJsPopoverOptions
+    : Element extends 'progress'
+    ? BsJsProgressOptions
+    : Element extends 'progress-bar'
+    ? BsJsProgressBarOptions
     : unknown)
 
 /** Object representing styles that can be applied to an HTML element */
@@ -140,5 +148,5 @@ export type BsJsStyles = {
   /** Object representing inline styles to apply to the element */
   inlineStyles: ElementStyle
   /** Attributes other than `class` or `style` (e.g. `data-` prefixed attributes) */
-  elementAttributes: Record<string, string>
+  elementAttributes: Record<string, string | number>
 }
