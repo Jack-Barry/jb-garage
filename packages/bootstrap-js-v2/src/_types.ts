@@ -47,6 +47,9 @@ import {
 import { BsJsFormControlOptions } from './bootstrapEntities/forms/formControl'
 import { BsJsFormGroupOptions } from './bootstrapEntities/forms/formGroup'
 import { BsJsFormLabelOptions } from './bootstrapEntities/forms/formLabel'
+import { BsJsFormSelectOptions } from './bootstrapEntities/forms/formSelect'
+import { BsJsFormFeedbackOptions } from './bootstrapEntities/forms/formValidation'
+import { BsJsInputGroupOptions } from './bootstrapEntities/forms/inputGroup'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
@@ -91,6 +94,7 @@ export type BsJsFadeableElementOptions = {
 
 export type BsJsElement =
   | BootstrapElement
+  | 'form-validation'
   | 'form-group'
   | 'img'
   | 'link'
@@ -131,12 +135,18 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsFormCheckInputOptions
     : Element extends 'form-control' | 'form-range'
     ? BsJsFormControlOptions
+    : Element extends 'form-validation'
+    ? BsJsFormFeedbackOptions
     : Element extends 'form-group'
     ? BsJsFormGroupOptions
     : Element extends 'form-label'
     ? BsJsFormLabelOptions
+    : Element extends 'form-select'
+    ? BsJsFormSelectOptions
     : Element extends 'img'
     ? BsJsImageOptions
+    : Element extends 'input-group'
+    ? BsJsInputGroupOptions
     : Element extends 'link' | 'card-link'
     ? BsJsLinkOptions
     : Element extends 'list-group-item'

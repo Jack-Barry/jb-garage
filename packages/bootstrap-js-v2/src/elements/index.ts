@@ -48,6 +48,9 @@ import {
 import { applyFormControlStyles } from '../bootstrapEntities/forms/formControl'
 import { applyFormGroupStyles } from '../bootstrapEntities/forms/formGroup'
 import { applyFormLabelStyles } from '../bootstrapEntities/forms/formLabel'
+import { applyFormSelectStyles } from '../bootstrapEntities/forms/formSelect'
+import { applyFormValidationStyles } from '../bootstrapEntities/forms/formValidation'
+import { applyInputGroupStyles } from '../bootstrapEntities/forms/inputGroup'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
 import { applyElementNameAsClass } from './utils'
@@ -117,11 +120,20 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
     case 'form-range':
       applyFormControlStyles(result, options as BsJsOptions<'form-control' | 'form-range'>)
       break
+    case 'form-validation':
+      applyFormValidationStyles(result, options as BsJsOptions<'form-validation'>)
+      break
     case 'form-label':
       applyFormLabelStyles(result, options as BsJsOptions<'form-label'>)
       break
+    case 'form-select':
+      applyFormSelectStyles(result, options as BsJsOptions<'form-select'>)
+      break
     case 'img':
       applyImageStyles(result, options as BsJsOptions<'img'>)
+      break
+    case 'input-group':
+      applyInputGroupStyles(result, options as BsJsOptions<'input-group'>)
       break
     case 'link':
       applyLinkStyles(prefix, result, options as BsJsOptions<'link' | 'card-link'>)
