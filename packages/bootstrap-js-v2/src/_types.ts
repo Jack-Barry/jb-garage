@@ -26,6 +26,7 @@ import {
   BsJsPageItemOptions,
   BsJsPaginationOptions
 } from './bootstrapEntities/components/pagination'
+import { BsJsPlaceholderAnimationOptions } from './bootstrapEntities/components/placeholder'
 import { BsJsImageOptions } from './bootstrapEntities/content/image'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
@@ -114,6 +115,8 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsPageItemOptions
     : Element extends 'pagination'
     ? BsJsPaginationOptions
+    : Element extends 'placeholder-animation'
+    ? BsJsPlaceholderAnimationOptions
     : unknown)
 
 /** Object representing styles that can be applied to an HTML element */

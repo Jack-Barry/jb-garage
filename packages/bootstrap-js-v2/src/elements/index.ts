@@ -25,6 +25,7 @@ import {
   applyPageItemStyles,
   applyPaginationStyles
 } from '../bootstrapEntities/components/pagination'
+import { applyPlaceholderAnimationStyles } from '../bootstrapEntities/components/placeholder'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -117,6 +118,12 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'pagination':
       applyPaginationStyles(result, options as BsJsOptions<'pagination'>)
+      break
+    case 'placeholder-animation':
+      applyPlaceholderAnimationStyles(
+        result,
+        options as unknown as BsJsOptions<'placeholder-animation'>
+      )
       break
     default:
       applyElementNameAsClass(result, options.elementType)

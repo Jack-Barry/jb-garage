@@ -65,6 +65,8 @@ export type BootstrapElement =
   | 'page-item'
   | 'page-link'
   | 'pagination'
+  | 'placeholder'
+  | 'placeholder-animation'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

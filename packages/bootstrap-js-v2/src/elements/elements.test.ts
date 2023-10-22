@@ -49,7 +49,8 @@ describe('Elements', () => {
       'offcanvas-body',
       'offcanvas-header',
       'offcanvas-title',
-      'page-link'
+      'page-link',
+      'placeholder'
     ]
 
     for (const elementType of elementTypes) {
