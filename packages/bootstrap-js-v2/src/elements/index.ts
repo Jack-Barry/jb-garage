@@ -32,6 +32,7 @@ import {
   applyProgressStyles
 } from '../bootstrapEntities/components/progress'
 import { applySpinnerStyles } from '../bootstrapEntities/components/spinner'
+import { applyToastStyles } from '../bootstrapEntities/components/toast'
 import { applyImageStyles } from '../bootstrapEntities/content/image'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
@@ -142,6 +143,9 @@ export function applyElementStyles<Element extends BsJsElement | undefined>(
       break
     case 'spinner':
       applySpinnerStyles(result, options as unknown as BsJsOptions<'spinner'>)
+      break
+    case 'toast':
+      applyToastStyles(result, options as unknown as BsJsOptions<'toast'>)
       break
     default:
       applyElementNameAsClass(result, options.elementType)

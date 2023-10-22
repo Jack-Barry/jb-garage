@@ -74,6 +74,10 @@ export type BootstrapElement =
   | 'progress-bar'
   | 'progress-stacked'
   | 'spinner'
+  | 'toast'
+  | 'toast-body'
+  | 'toast-container'
+  | 'toast-header'
 
 /** Theme included in Bootstrap by default */
 export type BootstrapTheme = 'light' | 'dark'

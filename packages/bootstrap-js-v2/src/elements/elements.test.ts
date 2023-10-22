@@ -53,7 +53,10 @@ describe('Elements', () => {
       'placeholder',
       'popover-body',
       'popover-header',
-      'progress-stacked'
+      'progress-stacked',
+      'toast-body',
+      'toast-container',
+      'toast-header'
     ]
 
     for (const elementType of elementTypes) {

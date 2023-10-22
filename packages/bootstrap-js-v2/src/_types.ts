@@ -1,12 +1,7 @@
 import { LiteralUnion } from '@jb-garage/utils-generic'
 import * as CSS from 'csstype'
 
-import {
-  BootstrapElement,
-  BootstrapTextColor,
-  BootstrapTheme,
-  BootstrapThemeColor
-} from './_bootstrapTypes'
+import { BootstrapElement, BootstrapTextColor, BootstrapTheme } from './_bootstrapTypes'
 import { BsJsButtonGroupOptions, BsJsButtonOptions } from './bootstrapEntities/components/button'
 import { BsJsCardImageOptions } from './bootstrapEntities/components/card'
 import {
@@ -145,6 +140,8 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsProgressBarOptions
     : Element extends 'spinner'
     ? BsJsSpinnerOptions
+    : Element extends 'toast'
+    ? BsJsFadeableElementOptions
     : unknown)
 
 /** Object representing styles that can be applied to an HTML element */
