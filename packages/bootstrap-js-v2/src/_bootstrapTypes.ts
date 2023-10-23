@@ -125,6 +125,16 @@ export type BootstrapThemeColorSubtle =
   | 'light-subtle'
   | 'dark-subtle'
 
+/** Theme background color included in Bootstrap by default */
+export type BootstrapBackgroundColor =
+  | BootstrapThemeColor
+  | BootstrapThemeColorSubtle
+  | 'body-secondary'
+  | 'body-tertiary'
+  | 'black'
+  | 'white'
+  | 'transparent'
+
 /** Button colors included in Bootstrap by default */
 export type BootstrapButtonColor = BootstrapThemeColor | 'close' | 'link'
 

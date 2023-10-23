@@ -56,12 +56,15 @@ import {
 } from './bootstrapEntities/layout/columns'
 import { BsJsContainerOptions } from './bootstrapEntities/layout/container'
 import { BsJsRowBreakpointDependentOptions, BsJsRowOptions } from './bootstrapEntities/layout/row'
+import { BsJsBackgroundOptions } from './bootstrapEntities/utilities/background'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
   /** Theme to apply */
   theme?: LiteralUnion<BootstrapTheme, string>
+  /** Options to use for background */
+  background?: BsJsBackgroundOptions
   /** Text color to apply */
   color?: LiteralUnion<BootstrapTextColor, string>
 }
