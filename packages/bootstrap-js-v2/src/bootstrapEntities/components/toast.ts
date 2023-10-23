@@ -1,7 +1,10 @@
 import { BsJsOptions, BsJsStyles } from '../../_types'
 import { applyElementNameAsClass } from '../../elements/utils'
 
-export function applyToastStyles(result: BsJsStyles, options: BsJsOptions<'toast'>) {
+export function applyToastStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'toast'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.fade !== false) {

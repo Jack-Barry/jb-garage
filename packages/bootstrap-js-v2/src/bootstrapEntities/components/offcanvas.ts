@@ -13,7 +13,10 @@ export type BsJsOffcanvasOptions = {
   /** Breakpoint at which to present the element as normal content */
   onCanvas?: LiteralUnion<BootstrapDefaultBreakpoint, string>
 }
-export function applyOffcanvasStyles(result: BsJsStyles, options: BsJsOptions<'offcanvas'>) {
+export function applyOffcanvasStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'offcanvas'>
+) {
   if (options.onCanvas) {
     result.classes[`offcanvas-${options.onCanvas}`] = true
   } else {

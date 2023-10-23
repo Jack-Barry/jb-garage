@@ -51,162 +51,169 @@ import { applyFormLabelStyles } from '../bootstrapEntities/forms/formLabel'
 import { applyFormSelectStyles } from '../bootstrapEntities/forms/formSelect'
 import { applyFormValidationStyles } from '../bootstrapEntities/forms/formValidation'
 import { applyInputGroupStyles } from '../bootstrapEntities/forms/inputGroup'
+import { applyColStyles } from '../bootstrapEntities/layout/columns'
 import { applyContainerStyles } from '../bootstrapEntities/layout/container'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
 import { applyElementNameAsClass } from './utils'
 
-export type ElementStyleOptions<Element extends BsJsElement | undefined> = Omit<
-  BsJsOptions<Element>,
-  'breakpoints'
->
-
 /** Modifies the provided `result` object with element-specific styles */
-export function applyElementStyles<Element extends BsJsElement | undefined>(
-  prefix: string,
-  result: BsJsStyles,
-  options: ElementStyleOptions<Element>
-) {
+export function applyElementStyles<
+  Breakpoints extends string,
+  Element extends BsJsElement | undefined
+>(prefix: string, result: BsJsStyles, options: BsJsOptions<Breakpoints, Element>) {
   if (!options.elementType) {
     return
   }
 
   switch (options.elementType) {
     case 'alert':
-      applyAlertStyles(result, options as BsJsOptions<'alert'>)
+      applyAlertStyles(result, options as BsJsOptions<Breakpoints, 'alert'>)
       break
     case 'btn':
-      applyButtonStyles(result, options as BsJsOptions<'btn'>)
+      applyButtonStyles(result, options as BsJsOptions<Breakpoints, 'btn'>)
       break
     case 'btn-group':
-      applyButtonGroupStyles(result, options as BsJsOptions<'btn-group'>)
+      applyButtonGroupStyles(result, options as BsJsOptions<Breakpoints, 'btn-group'>)
       break
     case 'card-img':
-      applyCardImageStyles(result, options as BsJsOptions<'card-img'>)
+      applyCardImageStyles(result, options as BsJsOptions<Breakpoints, 'card-img'>)
       break
     case 'card-link':
-      applyCardLinkStyles(prefix, result, options as BsJsOptions<'card-link'>)
+      applyCardLinkStyles(prefix, result, options as BsJsOptions<Breakpoints, 'card-link'>)
       break
     case 'carousel':
-      applyCarouselStyles(result, options as BsJsOptions<'carousel'>)
+      applyCarouselStyles(result, options as BsJsOptions<Breakpoints, 'carousel'>)
       break
     case 'carousel-control':
-      applyCarouselControlStyles(result, options as unknown as BsJsOptions<'carousel-control'>)
+      applyCarouselControlStyles(
+        result,
+        options as unknown as BsJsOptions<Breakpoints, 'carousel-control'>
+      )
       break
     case 'carousel-control-icon':
       applyCarouselControlIconStyles(
         result,
-        options as unknown as BsJsOptions<'carousel-control-icon'>
+        options as unknown as BsJsOptions<Breakpoints, 'carousel-control-icon'>
       )
       break
     case 'carousel-item':
-      applyCarouselItemStyles(result, options as BsJsOptions<'carousel-item'>)
+      applyCarouselItemStyles(result, options as BsJsOptions<Breakpoints, 'carousel-item'>)
       break
     case 'container':
-      applyContainerStyles(result, options as BsJsOptions<'container'>)
+      applyContainerStyles(result, options as BsJsOptions<Breakpoints, 'container'>)
+      break
+    case 'col':
+      applyColStyles(result, options as BsJsOptions<Breakpoints, 'col'>)
       break
     case 'dropdown-item':
-      applyDropdownItemStyles(result, options as BsJsOptions<'dropdown-item'>)
+      applyDropdownItemStyles(result, options as BsJsOptions<Breakpoints, 'dropdown-item'>)
       break
     case 'dropdown-toggle':
-      applyDropdownToggleStyles(result, options as BsJsOptions<'dropdown-toggle'>)
+      applyDropdownToggleStyles(result, options as BsJsOptions<Breakpoints, 'dropdown-toggle'>)
       break
     case 'form-check':
-      applyFormCheckStyles(result, options as BsJsOptions<'form-check'>)
+      applyFormCheckStyles(result, options as BsJsOptions<Breakpoints, 'form-check'>)
       break
     case 'form-check-input':
-      applyFormCheckInputStyles(result, options as BsJsOptions<'form-check-input'>)
+      applyFormCheckInputStyles(result, options as BsJsOptions<Breakpoints, 'form-check-input'>)
       break
     case 'form-group':
-      applyFormGroupStyles(result, options as BsJsOptions<'form-group'>)
+      applyFormGroupStyles(result, options as BsJsOptions<Breakpoints, 'form-group'>)
       break
     case 'form-control':
     case 'form-range':
-      applyFormControlStyles(result, options as BsJsOptions<'form-control' | 'form-range'>)
+      applyFormControlStyles(
+        result,
+        options as BsJsOptions<Breakpoints, 'form-control' | 'form-range'>
+      )
       break
     case 'form-validation':
-      applyFormValidationStyles(result, options as BsJsOptions<'form-validation'>)
+      applyFormValidationStyles(result, options as BsJsOptions<Breakpoints, 'form-validation'>)
       break
     case 'form-label':
-      applyFormLabelStyles(result, options as BsJsOptions<'form-label'>)
+      applyFormLabelStyles(result, options as BsJsOptions<Breakpoints, 'form-label'>)
       break
     case 'form-select':
-      applyFormSelectStyles(result, options as BsJsOptions<'form-select'>)
+      applyFormSelectStyles(result, options as BsJsOptions<Breakpoints, 'form-select'>)
       break
     case 'img':
-      applyImageStyles(result, options as BsJsOptions<'img'>)
+      applyImageStyles(result, options as BsJsOptions<Breakpoints, 'img'>)
       break
     case 'input-group':
-      applyInputGroupStyles(result, options as BsJsOptions<'input-group'>)
+      applyInputGroupStyles(result, options as BsJsOptions<Breakpoints, 'input-group'>)
       break
     case 'link':
-      applyLinkStyles(prefix, result, options as BsJsOptions<'link' | 'card-link'>)
+      applyLinkStyles(prefix, result, options as BsJsOptions<Breakpoints, 'link' | 'card-link'>)
       break
     case 'list-group-item':
-      applyListGroupItemStyles(result, options as BsJsOptions<'list-group-item'>)
+      applyListGroupItemStyles(result, options as BsJsOptions<Breakpoints, 'list-group-item'>)
       break
     case 'modal':
-      applyModalStyles(result, options as BsJsOptions<'modal'>)
+      applyModalStyles(result, options as BsJsOptions<Breakpoints, 'modal'>)
       break
     case 'modal-dialog':
-      applyModalDialogStyles(result, options as BsJsOptions<'modal-dialog'>)
+      applyModalDialogStyles(result, options as BsJsOptions<Breakpoints, 'modal-dialog'>)
       break
     case 'nav':
-      applyNavStyles(result, options as BsJsOptions<'nav'>)
+      applyNavStyles(result, options as BsJsOptions<Breakpoints, 'nav'>)
       break
     case 'nav-item':
-      applyNavItemStyles(result, options as BsJsOptions<'nav-item'>)
+      applyNavItemStyles(result, options as BsJsOptions<Breakpoints, 'nav-item'>)
       break
     case 'nav-link':
-      applyNavLinkStyles(result, options as BsJsOptions<'nav-link'>)
+      applyNavLinkStyles(result, options as BsJsOptions<Breakpoints, 'nav-link'>)
       break
     case 'navbar':
-      applyNavbarStyles(result, options as BsJsOptions<'navbar'>)
+      applyNavbarStyles(result, options as BsJsOptions<Breakpoints, 'navbar'>)
       break
     case 'offcanvas':
-      applyOffcanvasStyles(result, options as BsJsOptions<'offcanvas'>)
+      applyOffcanvasStyles(result, options as BsJsOptions<Breakpoints, 'offcanvas'>)
       break
     case 'page-item':
-      applyPageItemStyles(result, options as BsJsOptions<'page-item'>)
+      applyPageItemStyles(result, options as BsJsOptions<Breakpoints, 'page-item'>)
       break
     case 'pagination':
-      applyPaginationStyles(result, options as BsJsOptions<'pagination'>)
+      applyPaginationStyles(result, options as BsJsOptions<Breakpoints, 'pagination'>)
       break
     case 'placeholder-animation':
       applyPlaceholderAnimationStyles(
         result,
-        options as unknown as BsJsOptions<'placeholder-animation'>
+        options as unknown as BsJsOptions<Breakpoints, 'placeholder-animation'>
       )
       break
     case 'popover':
-      applyPopoverStyles(result, options as BsJsOptions<'popover'>)
+      applyPopoverStyles(result, options as BsJsOptions<Breakpoints, 'popover'>)
       break
     case 'progress':
-      applyProgressStyles(result, options as unknown as BsJsOptions<'progress'>)
+      applyProgressStyles(result, options as unknown as BsJsOptions<Breakpoints, 'progress'>)
       break
     case 'progress-bar':
-      applyProgressBarStyles(result, options as unknown as BsJsOptions<'progress-bar'>)
+      applyProgressBarStyles(result, options as unknown as BsJsOptions<Breakpoints, 'progress-bar'>)
       break
     case 'spinner':
-      applySpinnerStyles(result, options as unknown as BsJsOptions<'spinner'>)
+      applySpinnerStyles(result, options as unknown as BsJsOptions<Breakpoints, 'spinner'>)
       break
     case 'table':
-      applyTableStyles(result, options as unknown as BsJsOptions<'table'>)
+      applyTableStyles(result, options as unknown as BsJsOptions<Breakpoints, 'table'>)
       break
     case 'table-entry':
-      applyTableEntryStyles(result, options as unknown as BsJsOptions<'table-entry'>)
+      applyTableEntryStyles(result, options as unknown as BsJsOptions<Breakpoints, 'table-entry'>)
       break
     case 'table-group':
-      applyTableGroupStyles(result, options as unknown as BsJsOptions<'table-group'>)
+      applyTableGroupStyles(result, options as unknown as BsJsOptions<Breakpoints, 'table-group'>)
       break
     case 'table-responsive':
-      applyTableResponsiveStyles(result, options as unknown as BsJsOptions<'table-responsive'>)
+      applyTableResponsiveStyles(
+        result,
+        options as unknown as BsJsOptions<Breakpoints, 'table-responsive'>
+      )
       break
     case 'toast':
-      applyToastStyles(result, options as unknown as BsJsOptions<'toast'>)
+      applyToastStyles(result, options as unknown as BsJsOptions<Breakpoints, 'toast'>)
       break
     case 'tooltip':
-      applyTooltipStyles(result, options as unknown as BsJsOptions<'tooltip'>)
+      applyTooltipStyles(result, options as unknown as BsJsOptions<Breakpoints, 'tooltip'>)
       break
     default:
       applyElementNameAsClass(result, options.elementType)

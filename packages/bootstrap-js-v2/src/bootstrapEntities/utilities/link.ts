@@ -21,10 +21,10 @@ export type BsJsLinkOptions = {
   hoverUnderlineOpacity?: LinkUnderlineOpacity | BsJsAsCssVar<LinkUnderlineOpacity>
 }
 
-export function applyLinkStyles(
+export function applyLinkStyles<Breakpoints extends string>(
   prefix: string,
   result: BsJsStyles,
-  options: BsJsOptions<'link' | 'card-link'>
+  options: BsJsOptions<Breakpoints, 'link' | 'card-link'>
 ) {
   const {
     linkColor,

@@ -33,6 +33,7 @@ export type BootstrapElement =
   | 'carousel-indicators'
   | 'carousel-inner'
   | 'carousel-item'
+  | 'col'
   | 'collapse'
   | 'container'
   | 'dropdown'

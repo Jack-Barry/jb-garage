@@ -1,7 +1,10 @@
 import { BsJsOptions, BsJsStyles } from '../../_types'
 import { applyElementNameAsClass, applyShowableStyles } from '../../elements/utils'
 
-export function applyTooltipStyles(result: BsJsStyles, options: BsJsOptions<'tooltip'>) {
+export function applyTooltipStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'tooltip'>
+) {
   applyElementNameAsClass(result, options.elementType)
   applyShowableStyles(result, options)
 

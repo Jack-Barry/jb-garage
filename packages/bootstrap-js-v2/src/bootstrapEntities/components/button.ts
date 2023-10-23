@@ -25,7 +25,10 @@ export type BsJsButtonOptions = BsJsActivatableElementOptions &
     size?: BsJsButtonSize
   }
 
-export function applyButtonStyles(result: BsJsStyles, options: BsJsOptions<'btn'>) {
+export function applyButtonStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'btn'>
+) {
   applyElementNameAsClass(result, options.elementType)
   applyActiveStyles(result, options)
   applyDisabledStyles(result, options)

@@ -9,7 +9,10 @@ export type BsJsInputGroupOptions = {
   /** Whether or not the input group should have validation styling */
   hasValidation?: boolean
 }
-export function applyInputGroupStyles(result: BsJsStyles, options: BsJsOptions<'input-group'>) {
+export function applyInputGroupStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'input-group'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.size) {

@@ -14,7 +14,10 @@ export type BsJsNavOptions = {
   /** Present nav items as pills */
   pills?: boolean
 }
-export function applyNavStyles(result: BsJsStyles, options: BsJsOptions<'nav'>) {
+export function applyNavStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'nav'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.pills) {
@@ -26,7 +29,10 @@ export type BsJsNavItemOptions = {
   /** Present nav item as dropdown */
   dropdown?: boolean
 }
-export function applyNavItemStyles(result: BsJsStyles, options: BsJsOptions<'nav-item'>) {
+export function applyNavItemStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'nav-item'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.dropdown) {
@@ -39,7 +45,10 @@ export type BsJsNavLinkOptions = BsJsActivatableElementOptions &
     /** Link is a dropdown toggle */
     dropdownToggle?: boolean
   }
-export function applyNavLinkStyles(result: BsJsStyles, options: BsJsOptions<'nav-link'>) {
+export function applyNavLinkStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'nav-link'>
+) {
   applyElementNameAsClass(result, options.elementType)
   applyActiveStyles(result, options)
   applyDisabledStyles(result, options)

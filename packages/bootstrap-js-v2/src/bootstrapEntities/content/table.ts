@@ -20,7 +20,10 @@ export type BsJsTableOptions = {
   /** Place `caption` element from `table` above the table visually */
   captionTop?: boolean
 }
-export function applyTableStyles(result: BsJsStyles, options: BsJsOptions<'table'>) {
+export function applyTableStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'table'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.striped) {
@@ -53,9 +56,9 @@ export function applyTableStyles(result: BsJsStyles, options: BsJsOptions<'table
 }
 
 export type BsJsTableEntryOptions = BsJsActivatableElementOptions
-export function applyTableEntryStyles(
+export function applyTableEntryStyles<Breakpoints extends string>(
   result: BsJsStyles,
-  options: BsJsOptions<'table-entry' | 'table-group'>
+  options: BsJsOptions<Breakpoints, 'table-entry' | 'table-group'>
 ) {
   if (options.active) {
     result.classes['table-active'] = true
@@ -66,7 +69,10 @@ export type BsJsTableGroupOptions = BsJsTableEntryOptions & {
   /** Make border thicker and darker between this group and others */
   groupDivider?: boolean
 }
-export function applyTableGroupStyles(result: BsJsStyles, options: BsJsOptions<'table-group'>) {
+export function applyTableGroupStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'table-group'>
+) {
   applyTableEntryStyles(result, options)
 
   if (options.groupDivider) {
@@ -78,9 +84,9 @@ export type BsJsTableResponsiveOptions = {
   /** Breakpoint at which to stop applying responsive styling */
   responsiveMaxBreakpoint?: LiteralUnion<BootstrapDefaultBreakpoint, string>
 }
-export function applyTableResponsiveStyles(
+export function applyTableResponsiveStyles<Breakpoints extends string>(
   result: BsJsStyles,
-  options: BsJsOptions<'table-responsive'>
+  options: BsJsOptions<Breakpoints, 'table-responsive'>
 ) {
   result.classes['table'] = true
 

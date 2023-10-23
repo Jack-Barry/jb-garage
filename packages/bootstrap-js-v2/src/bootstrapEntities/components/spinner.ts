@@ -14,7 +14,10 @@ export type BsJsSpinnerOptions = {
   /** Size to use for height and width of inline styles for spinner */
   size?: string
 }
-export function applySpinnerStyles(result: BsJsStyles, options: BsJsOptions<'spinner'>) {
+export function applySpinnerStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'spinner'>
+) {
   const usedSpinnerType = options.spinnerType || 'border'
 
   result.classes[`spinner-${usedSpinnerType}`] = true

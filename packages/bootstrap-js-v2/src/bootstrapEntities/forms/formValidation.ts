@@ -12,9 +12,9 @@ export type BsJsFormFeedbackOptions = {
   /** Present feedback as a tooltip */
   asTooltip?: boolean
 }
-export function applyFormValidationStyles(
+export function applyFormValidationStyles<Breakpoints extends string>(
   result: BsJsStyles,
-  options: BsJsOptions<'form-validation'>
+  options: BsJsOptions<Breakpoints, 'form-validation'>
 ) {
   const usedFeedbackType = options.feedbackType || 'invalid'
 

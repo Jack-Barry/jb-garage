@@ -2,7 +2,10 @@ import { BsJsDisableableElementOptions, BsJsOptions, BsJsStyles } from '../../_t
 import { applyDisabledStyles, applyElementNameAsClass } from '../../elements/utils'
 
 export type BsJsFormCheckOptions = BsJsDisableableElementOptions
-export function applyFormCheckStyles(result: BsJsStyles, options: BsJsOptions<'form-check'>) {
+export function applyFormCheckStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'form-check'>
+) {
   applyElementNameAsClass(result, options.elementType)
   applyDisabledStyles(result, options)
 }
@@ -13,9 +16,9 @@ export type BsJsFormCheckInputOptions = {
   /** Input is not valid */
   isInvalid?: boolean
 }
-export function applyFormCheckInputStyles(
+export function applyFormCheckInputStyles<Breakpoints extends string>(
   result: BsJsStyles,
-  options: BsJsOptions<'form-check-input'>
+  options: BsJsOptions<Breakpoints, 'form-check-input'>
 ) {
   applyElementNameAsClass(result, options.elementType)
 

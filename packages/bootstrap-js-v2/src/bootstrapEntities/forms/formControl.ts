@@ -10,9 +10,9 @@ export type BsJsFormControlOptions = {
   isValid?: boolean
   isInvalid?: boolean
 }
-export function applyFormControlStyles(
+export function applyFormControlStyles<Breakpoints extends string>(
   result: BsJsStyles,
-  options: BsJsOptions<'form-control' | 'form-range'>
+  options: BsJsOptions<Breakpoints, 'form-control' | 'form-range'>
 ) {
   applyElementNameAsClass(result, options.elementType)
 

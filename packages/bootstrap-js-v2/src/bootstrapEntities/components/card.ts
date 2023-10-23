@@ -2,9 +2,8 @@ import { LiteralUnion } from '@jb-garage/utils-generic'
 
 import { BsJsOptions, BsJsStyles } from '../../_types'
 import { applyElementNameAsClass } from '../../elements/utils'
-import { applyLinkStyles } from '../utilities/link'
-
 import { BsJsImageOptions } from '../content/image'
+import { applyLinkStyles } from '../utilities/link'
 
 export type BsJsCardImagePosition = 'top' | 'bottom'
 
@@ -12,7 +11,10 @@ export type BsJsCardImageOptions = BsJsImageOptions & {
   imagePosition?: LiteralUnion<BsJsCardImagePosition, string>
 }
 
-export function applyCardImageStyles(result: BsJsStyles, options: BsJsOptions<'card-img'>) {
+export function applyCardImageStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'card-img'>
+) {
   if (options.imagePosition) {
     result.classes[`card-img-${options.imagePosition}`] = true
   } else {
@@ -20,10 +22,10 @@ export function applyCardImageStyles(result: BsJsStyles, options: BsJsOptions<'c
   }
 }
 
-export function applyCardLinkStyles(
+export function applyCardLinkStyles<Breakpoints extends string>(
   prefix: string,
   result: BsJsStyles,
-  options: BsJsOptions<'card-link'>
+  options: BsJsOptions<Breakpoints, 'card-link'>
 ) {
   applyElementNameAsClass(result, options.elementType)
   applyLinkStyles(prefix, result, options)

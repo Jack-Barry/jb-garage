@@ -6,7 +6,10 @@ import { applyElementNameAsClass } from '../../elements/utils'
 export type BsJsNavbarOptions = {
   placement?: LiteralUnion<'fixed-top' | 'fixed-bottom' | 'sticky-top' | 'sticky-bottom', string>
 }
-export function applyNavbarStyles(result: BsJsStyles, options: BsJsOptions<'navbar'>) {
+export function applyNavbarStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'navbar'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.placement) {

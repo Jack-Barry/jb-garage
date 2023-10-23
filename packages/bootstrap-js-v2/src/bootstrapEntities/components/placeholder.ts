@@ -6,9 +6,9 @@ export type BsJsPlaceholderAnimationOptions = {
   /** Type of animation to use */
   animation: LiteralUnion<'glow' | 'wave', string>
 }
-export function applyPlaceholderAnimationStyles(
+export function applyPlaceholderAnimationStyles<Breakpoints extends string>(
   result: BsJsStyles,
-  options: BsJsOptions<'placeholder-animation'>
+  options: BsJsOptions<Breakpoints, 'placeholder-animation'>
 ) {
   result.classes[`placeholder-${options.animation}`] = true
 }

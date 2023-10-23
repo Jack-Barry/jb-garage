@@ -14,7 +14,10 @@ export type BsJsProgressOptions = {
   /** Whether or not the `progress` element is nested in a `progress-stacked` */
   isStacked?: boolean
 }
-export function applyProgressStyles(result: BsJsStyles, options: BsJsOptions<'progress'>) {
+export function applyProgressStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'progress'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.isStacked) {
@@ -37,7 +40,10 @@ export type BsJsProgressBarOptions = BsJsProgressOptions & {
   /** Apply animation to progress bar */
   animated?: boolean
 }
-export function applyProgressBarStyles(result: BsJsStyles, options: BsJsOptions<'progress-bar'>) {
+export function applyProgressBarStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'progress-bar'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.striped) {

@@ -1,4 +1,5 @@
 import { BootstrapJs } from '../BootstrapJs'
+import { BootstrapDefaultBreakpoint } from '../_bootstrapTypes'
 import { BsJsElement, BsJsOptions } from '../_types'
 
 describe('Elements', () => {
@@ -65,7 +66,9 @@ describe('Elements', () => {
     ]
 
     for (const elementType of elementTypes) {
-      expect(bsJs({ elementType } as BsJsOptions<typeof elementType>)).toStrictEqual({
+      expect(
+        bsJs({ elementType } as BsJsOptions<BootstrapDefaultBreakpoint, typeof elementType>)
+      ).toStrictEqual({
         classes: { [elementType]: true },
         inlineStyles: {},
         elementAttributes: {}

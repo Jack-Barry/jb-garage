@@ -13,7 +13,10 @@ import {
 } from '../../elements/utils'
 
 export type BsJsPageItemOptions = BsJsActivatableElementOptions & BsJsDisableableElementOptions
-export function applyPageItemStyles(result: BsJsStyles, options: BsJsOptions<'page-item'>) {
+export function applyPageItemStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'page-item'>
+) {
   applyElementNameAsClass(result, options.elementType)
   applyActiveStyles(result, options)
   applyDisabledStyles(result, options)
@@ -23,7 +26,10 @@ export type BsJsPaginationOptions = {
   /** Size to apply to pagination */
   size?: LiteralUnion<'lg' | 'sm', string>
 }
-export function applyPaginationStyles(result: BsJsStyles, options: BsJsOptions<'pagination'>) {
+export function applyPaginationStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'pagination'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.size) {

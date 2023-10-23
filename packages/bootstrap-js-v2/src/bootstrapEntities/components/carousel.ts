@@ -10,7 +10,10 @@ export type BsJsCarouselOptions = BsJsFadeableElementOptions & {
   /** @default true */
   slide?: boolean
 }
-export function applyCarouselStyles(result: BsJsStyles, options: BsJsOptions<'carousel'>) {
+export function applyCarouselStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'carousel'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.slide !== false) {
@@ -27,22 +30,25 @@ export type BsJsCarouselControlOptions = {
   direction: 'prev' | 'next'
 }
 
-export function applyCarouselControlStyles(
+export function applyCarouselControlStyles<Breakpoints extends string>(
   result: BsJsStyles,
-  options: BsJsOptions<'carousel-control'>
+  options: BsJsOptions<Breakpoints, 'carousel-control'>
 ) {
   result.classes[`carousel-control-${options.direction}`] = true
 }
 
-export function applyCarouselControlIconStyles(
+export function applyCarouselControlIconStyles<Breakpoints extends string>(
   result: BsJsStyles,
-  options: BsJsOptions<'carousel-control-icon'>
+  options: BsJsOptions<Breakpoints, 'carousel-control-icon'>
 ) {
   result.classes[`carousel-control-${options.direction}-icon`] = true
 }
 
 export type BsJsCarouselItemOptions = BsJsActivatableElementOptions
-export function applyCarouselItemStyles(result: BsJsStyles, options: BsJsOptions<'carousel-item'>) {
+export function applyCarouselItemStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'carousel-item'>
+) {
   applyElementNameAsClass(result, options.elementType)
   applyActiveStyles(result, options)
 }

@@ -13,7 +13,10 @@ export type BsJsFormLabelOptions = {
    */
   asColumn?: boolean | LiteralUnion<'sm' | 'lg', string>
 }
-export function applyFormLabelStyles(result: BsJsStyles, options: BsJsOptions<'form-label'>) {
+export function applyFormLabelStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'form-label'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.asColumn === true) {

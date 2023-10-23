@@ -5,9 +5,9 @@ export type BsJsListGroupItemOptions = BsJsActivatableElementOptions & {
   /** List group item is an action */
   action?: boolean
 }
-export function applyListGroupItemStyles(
+export function applyListGroupItemStyles<Breakpoints extends string>(
   result: BsJsStyles,
-  options: BsJsOptions<'list-group-item'>
+  options: BsJsOptions<Breakpoints, 'list-group-item'>
 ) {
   applyElementNameAsClass(result, options.elementType)
   applyActiveStyles(result, options)

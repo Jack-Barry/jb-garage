@@ -50,6 +50,10 @@ import { BsJsFormLabelOptions } from './bootstrapEntities/forms/formLabel'
 import { BsJsFormSelectOptions } from './bootstrapEntities/forms/formSelect'
 import { BsJsFormFeedbackOptions } from './bootstrapEntities/forms/formValidation'
 import { BsJsInputGroupOptions } from './bootstrapEntities/forms/inputGroup'
+import {
+  BsJsColBreakpointDependentOptions,
+  BsJsColOptions
+} from './bootstrapEntities/layout/columns'
 import { BsJsContainerOptions } from './bootstrapEntities/layout/container'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
@@ -62,9 +66,16 @@ export type BsJsBreakpointAgnosticOptions = {
 }
 
 /** Options that can be applied to specific breakpoints */
-export type BsJsBreakpointDependentOptions = {
-  //
-}
+export type BsJsBreakpointDependentOptions<
+  Breakpoints extends string,
+  Element extends BsJsElement | undefined
+> = Record<
+  Breakpoints, // Breakpoints,
+  {
+    //
+    foo?: string
+  } & (Element extends 'col' ? BsJsColBreakpointDependentOptions : unknown)
+>
 
 /** Object that can used as an option to set a custom CSS variable value */
 export type BsJsAsCssVar<T> = {
@@ -103,7 +114,10 @@ export type BsJsElement =
   | 'table-group'
 
 /** Options to provide when calculating Bootstrap styles for a given element */
-export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpointAgnosticOptions &
+export type BsJsOptions<
+  Breakpoints extends string,
+  Element extends BsJsElement | undefined
+> = BsJsBreakpointAgnosticOptions &
   (Element extends BsJsElement
     ? {
         /** Type of Bootstrap element */
@@ -111,7 +125,7 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
       }
     : { elementType?: undefined }) & {
     /** Breakpoint-dependent style options */
-    breakpoints?: BsJsBreakpointDependentOptions
+    breakpoints?: BsJsBreakpointDependentOptions<Breakpoints, Element>
   } & (Element extends 'alert'
     ? BsJsShowableElementOptions
     : Element extends 'btn'
@@ -126,6 +140,8 @@ export type BsJsOptions<Element extends BsJsElement | undefined> = BsJsBreakpoin
     ? BsJsCarouselControlOptions
     : Element extends 'carousel-item'
     ? BsJsCarouselItemOptions
+    : Element extends 'col'
+    ? BsJsColOptions
     : Element extends 'container'
     ? BsJsContainerOptions
     : Element extends 'dropdown-item'

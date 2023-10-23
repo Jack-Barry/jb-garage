@@ -15,7 +15,10 @@ export type BsJsDropdownItemOptions = BsJsActivatableElementOptions &
     /** Should not be an interactive item */
     textOnly?: boolean
   }
-export function applyDropdownItemStyles(result: BsJsStyles, options: BsJsOptions<'dropdown-item'>) {
+export function applyDropdownItemStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'dropdown-item'>
+) {
   applyActiveStyles(result, options)
   applyDisabledStyles(result, options)
 
@@ -30,9 +33,9 @@ export type BsJsDropdownToggleOptions = {
   /** Toggle is part of a split button */
   split?: boolean
 }
-export function applyDropdownToggleStyles(
+export function applyDropdownToggleStyles<Breakpoints extends string>(
   result: BsJsStyles,
-  options: BsJsOptions<'dropdown-toggle'>
+  options: BsJsOptions<Breakpoints, 'dropdown-toggle'>
 ) {
   applyElementNameAsClass(result, options.elementType)
 

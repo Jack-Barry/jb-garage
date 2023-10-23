@@ -6,7 +6,10 @@ export type BsJsFormGroupOptions = {
   /** Apply "is invalid" styling to form group */
   isInvalid?: boolean
 }
-export function applyFormGroupStyles(result: BsJsStyles, options: BsJsOptions<'form-group'>) {
+export function applyFormGroupStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'form-group'>
+) {
   if (options.floatingLabels) {
     result.classes['form-floating'] = true
   }

@@ -9,7 +9,10 @@ export type BsJsContainerOptions = {
   /** Container should take full width at all breakpoints */
   fluid?: boolean
 }
-export function applyContainerStyles(result: BsJsStyles, options: BsJsOptions<'container'>) {
+export function applyContainerStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'container'>
+) {
   if (options.fluid) {
     result.classes['container-fluid'] = true
   } else if (options.fullWidthUntil) {

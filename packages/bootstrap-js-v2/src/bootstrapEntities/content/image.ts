@@ -7,7 +7,10 @@ export type BsJsImageOptions = {
   thumbnail?: boolean
 }
 
-export function applyImageStyles(result: BsJsStyles, options: BsJsOptions<'img'>) {
+export function applyImageStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'img'>
+) {
   if (options.fluid) {
     result.classes['img-fluid'] = true
   }

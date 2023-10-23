@@ -15,7 +15,10 @@ export type BsJsPopoverOptions = BsJsShowableElementOptions &
      */
     arrow?: boolean
   }
-export function applyPopoverStyles(result: BsJsStyles, options: BsJsOptions<'popover'>) {
+export function applyPopoverStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'popover'>
+) {
   applyElementNameAsClass(result, options.elementType)
   applyShowableStyles(result, options)
 

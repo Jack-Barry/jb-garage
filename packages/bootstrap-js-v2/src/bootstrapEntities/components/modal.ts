@@ -12,7 +12,10 @@ export type BsJsModalOptions = {
    */
   fade?: boolean
 }
-export function applyModalStyles(result: BsJsStyles, options: BsJsOptions<'modal'>) {
+export function applyModalStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'modal'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.fade !== false) {
@@ -36,7 +39,10 @@ export type BsJsModalDialogOptions = {
    */
   fullScreen?: boolean | LiteralUnion<BootstrapDefaultBreakpoint, string>
 }
-export function applyModalDialogStyles(result: BsJsStyles, options: BsJsOptions<'modal-dialog'>) {
+export function applyModalDialogStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'modal-dialog'>
+) {
   applyElementNameAsClass(result, options.elementType)
 
   if (options.scrollable) {
