@@ -85,6 +85,7 @@ export type BootstrapElement =
   | 'progress'
   | 'progress-bar'
   | 'progress-stacked'
+  | 'row'
   | 'spinner'
   | 'toast'
   | 'toast-body'
@@ -156,3 +157,5 @@ export type BootstrapTextColor =
   | 'body-tertiary'
   | 'body-emphasis'
   | 'reset'
+
+export type BootstrapSpacingValue = '0' | '1' | '2' | '3' | '4' | '5' | 'auto'

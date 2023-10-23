@@ -55,6 +55,7 @@ import {
   BsJsColOptions
 } from './bootstrapEntities/layout/columns'
 import { BsJsContainerOptions } from './bootstrapEntities/layout/container'
+import { BsJsRowBreakpointDependentOptions, BsJsRowOptions } from './bootstrapEntities/layout/row'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
@@ -73,8 +74,11 @@ export type BsJsBreakpointDependentOptions<
   Breakpoints, // Breakpoints,
   {
     //
-    foo?: string
-  } & (Element extends 'col' ? BsJsColBreakpointDependentOptions : unknown)
+  } & (Element extends 'col'
+    ? BsJsColBreakpointDependentOptions
+    : Element extends 'row'
+    ? BsJsRowBreakpointDependentOptions
+    : unknown)
 >
 
 /** Object that can used as an option to set a custom CSS variable value */
@@ -196,6 +200,8 @@ export type BsJsOptions<
     ? BsJsProgressOptions
     : Element extends 'progress-bar'
     ? BsJsProgressBarOptions
+    : Element extends 'row'
+    ? BsJsRowOptions
     : Element extends 'spinner'
     ? BsJsSpinnerOptions
     : Element extends 'toast'

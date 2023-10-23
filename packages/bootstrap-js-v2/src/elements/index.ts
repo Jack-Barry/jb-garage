@@ -53,6 +53,7 @@ import { applyFormValidationStyles } from '../bootstrapEntities/forms/formValida
 import { applyInputGroupStyles } from '../bootstrapEntities/forms/inputGroup'
 import { applyColStyles } from '../bootstrapEntities/layout/columns'
 import { applyContainerStyles } from '../bootstrapEntities/layout/container'
+import { applyRowStyles } from '../bootstrapEntities/layout/row'
 import { applyLinkStyles } from '../bootstrapEntities/utilities/link'
 
 import { applyElementNameAsClass } from './utils'
@@ -190,6 +191,9 @@ export function applyElementStyles<
       break
     case 'progress-bar':
       applyProgressBarStyles(result, options as unknown as BsJsOptions<Breakpoints, 'progress-bar'>)
+      break
+    case 'row':
+      applyRowStyles(result, options as BsJsOptions<Breakpoints, 'row'>)
       break
     case 'spinner':
       applySpinnerStyles(result, options as unknown as BsJsOptions<Breakpoints, 'spinner'>)
