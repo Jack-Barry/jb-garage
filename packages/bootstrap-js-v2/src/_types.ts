@@ -69,6 +69,7 @@ import { BsJsFloatType } from './bootstrapEntities/utilities/float'
 import { BsJsInteractionsOptions } from './bootstrapEntities/utilities/interactions'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 import { BsJsObjectFit } from './bootstrapEntities/utilities/objectFit'
+import { BsJsOverflowOptions } from './bootstrapEntities/utilities/overflow'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
@@ -92,6 +93,8 @@ export type BsJsBreakpointAgnosticOptions = {
   objectFit?: BsJsObjectFit
   /** Level of opacity to apply to the element */
   opacity?: LiteralUnion<BootstrapOpacityValue, string | number>
+  /** How to handle overflow */
+  overflow?: BsJsOverflowOptions
 }
 
 /** Options that can be applied to specific breakpoints */
