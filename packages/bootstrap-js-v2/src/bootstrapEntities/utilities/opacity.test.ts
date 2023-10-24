@@ -1,3 +1,4 @@
+import { BootstrapJs } from '../../BootstrapJs'
 import { BsJsStyles } from '../../_types'
 import { emptyStyles } from '../../utils'
 
@@ -127,6 +128,18 @@ describe('Utilities: Opacity', () => {
           inlineStyles: {},
           elementAttributes: {}
         })
+      })
+    })
+  })
+
+  describe('as plain opacity util', () => {
+    const bsJs = new BootstrapJs().bsJs
+
+    test('sets opacity class', () => {
+      expect(bsJs({ opacity: 0 })).toStrictEqual({
+        classes: { 'opacity-0': true },
+        inlineStyles: {},
+        elementAttributes: {}
       })
     })
   })

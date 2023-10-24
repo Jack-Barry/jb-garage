@@ -9,6 +9,7 @@ import { applyFlexStyles } from '../bootstrapEntities/utilities/flex'
 import { applyFloatStyles } from '../bootstrapEntities/utilities/float'
 import { applyInteractionsStyles } from '../bootstrapEntities/utilities/interactions'
 import { applyObjectFitStyles } from '../bootstrapEntities/utilities/objectFit'
+import { applyOpacityStyles } from '../bootstrapEntities/utilities/opacity'
 
 import { applyTheme } from './theme'
 
@@ -31,4 +32,5 @@ export function applyCommonStyles(
   applyFloatStyles(result, options)
   applyInteractionsStyles(result, options)
   applyObjectFitStyles(result, options)
+  applyOpacityStyles(result, { classNamePrefix: 'opacity' }, options.opacity)
 }

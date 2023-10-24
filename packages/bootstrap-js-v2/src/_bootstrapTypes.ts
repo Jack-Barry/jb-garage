@@ -169,3 +169,5 @@ export type BootstrapTextColor =
   | 'reset'
 
 export type BootstrapSpacingValue = '0' | '1' | '2' | '3' | '4' | '5' | 'auto'
+
+export type BootstrapOpacityValue = '0' | '25' | '50' | '75' | '100'

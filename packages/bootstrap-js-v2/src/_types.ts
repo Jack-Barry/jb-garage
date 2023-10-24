@@ -1,7 +1,12 @@
 import { LiteralUnion } from '@jb-garage/utils-generic'
 import * as CSS from 'csstype'
 
-import { BootstrapElement, BootstrapTextColor, BootstrapTheme } from './_bootstrapTypes'
+import {
+  BootstrapElement,
+  BootstrapOpacityValue,
+  BootstrapTextColor,
+  BootstrapTheme
+} from './_bootstrapTypes'
 import { BsJsButtonGroupOptions, BsJsButtonOptions } from './bootstrapEntities/components/button'
 import { BsJsCardImageOptions } from './bootstrapEntities/components/card'
 import {
@@ -85,6 +90,8 @@ export type BsJsBreakpointAgnosticOptions = {
   interactions?: BsJsInteractionsOptions
   /** Type of object fit to use */
   objectFit?: BsJsObjectFit
+  /** Level of opacity to apply to the element */
+  opacity?: LiteralUnion<BootstrapOpacityValue, string | number>
 }
 
 /** Options that can be applied to specific breakpoints */
