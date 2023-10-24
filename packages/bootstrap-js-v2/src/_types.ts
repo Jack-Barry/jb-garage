@@ -58,6 +58,7 @@ import { BsJsContainerOptions } from './bootstrapEntities/layout/container'
 import { BsJsRowBreakpointDependentOptions, BsJsRowOptions } from './bootstrapEntities/layout/row'
 import { BsJsBackgroundOptions } from './bootstrapEntities/utilities/background'
 import { BsJsBorderOptions } from './bootstrapEntities/utilities/borders'
+import { BsJsDisplayOption } from './bootstrapEntities/utilities/display'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
@@ -70,6 +71,8 @@ export type BsJsBreakpointAgnosticOptions = {
   border?: BsJsBorderOptions
   /** Text color to apply */
   color?: LiteralUnion<BootstrapTextColor, string>
+  /** Default display type (can be overridden in breakpoint options) */
+  display?: BsJsDisplayOption
 }
 
 /** Options that can be applied to specific breakpoints */
@@ -77,9 +80,10 @@ export type BsJsBreakpointDependentOptions<
   Breakpoints extends string,
   Element extends BsJsElement | undefined
 > = Record<
-  Breakpoints, // Breakpoints,
+  Breakpoints,
   {
-    //
+    /** Display type for this breakpoint and above */
+    display?: BsJsDisplayOption
   } & (Element extends 'col'
     ? BsJsColBreakpointDependentOptions
     : Element extends 'row'
