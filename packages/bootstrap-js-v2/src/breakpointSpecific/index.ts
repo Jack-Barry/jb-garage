@@ -2,6 +2,7 @@ import { isEmptyObject } from '@jb-garage/utils-generic'
 
 import { BsJsBreakpointDependentOptions, BsJsElement, BsJsOptions, BsJsStyles } from '../_types'
 import { applyDisplayStylesForBreakpoint } from '../bootstrapEntities/utilities/display'
+import { applyFlexStyles } from '../bootstrapEntities/utilities/flex'
 
 /** Modifies the provided `result` object with breakpoint-specific styles */
 export function applyBreakpointSpecificStyles<
@@ -24,5 +25,6 @@ export function applyBreakpointSpecificStyles<
       breakpoint as Breakpoints,
       options
     )
+    applyFlexStyles(result, options, breakpoint)
   }
 }

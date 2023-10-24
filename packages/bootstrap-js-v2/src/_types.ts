@@ -59,6 +59,7 @@ import { BsJsRowBreakpointDependentOptions, BsJsRowOptions } from './bootstrapEn
 import { BsJsBackgroundOptions } from './bootstrapEntities/utilities/background'
 import { BsJsBorderOptions } from './bootstrapEntities/utilities/borders'
 import { BsJsDisplayOption } from './bootstrapEntities/utilities/display'
+import { BsJsFlexOptions } from './bootstrapEntities/utilities/flex'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
@@ -73,6 +74,8 @@ export type BsJsBreakpointAgnosticOptions = {
   color?: LiteralUnion<BootstrapTextColor, string>
   /** Default display type (can be overridden in breakpoint options) */
   display?: BsJsDisplayOption
+  /** Flexbox related options */
+  flex?: BsJsFlexOptions
 }
 
 /** Options that can be applied to specific breakpoints */
@@ -84,6 +87,8 @@ export type BsJsBreakpointDependentOptions<
   {
     /** Display type for this breakpoint and above */
     display?: BsJsDisplayOption
+    /** Flexbox options for this breakpoint and above */
+    flex?: BsJsFlexOptions
   } & (Element extends 'col'
     ? BsJsColBreakpointDependentOptions
     : Element extends 'row'
