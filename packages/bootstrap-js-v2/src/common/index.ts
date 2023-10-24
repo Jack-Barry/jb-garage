@@ -8,6 +8,7 @@ import { applyDisplayStyles } from '../bootstrapEntities/utilities/display'
 import { applyFlexStyles } from '../bootstrapEntities/utilities/flex'
 import { applyFloatStyles } from '../bootstrapEntities/utilities/float'
 import { applyInteractionsStyles } from '../bootstrapEntities/utilities/interactions'
+import { applyObjectFitStyles } from '../bootstrapEntities/utilities/objectFit'
 
 import { applyTheme } from './theme'
 
@@ -29,4 +30,5 @@ export function applyCommonStyles(
   applyFlexStyles(result, options)
   applyFloatStyles(result, options)
   applyInteractionsStyles(result, options)
+  applyObjectFitStyles(result, options)
 }

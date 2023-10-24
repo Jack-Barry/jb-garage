@@ -63,6 +63,7 @@ import { BsJsFlexOptions } from './bootstrapEntities/utilities/flex'
 import { BsJsFloatType } from './bootstrapEntities/utilities/float'
 import { BsJsInteractionsOptions } from './bootstrapEntities/utilities/interactions'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
+import { BsJsObjectFit } from './bootstrapEntities/utilities/objectFit'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
@@ -82,6 +83,8 @@ export type BsJsBreakpointAgnosticOptions = {
   float?: BsJsFloatType
   /** Options for interaction styling */
   interactions?: BsJsInteractionsOptions
+  /** Type of object fit to use */
+  objectFit?: BsJsObjectFit
 }
 
 /** Options that can be applied to specific breakpoints */
@@ -97,6 +100,8 @@ export type BsJsBreakpointDependentOptions<
     flex?: BsJsFlexOptions
     /** Float type for this breakpoint and above */
     float?: BsJsFloatType
+    /** Type of object fit to use for this breakpoint and above */
+    objectFit?: BsJsObjectFit
   } & (Element extends 'col'
     ? BsJsColBreakpointDependentOptions
     : Element extends 'row'
