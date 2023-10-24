@@ -60,6 +60,7 @@ import { BsJsBackgroundOptions } from './bootstrapEntities/utilities/background'
 import { BsJsBorderOptions } from './bootstrapEntities/utilities/borders'
 import { BsJsDisplayOption } from './bootstrapEntities/utilities/display'
 import { BsJsFlexOptions } from './bootstrapEntities/utilities/flex'
+import { BsJsFloatType } from './bootstrapEntities/utilities/float'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
@@ -76,6 +77,8 @@ export type BsJsBreakpointAgnosticOptions = {
   display?: BsJsDisplayOption
   /** Flexbox related options */
   flex?: BsJsFlexOptions
+  /** Float type */
+  float?: BsJsFloatType
 }
 
 /** Options that can be applied to specific breakpoints */
@@ -89,6 +92,8 @@ export type BsJsBreakpointDependentOptions<
     display?: BsJsDisplayOption
     /** Flexbox options for this breakpoint and above */
     flex?: BsJsFlexOptions
+    /** Float type for this breakpoint and above */
+    float?: BsJsFloatType
   } & (Element extends 'col'
     ? BsJsColBreakpointDependentOptions
     : Element extends 'row'

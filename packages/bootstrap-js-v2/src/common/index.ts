@@ -6,6 +6,7 @@ import { applyBorderStyles } from '../bootstrapEntities/utilities/borders'
 import { applyTextColor } from '../bootstrapEntities/utilities/colors'
 import { applyDisplayStyles } from '../bootstrapEntities/utilities/display'
 import { applyFlexStyles } from '../bootstrapEntities/utilities/flex'
+import { applyFloatStyles } from '../bootstrapEntities/utilities/float'
 
 import { applyTheme } from './theme'
 
@@ -25,4 +26,5 @@ export function applyCommonStyles(
   applyBorderStyles(prefix, result, options)
   applyDisplayStyles(result, options)
   applyFlexStyles(result, options)
+  applyFloatStyles(result, options)
 }
