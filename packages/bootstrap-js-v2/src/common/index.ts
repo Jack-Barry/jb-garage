@@ -7,6 +7,7 @@ import { applyTextColor } from '../bootstrapEntities/utilities/colors'
 import { applyDisplayStyles } from '../bootstrapEntities/utilities/display'
 import { applyFlexStyles } from '../bootstrapEntities/utilities/flex'
 import { applyFloatStyles } from '../bootstrapEntities/utilities/float'
+import { applyInteractionsStyles } from '../bootstrapEntities/utilities/interactions'
 
 import { applyTheme } from './theme'
 
@@ -27,4 +28,5 @@ export function applyCommonStyles(
   applyDisplayStyles(result, options)
   applyFlexStyles(result, options)
   applyFloatStyles(result, options)
+  applyInteractionsStyles(result, options)
 }

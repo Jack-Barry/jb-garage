@@ -61,6 +61,7 @@ import { BsJsBorderOptions } from './bootstrapEntities/utilities/borders'
 import { BsJsDisplayOption } from './bootstrapEntities/utilities/display'
 import { BsJsFlexOptions } from './bootstrapEntities/utilities/flex'
 import { BsJsFloatType } from './bootstrapEntities/utilities/float'
+import { BsJsInteractionsOptions } from './bootstrapEntities/utilities/interactions'
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 
 /** Options that can be applied to any element */
@@ -79,6 +80,8 @@ export type BsJsBreakpointAgnosticOptions = {
   flex?: BsJsFlexOptions
   /** Float type */
   float?: BsJsFloatType
+  /** Options for interaction styling */
+  interactions?: BsJsInteractionsOptions
 }
 
 /** Options that can be applied to specific breakpoints */
