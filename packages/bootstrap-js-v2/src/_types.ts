@@ -72,6 +72,7 @@ import { BsJsObjectFit } from './bootstrapEntities/utilities/objectFit'
 import { BsJsOverflowOptions } from './bootstrapEntities/utilities/overflow'
 import { BsJsPositionOptions } from './bootstrapEntities/utilities/position'
 import { BsJsShadowOptions } from './bootstrapEntities/utilities/shadow'
+import { BsJsSizeOptions } from './bootstrapEntities/utilities/sizing'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
@@ -101,6 +102,8 @@ export type BsJsBreakpointAgnosticOptions = {
   position?: BsJsPositionOptions
   /** Shadow styling for element */
   shadow?: BsJsShadowOptions
+  /** Size of the element */
+  sizing?: BsJsSizeOptions
 }
 
 /** Options that can be applied to specific breakpoints */

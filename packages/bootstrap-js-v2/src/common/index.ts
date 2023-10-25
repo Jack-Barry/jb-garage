@@ -13,6 +13,7 @@ import { applyOpacityStyles } from '../bootstrapEntities/utilities/opacity'
 import { applyOverflowStyles } from '../bootstrapEntities/utilities/overflow'
 import { applyPositionStyles } from '../bootstrapEntities/utilities/position'
 import { applyShadowStyles } from '../bootstrapEntities/utilities/shadow'
+import { applySizingStyles } from '../bootstrapEntities/utilities/sizing'
 
 import { applyTheme } from './theme'
 
@@ -39,4 +40,5 @@ export function applyCommonStyles(
   applyOverflowStyles(result, options)
   applyPositionStyles(result, options)
   applyShadowStyles(result, options)
+  applySizingStyles(result, options)
 }
