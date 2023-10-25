@@ -1,6 +1,10 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
 
 import { BsJsBreakpointAgnosticOptions, BsJsStyles } from '../_types'
+import { applyClearfixStyles } from '../bootstrapEntities/helpers/clearfix'
+import { applyColorAndBackgroundStyles } from '../bootstrapEntities/helpers/colorAndBackground'
+import { applyFocusRingStyles } from '../bootstrapEntities/helpers/focusRing'
+import { applyIconLinkStyles } from '../bootstrapEntities/helpers/iconLink'
 import { applyBackgroundStyles } from '../bootstrapEntities/utilities/background'
 import { applyBorderStyles } from '../bootstrapEntities/utilities/borders'
 import { applyTextColor } from '../bootstrapEntities/utilities/colors'
@@ -33,6 +37,12 @@ export function applyCommonStyles(
   }
 
   applyTheme(prefix, result, options.theme)
+  // helpers
+  applyClearfixStyles(result, options)
+  applyColorAndBackgroundStyles(result, options)
+  applyFocusRingStyles(prefix, result, options)
+  applyIconLinkStyles(prefix, result, options)
+  // utilities
   applyTextColor(result, options)
   applyBackgroundStyles(prefix, result, options)
   applyBorderStyles(prefix, result, options)

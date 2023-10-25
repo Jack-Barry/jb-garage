@@ -55,6 +55,9 @@ import { BsJsFormLabelOptions } from './bootstrapEntities/forms/formLabel'
 import { BsJsFormSelectOptions } from './bootstrapEntities/forms/formSelect'
 import { BsJsFormFeedbackOptions } from './bootstrapEntities/forms/formValidation'
 import { BsJsInputGroupOptions } from './bootstrapEntities/forms/inputGroup'
+import { BsJsColorAndBackgroundOption } from './bootstrapEntities/helpers/colorAndBackground'
+import { BsJsFocusRingOptions } from './bootstrapEntities/helpers/focusRing'
+import { BsJsIconLinkOptions } from './bootstrapEntities/helpers/iconLink'
 import {
   BsJsColBreakpointDependentOptions,
   BsJsColOptions
@@ -80,20 +83,26 @@ import { BootstrapZIndex } from './bootstrapEntities/utilities/zIndex'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
-  /** Theme to apply */
-  theme?: LiteralUnion<BootstrapTheme, string>
   /** Options to use for background */
   background?: BsJsBackgroundOptions
   /** Options to use for border */
   border?: BsJsBorderOptions
+  /** Apply clearfix styling */
+  clearfix?: boolean
   /** Text color to apply */
   color?: LiteralUnion<BootstrapTextColor, string>
+  /** Apply color to text and background using helper class */
+  colorAndBackground?: BsJsColorAndBackgroundOption
   /** Default display type (can be overridden in breakpoint options) */
   display?: BsJsDisplayOption
   /** Flexbox related options */
   flex?: BsJsFlexOptions
   /** Float type */
   float?: BsJsFloatType
+  /** Options for focus ring helper classes */
+  focusRing?: BsJsFocusRingOptions
+  /** Options for icon link */
+  iconLink?: BsJsIconLinkOptions
   /** Options for interaction styling */
   interactions?: BsJsInteractionsOptions
   /** Type of object fit to use */
@@ -112,6 +121,8 @@ export type BsJsBreakpointAgnosticOptions = {
   spacing?: BsJsSpacingOptions
   /** Options for text */
   text?: BsJsTextOptions
+  /** Theme to apply */
+  theme?: LiteralUnion<BootstrapTheme, string>
   /** Type of vertical alignment to apply */
   verticalAlign?: LiteralUnion<BootstrapVerticalAlign, string>
   /** Make visibile or invisible */

@@ -1,7 +1,7 @@
 import { BootstrapJs } from '../../BootstrapJs'
 import { emptyStyles } from '../../utils'
 
-describe('Utilities: Borders', () => {
+describe('Bootstrap Entities: Utilities: Borders', () => {
   const bsJs = new BootstrapJs().bsJs
 
   test('applies border class when value is true', () => {
