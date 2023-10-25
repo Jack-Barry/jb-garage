@@ -113,6 +113,8 @@ export type BsJsBreakpointAgnosticOptions = {
   text?: BsJsTextOptions
   /** Type of vertical alignment to apply */
   verticalAlign?: LiteralUnion<BootstrapVerticalAlign, string>
+  /** Make visibile or invisible */
+  visibility?: boolean
 }
 
 /** Options that can be applied to specific breakpoints */
