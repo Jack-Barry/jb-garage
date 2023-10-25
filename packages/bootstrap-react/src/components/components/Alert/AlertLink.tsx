@@ -33,7 +33,7 @@ const AlertLink: AlertLinkWithRef = forwardRef(function AlertLink<
   const { as = 'a' as ElementType, children, bsJs, ...rest } = props
 
   return (
-    <BrElement as={as} ref={ref} bsJs={{ ...bsJs, elementType: 'alert-link' }} {...rest}>
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'alert-link', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )

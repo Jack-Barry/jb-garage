@@ -1,5 +1,8 @@
 import { BsJsElement, BsJsOptions, BsJsStyles } from '../_types'
-import { applyAccordionStyles } from '../bootstrapEntities/components/accordion'
+import {
+  applyAccordionButtonStyles,
+  applyAccordionStyles
+} from '../bootstrapEntities/components/accordion'
 import { applyAlertStyles } from '../bootstrapEntities/components/alert'
 import { applyButtonGroupStyles, applyButtonStyles } from '../bootstrapEntities/components/button'
 import { applyCardImageStyles, applyCardLinkStyles } from '../bootstrapEntities/components/card'
@@ -72,6 +75,9 @@ export function applyElementStyles<
   switch (options.elementType) {
     case 'accordion':
       applyAccordionStyles(result, options as BsJsOptions<Breakpoints, 'accordion'>)
+      break
+    case 'accordion-button':
+      applyAccordionButtonStyles(result, options as BsJsOptions<Breakpoints, 'accordion-button'>)
       break
     case 'alert':
       applyAlertStyles(result, options as BsJsOptions<Breakpoints, 'alert'>)

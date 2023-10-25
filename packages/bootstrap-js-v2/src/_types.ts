@@ -7,7 +7,10 @@ import {
   BootstrapTextColor,
   BootstrapTheme
 } from './_bootstrapTypes'
-import { BsJsAccordionOptions } from './bootstrapEntities/components/accordion'
+import {
+  BsJsAccordionButtonOptions,
+  BsJsAccordionOptions
+} from './bootstrapEntities/components/accordion'
 import { BsJsAlertOptions } from './bootstrapEntities/components/alert'
 import { BsJsButtonGroupOptions, BsJsButtonOptions } from './bootstrapEntities/components/button'
 import { BsJsCardImageOptions } from './bootstrapEntities/components/card'
@@ -225,6 +228,8 @@ export type BsJsOptions<
     breakpoints?: BsJsBreakpointDependentOptions<Breakpoints, Element>
   } & (Element extends 'accordion'
     ? BsJsAccordionOptions
+    : Element extends 'accordion-button'
+    ? BsJsAccordionButtonOptions
     : Element extends 'alert'
     ? BsJsAlertOptions
     : Element extends 'btn'
@@ -323,5 +328,5 @@ export type BsJsStyles = {
   /** Object representing inline styles to apply to the element */
   inlineStyles: ElementStyle
   /** Attributes other than `class` or `style` (e.g. `data-` prefixed attributes) */
-  elementAttributes: Record<string, string | number>
+  elementAttributes: Record<string, string | number | boolean>
 }

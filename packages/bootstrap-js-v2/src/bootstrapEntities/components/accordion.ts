@@ -16,3 +16,20 @@ export function applyAccordionStyles<Breakpoint extends string>(
     result.classes['accordion-flush'] = true
   }
 }
+
+export type BsJsAccordionButtonOptions = {
+  /** Accordion button is currently collapsed */
+  collapsed?: boolean
+}
+export function applyAccordionButtonStyles<Breakpoint extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoint, 'accordion-button'>
+) {
+  applyElementNameAsClass(result, options.elementType)
+
+  if (options.collapsed) {
+    result.classes['collapsed'] = true
+  }
+
+  result.elementAttributes['aria-expanded'] = !options.collapsed
+}

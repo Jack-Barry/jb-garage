@@ -43,7 +43,7 @@ const Alert: AlertWithRef = forwardRef(function Alert<
     <BrElement
       as={as}
       ref={usedRef}
-      bsJs={{ ...bsJs, elementType: 'alert', show: bsJs?.show || (!isAnimating && !isDismissed) }}
+      bsJs={{ elementType: 'alert', show: !isAnimating && !isDismissed, ...bsJs }}
       {...rest}
     >
       {children}

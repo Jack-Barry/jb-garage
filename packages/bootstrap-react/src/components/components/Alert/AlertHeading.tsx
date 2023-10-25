@@ -33,7 +33,7 @@ const AlertHeading: AlertHeadingWithRef = forwardRef(function AlertHeading<
   const { as = 'h4' as ElementType, children, bsJs, ...rest } = props
 
   return (
-    <BrElement as={as} ref={ref} bsJs={{ ...bsJs, elementType: 'alert-heading' }} {...rest}>
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'alert-heading', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )

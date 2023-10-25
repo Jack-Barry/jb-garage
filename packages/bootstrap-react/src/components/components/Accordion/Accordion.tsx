@@ -43,7 +43,7 @@ const Accordion: AccordionWithRef = forwardRef(function Accordion<
   } = props
 
   return (
-    <BrElement as={as} ref={ref} bsJs={{ ...bsJs, elementType: 'accordion' }} {...rest}>
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'accordion', ...bsJs }} {...rest}>
       <AccordionContextProvider maxOneOpen={!brAccordionAlwaysOpen}>
         {children}
       </AccordionContextProvider>

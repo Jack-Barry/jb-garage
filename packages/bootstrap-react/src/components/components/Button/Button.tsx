@@ -39,6 +39,7 @@ const Button: ButtonWithRef = forwardRef(function Button<
     as = 'button' as ElementType,
     type,
     children,
+    bsJs,
     'aria-disabled': ariaDisabled = props['aria-disabled'] ?? isVisuallyDisabled,
     ...rest
   } = props
@@ -46,7 +47,14 @@ const Button: ButtonWithRef = forwardRef(function Button<
   const usedType = type || (as === 'button' ? 'button' : undefined)
 
   return (
-    <BrElement as={as} type={usedType} ref={ref} aria-disabled={ariaDisabled} {...rest}>
+    <BrElement
+      as={as}
+      type={usedType}
+      ref={ref}
+      aria-disabled={ariaDisabled}
+      bsJs={{ elementType: 'btn', ...bsJs }}
+      {...rest}
+    >
       {children}
     </BrElement>
   )

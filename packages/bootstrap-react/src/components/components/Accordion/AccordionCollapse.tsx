@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef, useEffect } from 'react'
 
 import Collapse, { CollapseProps } from '../Collapse/Collapse'
@@ -6,23 +6,32 @@ import { useCollapse } from '../Collapse/useCollapse'
 
 import { useParentAccordion } from './AccordionContext'
 
-export type AccordionCollapseProps<T extends ElementType> = Partial<CollapseProps<T>> & {
+export type AccordionCollapseProps<T extends ElementType, Breakpoints extends string> = Partial<
+  CollapseProps<T, Breakpoints>
+> & {
   brAccordionCollapseDefaultOpen?: boolean
 }
 
-export type AccordionCollapseWithRef = <Component extends ElementType = 'div'>(
-  props: AccordionCollapseProps<Component>
+export type AccordionCollapseWithRef = <
+  Component extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: AccordionCollapseProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * [Accordion]()
  */
 const AccordionCollapse: AccordionCollapseWithRef = forwardRef(function AccordionCollapse<
-  T extends ElementType = 'div'
->(props: AccordionCollapseProps<T>, ref?: AccordionCollapseProps<T>['ref']) {
+  T extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: AccordionCollapseProps<T, Breakpoints>,
+  ref?: AccordionCollapseProps<T, Breakpoints>['ref']
+) {
   const {
     as = 'div' as ElementType,
-    className,
+    bsJs,
     brCollapse,
     brAccordionCollapseDefaultOpen,
     ...rest
@@ -61,7 +70,7 @@ const AccordionCollapse: AccordionCollapseWithRef = forwardRef(function Accordio
       as={as}
       ref={ref}
       brCollapse={usedCollapse}
-      className={classNames('accordion-collapse', className)}
+      bsJs={{ elementType: 'accordion-collapse', ...bsJs }}
       {...rest}
     />
   )

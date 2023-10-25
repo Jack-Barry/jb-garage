@@ -24,6 +24,6 @@ const Image: ImageWithRef = forwardRef(function Image<
 >(props: ImageProps<T, Breakpoints>, ref?: ImageProps<T, Breakpoints>['ref']) {
   const { as = 'img' as ImageElementType, bsJs, ...rest } = props
 
-  return <BrElement as={as} ref={ref} bsJs={{ ...bsJs, elementType: 'img' }} {...rest} />
+  return <BrElement as={as} ref={ref} bsJs={{ elementType: 'img', ...bsJs }} {...rest} />
 })
 export default Image
