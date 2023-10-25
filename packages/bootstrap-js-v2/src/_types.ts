@@ -75,6 +75,7 @@ import { BsJsShadowOptions } from './bootstrapEntities/utilities/shadow'
 import { BsJsSizeOptions } from './bootstrapEntities/utilities/sizing'
 import { BsJsSpacingOptions } from './bootstrapEntities/utilities/spacing'
 import { BsJsTextOptions } from './bootstrapEntities/utilities/text'
+import { BootstrapVerticalAlign } from './bootstrapEntities/utilities/verticalAlign'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
@@ -110,6 +111,8 @@ export type BsJsBreakpointAgnosticOptions = {
   spacing?: BsJsSpacingOptions
   /** Options for text */
   text?: BsJsTextOptions
+  /** Type of vertical alignment to apply */
+  verticalAlign?: LiteralUnion<BootstrapVerticalAlign, string>
 }
 
 /** Options that can be applied to specific breakpoints */
