@@ -12,7 +12,7 @@ describe('Bootstrap Entities: Forms: Input Group', () => {
   })
 
   test('applies size class name', () => {
-    expect(bsJs({ elementType: 'input-group', size: 'lg' })).toStrictEqual({
+    expect(bsJs({ elementType: 'input-group', inputGroupSize: 'lg' })).toStrictEqual({
       classes: { 'input-group': true, 'input-group-lg': true },
       inlineStyles: {},
       elementAttributes: {}

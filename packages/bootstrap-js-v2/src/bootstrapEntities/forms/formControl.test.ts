@@ -21,7 +21,7 @@ describe('Bootstrap Entities: Forms: Form Controls', () => {
     })
 
     test('applies size class name', () => {
-      expect(bsJs({ elementType, size: 'lg' })).toStrictEqual({
+      expect(bsJs({ elementType, formControlSize: 'lg' })).toStrictEqual({
         classes: { [elementType]: true, 'form-control-lg': true },
         inlineStyles: {},
         elementAttributes: {}

@@ -22,7 +22,7 @@ export type BsJsButtonOptions = BsJsActivatableElementOptions &
     /** Theme color or basic style to apply to the button */
     variant?: BsJsButtonColor
     /** Size of the button */
-    size?: BsJsButtonSize
+    buttonSize?: BsJsButtonSize
   }
 
 export function applyButtonStyles<Breakpoints extends string>(
@@ -37,14 +37,14 @@ export function applyButtonStyles<Breakpoints extends string>(
     result.classes[`btn-${options.variant}`] = true
   }
 
-  if (options.size) {
-    result.classes[`btn-${options.size}`] = true
+  if (options.buttonSize) {
+    result.classes[`btn-${options.buttonSize}`] = true
   }
 }
 
 export type BsJsButtonGroupOptions = {
   /** Size for buttons in the group */
-  size?: BsJsButtonSize
+  buttonGroupSize?: BsJsButtonSize
   /** Present as vertical list of buttons */
   vertical?: boolean
 }
@@ -56,7 +56,7 @@ export function applyButtonGroupStyles(result: BsJsStyles, options: BsJsButtonGr
     result.classes['btn-group'] = true
   }
 
-  if (options.size) {
-    result.classes[`btn-group-${options.size}`] = true
+  if (options.buttonGroupSize) {
+    result.classes[`btn-group-${options.buttonGroupSize}`] = true
   }
 }

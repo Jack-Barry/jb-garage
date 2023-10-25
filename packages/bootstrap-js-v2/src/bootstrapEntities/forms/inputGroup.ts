@@ -5,7 +5,7 @@ import { applyElementNameAsClass } from '../../elements/utils'
 
 export type BsJsInputGroupOptions = {
   /** Size to present the input group in */
-  size?: LiteralUnion<'sm' | 'lg', string>
+  inputGroupSize?: LiteralUnion<'sm' | 'lg', string>
   /** Whether or not the input group should have validation styling */
   hasValidation?: boolean
 }
@@ -15,8 +15,8 @@ export function applyInputGroupStyles<Breakpoints extends string>(
 ) {
   applyElementNameAsClass(result, options.elementType)
 
-  if (options.size) {
-    result.classes[`input-group-${options.size}`] = true
+  if (options.inputGroupSize) {
+    result.classes[`input-group-${options.inputGroupSize}`] = true
   }
 
   if (options.hasValidation) {

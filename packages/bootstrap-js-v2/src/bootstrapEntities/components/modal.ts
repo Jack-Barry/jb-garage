@@ -29,7 +29,7 @@ export type BsJsModalDialogOptions = {
   /** Content of modal dialog should be centered */
   centered?: boolean
   /** Size of modal dialog */
-  size?: LiteralUnion<'sm' | 'lg' | 'xl', string>
+  modalSize?: LiteralUnion<'sm' | 'lg' | 'xl', string>
   /**
    * Modal should take up the full screen
    *
@@ -53,8 +53,8 @@ export function applyModalDialogStyles<Breakpoints extends string>(
     result.classes['modal-dialog-centered'] = true
   }
 
-  if (options.size) {
-    result.classes[`modal-${options.size}`] = true
+  if (options.modalSize) {
+    result.classes[`modal-${options.modalSize}`] = true
   }
 
   if (isString(options.fullScreen)) {

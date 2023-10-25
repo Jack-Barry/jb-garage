@@ -24,7 +24,7 @@ export function applyPageItemStyles<Breakpoints extends string>(
 
 export type BsJsPaginationOptions = {
   /** Size to apply to pagination */
-  size?: LiteralUnion<'lg' | 'sm', string>
+  paginationSize?: LiteralUnion<'lg' | 'sm', string>
 }
 export function applyPaginationStyles<Breakpoints extends string>(
   result: BsJsStyles,
@@ -32,7 +32,7 @@ export function applyPaginationStyles<Breakpoints extends string>(
 ) {
   applyElementNameAsClass(result, options.elementType)
 
-  if (options.size) {
-    result.classes[`pagination-${options.size}`] = true
+  if (options.paginationSize) {
+    result.classes[`pagination-${options.paginationSize}`] = true
   }
 }

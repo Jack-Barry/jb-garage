@@ -40,7 +40,7 @@ describe('Element Components: Spinners', () => {
   })
 
   test('applies size inline styles', () => {
-    expect(bsJs({ elementType: 'spinner', size: '2rem' })).toStrictEqual({
+    expect(bsJs({ elementType: 'spinner', spinnerInlineStyleSize: '2rem' })).toStrictEqual({
       classes: { 'spinner-border': true },
       inlineStyles: { width: '2rem', height: '2rem' },
       elementAttributes: {}

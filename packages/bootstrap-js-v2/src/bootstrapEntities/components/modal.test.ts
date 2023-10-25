@@ -65,7 +65,7 @@ describe('Element Components: Modals', () => {
     })
 
     test('applies size class name', () => {
-      expect(bsJs({ elementType: 'modal-dialog', size: 'lg' })).toStrictEqual({
+      expect(bsJs({ elementType: 'modal-dialog', modalSize: 'lg' })).toStrictEqual({
         classes: { 'modal-dialog': true, 'modal-lg': true },
         inlineStyles: {},
         elementAttributes: {}

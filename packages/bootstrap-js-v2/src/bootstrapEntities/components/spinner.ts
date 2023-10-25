@@ -12,7 +12,7 @@ export type BsJsSpinnerOptions = {
   /** Size class to apply to spinner */
   spinnerSize?: LiteralUnion<'sm', string>
   /** Size to use for height and width of inline styles for spinner */
-  size?: string
+  spinnerInlineStyleSize?: string
 }
 export function applySpinnerStyles<Breakpoints extends string>(
   result: BsJsStyles,
@@ -26,8 +26,8 @@ export function applySpinnerStyles<Breakpoints extends string>(
     result.classes[`spinner-${usedSpinnerType}-${options.spinnerSize}`] = true
   }
 
-  if (options.size) {
-    result.inlineStyles['width'] = options.size
-    result.inlineStyles['height'] = options.size
+  if (options.spinnerInlineStyleSize) {
+    result.inlineStyles['width'] = options.spinnerInlineStyleSize
+    result.inlineStyles['height'] = options.spinnerInlineStyleSize
   }
 }

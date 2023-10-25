@@ -103,7 +103,7 @@ export type BsJsBreakpointAgnosticOptions = {
   /** Shadow styling for element */
   shadow?: BsJsShadowOptions
   /** Size of the element */
-  sizing?: BsJsSizeOptions
+  size?: BsJsSizeOptions
 }
 
 /** Options that can be applied to specific breakpoints */

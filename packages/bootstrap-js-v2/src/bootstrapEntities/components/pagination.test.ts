@@ -51,7 +51,7 @@ describe('Element Components: Pagination', () => {
     })
 
     test('applies size class name', () => {
-      expect(bsJs({ elementType: 'pagination', size: 'lg' })).toStrictEqual({
+      expect(bsJs({ elementType: 'pagination', paginationSize: 'lg' })).toStrictEqual({
         classes: { pagination: true, 'pagination-lg': true },
         inlineStyles: {},
         elementAttributes: {}

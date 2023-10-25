@@ -49,7 +49,7 @@ describe('Element Components: Buttons', () => {
     })
 
     test('applies "size" class name', () => {
-      expect(bsJs({ elementType: 'btn', size: 'lg' })).toStrictEqual({
+      expect(bsJs({ elementType: 'btn', buttonSize: 'lg' })).toStrictEqual({
         classes: { btn: true, 'btn-lg': true },
         inlineStyles: {},
         elementAttributes: {}
@@ -81,7 +81,7 @@ describe('Element Components: Buttons', () => {
     })
 
     test('applies size option', () => {
-      expect(bsJs({ elementType: 'btn-group', size: 'lg' })).toStrictEqual({
+      expect(bsJs({ elementType: 'btn-group', buttonGroupSize: 'lg' })).toStrictEqual({
         classes: { 'btn-group': true, 'btn-group-lg': true },
         inlineStyles: {},
         elementAttributes: {}

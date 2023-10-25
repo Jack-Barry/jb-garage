@@ -12,7 +12,7 @@ describe('Bootstrap Entities: Forms: Form Select', () => {
   })
 
   test('applies size class name', () => {
-    expect(bsJs({ elementType: 'form-select', size: 'lg' })).toStrictEqual({
+    expect(bsJs({ elementType: 'form-select', formControlSize: 'lg' })).toStrictEqual({
       classes: { 'form-select': true, 'form-select-lg': true },
       inlineStyles: {},
       elementAttributes: {}

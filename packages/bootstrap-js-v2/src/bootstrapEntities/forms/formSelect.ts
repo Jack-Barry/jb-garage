@@ -10,8 +10,8 @@ export function applyFormSelectStyles<Breakpoints extends string>(
 ) {
   applyElementNameAsClass(result, options.elementType)
 
-  if (options.size) {
-    result.classes[`form-select-${options.size}`] = true
+  if (options.formControlSize) {
+    result.classes[`form-select-${options.formControlSize}`] = true
   }
 
   if (options.isValid) {

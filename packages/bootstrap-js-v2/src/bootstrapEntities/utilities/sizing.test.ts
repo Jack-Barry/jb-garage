@@ -6,7 +6,7 @@ describe('Bootstrap Entities: Utilities: Sizing', () => {
   test('sets size classes', () => {
     expect(
       bsJs({
-        sizing: {
+        size: {
           width: 'auto',
           maxWidth: '100',
           viewportWidth: '99',

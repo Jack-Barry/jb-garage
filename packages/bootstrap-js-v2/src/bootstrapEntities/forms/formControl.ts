@@ -4,7 +4,7 @@ import { BsJsOptions, BsJsStyles } from '../../_types'
 import { applyElementNameAsClass } from '../../elements/utils'
 
 export type BsJsFormControlOptions = {
-  size?: LiteralUnion<'sm' | 'lg', string>
+  formControlSize?: LiteralUnion<'sm' | 'lg', string>
   plaintext?: boolean
   isColorSelector?: boolean
   isValid?: boolean
@@ -16,8 +16,8 @@ export function applyFormControlStyles<Breakpoints extends string>(
 ) {
   applyElementNameAsClass(result, options.elementType)
 
-  if (options.size) {
-    result.classes[`form-control-${options.size}`] = true
+  if (options.formControlSize) {
+    result.classes[`form-control-${options.formControlSize}`] = true
   }
 
   if (options.plaintext) {

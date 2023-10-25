@@ -17,7 +17,7 @@ export type BsJsSizeOptions = {
 }
 
 export function applySizingStyles(result: BsJsStyles, options: BsJsBreakpointAgnosticOptions) {
-  if (isUndefined(options.sizing)) {
+  if (isUndefined(options.size)) {
     return
   }
 
@@ -30,7 +30,7 @@ export function applySizingStyles(result: BsJsStyles, options: BsJsBreakpointAgn
     maxHeight,
     viewportHeight,
     minViewportHeight
-  } = options.sizing
+  } = options.size
 
   if (width) {
     result.classes[`w-${width}`] = true
