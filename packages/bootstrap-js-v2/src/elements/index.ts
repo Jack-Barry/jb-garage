@@ -51,6 +51,7 @@ import { applyFormLabelStyles } from '../bootstrapEntities/forms/formLabel'
 import { applyFormSelectStyles } from '../bootstrapEntities/forms/formSelect'
 import { applyFormValidationStyles } from '../bootstrapEntities/forms/formValidation'
 import { applyInputGroupStyles } from '../bootstrapEntities/forms/inputGroup'
+import { applyVerticalRuleStyles } from '../bootstrapEntities/helpers/verticalRule'
 import { applyColStyles } from '../bootstrapEntities/layout/columns'
 import { applyContainerStyles } from '../bootstrapEntities/layout/container'
 import { applyRowStyles } from '../bootstrapEntities/layout/row'
@@ -218,6 +219,9 @@ export function applyElementStyles<
       break
     case 'tooltip':
       applyTooltipStyles(result, options as unknown as BsJsOptions<Breakpoints, 'tooltip'>)
+      break
+    case 'vr':
+      applyVerticalRuleStyles(result)
       break
     default:
       applyElementNameAsClass(result, options.elementType)

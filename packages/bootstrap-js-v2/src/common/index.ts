@@ -6,6 +6,9 @@ import { applyColorAndBackgroundStyles } from '../bootstrapEntities/helpers/colo
 import { applyFocusRingStyles } from '../bootstrapEntities/helpers/focusRing'
 import { applyIconLinkStyles } from '../bootstrapEntities/helpers/iconLink'
 import { applyPositionHelperStyles } from '../bootstrapEntities/helpers/position'
+import { applyRatioStyles } from '../bootstrapEntities/helpers/ratio'
+import { applyStackStyles } from '../bootstrapEntities/helpers/stack'
+import { applyVisuallyHiddenStyles } from '../bootstrapEntities/helpers/visuallyHidden'
 import { applyBackgroundStyles } from '../bootstrapEntities/utilities/background'
 import { applyBorderStyles } from '../bootstrapEntities/utilities/borders'
 import { applyTextColor } from '../bootstrapEntities/utilities/colors'
@@ -44,6 +47,9 @@ export function applyCommonStyles(
   applyFocusRingStyles(prefix, result, options)
   applyIconLinkStyles(prefix, result, options)
   applyPositionHelperStyles(result, options)
+  applyRatioStyles(prefix, result, options)
+  applyStackStyles(result, options)
+  applyVisuallyHiddenStyles(result, options)
   // utilities
   applyTextColor(result, options)
   applyBackgroundStyles(prefix, result, options)

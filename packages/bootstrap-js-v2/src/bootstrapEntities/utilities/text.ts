@@ -1,6 +1,7 @@
 import { LiteralUnion } from '@jb-garage/utils-generic'
 
 import { BsJsBreakpointAgnosticOptions, BsJsStyles } from '../../_types'
+import { applyTextTruncationStyles } from '../helpers/textTruncation'
 
 type BootstrapTextAlign = 'start' | 'center' | 'end'
 
@@ -37,6 +38,7 @@ export type BsJsTextOptions = {
   monospace?: boolean
   resetColor?: boolean
   decoration?: LiteralUnion<BootstrapTextDecoration, string>
+  truncate?: boolean
 }
 
 export function applyTextStyles(
@@ -98,4 +100,6 @@ export function applyTextStyles(
   if (options.text.decoration) {
     result.classes[`text-decoration-${options.text.decoration}`] = true
   }
+
+  applyTextTruncationStyles(result, options.text.truncate)
 }

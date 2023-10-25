@@ -2,6 +2,7 @@ import { LiteralUnion } from '@jb-garage/utils-generic'
 
 import { BootstrapThemeColor } from '../../_bootstrapTypes'
 import { BsJsAsCssVar, BsJsOptions, BsJsStyles } from '../../_types'
+import { applyStretchedLinkStyles } from '../helpers/stretchedLink'
 
 import { applyOpacityStyles } from './opacity'
 
@@ -19,6 +20,7 @@ export type BsJsLinkOptions = {
   hoverOpacity?: LinkOpacity | BsJsAsCssVar<LinkOpacity>
   hoverUnderlineOffset?: LinkUnderlineOffset
   hoverUnderlineOpacity?: LinkUnderlineOpacity | BsJsAsCssVar<LinkUnderlineOpacity>
+  stretch?: boolean
 }
 
 export function applyLinkStyles<Breakpoints extends string>(
@@ -34,7 +36,8 @@ export function applyLinkStyles<Breakpoints extends string>(
     underlineOpacity,
     hoverOpacity,
     hoverUnderlineOffset,
-    hoverUnderlineOpacity
+    hoverUnderlineOpacity,
+    stretch
   } = options
 
   if (linkColor) {
@@ -95,4 +98,6 @@ export function applyLinkStyles<Breakpoints extends string>(
       hoverUnderlineOpacity
     )
   }
+
+  applyStretchedLinkStyles(result, stretch)
 }

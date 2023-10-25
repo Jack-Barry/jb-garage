@@ -62,6 +62,8 @@ import {
   BsJsPositionHelperOptions,
   BsJsResponsivePositionHelperOptions
 } from './bootstrapEntities/helpers/position'
+import { BsJsRatioOptions } from './bootstrapEntities/helpers/ratio'
+import { BsJsStackDirection } from './bootstrapEntities/helpers/stack'
 import {
   BsJsColBreakpointDependentOptions,
   BsJsColOptions
@@ -117,8 +119,12 @@ export type BsJsBreakpointAgnosticOptions = {
   overflow?: BsJsOverflowOptions
   /** Options for positioning the element */
   position?: BsJsPositionUtilityOptions | BsJsPositionHelperOptions
+  /** Maintain aspect ratio for element */
+  ratio?: BsJsRatioOptions
   /** Shadow styling for element */
   shadow?: BsJsShadowOptions
+  /** Flexbox stack helper direction */
+  stackDirection?: BsJsStackDirection
   /** Size of the element */
   size?: BsJsSizeOptions
   /** Spacing around the element */
@@ -131,6 +137,8 @@ export type BsJsBreakpointAgnosticOptions = {
   verticalAlign?: LiteralUnion<BootstrapVerticalAlign, string>
   /** Make visibile or invisible */
   visibility?: boolean
+  /** Make the element visually hidden */
+  visuallyHidden?: boolean
   /** Z-index options */
   zIndex?: LiteralUnion<BootstrapZIndex, string | number>
 }
@@ -198,6 +206,7 @@ export type BsJsElement =
   | 'link'
   | 'table-entry'
   | 'table-group'
+  | 'vr'
 
 /** Options to provide when calculating Bootstrap styles for a given element */
 export type BsJsOptions<
