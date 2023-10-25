@@ -12,6 +12,7 @@ import { applyObjectFitStyles } from '../bootstrapEntities/utilities/objectFit'
 import { applyOpacityStyles } from '../bootstrapEntities/utilities/opacity'
 import { applyOverflowStyles } from '../bootstrapEntities/utilities/overflow'
 import { applyPositionStyles } from '../bootstrapEntities/utilities/position'
+import { applyShadowStyles } from '../bootstrapEntities/utilities/shadow'
 
 import { applyTheme } from './theme'
 
@@ -37,4 +38,5 @@ export function applyCommonStyles(
   applyOpacityStyles(result, { classNamePrefix: 'opacity' }, options.opacity)
   applyOverflowStyles(result, options)
   applyPositionStyles(result, options)
+  applyShadowStyles(result, options)
 }
