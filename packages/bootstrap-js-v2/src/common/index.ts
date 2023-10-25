@@ -5,6 +5,7 @@ import { applyClearfixStyles } from '../bootstrapEntities/helpers/clearfix'
 import { applyColorAndBackgroundStyles } from '../bootstrapEntities/helpers/colorAndBackground'
 import { applyFocusRingStyles } from '../bootstrapEntities/helpers/focusRing'
 import { applyIconLinkStyles } from '../bootstrapEntities/helpers/iconLink'
+import { applyPositionHelperStyles } from '../bootstrapEntities/helpers/position'
 import { applyBackgroundStyles } from '../bootstrapEntities/utilities/background'
 import { applyBorderStyles } from '../bootstrapEntities/utilities/borders'
 import { applyTextColor } from '../bootstrapEntities/utilities/colors'
@@ -42,6 +43,7 @@ export function applyCommonStyles(
   applyColorAndBackgroundStyles(result, options)
   applyFocusRingStyles(prefix, result, options)
   applyIconLinkStyles(prefix, result, options)
+  applyPositionHelperStyles(result, options)
   // utilities
   applyTextColor(result, options)
   applyBackgroundStyles(prefix, result, options)

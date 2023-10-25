@@ -1,6 +1,7 @@
 import { isEmptyObject } from '@jb-garage/utils-generic'
 
 import { BsJsBreakpointDependentOptions, BsJsElement, BsJsOptions, BsJsStyles } from '../_types'
+import { applyPositionHelperStyles } from '../bootstrapEntities/helpers/position'
 import { applyDisplayStylesForBreakpoint } from '../bootstrapEntities/utilities/display'
 import { applyFlexStyles } from '../bootstrapEntities/utilities/flex'
 import { applyFloatStyles } from '../bootstrapEntities/utilities/float'
@@ -24,6 +25,9 @@ export function applyBreakpointSpecificStyles<
   for (const [breakpoint, options] of Object.entries<
     BsJsBreakpointDependentOptions<Breakpoints, Element>[Breakpoints]
   >(breakpointOptions)) {
+    // helpers
+    applyPositionHelperStyles(result, options, breakpoint)
+    // utilities
     applyDisplayStylesForBreakpoint<Breakpoints, Element>(
       result,
       breakpoint as Breakpoints,

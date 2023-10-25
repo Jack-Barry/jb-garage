@@ -59,6 +59,10 @@ import { BsJsColorAndBackgroundOption } from './bootstrapEntities/helpers/colorA
 import { BsJsFocusRingOptions } from './bootstrapEntities/helpers/focusRing'
 import { BsJsIconLinkOptions } from './bootstrapEntities/helpers/iconLink'
 import {
+  BsJsPositionHelperOptions,
+  BsJsResponsivePositionHelperOptions
+} from './bootstrapEntities/helpers/position'
+import {
   BsJsColBreakpointDependentOptions,
   BsJsColOptions
 } from './bootstrapEntities/layout/columns'
@@ -73,7 +77,7 @@ import { BsJsInteractionsOptions } from './bootstrapEntities/utilities/interacti
 import { BsJsLinkOptions } from './bootstrapEntities/utilities/link'
 import { BsJsObjectFit } from './bootstrapEntities/utilities/objectFit'
 import { BsJsOverflowOptions } from './bootstrapEntities/utilities/overflow'
-import { BsJsPositionOptions } from './bootstrapEntities/utilities/position'
+import { BsJsPositionUtilityOptions } from './bootstrapEntities/utilities/position'
 import { BsJsShadowOptions } from './bootstrapEntities/utilities/shadow'
 import { BsJsSizeOptions } from './bootstrapEntities/utilities/sizing'
 import { BsJsSpacingOptions } from './bootstrapEntities/utilities/spacing'
@@ -112,7 +116,7 @@ export type BsJsBreakpointAgnosticOptions = {
   /** How to handle overflow */
   overflow?: BsJsOverflowOptions
   /** Options for positioning the element */
-  position?: BsJsPositionOptions
+  position?: BsJsPositionUtilityOptions | BsJsPositionHelperOptions
   /** Shadow styling for element */
   shadow?: BsJsShadowOptions
   /** Size of the element */
@@ -146,6 +150,8 @@ export type BsJsBreakpointDependentOptions<
     float?: BsJsFloatType
     /** Type of object fit to use for this breakpoint and above */
     objectFit?: BsJsObjectFit
+    /** Position helper to use for this breakpoint and above */
+    position?: BsJsResponsivePositionHelperOptions
     /** Spacing around the element for this breakpoint and above */
     spacing?: BsJsSpacingOptions
     /** Text options for this breakpoint and above */

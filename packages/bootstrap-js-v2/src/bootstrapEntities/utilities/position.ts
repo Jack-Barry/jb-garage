@@ -1,12 +1,13 @@
 import { LiteralUnion, isString, isUndefined } from '@jb-garage/utils-generic'
 
 import { BsJsBreakpointAgnosticOptions, BsJsStyles } from '../../_types'
+import { isPositionHelperValue } from '../helpers/position'
 
 export type BootstrapPosition = 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'
 
 type BootstrapPositionValue = '0' | '50' | '100'
 
-export type BsJsPositionOptions =
+export type BsJsPositionUtilityOptions =
   | LiteralUnion<BootstrapPosition, string>
   | {
       position: LiteralUnion<BootstrapPosition, string>
@@ -20,7 +21,7 @@ export type BsJsPositionOptions =
     }
 
 export function applyPositionStyles(result: BsJsStyles, options: BsJsBreakpointAgnosticOptions) {
-  if (isUndefined(options.position)) {
+  if (isUndefined(options.position) || isPositionHelperValue(options.position)) {
     return
   }
 
