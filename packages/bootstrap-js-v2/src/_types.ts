@@ -73,6 +73,7 @@ import { BsJsOverflowOptions } from './bootstrapEntities/utilities/overflow'
 import { BsJsPositionOptions } from './bootstrapEntities/utilities/position'
 import { BsJsShadowOptions } from './bootstrapEntities/utilities/shadow'
 import { BsJsSizeOptions } from './bootstrapEntities/utilities/sizing'
+import { BsJsSpacingOptions } from './bootstrapEntities/utilities/spacing'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
@@ -104,6 +105,8 @@ export type BsJsBreakpointAgnosticOptions = {
   shadow?: BsJsShadowOptions
   /** Size of the element */
   size?: BsJsSizeOptions
+  /** Spacing around the element */
+  spacing?: BsJsSpacingOptions
 }
 
 /** Options that can be applied to specific breakpoints */
@@ -121,6 +124,8 @@ export type BsJsBreakpointDependentOptions<
     float?: BsJsFloatType
     /** Type of object fit to use for this breakpoint and above */
     objectFit?: BsJsObjectFit
+    /** Spacing around the element for this breakpoint and above */
+    spacing?: BsJsSpacingOptions
   } & (Element extends 'col'
     ? BsJsColBreakpointDependentOptions
     : Element extends 'row'

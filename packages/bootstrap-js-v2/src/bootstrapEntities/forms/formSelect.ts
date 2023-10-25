@@ -3,7 +3,10 @@ import { applyElementNameAsClass } from '../../elements/utils'
 
 import { BsJsFormControlOptions } from './formControl'
 
-export type BsJsFormSelectOptions = Pick<BsJsFormControlOptions, 'size' | 'isValid' | 'isInvalid'>
+export type BsJsFormSelectOptions = Pick<
+  BsJsFormControlOptions,
+  'formControlSize' | 'isValid' | 'isInvalid'
+>
 export function applyFormSelectStyles<Breakpoints extends string>(
   result: BsJsStyles,
   options: BsJsOptions<Breakpoints, 'form-select'>

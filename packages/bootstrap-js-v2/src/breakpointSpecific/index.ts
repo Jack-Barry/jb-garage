@@ -5,6 +5,7 @@ import { applyDisplayStylesForBreakpoint } from '../bootstrapEntities/utilities/
 import { applyFlexStyles } from '../bootstrapEntities/utilities/flex'
 import { applyFloatStyles } from '../bootstrapEntities/utilities/float'
 import { applyObjectFitStyles } from '../bootstrapEntities/utilities/objectFit'
+import { applySpacingStyles } from '../bootstrapEntities/utilities/spacing'
 
 /** Modifies the provided `result` object with breakpoint-specific styles */
 export function applyBreakpointSpecificStyles<
@@ -30,5 +31,6 @@ export function applyBreakpointSpecificStyles<
     applyFlexStyles(result, options, breakpoint)
     applyFloatStyles(result, options, breakpoint)
     applyObjectFitStyles(result, options, breakpoint)
+    applySpacingStyles(result, options, breakpoint)
   }
 }
