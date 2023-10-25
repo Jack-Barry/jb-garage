@@ -11,6 +11,7 @@ import { applyInteractionsStyles } from '../bootstrapEntities/utilities/interact
 import { applyObjectFitStyles } from '../bootstrapEntities/utilities/objectFit'
 import { applyOpacityStyles } from '../bootstrapEntities/utilities/opacity'
 import { applyOverflowStyles } from '../bootstrapEntities/utilities/overflow'
+import { applyPositionStyles } from '../bootstrapEntities/utilities/position'
 
 import { applyTheme } from './theme'
 
@@ -35,4 +36,5 @@ export function applyCommonStyles(
   applyObjectFitStyles(result, options)
   applyOpacityStyles(result, { classNamePrefix: 'opacity' }, options.opacity)
   applyOverflowStyles(result, options)
+  applyPositionStyles(result, options)
 }
