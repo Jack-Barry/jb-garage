@@ -15,6 +15,7 @@ import { applyPositionStyles } from '../bootstrapEntities/utilities/position'
 import { applyShadowStyles } from '../bootstrapEntities/utilities/shadow'
 import { applySizingStyles } from '../bootstrapEntities/utilities/sizing'
 import { applySpacingStyles } from '../bootstrapEntities/utilities/spacing'
+import { applyTextStyles } from '../bootstrapEntities/utilities/text'
 
 import { applyTheme } from './theme'
 
@@ -43,4 +44,5 @@ export function applyCommonStyles(
   applyShadowStyles(result, options)
   applySizingStyles(result, options)
   applySpacingStyles(result, options)
+  applyTextStyles(result, options)
 }

@@ -74,6 +74,7 @@ import { BsJsPositionOptions } from './bootstrapEntities/utilities/position'
 import { BsJsShadowOptions } from './bootstrapEntities/utilities/shadow'
 import { BsJsSizeOptions } from './bootstrapEntities/utilities/sizing'
 import { BsJsSpacingOptions } from './bootstrapEntities/utilities/spacing'
+import { BsJsTextOptions } from './bootstrapEntities/utilities/text'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
@@ -107,6 +108,8 @@ export type BsJsBreakpointAgnosticOptions = {
   size?: BsJsSizeOptions
   /** Spacing around the element */
   spacing?: BsJsSpacingOptions
+  /** Options for text */
+  text?: BsJsTextOptions
 }
 
 /** Options that can be applied to specific breakpoints */
@@ -126,6 +129,8 @@ export type BsJsBreakpointDependentOptions<
     objectFit?: BsJsObjectFit
     /** Spacing around the element for this breakpoint and above */
     spacing?: BsJsSpacingOptions
+    /** Text options for this breakpoint and above */
+    text?: Pick<BsJsTextOptions, 'align'>
   } & (Element extends 'col'
     ? BsJsColBreakpointDependentOptions
     : Element extends 'row'
