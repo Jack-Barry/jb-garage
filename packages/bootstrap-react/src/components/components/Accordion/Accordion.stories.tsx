@@ -68,7 +68,7 @@ export const Example: StoryFn = () => {
 
 export const Flush: StoryFn = () => {
   return (
-    <Accordion bsJs={{ bsJsAll: { accordion: { flush: true } } }} id="accordionFlushExample">
+    <Accordion bsJs={{ flush: true }} id="accordionFlushExample">
       <AccordionItem>
         <AccordionHeader>
           <AccordionButton aria-controls="flush-collapseOne">Accordion Item #1</AccordionButton>
