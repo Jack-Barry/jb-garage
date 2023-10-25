@@ -76,6 +76,7 @@ import { BsJsSizeOptions } from './bootstrapEntities/utilities/sizing'
 import { BsJsSpacingOptions } from './bootstrapEntities/utilities/spacing'
 import { BsJsTextOptions } from './bootstrapEntities/utilities/text'
 import { BootstrapVerticalAlign } from './bootstrapEntities/utilities/verticalAlign'
+import { BootstrapZIndex } from './bootstrapEntities/utilities/zIndex'
 
 /** Options that can be applied to any element */
 export type BsJsBreakpointAgnosticOptions = {
@@ -115,6 +116,8 @@ export type BsJsBreakpointAgnosticOptions = {
   verticalAlign?: LiteralUnion<BootstrapVerticalAlign, string>
   /** Make visibile or invisible */
   visibility?: boolean
+  /** Z-index options */
+  zIndex?: LiteralUnion<BootstrapZIndex, string | number>
 }
 
 /** Options that can be applied to specific breakpoints */

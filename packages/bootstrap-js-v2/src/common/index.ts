@@ -18,6 +18,7 @@ import { applySpacingStyles } from '../bootstrapEntities/utilities/spacing'
 import { applyTextStyles } from '../bootstrapEntities/utilities/text'
 import { applyVerticalAlignStyles } from '../bootstrapEntities/utilities/verticalAlign'
 import { applyVisibilityStyles } from '../bootstrapEntities/utilities/visibility'
+import { applyZIndexStyles } from '../bootstrapEntities/utilities/zIndex'
 
 import { applyTheme } from './theme'
 
@@ -49,4 +50,5 @@ export function applyCommonStyles(
   applyTextStyles(result, options)
   applyVerticalAlignStyles(result, options)
   applyVisibilityStyles(result, options)
+  applyZIndexStyles(result, options)
 }
