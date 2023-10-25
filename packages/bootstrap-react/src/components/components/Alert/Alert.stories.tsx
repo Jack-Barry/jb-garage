@@ -1,5 +1,4 @@
 import { Meta, StoryFn } from '@storybook/react'
-import classNames from 'classnames'
 import { useState } from 'react'
 
 import Image from '../../content/Image/Image'
@@ -21,14 +20,14 @@ export default meta
 export const Examples: StoryFn = () => {
   return (
     <div>
-      <Alert className="alert-primary">A simple primary alert—check it out!</Alert>
-      <Alert className="alert-secondary">A simple secondary alert—check it out!</Alert>
-      <Alert className="alert-success">A simple success alert—check it out!</Alert>
-      <Alert className="alert-danger">A simple danger alert—check it out!</Alert>
-      <Alert className="alert-warning">A simple warning alert—check it out!</Alert>
-      <Alert className="alert-info">A simple info alert—check it out!</Alert>
-      <Alert className="alert-light">A simple light alert—check it out!</Alert>
-      <Alert className="alert-dark">A simple dark alert—check it out!</Alert>
+      <Alert bsJs={{ variant: 'primary' }}>A simple primary alert—check it out!</Alert>
+      <Alert bsJs={{ variant: 'secondary' }}>A simple secondary alert—check it out!</Alert>
+      <Alert bsJs={{ variant: 'success' }}>A simple success alert—check it out!</Alert>
+      <Alert bsJs={{ variant: 'danger' }}>A simple danger alert—check it out!</Alert>
+      <Alert bsJs={{ variant: 'warning' }}>A simple warning alert—check it out!</Alert>
+      <Alert bsJs={{ variant: 'info' }}>A simple info alert—check it out!</Alert>
+      <Alert bsJs={{ variant: 'light' }}>A simple light alert—check it out!</Alert>
+      <Alert bsJs={{ variant: 'dark' }}>A simple dark alert—check it out!</Alert>
     </div>
   )
 }
@@ -47,11 +46,7 @@ export const LiveExample: StoryFn = () => {
   return (
     <div>
       {alerts.map((alert) => (
-        <Alert
-          key={alert}
-          className="alert-success"
-          bsJs={{ bsJsAll: { alert: { dismissible: true } } }}
-        >
+        <Alert key={alert} bsJs={{ variant: 'success', dismissible: true }}>
           <div>Alert {alert}</div>
           <CloseButton
             onClick={() => {
@@ -60,11 +55,7 @@ export const LiveExample: StoryFn = () => {
           />
         </Alert>
       ))}
-      <Button
-        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
-        id="liveAlertBtn"
-        onClick={addAlert}
-      >
+      <Button bsJs={{ variant: 'primary' }} id="liveAlertBtn" onClick={addAlert}>
         Show live alert
       </Button>
     </div>
@@ -74,7 +65,7 @@ export const LiveExample: StoryFn = () => {
 export const LinkColor: StoryFn = () => {
   return (
     <div>
-      <Alert className="alert-primary">
+      <Alert bsJs={{ variant: 'primary' }}>
         A simple primary alert with <AlertLink href="#">an example link</AlertLink>. Give it a click
         if you like.
       </Alert>
@@ -93,7 +84,7 @@ function AlertLinkExample(props: { variant: string }) {
   const { variant } = props
 
   return (
-    <Alert className={`alert-${variant}`}>
+    <Alert bsJs={{ variant }}>
       A simple {variant} alert with <AlertLink href="#">an example link</AlertLink>. Give it a click
       if you like.
     </Alert>
@@ -102,7 +93,7 @@ function AlertLinkExample(props: { variant: string }) {
 
 export const AdditionalContent: StoryFn = () => {
   return (
-    <Alert className="alert-success">
+    <Alert bsJs={{ variant: 'success' }}>
       <AlertHeading>Well done!</AlertHeading>
       <p>
         Aww yeah, you successfully read this important alert message. This example text is going to
@@ -110,7 +101,7 @@ export const AdditionalContent: StoryFn = () => {
         content.
       </p>
       <hr />
-      <BrElement as="p" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '0' } } } }}>
+      <BrElement as="p" bsJs={{ spacing: { margin: { bottom: '0' } } }}>
         Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
       </BrElement>
     </Alert>
@@ -133,13 +124,13 @@ export const Icons: StoryFn = () => {
       </svg>
 
       <Alert
-        bsJs={{ bsJsAll: { display: 'flex', flex: { alignItems: 'center' } } }}
+        bsJs={{ display: 'flex', flex: { alignItems: 'center' } }}
         className="alert-primary"
         role="alert"
       >
         <Image
           as="svg"
-          bsJs={{ bsJsAll: { flex: { shrink: false }, spacing: { margin: { end: '2' } } } }}
+          bsJs={{ flex: { shrink: false }, spacing: { margin: { end: '2' } } }}
           className="bi"
           role="img"
           aria-label="Info:"
@@ -148,14 +139,10 @@ export const Icons: StoryFn = () => {
         </Image>
         <div>An example alert with an icon</div>
       </Alert>
-      <Alert
-        bsJs={{ bsJsAll: { display: 'flex', flex: { alignItems: 'center' } } }}
-        className="alert-success"
-        role="alert"
-      >
+      <Alert bsJs={{ variant: 'success', display: 'flex', flex: { alignItems: 'center' } }}>
         <Image
           as="svg"
-          bsJs={{ bsJsAll: { flex: { shrink: false }, spacing: { margin: { end: '2' } } } }}
+          bsJs={{ flex: { shrink: false }, spacing: { margin: { end: '2' } } }}
           className="bi"
           role="img"
           aria-label="Success:"
@@ -164,14 +151,10 @@ export const Icons: StoryFn = () => {
         </Image>
         <div>An example success alert with an icon</div>
       </Alert>
-      <Alert
-        bsJs={{ bsJsAll: { display: 'flex', flex: { alignItems: 'center' } } }}
-        className="alert-warning"
-        role="alert"
-      >
+      <Alert bsJs={{ variant: 'warning', display: 'flex', flex: { alignItems: 'center' } }}>
         <Image
           as="svg"
-          bsJs={{ bsJsAll: { flex: { shrink: false }, spacing: { margin: { end: '2' } } } }}
+          bsJs={{ flex: { shrink: false }, spacing: { margin: { end: '2' } } }}
           className="bi"
           role="img"
           aria-label="Warning:"
@@ -180,14 +163,10 @@ export const Icons: StoryFn = () => {
         </Image>
         <div>An example warning alert with an icon</div>
       </Alert>
-      <Alert
-        bsJs={{ bsJsAll: { display: 'flex', flex: { alignItems: 'center' } } }}
-        className="alert-danger"
-        role="alert"
-      >
+      <Alert bsJs={{ variant: 'danger', display: 'flex', flex: { alignItems: 'center' } }}>
         <Image
           as="svg"
-          bsJs={{ bsJsAll: { flex: { shrink: false }, spacing: { margin: { end: '2' } } } }}
+          bsJs={{ flex: { shrink: false }, spacing: { margin: { end: '2' } } }}
           className="bi"
           role="img"
           aria-label="Danger:"
@@ -202,10 +181,7 @@ export const Icons: StoryFn = () => {
 
 export const Dismissing: StoryFn = () => {
   return (
-    <Alert
-      className={classNames('alert-warning fade')}
-      bsJs={{ bsJsAll: { alert: { dismissible: true } } }}
-    >
+    <Alert bsJs={{ variant: 'warning', fade: true, dismissible: true }}>
       <strong>Holy guacamole!</strong> You should check in on some of those fields below.
       <CloseButton data-bs-dismiss="alert" />
     </Alert>

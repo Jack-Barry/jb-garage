@@ -7,6 +7,7 @@ import {
   BootstrapTextColor,
   BootstrapTheme
 } from './_bootstrapTypes'
+import { BsJsAlertOptions } from './bootstrapEntities/components/alert'
 import { BsJsButtonGroupOptions, BsJsButtonOptions } from './bootstrapEntities/components/button'
 import { BsJsCardImageOptions } from './bootstrapEntities/components/card'
 import {
@@ -222,7 +223,7 @@ export type BsJsOptions<
     /** Breakpoint-dependent style options */
     breakpoints?: BsJsBreakpointDependentOptions<Breakpoints, Element>
   } & (Element extends 'alert'
-    ? BsJsShowableElementOptions
+    ? BsJsAlertOptions
     : Element extends 'btn'
     ? BsJsButtonOptions
     : Element extends 'btn-group'

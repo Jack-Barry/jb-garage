@@ -1,10 +1,12 @@
-import { AllBreakpointsOptions, BsJsConfig } from 'packages/bootstrap-js/src/_types'
+import { BootstrapDefaultBreakpoint, BsJsOptions } from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type ButtonProps<T extends ElementType> = BrElementProps<
+export type ButtonProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
   T,
+  undefined,
+  Breakpoints,
   {
     /**
      * Type of HTML element to render
@@ -12,12 +14,15 @@ export type ButtonProps<T extends ElementType> = BrElementProps<
      * @default "button"
      */
     as?: T
-    bsJs?: BsJsConfig<'button'>
+    bsJs?: Omit<BsJsOptions<Breakpoints, 'btn'>, 'elementType'>
   }
 >
 
-type ButtonWithRef = <Component extends ElementType = 'button'>(
-  props: ButtonProps<Component>
+type ButtonWithRef = <
+  Component extends ElementType = 'button',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: ButtonProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
@@ -25,12 +30,11 @@ type ButtonWithRef = <Component extends ElementType = 'button'>(
  *
  * - Accepts all props that can be passed to a `button` element
  */
-const Button: ButtonWithRef = forwardRef(function Button<T extends ElementType = 'button'>(
-  props: ButtonProps<T>,
-  ref?: ButtonProps<T>['ref']
-) {
-  const isVisuallyDisabled =
-    (props.bsJs?.bsJsAll as AllBreakpointsOptions<'button'>).button?.disabled ?? props['disabled']
+const Button: ButtonWithRef = forwardRef(function Button<
+  T extends ElementType = 'button',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: ButtonProps<T, Breakpoints>, ref?: ButtonProps<T, Breakpoints>['ref']) {
+  const isVisuallyDisabled = props.bsJs?.disabled ?? props['disabled']
   const {
     as = 'button' as ElementType,
     type,

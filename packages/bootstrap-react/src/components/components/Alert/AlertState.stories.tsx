@@ -1,5 +1,4 @@
 import { Meta, StoryFn } from '@storybook/react'
-import classNames from 'classnames'
 
 import CloseButton from '../CloseButton/CloseButton'
 
@@ -22,11 +21,7 @@ export const Example: StoryFn = () => {
   console.log({ isAnimating: alert.isAnimating, isDismissed: alert.isDismissed })
 
   return (
-    <Alert
-      bsJs={{ bsJsAll: { alert: { dismissible: true } } }}
-      brAlert={alert}
-      className={classNames('alert-warning fade')}
-    >
+    <Alert bsJs={{ variant: 'warning', fade: true, dismissible: true }} brAlert={alert}>
       If you need to have more control over or access to the alert state outside of the component,
       try the <code>useAlert</code> hook. You'll have access to properties like{' '}
       <code>isAnimating</code>, <code>isDismissed</code>, an <code>alertRef</code> and a{' '}
