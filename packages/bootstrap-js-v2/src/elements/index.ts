@@ -17,6 +17,7 @@ import { applyCardImageStyles, applyCardLinkStyles } from '../bootstrapEntities/
 import {
   applyCarouselControlIconStyles,
   applyCarouselControlStyles,
+  applyCarouselIndicatorStyles,
   applyCarouselItemStyles,
   applyCarouselStyles
 } from '../bootstrapEntities/components/carousel'
@@ -128,6 +129,12 @@ export function applyElementStyles<
       applyCarouselControlIconStyles(
         result,
         options as unknown as BsJsOptions<Breakpoints, 'carousel-control-icon'>
+      )
+      break
+    case 'carousel-indicator':
+      applyCarouselIndicatorStyles(
+        result,
+        options as BsJsOptions<Breakpoints, 'carousel-indicator'>
       )
       break
     case 'carousel-item':

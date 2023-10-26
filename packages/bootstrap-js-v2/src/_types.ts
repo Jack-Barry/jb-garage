@@ -20,6 +20,7 @@ import { BsJsButtonGroupOptions, BsJsButtonOptions } from './bootstrapEntities/c
 import { BsJsCardImageOptions } from './bootstrapEntities/components/card'
 import {
   BsJsCarouselControlOptions,
+  BsJsCarouselIndicatorOptions,
   BsJsCarouselItemOptions,
   BsJsCarouselOptions
 } from './bootstrapEntities/components/carousel'
@@ -251,6 +252,8 @@ export type BsJsOptions<
     ? BsJsCarouselOptions
     : Element extends 'carousel-control' | 'carousel-control-icon'
     ? BsJsCarouselControlOptions
+    : Element extends 'carousel-indicator'
+    ? BsJsCarouselIndicatorOptions
     : Element extends 'carousel-item'
     ? BsJsCarouselItemOptions
     : Element extends 'col'

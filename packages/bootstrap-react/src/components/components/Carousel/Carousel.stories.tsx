@@ -32,9 +32,7 @@ export const BasicExamples: StoryFn = () => {
       <CarouselInner>
         <CarouselItem
           bsJs={{
-            bsJsAll: {
-              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
-            }
+            active: carousel.currentIndex === -1 || carousel.currentIndex === 0
           }}
         >
           <Image
@@ -42,58 +40,46 @@ export const BasicExamples: StoryFn = () => {
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 1 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 2 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
           </Image>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
-        onClick={carousel.prev}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'prev' }} onClick={carousel.prev}>
+        <CarouselControlIcon bsJs={{ direction: 'prev' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
-        onClick={carousel.next}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'next' }} onClick={carousel.next}>
+        <CarouselControlIcon bsJs={{ direction: 'next' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Next
         </BrElement>
       </CarouselControl>
@@ -109,11 +95,7 @@ export const Indicators: StoryFn = () => {
       <CarouselIndicators>
         <CarouselIndicator
           bsJs={{
-            bsJsAll: {
-              carouselIndicator: {
-                active: carousel.currentIndex === -1 || carousel.currentIndex === 0
-              }
-            }
+            active: carousel.currentIndex === -1 || carousel.currentIndex === 0
           }}
           onClick={() => {
             carousel.to(0)
@@ -122,7 +104,7 @@ export const Indicators: StoryFn = () => {
           data-bs-target="#carouselExampleIndicators"
         />
         <CarouselIndicator
-          bsJs={{ bsJsAll: { carouselIndicator: { active: carousel.currentIndex === 1 } } }}
+          bsJs={{ active: carousel.currentIndex === 1 }}
           onClick={() => {
             carousel.to(1)
           }}
@@ -130,7 +112,7 @@ export const Indicators: StoryFn = () => {
           data-bs-target="#carouselExampleIndicators"
         />
         <CarouselIndicator
-          bsJs={{ bsJsAll: { carouselIndicator: { active: carousel.currentIndex === 2 } } }}
+          bsJs={{ active: carousel.currentIndex === 2 }}
           onClick={() => {
             carousel.to(2)
           }}
@@ -141,9 +123,7 @@ export const Indicators: StoryFn = () => {
       <CarouselInner>
         <CarouselItem
           bsJs={{
-            bsJsAll: {
-              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
-            }
+            active: carousel.currentIndex === -1 || carousel.currentIndex === 0
           }}
         >
           <Image
@@ -151,58 +131,46 @@ export const Indicators: StoryFn = () => {
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 1 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 2 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
           </Image>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
-        onClick={carousel.prev}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'prev' }} onClick={carousel.prev}>
+        <CarouselControlIcon bsJs={{ direction: 'prev' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
-        onClick={carousel.next}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'next' }} onClick={carousel.next}>
+        <CarouselControlIcon bsJs={{ direction: 'next' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Next
         </BrElement>
       </CarouselControl>
@@ -218,11 +186,7 @@ export const Captions: StoryFn = () => {
       <CarouselIndicators>
         <CarouselIndicator
           bsJs={{
-            bsJsAll: {
-              carouselIndicator: {
-                active: carousel.currentIndex === -1 || carousel.currentIndex === 0
-              }
-            }
+            active: carousel.currentIndex === -1 || carousel.currentIndex === 0
           }}
           onClick={() => {
             carousel.to(0)
@@ -231,7 +195,7 @@ export const Captions: StoryFn = () => {
           data-bs-target="#carouselExampleIndicators"
         />
         <CarouselIndicator
-          bsJs={{ bsJsAll: { carouselIndicator: { active: carousel.currentIndex === 1 } } }}
+          bsJs={{ active: carousel.currentIndex === 1 }}
           onClick={() => {
             carousel.to(1)
           }}
@@ -239,7 +203,7 @@ export const Captions: StoryFn = () => {
           data-bs-target="#carouselExampleIndicators"
         />
         <CarouselIndicator
-          bsJs={{ bsJsAll: { carouselIndicator: { active: carousel.currentIndex === 2 } } }}
+          bsJs={{ active: carousel.currentIndex === 2 }}
           onClick={() => {
             carousel.to(2)
           }}
@@ -250,9 +214,7 @@ export const Captions: StoryFn = () => {
       <CarouselInner>
         <CarouselItem
           bsJs={{
-            bsJsAll: {
-              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
-            }
+            active: carousel.currentIndex === -1 || carousel.currentIndex === 0
           }}
         >
           <Image
@@ -260,70 +222,58 @@ export const Captions: StoryFn = () => {
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
-          <CarouselCaption bsJs={{ bsJsAll: { display: 'none' }, md: { display: 'block' } }}>
+          <CarouselCaption bsJs={{ display: 'none', breakpoints: { md: { display: 'block' } } }}>
             <h5>First slide label</h5>
             <p>Some representative placeholder content for the first slide.</p>
           </CarouselCaption>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 1 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
-          <CarouselCaption bsJs={{ bsJsAll: { display: 'none' }, md: { display: 'block' } }}>
+          <CarouselCaption bsJs={{ display: 'none', breakpoints: { md: { display: 'block' } } }}>
             <h5>Second slide label</h5>
             <p>Some representative placeholder content for the second slide.</p>
           </CarouselCaption>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 2 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
           </Image>
-          <CarouselCaption bsJs={{ bsJsAll: { display: 'none' }, md: { display: 'block' } }}>
+          <CarouselCaption bsJs={{ display: 'none', breakpoints: { md: { display: 'block' } } }}>
             <h5>Third slide label</h5>
             <p>Some representative placeholder content for the third slide.</p>
           </CarouselCaption>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
-        onClick={carousel.prev}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'prev' }} onClick={carousel.prev}>
+        <CarouselControlIcon bsJs={{ direction: 'prev' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
-        onClick={carousel.next}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'next' }} onClick={carousel.next}>
+        <CarouselControlIcon bsJs={{ direction: 'next' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Next
         </BrElement>
       </CarouselControl>
@@ -335,17 +285,11 @@ export const CrossFade: StoryFn = () => {
   const carousel = useCarousel()
 
   return (
-    <Carousel
-      id="carouselExampleFade"
-      brCarousel={carousel}
-      bsJs={{ bsJsAll: { carousel: { fade: true } } }}
-    >
+    <Carousel id="carouselExampleFade" brCarousel={carousel} bsJs={{ fade: true }}>
       <CarouselInner>
         <CarouselItem
           bsJs={{
-            bsJsAll: {
-              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
-            }
+            active: carousel.currentIndex === -1 || carousel.currentIndex === 0
           }}
         >
           <Image
@@ -353,58 +297,46 @@ export const CrossFade: StoryFn = () => {
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 1 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 2 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
           </Image>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
-        onClick={carousel.prev}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'prev' }} onClick={carousel.prev}>
+        <CarouselControlIcon bsJs={{ direction: 'prev' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
-        onClick={carousel.next}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'next' }} onClick={carousel.next}>
+        <CarouselControlIcon bsJs={{ direction: 'next' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Next
         </BrElement>
       </CarouselControl>
@@ -422,11 +354,7 @@ export const AutoPlayingCarousels: StoryFn = () => {
         <CarouselInner>
           <CarouselItem
             bsJs={{
-              bsJsAll: {
-                carouselItem: {
-                  active: carousel1.currentIndex === -1 || carousel1.currentIndex === 0
-                }
-              }
+              active: carousel1.currentIndex === -1 || carousel1.currentIndex === 0
             }}
           >
             <Image
@@ -434,62 +362,46 @@ export const AutoPlayingCarousels: StoryFn = () => {
                 width: 800,
                 height: 400,
                 className: 'bd-placeholder-img-lg w-100',
-                bsJs: { bsJsAll: { display: 'block' } }
+                bsJs: { display: 'block' }
               })}
             >
               <PlaceholderImgSvgChildren text="First slide" />
             </Image>
           </CarouselItem>
-          <CarouselItem
-            bsJs={{ bsJsAll: { carouselItem: { active: carousel1.currentIndex === 1 } } }}
-          >
+          <CarouselItem bsJs={{ active: carousel1.currentIndex === 1 }}>
             <Image
               {...placeholderImgSvgProps({
                 width: 800,
                 height: 400,
                 className: 'bd-placeholder-img-lg w-100',
-                bsJs: { bsJsAll: { display: 'block' } }
+                bsJs: { display: 'block' }
               })}
             >
               <PlaceholderImgSvgChildren text="Second slide" />
             </Image>
           </CarouselItem>
-          <CarouselItem
-            bsJs={{ bsJsAll: { carouselItem: { active: carousel1.currentIndex === 2 } } }}
-          >
+          <CarouselItem bsJs={{ active: carousel1.currentIndex === 2 }}>
             <Image
               {...placeholderImgSvgProps({
                 width: 800,
                 height: 400,
                 className: 'bd-placeholder-img-lg w-100',
-                bsJs: { bsJsAll: { display: 'block' } }
+                bsJs: { display: 'block' }
               })}
             >
               <PlaceholderImgSvgChildren text="Third slide" />
             </Image>
           </CarouselItem>
         </CarouselInner>
-        <CarouselControl
-          bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
-          onClick={carousel1.prev}
-        >
-          <CarouselControlIcon
-            bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
-            aria-hidden={true}
-          />
-          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+        <CarouselControl bsJs={{ direction: 'prev' }} onClick={carousel1.prev}>
+          <CarouselControlIcon bsJs={{ direction: 'prev' }} aria-hidden={true} />
+          <BrElement as="span" bsJs={{ visuallyHidden: true }}>
             Previous
           </BrElement>
         </CarouselControl>
-        <CarouselControl
-          bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
-          onClick={carousel1.next}
-        >
-          <CarouselControlIcon
-            bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
-            aria-hidden={true}
-          />
-          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+        <CarouselControl bsJs={{ direction: 'next' }} onClick={carousel1.next}>
+          <CarouselControlIcon bsJs={{ direction: 'next' }} aria-hidden={true} />
+          <BrElement as="span" bsJs={{ visuallyHidden: true }}>
             Next
           </BrElement>
         </CarouselControl>
@@ -499,11 +411,7 @@ export const AutoPlayingCarousels: StoryFn = () => {
         <CarouselInner>
           <CarouselItem
             bsJs={{
-              bsJsAll: {
-                carouselItem: {
-                  active: carousel2.currentIndex === -1 || carousel2.currentIndex === 0
-                }
-              }
+              active: carousel2.currentIndex === -1 || carousel2.currentIndex === 0
             }}
           >
             <Image
@@ -511,62 +419,46 @@ export const AutoPlayingCarousels: StoryFn = () => {
                 width: 800,
                 height: 400,
                 className: 'bd-placeholder-img-lg w-100',
-                bsJs: { bsJsAll: { display: 'block' } }
+                bsJs: { display: 'block' }
               })}
             >
               <PlaceholderImgSvgChildren text="First slide" />
             </Image>
           </CarouselItem>
-          <CarouselItem
-            bsJs={{ bsJsAll: { carouselItem: { active: carousel2.currentIndex === 1 } } }}
-          >
+          <CarouselItem bsJs={{ active: carousel2.currentIndex === 1 }}>
             <Image
               {...placeholderImgSvgProps({
                 width: 800,
                 height: 400,
                 className: 'bd-placeholder-img-lg w-100',
-                bsJs: { bsJsAll: { display: 'block' } }
+                bsJs: { display: 'block' }
               })}
             >
               <PlaceholderImgSvgChildren text="Second slide" />
             </Image>
           </CarouselItem>
-          <CarouselItem
-            bsJs={{ bsJsAll: { carouselItem: { active: carousel2.currentIndex === 2 } } }}
-          >
+          <CarouselItem bsJs={{ active: carousel2.currentIndex === 2 }}>
             <Image
               {...placeholderImgSvgProps({
                 width: 800,
                 height: 400,
                 className: 'bd-placeholder-img-lg w-100',
-                bsJs: { bsJsAll: { display: 'block' } }
+                bsJs: { display: 'block' }
               })}
             >
               <PlaceholderImgSvgChildren text="Third slide" />
             </Image>
           </CarouselItem>
         </CarouselInner>
-        <CarouselControl
-          bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
-          onClick={carousel2.prev}
-        >
-          <CarouselControlIcon
-            bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
-            aria-hidden={true}
-          />
-          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+        <CarouselControl bsJs={{ direction: 'prev' }} onClick={carousel2.prev}>
+          <CarouselControlIcon bsJs={{ direction: 'prev' }} aria-hidden={true} />
+          <BrElement as="span" bsJs={{ visuallyHidden: true }}>
             Previous
           </BrElement>
         </CarouselControl>
-        <CarouselControl
-          bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
-          onClick={carousel2.next}
-        >
-          <CarouselControlIcon
-            bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
-            aria-hidden={true}
-          />
-          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+        <CarouselControl bsJs={{ direction: 'next' }} onClick={carousel2.next}>
+          <CarouselControlIcon bsJs={{ direction: 'next' }} aria-hidden={true} />
+          <BrElement as="span" bsJs={{ visuallyHidden: true }}>
             Next
           </BrElement>
         </CarouselControl>
@@ -583,72 +475,55 @@ export const IndividualCarouselItemInterval: StoryFn = () => {
       <CarouselInner>
         <CarouselItem
           bsJs={{
-            bsJsAll: {
-              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
-            }
+            active: carousel.currentIndex === -1 || carousel.currentIndex === 0,
+            interval: 10000
           }}
-          brCarouselItemInterval={10000}
         >
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem
-          bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}
-          brCarouselItemInterval={2000}
-        >
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 1, interval: 2000 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 2 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
           </Image>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
-        onClick={carousel.prev}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'prev' }} onClick={carousel.prev}>
+        <CarouselControlIcon bsJs={{ direction: 'prev' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
-        onClick={carousel.next}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'next' }} onClick={carousel.next}>
+        <CarouselControlIcon bsJs={{ direction: 'next' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Next
         </BrElement>
       </CarouselControl>
@@ -664,9 +539,7 @@ export const AutoplayingCarouselsWithoutControls: StoryFn = () => {
       <CarouselInner>
         <CarouselItem
           bsJs={{
-            bsJsAll: {
-              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
-            }
+            active: carousel.currentIndex === -1 || carousel.currentIndex === 0
           }}
         >
           <Image
@@ -674,31 +547,31 @@ export const AutoplayingCarouselsWithoutControls: StoryFn = () => {
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 1 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 2 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
@@ -717,9 +590,7 @@ export const DisableTouchSwiping: StoryFn = () => {
       <CarouselInner>
         <CarouselItem
           bsJs={{
-            bsJsAll: {
-              carouselItem: { active: carousel.currentIndex === -1 || carousel.currentIndex === 0 }
-            }
+            active: carousel.currentIndex === -1 || carousel.currentIndex === 0
           }}
         >
           <Image
@@ -727,58 +598,46 @@ export const DisableTouchSwiping: StoryFn = () => {
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="First slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 1 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 1 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Second slide" />
           </Image>
         </CarouselItem>
-        <CarouselItem bsJs={{ bsJsAll: { carouselItem: { active: carousel.currentIndex === 2 } } }}>
+        <CarouselItem bsJs={{ active: carousel.currentIndex === 2 }}>
           <Image
             {...placeholderImgSvgProps({
               width: 800,
               height: 400,
               className: 'bd-placeholder-img-lg w-100',
-              bsJs: { bsJsAll: { display: 'block' } }
+              bsJs: { display: 'block' }
             })}
           >
             <PlaceholderImgSvgChildren text="Third slide" />
           </Image>
         </CarouselItem>
       </CarouselInner>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'prev' } } }}
-        onClick={carousel.prev}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'prev' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'prev' }} onClick={carousel.prev}>
+        <CarouselControlIcon bsJs={{ direction: 'prev' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Previous
         </BrElement>
       </CarouselControl>
-      <CarouselControl
-        bsJs={{ bsJsAll: { carouselControl: { direction: 'next' } } }}
-        onClick={carousel.next}
-      >
-        <CarouselControlIcon
-          bsJs={{ bsJsAll: { carouselControlIcon: { direction: 'next' } } }}
-          aria-hidden={true}
-        />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <CarouselControl bsJs={{ direction: 'next' }} onClick={carousel.next}>
+        <CarouselControlIcon bsJs={{ direction: 'next' }} aria-hidden={true} />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Next
         </BrElement>
       </CarouselControl>

@@ -1,37 +1,36 @@
-import { BsJsConfig } from '@jb-garage/bootstrap-js'
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type CarouselItemProps<T extends ElementType> = BrElementProps<
+export type CarouselItemProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
   T,
+  undefined,
+  Breakpoints,
   {
-    bsJs?: BsJsConfig<'carousel-item'>
-    brCarouselItemInterval?: number
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'carousel-item'>
   }
 >
 
-export type CarouselItemWithRef = <Component extends ElementType = 'div'>(
-  props: CarouselItemProps<Component>
+export type CarouselItemWithRef = <
+  Component extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: CarouselItemProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * [Modal]()
  */
 const CarouselItem: CarouselItemWithRef = forwardRef(function CarouselItem<
-  T extends ElementType = 'div'
->(props: CarouselItemProps<T>, ref?: CarouselItemProps<T>['ref']) {
-  const { as = 'div' as ElementType, brCarouselItemInterval, className, ...rest } = props
+  T extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: CarouselItemProps<T, Breakpoints>, ref?: CarouselItemProps<T, Breakpoints>['ref']) {
+  const { as = 'div' as ElementType, bsJs, ...rest } = props
 
-  return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames('carousel-item', className)}
-      data-bs-interval={brCarouselItemInterval}
-      {...rest}
-    />
-  )
+  return <BrElement as={as} ref={ref} bsJs={{ elementType: 'carousel-item', ...bsJs }} {...rest} />
 })
 export default CarouselItem

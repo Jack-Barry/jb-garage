@@ -1,4 +1,5 @@
 import { BootstrapJs } from '../../BootstrapJs'
+import { emptyStyles } from '../../utils'
 
 describe('Element Components: Carousel', () => {
   const bsJs = new BootstrapJs().bsJs
@@ -88,6 +89,28 @@ describe('Element Components: Carousel', () => {
         inlineStyles: {},
         elementAttributes: {}
       })
+    })
+
+    test('sets interval', () => {
+      expect(bsJs({ elementType: 'carousel-item', interval: 100 })).toStrictEqual({
+        classes: { 'carousel-item': true },
+        inlineStyles: {},
+        elementAttributes: { 'data-bs-interval': 100 }
+      })
+    })
+  })
+
+  describe('Carousel Indicator', () => {
+    test('applies active class name', () => {
+      expect(bsJs({ elementType: 'carousel-indicator', active: true })).toStrictEqual({
+        classes: { active: true },
+        inlineStyles: {},
+        elementAttributes: {}
+      })
+
+      expect(bsJs({ elementType: 'carousel-indicator', active: false })).toStrictEqual(
+        emptyStyles()
+      )
     })
   })
 })
