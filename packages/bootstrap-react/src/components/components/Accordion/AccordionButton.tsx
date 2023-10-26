@@ -1,5 +1,7 @@
-import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js'
-import { BsJsOptions } from '@jb-garage/bootstrap-js-v2'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -11,10 +13,10 @@ export type AccordionButtonProps<
   Breakpoints extends string
 > = BrElementProps<
   T,
-  'accordion-button',
+  undefined,
   Breakpoints,
   {
-    bsJs?: BsJsOptions<Breakpoints, 'accordion-button'>
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'accordion-button'>
     /** Button is for accordion section that is currently collapsed */
     brAccordionButtonCollapsed?: boolean
   }

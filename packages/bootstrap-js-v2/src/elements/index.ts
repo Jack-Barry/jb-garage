@@ -4,6 +4,10 @@ import {
   applyAccordionStyles
 } from '../bootstrapEntities/components/accordion'
 import { applyAlertStyles } from '../bootstrapEntities/components/alert'
+import {
+  applyBreadcrumbItemStyles,
+  applyBreadcrumbsWrapperStyles
+} from '../bootstrapEntities/components/breadcrumb'
 import { applyButtonGroupStyles, applyButtonStyles } from '../bootstrapEntities/components/button'
 import { applyCardImageStyles, applyCardLinkStyles } from '../bootstrapEntities/components/card'
 import {
@@ -81,6 +85,16 @@ export function applyElementStyles<
       break
     case 'alert':
       applyAlertStyles(result, options as BsJsOptions<Breakpoints, 'alert'>)
+      break
+    case 'breadcrumbs-wrapper':
+      applyBreadcrumbsWrapperStyles(
+        prefix,
+        result,
+        options as BsJsOptions<Breakpoints, 'breadcrumbs-wrapper'>
+      )
+      break
+    case 'breadcrumb-item':
+      applyBreadcrumbItemStyles(result, options as BsJsOptions<Breakpoints, 'breadcrumb-item'>)
       break
     case 'btn':
       applyButtonStyles(result, options as BsJsOptions<Breakpoints, 'btn'>)

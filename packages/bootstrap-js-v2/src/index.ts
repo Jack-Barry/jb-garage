@@ -1,3 +1,3 @@
 export { BootstrapJs } from './BootstrapJs'
 export type { BootstrapDefaultBreakpoint } from './_bootstrapTypes'
-export type { BsJsOptions, BsJsElement } from './_types'
+export type { BsJsElement, BsJsOptions, BsJsOptionsWithoutElementType } from './_types'

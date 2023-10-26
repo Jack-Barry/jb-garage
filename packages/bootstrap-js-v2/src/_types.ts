@@ -12,6 +12,10 @@ import {
   BsJsAccordionOptions
 } from './bootstrapEntities/components/accordion'
 import { BsJsAlertOptions } from './bootstrapEntities/components/alert'
+import {
+  BsJsBreadcrumbItemOptions,
+  BsJsBreadcrumbsWrapperOptions
+} from './bootstrapEntities/components/breadcrumb'
 import { BsJsButtonGroupOptions, BsJsButtonOptions } from './bootstrapEntities/components/button'
 import { BsJsCardImageOptions } from './bootstrapEntities/components/card'
 import {
@@ -205,6 +209,7 @@ export type BsJsFadeableElementOptions = {
 
 export type BsJsElement =
   | BootstrapElement
+  | 'breadcrumbs-wrapper'
   | 'form-validation'
   | 'form-group'
   | 'img'
@@ -232,6 +237,10 @@ export type BsJsOptions<
     ? BsJsAccordionButtonOptions
     : Element extends 'alert'
     ? BsJsAlertOptions
+    : Element extends 'breadcrumbs-wrapper'
+    ? BsJsBreadcrumbsWrapperOptions
+    : Element extends 'breadcrumb-item'
+    ? BsJsBreadcrumbItemOptions
     : Element extends 'btn'
     ? BsJsButtonOptions
     : Element extends 'btn-group'
@@ -330,3 +339,9 @@ export type BsJsStyles = {
   /** Attributes other than `class` or `style` (e.g. `data-` prefixed attributes) */
   elementAttributes: Record<string, string | number | boolean>
 }
+
+/** Convenience type for when you are pre-populating the `elementType` */
+export type BsJsOptionsWithoutElementType<
+  Breakpoints extends string,
+  ElementType extends BsJsElement
+> = Omit<BsJsOptions<Breakpoints, ElementType>, 'elementType'>

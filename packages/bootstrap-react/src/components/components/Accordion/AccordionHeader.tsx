@@ -1,4 +1,7 @@
-import { BootstrapDefaultBreakpoint, BsJsOptions } from '@jb-garage/bootstrap-js-v2'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -11,7 +14,7 @@ export type AccordionHeaderProps<
   undefined,
   Breakpoints,
   {
-    bsJs?: Omit<BsJsOptions<Breakpoints, 'accordion-header'>, 'elementType'>
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'accordion-header'>
   }
 >
 

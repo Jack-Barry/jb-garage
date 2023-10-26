@@ -1,4 +1,7 @@
-import { BootstrapDefaultBreakpoint, BsJsOptions } from '@jb-garage/bootstrap-js-v2'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -14,7 +17,7 @@ export type AlertLinkProps<T extends ElementType, Breakpoints extends string> = 
      * @default "a"
      */
     as?: T
-    bsJs?: Omit<BsJsOptions<Breakpoints, 'alert-link'>, 'elementType'>
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'alert-link'>
   }
 >
 

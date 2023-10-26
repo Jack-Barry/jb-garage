@@ -1,4 +1,7 @@
-import { BootstrapDefaultBreakpoint, BsJsOptions } from '@jb-garage/bootstrap-js-v2'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -6,20 +9,22 @@ import { useMultiRef } from '../../utils/useMultiRef'
 
 import { useAlert } from './useAlert'
 
-export type AlertProps<T extends ElementType, Breakpoints extends string> = Omit<
-  BrElementProps<T, 'alert', Breakpoints>,
-  'bsJs'
-> & {
-  /**
-   * Type of HTML element to render
-   *
-   * @default "div"
-   */
-  as?: T
-  /** State to manage closing the alert */
-  brAlert?: ReturnType<typeof useAlert>
-  bsJs?: Omit<BsJsOptions<Breakpoints, 'alert'>, 'elementType'>
-}
+export type AlertProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    /**
+     * Type of HTML element to render
+     *
+     * @default "div"
+     */
+    as?: T
+    /** State to manage closing the alert */
+    brAlert?: ReturnType<typeof useAlert>
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'alert'>
+  }
+>
 
 export type AlertWithRef = <
   Component extends ElementType = 'div',

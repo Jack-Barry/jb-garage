@@ -1,12 +1,15 @@
-import { BsJsConfig } from '@jb-garage/bootstrap-js'
-import classNames from 'classnames'
-import { AllBreakpointsOptions } from 'packages/bootstrap-js/src/_types'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type BreadcrumbItemProps<T extends ElementType> = BrElementProps<
+export type BreadcrumbItemProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
   T,
+  undefined,
+  Breakpoints,
   {
     /**
      * Type of HTML element to render
@@ -14,38 +17,28 @@ export type BreadcrumbItemProps<T extends ElementType> = BrElementProps<
      * @default "li"
      */
     as?: T
-    bsJs?: BsJsConfig<'breadcrumb-item'>
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'breadcrumb-item'>
   }
 >
 
-type BreadcrumbItemWithRef = <Component extends ElementType = 'li'>(
-  props: BreadcrumbItemProps<Component>
+type BreadcrumbItemWithRef = <
+  Component extends ElementType = 'li',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: BreadcrumbItemProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * []()
  */
 const BreadcrumbItem: BreadcrumbItemWithRef = forwardRef(function BreadcrumbItem<
-  T extends ElementType = 'li'
->(props: BreadcrumbItemProps<T>, ref?: BreadcrumbItemProps<T>['ref']) {
-  const isActive = (props.bsJs?.bsJsAll as AllBreakpointsOptions<'breadcrumb-item'>).breadcrumbItem
-    ?.active
-  const {
-    as = 'li' as ElementType,
-    className,
-    children,
-    'aria-current': ariaCurrent = isActive ? 'page' : undefined,
-    ...rest
-  } = props
+  T extends ElementType = 'li',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: BreadcrumbItemProps<T, Breakpoints>, ref?: BreadcrumbItemProps<T, Breakpoints>['ref']) {
+  const { as = 'li' as ElementType, bsJs, children, ...rest } = props
 
   return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames('breadcrumb-item', className)}
-      aria-current={ariaCurrent}
-      {...rest}
-    >
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'breadcrumb-item', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )

@@ -1,10 +1,15 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type BreadcrumbListProps<T extends ElementType> = BrElementProps<
+export type BreadcrumbListProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
   T,
+  undefined,
+  Breakpoints,
   {
     /**
      * Type of HTML element to render
@@ -12,23 +17,28 @@ export type BreadcrumbListProps<T extends ElementType> = BrElementProps<
      * @default "ol"
      */
     as?: T
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'breadcrumb'>
   }
 >
 
-type BreadcrumbListWithRef = <Component extends ElementType = 'ol'>(
-  props: BreadcrumbListProps<Component>
+type BreadcrumbListWithRef = <
+  Component extends ElementType = 'ol',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: BreadcrumbListProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * []()
  */
 const BreadcrumbList: BreadcrumbListWithRef = forwardRef(function BreadcrumbList<
-  T extends ElementType = 'ol'
->(props: BreadcrumbListProps<T>, ref?: BreadcrumbListProps<T>['ref']) {
-  const { as = 'ol' as ElementType, className, children, ...rest } = props
+  T extends ElementType = 'ol',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: BreadcrumbListProps<T, Breakpoints>, ref?: BreadcrumbListProps<T, Breakpoints>['ref']) {
+  const { as = 'ol' as ElementType, bsJs, children, ...rest } = props
 
   return (
-    <BrElement as={as} ref={ref} className={classNames('breadcrumb', className)} {...rest}>
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'breadcrumb', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )

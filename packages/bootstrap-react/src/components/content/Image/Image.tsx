@@ -1,15 +1,20 @@
-import { BootstrapDefaultBreakpoint, BsJsOptions } from '@jb-garage/bootstrap-js-v2'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type ImageElementType = 'img' | 'svg'
-export type ImageProps<T extends ImageElementType, Breakpoints extends string> = Omit<
-  BrElementProps<T, 'img', Breakpoints>,
-  'bsJs'
-> & {
-  bsJs?: Omit<BsJsOptions<Breakpoints, 'img'>, 'elementType'>
-}
+export type ImageProps<T extends ImageElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'img'>
+  }
+>
 
 type ImageWithRef = <
   Component extends ImageElementType = 'img',

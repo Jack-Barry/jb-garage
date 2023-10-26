@@ -38,8 +38,8 @@ export const ExamplesHeadings: StoryFn = () => {
 
 export const ExamplesButtons: StoryFn = () => {
   return (
-    <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
-      Notifications <Badge bsJs={{ bsJsAll: { color: 'bg-secondary' } }}>4</Badge>
+    <Button bsJs={{ variant: 'primary' }}>
+      Notifications <Badge bsJs={{ background: 'secondary' }}>4</Badge>
     </Button>
   )
 }
@@ -47,36 +47,36 @@ export const ExamplesButtons: StoryFn = () => {
 export const ExamplesPositioned: StoryFn = () => {
   return (
     <div>
-      <Button bsJs={{ bsJsAll: { button: { color: 'primary' }, position: 'relative' } }}>
+      <Button bsJs={{ variant: 'primary', position: 'relative' }}>
         Inbox
         <Badge
           bsJs={{
-            bsJsAll: { background: 'danger', border: { radius: 'pill' }, position: 'absolute' }
+            background: 'danger',
+            border: { radius: 'pill' },
+            position: 'absolute'
           }}
           className="top-0 start-100 translate-middle"
         >
           99+
-          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+          <BrElement as="span" bsJs={{ visuallyHidden: true }}>
             unread messages
           </BrElement>
         </Badge>
       </Button>
       <hr />
-      <Button bsJs={{ bsJsAll: { button: { color: 'primary' }, position: 'relative' } }}>
+      <Button bsJs={{ variant: 'primary', position: 'relative' }}>
         Profile
         <BrElement
           as="span"
           bsJs={{
-            bsJsAll: {
-              background: 'danger',
-              border: { color: 'light', radius: 'circle' },
-              position: 'absolute',
-              spacing: { padding: '2' }
-            }
+            background: 'danger',
+            border: { color: 'light', radius: 'circle' },
+            position: 'absolute',
+            spacing: { padding: '2' }
           }}
           className="top-0 start-100 translate-middle rounded-circle"
         >
-          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+          <BrElement as="span" bsJs={{ visuallyHidden: true }}>
             New alerts
           </BrElement>
         </BrElement>
@@ -87,32 +87,30 @@ export const ExamplesPositioned: StoryFn = () => {
 
 export const BackgroundColors: StoryFn = () => {
   return (
-    <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '1' } } }}>
-      <Badge bsJs={{ bsJsAll: { color: 'bg-primary' } }}>Primary</Badge>
-      <Badge bsJs={{ bsJsAll: { color: 'bg-secondary' } }}>Secondary</Badge>
-      <Badge bsJs={{ bsJsAll: { color: 'bg-success' } }}>Success</Badge>
-      <Badge bsJs={{ bsJsAll: { color: 'bg-danger' } }}>Danger</Badge>
-      <Badge bsJs={{ bsJsAll: { color: 'bg-warning' } }}>Warning</Badge>
-      <Badge bsJs={{ bsJsAll: { color: 'bg-info' } }}>Info</Badge>
-      <Badge bsJs={{ bsJsAll: { color: 'bg-light' } }}>Light</Badge>
-      <Badge bsJs={{ bsJsAll: { color: 'bg-dark' } }}>Dark</Badge>
+    <BrElement bsJs={{ display: 'flex', spacing: { gap: '1' } }}>
+      <Badge bsJs={{ background: 'primary' }}>Primary</Badge>
+      <Badge bsJs={{ background: 'secondary' }}>Secondary</Badge>
+      <Badge bsJs={{ background: 'success' }}>Success</Badge>
+      <Badge bsJs={{ background: 'danger' }}>Danger</Badge>
+      <Badge bsJs={{ background: 'warning' }}>Warning</Badge>
+      <Badge bsJs={{ background: 'info' }}>Info</Badge>
+      <Badge bsJs={{ background: 'light' }}>Light</Badge>
+      <Badge bsJs={{ background: 'dark' }}>Dark</Badge>
     </BrElement>
   )
 }
 
 export const PillBadges: StoryFn = () => {
   return (
-    <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '1' } } }}>
-      <Badge bsJs={{ bsJsAll: { border: { radius: 'pill' }, color: 'bg-primary' } }}>Primary</Badge>
-      <Badge bsJs={{ bsJsAll: { border: { radius: 'pill' }, color: 'bg-secondary' } }}>
-        Secondary
-      </Badge>
-      <Badge bsJs={{ bsJsAll: { border: { radius: 'pill' }, color: 'bg-success' } }}>Success</Badge>
-      <Badge bsJs={{ bsJsAll: { border: { radius: 'pill' }, color: 'bg-danger' } }}>Danger</Badge>
-      <Badge bsJs={{ bsJsAll: { border: { radius: 'pill' }, color: 'bg-warning' } }}>Warning</Badge>
-      <Badge bsJs={{ bsJsAll: { border: { radius: 'pill' }, color: 'bg-info' } }}>Info</Badge>
-      <Badge bsJs={{ bsJsAll: { border: { radius: 'pill' }, color: 'bg-light' } }}>Light</Badge>
-      <Badge bsJs={{ bsJsAll: { border: { radius: 'pill' }, color: 'bg-dark' } }}>Dark</Badge>
+    <BrElement bsJs={{ display: 'flex', spacing: { gap: '1' } }}>
+      <Badge bsJs={{ border: { radius: 'pill' }, background: 'primary' }}>Primary</Badge>
+      <Badge bsJs={{ border: { radius: 'pill' }, background: 'secondary' }}>Secondary</Badge>
+      <Badge bsJs={{ border: { radius: 'pill' }, background: 'success' }}>Success</Badge>
+      <Badge bsJs={{ border: { radius: 'pill' }, background: 'danger' }}>Danger</Badge>
+      <Badge bsJs={{ border: { radius: 'pill' }, background: 'warning' }}>Warning</Badge>
+      <Badge bsJs={{ border: { radius: 'pill' }, background: 'info' }}>Info</Badge>
+      <Badge bsJs={{ border: { radius: 'pill' }, background: 'light' }}>Light</Badge>
+      <Badge bsJs={{ border: { radius: 'pill' }, background: 'dark' }}>Dark</Badge>
     </BrElement>
   )
 }

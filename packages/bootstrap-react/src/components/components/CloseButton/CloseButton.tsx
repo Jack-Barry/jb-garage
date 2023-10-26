@@ -1,4 +1,7 @@
-import { BootstrapDefaultBreakpoint, BsJsOptions } from '@jb-garage/bootstrap-js-v2'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ReactNode, forwardRef } from 'react'
 
 import { BrElementProps } from '../../utils/BrElement'
@@ -11,7 +14,7 @@ export type CloseButtonProps<Breakpoints extends string> = BrElementProps<
   {
     /** @default "Close" */
     'aria-label'?: string
-    bsJs?: Omit<BsJsOptions<Breakpoints, 'btn'>, 'variant' | 'elementType'>
+    bsJs?: Omit<BsJsOptionsWithoutElementType<Breakpoints, 'btn'>, 'variant'>
   }
 >
 

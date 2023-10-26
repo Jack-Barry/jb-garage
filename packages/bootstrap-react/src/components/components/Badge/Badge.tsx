@@ -1,19 +1,31 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type BadgeProps<T extends ElementType> = BrElementProps<T> & {
-  /**
-   * Type of HTML element to render
-   *
-   * @default "span"
-   */
-  as?: T
-}
+export type BadgeProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    /**
+     * Type of HTML element to render
+     *
+     * @default "span"
+     */
+    as?: T
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'badge'>
+  }
+>
 
-type BadgeWithRef = <Component extends ElementType = 'span'>(
-  props: BadgeProps<Component>
+type BadgeWithRef = <
+  Component extends ElementType = 'span',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: BadgeProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
@@ -21,20 +33,14 @@ type BadgeWithRef = <Component extends ElementType = 'span'>(
  *
  * - If no `bg-` class is provided, defaults to `bg-secondary`
  */
-const Badge: BadgeWithRef = forwardRef(function Badge<T extends ElementType>(
-  props: BadgeProps<T>,
-  ref?: BadgeProps<T>['ref']
-) {
-  const { as = 'span' as ElementType, children, className, brUtilsBackground, ...rest } = props
+const Badge: BadgeWithRef = forwardRef(function Badge<
+  T extends ElementType,
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: BadgeProps<T, Breakpoints>, ref?: BadgeProps<T, Breakpoints>['ref']) {
+  const { as = 'span' as ElementType, children, bsJs, ...rest } = props
 
   return (
-    <BrElement
-      as={as}
-      ref={ref}
-      brUtilsBackground={brUtilsBackground || className.includes('bg-') ? undefined : 'secondary'}
-      className={classNames('badge', className)}
-      {...rest}
-    >
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'badge', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )

@@ -9,7 +9,6 @@ describe('Elements', () => {
     const elementTypes: BsJsElement[] = [
       'accordion',
       'accordion-body',
-      'accordion-button',
       'accordion-collapse',
       'accordion-header',
       'accordion-item',
@@ -17,7 +16,6 @@ describe('Elements', () => {
       'alert-link',
       'badge',
       'breadcrumb',
-      'breadcrumb-item',
       'btn-toolbar',
       'card',
       'card-body',

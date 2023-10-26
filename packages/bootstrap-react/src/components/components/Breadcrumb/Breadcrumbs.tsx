@@ -1,11 +1,15 @@
-import { BsJsConfig } from '@jb-garage/bootstrap-js'
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type BreadcrumbsProps<T extends ElementType> = BrElementProps<
+export type BreadcrumbsProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
   T,
+  undefined,
+  Breakpoints,
   {
     /**
      * Type of HTML element to render
@@ -13,36 +17,28 @@ export type BreadcrumbsProps<T extends ElementType> = BrElementProps<
      * @default "nav"
      */
     as?: T
-    bsJs?: BsJsConfig<'breadcrumb'>
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'breadcrumbs-wrapper'>
   }
 >
 
-type BreadcrumbsWithRef = <Component extends ElementType = 'nav'>(
-  props: BreadcrumbsProps<Component>
+type BreadcrumbsWithRef = <
+  Component extends ElementType = 'nav',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: BreadcrumbsProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * []()
  */
 const Breadcrumbs: BreadcrumbsWithRef = forwardRef(function Breadcrumbs<
-  T extends ElementType = 'nav'
->(props: BreadcrumbsProps<T>, ref?: BreadcrumbsProps<T>['ref']) {
-  const {
-    as = 'nav' as ElementType,
-    className,
-    children,
-    'aria-label': ariaLabel = 'breadcrumb',
-    ...rest
-  } = props
+  T extends ElementType = 'nav',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: BreadcrumbsProps<T, Breakpoints>, ref?: BreadcrumbsProps<T, Breakpoints>['ref']) {
+  const { as = 'nav' as ElementType, bsJs, children, ...rest } = props
 
   return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames('breadcrumb', className)}
-      aria-label={ariaLabel}
-      {...rest}
-    >
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'breadcrumbs-wrapper', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )
