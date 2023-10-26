@@ -15,7 +15,7 @@ describe('Element Components: Breadcrumb', () => {
     test('applies divider as CSS variable', () => {
       expect(bsJs({ elementType: 'breadcrumbs-wrapper', divider: 'custom' })).toStrictEqual({
         classes: {},
-        inlineStyles: { '--bs-breadcrumbs-divider': 'custom' },
+        inlineStyles: { '--bs-breadcrumb-divider': 'custom' },
         elementAttributes: { 'aria-label': 'breadcrumb' }
       })
 
@@ -23,7 +23,7 @@ describe('Element Components: Breadcrumb', () => {
         new BootstrapJs('custom').bsJs({ elementType: 'breadcrumbs-wrapper', divider: 'custom' })
       ).toStrictEqual({
         classes: {},
-        inlineStyles: { '--custom-breadcrumbs-divider': 'custom' },
+        inlineStyles: { '--custom-breadcrumb-divider': 'custom' },
         elementAttributes: { 'aria-label': 'breadcrumb' }
       })
     })

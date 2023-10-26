@@ -62,7 +62,7 @@ describe('Element Components: Buttons', () => {
       expect(bsJs({ elementType: 'btn-group' })).toStrictEqual({
         classes: { 'btn-group': true },
         inlineStyles: {},
-        elementAttributes: {}
+        elementAttributes: { role: 'group' }
       })
     })
 
@@ -70,13 +70,13 @@ describe('Element Components: Buttons', () => {
       expect(bsJs({ elementType: 'btn-group', vertical: true })).toStrictEqual({
         classes: { 'btn-group-vertical': true },
         inlineStyles: {},
-        elementAttributes: {}
+        elementAttributes: { role: 'group' }
       })
 
       expect(bsJs({ elementType: 'btn-group', vertical: false })).toStrictEqual({
         classes: { 'btn-group': true },
         inlineStyles: {},
-        elementAttributes: {}
+        elementAttributes: { role: 'group' }
       })
     })
 
@@ -84,7 +84,17 @@ describe('Element Components: Buttons', () => {
       expect(bsJs({ elementType: 'btn-group', buttonGroupSize: 'lg' })).toStrictEqual({
         classes: { 'btn-group': true, 'btn-group-lg': true },
         inlineStyles: {},
-        elementAttributes: {}
+        elementAttributes: { role: 'group' }
+      })
+    })
+  })
+
+  describe('Button Toolbar', () => {
+    test('applies base class name', () => {
+      expect(bsJs({ elementType: 'btn-toolbar' })).toStrictEqual({
+        classes: { 'btn-toolbar': true },
+        inlineStyles: {},
+        elementAttributes: { role: 'toolbar' }
       })
     })
   })

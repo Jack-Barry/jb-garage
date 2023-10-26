@@ -8,7 +8,11 @@ import {
   applyBreadcrumbItemStyles,
   applyBreadcrumbsWrapperStyles
 } from '../bootstrapEntities/components/breadcrumb'
-import { applyButtonGroupStyles, applyButtonStyles } from '../bootstrapEntities/components/button'
+import {
+  applyButtonGroupStyles,
+  applyButtonStyles,
+  applyButtonToolbarStyles
+} from '../bootstrapEntities/components/button'
 import { applyCardImageStyles, applyCardLinkStyles } from '../bootstrapEntities/components/card'
 import {
   applyCarouselControlIconStyles,
@@ -101,6 +105,9 @@ export function applyElementStyles<
       break
     case 'btn-group':
       applyButtonGroupStyles(result, options as BsJsOptions<Breakpoints, 'btn-group'>)
+      break
+    case 'btn-toolbar':
+      applyButtonToolbarStyles(result, options as BsJsOptions<Breakpoints, 'btn-toolbar'>)
       break
     case 'card-img':
       applyCardImageStyles(result, options as BsJsOptions<Breakpoints, 'card-img'>)

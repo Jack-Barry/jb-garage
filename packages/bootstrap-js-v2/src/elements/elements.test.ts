@@ -16,7 +16,6 @@ describe('Elements', () => {
       'alert-link',
       'badge',
       'breadcrumb',
-      'btn-toolbar',
       'card',
       'card-body',
       'card-footer',

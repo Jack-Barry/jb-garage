@@ -59,4 +59,15 @@ export function applyButtonGroupStyles(result: BsJsStyles, options: BsJsButtonGr
   if (options.buttonGroupSize) {
     result.classes[`btn-group-${options.buttonGroupSize}`] = true
   }
+
+  result.elementAttributes['role'] = 'group'
+}
+
+export function applyButtonToolbarStyles<Breakpoints extends string>(
+  result: BsJsStyles,
+  options: BsJsOptions<Breakpoints, 'btn-toolbar'>
+) {
+  applyElementNameAsClass(result, options.elementType)
+
+  result.elementAttributes['role'] = 'toolbar'
 }
