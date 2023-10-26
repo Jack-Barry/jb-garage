@@ -230,7 +230,7 @@ export type BsJsOptions<
       }
     : { elementType?: undefined }) & {
     /** Breakpoint-dependent style options */
-    breakpoints?: BsJsBreakpointDependentOptions<Breakpoints, Element>
+    breakpoints?: Partial<BsJsBreakpointDependentOptions<Breakpoints, Element>>
   } & (Element extends 'accordion'
     ? BsJsAccordionOptions
     : Element extends 'accordion-button'

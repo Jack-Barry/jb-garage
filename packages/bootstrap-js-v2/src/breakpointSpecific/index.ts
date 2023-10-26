@@ -24,7 +24,7 @@ export function applyBreakpointSpecificStyles<
 
   for (const [breakpoint, options] of Object.entries<
     BsJsBreakpointDependentOptions<Breakpoints, Element>[Breakpoints]
-  >(breakpointOptions)) {
+  >(breakpointOptions as BsJsBreakpointDependentOptions<Breakpoints, Element>)) {
     // helpers
     applyPositionHelperStyles(result, options, breakpoint)
     // utilities
