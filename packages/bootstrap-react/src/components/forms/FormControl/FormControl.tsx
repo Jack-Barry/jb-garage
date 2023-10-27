@@ -1,3 +1,4 @@
+import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js'
 import { ElementType } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -5,10 +6,14 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 import Input, { InputElementType, InputProps } from './Input'
 import Label, { LabelProps } from './Label'
 
-type FormControlProps<Wrapper extends ElementType, Input extends InputElementType> = {
-  brFormControlWrapperProps?: BrElementProps<Wrapper>
-  brFormControlInputProps?: InputProps<Input>
-  brFormControlLabelProps?: LabelProps
+type FormControlProps<
+  Wrapper extends ElementType,
+  Input extends InputElementType,
+  Breakpoints extends string
+> = {
+  brFormControlWrapperProps?: BrElementProps<Wrapper, undefined, Breakpoints>
+  brFormControlInputProps?: InputProps<Input, Breakpoints>
+  brFormControlLabelProps?: LabelProps<Breakpoints>
 }
 
 /**
@@ -22,18 +27,19 @@ type FormControlProps<Wrapper extends ElementType, Input extends InputElementTyp
  */
 export default function FormControl<
   Wrapper extends ElementType = 'div',
-  Input extends InputElementType = 'input'
->(props: FormControlProps<Wrapper, Input>) {
+  Input extends InputElementType = 'input',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: FormControlProps<Wrapper, Input, Breakpoints>) {
   const {
     brFormControlWrapperProps = {} as BrElementProps<Wrapper>,
-    brFormControlInputProps = {} as InputProps<Input>,
+    brFormControlInputProps = {} as InputProps<Input, Breakpoints>,
     brFormControlLabelProps = {}
   } = props
-  const { as, className: wrapperClassName, ...wrapperRest } = brFormControlWrapperProps
+  const { as, ...wrapperRest } = brFormControlWrapperProps
   const { htmlFor = brFormControlInputProps.id, ...labelPropsRest } = brFormControlLabelProps
 
   return (
-    <BrElement as={as as ElementType} className={wrapperClassName} {...wrapperRest}>
+    <BrElement as={as as ElementType} {...wrapperRest}>
       <Label htmlFor={htmlFor} {...labelPropsRest} />
       <Input {...brFormControlInputProps} />
     </BrElement>

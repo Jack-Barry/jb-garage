@@ -1,41 +1,36 @@
-import classNames from 'classnames'
+import { BootstrapDefaultBreakpoint, BsJsOptionsWithoutElementType } from '@jb-garage/bootstrap-js'
 import { ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type FormCheckInputProps = Omit<BrElementProps<'input'>, 'as' | 'type'> & {
-  type?: 'checkbox' | 'radio'
-  /** Form input value is invalid */
-  brFormCheckInputInvalid?: boolean
-  /** Form input value is valid */
-  brFormCheckInputValid?: boolean
-}
+export type FormCheckInputProps<Breakpoints extends string> = Omit<
+  BrElementProps<
+    'input',
+    undefined,
+    Breakpoints,
+    {
+      bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'form-check-input'>
+      type?: 'checkbox' | 'radio'
+    }
+  >,
+  'as'
+>
 
-type FormCheckInputWithRef = (props: FormCheckInputProps) => ReactNode
+type FormCheckInputWithRef = <Breakpoints extends string = BootstrapDefaultBreakpoint>(
+  props: FormCheckInputProps<Breakpoints>
+) => ReactNode
 
-const FormCheckInput: FormCheckInputWithRef = forwardRef(function FormCheckInput(
-  props: FormCheckInputProps,
-  ref
-) {
-  const {
-    type = 'checkbox',
-    children,
-    className,
-    brFormCheckInputInvalid,
-    brFormCheckInputValid,
-    ...rest
-  } = props
+const FormCheckInput: FormCheckInputWithRef = forwardRef(function FormCheckInput<
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: FormCheckInputProps<Breakpoints>, ref?: FormCheckInputProps<Breakpoints>['ref']) {
+  const { type = 'checkbox', children, bsJs, ...rest } = props
 
   return (
     <BrElement
       as="input"
       type={type}
       ref={ref}
-      className={classNames(
-        'form-check-input',
-        { 'is-invalid': brFormCheckInputInvalid, 'is-valid': brFormCheckInputValid },
-        className
-      )}
+      bsJs={{ elementType: 'form-check-input', ...bsJs }}
       {...rest}
     >
       {children}

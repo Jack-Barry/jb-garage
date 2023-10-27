@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import { BootstrapDefaultBreakpoint, BsJsOptionsWithoutElementType } from '@jb-garage/bootstrap-js'
 import { ElementType, PropsWithChildren } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -6,13 +6,19 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 import FormCheckInput, { FormCheckInputProps } from './FormCheckInput'
 import FormCheckLabel, { FormCheckLabelProps } from './FormCheckLabel'
 
-type FormCheckProps<T extends ElementType> = PropsWithChildren<{
-  brFormCheckWrapperProps?: Omit<BrElementProps<T>, 'children'> & {
-    /** Apply Bootstrap disabled styling */
-    brFormCheckDisabled?: boolean
-  }
-  brFormCheckInputProps?: FormCheckInputProps
-  brFormCheckLabelProps?: FormCheckLabelProps
+type FormCheckProps<T extends ElementType, Breakpoints extends string> = PropsWithChildren<{
+  brFormCheckWrapperProps?: Omit<
+    BrElementProps<
+      T,
+      undefined,
+      Breakpoints,
+      { bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'form-check'> }
+    >,
+    'children'
+  >
+
+  brFormCheckInputProps?: FormCheckInputProps<Breakpoints>
+  brFormCheckLabelProps?: FormCheckLabelProps<Breakpoints>
 }>
 
 /**
@@ -24,29 +30,23 @@ type FormCheckProps<T extends ElementType> = PropsWithChildren<{
  *   `htmlFor` prop to match. You can override `htmlFor` in the `label` if needed
  *   by explicitly providing `labelProps.htmlFor`
  */
-export default function FormCheck<T extends ElementType = 'div'>(props: FormCheckProps<T>) {
+export default function FormCheck<
+  T extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: FormCheckProps<T, Breakpoints>) {
   const {
     brFormCheckWrapperProps: wrapperProps = {} as Required<
-      FormCheckProps<T>
+      FormCheckProps<T, Breakpoints>
     >['brFormCheckWrapperProps'],
     brFormCheckInputProps = {},
     brFormCheckLabelProps = {},
     children
   } = props
-  const {
-    as = 'div' as ElementType,
-    className: wrapperClassName,
-    brFormCheckDisabled,
-    ...wrapperRest
-  } = wrapperProps
+  const { as = 'div' as ElementType, bsJs, ...wrapperRest } = wrapperProps
   const { htmlFor = brFormCheckInputProps.id, ...labelPropsRest } = brFormCheckLabelProps
 
   return (
-    <BrElement
-      as={as}
-      className={classNames('form-check', { disabled: brFormCheckDisabled }, wrapperClassName)}
-      {...wrapperRest}
-    >
+    <BrElement as={as} bsJs={{ elementType: 'form-check', ...bsJs }} {...wrapperRest}>
       <FormCheckInput {...brFormCheckInputProps} />
       <FormCheckLabel htmlFor={htmlFor} {...labelPropsRest} />
       {children}

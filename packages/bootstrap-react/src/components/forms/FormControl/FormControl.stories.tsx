@@ -19,7 +19,7 @@ export const BaseExample: StoryFn = () => {
   return (
     <div>
       <FormControl
-        brFormControlWrapperProps={{ bsJs: { bsJsAll: { spacing: { margin: { bottom: '3' } } } } }}
+        brFormControlWrapperProps={{ bsJs: { spacing: { margin: { bottom: '3' } } } }}
         brFormControlInputProps={{
           type: 'email',
           id: 'exampleFormControlInput1',
@@ -28,7 +28,7 @@ export const BaseExample: StoryFn = () => {
         brFormControlLabelProps={{ children: 'Email address' }}
       />
       <FormControl
-        brFormControlWrapperProps={{ bsJs: { bsJsAll: { spacing: { margin: { bottom: '3' } } } } }}
+        brFormControlWrapperProps={{ bsJs: { spacing: { margin: { bottom: '3' } } } }}
         brFormControlInputProps={{
           as: 'textarea',
           id: 'exampleFormControlTextarea1',
@@ -43,9 +43,17 @@ export const BaseExample: StoryFn = () => {
 export const Sizing: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Input placeholder=".form-control-lg" aria-label=".form-control-lg example" brInputLg />
+      <Input
+        placeholder=".form-control-lg"
+        aria-label=".form-control-lg example"
+        bsJs={{ formControlSize: 'lg' }}
+      />
       <Input placeholder="Default input" aria-label="default input example" />
-      <Input placeholder=".form-control-sm" aria-label=".form-control-sm example" brInputSm />
+      <Input
+        placeholder=".form-control-sm"
+        aria-label=".form-control-sm example"
+        bsJs={{ formControlSize: 'sm' }}
+      />
     </div>
   )
 }
@@ -65,7 +73,7 @@ export const FormTextStory: StoryFn = () => {
       <div>
         <Row brRowGutter={3} className="align-items-center">
           <Col brCols="auto">
-            <Label htmlFor="inputPassword6" brLabelCol>
+            <Label htmlFor="inputPassword6" bsJs={{ asColumn: true }}>
               Password
             </Label>
           </Col>
@@ -106,16 +114,16 @@ export const ReadOnlyPlainText: StoryFn = () => {
   return (
     <div className="bd-example">
       <div>
-        <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-          <Label htmlFor="staticEmail" brLabelCol className="col-sm-2">
+        <Row bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+          <Label htmlFor="staticEmail" bsJs={{ asColumn: true }} className="col-sm-2">
             Email
           </Label>
           <Col brColsSm={10}>
-            <Input id="staticEmail" value="email@example.com" readOnly brInputPlainText />
+            <Input id="staticEmail" value="email@example.com" readOnly bsJs={{ plaintext: true }} />
           </Col>
         </Row>
-        <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-          <Label htmlFor="inputPassword" brLabelCol className="col-sm-2">
+        <Row bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+          <Label htmlFor="inputPassword" bsJs={{ asColumn: true }} className="col-sm-2">
             Password
           </Label>
           <Col brColsSm={10}>
@@ -133,7 +141,7 @@ export const ReadOnlyPlainText: StoryFn = () => {
             <Input
               type="text"
               readOnly
-              brInputPlainText
+              bsJs={{ plaintext: true }}
               id="staticEmail2"
               value="email@example.com"
             />
@@ -148,7 +156,8 @@ export const ReadOnlyPlainText: StoryFn = () => {
             <Button
               type="submit"
               bsJs={{
-                bsJsAll: { spacing: { margin: { bottom: '3' } }, button: { color: 'primary' } }
+                spacing: { margin: { bottom: '3' } },
+                variant: 'primary'
               }}
             >
               Confirm identity
@@ -164,33 +173,41 @@ export const FiltInput: StoryFn = () => {
   return (
     <div className="bd-example">
       <FormControl
-        brFormControlWrapperProps={{ bsJs: { bsJsAll: { spacing: { margin: { bottom: '3' } } } } }}
+        brFormControlWrapperProps={{ bsJs: { spacing: { margin: { bottom: '3' } } } }}
         brFormControlLabelProps={{ children: 'Default file input example' }}
         brFormControlInputProps={{ type: 'file', id: 'formFile' }}
       />
       <hr />
       <FormControl
-        brFormControlWrapperProps={{ bsJs: { bsJsAll: { spacing: { margin: { bottom: '3' } } } } }}
+        brFormControlWrapperProps={{ bsJs: { spacing: { margin: { bottom: '3' } } } }}
         brFormControlLabelProps={{ children: 'Multiple files input example' }}
         brFormControlInputProps={{ type: 'file', id: 'formFileMultiple', multiple: true }}
       />
       <hr />
       <FormControl
-        brFormControlWrapperProps={{ bsJs: { bsJsAll: { spacing: { margin: { bottom: '3' } } } } }}
+        brFormControlWrapperProps={{ bsJs: { spacing: { margin: { bottom: '3' } } } }}
         brFormControlLabelProps={{ children: 'Disabled file input example' }}
         brFormControlInputProps={{ type: 'file', id: 'formFileDisabled', disabled: true }}
       />
       <hr />
       <FormControl
-        brFormControlWrapperProps={{ bsJs: { bsJsAll: { spacing: { margin: { bottom: '3' } } } } }}
+        brFormControlWrapperProps={{ bsJs: { spacing: { margin: { bottom: '3' } } } }}
         brFormControlLabelProps={{ children: 'Small file input example' }}
-        brFormControlInputProps={{ type: 'file', id: 'formFileSm', brInputSm: true }}
+        brFormControlInputProps={{
+          type: 'file',
+          id: 'formFileSm',
+          bsJs: { formControlSize: 'sm' }
+        }}
       />
       <hr />
       <FormControl
-        brFormControlWrapperProps={{ bsJs: { bsJsAll: { spacing: { margin: { bottom: '3' } } } } }}
+        brFormControlWrapperProps={{ bsJs: { spacing: { margin: { bottom: '3' } } } }}
         brFormControlLabelProps={{ children: 'Large file input example' }}
-        brFormControlInputProps={{ type: 'file', id: 'formFileLg', brInputLg: true }}
+        brFormControlInputProps={{
+          type: 'file',
+          id: 'formFileLg',
+          bsJs: { formControlSize: 'lg' }
+        }}
       />
     </div>
   )

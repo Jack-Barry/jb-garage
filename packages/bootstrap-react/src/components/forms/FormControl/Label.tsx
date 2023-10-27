@@ -1,25 +1,31 @@
-import classNames from 'classnames'
+import { BootstrapDefaultBreakpoint, BsJsOptionsWithoutElementType } from '@jb-garage/bootstrap-js'
 import { ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type LabelProps = Omit<BrElementProps<'label'>, 'as'> & {
-  /** Apply Bootstrap column form label styling */
-  brLabelCol?: boolean
-}
+export type LabelProps<Breakpoints extends string> = Omit<
+  BrElementProps<
+    'label',
+    undefined,
+    Breakpoints,
+    {
+      bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'form-label'>
+    }
+  >,
+  'as'
+>
 
-type LabelWithRef = (props: LabelProps) => ReactNode
+type LabelWithRef = <Breakpoints extends string = BootstrapDefaultBreakpoint>(
+  props: LabelProps<Breakpoints>
+) => ReactNode
 
-const Label: LabelWithRef = forwardRef(function Label(props: LabelProps, ref?: LabelProps['ref']) {
-  const { brLabelCol, children, className, ...rest } = props
+const Label: LabelWithRef = forwardRef(function Label<
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: LabelProps<Breakpoints>, ref?: LabelProps<Breakpoints>['ref']) {
+  const { children, bsJs, ...rest } = props
 
   return (
-    <BrElement
-      as="label"
-      ref={ref}
-      className={classNames({ 'form-Label': !brLabelCol, 'col-form-label': brLabelCol }, className)}
-      {...rest}
-    >
+    <BrElement as="label" ref={ref} bsJs={{ elementType: 'form-label', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )

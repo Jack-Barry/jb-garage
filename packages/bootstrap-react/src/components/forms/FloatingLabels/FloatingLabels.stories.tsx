@@ -19,19 +19,16 @@ export default meta
 export const Example: StoryFn = () => {
   return (
     <div>
-      <FormGroup
-        brFormGroupFloatingLabels
-        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
-      >
+      <FormGroup bsJs={{ floatingLabels: true, spacing: { margin: { bottom: '3' } } }}>
         <Input type="email" id="floatingInput" placeholder="name@example.com" />
         <Label htmlFor="floatingInput">Email address</Label>
       </FormGroup>
-      <FormGroup brFormGroupFloatingLabels>
+      <FormGroup bsJs={{ floatingLabels: true }}>
         <Input type="password" id="floatingPassword" placeholder="Password" />
         <Label htmlFor="floatingPassword">Password</Label>
       </FormGroup>
       <hr />
-      <FormGroup as="form" brFormGroupFloatingLabels>
+      <FormGroup as="form" bsJs={{ floatingLabels: true }}>
         <Input
           type="email"
           id="floatingInputValue"
@@ -41,7 +38,7 @@ export const Example: StoryFn = () => {
         <Label htmlFor="floatingInputValue">Input with value</Label>
       </FormGroup>
       <hr />
-      <FormGroup as="form" brFormGroupFloatingLabels>
+      <FormGroup as="form" bsJs={{ floatingLabels: true }}>
         <Input
           type="email"
           brInputInvalid
@@ -58,12 +55,12 @@ export const Example: StoryFn = () => {
 export const Textareas: StoryFn = () => {
   return (
     <div>
-      <FormGroup brFormGroupFloatingLabels>
+      <FormGroup bsJs={{ floatingLabels: true }}>
         <Input as="textarea" placeholder="Leave a comment here" id="floatingTextarea" />
         <Label htmlFor="floatingTextarea">Comments</Label>
       </FormGroup>
       <hr />
-      <FormGroup brFormGroupFloatingLabels>
+      <FormGroup bsJs={{ floatingLabels: true }}>
         <Input
           as="textarea"
           placeholder="Leave a comment here"
@@ -78,7 +75,7 @@ export const Textareas: StoryFn = () => {
 
 export const Selects: StoryFn = () => {
   return (
-    <FormGroup brFormGroupFloatingLabels>
+    <FormGroup bsJs={{ floatingLabels: true }}>
       <Select id="floatingSelect" aria-label="Floating label select example">
         <option selected>Open this select menu</option>
         <option value="1">One</option>
@@ -93,17 +90,11 @@ export const Selects: StoryFn = () => {
 export const Disabled: StoryFn = () => {
   return (
     <div>
-      <FormGroup
-        brFormGroupFloatingLabels
-        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
-      >
+      <FormGroup bsJs={{ floatingLabels: true, spacing: { margin: { bottom: '3' } } }}>
         <Input type="email" id="floatingInputDisabled" placeholder="name@example.com" disabled />
         <Label htmlFor="floatingInputDisabled">Email address</Label>
       </FormGroup>
-      <FormGroup
-        brFormGroupFloatingLabels
-        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
-      >
+      <FormGroup bsJs={{ floatingLabels: true, spacing: { margin: { bottom: '3' } } }}>
         <Input
           as="textarea"
           placeholder="Leave a comment here"
@@ -112,10 +103,7 @@ export const Disabled: StoryFn = () => {
         />
         <Label htmlFor="floatingTextareaDisabled">Comments</Label>
       </FormGroup>
-      <FormGroup
-        brFormGroupFloatingLabels
-        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
-      >
+      <FormGroup bsJs={{ floatingLabels: true, spacing: { margin: { bottom: '3' } } }}>
         <Input
           as="textarea"
           placeholder="Leave a comment here"
@@ -125,7 +113,7 @@ export const Disabled: StoryFn = () => {
         />
         <Label htmlFor="floatingTextarea2Disabled">Comments</Label>
       </FormGroup>
-      <FormGroup brFormGroupFloatingLabels>
+      <FormGroup bsJs={{ floatingLabels: true }}>
         <Select
           id="floatingSelectDisabled"
           aria-label="Floating label disabled select example"
@@ -145,10 +133,7 @@ export const Disabled: StoryFn = () => {
 export const ReadonlyPlaintext: StoryFn = () => {
   return (
     <div>
-      <FormGroup
-        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
-        brFormGroupFloatingLabels
-      >
+      <FormGroup bsJs={{ floatingLabels: true, spacing: { margin: { bottom: '3' } } }}>
         <Input
           type="email"
           readOnly
@@ -158,10 +143,7 @@ export const ReadonlyPlaintext: StoryFn = () => {
         />
         <Label htmlFor="floatingEmptyPlaintextInput">Empty input</Label>
       </FormGroup>
-      <FormGroup
-        bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}
-        brFormGroupFloatingLabels
-      >
+      <FormGroup bsJs={{ floatingLabels: true, spacing: { margin: { bottom: '3' } } }}>
         <Input
           type="email"
           readOnly
@@ -179,9 +161,9 @@ export const ReadonlyPlaintext: StoryFn = () => {
 export const InputGroups: StoryFn = () => {
   return (
     <div>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <InputGroupText>@</InputGroupText>
-        <FormGroup brFormGroupFloatingLabels>
+        <FormGroup bsJs={{ floatingLabels: true }}>
           <Input id="floatingInputGroup1" placeholder="Username" />
           <Label htmlFor="floatingInputGroup1">Username</Label>
         </FormGroup>
@@ -189,7 +171,7 @@ export const InputGroups: StoryFn = () => {
       <hr />
       <InputGroup brInputGroupHasValidation>
         <InputGroupText>@</InputGroupText>
-        <FormGroup brFormGroupFloatingLabels brFormGroupIsInvalid>
+        <FormGroup bsJs={{ floatingLabels: true, isInvalid: true }}>
           <Input
             type="text"
             brInputInvalid
@@ -209,7 +191,7 @@ export const Layout: StoryFn = () => {
   return (
     <Row brRowGutter={2}>
       <Col brColsMd>
-        <FormGroup brFormGroupFloatingLabels>
+        <FormGroup bsJs={{ floatingLabels: true }}>
           <Input
             type="email"
             id="floatingInputGrid"
@@ -220,7 +202,7 @@ export const Layout: StoryFn = () => {
         </FormGroup>
       </Col>
       <Col brColsMd>
-        <FormGroup brFormGroupFloatingLabels>
+        <FormGroup bsJs={{ floatingLabels: true }}>
           <Select id="floatingSelectGrid">
             <option selected>Open this select menu</option>
             <option value="1">One</option>

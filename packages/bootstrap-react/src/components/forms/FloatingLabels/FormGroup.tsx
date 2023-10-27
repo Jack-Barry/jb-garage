@@ -1,45 +1,32 @@
-import classNames from 'classnames'
+import { BootstrapDefaultBreakpoint, BsJsOptionsWithoutElementType } from '@jb-garage/bootstrap-js'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type FormGroupProps<T extends ElementType> = BrElementProps<T> & {
-  /** Form has floating labels */
-  brFormGroupFloatingLabels?: boolean
-  /** Apply Bootstrap is invalid styling to form group */
-  brFormGroupIsInvalid?: boolean
-}
+export type FormGroupProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'form-group'>
+  }
+>
 
-type FormGroupWithRef = <Component extends ElementType = 'div'>(
-  props: FormGroupProps<Component>
+type FormGroupWithRef = <
+  Component extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: FormGroupProps<Component, Breakpoints>
 ) => ReactNode
 
-const FormGroup: FormGroupWithRef = forwardRef(function FormGroup<T extends ElementType = 'div'>(
-  props: FormGroupProps<T>,
-  ref?: FormGroupProps<T>['ref']
-) {
-  const {
-    as = 'div' as ElementType,
-    className,
-    children,
-    brFormGroupFloatingLabels,
-    brFormGroupIsInvalid,
-    ...rest
-  } = props
+const FormGroup: FormGroupWithRef = forwardRef(function FormGroup<
+  T extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: FormGroupProps<T, Breakpoints>, ref?: FormGroupProps<T, Breakpoints>['ref']) {
+  const { as = 'div' as ElementType, bsJs, children, ...rest } = props
 
   return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames(
-        {
-          'form-floating': brFormGroupFloatingLabels,
-          'is-invalid': brFormGroupIsInvalid
-        },
-        className
-      )}
-      {...rest}
-    >
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'form-group', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )
