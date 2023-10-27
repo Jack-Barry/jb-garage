@@ -9,7 +9,7 @@ import { BrElement, BrElementProps } from '../../utils/BrElement'
 export type ImageElementType = 'img' | 'svg'
 export type ImageProps<T extends ImageElementType, Breakpoints extends string> = BrElementProps<
   T,
-  'img' | 'card-img',
+  undefined,
   Breakpoints,
   {
     bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'img' | 'card-img'>

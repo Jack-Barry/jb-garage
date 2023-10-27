@@ -1,33 +1,36 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type NavbarProps<T extends ElementType> = BrElementProps<T> & {
-  /** Where and how to place the navbar */
-  brNavbarPlacement?: 'fixed-top' | 'fixed-bottom' | 'sticky-top' | 'sticky-bottom'
-}
+export type NavbarProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'navbar'>
+  }
+>
 
-export type NavbarWithRef = <Component extends ElementType = 'nav'>(
-  props: NavbarProps<Component>
+export type NavbarWithRef = <
+  Component extends ElementType = 'nav',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: NavbarProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * [Navbar]()
  */
-const Navbar: NavbarWithRef = forwardRef(function Navbar<T extends ElementType = 'nav'>(
-  props: NavbarProps<T>,
-  ref?: NavbarProps<T>['ref']
-) {
-  const { as = 'nav' as ElementType, brNavbarPlacement, className, ...rest } = props
+const Navbar: NavbarWithRef = forwardRef(function Navbar<
+  T extends ElementType = 'nav',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: NavbarProps<T, Breakpoints>, ref?: NavbarProps<T, Breakpoints>['ref']) {
+  const { as = 'nav' as ElementType, bsJs, ...rest } = props
 
-  return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames('navbar', brNavbarPlacement && brNavbarPlacement, className)}
-      {...rest}
-    />
-  )
+  return <BrElement as={as} ref={ref} bsJs={{ elementType: 'navbar', ...bsJs }} {...rest} />
 })
 export default Navbar

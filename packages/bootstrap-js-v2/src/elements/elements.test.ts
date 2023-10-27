@@ -46,6 +46,7 @@ describe('Elements', () => {
       'navbar-collapse',
       'navbar-nav',
       'navbar-text',
+      'navbar-toggler',
       'navbar-toggler-icon',
       'offcanvas-body',
       'offcanvas-header',

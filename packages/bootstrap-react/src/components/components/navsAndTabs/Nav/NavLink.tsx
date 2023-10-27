@@ -1,54 +1,43 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../../utils/BrElement'
 
-export type NavLinkProps<T extends ElementType> = BrElementProps<T> & {
-  /**
-   * Type of HTML element to render
-   *
-   * @default "a"
-   */
-  as?: T
-  /** Nav link is currently active */
-  brNavLinkActive?: boolean
-  /** Nav link is currently disabled */
-  brNavLinkDisabled?: boolean
-  brNavLinkDropdownToggle?: boolean
-}
+export type NavLinkProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'nav-link'>
+    /**
+     * Type of HTML element to render
+     *
+     * @default "a"
+     */
+    as?: T
+  }
+>
 
-type NavLinkWithRef = <Component extends ElementType = 'a'>(
-  props: NavLinkProps<Component>
+type NavLinkWithRef = <
+  Component extends ElementType = 'a',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: NavLinkProps<Component, Breakpoints>
 ) => ReactNode
 
 /** [Nav]() */
 const NavLink: NavLinkWithRef = forwardRef(
-  <T extends ElementType = 'a'>(props: NavLinkProps<T>, ref?: NavLinkProps<T>['ref']) => {
-    const {
-      as = 'a' as ElementType,
-      brNavLinkActive,
-      brNavLinkDisabled,
-      brNavLinkDropdownToggle,
-      children,
-      className,
-      ...rest
-    } = props
+  <T extends ElementType = 'a', Breakpoints extends string = BootstrapDefaultBreakpoint>(
+    props: NavLinkProps<T, Breakpoints>,
+    ref?: NavLinkProps<T, Breakpoints>['ref']
+  ) => {
+    const { as = 'a' as ElementType, children, bsJs, ...rest } = props
 
     return (
-      <BrElement
-        as={as}
-        ref={ref}
-        className={classNames(
-          'nav-link',
-          {
-            active: brNavLinkActive,
-            disabled: brNavLinkDisabled,
-            'dropdown-toggle': brNavLinkDropdownToggle
-          },
-          className
-        )}
-        {...rest}
-      >
+      <BrElement as={as} ref={ref} bsJs={{ elementType: 'nav-link', ...bsJs }} {...rest}>
         {children}
       </BrElement>
     )

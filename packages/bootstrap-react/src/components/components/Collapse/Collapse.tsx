@@ -8,7 +8,7 @@ import { useCollapse } from './useCollapse'
 
 export type CollapseProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
   T,
-  'collapse' | 'accordion-collapse',
+  undefined,
   Breakpoints,
   {
     brCollapse: ReturnType<typeof useCollapse>

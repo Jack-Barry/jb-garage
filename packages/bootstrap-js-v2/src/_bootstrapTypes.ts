@@ -69,6 +69,7 @@ export type BootstrapElement =
   | 'navbar-collapse'
   | 'navbar-nav'
   | 'navbar-text'
+  | 'navbar-toggler'
   | 'navbar-toggler-icon'
   | 'offcanvas'
   | 'offcanvas-body'

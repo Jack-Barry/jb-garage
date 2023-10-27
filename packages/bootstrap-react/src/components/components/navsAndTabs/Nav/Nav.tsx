@@ -1,35 +1,42 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../../utils/BrElement'
 
-export type NavProps<T extends ElementType> = BrElementProps<T> & {
-  /**
-   * Type of HTML element to render
-   *
-   * @default "ul"
-   */
-  as?: T
-  /** Apply pill styles */
-  brNavPills?: boolean
-}
+export type NavProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'nav'>
+    /**
+     * Type of HTML element to render
+     *
+     * @default "ul"
+     */
+    as?: T
+  }
+>
 
-type NavWithRef = <Component extends ElementType = 'ul'>(props: NavProps<Component>) => ReactNode
+type NavWithRef = <
+  Component extends ElementType = 'ul',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: NavProps<Component, Breakpoints>
+) => ReactNode
 
 /** [Nav]() */
-const Nav: NavWithRef = forwardRef(function Nav<T extends ElementType = 'ul'>(
-  props: NavProps<T>,
-  ref?: NavProps<T>['ref']
-) {
-  const { as = 'ul' as ElementType, children, className, brNavPills, ...rest } = props
+const Nav: NavWithRef = forwardRef(function Nav<
+  T extends ElementType = 'ul',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: NavProps<T, Breakpoints>, ref?: NavProps<T, Breakpoints>['ref']) {
+  const { as = 'ul' as ElementType, children, bsJs, ...rest } = props
 
   return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames('nav', { 'nav-pills': brNavPills }, className)}
-      {...rest}
-    >
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'nav', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )
