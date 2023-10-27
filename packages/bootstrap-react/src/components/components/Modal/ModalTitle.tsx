@@ -1,23 +1,34 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type ModalTitleProps<T extends ElementType> = BrElementProps<T>
+export type ModalTitleProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  { bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'modal-title'> }
+>
 
-export type ModalTitleWithRef = <Component extends ElementType = 'h1'>(
-  props: ModalTitleProps<Component>
+export type ModalTitleWithRef = <
+  Component extends ElementType = 'h1',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: ModalTitleProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * [Modal]()
  */
-const ModalTitle: ModalTitleWithRef = forwardRef(function ModalTitle<T extends ElementType = 'h1'>(
-  props: ModalTitleProps<T>,
-  ref?: ModalTitleProps<T>['ref']
-) {
-  const { as = 'h1' as ElementType, className, ...rest } = props
+const ModalTitle: ModalTitleWithRef = forwardRef(function ModalTitle<
+  T extends ElementType = 'h1',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: ModalTitleProps<T, Breakpoints>, ref?: ModalTitleProps<T, Breakpoints>['ref']) {
+  const { as = 'h1' as ElementType, bsJs, ...rest } = props
 
-  return <BrElement as={as} ref={ref} className={classNames('modal-title', className)} {...rest} />
+  return <BrElement as={as} ref={ref} bsJs={{ elementType: 'modal-title', ...bsJs }} {...rest} />
 })
 export default ModalTitle

@@ -7,7 +7,7 @@ describe('Element Components: Popover', () => {
     expect(bsJs({ elementType: 'popover' })).toStrictEqual({
       classes: { popover: true, 'bs-popover-auto': true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'tooltip' }
     })
   })
 
@@ -15,13 +15,13 @@ describe('Element Components: Popover', () => {
     expect(bsJs({ elementType: 'popover', arrow: true })).toStrictEqual({
       classes: { popover: true, 'bs-popover-auto': true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'tooltip' }
     })
 
     expect(bsJs({ elementType: 'popover', arrow: false })).toStrictEqual({
       classes: { popover: true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'tooltip' }
     })
   })
 
@@ -29,13 +29,13 @@ describe('Element Components: Popover', () => {
     expect(bsJs({ elementType: 'popover', show: true })).toStrictEqual({
       classes: { popover: true, 'bs-popover-auto': true, show: true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'tooltip' }
     })
 
     expect(bsJs({ elementType: 'popover', show: false })).toStrictEqual({
       classes: { popover: true, 'bs-popover-auto': true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'tooltip' }
     })
   })
 
@@ -43,13 +43,13 @@ describe('Element Components: Popover', () => {
     expect(bsJs({ elementType: 'popover', fade: true })).toStrictEqual({
       classes: { popover: true, 'bs-popover-auto': true, fade: true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'tooltip' }
     })
 
     expect(bsJs({ elementType: 'popover', fade: false })).toStrictEqual({
       classes: { popover: true, 'bs-popover-auto': true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'tooltip' }
     })
   })
 })

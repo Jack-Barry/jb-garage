@@ -1,4 +1,7 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
@@ -6,39 +9,32 @@ import { useMultiRef } from '../../utils/useMultiRef'
 
 import { usePopover } from './usePopover'
 
-export type PopoverProps<T extends ElementType> = BrElementProps<
+export type PopoverProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
   T,
+  undefined,
+  Breakpoints,
   {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'popover'>
     /** Controlled state can be provided by the return value of `usePopover` */
     brPopover: ReturnType<typeof usePopover>['floating']
-    /**
-     * @default true
-     */
-    brPopoverArrow?: boolean
   }
 >
 
-export type PopoverWithRef = <Component extends ElementType = 'div'>(
-  props: PopoverProps<Component>
+export type PopoverWithRef = <
+  Component extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: PopoverProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * [Popover]()
  */
-const Popover: PopoverWithRef = forwardRef(function Popover<T extends ElementType = 'div'>(
-  props: PopoverProps<T>,
-  ref?: PopoverProps<T>['ref']
-) {
-  const {
-    as = 'div' as ElementType,
-    brPopover,
-    brPopoverArrow = true,
-    role = 'tooltip',
-    className,
-    style,
-    children,
-    ...rest
-  } = props
+const Popover: PopoverWithRef = forwardRef(function Popover<
+  T extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: PopoverProps<T, Breakpoints>, ref?: PopoverProps<T, Breakpoints>['ref']) {
+  const { as = 'div' as ElementType, brPopover, style, bsJs, children, ...rest } = props
   const {
     arrow,
     getProps,
@@ -57,22 +53,18 @@ const Popover: PopoverWithRef = forwardRef(function Popover<T extends ElementTyp
         as={as}
         {...getProps()}
         ref={usedRef}
-        role={role}
-        className={classNames(
-          'popover',
-          {
-            fade: shouldAnimate,
-            show: transitionStatus === 'open',
-            'bs-popover-auto': brPopoverArrow
-          },
-          className
-        )}
+        bsJs={{
+          elementType: 'popover',
+          fade: shouldAnimate,
+          show: transitionStatus === 'open',
+          ...bsJs
+        }}
         style={{ ...styles, ...style }}
         // don't need this for Popper/Floating UI, but Bootstrap uses it for styling
         data-popper-placement={placement}
         {...rest}
       >
-        {brPopoverArrow && <div className="popover-arrow" {...arrow} />}
+        {bsJs?.arrow && <div className="popover-arrow" {...arrow} />}
         <div className="popover-inner">{children}</div>
       </BrElement>
     )

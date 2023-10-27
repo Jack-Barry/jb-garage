@@ -1,51 +1,44 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type ListGroupItemProps<T extends ElementType> = BrElementProps<T> & {
-  /**
-   * Type of HTML element to render
-   *
-   * @default "li"
-   */
-  as?: T
-  /** Apply action styles */
-  brListGroupItemAction?: boolean
-  /** Apply active styles */
-  brListGroupItemActive?: boolean
-}
+export type ListGroupItemProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'list-group-item'>
+    /**
+     * Type of HTML element to render
+     *
+     * @default "li"
+     */
+    as?: T
+  }
+>
 
-export type ListGroupItemWithRef = <Component extends ElementType = 'li'>(
-  props: ListGroupItemProps<Component>
+export type ListGroupItemWithRef = <
+  Component extends ElementType = 'li',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: ListGroupItemProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * [List Group Item](https://getbootstrap.com/docs/5.3/components/list-group/)
  */
 const ListGroupItem: ListGroupItemWithRef = forwardRef(function ListGroupItem<
-  T extends ElementType = 'li'
->(props: ListGroupItemProps<T>, ref?: ListGroupItemProps<T>['ref']) {
-  const {
-    as = 'li' as ElementType,
-    children,
-    className,
-    brListGroupItemAction,
-    brListGroupItemActive,
-    ...rest
-  } = props
+  T extends ElementType = 'li',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: ListGroupItemProps<T, Breakpoints>, ref?: ListGroupItemProps<T, Breakpoints>['ref']) {
+  const { as = 'li' as ElementType, children, bsJs, ...rest } = props
 
   return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames(
-        'list-group-item',
-        { 'list-group-item-action': brListGroupItemAction, active: brListGroupItemActive },
-        className
-      )}
-      {...rest}
-    >
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'list-group-item', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )

@@ -1,31 +1,44 @@
-import classNames from 'classnames'
-import { BrElement, BrElementProps } from '../../utils/BrElement'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
-export type ListGroupProps<T extends ElementType> = BrElementProps<T> & {
-  /**
-   * Type of HTML element to render
-   *
-   * @default "ul"
-   */
-  as?: T
-}
+import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-type ListGroupWithRef = <Component extends ElementType = 'ul'>(
-  props: ListGroupProps<Component>
+export type ListGroupProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'list-group'>
+    /**
+     * Type of HTML element to render
+     *
+     * @default "ul"
+     */
+    as?: T
+  }
+>
+
+type ListGroupWithRef = <
+  Component extends ElementType = 'ul',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: ListGroupProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * [ListGroup](https://getbootstrap.com/docs/5.3/components/list-group/)
  */
-const ListGroup: ListGroupWithRef = forwardRef(function ListGroup<T extends ElementType = 'ul'>(
-  props: ListGroupProps<T>,
-  ref?: ListGroupProps<T>['ref']
-) {
-  const { as = 'ul' as ElementType, children, className, ...rest } = props
+const ListGroup: ListGroupWithRef = forwardRef(function ListGroup<
+  T extends ElementType = 'ul',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: ListGroupProps<T, Breakpoints>, ref?: ListGroupProps<T, Breakpoints>['ref']) {
+  const { as = 'ul' as ElementType, children, bsJs, ...rest } = props
 
   return (
-    <BrElement as={as} ref={ref} className={classNames('list-group', className)} {...rest}>
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'list-group', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )

@@ -138,11 +138,9 @@ export const BlockButtons: StoryFn = () => {
           display: 'grid',
           spacing: {
             margin: {
-              x: 'auto',
-              // eslint-disable-next-line
-              // @ts-ignore -- TODO: implement grid gap utilities
-              gap: '2'
-            }
+              x: 'auto'
+            },
+            gap: '2'
           }
         }}
         brCols={6}

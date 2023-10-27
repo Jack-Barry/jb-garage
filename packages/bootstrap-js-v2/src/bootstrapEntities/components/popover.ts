@@ -29,4 +29,6 @@ export function applyPopoverStyles<Breakpoints extends string>(
   if (options.arrow !== false) {
     result.classes['bs-popover-auto'] = true
   }
+
+  result.elementAttributes['role'] = 'tooltip'
 }

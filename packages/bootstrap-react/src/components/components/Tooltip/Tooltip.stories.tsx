@@ -50,11 +50,7 @@ export const CustomTooltips: StoryFn = () => {
   const { target, floating } = useTooltip()
   return (
     <div>
-      <Button
-        ref={target.ref}
-        {...target.getProps()}
-        bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
-      >
+      <Button ref={target.ref} {...target.getProps()} bsJs={{ variant: 'secondary' }}>
         Custom tooltip
       </Button>
       <Tooltip brTooltip={floating} className="custom-tooltip">
@@ -73,47 +69,27 @@ export const Directions: StoryFn = () => {
   const { target: targetSvg, floating: tooltipSvg } = useTooltip()
 
   return (
-    <BrElement bsJs={{ bsJsAll: { spacing: { margin: '5' } } }}>
-      <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '2' } } }}>
-        <Button
-          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
-          ref={targetTop.ref}
-          {...targetTop.getProps()}
-        >
+    <BrElement bsJs={{ spacing: { margin: '5' } }}>
+      <BrElement bsJs={{ display: 'flex', spacing: { gap: '2' } }}>
+        <Button bsJs={{ variant: 'secondary' }} ref={targetTop.ref} {...targetTop.getProps()}>
           Tooltip on top
         </Button>
         <Tooltip brTooltip={tooltipTop}>Tooltip on top</Tooltip>
-        <Button
-          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
-          ref={targetRight.ref}
-          {...targetRight.getProps()}
-        >
+        <Button bsJs={{ variant: 'secondary' }} ref={targetRight.ref} {...targetRight.getProps()}>
           Tooltip on right
         </Button>
         <Tooltip brTooltip={tooltipRight}>Tooltip on right</Tooltip>
-        <Button
-          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
-          ref={targetBottom.ref}
-          {...targetBottom.getProps()}
-        >
+        <Button bsJs={{ variant: 'secondary' }} ref={targetBottom.ref} {...targetBottom.getProps()}>
           Tooltip on bottom
         </Button>
         <Tooltip brTooltip={tooltipBottom}>Tooltip on bottom</Tooltip>
-        <Button
-          bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
-          ref={targetLeft.ref}
-          {...targetLeft.getProps()}
-        >
+        <Button bsJs={{ variant: 'secondary' }} ref={targetLeft.ref} {...targetLeft.getProps()}>
           Tooltip on left
         </Button>
         <Tooltip brTooltip={tooltipLeft}>Tooltip on left</Tooltip>
       </BrElement>
       <hr />
-      <Button
-        bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
-        ref={targetHtml.ref}
-        {...targetHtml.getProps()}
-      >
+      <Button bsJs={{ variant: 'secondary' }} ref={targetHtml.ref} {...targetHtml.getProps()}>
         Tooltip with HTML
       </Button>
       <Tooltip brTooltip={tooltipHtml}>
@@ -122,7 +98,7 @@ export const Directions: StoryFn = () => {
       <hr />
       <BrElement
         as="a"
-        bsJs={{ bsJsAll: { display: 'inline-block' } }}
+        bsJs={{ display: 'inline-block' }}
         href="#"
         ref={targetSvg.ref}
         {...targetSvg.getProps()}
@@ -144,12 +120,12 @@ export const DisabledElements: StoryFn = () => {
     <div>
       <BrElement
         as="span"
-        bsJs={{ bsJsAll: { display: 'inline-block' } }}
+        bsJs={{ display: 'inline-block' }}
         tabIndex={0}
         ref={target.ref}
         {...target.getProps()}
       >
-        <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} disabled>
+        <Button bsJs={{ variant: 'primary' }} disabled>
           Disabled button
         </Button>
         <Tooltip brTooltip={floating}>Disabled tooltip</Tooltip>

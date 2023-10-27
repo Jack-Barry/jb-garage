@@ -23,11 +23,11 @@ export const BaseExample: StoryFn = () => {
   const { target, floating } = usePopover()
 
   return (
-    <BrElement bsJs={{ bsJsAll: { spacing: { padding: { y: '5' } } } }}>
+    <BrElement bsJs={{ spacing: { padding: { y: '5' } } }}>
       <Button
         ref={target.ref}
         {...target.getProps()}
-        bsJs={{ bsJsAll: { button: { color: 'danger', size: 'lg' } } }}
+        bsJs={{ variant: 'danger', buttonSize: 'lg' }}
       >
         Click to toggle popover
       </Button>
@@ -46,11 +46,11 @@ export const FourDirections: StoryFn = () => {
   const popoverLeft = usePopover({ placement: 'left' })
 
   return (
-    <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { padding: { y: '5' }, gap: '2' } } }}>
+    <BrElement bsJs={{ display: 'flex', spacing: { padding: { y: '5' }, gap: '2' } }}>
       <Button
         ref={popoverTop.target.ref}
         {...popoverTop.target.getProps()}
-        bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+        bsJs={{ variant: 'secondary' }}
       >
         Popover on top
       </Button>
@@ -60,7 +60,7 @@ export const FourDirections: StoryFn = () => {
       <Button
         ref={popoverRight.target.ref}
         {...popoverRight.target.getProps()}
-        bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+        bsJs={{ variant: 'secondary' }}
       >
         Popover on right
       </Button>
@@ -70,7 +70,7 @@ export const FourDirections: StoryFn = () => {
       <Button
         ref={popoverBottom.target.ref}
         {...popoverBottom.target.getProps()}
-        bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+        bsJs={{ variant: 'secondary' }}
       >
         Popover on bottom
       </Button>
@@ -80,7 +80,7 @@ export const FourDirections: StoryFn = () => {
       <Button
         ref={popoverLeft.target.ref}
         {...popoverLeft.target.getProps()}
-        bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
+        bsJs={{ variant: 'secondary' }}
       >
         Popover on left
       </Button>
@@ -102,7 +102,7 @@ export const DismissOnNextClick: StoryFn = () => {
       <Button
         ref={popover.target.ref}
         {...popover.target.getProps()}
-        bsJs={{ bsJsAll: { button: { color: 'danger', size: 'lg' } } }}
+        bsJs={{ variant: 'danger', buttonSize: 'lg' }}
       >
         Dismissable popover
       </Button>
