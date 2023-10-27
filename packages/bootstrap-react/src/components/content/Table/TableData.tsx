@@ -1,14 +1,19 @@
+import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js-v2'
 import { ReactNode, forwardRef } from 'react'
 
 import TableEntry, { TableEntryProps } from './TableEntry'
 
-export type TableDataProps = Omit<TableEntryProps<'td'>, 'as'>
-type TableDataWithRef = (props: TableDataProps) => ReactNode
+export type TableDataProps<Breakpoints extends string> = Omit<
+  TableEntryProps<'td', Breakpoints>,
+  'as'
+>
+type TableDataWithRef = <Breakpoints extends string = BootstrapDefaultBreakpoint>(
+  props: TableDataProps<Breakpoints>
+) => ReactNode
 
-const TableData: TableDataWithRef = forwardRef(function TableData(
-  props: TableDataProps,
-  ref?: TableDataProps['ref']
-) {
+const TableData: TableDataWithRef = forwardRef(function TableData<
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: TableDataProps<Breakpoints>, ref?: TableDataProps<Breakpoints>['ref']) {
   return <TableEntry as="td" ref={ref} {...props} />
 })
 export default TableData

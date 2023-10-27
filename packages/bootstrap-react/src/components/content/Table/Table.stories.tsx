@@ -101,7 +101,7 @@ function VariantExample(props: { variant: string }) {
 
 export const StripedRows: StoryFn = () => {
   return (
-    <Table bsJs={{ bsJsAll: { table: { striped: true } } }}>
+    <Table bsJs={{ striped: true }}>
       <TableExampleContent />
     </Table>
   )
@@ -109,7 +109,7 @@ export const StripedRows: StoryFn = () => {
 
 export const StripedColumns: StoryFn = () => {
   return (
-    <Table bsJs={{ bsJsAll: { table: { stripedCols: true } } }}>
+    <Table bsJs={{ stripedCols: true }}>
       <TableExampleContent />
     </Table>
   )
@@ -118,19 +118,19 @@ export const StripedColumns: StoryFn = () => {
 export const StripedVariants: StoryFn = () => {
   return (
     <div>
-      <Table className="table-dark" bsJs={{ bsJsAll: { table: { striped: true } } }}>
+      <Table className="table-dark" bsJs={{ striped: true }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" bsJs={{ bsJsAll: { table: { stripedCols: true } } }}>
+      <Table className="table-dark" bsJs={{ stripedCols: true }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-success" bsJs={{ bsJsAll: { table: { striped: true } } }}>
+      <Table className="table-success" bsJs={{ striped: true }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-success" bsJs={{ bsJsAll: { table: { stripedCols: true } } }}>
+      <Table className="table-success" bsJs={{ stripedCols: true }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -140,15 +140,15 @@ export const StripedVariants: StoryFn = () => {
 export const HoverableRows: StoryFn = () => {
   return (
     <div>
-      <Table bsJs={{ bsJsAll: { table: { rowHover: true } } }}>
+      <Table bsJs={{ rowHover: true }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" bsJs={{ bsJsAll: { table: { rowHover: true } } }}>
+      <Table className="table-dark" bsJs={{ rowHover: true }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table bsJs={{ bsJsAll: { table: { rowHover: true, striped: true } } }}>
+      <Table bsJs={{ rowHover: true, striped: true }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -160,7 +160,7 @@ export const TableActive: StoryFn = () => {
     <div>
       <Table>
         <TableHead>
-          <TableRow bsJs={{ bsJsAll: { tableEntry: { active: true } } }}>
+          <TableRow bsJs={{ active: true }}>
             <TableHeader scope="col">#</TableHeader>
             <TableHeader scope="col">First</TableHeader>
             <TableHeader scope="col">Last</TableHeader>
@@ -182,7 +182,7 @@ export const TableActive: StoryFn = () => {
           </TableRow>
           <TableRow>
             <TableHeader scope="row">3</TableHeader>
-            <TableData colSpan={2} bsJs={{ bsJsAll: { tableEntry: { active: true } } }}>
+            <TableData colSpan={2} bsJs={{ active: true }}>
               Larry the Bird
             </TableData>
             <TableData>@twitter</TableData>
@@ -192,7 +192,7 @@ export const TableActive: StoryFn = () => {
       <hr />
       <Table className="table-dark">
         <TableHead>
-          <TableRow bsJs={{ bsJsAll: { tableEntry: { active: true } } }}>
+          <TableRow bsJs={{ active: true }}>
             <TableHeader scope="col">#</TableHeader>
             <TableHeader scope="col">First</TableHeader>
             <TableHeader scope="col">Last</TableHeader>
@@ -214,7 +214,7 @@ export const TableActive: StoryFn = () => {
           </TableRow>
           <TableRow>
             <TableHeader scope="row">3</TableHeader>
-            <TableData colSpan={2} bsJs={{ bsJsAll: { tableEntry: { active: true } } }}>
+            <TableData colSpan={2} bsJs={{ active: true }}>
               Larry the Bird
             </TableData>
             <TableData>@twitter</TableData>
@@ -228,11 +228,11 @@ export const TableActive: StoryFn = () => {
 export const BorderedTables: StoryFn = () => {
   return (
     <div>
-      <Table bsJs={{ bsJsAll: { table: { bordered: true } } }}>
+      <Table bsJs={{ bordered: true }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table bsJs={{ bsJsAll: { border: { color: 'primary' }, table: { bordered: true } } }}>
+      <Table bsJs={{ border: { color: 'primary' }, bordered: true }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -242,11 +242,11 @@ export const BorderedTables: StoryFn = () => {
 export const TablesWithoutBorders: StoryFn = () => {
   return (
     <div>
-      <Table bsJs={{ bsJsAll: { table: { borderless: true } } }}>
+      <Table bsJs={{ borderless: true }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" bsJs={{ bsJsAll: { table: { borderless: true } } }}>
+      <Table className="table-dark" bsJs={{ borderless: true }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -256,11 +256,11 @@ export const TablesWithoutBorders: StoryFn = () => {
 export const SmallTables: StoryFn = () => {
   return (
     <div>
-      <Table bsJs={{ bsJsAll: { table: { small: true } } }}>
+      <Table bsJs={{ tableSize: 'sm' }}>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table className="table-dark" bsJs={{ bsJsAll: { table: { small: true } } }}>
+      <Table className="table-dark" bsJs={{ tableSize: 'sm' }}>
         <TableExampleContent />
       </Table>
     </div>
@@ -271,7 +271,7 @@ export const TableGroupDividers: StoryFn = () => {
   return (
     <Table>
       <TableExampleHead />
-      <TableBody bsJs={{ bsJsAll: { tableGroup: { groupDivider: true } } }}>
+      <TableBody bsJs={{ groupDivider: true }}>
         <TableRow>
           <TableHeader scope="row">1</TableHeader>
           <TableData>Mark</TableData>
@@ -296,7 +296,7 @@ export const TableGroupDividers: StoryFn = () => {
 
 export const Nesting: StoryFn = () => {
   return (
-    <Table bsJs={{ bsJsAll: { table: { striped: true, bordered: true } } }}>
+    <Table bsJs={{ striped: true, bordered: true }}>
       <TableHead>
         <TableRow>
           <TableHeader scope="col">#</TableHeader>
@@ -314,7 +314,7 @@ export const Nesting: StoryFn = () => {
         </TableRow>
         <TableRow>
           <TableData colSpan={4}>
-            <Table bsJs={{ bsJsAll: { spacing: { margin: { bottom: 0 } } } }}>
+            <Table bsJs={{ spacing: { margin: { bottom: 0 } } }}>
               <TableHead>
                 <TableRow>
                   <TableHeader scope="col">Header</TableHeader>
@@ -410,12 +410,12 @@ export const AnatomyTableFoot: StoryFn = () => {
 export const Captions: StoryFn = () => {
   return (
     <div>
-      <Table bsJs={{ bsJsAll: { table: { small: true } } }}>
+      <Table bsJs={{ tableSize: 'sm' }}>
         <caption>List of users</caption>
         <TableExampleContent />
       </Table>
       <hr />
-      <Table bsJs={{ bsJsAll: { table: { captionTop: true } } }}>
+      <Table bsJs={{ captionTop: true }}>
         <caption>List of users</caption>
         <TableExampleContent />
       </Table>
@@ -425,7 +425,7 @@ export const Captions: StoryFn = () => {
 
 export const ResponsiveTablesAlwaysResponsive: StoryFn = () => {
   return (
-    <ResponsiveTableWrapper brTableResponsive>
+    <ResponsiveTableWrapper>
       <Table>
         <TableHead>
           <TableRow>
@@ -487,23 +487,23 @@ export const ResponsiveTablesAlwaysResponsive: StoryFn = () => {
 export const ResponsiveTablesBreakpointSpecific: StoryFn = () => {
   return (
     <div>
-      <ResponsiveTableWrapper brTableResponsiveSm>
+      <ResponsiveTableWrapper bsJs={{ responsiveMaxBreakpoint: 'sm' }}>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
       <hr />
-      <ResponsiveTableWrapper brTableResponsiveMd>
+      <ResponsiveTableWrapper bsJs={{ responsiveMaxBreakpoint: 'md' }}>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
       <hr />
-      <ResponsiveTableWrapper brTableResponsiveLg>
+      <ResponsiveTableWrapper bsJs={{ responsiveMaxBreakpoint: 'lg' }}>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
       <hr />
-      <ResponsiveTableWrapper brTableResponsiveXl>
+      <ResponsiveTableWrapper bsJs={{ responsiveMaxBreakpoint: 'xl' }}>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
       <hr />
-      <ResponsiveTableWrapper brTableResponsive2xl>
+      <ResponsiveTableWrapper bsJs={{ responsiveMaxBreakpoint: 'xxl' }}>
         <ResponsiveTableExample />
       </ResponsiveTableWrapper>
     </div>

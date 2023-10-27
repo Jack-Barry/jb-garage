@@ -16,7 +16,7 @@ export type BsJsTableOptions = {
   /** Remove border around table elements */
   borderless?: boolean
   /** Present table in a different size format */
-  size?: LiteralUnion<'sm', string>
+  tableSize?: LiteralUnion<'sm', string>
   /** Place `caption` element from `table` above the table visually */
   captionTop?: boolean
 }
@@ -46,8 +46,8 @@ export function applyTableStyles<Breakpoints extends string>(
     result.classes['table-borderless'] = true
   }
 
-  if (options.size) {
-    result.classes[`table-${options.size}`] = true
+  if (options.tableSize) {
+    result.classes[`table-${options.tableSize}`] = true
   }
 
   if (options.captionTop) {

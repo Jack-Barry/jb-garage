@@ -84,7 +84,7 @@ describe('Element Components: Table', () => {
     })
 
     test('applies size class name', () => {
-      expect(bsJs({ elementType: 'table', size: 'sm' })).toStrictEqual({
+      expect(bsJs({ elementType: 'table', tableSize: 'sm' })).toStrictEqual({
         classes: { table: true, 'table-sm': true },
         inlineStyles: {},
         elementAttributes: {}

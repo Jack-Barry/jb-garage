@@ -1,62 +1,42 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type ResponsiveTableWrapperProps<T extends ElementType> = BrElementProps<T> & {
-  /** Apply responsive table styling for all breakpoints or up to specified breakpoint */
-  brTableResponsive?: boolean
-  /** Apply responsive table styling up to sm breakpoint */
-  brTableResponsiveSm?: boolean
-  /** Apply responsive table styling up to md breakpoint */
-  brTableResponsiveMd?: boolean
-  /** Apply responsive table styling up to lg breakpoint */
-  brTableResponsiveLg?: boolean
-  /** Apply responsive table styling up to xl breakpoint */
-  brTableResponsiveXl?: boolean
-  /** Apply responsive table styling up to xxl breakpoint */
-  brTableResponsive2xl?: boolean
-}
+export type ResponsiveTableWrapperProps<
+  T extends ElementType,
+  Breakpoints extends string
+> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'table-responsive'>
+  }
+>
 
-type ResponsiveTableWrapperWithRef = <Component extends ElementType = 'div'>(
-  props: ResponsiveTableWrapperProps<Component>
+type ResponsiveTableWrapperWithRef = <
+  Component extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: ResponsiveTableWrapperProps<Component, Breakpoints>
 ) => ReactNode
 
 const ResponsiveTableWrapper: ResponsiveTableWrapperWithRef = forwardRef(
-  function ResponsiveTableWrapper<T extends ElementType = 'div'>(
-    props: ResponsiveTableWrapperProps<T>,
-    ref?: ResponsiveTableWrapperProps<T>['ref']
+  function ResponsiveTableWrapper<
+    T extends ElementType = 'div',
+    Breakpoints extends string = BootstrapDefaultBreakpoint
+  >(
+    props: ResponsiveTableWrapperProps<T, Breakpoints>,
+    ref?: ResponsiveTableWrapperProps<T, Breakpoints>['ref']
   ) {
-    const {
-      as = 'div' as ElementType,
-      className,
-      brTableResponsive,
-      brTableResponsiveSm,
-      brTableResponsiveMd,
-      brTableResponsiveLg,
-      brTableResponsiveXl,
-      brTableResponsive2xl,
-      ...rest
-    } = props
+    const { as = 'div' as ElementType, bsJs, ...rest } = props
 
     return (
-      <BrElement
-        as={as}
-        ref={ref}
-        className={classNames(
-          'table',
-          {
-            'table-responsive': brTableResponsive,
-            'table-responsive-sm': brTableResponsiveSm,
-            'table-responsive-md': brTableResponsiveMd,
-            'table-responsive-lg': brTableResponsiveLg,
-            'table-responsive-xl': brTableResponsiveXl,
-            'table-responsive-xxl': brTableResponsive2xl
-          },
-          className
-        )}
-        {...rest}
-      />
+      <BrElement as={as} ref={ref} bsJs={{ elementType: 'table-responsive', ...bsJs }} {...rest} />
     )
   }
 )

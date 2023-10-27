@@ -1,14 +1,24 @@
-import { BsJsConfig } from '@jb-garage/bootstrap-js'
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type TableProps = Omit<BrElementProps<'table'>, 'as' | 'bsJs'> & {
-  bsJs?: BsJsConfig<'table'>
-}
+export type TableProps<Breakpoints extends string> = Omit<
+  BrElementProps<
+    'table',
+    undefined,
+    Breakpoints,
+    { bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'table'> }
+  >,
+  'as'
+>
 
-export default function Table(props: TableProps) {
-  const { className, ...rest } = props
+export default function Table<Breakpoints extends string = BootstrapDefaultBreakpoint>(
+  props: TableProps<Breakpoints>
+) {
+  const { bsJs, ...rest } = props
 
-  return <BrElement as="table" className={classNames('table', className)} {...rest} />
+  return <BrElement as="table" bsJs={{ elementType: 'table', ...bsJs }} {...rest} />
 }
