@@ -42,4 +42,6 @@ export function applyDropdownToggleStyles<Breakpoints extends string>(
   if (options.split) {
     result.classes['dropdown-toggle-split'] = true
   }
+
+  result.elementAttributes['data-bs-toggle'] = 'dropdown'
 }

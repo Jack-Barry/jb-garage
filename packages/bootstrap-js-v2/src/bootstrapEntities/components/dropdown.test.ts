@@ -60,7 +60,7 @@ describe('Element Components: Dropdowns', () => {
       expect(bsJs({ elementType: 'dropdown-toggle' })).toStrictEqual({
         classes: { 'dropdown-toggle': true },
         inlineStyles: {},
-        elementAttributes: {}
+        elementAttributes: { 'data-bs-toggle': 'dropdown' }
       })
     })
 
@@ -68,7 +68,7 @@ describe('Element Components: Dropdowns', () => {
       expect(bsJs({ elementType: 'dropdown-toggle', split: true })).toStrictEqual({
         classes: { 'dropdown-toggle': true, 'dropdown-toggle-split': true },
         inlineStyles: {},
-        elementAttributes: {}
+        elementAttributes: { 'data-bs-toggle': 'dropdown' }
       })
     })
   })

@@ -1,47 +1,45 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import Button, { ButtonProps } from '../Button/Button'
 
-export type DropdownToggleProps<T extends ElementType> = ButtonProps<T> & {
+export type DropdownToggleProps<T extends ElementType, Breakpoints extends string> = ButtonProps<
+  T,
+  Breakpoints
+> & {
+  bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'dropdown-toggle'>
   /**
    * Type of HTML element to render
    *
    * @default "button"
    */
   as?: T
-  /** Toggle is part of a split button */
-  brDropdownToggleSplit?: boolean
 }
 
-type DropdownToggleWithRef = <Component extends ElementType = 'button'>(
-  props: DropdownToggleProps<Component>
+type DropdownToggleWithRef = <
+  Component extends ElementType = 'button',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: DropdownToggleProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * [DropdownToggle]()
  */
 const DropdownToggle: DropdownToggleWithRef = forwardRef(function DropdownToggle<
-  T extends ElementType = 'button'
->(props: DropdownToggleProps<T>, ref?: DropdownToggleProps<T>['ref']) {
-  const {
-    as = 'button' as ElementType,
-    brDropdownToggleSplit,
-    children,
-    className,
-    ...rest
-  } = props
+  T extends ElementType = 'button',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: DropdownToggleProps<T, Breakpoints>, ref?: DropdownToggleProps<T, Breakpoints>['ref']) {
+  const { as = 'button' as ElementType, children, bsJs, ...rest } = props
 
   return (
     <Button
       as={as}
       ref={ref}
-      data-bs-toggle="dropdown"
-      className={classNames(
-        'dropdown-toggle',
-        { 'dropdown-toggle-split': brDropdownToggleSplit },
-        className
-      )}
+      bsJs={{ elementType: 'dropdown-toggle', ...(bsJs as ButtonProps<T, Breakpoints>['bsJs']) }}
       {...rest}
     >
       {children}
