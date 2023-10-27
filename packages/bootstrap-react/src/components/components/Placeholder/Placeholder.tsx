@@ -1,11 +1,21 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type PlaceholderProps<T extends ElementType, U extends ElementType> = BrElementProps<
+export type PlaceholderProps<
+  T extends ElementType,
+  U extends ElementType,
+  Breakpoints extends string
+> = BrElementProps<
   T,
+  undefined,
+  Breakpoints,
   {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'placeholder'>
     /**
      * Type of HTML element to render
      *
@@ -15,15 +25,21 @@ export type PlaceholderProps<T extends ElementType, U extends ElementType> = BrE
     /** Type of animation to use */
     brPlaceholderAnimation?: 'glow' | 'wave'
     /** Props to pass to the wrapping element */
-    brPlaceholderWrapperProps?: BrElementProps<U>
+    brPlaceholderWrapperProps?: BrElementProps<
+      U,
+      undefined,
+      Breakpoints,
+      { bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'placeholder-animation'> }
+    >
   }
 >
 
 type PlaceholderWithRef = <
   Component extends ElementType = 'span',
-  Wrapper extends ElementType = 'p'
+  Wrapper extends ElementType = 'p',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
 >(
-  props: PlaceholderProps<Component, Wrapper>
+  props: PlaceholderProps<Component, Wrapper, Breakpoints>
 ) => ReactNode
 
 /**
@@ -34,31 +50,22 @@ type PlaceholderWithRef = <
  */
 const Placeholder: PlaceholderWithRef = forwardRef(function Placeholder<
   T extends ElementType = 'span',
-  U extends ElementType = 'p'
->(props: PlaceholderProps<T, U>, ref?: PlaceholderProps<T, U>['ref']) {
-  const {
-    as = 'span' as ElementType,
-    brPlaceholderWrapperProps,
-    brPlaceholderAnimation,
-    className,
-    ...rest
-  } = props
-  const {
-    as: wrapperAs = 'p' as ElementType,
-    className: wrapperClassName,
-    ...wrapperRest
-  } = brPlaceholderWrapperProps || ({} as BrElementProps<U>)
+  U extends ElementType = 'p',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: PlaceholderProps<T, U, Breakpoints>, ref?: PlaceholderProps<T, U, Breakpoints>['ref']) {
+  const { as = 'span' as ElementType, brPlaceholderWrapperProps, bsJs, ...rest } = props
+  const { as: wrapperAs = 'p' as ElementType, ...wrapperRest } =
+    brPlaceholderWrapperProps ||
+    ({} as BrElementProps<
+      U,
+      undefined,
+      Breakpoints,
+      { bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'placeholder-animation'> }
+    >)
 
   return (
-    <BrElement
-      as={wrapperAs}
-      className={classNames(
-        { [`placeholder-${brPlaceholderAnimation}`]: !!brPlaceholderAnimation },
-        wrapperClassName
-      )}
-      {...wrapperRest}
-    >
-      <BrElement as={as} ref={ref} className={classNames('placeholder', className)} {...rest} />
+    <BrElement as={wrapperAs} {...wrapperRest}>
+      <BrElement as={as} ref={ref} bsJs={{ elementType: 'placeholder', ...bsJs }} {...rest} />
     </BrElement>
   )
 })

@@ -30,4 +30,6 @@ export function applySpinnerStyles<Breakpoints extends string>(
     result.inlineStyles['width'] = options.spinnerInlineStyleSize
     result.inlineStyles['height'] = options.spinnerInlineStyleSize
   }
+
+  result.elementAttributes['role'] = 'status'
 }

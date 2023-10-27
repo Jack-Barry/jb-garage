@@ -7,13 +7,13 @@ describe('Element Components: Spinners', () => {
     expect(bsJs({ elementType: 'spinner' })).toStrictEqual({
       classes: { 'spinner-border': true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'status' }
     })
 
     expect(bsJs({ elementType: 'spinner', spinnerType: 'border' })).toStrictEqual({
       classes: { 'spinner-border': true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'status' }
     })
   })
 
@@ -21,7 +21,7 @@ describe('Element Components: Spinners', () => {
     expect(bsJs({ elementType: 'spinner', spinnerType: 'grow' })).toStrictEqual({
       classes: { 'spinner-grow': true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'status' }
     })
   })
 
@@ -29,13 +29,13 @@ describe('Element Components: Spinners', () => {
     expect(bsJs({ elementType: 'spinner', spinnerSize: 'sm' })).toStrictEqual({
       classes: { 'spinner-border': true, 'spinner-border-sm': true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'status' }
     })
 
     expect(bsJs({ elementType: 'spinner', spinnerSize: 'sm', spinnerType: 'grow' })).toStrictEqual({
       classes: { 'spinner-grow': true, 'spinner-grow-sm': true },
       inlineStyles: {},
-      elementAttributes: {}
+      elementAttributes: { role: 'status' }
     })
   })
 
@@ -43,7 +43,7 @@ describe('Element Components: Spinners', () => {
     expect(bsJs({ elementType: 'spinner', spinnerInlineStyleSize: '2rem' })).toStrictEqual({
       classes: { 'spinner-border': true },
       inlineStyles: { width: '2rem', height: '2rem' },
-      elementAttributes: {}
+      elementAttributes: { role: 'status' }
     })
   })
 })

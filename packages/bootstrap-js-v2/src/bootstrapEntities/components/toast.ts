@@ -10,4 +10,6 @@ export function applyToastStyles<Breakpoints extends string>(
   if (options.fade !== false) {
     result.classes['fade'] = true
   }
+
+  result.elementAttributes['role'] = 'alert'
 }

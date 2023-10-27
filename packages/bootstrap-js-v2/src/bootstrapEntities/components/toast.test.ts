@@ -8,7 +8,7 @@ describe('Element Components: Toasts', () => {
       expect(bsJs({ elementType: 'toast' })).toStrictEqual({
         classes: { toast: true, fade: true },
         inlineStyles: {},
-        elementAttributes: {}
+        elementAttributes: { role: 'alert' }
       })
     })
 
@@ -16,13 +16,13 @@ describe('Element Components: Toasts', () => {
       expect(bsJs({ elementType: 'toast', fade: true })).toStrictEqual({
         classes: { toast: true, fade: true },
         inlineStyles: {},
-        elementAttributes: {}
+        elementAttributes: { role: 'alert' }
       })
 
       expect(bsJs({ elementType: 'toast', fade: false })).toStrictEqual({
         classes: { toast: true },
         inlineStyles: {},
-        elementAttributes: {}
+        elementAttributes: { role: 'alert' }
       })
     })
   })

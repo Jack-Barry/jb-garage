@@ -16,7 +16,7 @@ export const BorderSpinner: StoryFn = () => {
   return (
     <div className="bd-example">
       <Spinner>
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
@@ -27,43 +27,43 @@ export const BorderSpinner: StoryFn = () => {
 export const Colors: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Spinner brSpinnerColor="primary">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ color: 'primary' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerColor="secondary">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ color: 'secondary' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerColor="success">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ color: 'success' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerColor="danger">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ color: 'danger' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerColor="warning">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ color: 'warning' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerColor="info">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ color: 'info' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerColor="light">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ color: 'light' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerColor="dark">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ color: 'dark' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
@@ -74,49 +74,49 @@ export const Colors: StoryFn = () => {
 export const GrowingSpinner: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Spinner brSpinnerGrowing>
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerType: 'grow' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
       <hr />
-      <Spinner brSpinnerGrowing brSpinnerColor="primary">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerType: 'grow', color: 'primary' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerGrowing brSpinnerColor="secondary">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerType: 'grow', color: 'secondary' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerGrowing brSpinnerColor="success">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerType: 'grow', color: 'success' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerGrowing brSpinnerColor="danger">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerType: 'grow', color: 'danger' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerGrowing brSpinnerColor="warning">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerType: 'grow', color: 'warning' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerGrowing brSpinnerColor="info">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerType: 'grow', color: 'info' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerGrowing brSpinnerColor="light">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerType: 'grow', color: 'light' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerGrowing brSpinnerColor="dark">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerType: 'grow', color: 'dark' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
@@ -127,8 +127,8 @@ export const GrowingSpinner: StoryFn = () => {
 export const AlignmentMargin: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Spinner bsJs={{ bsJsAll: { spacing: { margin: '5' } } }}>
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spacing: { margin: '5' } }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
@@ -139,20 +139,17 @@ export const AlignmentMargin: StoryFn = () => {
 export const AlignmentPlacementFlex: StoryFn = () => {
   return (
     <div className="bd-example">
-      <BrElement bsJs={{ bsJsAll: { display: 'flex', flex: { justifyContent: 'center' } } }}>
+      <BrElement bsJs={{ display: 'flex', flex: { justifyContent: 'center' } }}>
         <Spinner>
-          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+          <BrElement as="span" bsJs={{ visuallyHidden: true }}>
             Loading...
           </BrElement>
         </Spinner>
       </BrElement>
       <hr />
-      <BrElement bsJs={{ bsJsAll: { display: 'flex', flex: { alignItems: 'center' } } }}>
+      <BrElement bsJs={{ display: 'flex', flex: { alignItems: 'center' } }}>
         <strong>Loading...</strong>
-        <Spinner
-          bsJs={{ bsJsAll: { spacing: { margin: { start: 'auto' } } } }}
-          aria-hidden="true"
-        />
+        <Spinner bsJs={{ spacing: { margin: { start: 'auto' } } }} aria-hidden="true" />
       </BrElement>
     </div>
   )
@@ -161,9 +158,9 @@ export const AlignmentPlacementFlex: StoryFn = () => {
 export const AlignmentPlacementFloats: StoryFn = () => {
   return (
     <div className="bd-example">
-      <BrElement bsJs={{ bsJsAll: { clearfix: true } }}>
+      <BrElement bsJs={{ clearfix: true }}>
         <Spinner className="float-end">
-          <BrElement bsJs={{ bsJsAll: { visuallyHidden: true } }}>Loading...</BrElement>
+          <BrElement bsJs={{ visuallyHidden: true }}>Loading...</BrElement>
         </Spinner>
       </BrElement>
     </div>
@@ -175,7 +172,7 @@ export const AlignmentPlacementTextAlign: StoryFn = () => {
     <div className="bd-example">
       <div className="text-center">
         <Spinner>
-          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+          <BrElement as="span" bsJs={{ visuallyHidden: true }}>
             Loading...
           </BrElement>
         </Spinner>
@@ -187,24 +184,24 @@ export const AlignmentPlacementTextAlign: StoryFn = () => {
 export const Size: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Spinner brSpinnerSm>
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerSize: 'sm' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerGrowing brSpinnerSm>
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerSize: 'sm', spinnerType: 'grow' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
       <hr />
-      <Spinner brSpinnerSize="3rem">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerSize: '3rem' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
-      <Spinner brSpinnerGrowing brSpinnerSize="3rem">
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Spinner bsJs={{ spinnerSize: '3rem', spinnerType: 'grow' }}>
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Spinner>
@@ -215,24 +212,25 @@ export const Size: StoryFn = () => {
 export const Buttons: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} disabled>
-        <Spinner as="span" brSpinnerSm aria-hidden="true" />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Button bsJs={{ variant: 'primary' }} disabled>
+        <Spinner as="span" bsJs={{ spinnerSize: 'sm' }} aria-hidden="true" />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Button>
-      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} disabled>
-        <Spinner as="span" brSpinnerSm aria-hidden="true" /> Loading...
+      <Button bsJs={{ variant: 'primary' }} disabled>
+        <Spinner as="span" bsJs={{ spinnerSize: 'sm' }} aria-hidden="true" /> Loading...
       </Button>
       <hr />
-      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} disabled>
-        <Spinner as="span" brSpinnerGrowing brSpinnerSm aria-hidden="true" />
-        <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+      <Button bsJs={{ variant: 'primary' }} disabled>
+        <Spinner as="span" bsJs={{ spinnerSize: 'sm', spinnerType: 'grow' }} aria-hidden="true" />
+        <BrElement as="span" bsJs={{ visuallyHidden: true }}>
           Loading...
         </BrElement>
       </Button>
-      <Button bsJs={{ bsJsAll: { button: { color: 'primary' } } }} disabled>
-        <Spinner as="span" brSpinnerGrowing brSpinnerSm aria-hidden="true" /> Loading...
+      <Button bsJs={{ variant: 'primary' }} disabled>
+        <Spinner as="span" bsJs={{ spinnerSize: 'sm', spinnerType: 'grow' }} aria-hidden="true" />{' '}
+        Loading...
       </Button>
     </div>
   )

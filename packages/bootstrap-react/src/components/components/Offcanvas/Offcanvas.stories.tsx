@@ -31,7 +31,7 @@ export const LiveDemo: StoryFn = () => {
     <div className="bd-example">
       <Button
         as="a"
-        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        bsJs={{ variant: 'primary' }}
         href="#offcanvasExample"
         aria-controls="offcanvasExample"
         onClick={offcanvas.toggle}
@@ -39,7 +39,7 @@ export const LiveDemo: StoryFn = () => {
         Link with href
       </Button>
       <Button
-        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        bsJs={{ variant: 'primary' }}
         aria-controls="offcanvasExample"
         onClick={offcanvas.toggle}
       >
@@ -60,11 +60,8 @@ export const LiveDemo: StoryFn = () => {
             Some text as placeholder. In real life you can have the elements you have chosen. Like,
             text, images, lists, etc.
           </div>
-          <Dropdown bsJs={{ bsJsAll: { spacing: { margin: { top: '3' } } } }}>
-            <DropdownToggle
-              bsJs={{ bsJsAll: { button: { color: 'secondary' } } }}
-              ref={dropdown.dropdownRef}
-            >
+          <Dropdown bsJs={{ spacing: { margin: { top: '3' } } }}>
+            <DropdownToggle bsJs={{ variant: 'secondary' }} ref={dropdown.dropdownRef}>
               Dropdown button
             </DropdownToggle>
             <DropdownMenu>
@@ -85,7 +82,7 @@ export const BodyScrolling: StoryFn = () => {
   return (
     <div>
       <Button
-        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        bsJs={{ variant: 'primary' }}
         aria-controls="offcanvasScrolling"
         onClick={offcanvas.toggle}
       >
@@ -117,7 +114,7 @@ export const BodyScrollingAndBackdrop: StoryFn = () => {
   return (
     <div>
       <Button
-        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        bsJs={{ variant: 'primary' }}
         aria-controls="offcanvasWithBothOptions"
         onClick={offcanvas.toggle}
       >
@@ -149,7 +146,7 @@ export const StaticBackdrop: StoryFn = () => {
   return (
     <div>
       <Button
-        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        bsJs={{ variant: 'primary' }}
         aria-controls="staticBackdrop"
         onClick={offcanvas.toggle}
       >
@@ -175,17 +172,14 @@ export const Responsive: StoryFn = () => {
   return (
     <div>
       <Button
-        bsJs={{ bsJsAll: { button: { color: 'primary' } }, lg: { display: 'none' } }}
+        bsJs={{ variant: 'primary', breakpoints: { lg: { display: 'none' } } }}
         aria-controls="offcanvasResponsive"
         onClick={offcanvas.toggle}
       >
         Toggle offcanvas
       </Button>
 
-      <Alert
-        bsJs={{ bsJsAll: { display: 'none' }, lg: { display: 'block' } }}
-        className="alert-info"
-      >
+      <Alert bsJs={{ variant: 'info', display: 'none', breakpoints: { lg: { display: 'block' } } }}>
         Resize your browser to show the responsive offcanvas toggle.
       </Alert>
 
@@ -193,15 +187,14 @@ export const Responsive: StoryFn = () => {
         id="offcanvasResponsive"
         aria-labelledby="offcanvasResponsiveLabel"
         brOffcanvas={offcanvas}
-        brOffcanvasBreakpoint="lg"
-        brOffcanvasPlacement="end"
+        bsJs={{ onCanvas: 'lg', placement: 'end' }}
       >
         <OffcanvasHeader>
           <OffcanvasTitle id="offcanvasResponsiveLabel">Responsive offcanvas</OffcanvasTitle>
           <CloseButton onClick={offcanvas.hide} />
         </OffcanvasHeader>
         <OffcanvasBody>
-          <BrElement as="p" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '0' } } } }}>
+          <BrElement as="p" bsJs={{ spacing: { margin: { bottom: '0' } } }}>
             This is content within an <code>.offcanvas-lg</code>.
           </BrElement>
         </OffcanvasBody>
@@ -218,7 +211,7 @@ export const Placement: StoryFn = () => {
   return (
     <div>
       <Button
-        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        bsJs={{ variant: 'primary' }}
         aria-controls="offcanvasTop"
         onClick={offcanvasTop.toggle}
       >
@@ -229,7 +222,7 @@ export const Placement: StoryFn = () => {
         id="offcanvasTop"
         aria-labelledby="offcanvasTopLabel"
         brOffcanvas={offcanvasTop}
-        brOffcanvasPlacement="top"
+        bsJs={{ placement: 'top' }}
       >
         <OffcanvasHeader>
           <OffcanvasTitle id="offcanvasTopLabel">Offcanvas top</OffcanvasTitle>
@@ -239,7 +232,7 @@ export const Placement: StoryFn = () => {
       </Offcanvas>
       <hr />
       <Button
-        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        bsJs={{ variant: 'primary' }}
         aria-controls="offcanvasEnd"
         onClick={offcanvasEnd.toggle}
       >
@@ -250,7 +243,7 @@ export const Placement: StoryFn = () => {
         id="offcanvasEnd"
         aria-labelledby="offcanvasEndLabel"
         brOffcanvas={offcanvasEnd}
-        brOffcanvasPlacement="end"
+        bsJs={{ placement: 'end' }}
       >
         <OffcanvasHeader>
           <OffcanvasTitle id="offcanvasEndLabel">Offcanvas right</OffcanvasTitle>
@@ -260,7 +253,7 @@ export const Placement: StoryFn = () => {
       </Offcanvas>
       <hr />
       <Button
-        bsJs={{ bsJsAll: { button: { color: 'primary' } } }}
+        bsJs={{ variant: 'primary' }}
         aria-controls="offcanvasBottom"
         onClick={offcanvasBottom.toggle}
       >
@@ -271,7 +264,7 @@ export const Placement: StoryFn = () => {
         id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel"
         brOffcanvas={offcanvasBottom}
-        brOffcanvasPlacement="bottom"
+        bsJs={{ placement: 'bottom' }}
       >
         <OffcanvasHeader>
           <OffcanvasTitle id="offcanvasBottomLabel">Offcanvas bottom</OffcanvasTitle>

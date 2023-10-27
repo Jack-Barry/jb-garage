@@ -13,7 +13,6 @@ const meta: Meta<typeof Placeholder> = {
 export default meta
 export const BaseExample: StoryObj = {
   args: {
-    className: 'w-100',
-    animation: undefined
+    className: 'w-100'
   }
 }

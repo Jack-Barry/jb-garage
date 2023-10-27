@@ -1,24 +1,36 @@
-import classNames from 'classnames'
+import {
+  BootstrapDefaultBreakpoint,
+  BsJsOptionsWithoutElementType
+} from '@jb-garage/bootstrap-js-v2'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type ToastContainerProps<T extends ElementType> = BrElementProps<T>
+export type ToastContainerProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  { bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'toast-container'> }
+>
 
-export type ToastContainerWithRef = <Component extends ElementType = 'div'>(
-  props: ToastContainerProps<Component>
+export type ToastContainerWithRef = <
+  Component extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: ToastContainerProps<Component, Breakpoints>
 ) => ReactNode
 
 /**
  * [Toast]()
  */
 const ToastContainer: ToastContainerWithRef = forwardRef(function ToastContainer<
-  T extends ElementType = 'div'
->(props: ToastContainerProps<T>, ref?: ToastContainerProps<T>['ref']) {
-  const { as = 'div' as ElementType, className, ...rest } = props
+  T extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: ToastContainerProps<T, Breakpoints>, ref?: ToastContainerProps<T, Breakpoints>['ref']) {
+  const { as = 'div' as ElementType, bsJs, ...rest } = props
 
   return (
-    <BrElement as={as} ref={ref} className={classNames('toast-container', className)} {...rest} />
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'toast-container', ...bsJs }} {...rest} />
   )
 })
 export default ToastContainer

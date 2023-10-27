@@ -68,13 +68,13 @@ export const DisabledAndActiveStates: StoryFn = () => {
     <div>
       <nav aria-label="...">
         <Pagination>
-          <PageItem brPageItemDisabled>
+          <PageItem bsJs={{ disabled: true }}>
             <PageLink>Previous</PageLink>
           </PageItem>
           <PageItem>
             <PageLink href="#">1</PageLink>
           </PageItem>
-          <PageItem brPageItemActive aria-current="page">
+          <PageItem bsJs={{ active: true }} aria-current="page">
             <PageLink href="#">2</PageLink>
           </PageItem>
           <PageItem>
@@ -88,13 +88,13 @@ export const DisabledAndActiveStates: StoryFn = () => {
       <hr />
       <nav aria-label="...">
         <Pagination>
-          <PageItem brPageItemDisabled>
+          <PageItem bsJs={{ disabled: true }}>
             <PageLink as="span">Previous</PageLink>
           </PageItem>
           <PageItem>
             <PageLink href="#">1</PageLink>
           </PageItem>
-          <PageItem brPageItemActive aria-current="page">
+          <PageItem bsJs={{ active: true }} aria-current="page">
             <PageLink as="span">2</PageLink>
           </PageItem>
           <PageItem>
@@ -113,8 +113,8 @@ export const Sizing: StoryFn = () => {
   return (
     <div>
       <nav aria-label="...">
-        <Pagination brPaginationSize="lg">
-          <PageItem brPageItemActive aria-current="page">
+        <Pagination bsJs={{ paginationSize: 'lg' }}>
+          <PageItem bsJs={{ active: true }} aria-current="page">
             <PageLink as="span">1</PageLink>
           </PageItem>
           <PageItem>
@@ -127,8 +127,8 @@ export const Sizing: StoryFn = () => {
       </nav>
       <hr />
       <nav aria-label="...">
-        <Pagination brPaginationSize="sm">
-          <PageItem brPageItemActive aria-current="page">
+        <Pagination bsJs={{ paginationSize: 'sm' }}>
+          <PageItem bsJs={{ active: true }} aria-current="page">
             <PageLink as="span">1</PageLink>
           </PageItem>
           <PageItem>
@@ -148,7 +148,7 @@ export const Alignment: StoryFn = () => {
     <div>
       <nav aria-label="Page navigation example">
         <Pagination className="justify-content-center">
-          <PageItem brPageItemDisabled>
+          <PageItem bsJs={{ disabled: true }}>
             <PageLink>Previous</PageLink>
           </PageItem>
           <PageItem>
@@ -168,7 +168,7 @@ export const Alignment: StoryFn = () => {
       <hr />
       <nav aria-label="Page navigation example">
         <Pagination className="justify-content-end">
-          <PageItem brPageItemDisabled>
+          <PageItem bsJs={{ disabled: true }}>
             <PageLink>Previous</PageLink>
           </PageItem>
           <PageItem>

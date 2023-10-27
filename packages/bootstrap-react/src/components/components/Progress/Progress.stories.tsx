@@ -13,11 +13,11 @@ export default meta
 export const HowItWorks: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Progress brProgressValue={0} aria-label="Basic example" />
-      <Progress brProgressValue={25} aria-label="Basic example" />
-      <Progress brProgressValue={50} aria-label="Basic example" />
-      <Progress brProgressValue={75} aria-label="Basic example" />
-      <Progress brProgressValue={100} aria-label="Basic example" />
+      <Progress bsJs={{ progressValue: 0 }} aria-label="Basic example" />
+      <Progress bsJs={{ progressValue: 25 }} aria-label="Basic example" />
+      <Progress bsJs={{ progressValue: 50 }} aria-label="Basic example" />
+      <Progress bsJs={{ progressValue: 75 }} aria-label="Basic example" />
+      <Progress bsJs={{ progressValue: 100 }} aria-label="Basic example" />
     </div>
   )
 }
@@ -25,7 +25,11 @@ export const HowItWorks: StoryFn = () => {
 export const BarSizingWidth: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Progress aria-label="Basic example" brProgressBarProps={{ className: 'w-75' }} />
+      <Progress
+        aria-label="Basic example"
+        bsJs={{ progressValue: 0 }}
+        brProgressBarProps={{ bsJs: { size: { width: '75' } } }}
+      />
     </div>
   )
 }
@@ -33,8 +37,16 @@ export const BarSizingWidth: StoryFn = () => {
 export const BarSizingHeight: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Progress brProgressValue={25} style={{ height: '1px' }} aria-label="Example 1px high" />
-      <Progress brProgressValue={25} style={{ height: '20px' }} aria-label="Example 20px high" />
+      <Progress
+        bsJs={{ progressValue: 25 }}
+        style={{ height: '1px' }}
+        aria-label="Example 1px high"
+      />
+      <Progress
+        bsJs={{ progressValue: 25 }}
+        style={{ height: '20px' }}
+        aria-label="Example 20px high"
+      />
     </div>
   )
 }
@@ -42,16 +54,15 @@ export const BarSizingHeight: StoryFn = () => {
 export const Labels: StoryFn = () => {
   return (
     <div className="bd-example">
-      <Progress aria-label="Example with label" brProgressValue={25}>
+      <Progress aria-label="Example with label" bsJs={{ progressValue: 25 }}>
         25%
       </Progress>
       <hr />
       <Progress
         aria-label="Example with label"
-        brProgressValue={10}
+        bsJs={{ progressValue: 10 }}
         brProgressBarProps={{
-          bsJs: { bsJsAll: { color: 'dark' } },
-          className: 'overflow-visible'
+          bsJs: { color: 'dark', overflow: 'visible' }
         }}
       >
         Long label text for the progress bar, set to a dark color
@@ -65,58 +76,58 @@ export const Backgrounds: StoryFn = () => {
     <div className="bd-example">
       <Progress
         aria-label="Success example"
-        brProgressValue={25}
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'success' } } }}
+        bsJs={{ progressValue: 25 }}
+        brProgressBarProps={{ bsJs: { background: 'success' } }}
       />
       <Progress
         aria-label="Info example"
-        brProgressValue={50}
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'info' } } }}
+        bsJs={{ progressValue: 50 }}
+        brProgressBarProps={{ bsJs: { background: 'info' } }}
       />
       <Progress
         aria-label="Warning example"
-        brProgressValue={75}
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'warning' } } }}
+        bsJs={{ progressValue: 75 }}
+        brProgressBarProps={{ bsJs: { background: 'warning' } }}
       />
       <Progress
         aria-label="Danger example"
-        brProgressValue={100}
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'danger' } } }}
+        bsJs={{ progressValue: 100 }}
+        brProgressBarProps={{ bsJs: { background: 'danger' } }}
       />
       <hr />
       <Progress
         aria-label="Success example"
-        brProgressValue={25}
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'success' } } }}
+        bsJs={{ progressValue: 25 }}
+        brProgressBarProps={{ bsJs: { background: 'success' } }}
       >
         25%
       </Progress>
       <Progress
         aria-label="Info example"
-        brProgressValue={50}
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'info', color: 'dark' } } }}
+        bsJs={{ progressValue: 50 }}
+        brProgressBarProps={{ bsJs: { background: 'info', color: 'dark' } }}
       >
         50%
       </Progress>
       <Progress
         aria-label="Warning example"
-        brProgressValue={75}
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'warning', color: 'dark' } } }}
+        bsJs={{ progressValue: 75 }}
+        brProgressBarProps={{ bsJs: { background: 'warning', color: 'dark' } }}
       >
         75%
       </Progress>
       <Progress
         aria-label="Danger example"
-        brProgressValue={100}
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'danger' } } }}
+        bsJs={{ progressValue: 100 }}
+        brProgressBarProps={{ bsJs: { background: 'danger' } }}
       >
         100%
       </Progress>
       <hr />
       <Progress
         aria-label="Warning example"
-        brProgressValue={75}
-        brProgressBarProps={{ bsJs: { bsJsAll: { color: 'bg-warning' } } }}
+        bsJs={{ progressValue: 75 }}
+        brProgressBarProps={{ bsJs: { color: 'bg-warning' } }}
       >
         75%
       </Progress>
@@ -128,18 +139,16 @@ export const MultipleBars: StoryFn = () => {
   return (
     <div className="bd-example">
       <ProgressStacked>
-        <Progress aria-label="Segment one" brProgressValue={15} brProgressStacked />
+        <Progress aria-label="Segment one" bsJs={{ progressValue: 15, isStacked: true }} />
         <Progress
           aria-label="Segment two"
-          brProgressValue={30}
-          brProgressBarProps={{ bsJs: { bsJsAll: { background: 'success' } } }}
-          brProgressStacked
+          bsJs={{ progressValue: 30, isStacked: true }}
+          brProgressBarProps={{ bsJs: { background: 'success' } }}
         />
         <Progress
           aria-label="Segment three"
-          brProgressValue={20}
-          brProgressBarProps={{ bsJs: { bsJsAll: { background: 'info' } } }}
-          brProgressStacked
+          bsJs={{ progressValue: 20, isStacked: true }}
+          brProgressBarProps={{ bsJs: { background: 'info' } }}
         />
       </ProgressStacked>
     </div>
@@ -151,33 +160,28 @@ export const Striped: StoryFn = () => {
     <div className="bd-example">
       <Progress
         aria-label="Default striped example"
-        brProgressValue={10}
-        brProgressStriped
-        brProgressBarProps={{ className: '' }}
+        bsJs={{ progressValue: 10 }}
+        brProgressBarProps={{ bsJs: { striped: true } }}
       />
       <Progress
         aria-label="Success striped example"
-        brProgressValue={25}
-        brProgressStriped
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'success' } } }}
+        bsJs={{ progressValue: 25 }}
+        brProgressBarProps={{ bsJs: { striped: true, background: 'success' } }}
       />
       <Progress
         aria-label="Info striped example"
-        brProgressValue={50}
-        brProgressStriped
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'info' } } }}
+        bsJs={{ progressValue: 50 }}
+        brProgressBarProps={{ bsJs: { striped: true, background: 'info' } }}
       />
       <Progress
         aria-label="Warning striped example"
-        brProgressValue={75}
-        brProgressStriped
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'warning' } } }}
+        bsJs={{ progressValue: 75 }}
+        brProgressBarProps={{ bsJs: { striped: true, background: 'warning' } }}
       />
       <Progress
         aria-label="Danger striped example"
-        brProgressValue={100}
-        brProgressStriped
-        brProgressBarProps={{ bsJs: { bsJsAll: { background: 'danger' } } }}
+        bsJs={{ progressValue: 100 }}
+        brProgressBarProps={{ bsJs: { striped: true, background: 'danger' } }}
       />
     </div>
   )
@@ -188,9 +192,8 @@ export const AnimatedStripes: StoryFn = () => {
     <div className="bd-example">
       <Progress
         aria-label="Animated striped example"
-        brProgressValue={75}
-        brProgressStriped
-        brProgressAnimated
+        bsJs={{ progressValue: 75 }}
+        brProgressBarProps={{ bsJs: { striped: true, animated: true } }}
       />
     </div>
   )

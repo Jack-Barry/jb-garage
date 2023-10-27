@@ -33,10 +33,8 @@ export const NavbarStory: StoryFn = () => {
       <Navbar
         id="navbar-example2"
         bsJs={{
-          bsJsAll: {
-            background: 'body-tertiary',
-            spacing: { margin: { bottom: '3' }, padding: { x: '3' } }
-          }
+          background: 'body-tertiary',
+          spacing: { margin: { bottom: '3' }, padding: { x: '3' } }
         }}
         className="rounded-2"
       >
@@ -50,9 +48,9 @@ export const NavbarStory: StoryFn = () => {
           <NavItem>
             <NavLink href="#scrollspyHeading2">Second</NavLink>
           </NavItem>
-          <NavItem brNavItemDropdown>
+          <NavItem bsJs={{ dropdown: true }}>
             <NavLink
-              brNavLinkDropdownToggle
+              bsJs={{ dropdownToggle: true }}
               href="#"
               role="button"
               aria-expanded={dropdown.isOpen}
@@ -71,7 +69,7 @@ export const NavbarStory: StoryFn = () => {
       </Navbar>
       <BrElement
         className="scrollspy-example rounded-2"
-        bsJs={{ bsJsAll: { background: 'body-tertiary', spacing: { padding: '3' } } }}
+        bsJs={{ background: 'body-tertiary', spacing: { padding: '3' } }}
         tabIndex={0}
         ref={scrollSpy.ref}
       >
@@ -127,42 +125,28 @@ export const NestedNav: StoryFn = () => {
             id="navbar-example3"
             className="h-100"
             bsJs={{
-              bsJsAll: {
-                border: { end: true },
-                flex: { column: true, alignItems: 'stretch' },
-                spacing: { padding: { end: '4' } }
-              }
+              border: { end: true },
+              flex: { column: true, alignItems: 'stretch' },
+              spacing: { padding: { end: '4' } }
             }}
           >
-            <Nav brNavPills bsJs={{ bsJsAll: { flex: { column: true } } }}>
+            <Nav bsJs={{ pills: true, flex: { column: true } }}>
               <NavLink href="#item-1">Item 1</NavLink>
-              <Nav brNavPills bsJs={{ bsJsAll: { flex: { column: true } } }}>
-                <NavLink
-                  bsJs={{ bsJsAll: { spacing: { margin: { start: '3', y: '1' } } } }}
-                  href="#item-1-1"
-                >
+              <Nav bsJs={{ pills: true, flex: { column: true } }}>
+                <NavLink bsJs={{ spacing: { margin: { start: '3', y: '1' } } }} href="#item-1-1">
                   Item 1-1
                 </NavLink>
-                <NavLink
-                  bsJs={{ bsJsAll: { spacing: { margin: { start: '3', y: '1' } } } }}
-                  href="#item-1-2"
-                >
+                <NavLink bsJs={{ spacing: { margin: { start: '3', y: '1' } } }} href="#item-1-2">
                   Item 1-2
                 </NavLink>
               </Nav>
               <NavLink href="#item-2">Item 2</NavLink>
               <NavLink href="#item-3">Item 3</NavLink>
-              <Nav brNavPills bsJs={{ bsJsAll: { flex: { column: true } } }}>
-                <NavLink
-                  bsJs={{ bsJsAll: { spacing: { margin: { start: '3', y: '1' } } } }}
-                  href="#item-3-1"
-                >
+              <Nav bsJs={{ pills: true, flex: { column: true } }}>
+                <NavLink bsJs={{ spacing: { margin: { start: '3', y: '1' } } }} href="#item-3-1">
                   Item 3-1
                 </NavLink>
-                <NavLink
-                  bsJs={{ bsJsAll: { spacing: { margin: { start: '3', y: '1' } } } }}
-                  href="#item-3-2"
-                >
+                <NavLink bsJs={{ spacing: { margin: { start: '3', y: '1' } } }} href="#item-3-2">
                   Item 3-2
                 </NavLink>
               </Nav>
@@ -289,16 +273,16 @@ export const ListGroupStory: StoryFn = () => {
       <Row>
         <Col brCols={4}>
           <ListGroup id="list-example">
-            <ListGroupItem as="a" brListGroupItemAction href="#list-item-1">
+            <ListGroupItem as="a" bsJs={{ action: true }} href="#list-item-1">
               Item 1
             </ListGroupItem>
-            <ListGroupItem as="a" brListGroupItemAction href="#list-item-2">
+            <ListGroupItem as="a" bsJs={{ action: true }} href="#list-item-2">
               Item 2
             </ListGroupItem>
-            <ListGroupItem as="a" brListGroupItemAction href="#list-item-3">
+            <ListGroupItem as="a" bsJs={{ action: true }} href="#list-item-3">
               Item 3
             </ListGroupItem>
-            <ListGroupItem as="a" brListGroupItemAction href="#list-item-4">
+            <ListGroupItem as="a" bsJs={{ action: true }} href="#list-item-4">
               Item 4
             </ListGroupItem>
           </ListGroup>
@@ -358,39 +342,39 @@ export const SimpleAnchors: StoryFn = () => {
           <BrElement
             id="simple-list-example"
             className="simple-list-example-scrollspy text-center"
-            bsJs={{ bsJsAll: { display: 'flex', flex: { column: true }, spacing: { gap: '2' } } }}
+            bsJs={{ display: 'flex', flex: { column: true }, spacing: { gap: '2' } }}
           >
             <BrElement
               as="a"
-              bsJs={{ bsJsAll: { border: true, spacing: { padding: '1' } } }}
+              bsJs={{ border: true, spacing: { padding: '1' } }}
               href="#simple-list-item-1"
             >
               Item 1
             </BrElement>
             <BrElement
               as="a"
-              bsJs={{ bsJsAll: { border: true, spacing: { padding: '1' } } }}
+              bsJs={{ border: true, spacing: { padding: '1' } }}
               href="#simple-list-item-2"
             >
               Item 2
             </BrElement>
             <BrElement
               as="a"
-              bsJs={{ bsJsAll: { border: true, spacing: { padding: '1' } } }}
+              bsJs={{ border: true, spacing: { padding: '1' } }}
               href="#simple-list-item-3"
             >
               Item 3
             </BrElement>
             <BrElement
               as="a"
-              bsJs={{ bsJsAll: { border: true, spacing: { padding: '1' } } }}
+              bsJs={{ border: true, spacing: { padding: '1' } }}
               href="#simple-list-item-4"
             >
               Item 4
             </BrElement>
             <BrElement
               as="a"
-              bsJs={{ bsJsAll: { border: true, spacing: { padding: '1' } } }}
+              bsJs={{ border: true, spacing: { padding: '1' } }}
               href="#simple-list-item-5"
             >
               Item 5
