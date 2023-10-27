@@ -4,7 +4,7 @@ import {
   BootstrapJs,
   BsJsElement,
   BsJsOptions
-} from '@jb-garage/bootstrap-js-v2'
+} from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import {
   ComponentPropsWithRef,

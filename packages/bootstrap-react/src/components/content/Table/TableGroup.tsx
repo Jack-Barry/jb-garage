@@ -1,7 +1,4 @@
-import {
-  BootstrapDefaultBreakpoint,
-  BsJsOptionsWithoutElementType
-} from '@jb-garage/bootstrap-js-v2'
+import { BootstrapDefaultBreakpoint, BsJsOptionsWithoutElementType } from '@jb-garage/bootstrap-js'
 import { ReactNode, forwardRef } from 'react'
 
 import TableEntry, { TableEntryProps } from './TableEntry'

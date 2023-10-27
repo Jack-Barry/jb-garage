@@ -1,4 +1,4 @@
-import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js-v2'
+import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js'
 import { ElementType, ReactNode, forwardRef, useEffect } from 'react'
 
 import Collapse, { CollapseProps } from '../Collapse/Collapse'

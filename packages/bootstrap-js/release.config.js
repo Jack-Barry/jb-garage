@@ -1,4 +1,5 @@
 const { basename } = require('node:path')
+
 const {
   makePackageReleaseConfig: makeReleaseConfig
 } = require('../../tools/configs/semantic-release.cjs')

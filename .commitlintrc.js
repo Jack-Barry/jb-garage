@@ -11,7 +11,6 @@ const config = {
       'global',
       'bootstrap',
       'bootstrap-js',
-      'bootstrap-js-v2',
       'bootstrap-react',
       'jack-barry-onl',
       'style-dictionary',

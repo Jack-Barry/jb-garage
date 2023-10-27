@@ -1,4 +1,3 @@
-import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
 

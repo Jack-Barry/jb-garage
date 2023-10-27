@@ -1,4 +1,3 @@
-import { BootstrapSpacingValue, BsJsSpacingConfig } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import { ElementType, ReactNode, forwardRef } from 'react'
 

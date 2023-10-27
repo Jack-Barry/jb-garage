@@ -1,4 +1,4 @@
-import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js-v2'
+import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'

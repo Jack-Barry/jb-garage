@@ -1,7 +1,4 @@
-import {
-  BootstrapDefaultBreakpoint,
-  BsJsOptionsWithoutElementType
-} from '@jb-garage/bootstrap-js-v2'
+import { BootstrapDefaultBreakpoint, BsJsOptionsWithoutElementType } from '@jb-garage/bootstrap-js'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 

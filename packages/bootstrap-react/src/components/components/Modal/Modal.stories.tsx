@@ -1,4 +1,4 @@
-import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js-v2'
+import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js'
 import { Meta, StoryFn } from '@storybook/react'
 import { useState } from 'react'
 
