@@ -23,8 +23,7 @@ export const Sizing: StoryFn = () => {
   return (
     <div className="bd-example">
       <Select
-        brSelectLg
-        bsJs={{ bsJsAll: { spacing: { margin: { bottom: 3 } } } }}
+        bsJs={{ formControlSize: 'lg', spacing: { margin: { bottom: 3 } } }}
         aria-label=".form-select-lg example"
       >
         <option selected>Open this select menu</option>
@@ -32,7 +31,7 @@ export const Sizing: StoryFn = () => {
         <option value="2">Two</option>
         <option value="3">Three</option>
       </Select>
-      <Select brSelectSm aria-label=".form-select-sm example">
+      <Select bsJs={{ formControlSize: 'sm' }} aria-label=".form-select-sm example">
         <option selected>Open this select menu</option>
         <option value="1">One</option>
         <option value="2">Two</option>

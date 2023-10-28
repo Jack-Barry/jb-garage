@@ -71,16 +71,16 @@ export const FormTextStory: StoryFn = () => {
       </div>
       <hr />
       <div>
-        <Row brRowGutter={3} className="align-items-center">
-          <Col brCols="auto">
+        <Row bsJs={{ gutter: 3 }} className="align-items-center">
+          <Col bsJs={{ cols: 'auto' }}>
             <Label htmlFor="inputPassword6" bsJs={{ asColumn: true }}>
               Password
             </Label>
           </Col>
-          <Col brCols="auto">
+          <Col bsJs={{ cols: 'auto' }}>
             <Input type="password" id="inputPassword6" aria-labelledby="passwordHelpInline" />
           </Col>
-          <Col brCols="auto">
+          <Col bsJs={{ cols: 'auto' }}>
             <FormText as="span" id="passwordHelpInline">
               Must be 8-20 characters long.
             </FormText>
@@ -118,7 +118,7 @@ export const ReadOnlyPlainText: StoryFn = () => {
           <Label htmlFor="staticEmail" bsJs={{ asColumn: true }} className="col-sm-2">
             Email
           </Label>
-          <Col brColsSm={10}>
+          <Col bsJs={{ breakpoints: { sm: { col: { cols: 10 } } } }}>
             <Input id="staticEmail" value="email@example.com" readOnly bsJs={{ plaintext: true }} />
           </Col>
         </Row>
@@ -126,15 +126,15 @@ export const ReadOnlyPlainText: StoryFn = () => {
           <Label htmlFor="inputPassword" bsJs={{ asColumn: true }} className="col-sm-2">
             Password
           </Label>
-          <Col brColsSm={10}>
+          <Col bsJs={{ breakpoints: { sm: { col: { cols: 10 } } } }}>
             <Input id="inputPassword" />
           </Col>
         </Row>
       </div>
       <hr />
       <div>
-        <Row as="form" brRowGutter={3}>
-          <Col brCols="auto">
+        <Row as="form" bsJs={{ gutter: 3 }}>
+          <Col bsJs={{ cols: 'auto' }}>
             <Label htmlFor="staticEmail2" className="visually-hidden">
               Email
             </Label>
@@ -146,13 +146,13 @@ export const ReadOnlyPlainText: StoryFn = () => {
               value="email@example.com"
             />
           </Col>
-          <Col brCols="auto">
+          <Col bsJs={{ cols: 'auto' }}>
             <Label htmlFor="inputPassword2" className="visually-hidden">
               Password
             </Label>
             <Input type="password" id="inputPassword2" placeholder="Password" />
           </Col>
-          <Col brCols="auto">
+          <Col bsJs={{ cols: 'auto' }}>
             <Button
               type="submit"
               bsJs={{

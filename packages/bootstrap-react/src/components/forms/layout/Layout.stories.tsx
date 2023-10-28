@@ -20,11 +20,11 @@ export default meta
 export const Utilities: StoryFn = () => {
   return (
     <div>
-      <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <BrElement bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Label htmlFor="formGroupExampleInput">Example label</Label>
         <Input id="formGroupExampleInput" placeholder="Example input placeholder" />
       </BrElement>
-      <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <BrElement bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Label htmlFor="formGroupExampleInput2">Another label</Label>
         <Input id="formGroupExampleInput2" placeholder="Another input placeholder" />
       </BrElement>
@@ -57,46 +57,46 @@ export const Gutters: StoryFn = () => {
         </Col>
       </Row>
       <hr />
-      <Row as="form" brRowGutter={3}>
-        <Col brColsMd={6}>
+      <Row as="form" bsJs={{ gutter: 3 }}>
+        <Col bsJs={{ breakpoints: { md: { col: { cols: 6 } } } }}>
           <Label htmlFor="inputEmail4">Email</Label>
           <Input type="email" id="inputEmail4" />
         </Col>
-        <Col brColsMd={6}>
+        <Col bsJs={{ breakpoints: { md: { col: { cols: 6 } } } }}>
           <Label htmlFor="inputPassword4">Password</Label>
           <Input type="password" id="inputPassword4" />
         </Col>
-        <Col brCols={12}>
+        <Col bsJs={{ cols: 12 }}>
           <Label htmlFor="inputAddress">Address</Label>
           <Input type="text" id="inputAddress" placeholder="1234 Main St" />
         </Col>
-        <Col brCols={12}>
+        <Col bsJs={{ cols: 12 }}>
           <Label htmlFor="inputAddress2">Address 2</Label>
           <Input type="text" id="inputAddress2" placeholder="Apartment, studio, or floor" />
         </Col>
-        <Col brColsMd={6}>
+        <Col bsJs={{ breakpoints: { md: { col: { cols: 6 } } } }}>
           <Label htmlFor="inputCity">City</Label>
           <Input type="text" id="inputCity" />
         </Col>
-        <Col brColsMd={4}>
+        <Col bsJs={{ breakpoints: { md: { col: { cols: 4 } } } }}>
           <Label htmlFor="inputState">State</Label>
           <Select id="inputState">
             <option selected>Choose...</option>
             <option>...</option>
           </Select>
         </Col>
-        <Col brColsMd={2}>
+        <Col bsJs={{ breakpoints: { md: { col: { cols: 2 } } } }}>
           <Label htmlFor="inputZip">Zip</Label>
           <Input type="text" id="inputZip" />
         </Col>
-        <Col brCols={12}>
+        <Col bsJs={{ cols: 12 }}>
           <FormCheck
             brFormCheckLabelProps={{ children: 'Check me out' }}
             brFormCheckInputProps={{ id: 'gridCheck' }}
           />
         </Col>
-        <Col brCols={12}>
-          <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
+        <Col bsJs={{ cols: 12 }}>
+          <Button type="submit" bsJs={{ variant: 'primary' }}>
             Sign in
           </Button>
         </Col>
@@ -108,32 +108,41 @@ export const Gutters: StoryFn = () => {
 export const HorizontalForm: StoryFn = () => {
   return (
     <form>
-      <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Col as="label" brColsSm={2} htmlFor="inputEmail3" className="col-form-label">
+      <Row bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+        <Col
+          as="label"
+          bsJs={{ breakpoints: { sm: { col: { cols: 2 } } } }}
+          htmlFor="inputEmail3"
+          className="col-form-label"
+        >
           Email
         </Col>
-        <Col brColsSm={10}>
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 10 } } } }}>
           <Input type="email" id="inputEmail3" />
         </Col>
       </Row>
-      <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Col as="label" brColsSm={2} htmlFor="inputPassword3" className="col-form-label">
+      <Row bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+        <Col
+          as="label"
+          bsJs={{ breakpoints: { sm: { col: { cols: 2 } } } }}
+          htmlFor="inputPassword3"
+          className="col-form-label"
+        >
           Password
         </Col>
-        <Col brColsSm={10}>
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 10 } } } }}>
           <Input type="password" id="inputPassword3" />
         </Col>
       </Row>
-      <Row as="fieldset" bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <Row as="fieldset" bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Col
           as="legend"
-          brColsSm={2}
-          bsJs={{ bsJsAll: { spacing: { padding: { top: '0' } } } }}
+          bsJs={{ spacing: { padding: { top: '0' } }, breakpoints: { sm: { col: { cols: 2 } } } }}
           className="col-form-label"
         >
           Radios
         </Col>
-        <Col brColsSm={10}>
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 10 } } } }}>
           <FormCheck
             brFormCheckInputProps={{
               type: 'radio',
@@ -154,7 +163,7 @@ export const HorizontalForm: StoryFn = () => {
             brFormCheckLabelProps={{ children: 'Second radio' }}
           />
           <FormCheck
-            brFormCheckWrapperProps={{ brFormCheckDisabled: true }}
+            brFormCheckWrapperProps={{ bsJs: { disabled: true } }}
             brFormCheckInputProps={{
               type: 'radio',
               name: 'gridRadios',
@@ -165,15 +174,15 @@ export const HorizontalForm: StoryFn = () => {
           />
         </Col>
       </Row>
-      <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Col brColsSm={10} brColOffsetSm={2}>
+      <Row bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 10, offset: 2 } } } }}>
           <FormCheck
             brFormCheckInputProps={{ id: 'gridCheck1' }}
             brFormCheckLabelProps={{ children: 'Example checkbox' }}
           />
         </Col>
       </Row>
-      <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
+      <Button type="submit" bsJs={{ variant: 'primary' }}>
         Sign in
       </Button>
     </form>
@@ -183,24 +192,34 @@ export const HorizontalForm: StoryFn = () => {
 export const HorizontalFormLabelSizing: StoryFn = () => {
   return (
     <div>
-      <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <Row bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Col
           as="label"
           htmlFor="colFormLabelSm"
-          brColsSm={2}
+          bsJs={{ breakpoints: { sm: { col: { cols: 2 } } } }}
           className="col-form-label col-form-label-sm"
         >
           Email
         </Col>
-        <Col brColsSm={10}>
-          <Input type="email" brInputSm id="colFormLabelSm" placeholder="col-form-label-sm" />
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 10 } } } }}>
+          <Input
+            type="email"
+            bsJs={{ formControlSize: 'sm' }}
+            id="colFormLabelSm"
+            placeholder="col-form-label-sm"
+          />
         </Col>
       </Row>
-      <Row bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Col as="label" htmlFor="colFormLabel" brColsSm={2} className="col-form-label">
+      <Row bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+        <Col
+          as="label"
+          htmlFor="colFormLabel"
+          bsJs={{ breakpoints: { sm: { col: { cols: 2 } } } }}
+          className="col-form-label"
+        >
           Email
         </Col>
-        <Col brColsSm={10}>
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 10 } } } }}>
           <Input type="email" id="colFormLabel" placeholder="col-form-label" />
         </Col>
       </Row>
@@ -208,13 +227,18 @@ export const HorizontalFormLabelSizing: StoryFn = () => {
         <Col
           as="label"
           htmlFor="colFormLabelLg"
-          brColsSm={2}
+          bsJs={{ breakpoints: { sm: { col: { cols: 2 } } } }}
           className="col-form-label col-form-label-lg"
         >
           Email
         </Col>
-        <Col brColsSm={10}>
-          <Input type="email" brInputLg id="colFormLabelLg" placeholder="col-form-label-lg" />
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 10 } } } }}>
+          <Input
+            type="email"
+            bsJs={{ formControlSize: 'lg' }}
+            id="colFormLabelLg"
+            placeholder="col-form-label-lg"
+          />
         </Col>
       </Row>
     </div>
@@ -224,14 +248,14 @@ export const HorizontalFormLabelSizing: StoryFn = () => {
 export const ColumnSizing: StoryFn = () => {
   return (
     <div>
-      <Row brRowGutter={3}>
-        <Col brColsSm={7}>
+      <Row bsJs={{ gutter: 3 }}>
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 7 } } } }}>
           <Input placeholder="City" aria-label="City" />
         </Col>
-        <Col brColsSm>
+        <Col bsJs={{ breakpoints: { sm: { col: true } } }}>
           <Input placeholder="State" aria-label="State" />
         </Col>
-        <Col brColsSm>
+        <Col bsJs={{ breakpoints: { sm: { col: true } } }}>
           <Input placeholder="Zip" aria-label="Zip" />
         </Col>
       </Row>
@@ -242,15 +266,15 @@ export const ColumnSizing: StoryFn = () => {
 export const AutoSizing: StoryFn = () => {
   return (
     <div>
-      <Row as="form" brRowGutter={{ x: 3, y: 2 }} className="align-items-center">
-        <Col brCols="auto">
-          <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="autoSizingInput">
+      <Row as="form" bsJs={{ gutter: { x: 3, y: 2 } }} className="align-items-center">
+        <Col bsJs={{ cols: 'auto' }}>
+          <Label bsJs={{ visuallyHidden: true }} htmlFor="autoSizingInput">
             Name
           </Label>
           <Input id="autoSizingInput" placeholder="Jane Doe" />
         </Col>
-        <Col brCols="auto">
-          <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="autoSizingInputGroup">
+        <Col bsJs={{ cols: 'auto' }}>
+          <Label bsJs={{ visuallyHidden: true }} htmlFor="autoSizingInputGroup">
             Username
           </Label>
           <InputGroup>
@@ -258,8 +282,8 @@ export const AutoSizing: StoryFn = () => {
             <Input type="text" id="autoSizingInputGroup" placeholder="Username" />
           </InputGroup>
         </Col>
-        <Col brCols="auto">
-          <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="autoSizingSelect">
+        <Col bsJs={{ cols: 'auto' }}>
+          <Label bsJs={{ visuallyHidden: true }} htmlFor="autoSizingSelect">
             Preference
           </Label>
           <Select id="autoSizingSelect">
@@ -269,31 +293,28 @@ export const AutoSizing: StoryFn = () => {
             <option value="3">Three</option>
           </Select>
         </Col>
-        <Col brCols="auto">
+        <Col bsJs={{ cols: 'auto' }}>
           <FormCheck
             brFormCheckInputProps={{ id: 'autoSizingCheck' }}
             brFormCheckLabelProps={{ children: 'Remember me' }}
           />
         </Col>
-        <Col brCols="auto">
-          <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
+        <Col bsJs={{ cols: 'auto' }}>
+          <Button type="submit" bsJs={{ variant: 'primary' }}>
             Submit
           </Button>
         </Col>
       </Row>
       <hr />
-      <Row as="form" brRowGutter={{ x: 3, y: 2 }} className="align-items-center">
-        <Col brColsSm={3}>
-          <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="specificSizeInputName">
+      <Row as="form" bsJs={{ gutter: { x: 3, y: 2 } }} className="align-items-center">
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 3 } } } }}>
+          <Label bsJs={{ visuallyHidden: true }} htmlFor="specificSizeInputName">
             Name
           </Label>
           <Input type="text" id="specificSizeInputName" placeholder="Jane Doe" />
         </Col>
-        <Col brColsSm={3}>
-          <Label
-            bsJs={{ bsJsAll: { visuallyHidden: true } }}
-            htmlFor="specificSizeInputGroupUsername"
-          >
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 3 } } } }}>
+          <Label bsJs={{ visuallyHidden: true }} htmlFor="specificSizeInputGroupUsername">
             Username
           </Label>
           <InputGroup>
@@ -301,8 +322,8 @@ export const AutoSizing: StoryFn = () => {
             <Input type="text" id="specificSizeInputGroupUsername" placeholder="Username" />
           </InputGroup>
         </Col>
-        <Col brColsSm={3}>
-          <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="specificSizeSelect">
+        <Col bsJs={{ breakpoints: { sm: { col: { cols: 3 } } } }}>
+          <Label bsJs={{ visuallyHidden: true }} htmlFor="specificSizeSelect">
             Preference
           </Label>
           <Select id="specificSizeSelect">
@@ -312,14 +333,14 @@ export const AutoSizing: StoryFn = () => {
             <option value="3">Three</option>
           </Select>
         </Col>
-        <Col brCols="auto">
+        <Col bsJs={{ cols: 'auto' }}>
           <FormCheck
             brFormCheckInputProps={{ id: 'autoSizingCheck2' }}
             brFormCheckLabelProps={{ children: 'Remember me' }}
           />
         </Col>
-        <Col brCols="auto">
-          <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
+        <Col bsJs={{ cols: 'auto' }}>
+          <Button type="submit" bsJs={{ variant: 'primary' }}>
             Submit
           </Button>
         </Col>
@@ -330,9 +351,13 @@ export const AutoSizing: StoryFn = () => {
 
 export const InlineForms: StoryFn = () => {
   return (
-    <Row as="form" brRowColsLg="auto" brRowGutter={3} className="align-items-center">
-      <Col brCols={12}>
-        <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="inlineFormInputGroupUsername">
+    <Row
+      as="form"
+      bsJs={{ gutter: 3, breakpoints: { lg: { row: { cols: 'auto' } } } }}
+      className="align-items-center"
+    >
+      <Col bsJs={{ cols: 12 }}>
+        <Label bsJs={{ visuallyHidden: true }} htmlFor="inlineFormInputGroupUsername">
           Username
         </Label>
         <InputGroup>
@@ -341,8 +366,8 @@ export const InlineForms: StoryFn = () => {
         </InputGroup>
       </Col>
 
-      <Col brCols={12}>
-        <Label bsJs={{ bsJsAll: { visuallyHidden: true } }} htmlFor="inlineFormSelectPref">
+      <Col bsJs={{ cols: 12 }}>
+        <Label bsJs={{ visuallyHidden: true }} htmlFor="inlineFormSelectPref">
           Preference
         </Label>
         <Select id="inlineFormSelectPref">
@@ -353,15 +378,15 @@ export const InlineForms: StoryFn = () => {
         </Select>
       </Col>
 
-      <Col brCols={12}>
+      <Col bsJs={{ cols: 12 }}>
         <FormCheck
           brFormCheckInputProps={{ id: 'inlineFormCheck' }}
           brFormCheckLabelProps={{ children: 'Remember me' }}
         />
       </Col>
 
-      <Col brCols={12}>
-        <Button type="submit" bsJs={{ bsJsAll: { button: { color: 'primary' } } }}>
+      <Col bsJs={{ cols: 12 }}>
+        <Button type="submit" bsJs={{ variant: 'primary' }}>
           Submit
         </Button>
       </Col>

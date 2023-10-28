@@ -239,11 +239,10 @@ export const SizingUsingGridMarkup: StoryFn = () => {
   return (
     <Row>
       <Col
-        brColsSm={6}
         bsJs={{
           spacing: { margin: { bottom: '3' } },
           breakpoints: {
-            sm: { spacing: { margin: { bottom: '0' } } }
+            sm: { col: { cols: 6 }, spacing: { margin: { bottom: '0' } } }
           }
         }}
       >
@@ -259,7 +258,7 @@ export const SizingUsingGridMarkup: StoryFn = () => {
           </CardBody>
         </Card>
       </Col>
-      <Col brColsSm={6}>
+      <Col bsJs={{ breakpoints: { sm: { col: { cols: 6 } } } }}>
         <Card>
           <CardBody>
             <CardTitle>Special title treatment</CardTitle>
@@ -371,7 +370,7 @@ export const Navigation: StoryFn = () => {
         <CardHeader>
           <Nav className="nav-tabs card-header-tabs">
             <NavItem>
-              <NavLink aria-current="true" href="#" brNavLinkActive>
+              <NavLink aria-current="true" href="#" bsJs={{ active: true }}>
                 Active
               </NavLink>
             </NavItem>
@@ -379,7 +378,7 @@ export const Navigation: StoryFn = () => {
               <NavLink href="#">Link</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink brNavLinkDisabled>Disabled</NavLink>
+              <NavLink bsJs={{ disabled: true }}>Disabled</NavLink>
             </NavItem>
           </Nav>
         </CardHeader>
@@ -398,7 +397,7 @@ export const Navigation: StoryFn = () => {
         <CardHeader>
           <Nav className="nav-pills card-header-pills">
             <NavItem>
-              <NavLink aria-current="true" href="#" brNavLinkActive>
+              <NavLink aria-current="true" href="#" bsJs={{ active: true }}>
                 Active
               </NavLink>
             </NavItem>
@@ -406,7 +405,7 @@ export const Navigation: StoryFn = () => {
               <NavLink href="#">Link</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink brNavLinkDisabled>Disabled</NavLink>
+              <NavLink bsJs={{ disabled: true }}>Disabled</NavLink>
             </NavItem>
           </Nav>
         </CardHeader>
@@ -494,8 +493,8 @@ export const ImagesImageOverlays: StoryFn = () => {
 export const Horizontal: StoryFn = () => {
   return (
     <Card bsJs={{ spacing: { margin: { bottom: '3' } } }} style={{ maxWidth: '540px' }}>
-      <Row brRowGutter={0}>
-        <Col brColsMd={4}>
+      <Row bsJs={{ gutter: 0 }}>
+        <Col bsJs={{ breakpoints: { ms: { col: { cols: 4 } } } }}>
           <Image
             bsJs={{ image: { fluid: true } }}
             {...placeholderImgSvgProps({
@@ -507,7 +506,7 @@ export const Horizontal: StoryFn = () => {
             <PlaceholderImgSvgChildren text="Image" />
           </Image>
         </Col>
-        <Col brColsMd={8}>
+        <Col bsJs={{ breakpoints: { ms: { col: { cols: 8 } } } }}>
           <CardBody>
             <CardTitle>Card title</CardTitle>
             <CardText>
@@ -783,7 +782,7 @@ export const CardLayoutCardGroups: StoryFn = () => {
 export const CardLayoutGridCards: StoryFn = () => {
   return (
     <div>
-      <Row brRowCols={1} brRowColsMd={2} brRowGutter={4}>
+      <Row bsJs={{ cols: 1, gutter: 4, breakpoints: { md: { row: { cols: 2 } } } }}>
         <Col>
           <Card>
             <CardImage
@@ -806,14 +805,14 @@ export const CardLayoutGridCards: StoryFn = () => {
         <GridCardCol />
       </Row>
       <hr />
-      <Row brRowCols={1} brRowColsMd={3} brRowGutter={4}>
+      <Row bsJs={{ cols: 1, gutter: 4, breakpoints: { md: { row: { cols: 3 } } } }}>
         <GridCardCol />
         <GridCardCol />
         <GridCardCol />
         <GridCardCol />
       </Row>
       <hr />
-      <Row brRowCols={1} brRowColsMd={3} brRowGutter={4}>
+      <Row bsJs={{ cols: 1, gutter: 4, breakpoints: { md: { row: { cols: 3 } } } }}>
         <GridCardCol cardClassName="h-100" />
         <Col>
           <Card className="h-100">
@@ -833,7 +832,7 @@ export const CardLayoutGridCards: StoryFn = () => {
         <GridCardCol cardClassName="h-100" />
       </Row>
       <hr />
-      <Row brRowCols={1} brRowColsMd={3} brRowGutter={4}>
+      <Row bsJs={{ cols: 1, gutter: 4, breakpoints: { md: { row: { cols: 3 } } } }}>
         <Col>
           <Card className="h-100">
             <CardImage

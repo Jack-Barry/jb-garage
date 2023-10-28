@@ -120,7 +120,7 @@ export const NestedNav: StoryFn = () => {
   return (
     <div className="bd-example">
       <Row>
-        <Col brCols={4}>
+        <Col bsJs={{ cols: 4 }}>
           <Navbar
             id="navbar-example3"
             className="h-100"
@@ -153,7 +153,7 @@ export const NestedNav: StoryFn = () => {
             </Nav>
           </Navbar>
         </Col>
-        <Col brCols={8}>
+        <Col bsJs={{ cols: 8 }}>
           <div
             /* data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" */
             className="scrollspy-example-2"
@@ -271,7 +271,7 @@ export const ListGroupStory: StoryFn = () => {
   return (
     <div className="bd-example">
       <Row>
-        <Col brCols={4}>
+        <Col bsJs={{ cols: 4 }}>
           <ListGroup id="list-example">
             <ListGroupItem as="a" bsJs={{ action: true }} href="#list-item-1">
               Item 1
@@ -287,7 +287,7 @@ export const ListGroupStory: StoryFn = () => {
             </ListGroupItem>
           </ListGroup>
         </Col>
-        <Col brCols={8}>
+        <Col bsJs={{ cols: 8 }}>
           <div
             // data-bs-spy="scroll"
             // data-bs-target="#list-example"
@@ -338,7 +338,7 @@ export const SimpleAnchors: StoryFn = () => {
   return (
     <div className="bd-example">
       <Row>
-        <Col brCols={4}>
+        <Col bsJs={{ cols: 4 }}>
           <BrElement
             id="simple-list-example"
             className="simple-list-example-scrollspy text-center"
@@ -381,7 +381,7 @@ export const SimpleAnchors: StoryFn = () => {
             </BrElement>
           </BrElement>
         </Col>
-        <Col brCols={8}>
+        <Col bsJs={{ cols: 8 }}>
           <div className="scrollspy-example" tabIndex={0} ref={scrollSpy.ref}>
             <h4 id="simple-list-item-1">Item 1</h4>
             <p>

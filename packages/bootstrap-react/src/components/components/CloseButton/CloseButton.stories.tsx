@@ -21,7 +21,7 @@ export const DisabledState: StoryFn = () => {
 
 export const DarkVariant: StoryFn = () => {
   return (
-    <BrElement bsJs={{ bsJsAll: { theme: 'dark' } }}>
+    <BrElement bsJs={{ theme: 'dark' }}>
       <CloseButton />
       <CloseButton disabled />
     </BrElement>

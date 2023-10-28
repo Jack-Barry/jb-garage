@@ -41,7 +41,7 @@ export const Example: StoryFn = () => {
       <FormGroup as="form" bsJs={{ floatingLabels: true }}>
         <Input
           type="email"
-          brInputInvalid
+          bsJs={{ isInvalid: true }}
           id="floatingInputInvalid"
           placeholder="name@example.com"
           value="test@example.com"
@@ -137,7 +137,7 @@ export const ReadonlyPlaintext: StoryFn = () => {
         <Input
           type="email"
           readOnly
-          brInputPlainText
+          bsJs={{ plaintext: true }}
           id="floatingEmptyPlaintextInput"
           placeholder="name@example.com"
         />
@@ -147,7 +147,7 @@ export const ReadonlyPlaintext: StoryFn = () => {
         <Input
           type="email"
           readOnly
-          brInputPlainText
+          bsJs={{ plaintext: true }}
           id="floatingPlaintextInput"
           placeholder="name@example.com"
           value="name@example.com"
@@ -169,12 +169,12 @@ export const InputGroups: StoryFn = () => {
         </FormGroup>
       </InputGroup>
       <hr />
-      <InputGroup brInputGroupHasValidation>
+      <InputGroup bsJs={{ hasValidation: true }}>
         <InputGroupText>@</InputGroupText>
         <FormGroup bsJs={{ floatingLabels: true, isInvalid: true }}>
           <Input
             type="text"
-            brInputInvalid
+            bsJs={{ isInvalid: true }}
             id="floatingInputGroup2"
             placeholder="Username"
             required
@@ -189,8 +189,8 @@ export const InputGroups: StoryFn = () => {
 
 export const Layout: StoryFn = () => {
   return (
-    <Row brRowGutter={2}>
-      <Col brColsMd>
+    <Row bsJs={{ gutter: 2 }}>
+      <Col bsJs={{ breakpoints: { md: { col: true } } }}>
         <FormGroup bsJs={{ floatingLabels: true }}>
           <Input
             type="email"
@@ -201,7 +201,7 @@ export const Layout: StoryFn = () => {
           <Label htmlFor="floatingInputGrid">Email address</Label>
         </FormGroup>
       </Col>
-      <Col brColsMd>
+      <Col bsJs={{ breakpoints: { md: { col: true } } }}>
         <FormGroup bsJs={{ floatingLabels: true }}>
           <Select id="floatingSelectGrid">
             <option selected>Open this select menu</option>

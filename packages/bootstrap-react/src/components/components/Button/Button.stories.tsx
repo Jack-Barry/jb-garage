@@ -136,6 +136,7 @@ export const BlockButtons: StoryFn = () => {
       <Col
         bsJs={{
           display: 'grid',
+          cols: 6,
           spacing: {
             margin: {
               x: 'auto'
@@ -143,7 +144,6 @@ export const BlockButtons: StoryFn = () => {
             gap: '2'
           }
         }}
-        brCols={6}
       >
         <Button bsJs={{ variant: 'primary' }}>Button</Button>
         <Button bsJs={{ variant: 'primary' }}>Button</Button>

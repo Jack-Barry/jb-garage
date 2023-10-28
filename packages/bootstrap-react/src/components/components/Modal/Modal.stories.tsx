@@ -376,32 +376,52 @@ export const UsingTheGrid: StoryFn = () => {
             <ModalBody>
               <Container brContainerFluid className="bd-example-row">
                 <Row>
-                  <Col brColsMd={4}>.col-md-4</Col>
-                  <Col brColsMd={4} bsJs={{ spacing: { margin: { start: 'auto' } } }}>
+                  <Col bsJs={{ breakpoints: { md: { col: { cols: 4 } } } }}>.col-md-4</Col>
+                  <Col
+                    bsJs={{
+                      spacing: { margin: { start: 'auto' } },
+                      breakpoints: { md: { col: { cols: 4 } } }
+                    }}
+                  >
                     .col-md-4 .ms-auto
                   </Col>
                 </Row>
                 <Row>
-                  <Col brColsMd={3} bsJs={{ spacing: { margin: { start: 'auto' } } }}>
+                  <Col
+                    bsJs={{
+                      spacing: { margin: { start: 'auto' } },
+                      breakpoints: { md: { col: { cols: 3 } } }
+                    }}
+                  >
                     .col-md-3 .ms-auto
                   </Col>
-                  <Col brColsMd={2} bsJs={{ spacing: { margin: { start: 'auto' } } }}>
+                  <Col
+                    bsJs={{
+                      spacing: { margin: { start: 'auto' } },
+                      breakpoints: { md: { col: { cols: 2 } } }
+                    }}
+                  >
                     .col-md-2 .ms-auto
                   </Col>
                 </Row>
                 <Row>
-                  <Col brColsMd={6} bsJs={{ spacing: { margin: { start: 'auto' } } }}>
+                  <Col
+                    bsJs={{
+                      spacing: { margin: { start: 'auto' } },
+                      breakpoints: { md: { col: { cols: 6 } } }
+                    }}
+                  >
                     .col-md-6 .ms-auto
                   </Col>
                 </Row>
                 <Row>
-                  <Col brColsSm={9}>
+                  <Col bsJs={{ breakpoints: { sm: { col: { cols: 9 } } } }}>
                     Level 1: .col-sm-9
                     <Row>
-                      <Col brCols={8} brColsSm={6}>
+                      <Col bsJs={{ cols: 8, breakpoints: { sm: { col: { cols: 6 } } } }}>
                         Level 2: .col-8 .col-sm-6
                       </Col>
-                      <Col brCols={4} brColsSm={6}>
+                      <Col bsJs={{ cols: 4, breakpoints: { sm: { col: { cols: 6 } } } }}>
                         Level 2: .col-4 .col-sm-6
                       </Col>
                     </Row>

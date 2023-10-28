@@ -1,50 +1,30 @@
-import classNames from 'classnames'
+import { BootstrapDefaultBreakpoint, BsJsOptionsWithoutElementType } from '@jb-garage/bootstrap-js'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type InputGroupProps<T extends ElementType> = BrElementProps<T> & {
-  /** Present as a small input group */
-  brInputGroupSm?: boolean
-  /** Present as a large input group */
-  brInputGroupLg?: boolean
-  /** Apply Bootstrap has validation styling to input group */
-  brInputGroupHasValidation?: boolean
-}
+export type InputGroupProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  { bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'input-group'> }
+>
 
-type InputGroupWithRef = <Component extends ElementType = 'div'>(
-  props: InputGroupProps<Component>
+type InputGroupWithRef = <
+  Component extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: InputGroupProps<Component, Breakpoints>
 ) => ReactNode
 
-const InputGroup: InputGroupWithRef = forwardRef(function FormInput<T extends ElementType = 'div'>(
-  props: InputGroupProps<T>,
-  ref?: InputGroupProps<T>['ref']
-) {
-  const {
-    as = 'div' as ElementType,
-    className,
-    children,
-    brInputGroupSm,
-    brInputGroupLg,
-    brInputGroupHasValidation,
-    ...rest
-  } = props
+const InputGroup: InputGroupWithRef = forwardRef(function FormInput<
+  T extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: InputGroupProps<T, Breakpoints>, ref?: InputGroupProps<T, Breakpoints>['ref']) {
+  const { as = 'div' as ElementType, bsJs, children, ...rest } = props
 
   return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames(
-        'input-group',
-        {
-          'input-group-sm': brInputGroupSm,
-          'input-group-lg': brInputGroupLg,
-          'has-validation': brInputGroupHasValidation
-        },
-        className
-      )}
-      {...rest}
-    >
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'input-group', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )

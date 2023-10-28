@@ -68,7 +68,7 @@ export const MultipleTogglesAndTargets: StoryFn = () => {
 
   return (
     <div style={{ minHeight: '200px' }}>
-      <BrElement bsJs={{ bsJsAll: { display: 'flex', spacing: { gap: '2' } } }}>
+      <BrElement bsJs={{ display: 'flex', spacing: { gap: '2' } }}>
         <Button onClick={collapse1.toggle}>Toggle first element</Button>
         <Button onClick={collapse2.toggle}>Toggle second element</Button>
         <Button

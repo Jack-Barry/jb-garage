@@ -497,7 +497,7 @@ export const JavascriptBehavior: StoryFn = () => {
   return (
     <div>
       <Row>
-        <Col brCols={4}>
+        <Col bsJs={{ cols: 4 }}>
           <ListGroup id="list-tab" role="tablist">
             <ListGroupItem
               as="a"
@@ -549,7 +549,7 @@ export const JavascriptBehavior: StoryFn = () => {
             </ListGroupItem>
           </ListGroup>
         </Col>
-        <Col brCols={8}>
+        <Col bsJs={{ cols: 8 }}>
           <div className="tab-content" id="nav-tabContent">
             <div
               className="tab-pane fade"

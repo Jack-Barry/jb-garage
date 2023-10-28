@@ -25,12 +25,12 @@ export default meta
 export const BasicExample: StoryFn = () => {
   return (
     <div>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <InputGroupText id="basic-addon1">@</InputGroupText>
         <Input placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
       </InputGroup>
 
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Input
           placeholder="Recipient's username"
           aria-label="Recipient's username"
@@ -39,7 +39,7 @@ export const BasicExample: StoryFn = () => {
         <InputGroupText id="basic-addon2">@example.com</InputGroupText>
       </InputGroup>
 
-      <BrElement bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <BrElement bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Label htmlFor="basic-url">Your vanity URL</Label>
         <InputGroup>
           <InputGroupText id="basic-addon3">https://example.com/users/</InputGroupText>
@@ -48,13 +48,13 @@ export const BasicExample: StoryFn = () => {
         <FormText id="basic-addon4">Example help text goes outside the input group.</FormText>
       </BrElement>
 
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <InputGroupText>$</InputGroupText>
         <Input type="text" aria-label="Amount (to the nearest dollar)" />
         <InputGroupText>.00</InputGroupText>
       </InputGroup>
 
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Input type="text" placeholder="Username" aria-label="Username" />
         <InputGroupText>@</InputGroupText>
         <Input type="text" placeholder="Server" aria-label="Server" />
@@ -70,7 +70,7 @@ export const BasicExample: StoryFn = () => {
 
 export const Wrapping: StoryFn = () => {
   return (
-    <InputGroup bsJs={{ bsJsAll: { flex: { wrap: 'nowrap' } } }}>
+    <InputGroup bsJs={{ flex: { wrap: 'nowrap' } }}>
       <InputGroupText id="addon-wrapping">@</InputGroupText>
       <Input placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"></Input>
     </InputGroup>
@@ -80,17 +80,17 @@ export const Wrapping: StoryFn = () => {
 export const Sizing: StoryFn = () => {
   return (
     <div>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }} brInputGroupSm>
+      <InputGroup bsJs={{ inputGroupSize: 'sm', spacing: { margin: { bottom: '3' } } }}>
         <InputGroupText id="inputGroup-sizing-sm">Small</InputGroupText>
         <Input aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
       </InputGroup>
 
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <InputGroupText id="inputGroup-sizing-default">Default</InputGroupText>
         <Input aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
       </InputGroup>
 
-      <InputGroup brInputGroupLg>
+      <InputGroup bsJs={{ inputGroupSize: 'lg' }}>
         <InputGroupText id="inputGroup-sizing-lg">Large</InputGroupText>
         <Input aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
       </InputGroup>
@@ -101,10 +101,10 @@ export const Sizing: StoryFn = () => {
 export const CheckboxesAndRadios: StoryFn = () => {
   return (
     <div>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <InputGroupText>
           <FormCheckInput
-            bsJs={{ bsJsAll: { spacing: { margin: { top: '0' } } } }}
+            bsJs={{ spacing: { margin: { top: '0' } } }}
             value=""
             aria-label="Checkbox for following text input"
           />
@@ -115,7 +115,7 @@ export const CheckboxesAndRadios: StoryFn = () => {
       <InputGroup>
         <InputGroupText>
           <FormCheckInput
-            bsJs={{ bsJsAll: { spacing: { margin: { top: '0' } } } }}
+            bsJs={{ spacing: { margin: { top: '0' } } }}
             type="radio"
             value=""
             aria-label="Radio button for following text input"
@@ -140,7 +140,7 @@ export const MultipleInputs: StoryFn = () => {
 export const MultipleAddons: StoryFn = () => {
   return (
     <div>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <InputGroupText>$</InputGroupText>
         <InputGroupText>0.00</InputGroupText>
         <Input aria-label="Dollar amount (with dot and two decimal places)" />
@@ -158,8 +158,8 @@ export const MultipleAddons: StoryFn = () => {
 export const ButtonAddons: StoryFn = () => {
   return (
     <div>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }} id="button-addon1">
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+        <Button bsJs={{ variant: 'outline-secondary' }} id="button-addon1">
           Button
         </Button>
         <Input
@@ -169,20 +169,20 @@ export const ButtonAddons: StoryFn = () => {
         />
       </InputGroup>
 
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Input
           placeholder="Recipient's username"
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
         />
-        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }} id="button-addon2">
+        <Button bsJs={{ variant: 'outline-secondary' }} id="button-addon2">
           Button
         </Button>
       </InputGroup>
 
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Button</Button>
-        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Button</Button>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+        <Button bsJs={{ variant: 'outline-secondary' }}>Button</Button>
+        <Button bsJs={{ variant: 'outline-secondary' }}>Button</Button>
         <Input placeholder="" aria-label="Example text with two button addons" />
       </InputGroup>
 
@@ -191,8 +191,8 @@ export const ButtonAddons: StoryFn = () => {
           placeholder="Recipient's username"
           aria-label="Recipient's username with two button addons"
         />
-        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Button</Button>
-        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Button</Button>
+        <Button bsJs={{ variant: 'outline-secondary' }}>Button</Button>
+        <Button bsJs={{ variant: 'outline-secondary' }}>Button</Button>
       </InputGroup>
     </div>
   )
@@ -206,10 +206,10 @@ export const ButtonsWithDropdowns: StoryFn = () => {
 
   return (
     <div style={{ minHeight: '300px' }}>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <DropdownToggle
           ref={dropdownRef1}
-          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
+          bsJs={{ variant: 'outline-secondary' }}
           aria-expanded={isOpen1}
         >
           Dropdown
@@ -223,11 +223,11 @@ export const ButtonsWithDropdowns: StoryFn = () => {
         </DropdownMenu>
         <Input aria-label="Text input with dropdown button" />
       </InputGroup>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Input aria-label="Text input with dropdown button" />
         <DropdownToggle
           ref={dropdownRef2}
-          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
+          bsJs={{ variant: 'outline-secondary' }}
           aria-expanded={isOpen2}
         >
           Dropdown
@@ -244,7 +244,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
       <InputGroup>
         <DropdownToggle
           ref={dropdownRef3}
-          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
+          bsJs={{ variant: 'outline-secondary' }}
           aria-expanded={isOpen3}
         >
           Dropdown
@@ -259,7 +259,7 @@ export const ButtonsWithDropdowns: StoryFn = () => {
         <Input aria-label="Text input with 2 dropdown buttons" />
         <DropdownToggle
           ref={dropdownRef4}
-          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
+          bsJs={{ variant: 'outline-secondary' }}
           aria-expanded={isOpen4}
         >
           Dropdown
@@ -282,15 +282,14 @@ export const SegmentedButtons: StoryFn = () => {
 
   return (
     <div style={{ minHeight: '280px' }}>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Action</Button>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+        <Button bsJs={{ variant: 'outline-secondary' }}>Action</Button>
         <DropdownToggle
           ref={dropdownRef1}
-          brDropdownToggleSplit
-          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
+          bsJs={{ variant: 'outline-secondary', split: true }}
           aria-expanded={isOpen1}
         >
-          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+          <BrElement as="span" bsJs={{ visuallyHidden: true }}>
             Toggle Dropdown
           </BrElement>
         </DropdownToggle>
@@ -306,14 +305,13 @@ export const SegmentedButtons: StoryFn = () => {
 
       <InputGroup>
         <Input aria-label="Text input with segmented dropdown button" />
-        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Action</Button>
+        <Button bsJs={{ variant: 'outline-secondary' }}>Action</Button>
         <DropdownToggle
           ref={dropdownRef2}
-          brDropdownToggleSplit
-          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
+          bsJs={{ variant: 'outline-secondary', split: true }}
           aria-expanded={isOpen2}
         >
-          <BrElement as="span" bsJs={{ bsJsAll: { visuallyHidden: true } }}>
+          <BrElement as="span" bsJs={{ visuallyHidden: true }}>
             Toggle Dropdown
           </BrElement>
         </DropdownToggle>
@@ -332,7 +330,7 @@ export const SegmentedButtons: StoryFn = () => {
 export const CustomFormsCustomSelect: StoryFn = () => {
   return (
     <div>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <InputGroupText as="label" htmlFor="inputGroupSelect01">
           Options
         </InputGroupText>
@@ -344,7 +342,7 @@ export const CustomFormsCustomSelect: StoryFn = () => {
         </Select>
       </InputGroup>
 
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Select id="inputGroupSelect02">
           <option selected>Choose...</option>
           <option value="1">One</option>
@@ -356,8 +354,8 @@ export const CustomFormsCustomSelect: StoryFn = () => {
         </InputGroupText>
       </InputGroup>
 
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}>Button</Button>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+        <Button bsJs={{ variant: 'outline-secondary' }}>Button</Button>
         <Select id="inputGroupSelect03" aria-label="Example select with button addon">
           <option selected>Choose...</option>
           <option value="1">One</option>
@@ -373,7 +371,7 @@ export const CustomFormsCustomSelect: StoryFn = () => {
           <option value="2">Two</option>
           <option value="3">Three</option>
         </Select>
-        <Button bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }} type="button">
+        <Button bsJs={{ variant: 'outline-secondary' }} type="button">
           Button
         </Button>
       </InputGroup>
@@ -384,25 +382,22 @@ export const CustomFormsCustomSelect: StoryFn = () => {
 export const CustomFormsCustomFileInput: StoryFn = () => {
   return (
     <div>
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <InputGroupText as="label" htmlFor="inputGroupFile01">
           Upload
         </InputGroupText>
         <Input type="file" id="inputGroupFile01" />
       </InputGroup>
 
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
         <Input type="file" id="inputGroupFile02" />
         <InputGroupText as="label" htmlFor="inputGroupFile02">
           Upload
         </InputGroupText>
       </InputGroup>
 
-      <InputGroup bsJs={{ bsJsAll: { spacing: { margin: { bottom: '3' } } } }}>
-        <Button
-          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
-          id="inputGroupFileAddon03"
-        >
+      <InputGroup bsJs={{ spacing: { margin: { bottom: '3' } } }}>
+        <Button bsJs={{ variant: 'outline-secondary' }} id="inputGroupFileAddon03">
           Button
         </Button>
         <Input
@@ -420,10 +415,7 @@ export const CustomFormsCustomFileInput: StoryFn = () => {
           aria-describedby="inputGroupFileAddon04"
           aria-label="Upload"
         />
-        <Button
-          bsJs={{ bsJsAll: { button: { color: 'outline-secondary' } } }}
-          id="inputGroupFileAddon04"
-        >
+        <Button bsJs={{ variant: 'outline-secondary' }} id="inputGroupFileAddon04">
           Button
         </Button>
       </InputGroup>

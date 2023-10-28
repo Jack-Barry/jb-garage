@@ -314,7 +314,7 @@ export const Forms: StoryFn = () => {
       </Navbar>
       <hr />
       <Navbar bsJs={{ background: 'body-tertiary' }}>
-        <Container as="form" brContainerFluid>
+        <Container as="form" bsJs={{ fluid: true }}>
           <InputGroup>
             <InputGroupText id="basic-addon1">@</InputGroupText>
             <Input placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
@@ -323,7 +323,7 @@ export const Forms: StoryFn = () => {
       </Navbar>
       <hr />
       <Navbar bsJs={{ background: 'body-tertiary' }}>
-        <Container as="form" brContainerFluid className="justify-content-start">
+        <Container as="form" bsJs={{ fluid: true }} className="justify-content-start">
           <Button
             bsJs={{
               variant: 'outline-success',

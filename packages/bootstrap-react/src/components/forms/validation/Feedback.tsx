@@ -1,50 +1,33 @@
-import classNames from 'classnames'
+import { BootstrapDefaultBreakpoint, BsJsOptionsWithoutElementType } from '@jb-garage/bootstrap-js'
 import { ElementType, ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
 export type BrFeedbackType = 'valid' | 'invalid' | string
-export type FeedbackProps<T extends ElementType> = BrElementProps<T> & {
-  /**
-   * Type of feedback being presented
-   *
-   * @default "invalid"
-   */
-  brFeedbackType?: BrFeedbackType
-  /** Present feedback as a tooltip */
-  brFeedbackTooltip?: boolean
-}
+export type FeedbackProps<T extends ElementType, Breakpoints extends string> = BrElementProps<
+  T,
+  undefined,
+  Breakpoints,
+  {
+    bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'form-validation'>
+  }
+>
 
-type FeedbackWithRef = <Component extends ElementType = 'div'>(
-  props: FeedbackProps<Component>
+type FeedbackWithRef = <
+  Component extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(
+  props: FeedbackProps<Component, Breakpoints>
 ) => ReactNode
 
-const Feedback: FeedbackWithRef = forwardRef(function Feedback<T extends ElementType = 'div'>(
-  props: FeedbackProps<T>,
-  ref?: FeedbackProps<T>['ref']
-) {
-  const {
-    as = 'div' as ElementType,
-    className,
-    children,
-    brFeedbackType = 'invalid',
-    brFeedbackTooltip,
-    ...rest
-  } = props
+const Feedback: FeedbackWithRef = forwardRef(function Feedback<
+  T extends ElementType = 'div',
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: FeedbackProps<T, Breakpoints>, ref?: FeedbackProps<T, Breakpoints>['ref']) {
+  const { as = 'div' as ElementType, bsJs, children, ...rest } = props
 
   return (
-    <BrElement
-      as={as}
-      ref={ref}
-      className={classNames(
-        {
-          [`${brFeedbackType}-feedback`]: !brFeedbackTooltip,
-          [`${brFeedbackType}-tooltip`]: brFeedbackTooltip
-        },
-        className
-      )}
-      {...rest}
-    >
+    <BrElement as={as} ref={ref} bsJs={{ elementType: 'form-validation', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )

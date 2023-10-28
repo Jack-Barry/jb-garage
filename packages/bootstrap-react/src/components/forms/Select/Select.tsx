@@ -1,44 +1,31 @@
-import classNames from 'classnames'
+import { BootstrapDefaultBreakpoint, BsJsOptionsWithoutElementType } from '@jb-garage/bootstrap-js'
 import { ReactNode, forwardRef } from 'react'
 
 import { BrElement, BrElementProps } from '../../utils/BrElement'
 
-export type SelectProps = Omit<BrElementProps<'select'>, 'as'> & {
-  /** Render select with Bootstrap's small styling */
-  brSelectSm?: boolean
-  /** Render select with Bootstrap's large styling */
-  brSelectLg?: boolean
-  /** Form input value is invalid */
-  brSelectInvalid?: boolean
-  /** Form input value is valid */
-  brSelectValid?: boolean
-}
+export type SelectProps<Breakpoints extends string> = Omit<
+  BrElementProps<
+    'select',
+    undefined,
+    Breakpoints,
+    {
+      bsJs?: BsJsOptionsWithoutElementType<Breakpoints, 'form-select'>
+    }
+  >,
+  'as'
+>
 
-type SelectWithRef = (props: SelectProps) => ReactNode
+type SelectWithRef = <Breakpoints extends string = BootstrapDefaultBreakpoint>(
+  props: SelectProps<Breakpoints>
+) => ReactNode
 
-const Select: SelectWithRef = forwardRef(function Select(
-  props: SelectProps,
-  ref?: SelectProps['ref']
-) {
-  const { children, className, brSelectSm, brSelectLg, brSelectInvalid, brSelectValid, ...rest } =
-    props
+const Select: SelectWithRef = forwardRef(function Select<
+  Breakpoints extends string = BootstrapDefaultBreakpoint
+>(props: SelectProps<Breakpoints>, ref?: SelectProps<Breakpoints>['ref']) {
+  const { children, bsJs, ...rest } = props
 
   return (
-    <BrElement
-      as="select"
-      ref={ref}
-      className={classNames(
-        'form-select',
-        {
-          'form-select-sm': brSelectSm,
-          'form-select-lg': brSelectLg,
-          'is-invalid': brSelectInvalid,
-          'is-valid': brSelectValid
-        },
-        className
-      )}
-      {...rest}
-    >
+    <BrElement as="select" ref={ref} bsJs={{ elementType: 'form-select', ...bsJs }} {...rest}>
       {children}
     </BrElement>
   )
