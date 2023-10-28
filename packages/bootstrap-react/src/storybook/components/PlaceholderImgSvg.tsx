@@ -1,3 +1,4 @@
+import { BootstrapDefaultBreakpoint } from '@jb-garage/bootstrap-js'
 import classNames from 'classnames'
 import { CSSProperties, Fragment } from 'react'
 
@@ -12,7 +13,9 @@ export const stylesBdPlaceholderImg: CSSProperties = {
   textAnchor: 'middle'
 }
 
-export function placeholderImgSvgProps(props: ImageProps<'svg'> = {}): ImageProps<'svg'> {
+export function placeholderImgSvgProps(
+  props: ImageProps<'svg', BootstrapDefaultBreakpoint> = {}
+): ImageProps<'svg', BootstrapDefaultBreakpoint> {
   const { className, ...rest } = props
 
   return {
