@@ -41,10 +41,12 @@ const config: StorybookConfig = {
   },
   async viteFinal(config) {
     config.plugins?.push(
-      viteTsConfigPathsPlugin({ projects: [resolve(__dirname, '..', 'tsconfig.json')] })
+      viteTsConfigPathsPlugin({
+        root: '../..'
+        // projects: [resolve(__dirname, '..', 'tsconfig.json')]
+      })
     )
     return config
   }
 }
-console.log({ tsconfig: resolve(__dirname, '..', 'tsconfig.json') })
 export default config

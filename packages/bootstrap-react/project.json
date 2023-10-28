@@ -45,7 +45,7 @@
       "dependsOn": ["build", "setup:dev"]
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/bootstrap-react/**/*.ts"]
